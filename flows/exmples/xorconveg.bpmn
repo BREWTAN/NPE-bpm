@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<definitions id="Definition"
+             targetNamespace="http://www.jboss.org/drools"
+             typeLanguage="http://www.java.com/javaTypes"
+             expressionLanguage="http://www.mvel.org/2.0"
+             xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL BPMN20.xsd"
+             xmlns:g="http://www.jboss.org/drools/flow/gpd"
+             xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI"
+             xmlns:dc="http://www.omg.org/spec/DD/20100524/DC"
+             xmlns:di="http://www.omg.org/spec/DD/20100524/DI"
+             xmlns:tns="http://www.jboss.org/drools">
+
+  <process processType="Private" isExecutable="true" id="xorconverg" name="Sample Process" tns:packageName="defaultPackage" >
+
+    <!-- nodes -->
+    <startEvent id="_1"  isInterrupting="true">
+    </startEvent>
+    <userTask id="task1" name="task1" >
+      <ioSpecification>
+        <dataInput id="task1_NodeNameInput" name="NodeName" />
+        <inputSet>
+          <dataInputRefs>task1_NodeNameInput</dataInputRefs>
+        </inputSet>
+        <outputSet>
+        </outputSet>
+      </ioSpecification>
+      <dataInputAssociation>
+        <targetRef>task1_NodeNameInput</targetRef>
+        <assignment>
+          <from xsi:type="tFormalExpression">task1</from>
+          <to xsi:type="tFormalExpression">task1_NodeNameInput</to>
+        </assignment>
+      </dataInputAssociation>
+    </userTask>
+    <userTask id="task2" name="task2" >
+      <ioSpecification>
+        <dataInput id="task2_NodeNameInput" name="NodeName" />
+        <inputSet>
+          <dataInputRefs>task2_NodeNameInput</dataInputRefs>
+        </inputSet>
+        <outputSet>
+        </outputSet>
+      </ioSpecification>
+      <dataInputAssociation>
+        <targetRef>task2_NodeNameInput</targetRef>
+        <assignment>
+          <from xsi:type="tFormalExpression">task2</from>
+          <to xsi:type="tFormalExpression">task2_NodeNameInput</to>
+        </assignment>
+      </dataInputAssociation>
+    </userTask>
+    <userTask id="task3" name="task3" >
+      <ioSpecification>
+        <dataInput id="task3_NodeNameInput" name="NodeName" />
+        <inputSet>
+          <dataInputRefs>task3_NodeNameInput</dataInputRefs>
+        </inputSet>
+        <outputSet>
+        </outputSet>
+      </ioSpecification>
+      <dataInputAssociation>
+        <targetRef>task3_NodeNameInput</targetRef>
+        <assignment>
+          <from xsi:type="tFormalExpression">task3</from>
+          <to xsi:type="tFormalExpression">task3_NodeNameInput</to>
+        </assignment>
+      </dataInputAssociation>
+    </userTask>
+    <complexGateway id="dgw" name="dgw" gatewayDirection="Diverging" >
+    </complexGateway>
+    <exclusiveGateway id="cgw" name="cgw" gatewayDirection="Converging" >
+    </exclusiveGateway>
+    <endEvent id="ENDD" name="End" >
+        <terminateEventDefinition />
+    </endEvent>
+
+    <!-- connections -->
+    <sequenceFlow id="dgw-task1" sourceRef="dgw" targetRef="task1" />
+    <sequenceFlow id="dgw-task2" sourceRef="dgw" targetRef="task2" />
+    <sequenceFlow id="dgw-task3" sourceRef="dgw" targetRef="task3" />
+    <sequenceFlow id="_1-dgw" sourceRef="_1" targetRef="dgw" />
+    <sequenceFlow id="task1-cgw" sourceRef="task1" targetRef="cgw" />
+    <sequenceFlow id="task2-cgw" sourceRef="task2" targetRef="cgw" />
+    <sequenceFlow id="task3-cgw" sourceRef="task3" targetRef="cgw" />
+    <sequenceFlow id="cgw-ENDD" sourceRef="cgw" targetRef="ENDD" />
+
+  </process>
+
+  <bpmndi:BPMNDiagram>
+    <bpmndi:BPMNPlane bpmnElement="com.sample.bpmn" >
+      <bpmndi:BPMNShape bpmnElement="_1" >
+        <dc:Bounds x="300" y="51" width="48" height="48" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="task1" >
+        <dc:Bounds x="87" y="250" width="100" height="48" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="task2" >
+        <dc:Bounds x="282" y="239" width="100" height="48" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="task3" >
+        <dc:Bounds x="482" y="247" width="100" height="48" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="dgw" >
+        <dc:Bounds x="302" y="146" width="48" height="48" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="cgw" >
+        <dc:Bounds x="313" y="362" width="48" height="48" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="ENDD" >
+        <dc:Bounds x="313" y="454" width="48" height="48" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="dgw-task1" >
+        <di:waypoint x="326" y="170" />
+        <di:waypoint x="137" y="274" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="dgw-task2" >
+        <di:waypoint x="326" y="170" />
+        <di:waypoint x="332" y="263" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="dgw-task3" >
+        <di:waypoint x="326" y="170" />
+        <di:waypoint x="532" y="271" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="_1-dgw" >
+        <di:waypoint x="324" y="75" />
+        <di:waypoint x="326" y="170" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="task1-cgw" >
+        <di:waypoint x="137" y="274" />
+        <di:waypoint x="337" y="386" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="task2-cgw" >
+        <di:waypoint x="332" y="263" />
+        <di:waypoint x="337" y="386" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="task3-cgw" >
+        <di:waypoint x="532" y="271" />
+        <di:waypoint x="337" y="386" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="cgw-ENDD" >
+        <di:waypoint x="337" y="386" />
+        <di:waypoint x="337" y="478" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+
+</definitions>

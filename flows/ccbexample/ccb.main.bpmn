@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<definitions id="Definition"
+             targetNamespace="http://www.jboss.org/drools"
+             typeLanguage="http://www.java.com/javaTypes"
+             expressionLanguage="http://www.mvel.org/2.0"
+             xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL BPMN20.xsd"
+             xmlns:g="http://www.jboss.org/drools/flow/gpd"
+             xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI"
+             xmlns:dc="http://www.omg.org/spec/DD/20100524/DC"
+             xmlns:di="http://www.omg.org/spec/DD/20100524/DI"
+             xmlns:tns="http://www.jboss.org/drools">
+
+  <process processType="Private" isExecutable="true" id="ccb.main" name="主流程" tns:packageName="defaultPackage" >
+
+    <!-- nodes -->
+    <startEvent id="_1"  isInterrupting="true">
+    </startEvent>
+    <userTask id="_jbpm-unique-0" name="扫描" >
+      <ioSpecification>
+        <dataInput id="_jbpm-unique-0_CommentInput" name="Comment" />
+        <dataInput id="_jbpm-unique-0_CreatedByInput" name="CreatedBy" />
+        <dataInput id="_jbpm-unique-0_SkippableInput" name="Skippable" />
+        <dataInput id="_jbpm-unique-0_LocaleInput" name="Locale" />
+        <dataInput id="_jbpm-unique-0_TaskNameInput" name="TaskName" />
+        <dataInput id="_jbpm-unique-0_GroupIdInput" name="GroupId" />
+        <dataInput id="_jbpm-unique-0_NodeNameInput" name="NodeName" />
+        <dataInput id="_jbpm-unique-0_PriorityInput" name="Priority" />
+        <inputSet>
+          <dataInputRefs>_jbpm-unique-0_CommentInput</dataInputRefs>
+          <dataInputRefs>_jbpm-unique-0_CreatedByInput</dataInputRefs>
+          <dataInputRefs>_jbpm-unique-0_SkippableInput</dataInputRefs>
+          <dataInputRefs>_jbpm-unique-0_LocaleInput</dataInputRefs>
+          <dataInputRefs>_jbpm-unique-0_TaskNameInput</dataInputRefs>
+          <dataInputRefs>_jbpm-unique-0_GroupIdInput</dataInputRefs>
+          <dataInputRefs>_jbpm-unique-0_NodeNameInput</dataInputRefs>
+          <dataInputRefs>_jbpm-unique-0_PriorityInput</dataInputRefs>
+        </inputSet>
+        <outputSet>
+        </outputSet>
+      </ioSpecification>
+      <dataInputAssociation>
+        <targetRef>_jbpm-unique-0_CommentInput</targetRef>
+        <assignment>
+          <from xsi:type="tFormalExpression"></from>
+          <to xsi:type="tFormalExpression">_jbpm-unique-0_CommentInput</to>
+        </assignment>
+      </dataInputAssociation>
+      <dataInputAssociation>
+        <targetRef>_jbpm-unique-0_CreatedByInput</targetRef>
+        <assignment>
+          <from xsi:type="tFormalExpression"></from>
+          <to xsi:type="tFormalExpression">_jbpm-unique-0_CreatedByInput</to>
+        </assignment>
+      </dataInputAssociation>
+      <dataInputAssociation>
+        <targetRef>_jbpm-unique-0_SkippableInput</targetRef>
+        <assignment>
+          <from xsi:type="tFormalExpression">false</from>
+          <to xsi:type="tFormalExpression">_jbpm-unique-0_SkippableInput</to>
+        </assignment>
+      </dataInputAssociation>
+      <dataInputAssociation>
+        <targetRef>_jbpm-unique-0_LocaleInput</targetRef>
+        <assignment>
+          <from xsi:type="tFormalExpression">en-UK</from>
+          <to xsi:type="tFormalExpression">_jbpm-unique-0_LocaleInput</to>
+        </assignment>
+      </dataInputAssociation>
+      <dataInputAssociation>
+        <targetRef>_jbpm-unique-0_TaskNameInput</targetRef>
+        <assignment>
+          <from xsi:type="tFormalExpression">scan</from>
+          <to xsi:type="tFormalExpression">_jbpm-unique-0_TaskNameInput</to>
+        </assignment>
+      </dataInputAssociation>
+      <dataInputAssociation>
+        <targetRef>_jbpm-unique-0_GroupIdInput</targetRef>
+        <assignment>
+          <from xsi:type="tFormalExpression"></from>
+          <to xsi:type="tFormalExpression">_jbpm-unique-0_GroupIdInput</to>
+        </assignment>
+      </dataInputAssociation>
+      <dataInputAssociation>
+        <targetRef>_jbpm-unique-0_NodeNameInput</targetRef>
+        <assignment>
+          <from xsi:type="tFormalExpression">扫描</from>
+          <to xsi:type="tFormalExpression">_jbpm-unique-0_NodeNameInput</to>
+        </assignment>
+      </dataInputAssociation>
+      <dataInputAssociation>
+        <targetRef>_jbpm-unique-0_PriorityInput</targetRef>
+        <assignment>
+          <from xsi:type="tFormalExpression"></from>
+          <to xsi:type="tFormalExpression">_jbpm-unique-0_PriorityInput</to>
+        </assignment>
+      </dataInputAssociation>
+      <potentialOwner>
+        <resourceAssignmentExpression>
+          <formalExpression></formalExpression>
+        </resourceAssignmentExpression>
+      </potentialOwner>
+    </userTask>
+    <userTask id="_jbpm-unique-1" name="版面识别" >
+      <ioSpecification>
+        <dataInput id="_jbpm-unique-1_CommentInput" name="Comment" />
+        <dataInput id="_jbpm-unique-1_CreatedByInput" name="CreatedBy" />
+        <dataInput id="_jbpm-unique-1_SkippableInput" name="Skippable" />
+        <dataInput id="_jbpm-unique-1_LocaleInput" name="Locale" />
+        <dataInput id="_jbpm-unique-1_TaskNameInput" name="TaskName" />
+        <dataInput id="_jbpm-unique-1_GroupIdInput" name="GroupId" />
+        <dataInput id="_jbpm-unique-1_NodeNameInput" name="NodeName" />
+        <dataInput id="_jbpm-unique-1_PriorityInput" name="Priority" />
+        <inputSet>
+          <dataInputRefs>_jbpm-unique-1_CommentInput</dataInputRefs>
+          <dataInputRefs>_jbpm-unique-1_CreatedByInput</dataInputRefs>
+          <dataInputRefs>_jbpm-unique-1_SkippableInput</dataInputRefs>
+          <dataInputRefs>_jbpm-unique-1_LocaleInput</dataInputRefs>
+          <dataInputRefs>_jbpm-unique-1_TaskNameInput</dataInputRefs>
+          <dataInputRefs>_jbpm-unique-1_GroupIdInput</dataInputRefs>
+          <dataInputRefs>_jbpm-unique-1_NodeNameInput</dataInputRefs>
+          <dataInputRefs>_jbpm-unique-1_PriorityInput</dataInputRefs>
+        </inputSet>
+        <outputSet>
+        </outputSet>
+      </ioSpecification>
+      <dataInputAssociation>
+        <targetRef>_jbpm-unique-1_CommentInput</targetRef>
+        <assignment>
+          <from xsi:type="tFormalExpression"></from>
+          <to xsi:type="tFormalExpression">_jbpm-unique-1_CommentInput</to>
+        </assignment>
+      </dataInputAssociation>
+      <dataInputAssociation>
+        <targetRef>_jbpm-unique-1_CreatedByInput</targetRef>
+        <assignment>
+          <from xsi:type="tFormalExpression"></from>
+          <to xsi:type="tFormalExpression">_jbpm-unique-1_CreatedByInput</to>
+        </assignment>
+      </dataInputAssociation>
+      <dataInputAssociation>
+        <targetRef>_jbpm-unique-1_SkippableInput</targetRef>
+        <assignment>
+          <from xsi:type="tFormalExpression">false</from>
+          <to xsi:type="tFormalExpression">_jbpm-unique-1_SkippableInput</to>
+        </assignment>
+      </dataInputAssociation>
+      <dataInputAssociation>
+        <targetRef>_jbpm-unique-1_LocaleInput</targetRef>
+        <assignment>
+          <from xsi:type="tFormalExpression">en-UK</from>
+          <to xsi:type="tFormalExpression">_jbpm-unique-1_LocaleInput</to>
+        </assignment>
+      </dataInputAssociation>
+      <dataInputAssociation>
+        <targetRef>_jbpm-unique-1_TaskNameInput</targetRef>
+        <assignment>
+          <from xsi:type="tFormalExpression">版面识别</from>
+          <to xsi:type="tFormalExpression">_jbpm-unique-1_TaskNameInput</to>
+        </assignment>
+      </dataInputAssociation>
+      <dataInputAssociation>
+        <targetRef>_jbpm-unique-1_GroupIdInput</targetRef>
+        <assignment>
+          <from xsi:type="tFormalExpression"></from>
+          <to xsi:type="tFormalExpression">_jbpm-unique-1_GroupIdInput</to>
+        </assignment>
+      </dataInputAssociation>
+      <dataInputAssociation>
+        <targetRef>_jbpm-unique-1_NodeNameInput</targetRef>
+        <assignment>
+          <from xsi:type="tFormalExpression">版面识别</from>
+          <to xsi:type="tFormalExpression">_jbpm-unique-1_NodeNameInput</to>
+        </assignment>
+      </dataInputAssociation>
+      <dataInputAssociation>
+        <targetRef>_jbpm-unique-1_PriorityInput</targetRef>
+        <assignment>
+          <from xsi:type="tFormalExpression"></from>
+          <to xsi:type="tFormalExpression">_jbpm-unique-1_PriorityInput</to>
+        </assignment>
+      </dataInputAssociation>
+      <potentialOwner>
+        <resourceAssignmentExpression>
+          <formalExpression></formalExpression>
+        </resourceAssignmentExpression>
+      </potentialOwner>
+    </userTask>
+    <callActivity id="_jbpm-unique-2" name="单笔处理" calledElement="ccb.singleproc" >
+      <ioSpecification>
+        <inputSet>
+        </inputSet>
+        <outputSet>
+        </outputSet>
+      </ioSpecification>
+    </callActivity>
+    <endEvent id="_jbpm-unique-3" name="End" >
+        <terminateEventDefinition />
+    </endEvent>
+
+    <!-- connections -->
+    <sequenceFlow id="_1-_jbpm-unique-0" sourceRef="_1" targetRef="_jbpm-unique-0" />
+    <sequenceFlow id="_jbpm-unique-0-_jbpm-unique-1" sourceRef="_jbpm-unique-0" targetRef="_jbpm-unique-1" />
+    <sequenceFlow id="_jbpm-unique-1-_jbpm-unique-2" sourceRef="_jbpm-unique-1" targetRef="_jbpm-unique-2" />
+    <sequenceFlow id="_jbpm-unique-2-_jbpm-unique-3" sourceRef="_jbpm-unique-2" targetRef="_jbpm-unique-3" />
+
+  </process>
+
+  <bpmndi:BPMNDiagram>
+    <bpmndi:BPMNPlane bpmnElement="ccb.main" >
+      <bpmndi:BPMNShape bpmnElement="_1" >
+        <dc:Bounds x="53" y="164" width="48" height="48" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="_jbpm-unique-0" >
+        <dc:Bounds x="155" y="165" width="100" height="48" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="_jbpm-unique-1" >
+        <dc:Bounds x="311" y="164" width="100" height="48" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="_jbpm-unique-2" >
+        <dc:Bounds x="478" y="165" width="110" height="48" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="_jbpm-unique-3" >
+        <dc:Bounds x="682" y="161" width="48" height="48" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="_1-_jbpm-unique-0" >
+        <di:waypoint x="77" y="188" />
+        <di:waypoint x="205" y="189" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="_jbpm-unique-0-_jbpm-unique-1" >
+        <di:waypoint x="205" y="189" />
+        <di:waypoint x="361" y="188" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="_jbpm-unique-1-_jbpm-unique-2" >
+        <di:waypoint x="361" y="188" />
+        <di:waypoint x="533" y="189" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="_jbpm-unique-2-_jbpm-unique-3" >
+        <di:waypoint x="533" y="189" />
+        <di:waypoint x="706" y="185" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+
+</definitions>

@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<definitions id="Definition"
+             targetNamespace="http://www.jboss.org/drools"
+             typeLanguage="http://www.java.com/javaTypes"
+             expressionLanguage="http://www.mvel.org/2.0"
+             xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL BPMN20.xsd"
+             xmlns:g="http://www.jboss.org/drools/flow/gpd"
+             xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI"
+             xmlns:dc="http://www.omg.org/spec/DD/20100524/DC"
+             xmlns:di="http://www.omg.org/spec/DD/20100524/DI"
+             xmlns:tns="http://www.jboss.org/drools">
+
+  <process processType="Private" isExecutable="true" id="seq1" name="Sample Process" tns:packageName="defaultPackage" >
+
+    <!-- nodes -->
+    <startEvent id="_1"  isInterrupting="true">
+    </startEvent>
+    <endEvent id="endtast" name="End" >
+        <terminateEventDefinition />
+    </endEvent>
+    <userTask id="iduserTask1" name="actor1work" >
+      <ioSpecification>
+        <dataInput id="iduserTask1_CreatedByInput" name="CreatedBy" />
+        <dataInput id="iduserTask1_CommentInput" name="Comment" />
+        <dataInput id="iduserTask1_SkippableInput" name="Skippable" />
+        <dataInput id="iduserTask1_LocaleInput" name="Locale" />
+        <dataInput id="iduserTask1_TaskNameInput" name="TaskName" />
+        <dataInput id="iduserTask1_GroupIdInput" name="GroupId" />
+        <dataInput id="iduserTask1_PriorityInput" name="Priority" />
+        <inputSet>
+          <dataInputRefs>iduserTask1_CreatedByInput</dataInputRefs>
+          <dataInputRefs>iduserTask1_CommentInput</dataInputRefs>
+          <dataInputRefs>iduserTask1_SkippableInput</dataInputRefs>
+          <dataInputRefs>iduserTask1_LocaleInput</dataInputRefs>
+          <dataInputRefs>iduserTask1_TaskNameInput</dataInputRefs>
+          <dataInputRefs>iduserTask1_GroupIdInput</dataInputRefs>
+          <dataInputRefs>iduserTask1_PriorityInput</dataInputRefs>
+        </inputSet>
+        <outputSet>
+        </outputSet>
+      </ioSpecification>
+      <dataInputAssociation>
+        <targetRef>iduserTask1_CreatedByInput</targetRef>
+        <assignment>
+          <from xsi:type="tFormalExpression"></from>
+          <to xsi:type="tFormalExpression">iduserTask1_CreatedByInput</to>
+        </assignment>
+      </dataInputAssociation>
+      <dataInputAssociation>
+        <targetRef>iduserTask1_CommentInput</targetRef>
+        <assignment>
+          <from xsi:type="tFormalExpression"></from>
+          <to xsi:type="tFormalExpression">iduserTask1_CommentInput</to>
+        </assignment>
+      </dataInputAssociation>
+      <dataInputAssociation>
+        <targetRef>iduserTask1_SkippableInput</targetRef>
+        <assignment>
+          <from xsi:type="tFormalExpression">false</from>
+          <to xsi:type="tFormalExpression">iduserTask1_SkippableInput</to>
+        </assignment>
+      </dataInputAssociation>
+      <dataInputAssociation>
+        <targetRef>iduserTask1_LocaleInput</targetRef>
+        <assignment>
+          <from xsi:type="tFormalExpression">en-UK</from>
+          <to xsi:type="tFormalExpression">iduserTask1_LocaleInput</to>
+        </assignment>
+      </dataInputAssociation>
+      <dataInputAssociation>
+        <targetRef>iduserTask1_TaskNameInput</targetRef>
+        <assignment>
+          <from xsi:type="tFormalExpression"></from>
+          <to xsi:type="tFormalExpression">iduserTask1_TaskNameInput</to>
+        </assignment>
+      </dataInputAssociation>
+      <dataInputAssociation>
+        <targetRef>iduserTask1_GroupIdInput</targetRef>
+        <assignment>
+          <from xsi:type="tFormalExpression">group1</from>
+          <to xsi:type="tFormalExpression">iduserTask1_GroupIdInput</to>
+        </assignment>
+      </dataInputAssociation>
+      <dataInputAssociation>
+        <targetRef>iduserTask1_PriorityInput</targetRef>
+        <assignment>
+          <from xsi:type="tFormalExpression"></from>
+          <to xsi:type="tFormalExpression">iduserTask1_PriorityInput</to>
+        </assignment>
+      </dataInputAssociation>
+      <potentialOwner>
+        <resourceAssignmentExpression>
+          <formalExpression>actor1</formalExpression>
+        </resourceAssignmentExpression>
+      </potentialOwner>
+    </userTask>
+    <userTask id="iduserTask2" name="actor2work" >
+      <ioSpecification>
+        <dataInput id="iduserTask2_GroupIdInput" name="GroupId" />
+        <dataInput id="iduserTask2_NodeNameInput" name="NodeName" />
+        <inputSet>
+          <dataInputRefs>iduserTask2_GroupIdInput</dataInputRefs>
+          <dataInputRefs>iduserTask2_NodeNameInput</dataInputRefs>
+        </inputSet>
+        <outputSet>
+        </outputSet>
+      </ioSpecification>
+      <dataInputAssociation>
+        <targetRef>iduserTask2_GroupIdInput</targetRef>
+        <assignment>
+          <from xsi:type="tFormalExpression">group1</from>
+          <to xsi:type="tFormalExpression">iduserTask2_GroupIdInput</to>
+        </assignment>
+      </dataInputAssociation>
+      <dataInputAssociation>
+        <targetRef>iduserTask2_NodeNameInput</targetRef>
+        <assignment>
+          <from xsi:type="tFormalExpression">actor2work</from>
+          <to xsi:type="tFormalExpression">iduserTask2_NodeNameInput</to>
+        </assignment>
+      </dataInputAssociation>
+      <potentialOwner>
+        <resourceAssignmentExpression>
+          <formalExpression>actor2</formalExpression>
+        </resourceAssignmentExpression>
+      </potentialOwner>
+    </userTask>
+
+    <!-- connections -->
+    <sequenceFlow id="iduserTask2-endtast" sourceRef="iduserTask2" targetRef="endtast" />
+    <sequenceFlow id="_1-iduserTask1" sourceRef="_1" targetRef="iduserTask1" />
+    <sequenceFlow id="iduserTask1-iduserTask2" sourceRef="iduserTask1" targetRef="iduserTask2" />
+
+  </process>
+
+  <bpmndi:BPMNDiagram>
+    <bpmndi:BPMNPlane bpmnElement="com.sample.bpmn" >
+      <bpmndi:BPMNShape bpmnElement="_1" >
+        <dc:Bounds x="175" y="23" width="48" height="48" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="endtast" >
+        <dc:Bounds x="157" y="361" width="48" height="48" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="iduserTask1" >
+        <dc:Bounds x="114" y="129" width="100" height="48" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="iduserTask2" >
+        <dc:Bounds x="135" y="236" width="100" height="48" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="iduserTask2-endtast" >
+        <di:waypoint x="185" y="260" />
+        <di:waypoint x="181" y="385" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="_1-iduserTask1" >
+        <di:waypoint x="199" y="47" />
+        <di:waypoint x="164" y="153" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="iduserTask1-iduserTask2" >
+        <di:waypoint x="164" y="153" />
+        <di:waypoint x="185" y="260" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+
+</definitions>

@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<definitions id="Definition"
+             targetNamespace="http://www.jboss.org/drools"
+             typeLanguage="http://www.java.com/javaTypes"
+             expressionLanguage="http://www.mvel.org/2.0"
+             xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL BPMN20.xsd"
+             xmlns:g="http://www.jboss.org/drools/flow/gpd"
+             xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI"
+             xmlns:dc="http://www.omg.org/spec/DD/20100524/DC"
+             xmlns:di="http://www.omg.org/spec/DD/20100524/DI"
+             xmlns:tns="http://www.jboss.org/drools">
+
+  <process processType="Private" isExecutable="true" id="ccb.inputproc" name="录入验印子流程" tns:packageName="defaultPackage" >
+
+    <!-- nodes -->
+    <startEvent id="_1"  isInterrupting="true">
+    </startEvent>
+    <endEvent id="_jbpm-unique-3" name="End" >
+        <terminateEventDefinition />
+    </endEvent>
+    <callActivity id="_jbpm-unique-10" name="日期" calledElement="ccb.inputdateproc" >
+      <ioSpecification>
+        <inputSet>
+        </inputSet>
+        <outputSet>
+        </outputSet>
+      </ioSpecification>
+    </callActivity>
+    <callActivity id="_jbpm-unique-11" name="账号录入" calledElement="ccb.inputaccountproc" >
+      <ioSpecification>
+        <inputSet>
+        </inputSet>
+        <outputSet>
+        </outputSet>
+      </ioSpecification>
+    </callActivity>
+    <callActivity id="_jbpm-unique-12" name="金额录入" calledElement="ccb.inputmoneyproc" >
+      <ioSpecification>
+        <inputSet>
+        </inputSet>
+        <outputSet>
+        </outputSet>
+      </ioSpecification>
+    </callActivity>
+    <userTask id="_jbpm-unique-13" name="数据组装" >
+      <ioSpecification>
+        <dataInput id="_jbpm-unique-13_TaskNameInput" name="TaskName" />
+        <dataInput id="_jbpm-unique-13_NodeNameInput" name="NodeName" />
+        <inputSet>
+          <dataInputRefs>_jbpm-unique-13_TaskNameInput</dataInputRefs>
+          <dataInputRefs>_jbpm-unique-13_NodeNameInput</dataInputRefs>
+        </inputSet>
+        <outputSet>
+        </outputSet>
+      </ioSpecification>
+      <dataInputAssociation>
+        <targetRef>_jbpm-unique-13_TaskNameInput</targetRef>
+        <assignment>
+          <from xsi:type="tFormalExpression">数据组装</from>
+          <to xsi:type="tFormalExpression">_jbpm-unique-13_TaskNameInput</to>
+        </assignment>
+      </dataInputAssociation>
+      <dataInputAssociation>
+        <targetRef>_jbpm-unique-13_NodeNameInput</targetRef>
+        <assignment>
+          <from xsi:type="tFormalExpression">数据组装</from>
+          <to xsi:type="tFormalExpression">_jbpm-unique-13_NodeNameInput</to>
+        </assignment>
+      </dataInputAssociation>
+    </userTask>
+    <userTask id="_jbpm-unique-14" name="要素拆分" >
+      <ioSpecification>
+        <dataInput id="_jbpm-unique-14_TaskNameInput" name="TaskName" />
+        <dataInput id="_jbpm-unique-14_NodeNameInput" name="NodeName" />
+        <inputSet>
+          <dataInputRefs>_jbpm-unique-14_TaskNameInput</dataInputRefs>
+          <dataInputRefs>_jbpm-unique-14_NodeNameInput</dataInputRefs>
+        </inputSet>
+        <outputSet>
+        </outputSet>
+      </ioSpecification>
+      <dataInputAssociation>
+        <targetRef>_jbpm-unique-14_TaskNameInput</targetRef>
+        <assignment>
+          <from xsi:type="tFormalExpression">要素拆分</from>
+          <to xsi:type="tFormalExpression">_jbpm-unique-14_TaskNameInput</to>
+        </assignment>
+      </dataInputAssociation>
+      <dataInputAssociation>
+        <targetRef>_jbpm-unique-14_NodeNameInput</targetRef>
+        <assignment>
+          <from xsi:type="tFormalExpression">要素拆分</from>
+          <to xsi:type="tFormalExpression">_jbpm-unique-14_NodeNameInput</to>
+        </assignment>
+      </dataInputAssociation>
+    </userTask>
+    <userTask id="_jbpm-unique-15" name="验印" >
+      <ioSpecification>
+        <dataInput id="_jbpm-unique-15_TaskNameInput" name="TaskName" />
+        <dataInput id="_jbpm-unique-15_NodeNameInput" name="NodeName" />
+        <inputSet>
+          <dataInputRefs>_jbpm-unique-15_TaskNameInput</dataInputRefs>
+          <dataInputRefs>_jbpm-unique-15_NodeNameInput</dataInputRefs>
+        </inputSet>
+        <outputSet>
+        </outputSet>
+      </ioSpecification>
+      <dataInputAssociation>
+        <targetRef>_jbpm-unique-15_TaskNameInput</targetRef>
+        <assignment>
+          <from xsi:type="tFormalExpression">验印</from>
+          <to xsi:type="tFormalExpression">_jbpm-unique-15_TaskNameInput</to>
+        </assignment>
+      </dataInputAssociation>
+      <dataInputAssociation>
+        <targetRef>_jbpm-unique-15_NodeNameInput</targetRef>
+        <assignment>
+          <from xsi:type="tFormalExpression">验印</from>
+          <to xsi:type="tFormalExpression">_jbpm-unique-15_NodeNameInput</to>
+        </assignment>
+      </dataInputAssociation>
+    </userTask>
+    <userTask id="_jbpm-unique-16" name="要素组合" >
+      <ioSpecification>
+        <dataInput id="_jbpm-unique-16_TaskNameInput" name="TaskName" />
+        <dataInput id="_jbpm-unique-16_NodeNameInput" name="NodeName" />
+        <inputSet>
+          <dataInputRefs>_jbpm-unique-16_TaskNameInput</dataInputRefs>
+          <dataInputRefs>_jbpm-unique-16_NodeNameInput</dataInputRefs>
+        </inputSet>
+        <outputSet>
+        </outputSet>
+      </ioSpecification>
+      <dataInputAssociation>
+        <targetRef>_jbpm-unique-16_TaskNameInput</targetRef>
+        <assignment>
+          <from xsi:type="tFormalExpression">要素组合</from>
+          <to xsi:type="tFormalExpression">_jbpm-unique-16_TaskNameInput</to>
+        </assignment>
+      </dataInputAssociation>
+      <dataInputAssociation>
+        <targetRef>_jbpm-unique-16_NodeNameInput</targetRef>
+        <assignment>
+          <from xsi:type="tFormalExpression">要素组合</from>
+          <to xsi:type="tFormalExpression">_jbpm-unique-16_NodeNameInput</to>
+        </assignment>
+      </dataInputAssociation>
+    </userTask>
+    <parallelGateway id="_jbpm-unique-17" name="Gateway" gatewayDirection="Diverging" >
+    </parallelGateway>
+    <parallelGateway id="_jbpm-unique-18" name="Gateway" gatewayDirection="Converging" >
+    </parallelGateway>
+
+    <!-- connections -->
+    <sequenceFlow id="_jbpm-unique-16-_jbpm-unique-3" sourceRef="_jbpm-unique-16" targetRef="_jbpm-unique-3" />
+    <sequenceFlow id="_jbpm-unique-17-_jbpm-unique-10" sourceRef="_jbpm-unique-17" targetRef="_jbpm-unique-10" />
+    <sequenceFlow id="_jbpm-unique-17-_jbpm-unique-11" sourceRef="_jbpm-unique-17" targetRef="_jbpm-unique-11" />
+    <sequenceFlow id="_jbpm-unique-17-_jbpm-unique-12" sourceRef="_jbpm-unique-17" targetRef="_jbpm-unique-12" />
+    <sequenceFlow id="_jbpm-unique-18-_jbpm-unique-13" sourceRef="_jbpm-unique-18" targetRef="_jbpm-unique-13" />
+    <sequenceFlow id="_1-_jbpm-unique-14" sourceRef="_1" targetRef="_jbpm-unique-14" />
+    <sequenceFlow id="_jbpm-unique-13-_jbpm-unique-15" sourceRef="_jbpm-unique-13" targetRef="_jbpm-unique-15" />
+    <sequenceFlow id="_jbpm-unique-15-_jbpm-unique-16" sourceRef="_jbpm-unique-15" targetRef="_jbpm-unique-16" />
+    <sequenceFlow id="_jbpm-unique-14-_jbpm-unique-17" sourceRef="_jbpm-unique-14" targetRef="_jbpm-unique-17" />
+    <sequenceFlow id="_jbpm-unique-10-_jbpm-unique-18" sourceRef="_jbpm-unique-10" targetRef="_jbpm-unique-18" />
+    <sequenceFlow id="_jbpm-unique-11-_jbpm-unique-18" sourceRef="_jbpm-unique-11" targetRef="_jbpm-unique-18" />
+    <sequenceFlow id="_jbpm-unique-12-_jbpm-unique-18" sourceRef="_jbpm-unique-12" targetRef="_jbpm-unique-18" />
+
+  </process>
+
+  <bpmndi:BPMNDiagram>
+    <bpmndi:BPMNPlane bpmnElement="ccb.inputproc" >
+      <bpmndi:BPMNShape bpmnElement="_1" >
+        <dc:Bounds x="17" y="36" width="48" height="48" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="_jbpm-unique-3" >
+        <dc:Bounds x="793" y="280" width="48" height="48" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="_jbpm-unique-10" >
+        <dc:Bounds x="240" y="84" width="110" height="48" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="_jbpm-unique-11" >
+        <dc:Bounds x="237" y="183" width="110" height="48" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="_jbpm-unique-12" >
+        <dc:Bounds x="238" y="281" width="110" height="48" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="_jbpm-unique-13" >
+        <dc:Bounds x="511" y="192" width="100" height="48" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="_jbpm-unique-14" >
+        <dc:Bounds x="-3" y="174" width="100" height="48" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="_jbpm-unique-15" >
+        <dc:Bounds x="645" y="193" width="100" height="48" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="_jbpm-unique-16" >
+        <dc:Bounds x="768" y="200" width="100" height="48" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="_jbpm-unique-17" >
+        <dc:Bounds x="143" y="188" width="48" height="48" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="_jbpm-unique-18" >
+        <dc:Bounds x="416" y="210" width="48" height="48" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="_jbpm-unique-16-_jbpm-unique-3" >
+        <di:waypoint x="818" y="224" />
+        <di:waypoint x="817" y="304" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="_jbpm-unique-17-_jbpm-unique-10" >
+        <di:waypoint x="167" y="212" />
+        <di:waypoint x="295" y="108" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="_jbpm-unique-17-_jbpm-unique-11" >
+        <di:waypoint x="167" y="212" />
+        <di:waypoint x="292" y="207" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="_jbpm-unique-17-_jbpm-unique-12" >
+        <di:waypoint x="167" y="212" />
+        <di:waypoint x="293" y="305" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="_jbpm-unique-18-_jbpm-unique-13" >
+        <di:waypoint x="440" y="234" />
+        <di:waypoint x="561" y="216" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="_1-_jbpm-unique-14" >
+        <di:waypoint x="41" y="60" />
+        <di:waypoint x="47" y="198" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="_jbpm-unique-13-_jbpm-unique-15" >
+        <di:waypoint x="561" y="216" />
+        <di:waypoint x="695" y="217" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="_jbpm-unique-15-_jbpm-unique-16" >
+        <di:waypoint x="695" y="217" />
+        <di:waypoint x="818" y="224" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="_jbpm-unique-14-_jbpm-unique-17" >
+        <di:waypoint x="47" y="198" />
+        <di:waypoint x="167" y="212" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="_jbpm-unique-10-_jbpm-unique-18" >
+        <di:waypoint x="295" y="108" />
+        <di:waypoint x="440" y="234" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="_jbpm-unique-11-_jbpm-unique-18" >
+        <di:waypoint x="292" y="207" />
+        <di:waypoint x="440" y="234" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="_jbpm-unique-12-_jbpm-unique-18" >
+        <di:waypoint x="293" y="305" />
+        <di:waypoint x="440" y="234" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+
+</definitions>

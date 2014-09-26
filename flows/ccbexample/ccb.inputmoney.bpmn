@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<definitions id="Definition"
+             targetNamespace="http://www.jboss.org/drools"
+             typeLanguage="http://www.java.com/javaTypes"
+             expressionLanguage="http://www.mvel.org/2.0"
+             xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL BPMN20.xsd"
+             xmlns:g="http://www.jboss.org/drools/flow/gpd"
+             xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI"
+             xmlns:dc="http://www.omg.org/spec/DD/20100524/DC"
+             xmlns:di="http://www.omg.org/spec/DD/20100524/DI"
+             xmlns:tns="http://www.jboss.org/drools">
+
+  <process processType="Private" isExecutable="true" id="ccb.inputmoneyproc" name="金额录入子流程" tns:packageName="defaultPackage" >
+
+    <!-- nodes -->
+    <startEvent id="_1"  isInterrupting="true">
+    </startEvent>
+    <endEvent id="_jbpm-unique-3" name="End" >
+        <terminateEventDefinition />
+    </endEvent>
+    <userTask id="_jbpm-unique-4" name="自动赋值" >
+      <ioSpecification>
+        <dataInput id="_jbpm-unique-4_TaskNameInput" name="TaskName" />
+        <dataInput id="_jbpm-unique-4_NodeNameInput" name="NodeName" />
+        <inputSet>
+          <dataInputRefs>_jbpm-unique-4_TaskNameInput</dataInputRefs>
+          <dataInputRefs>_jbpm-unique-4_NodeNameInput</dataInputRefs>
+        </inputSet>
+        <outputSet>
+        </outputSet>
+      </ioSpecification>
+      <dataInputAssociation>
+        <targetRef>_jbpm-unique-4_TaskNameInput</targetRef>
+        <assignment>
+          <from xsi:type="tFormalExpression">自动赋值</from>
+          <to xsi:type="tFormalExpression">_jbpm-unique-4_TaskNameInput</to>
+        </assignment>
+      </dataInputAssociation>
+      <dataInputAssociation>
+        <targetRef>_jbpm-unique-4_NodeNameInput</targetRef>
+        <assignment>
+          <from xsi:type="tFormalExpression">自动赋值</from>
+          <to xsi:type="tFormalExpression">_jbpm-unique-4_NodeNameInput</to>
+        </assignment>
+      </dataInputAssociation>
+    </userTask>
+    <userTask id="_jbpm-unique-19" name="录入" >
+      <ioSpecification>
+        <dataInput id="_jbpm-unique-19_TaskNameInput" name="TaskName" />
+        <dataInput id="_jbpm-unique-19_NodeNameInput" name="NodeName" />
+        <inputSet>
+          <dataInputRefs>_jbpm-unique-19_TaskNameInput</dataInputRefs>
+          <dataInputRefs>_jbpm-unique-19_NodeNameInput</dataInputRefs>
+        </inputSet>
+        <outputSet>
+        </outputSet>
+      </ioSpecification>
+      <dataInputAssociation>
+        <targetRef>_jbpm-unique-19_TaskNameInput</targetRef>
+        <assignment>
+          <from xsi:type="tFormalExpression">录入</from>
+          <to xsi:type="tFormalExpression">_jbpm-unique-19_TaskNameInput</to>
+        </assignment>
+      </dataInputAssociation>
+      <dataInputAssociation>
+        <targetRef>_jbpm-unique-19_NodeNameInput</targetRef>
+        <assignment>
+          <from xsi:type="tFormalExpression">录入</from>
+          <to xsi:type="tFormalExpression">_jbpm-unique-19_NodeNameInput</to>
+        </assignment>
+      </dataInputAssociation>
+    </userTask>
+    <userTask id="_jbpm-unique-20" name="校验" >
+      <ioSpecification>
+        <dataInput id="_jbpm-unique-20_TaskNameInput" name="TaskName" />
+        <dataInput id="_jbpm-unique-20_NodeNameInput" name="NodeName" />
+        <inputSet>
+          <dataInputRefs>_jbpm-unique-20_TaskNameInput</dataInputRefs>
+          <dataInputRefs>_jbpm-unique-20_NodeNameInput</dataInputRefs>
+        </inputSet>
+        <outputSet>
+        </outputSet>
+      </ioSpecification>
+      <dataInputAssociation>
+        <targetRef>_jbpm-unique-20_TaskNameInput</targetRef>
+        <assignment>
+          <from xsi:type="tFormalExpression">校验</from>
+          <to xsi:type="tFormalExpression">_jbpm-unique-20_TaskNameInput</to>
+        </assignment>
+      </dataInputAssociation>
+      <dataInputAssociation>
+        <targetRef>_jbpm-unique-20_NodeNameInput</targetRef>
+        <assignment>
+          <from xsi:type="tFormalExpression">校验</from>
+          <to xsi:type="tFormalExpression">_jbpm-unique-20_NodeNameInput</to>
+        </assignment>
+      </dataInputAssociation>
+    </userTask>
+
+    <!-- connections -->
+    <sequenceFlow id="_jbpm-unique-20-_jbpm-unique-3" sourceRef="_jbpm-unique-20" targetRef="_jbpm-unique-3" />
+    <sequenceFlow id="_1-_jbpm-unique-4" sourceRef="_1" targetRef="_jbpm-unique-4" />
+    <sequenceFlow id="_jbpm-unique-4-_jbpm-unique-19" sourceRef="_jbpm-unique-4" targetRef="_jbpm-unique-19" />
+    <sequenceFlow id="_jbpm-unique-19-_jbpm-unique-20" sourceRef="_jbpm-unique-19" targetRef="_jbpm-unique-20" />
+
+  </process>
+
+  <bpmndi:BPMNDiagram>
+    <bpmndi:BPMNPlane bpmnElement="ccb.inputmoneyproc" >
+      <bpmndi:BPMNShape bpmnElement="_1" >
+        <dc:Bounds x="53" y="164" width="48" height="48" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="_jbpm-unique-3" >
+        <dc:Bounds x="675" y="156" width="48" height="48" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="_jbpm-unique-4" >
+        <dc:Bounds x="160" y="156" width="100" height="48" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="_jbpm-unique-19" >
+        <dc:Bounds x="329" y="147" width="100" height="48" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="_jbpm-unique-20" >
+        <dc:Bounds x="497" y="150" width="100" height="48" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="_jbpm-unique-20-_jbpm-unique-3" >
+        <di:waypoint x="547" y="174" />
+        <di:waypoint x="699" y="180" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="_1-_jbpm-unique-4" >
+        <di:waypoint x="77" y="188" />
+        <di:waypoint x="210" y="180" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="_jbpm-unique-4-_jbpm-unique-19" >
+        <di:waypoint x="210" y="180" />
+        <di:waypoint x="379" y="171" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="_jbpm-unique-19-_jbpm-unique-20" >
+        <di:waypoint x="379" y="171" />
+        <di:waypoint x="547" y="174" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+
+</definitions>

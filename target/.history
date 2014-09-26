@@ -1,0 +1,69 @@
+eclipse
+show version
+cd 
+projects
+reload
+projects
+project util
+projects
+project commons
+show version 
+reload
+eclipse
+projects
+project commons
+reload
+eclipse
+reload
+eclipse
+compile
+clean
+eclipse
+project fsm
+reload
+eclipse
+compile
+compil
+compile
+clean
+compile
+reload
+compile
+clean
+compile
+clean
+compile
+reload
+eclipse
+ls
+packageBin::products
+compile
+exit
+projects 
+project commons
+package
+project fsm
+packageBin::products
+exit
+help
+projects
+ui
+help
+tasks
+run fsm.TestProcess
+help
+show
+tasks
+package
+help package
+project fsm
+projects
+compile
+package
+compile
+package
+clean
+package
+compile
+run
+exit

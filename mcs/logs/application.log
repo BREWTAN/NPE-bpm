@@ -1,0 +1,24 @@
+2014-09-15 15:31:19,074 - [INFO] - from play in pool-4-thread-3 
+Listening for HTTP on /0:0:0:0:0:0:0:0:9000
+
+2014-09-15 15:31:35,689 - [INFO] - from application in play-internal-execution-context-1 
+Application has started
+
+2014-09-15 15:31:35,694 - [INFO] - from play in play-internal-execution-context-1 
+Application started (Dev)
+
+2014-09-15 15:31:37,219 - [INFO] - from application in PECluster-akka.actor.default-dispatcher-15 
+member UPUP...
+
+2014-09-15 15:31:37,223 - [INFO] - from application in PECluster-akka.actor.default-dispatcher-15 
+con==Actor[akka://PECluster/user/fsmcollects#-222700766]
+
+2014-09-15 15:31:37,225 - [INFO] - from application in PECluster-akka.actor.default-dispatcher-20 
+preStart
+
+2014-09-15 15:31:37,229 - [INFO] - from application in PECluster-akka.actor.default-dispatcher-20 
+state is Up: CurrentClusterState(TreeSet(Member(address = akka.tcp://PECluster@127.0.0.1:2551, status = Up), Member(address = akka.tcp://PECluster@127.0.0.1:2660, status = Up)),Set(),Set(akka.tcp://PECluster@127.0.0.1:2551, akka.tcp://PECluster@127.0.0.1:2660),Some(akka.tcp://PECluster@127.0.0.1:2551),Map(compute -> Some(akka.tcp://PECluster@127.0.0.1:2551), viewer -> Some(akka.tcp://PECluster@127.0.0.1:2551), viewere -> Some(akka.tcp://PECluster@127.0.0.1:2660)))
+
+2014-09-15 15:31:37,231 - [INFO] - from application in PECluster-akka.actor.default-dispatcher-20 
+currentMember:akka.tcp://PECluster@127.0.0.1:2551
+
