@@ -35,8 +35,9 @@ case class StateContext(
   ) extends Serializable {
 
   def simpleName(): String = {
-    val p = ProcDefHelper.procDefs.get(procDefId);
-    "StateContext(" + p.get.e.name + "," + p.get.nodes.get(taskDefId).get.e.name + ")"
+//    val p = ProcDefHelper.procDefs.get(procDefId);
+//    "StateContext(" + p.get.e.name + "," + p.get.nodes.get(taskDefId).get.e.name + ")"
+    ""
   }
   def copy(from: StateContext): StateContext = {
     StateContext(from.procInstId, from.procDefId, from.taskInstId, from.taskDefId, from.taskName, from.antecessors, from.internalState, from.prevStateInstIds,

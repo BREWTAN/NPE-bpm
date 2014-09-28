@@ -27,7 +27,7 @@ class PIOQueue[T](val pio: Int = 0, __link: LinkedBlockingQueue[T] = new LinkedB
     if(ret!=null) obtainCC .incrementAndGet();
     
     ret
-  }
+  } 
   def size():Int= __link.size()
 }
 class AdvancePriorityQueue[T <: PriorityAware]() {
@@ -40,7 +40,7 @@ class AdvancePriorityQueue[T <: PriorityAware]() {
 
    override def toString:String={
     "(c="+queuesList.foldLeft(0)(_ + _.pio )+",a="+queuesList.foldLeft(0)(_ + _.offerCC.get() )+",g="+queuesList.foldLeft(0)(_ + _.obtainCC .get() )+")"
-    
+//    ""
   }
   def offer(sc: T)(implicit lq: LinkedBlockingQueue[T] = null): Unit = {
     queues.get(sc.pio) match {

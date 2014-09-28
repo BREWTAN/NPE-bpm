@@ -17,12 +17,13 @@ import akka.cluster.Cluster
 import akka.contrib.pattern.ClusterSingletonManager
 import akka.routing.RoundRobinPool
 import org.nights.npe.fsm.ContextData
+import org.nights.npe.fsm.GlobalQueue
 
 object TestFSM_CCB_Slave {
 
   def main(args: Array[String]) {
     var systems: MutableList[ActorSystem] = MutableList.empty;
-    var counter = 2;
+    var counter = 0;
     var sleep = 10;
     if (args.length >= 1)
       counter = args(0).toInt
@@ -41,13 +42,13 @@ object TestFSM_CCB_Slave {
        
         system.actorOf(akka.actor.Props[ProcDefStorage], "definitionstore")
 
-        system.actorOf(ClusterSingletonManager.defaultProps(RoundRobinPool(10).props(akka.actor.Props[ConvergeTransWorker]), "convergers",
-          PoisonPill, "compute"), "singleton");
+        system.actorOf(ClusterSingletonManager.defaultProps(RoundRobinPool(20).props(akka.actor.Props[ConvergeTransWorker]), "convergers",
+          PoisonPill, "compute"), "singleton"); 
 
         val cmd = system.actorOf(akka.actor.Props[InlineCmdActor], "cmd");
 
 
-        Thread.sleep(10000)
+        Thread.sleep(10000) 
 
         val start = System.currentTimeMillis();
         println("start!!:!"+cmd)
@@ -58,8 +59,12 @@ object TestFSM_CCB_Slave {
         for (i <- 1 to counter)
           new Thread(new Runnable() {
             def run() {
+              var cc: Int = 0
               while (true) {
-                cmd ! CMDSubmit(MessageHelper.wrappedANewProcess(UUID.randomUUID().toString(),Thread.currentThread().getName(), "ccb.main", ContextData()))
+
+                cmd ! CMDSubmit(MessageHelper.wrappedANewProcess(UUID.randomUUID().toString(), Thread.currentThread().getName(), "ccb.main", ContextData(
+                  (cc) % 10)))
+                cc += 1
                 Thread.sleep(sleep)
               }
             }
@@ -71,10 +76,14 @@ object TestFSM_CCB_Slave {
             + "/s,newps=" + StatsCounter.newprocs.get() * 1000 / ((System.currentTimeMillis() - start))
             + "/s,submitps=" + StatsCounter.submits.get() * 1000 / ((System.currentTimeMillis() - start))
             + "/s,obtainps=" + StatsCounter.obtains.get() * 1000 / ((System.currentTimeMillis() - start))
-            + "/s,cc(terms=" + StatsCounter.terminates.get()
-            + ",news=" + StatsCounter.newprocs.get()
+            + "/s,cost(max=" + StatsCounter.maxCost.get() / 1000
+            + "/s,min=" + StatsCounter.minCost.get() / 1000
+            + "/s),news=" + StatsCounter.newprocs.get()
+            + ",term=" + StatsCounter.terminates.get()
             + ",submits=" + StatsCounter.submits.get()
             + ",obtains=" + StatsCounter.obtains.get() + ")");
+                    println("roles:" + GlobalQueue.queue)
+
         }
 
       }

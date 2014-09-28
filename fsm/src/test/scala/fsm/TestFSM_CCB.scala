@@ -23,8 +23,8 @@ object TestFSM_CCB {
 
   def main(args: Array[String]) {
     var systems: MutableList[ActorSystem] = MutableList.empty;
-    var counter = 3;
-    var sleep = 30;
+    var counter = 7;
+    var sleep = 5;
     if (args.length >= 1)
       counter = args(0).toInt
     if (args.length >= 2)
@@ -39,25 +39,29 @@ object TestFSM_CCB {
           val fsm = system.actorOf(akka.actor.Props[FsmActorsController], "fsm");
           println("fsm==" + fsm)
         }
-        system.actorOf(ClusterSingletonManager.defaultProps(RoundRobinPool(40).props(akka.actor.Props[ConvergeTransWorker]), "convergers",
+        system.actorOf(ClusterSingletonManager.defaultProps(RoundRobinPool(20).props(akka.actor.Props[ConvergeTransWorker]), "convergers",
           PoisonPill, "compute"), "singleton");
 
         val cmd = system.actorOf(akka.actor.Props[InlineCmdActor], "cmd");
 
         Thread.sleep(8000)
 
-//        cmd ! RecoverFor("*")
+        //        cmd ! RecoverFor("*")
         val start = System.currentTimeMillis();
 
-                cmd ! CMDSubmit(MessageHelper.wrappedANewProcess(UUID.randomUUID().toString(),Thread.currentThread().getName(), "ccb.main", ContextData()))
+        cmd ! CMDSubmit(MessageHelper.wrappedANewProcess(UUID.randomUUID().toString(), Thread.currentThread().getName(), "ccb.main", ContextData()))
         //        cmd ! CMDSubmit(MessageHelper.wrappedANewProcess(UUID.randomUUID().toString(), "ccb.main", "MyData"))
         //                cmd ! CMDSubmit(MessageHelper.wrappedANewProcess(UUID.randomUUID().toString(), "ccb.main", "MyData"))
 
         for (i <- 1 to counter)
           new Thread(new Runnable() {
             def run() {
+              var cc: Int = 0
               while (true) {
-                cmd ! CMDSubmit(MessageHelper.wrappedANewProcess(UUID.randomUUID().toString(), Thread.currentThread().getName(), "ccb.main", ContextData()))
+
+                cmd ! CMDSubmit(MessageHelper.wrappedANewProcess(UUID.randomUUID().toString(), Thread.currentThread().getName(), "ccb.main", ContextData(
+                  (cc) % 10)))
+                cc += 1
                 Thread.sleep(sleep)
               }
             }

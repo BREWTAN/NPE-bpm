@@ -1,6 +1,8 @@
 package org.nights.npe.fsm.backend
 
 import java.util.HashSet
+import scala.concurrent.ExecutionContext
+import scala.concurrent.ExecutionContext
 import scala.concurrent.Future
 import scala.concurrent.impl.Future
 import scala.concurrent.impl.Future
@@ -17,8 +19,7 @@ import net.sf.ehcache.Element
 import net.sf.ehcache.config.CacheConfiguration
 import net.sf.ehcache.config.Configuration
 import net.sf.ehcache.store.MemoryStoreEvictionPolicy
-import scala.concurrent.ExecutionContext
-import scala.concurrent.{ ExecutionContext, Promise }
+import com.github.mauricio.async.db.QueryResult
 
 /**
  * 支持TC超大集群内存模式
@@ -116,7 +117,7 @@ object EhCacheStorage extends StateStore {
       }
     }
 
-    Future { 1 }
+    Future { new QueryResult(1,"OK") }
 
     //      tx.commit
     //    stateCache flush; stateHistoryCache flush; procInstDataCache flush; procInstCache flush;
@@ -150,15 +151,15 @@ object EhCacheStorage extends StateStore {
   override def doSubmitStates(state: StateContext, submitter: String, ctxData: ContextData): Future[Any] = {
     log.trace("get SubmitStates:@" + state + ",by" + submitter)
     stateCache.put(new Element(state.taskInstId, state))
-    Future { 1 }
+    Future { new QueryResult(1,"OK") }
   }
   override def saveGateway(state: StateContext, submitter: String, ctxData: ContextData): Future[Any] = {
     stateCache.put(new Element(state.taskInstId, state))
-    Future { 1 }
+    Future { new QueryResult(1,"OK") }
   }
   override def doNewProcess(state: StateContext, submitter: String, ctxData: ContextData): Future[Any] = {
     stateCache.put(new Element(state.taskInstId, state))
-    Future { 1 }
+    Future { new QueryResult(1,"OK") }
 
   }
   def doFetchProcessStates(procId: String): AskResult[Any] = {
@@ -172,10 +173,10 @@ object EhCacheStorage extends StateStore {
   }
 
   override def doSaveConverge(convergeId: String, taskInsts: String): Future[Any] = {
-    Future { 1 }
+    Future { new QueryResult(1,"OK") }
   }
   override def doRemoveConverge(convergeId: String): Future[Any] = {
-    Future { 1 }
+    Future { new QueryResult(1,"OK") }
   }
 
 }

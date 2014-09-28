@@ -56,3 +56,5 @@ one-jar
 clean
 one-jar
 exit
+clean
+compile

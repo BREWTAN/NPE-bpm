@@ -44,7 +44,7 @@ class FsmActorsController extends Actor with ActorLogging {
 //    
     context.system.actorOf(RoundRobinPool(num*2).props(Props[StorageWorker]).withDispatcher("fsm-thread-pool-dispatcher"), "statestores")
 
-    context.system.actorOf(RoundRobinPool(10).props(Props[Submitor]).withDispatcher("fsm-thread-pool-dispatcher"), "submitor")
+    context.system.actorOf(RoundRobinPool(num).props(Props[Submitor]).withDispatcher("fsm-thread-pool-dispatcher"), "submitor")
 
     context.system.actorOf(RoundRobinPool(num).props(Props[TransitionWorker]).withDispatcher("fsm-thread-pool-dispatcher"), "transitionworker")
 

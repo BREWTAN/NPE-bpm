@@ -16,7 +16,7 @@ class ProcDefStorage extends Actor with ActorLogging with ActorHelper {
 
   override def preStart(): Unit = {
     log.info("startup@{}", self)
-    self ! LoadDefDir("/Users/brew/NPE/workspace/npe/flows/ccbexample")
+    self ! LoadDefDir("/tmp/flows/ccbexample")
   }
   override def postStop(): Unit = {
     log.info("shutdown:{}", self)

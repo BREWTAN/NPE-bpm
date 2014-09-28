@@ -55,7 +55,7 @@ class Submitor extends Actor with ActorLogging with ActorHelper {
       }
     }
     case TaskDone(doneState: DoneStateContext) => {
-      log.info("TaskDone:{}", doneState);
+//      log.info("TaskDone:{}", doneState);
       StatsCounter.submits .incrementAndGet();
 
       stateStores ! wrapToPipeMessage(SubmitStates(doneState.state asSubmit,doneState.submitter  , doneState.ctxData), Tansitionworkers(), doneState.state.taskInstId);

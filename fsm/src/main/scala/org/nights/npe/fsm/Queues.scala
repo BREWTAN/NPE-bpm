@@ -1,24 +1,17 @@
 package org.nights.npe.fsm
 
-import scala.actors.threadpool.LinkedBlockingQueue
-import org.nights.npe.fsm.backend.ObtainedStates
-import org.nights.npe.fsm.backend.Transition
-import akka.actor.Actor
-import akka.actor.ActorLogging
-import akka.actor.ActorRef
-import akka.routing.ConsistentHashingRouter.ConsistentHashableEnvelope
-import org.nights.npe.fsm.defs.ProcDefHelper
-import org.nights.npe.po.Definition._
-import scala.collection.mutable.Map
-import java.util.ArrayList
-import scala.collection.mutable.ListBuffer
-import scala.util.control.Breaks._
-import java.util.PriorityQueue
-import org.nights.npe.queue.AdvancePriorityQueue
-import org.nights.npe.queue.RolePIOQueue
 import scala.concurrent.ExecutionContext.Implicits.global
 import scala.concurrent.duration.DurationInt
-import org.nights.npe.fsm.backend.MySqlStorage
+
+import org.nights.npe.fsm.backend.ObtainedStates
+import org.nights.npe.fsm.backend.Transition
+import org.nights.npe.fsm.defs.ProcDefHelper
+import org.nights.npe.po.Definition.UserTask
+import org.nights.npe.queue.RolePIOQueue
+
+import akka.actor.Actor
+import akka.actor.ActorLogging
+import akka.actor.ActorSelection.toScala
 
 case class AskNewWork(count: Int, obtainer: String = null, role: String = null, group: String = null)
 
@@ -71,8 +64,6 @@ class ObtainTimeOutChecker extends Actor with ActorLogging with ActorHelper {
     //    log.info("shutdown:{}", self)
     sc.cancel
   }
-
-  val store = MySqlStorage
 
   def receive = {
     case "tick" =>

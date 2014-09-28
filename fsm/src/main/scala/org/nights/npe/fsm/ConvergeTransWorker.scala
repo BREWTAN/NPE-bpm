@@ -1,18 +1,16 @@
 package org.nights.npe.fsm
 
 import scala.collection.mutable.ListBuffer
+
 import org.nights.npe.fsm.backend.EHConverger
-import org.nights.npe.fsm.backend.UpdateStates
+import org.nights.npe.fsm.backend.GatewayStates
 import org.nights.npe.fsm.backend.UpdateStates
 import org.nights.npe.fsm.defs.ProcDefHelper
+
 import akka.actor.Actor
 import akka.actor.ActorLogging
 import akka.actor.ActorSelection.toScala
 import akka.cluster.Cluster
-import akka.routing.ConsistentHashingRouter.ConsistentHashableEnvelope
-import org.nights.npe.fsm.backend.MySqlStorage
-import org.nights.npe.fsm.backend.SubmitStates
-import org.nights.npe.fsm.backend.GatewayStates
 
 case class ConvergingTrans(upstate: UpdateStates, convergeCount: Int, convergeNodeId: String)
 
@@ -22,7 +20,6 @@ class ConvergeTransWorker extends Actor with ActorLogging with ActorHelper {
   }
   implicit val exec = context.dispatcher
 
-  val store = MySqlStorage
   override def preStart(): Unit = {
     log.info("instanceCacheMan startup@{}", self)
     val storepath = addresstoPath(Cluster(context.system).selfAddress.hostPort)

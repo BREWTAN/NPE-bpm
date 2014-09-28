@@ -1,21 +1,19 @@
 package org.nights.npe.fsm.backend
 
 import scala.concurrent.Future
-import scala.concurrent.duration.DurationInt
+import scala.util.Success
+
 import org.nights.npe.fsm.ActorHelper
 import org.nights.npe.fsm.ContextData
 import org.nights.npe.fsm.PipeEnvelope
 import org.nights.npe.fsm.StateContext
-import org.nights.npe.fsm.StateContext
 import org.nights.npe.po.AskResult
+
+import com.github.mauricio.async.db.QueryResult
+
 import akka.actor.Actor
 import akka.actor.ActorLogging
-import akka.actor.ActorRef
-import akka.actor.ActorSelection.toScala
-import akka.actor.actorRef2Scala
 import akka.cluster.Cluster
-import scala.util.Success
-import com.github.mauricio.async.db.QueryResult
 //state op
 
 case class Transition(states: List[StateContext], ctxData: ContextData = null)
@@ -58,9 +56,9 @@ class StorageWorker extends Actor with ActorLogging with ActorHelper {
   def addresstoPath(implicit hostport: String): String = {
     "/tmp/fsm/" + hostport.replaceAll("akka://", "_").replaceAll("/", "_")
   }
-  //  val store = EhCacheStorage
-  val store = MySqlStorage
-  //    val store = MySqlInsertStorage
+    val store = EhCacheStorage
+//  val store = MySqlStorage
+//      val store = MySqlInsertStorage
 
   override def preStart(): Unit = {
     log.info("instanceCacheMan startup@{}", self)
