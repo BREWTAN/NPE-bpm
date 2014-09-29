@@ -63,7 +63,7 @@ object TestMysql {
       }
     }
     val ko = KOParams("cc", "dd")
-    SubmitTasksDAO.updateByCond(KOSubmitTasks(null, "ss"),
+    SubmitTasksDAO.updateByCond(KOSubmitTasks(null,null,null,null, "ss"),
       KO.submitFilter("4bb2da87a202ce829158af3838002", 2))
 
     Thread.sleep(2000)

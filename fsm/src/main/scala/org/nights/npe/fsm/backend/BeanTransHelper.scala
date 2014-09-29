@@ -19,6 +19,7 @@ import scala.collection.mutable.HashMap
 import org.nights.npe.fsm.backend.db.KOConvergeCounter
 import org.nights.npe.fsm.InterStateSubmit
 import org.slf4j.LoggerFactory
+import org.nights.npe.fsm.backend.db.KOInTermTask
 
 object BeanTransHelper {
 	val log=LoggerFactory.getLogger(BeanTransHelper.getClass())
@@ -129,8 +130,18 @@ object BeanTransHelper {
     sc.taskInstId, // String, // varchar(32) not null, 
     obtainer)
 
+  def koForInTermState(taskid: String, cluster: String): KOInTermTask = KOInTermTask(
+    taskid, // String, // varchar(32) not null, 
+    cluster)
+    
+  def koForTermState(sc: StateContext): KOTermTask = KOTermTask(
+    sc.taskInstId // String, // varchar(32) not null, 
+   )
   def koForSubmitState(sc: StateContext, submitter: String, dt: ContextData): KOSubmitTasks = KOSubmitTasks(
     sc.taskInstId, // String, // varchar(32) not null, 
+    sc.procDefId ,
+    sc.procInstId ,
+    sc.taskDefId ,
     submitter,
     Some(InterStateSubmit().v),
     Some(dt.procPIO),

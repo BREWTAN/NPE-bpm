@@ -30,6 +30,7 @@ import com.github.mauricio.async.db.exceptions.DatabaseException
 import akka.dispatch.ExecutionContexts
 import akka.util.Timeout
 import akka.actor.Status.Success
+import org.nights.npe.fsm.FSMGlobal
 
 /**
  * MySqlUpdate的模式
@@ -55,10 +56,10 @@ object MySqlStorage extends StateStore {
     implicit val noexec: Boolean = true;
     val beans = for (state <- states) yield BeanTransHelper.koFromState(state, ctxData)
     val future1 = TasksDAO.insertBatch(beans)
-    val prevs = states.foldLeft(List[String]())(_ ++ _.prevStateInstIds)
+    val prevs = states.foldLeft(List[String]())(_ ++ _.prevStateInstIds).distinct
     val upbeans = prevs.map { BeanTransHelper.koTermFromString(_) }
     val future2 = upbeans.map { TermUpdateTasksDAO.update(_) }
-    implicit val exec = ExecutionContexts.global
+    implicit val exec = FSMGlobal.exec
     val result = Await.ready(Future.sequence(List(future1) ::: future2), 100 seconds)
     log.debug("resultready==" + result.value.get.get)
     TasksDAO.execInBatch(result.value.get.get)
@@ -73,10 +74,10 @@ object MySqlStorage extends StateStore {
 
     val bean = BeanTransHelper.koFromState(state, submitter, ctxData)
     val future1 = TasksDAO.insert(bean)
-    val prevs = state.prevStateInstIds
+    val prevs = state.prevStateInstIds.distinct
     val upbeans = prevs.map { BeanTransHelper.koTermFromString(_) }
     val future2 = upbeans.map { TermUpdateTasksDAO.update(_) }
-    implicit val exec = ExecutionContexts.global
+    implicit val exec = FSMGlobal.exec
     //    Future.sequence(List(future1) ::: future2)
     val result = Await.ready(Future.sequence(List(future1) ::: future2), 100 seconds)
     log.debug("resultready==" + result.value.get.get)

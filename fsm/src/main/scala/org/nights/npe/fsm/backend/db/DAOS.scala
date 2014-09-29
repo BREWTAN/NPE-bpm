@@ -1,11 +1,6 @@
 package org.nights.npe.fsm.backend.db
 
-import scala.collection.mutable.StringBuilder
-import scala.concurrent.Future
 import scala.reflect.classTag
-
-import com.github.mauricio.async.db.QueryResult
-import com.github.mauricio.async.db.RowData
 
 object ParamsDAO extends SimpleDAO[KOParams] {
   val ttag = classTag[KOParams];
@@ -28,7 +23,7 @@ object TasksDAO extends SimpleDAO[KOTasks] {
 
 object ObtainTasksDAO extends SimpleDAO[KOObtainTasks] {
   val ttag = classTag[KOObtainTasks];
-  val tablename = "tasks_obtain";
+  val tablename = "tasks";
   val keyname = "taskinstid"
 }
 
@@ -44,15 +39,29 @@ object TermTasksDAO extends SimpleDAO[KOTermTask] {
   val keyname = "taskinstid"
 }
 
+
+object InTermTasksDAO extends SimpleDAO[KOInTermTask] {
+  val ttag = classTag[KOInTermTask];
+  val tablename = "tasks_term";
+  val keyname = "taskinstid" 
+}
+
 object TermUpdateTasksDAO extends SimpleDAO[KOTermTask] {
   val ttag = classTag[KOTermTask];
   val tablename = "tasks";
   val keyname = "taskinstid"
 }
+
 object UpdateObtainTasksDAO extends SimpleDAO[KOObtainTasks] {
   val ttag = classTag[KOObtainTasks];
   val tablename = "tasks";
   val keyname = "taskinstid"
+}
+
+object InObtainTasksDAO extends SimpleDAO[KOObtainTasks] {
+  val ttag = classTag[KOObtainTasks];
+  val tablename = "tasks_obtain";
+  val keyname = "taskinstid" 
 }
 
 object UpdateSubmitTasksDAO extends SimpleDAO[KOSubmitTasks] {
@@ -61,6 +70,11 @@ object UpdateSubmitTasksDAO extends SimpleDAO[KOSubmitTasks] {
   val keyname = "taskinstid"
 }
 
+object InSubmitTasksDAO extends SimpleDAO[KOSubmitTasks] {
+  val ttag = classTag[KOSubmitTasks];
+  val tablename = "tasks_submit";
+  val keyname = "taskinstid"
+}
 
 object ProcinstsDAO extends SimpleDAO[KOProcinsts] {
   val ttag = classTag[KOProcinsts];

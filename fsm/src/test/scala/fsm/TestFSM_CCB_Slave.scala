@@ -23,15 +23,15 @@ object TestFSM_CCB_Slave {
 
   def main(args: Array[String]) {
     var systems: MutableList[ActorSystem] = MutableList.empty;
-    var counter = 2;
-    var sleep = 5;
+    var counter = 0;
+    var sleep = 20;
     if (args.length >= 1)
       counter = args(0).toInt
     if (args.length >= 2)
       sleep = args(1).toInt
 
     println("counter=" + counter + ",sleep=" + sleep)
-    for (i <- 3 to 3) {
+    for (i <- 8 to 8) {
       val system = ActorSystem("PECluster", ConfigFactory.parseString("akka.remote.netty.tcp.port = 255" + i).withFallback(ConfigFactory.load))
       systems += system;
       Cluster(system).registerOnMemberUp {

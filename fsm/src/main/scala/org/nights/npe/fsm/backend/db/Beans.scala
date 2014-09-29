@@ -42,7 +42,16 @@ case class KOObtainTasks(val taskinstid: String,
   val obtaintime: Long = System.currentTimeMillis(),
   val interstate: Option[Int] = Some(InterStateObtain().v))
 
+ case class KOInTermTask(val taskinstid: String,
+  val cluster: String,
+  val calctime: Long = System.currentTimeMillis(),
+  val interstate: Option[Int] = Some(InterStateTerminate().v))
+  
 case class KOSubmitTasks(val taskinstid: String,
+  val procdefid: String = null, // varchar(32) not null,
+  val procinstid: String = null, //  varchar(32) not null,
+  val taskdefid: String = null, // varchar(32) not null,
+
   val submitter: String,
   val interstate: Option[Int] = Some(InterStateSubmit().v),
   val procPIO: Option[Int] = null,
@@ -59,7 +68,7 @@ case class KOSubmitTasks(val taskinstid: String,
 }
 object KO {
   def submitFilter(taskinstid: String, state: Int): KOSubmitTasks = {
-    KOSubmitTasks(taskinstid, null, Some(state), null, null, null, null, null, null, null, null, null, null, null)
+    KOSubmitTasks(taskinstid,null, null, null,  null, Some(state), null, null, null, null, null, null, null, null, null, null, null)
   }
 }
 

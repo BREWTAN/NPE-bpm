@@ -1,11 +1,12 @@
 package org.nights.npe.fsm.front
 
-import java.util.UUID
 import org.nights.npe.fsm.ActorHelper
+import org.nights.npe.fsm.ContextData
 import org.nights.npe.fsm.DoneStateContext
-import org.nights.npe.fsm.DoneStateContext
-import org.nights.npe.fsm.InterStateSubmit
 import org.nights.npe.fsm.StateContext
+import org.nights.npe.fsm.StatsCounter
+import org.nights.npe.fsm.Tansitionworkers
+import org.nights.npe.fsm.backend.SubmitStates
 import org.nights.npe.fsm.defs.ProcDefHelper
 import org.nights.npe.po.AskResult
 import org.nights.npe.po.Definition.NoneProcess
@@ -13,12 +14,7 @@ import akka.actor.Actor
 import akka.actor.ActorLogging
 import akka.actor.actorRef2Scala
 import akka.routing.ConsistentHashingRouter.ConsistentHashableEnvelope
-import org.nights.npe.fsm.Tansitionworkers
-import org.nights.npe.fsm.StatsCounter
-import org.nights.npe.fsm.ContextData
-import org.nights.npe.fsm.backend.SubmitStates
 import org.nights.npe.fsm.backend.NewProcess
-import org.nights.npe.fsm.backend.SubmitStates
 
 case class ANewProcess(procInstId: String,submitter:String, procDefId: String, data: ContextData)
 
@@ -49,16 +45,17 @@ class Submitor extends Actor with ActorLogging with ActorHelper {
           startDefNode.nodeid)
         
         StatsCounter.newprocs.incrementAndGet(); 
-        stateStores ! wrapToPipeMessage(NewProcess(state asSubmit, submitter,ctxData), Tansitionworkers(), taskInstId);
+        val subdata=ctxData.asHigerPIODData
+        stateStores ! wrapToPipeMessage(NewProcess(state asSubmit, submitter,subdata), Tansitionworkers(), taskInstId);
         sender ! AskResult(1, procInstId)
-        
+          
       }
     }
     case TaskDone(doneState: DoneStateContext) => {
 //      log.info("TaskDone:{}", doneState);
       StatsCounter.submits .incrementAndGet();
 
-      stateStores ! wrapToPipeMessage(SubmitStates(doneState.state asSubmit,doneState.submitter  , doneState.ctxData), Tansitionworkers(), doneState.state.taskInstId);
+      stateStores ! wrapToPipeMessage(SubmitStates(doneState.state asSubmit,doneState.submitter  , doneState.ctxData.asHigerPIODData), Tansitionworkers(), doneState.state.taskInstId);
     }
     case _ => log.error("unknow message")
   }

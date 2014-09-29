@@ -30,7 +30,7 @@ class PIOQueue[T](val pio: Int = 0, __link: LinkedBlockingQueue[T] = new LinkedB
   } 
   def size():Int= __link.size()
 }
-class AdvancePriorityQueue[T <: PriorityAware]() {
+class AdvancePriorityQueue[T <: PriorityAware](role:String) {
   val queues: Map[Int, PIOQueue[T]] = Map.empty;
   val queuesList: ListBuffer[PIOQueue[T]] = ListBuffer.empty
   
@@ -39,7 +39,7 @@ class AdvancePriorityQueue[T <: PriorityAware]() {
   val addLock = new ReentrantLock()
 
    override def toString:String={
-    "(c="+queuesList.foldLeft(0)(_ + _.pio )+",a="+queuesList.foldLeft(0)(_ + _.offerCC.get() )+",g="+queuesList.foldLeft(0)(_ + _.obtainCC .get() )+")"
+    "("+role+",p="+queuesList.foldLeft(0)(_ + _.pio )+",c="+queuesList.foldLeft(0)(_ + _.size )+",a="+queuesList.foldLeft(0)(_ + _.offerCC.get() )+",g="+queuesList.foldLeft(0)(_ + _.obtainCC .get() )+")"
 //    ""
   }
   def offer(sc: T)(implicit lq: LinkedBlockingQueue[T] = null): Unit = {

@@ -56,9 +56,9 @@ class StorageWorker extends Actor with ActorLogging with ActorHelper {
   def addresstoPath(implicit hostport: String): String = {
     "/tmp/fsm/" + hostport.replaceAll("akka://", "_").replaceAll("/", "_")
   }
-    val store = EhCacheStorage
+//    val store = EhCacheStorage
 //  val store = MySqlStorage
-//      val store = MySqlInsertStorage
+      val store = MySqlInsertStorage
 
   override def preStart(): Unit = {
     log.info("instanceCacheMan startup@{}", self)

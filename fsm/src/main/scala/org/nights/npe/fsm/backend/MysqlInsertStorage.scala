@@ -3,6 +3,7 @@ package org.nights.npe.fsm.backend
 import java.util.concurrent.atomic.AtomicBoolean
 import scala.concurrent.Await
 import scala.concurrent.Future
+import scala.concurrent.duration.DurationInt
 import org.nights.npe.fsm.ContextData
 import org.nights.npe.fsm.StateContext
 import org.nights.npe.fsm.backend.db.KOTasks
@@ -28,6 +29,10 @@ import akka.dispatch.ExecutionContexts
 import org.nights.npe.fsm.backend.db.KOConvergeCounter
 import org.nights.npe.fsm.backend.db.ConvergeDAO
 import org.nights.npe.fsm.backend.db.TermUpdateTasksDAO
+import org.nights.npe.fsm.backend.db.InObtainTasksDAO
+import org.nights.npe.fsm.backend.db.InSubmitTasksDAO
+import org.nights.npe.fsm.FSMGlobal
+import org.nights.npe.fsm.backend.db.InTermTasksDAO
 
 /**
  * MySqlUpdate的模式
@@ -47,8 +52,19 @@ object MySqlInsertStorage extends StateStore {
   override def saveTransition(states: List[StateContext], ctxData: ContextData): Future[Any] = {
     //      tx.begin
     //先把当前节点状态进行保存
+//    val beans = for (state <- states) yield BeanTransHelper.koFromState(state, ctxData)
+//    TasksDAO.insertBatch(beans)
+    
+        implicit val noexec: Boolean = true;
     val beans = for (state <- states) yield BeanTransHelper.koFromState(state, ctxData)
-    TasksDAO.insertBatch(beans)
+    val future1 = TasksDAO.insertBatch(beans)
+    val prevs = states.foldLeft(List[String]())(_ ++ _.prevStateInstIds).distinct
+    val upbeans = prevs.map { BeanTransHelper.koForInTermState(_,"") }
+    val future2 = upbeans.map { InTermTasksDAO.insert(_) }
+    implicit val exec = FSMGlobal.exec
+    val result = Await.ready(Future.sequence(List(future1) ::: future2), 100 seconds)
+    log.debug("resultready==" + result.value.get.get)
+    TasksDAO.execInBatch(result.value.get.get)
 
   }
 
@@ -57,11 +73,11 @@ object MySqlInsertStorage extends StateStore {
   //  }
   override def doObtainedStates(state: StateContext, obtainer: String): Future[Any] = {
     //    log.trace("get ObtainedStates:@" + state + ",by" + obtainer)
-    ObtainTasksDAO.insert(BeanTransHelper.koForObtainState(state, obtainer));
+    InObtainTasksDAO.insert(BeanTransHelper.koForObtainState(state, obtainer));
   }
   override def doSubmitStates(state: StateContext, submitter: String, ctxData: ContextData): Future[Any] = {
     //    log.trace("get SubmitStates:@" + state + ",by" + submitter)
-    SubmitTasksDAO.insert(BeanTransHelper.koForSubmitState(state, submitter, ctxData));
+    InSubmitTasksDAO.insert(BeanTransHelper.koForSubmitState(state, submitter, ctxData));
   }
 
   override def doNewProcess(state: StateContext, submitter: String, ctxData: ContextData): Future[Any] = {
@@ -86,13 +102,23 @@ object MySqlInsertStorage extends StateStore {
     //      tx.begin
     //先把当前节点状态进行保存
     log.debug("insert new Gateway:::" + state)
-    val bean = BeanTransHelper.koFromState(state,submitter, ctxData)
+//    val bean = BeanTransHelper.koFromState(state,submitter, ctxData)
+//    val future1 = TasksDAO.insert(bean)
+//    future1
+    
+    implicit val noexec: Boolean = true;
+
+    val bean = BeanTransHelper.koFromState(state, submitter, ctxData)
     val future1 = TasksDAO.insert(bean)
-    val prevs = state.prevStateInstIds 
-    val upbeans = prevs.map { BeanTransHelper.koTermFromString(_) }
-    val future2 = upbeans.map { TermUpdateTasksDAO.update(_) }
-    implicit val exec = ExecutionContexts.global
-    Future.sequence(List(future1) ::: future2)
+    val prevs = state.prevStateInstIds.distinct
+    val upbeans = prevs.map { BeanTransHelper.koForInTermState(_,"") }
+    val future2 = upbeans.map { InTermTasksDAO.insert(_) }
+        implicit val exec = FSMGlobal.exec
+    //    Future.sequence(List(future1) ::: future2)
+    val result = Await.ready(Future.sequence(List(future1) ::: future2), 100 seconds)
+    log.debug("resultready==" + result.value.get.get)
+    TasksDAO.execInBatch(result.value.get.get)
+    
   }
 
   

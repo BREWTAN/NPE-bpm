@@ -35,9 +35,9 @@ case class StateContext(
   ) extends Serializable {
 
   def simpleName(): String = {
-//    val p = ProcDefHelper.procDefs.get(procDefId);
-//    "StateContext(" + p.get.e.name + "," + p.get.nodes.get(taskDefId).get.e.name + ")"
-    ""
+    val p = ProcDefHelper.procDefs.get(procDefId);
+    "StateContext(" + p.get.e.name + "," + p.get.nodes.get(taskDefId).get.e.name + ")"
+//    ""
   }
   def copy(from: StateContext): StateContext = {
     StateContext(from.procInstId, from.procDefId, from.taskInstId, from.taskDefId, from.taskName, from.antecessors, from.internalState, from.prevStateInstIds,
@@ -84,8 +84,11 @@ case class ContextData(
     if(PIO>=other.PIO){
       ContextData(procPIO,taskPIO,rolemark,startMS,idata1,idata2,strdata1,strdata2,fdata1,fdata2,other.extra.++:(extra))
     }else{
-      other.merge(this)
+      other.merge(this) 
     }
+  }
+  def asHigerPIODData() : ContextData={
+      ContextData(procPIO,taskPIO+1,rolemark,startMS,idata1,idata2,strdata1,strdata2,fdata1,fdata2,extra) 
   }
 }
 case class StateContextWithData(val sc: StateContext, val dt: ContextData) extends PriorityAware {

@@ -9,7 +9,20 @@
  
 	<logger name="net.sf.ehcache" level="WARN"></logger>
 	<logger name="akka" level="INFO"></logger>
-	<root level="ERROR">
-		<appender-ref ref="STDOUT" />
-	</root>
+	
+	
+	
+	<appender name="FILE" class="ch.qos.logback.core.FileAppender">
+	    <file>/tmp/npe.log</file>
+	
+	    <encoder>
+			<pattern>%d{HH:mm:ss.SSS} %-5level [%X{sourceThread}] [%logger{48}] - %msg%n</pattern>
+	    </encoder>
+	  </appender>
+	
+	
+	  <root level="ERROR"  >
+	    <appender-ref ref="FILE" />
+	     <appender-ref ref="STDOUT" />
+	  </root>
 </configuration> 

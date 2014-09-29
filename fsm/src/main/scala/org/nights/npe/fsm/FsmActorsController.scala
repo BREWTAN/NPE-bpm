@@ -4,7 +4,6 @@ import org.nights.npe.fsm.backend.ProcDefStorage
 import org.nights.npe.fsm.backend.ProcessTerminator
 import org.nights.npe.fsm.backend.StorageWorker
 import org.nights.npe.fsm.front.Submitor
-
 import akka.actor.Actor
 import akka.actor.ActorLogging
 import akka.actor.PoisonPill
@@ -13,12 +12,19 @@ import akka.actor.actorRef2Scala
 import akka.contrib.pattern.ClusterSingletonManager
 import akka.routing.FromConfig
 import akka.routing.RoundRobinPool
+import scala.concurrent.ExecutionContext
+
+object FSMGlobal {
+  var exec: ExecutionContext = null;
+}
 
 class FsmActorsController extends Actor with ActorLogging {
 
   override def preStart(): Unit = {
     log.info("startup@{}", self)
     log.info("creatingActor::" + self)
+    FSMGlobal.exec = context.system.dispatchers.lookup("fsm-thread-pool-dispatcher")
+
     //---------
     // create EhcacheStorage for statepersistance
     context.actorOf(Props[ProcDefStorage], "definitionstore")

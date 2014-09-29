@@ -23,8 +23,8 @@ object TestFSM_CCB {
 
   def main(args: Array[String]) {
     var systems: MutableList[ActorSystem] = MutableList.empty;
-    var counter = 5;
-    var sleep = 5;
+    var counter = 2;
+    var sleep = 20;
     if (args.length >= 1)
       counter = args(0).toInt
     if (args.length >= 2)
@@ -52,7 +52,8 @@ object TestFSM_CCB {
         cmd ! CMDSubmit(MessageHelper.wrappedANewProcess(UUID.randomUUID().toString(), Thread.currentThread().getName(), "ccb.main", ContextData()))
         //        cmd ! CMDSubmit(MessageHelper.wrappedANewProcess(UUID.randomUUID().toString(), "ccb.main", "MyData"))
         //                cmd ! CMDSubmit(MessageHelper.wrappedANewProcess(UUID.randomUUID().toString(), "ccb.main", "MyData"))
-
+        
+        Thread.sleep(2000)
         for (i <- 1 to counter)
           new Thread(new Runnable() {
             def run() {
