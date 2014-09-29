@@ -58,8 +58,12 @@ trait ActorHelper { this: Actor ⇒
   }
   //获取持久化的节点
   lazy val stateStores = context.actorSelection("/user/statestores")
+    lazy val stateClusterStores = context.actorSelection("/user/fsm/statestores")
+
   lazy val submitors = context.actorSelection("/user/submitor")
+
   lazy val tansitionworkers = context.actorSelection("/user/transitionworker")
+
   lazy val queuelocalworkers = context.actorSelection("/user/queues")
   lazy val queueAllworkers = context.actorSelection("/user/fsm/queuesall")
 

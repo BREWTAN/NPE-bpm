@@ -68,7 +68,7 @@ class ConvergeTransWorker extends Actor with ActorLogging with ActorHelper {
       val ctxData = map.foldLeft(ContextData(-1, -1)) { (data, kv) =>
         data.merge(kv._2)
       }
-      stateStores ! wrapToPipeMessage(GatewayStates(nextstate, self.toString, ctxData), Tansitionworkers(), nextstate.taskInstId);
+      stateClusterStores ! wrapToPipeMessage(GatewayStates(nextstate, self.toString, ctxData), Tansitionworkers(), nextstate.taskInstId);
 
     } else {
       log.info("ANDConverging ignore:" + state + ",v=" + map)

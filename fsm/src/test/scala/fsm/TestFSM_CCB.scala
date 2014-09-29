@@ -23,8 +23,8 @@ object TestFSM_CCB {
 
   def main(args: Array[String]) {
     var systems: MutableList[ActorSystem] = MutableList.empty;
-    var counter = 1;
-    var sleep = 5000;
+    var counter = 5;
+    var sleep = 5;
     if (args.length >= 1)
       counter = args(0).toInt
     if (args.length >= 2)

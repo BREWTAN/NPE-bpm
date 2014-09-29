@@ -9,7 +9,7 @@
  
 	<logger name="net.sf.ehcache" level="WARN"></logger>
 	<logger name="akka" level="INFO"></logger>
-	<root level="DEBUG">
+	<root level="ERROR">
 		<appender-ref ref="STDOUT" />
 	</root>
 </configuration> 
