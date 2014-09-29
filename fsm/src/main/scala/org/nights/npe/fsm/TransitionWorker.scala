@@ -15,14 +15,15 @@ import org.nights.npe.po.Definition._
 import org.nights.npe.fsm.backend.ConvergingResult
 import org.nights.npe.fsm.backend.IncreConverging
 import org.nights.npe.fsm.backend.UpdateStates
+import org.nights.npe.fsm.cluster.ConvergeClusterListener
 
-class TransitionWorker extends Actor with ActorLogging with ActorHelper {
+class TransitionWorker extends ConvergeClusterListener {
 
   def receive = {
     case UpdateStates(state, ctxData) => {
       doTransite(state, ctxData)
     }
-    case a @ _ => log.error("unknow message::" + a)
+    case a @ _ => receiveOther(a)
 
   }
   def doTransite(state: StateContext, ctxData: ContextData, issubproc: Boolean = false): ListBuffer[StateContext] = {
@@ -58,11 +59,12 @@ class TransitionWorker extends Actor with ActorLogging with ActorHelper {
           doTransite(nextSubProc, ctxData, true)
         }
         case conv: ANDConverging => {
-          sconvergers ! ConvergingTrans(UpdateStates(state, ctxData), n.froms.size, n.id);
+         sendConverge(ConvergingTrans(UpdateStates(state, ctxData), n.froms.size, n.id));
           null
         }
         case conv: XORConverging => {
-          sconvergers ! ConvergingTrans(UpdateStates(state, ctxData), 1, n.id);
+//          sconvergers ! ConvergingTrans(UpdateStates(state, ctxData), 1, n.id);
+          sendConverge(ConvergingTrans(UpdateStates(state, ctxData), 1, n.id))
           null
         }
 

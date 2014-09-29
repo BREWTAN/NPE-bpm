@@ -23,8 +23,8 @@ object TestFSM_CCB_Slave {
 
   def main(args: Array[String]) {
     var systems: MutableList[ActorSystem] = MutableList.empty;
-    var counter = 0;
-    var sleep = 10;
+    var counter = 1;
+    var sleep = 5000;
     if (args.length >= 1)
       counter = args(0).toInt
     if (args.length >= 2)
@@ -40,7 +40,7 @@ object TestFSM_CCB_Slave {
           println("fsm==" + fsm)
 //        }
        
-        system.actorOf(akka.actor.Props[ProcDefStorage], "definitionstore")
+//        system.actorOf(akka.actor.Props[ProcDefStorage], "definitionstore")
 
         system.actorOf(ClusterSingletonManager.defaultProps(RoundRobinPool(20).props(akka.actor.Props[ConvergeTransWorker]), "convergers",
           PoisonPill, "compute"), "singleton"); 

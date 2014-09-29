@@ -1,5 +1,7 @@
 package org.nights.npe.fsm.cluster
 
+import org.nights.npe.fsm.ActorHelper
+
 import akka.actor.Actor
 import akka.actor.ActorLogging
 import akka.actor.ActorSelection
@@ -12,19 +14,10 @@ import akka.cluster.ClusterEvent.MemberRemoved
 import akka.cluster.ClusterEvent.MemberUp
 import akka.cluster.ClusterEvent.UnreachableMember
 import akka.cluster.Member
-import akka.contrib.pattern.ClusterSingletonProxy
 import akka.pattern.Patterns._
 import akka.pattern.ask
-import akka.routing.ConsistentHashingRouter.ConsistentHashableEnvelope
-import org.nights.npe.fsm.backend.ConvergingResult
-import org.nights.npe.fsm.backend.EHConverger
-import org.nights.npe.fsm.backend.IncreConverging
-import akka.routing.Broadcast
-import org.nights.npe.fsm.backend.IncreConvergingFromCluster
-import org.nights.npe.fsm.ActorHelper
-import org.nights.npe.fsm.ConvergingTrans
 
-class ConvergeClusterListener extends Actor with ActorLogging with ActorHelper {
+trait ConvergeClusterListener extends Actor with ActorLogging with ActorHelper {
   val cluster = Cluster(context.system)
 
   override def preStart(): Unit = {
@@ -41,7 +34,7 @@ class ConvergeClusterListener extends Actor with ActorLogging with ActorHelper {
     membersByAge.headOption map (m ⇒ context.actorSelection(
       RootActorPath(m.address) / "user" / "singleton" / "convergers"))
 
-  def receive = {
+  def receiveOther:PartialFunction[Any,Any] = {
     case MemberUp(member) =>
       {
         if (member.hasRole(role)) membersByAge += member
@@ -61,13 +54,16 @@ class ConvergeClusterListener extends Actor with ActorLogging with ActorHelper {
 
       }
     case _: MemberEvent => // ignore
+    case a@_ => log.error("Unknow Message:"+a)
 
-    case ct: ConvergingTrans => {
-      worker foreach (_ ! ct)
-      //   context.actorSelection("/usr/fsm/convergers") ! Broadcast(IncreConvergingFromCluster(procInstId, cluster.selfAddress.hostPort))
-    }
-    
+//    case ct: ConvergingTrans => {
+//      worker foreach (_ ! ct)
+//      //   context.actorSelection("/usr/fsm/convergers") ! Broadcast(IncreConvergingFromCluster(procInstId, cluster.selfAddress.hostPort))
+//    }
 
     //      	Patterns.ask(worker!ConsistentHashableEnvelope("ping","ping") 
+  }
+  def sendConverge(msg:Any) = {
+    worker foreach (_ ! msg)
   }
 }
