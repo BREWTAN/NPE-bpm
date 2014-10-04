@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta charset="utf-8" />
+	<base href="../" >
+	<!-- CSS to style the file input field as button and adjust the Bootstrap progress bars -->
+	<link rel="stylesheet" href="assets/js/jquery-file-upload/css/jquery.fileupload.css">
+	<link rel="stylesheet" href="assets/js/jquery-file-upload/css/jquery.fileupload-ui.css"></head>
+
+	<title>upload</title>
+	<script type="text/javascript" src="parts/js/header.js"></script>
+
+
+<body class="no-skin">
+	<script type="text/javascript">$.include("parts/pages/navbar.shtml")</script>
+
+		<script type="text/javascript">
+				try{ace.settings.check('main-container' , 'fixed')}catch(e){}
+			</script>
+		<!-- #section:basics/sidebar -->
+		<script type="text/javascript">$.include("parts/pages/sidebar.shtml")</script>
+
+		<!-- /section:basics/sidebar -->
+		<div class="main-content">
+			<script type="text/javascript">$.include("parts/pages/content_title.shtml")</script>
+			<!-- /section:basics/content.breadcrumbs -->
+			<div class="page-content">
+
+
+						<pre class="prettyprint prettyprinted">选择流程定义文件，该文件以xml结尾，是BPMN2规范的文件。
+                <br>导入后将以文件名作为系统的流程定义id号，请注意文件名</pre>
+
+						<form id="fileupload" method="POST" enctype="multipart/form-data">
+							<!-- Redirect browsers with JavaScript disabled to the origin page -->
+							<noscript>
+								<input type="hidden" name="redirect" value=""></noscript>
+							<!-- The fileupload-buttonbar contains buttons to add/delete files and start/cancel the upload -->
+							<div class="row fileupload-buttonbar" type="height:30px">
+								<div class="col-lg-7">
+									<!-- The fileinput-button span is used to style the file input field as button -->
+									<span class="btn btn-success fileinput-button"> <i class="glyphicon glyphicon-plus"></i>
+										<span>添加文件...</span>
+										<input type="file" name="files[]" multiple></span>
+									<button type="submit" class="btn btn-primary start"> <i class="glyphicon glyphicon-upload"></i>
+										<span>开始上传</span>
+									</button>
+									<button type="reset" class="btn btn-warning cancel">
+										<i class="glyphicon glyphicon-ban-circle"></i>
+										<span>取消上传</span>
+									</button>
+									<button type="button" class="btn btn-danger delete">
+										<i class="glyphicon glyphicon-trash"></i>
+										<span>删除</span>
+									</button>
+									<!-- The global file processing state -->
+									<span class="fileupload-process"></span>
+								</div>
+								<!-- The global progress state -->
+								<div class="col-lg-5 fileupload-progress fade">
+									<!-- The global progress bar -->
+									<div class="progress progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+										<div class="progress-bar progress-bar-success" style="width:0%;"></div>
+									</div>
+									<!-- The extended global progress state -->
+									<div class="progress-extended">&nbsp;</div>
+								</div>
+							<table role="presentation" class="table table-striped">
+								<tbody class="files"></tbody>
+							</table>
+							</div>
+							<!-- The table listing the files available for upload/download -->
+						</form>
+					</div>
+					<!-- /.row -->				<!-- /.page-content-area -->
+	
+		<script type="text/javascript">$.include("parts/pages/copyright.shtml")</script>
+
+	</div>
+	<!-- /.main-container -->
+
+	<script type="text/javascript">$.include("parts/pages/foot.shtml")</script>
+
+</body>
+    <!-- /#wrapper -->
+<script id="template-upload" type="text/x-tmpl">
+{% for (var i=0, file; file=o.files[i]; i++) { %}
+    <tr class="template-upload fade">
+        <td>
+            <span class="preview"></span>
+        </td>
+        <td>
+            <p class="name">{%=file.name%}</p>
+            <strong class="error text-danger"></strong>
+        </td>
+        <td>
+            <p class="size">Processing...</p>
+            <div class="progress progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="progress-bar progress-bar-success" style="width:0%;"></div></div>
+        </td>
+        <td>
+            {% if (!i && !o.options.autoUpload) { %}
+                <button class="btn btn-primary start" disabled>
+                    <i class="glyphicon glyphicon-upload"></i>
+                    <span>Start</span>
+                </button>
+            {% } %}
+            {% if (!i) { %}
+                <button class="btn btn-warning cancel">
+                    <i class="glyphicon glyphicon-ban-circle"></i>
+                    <span>Cancel</span>
+                </button>
+            {% } %}
+        </td>
+    </tr>
+{% } %}
+</script>
+<!-- The template to display files available for download -->
+<script id="template-download" type="text/x-tmpl">
+{% for (var i=0, file; file=o.files[i]; i++) { %}
+    <tr class="template-download fade">
+        <td>
+            <span class="preview">
+                {% if (file.thumbnailUrl) { %}
+                    <a href="{%=file.url%}" title="{%=file.name%}" download="{%=file.name%}" data-gallery><img src="{%=file.thumbnailUrl%}"></a>
+                {% } %}
+            </span>
+        </td>
+        <td>
+            <p class="name">
+                {% if (file.url) { %}
+                    <a href="{%=file.url%}" title="{%=file.name%}" download="{%=file.name%}" {%=file.thumbnailUrl?'data-gallery':''%}>{%=file.name%}</a>
+                {% } else { %}
+                    <span>{%=file.name%}</span>
+                {% } %}
+            </p>
+            {% if (file.error) { %}
+                <div><span class="label label-danger">Error</span> {%=file.error%}</div>
+            {% }  else { %}
+                <div><span class="label label-primary">Success</span> 文件上传成功！ </div>
+            {% } %}
+        </td>
+        <td>
+            <span class="size">{%=o.formatFileSize(file.size)%}</span>
+        </td>
+        <td>
+            {% if (file.delete_url) { %}
+                <button class="btn btn-danger delete" data-type="{%=file.deleteType%}" data-url="{%=file.deleteUrl%}"{% if (file.deleteWithCredentials) { %} data-xhr-fields='{"withCredentials":true}'{% } %}>
+                    <i class="glyphicon glyphicon-trash"></i>
+                    <span>Delete</span>
+                </button>
+                <input type="checkbox" name="delete" value="1" class="toggle">
+            {% } else { %}
+                <button class="btn btn-warning cancel">
+                    <i class="glyphicon glyphicon-ban-circle"></i>
+                    <span>Cancel</span>
+                </button>
+            {% } %}
+        </td>
+    </tr>
+{% } %}
+</script>
+
+   <script src="assets/js/jquery-file-upload/js/vendor/jquery.ui.widget.js"></script>
+    <script src="assets/js/jquery-file-upload/js/jquery.iframe-transport.js"></script>
+    <script src="assets/js/jquery-file-upload/js/jquery.fileupload.js"></script>
+<script src="assets/js/jquery-file-upload/js/tmpl.min.js"></script>
+<!-- The Load Image plugin is included for the preview images and image resizing functionality -->
+<script src="assets/js/jquery-file-upload/js/load-image.min.js"></script>
+<!-- The Canvas to Blob plugin is included for image resizing functionality -->
+
+<script src="assets/js/jquery-file-upload/js/canvas-to-blob.min.js"></script>
+
+<script src="assets/js/jquery-file-upload/js/jquery.blueimp-gallery.min.js"></script>
+
+
+<script src="assets/js/jquery-file-upload/js/jquery.fileupload.js"></script>
+<!-- The File Upload processing plugin -->
+<script src="assets/js/jquery-file-upload/js/jquery.fileupload-process.js"></script>
+<!-- The File Upload image preview & resize plugin -->
+<script src="assets/js/jquery-file-upload/js/jquery.fileupload-image.js"></script>
+<!-- The File Upload audio preview plugin -->
+<script src="assets/js/jquery-file-upload/js/jquery.fileupload-audio.js"></script>
+<!-- The File Upload video preview plugin -->
+<script src="assets/js/jquery-file-upload/js/jquery.fileupload-video.js"></script>
+<!-- The File Upload validation plugin -->
+<script src="assets/js/jquery-file-upload/js/jquery.fileupload-validate.js"></script>
+<!-- The File Upload user interface plugin -->
+<script src="assets/js/jquery-file-upload/js/jquery.fileupload-ui.js"></script>
+<!-- The main application script -->
+
+
+	<!-- inline scripts related to this page -->
+	<script type="text/javascript">
+		jQuery(function($) {//初始化函数
+			setTitlePath("流程定义","上传")
+			
+
+				  // $("#input-id").fileinput({ 'previewFileType':'any','maxFileCount':10});
+	    $('#fileupload').fileupload({
+	        // dataType: 'json',
+	        url: '/procdef/upload',
+	        done: function (e,results) {
+	            console.log("ret:"+e+","+$(this))
+	            // console.log("lll::"+JSON.stringify(data.result));
+	             // $(this).fileupload('option', 'done')
+	                // .call(this, $.Event('done'), {result: result}
+	                    return true;
+	        }
+
+	    });
+
+		})
+	</script>
+</html>

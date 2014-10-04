@@ -1,0 +1,309 @@
+
+
+	<div class="btn-group btn-sm">
+	    <button id="add_button" class="btn btn-sm btn-info" data-target="#stack1" data-toggle="modal">
+	        添加&nbsp; <i class="fa fa-plus"></i>
+	    </button>
+	</div>
+	
+	<div class="btn-group btn-sm">
+	    <button id="upd_button" class="btn btn-sm btn-danger" data-target="#stack1" data-toggle="modal">
+	        修改&nbsp;
+	        <i class="fa fa-pencil"></i>
+	    </button>
+	</div>
+	
+
+	<div class="btn-group btn-sm">
+	    <button id="del_button" class="btn btn-sm btn-warning">
+	        删除&nbsp;
+	        <i class="fa fa-trash-o"></i>
+	    </button>
+	</div>
+
+
+
+	<div class="btn-group btn-sm">
+	    <button id="qr_button1" class="btn btn-sm btn-danger" data-target="#myModal1"  data-toggle="modal">
+	        医生确认签名&nbsp;
+	        <i class="fa fa-pencil"></i>
+	    </button>
+	</div>
+
+
+  <script type="text/javascript">$.include("parts/pages/my-xwatable-form.shtml")</script>  
+
+	
+<script type="text/javascript">
+
+       var selrow;
+
+      $("#qr_button1").unbind('click').click(function () {
+     //  $("#qr_button1").on('click', function(){
+    	   
+    	   var selrows =  w.getData(true);
+    	   var str = "";
+    	   if (selrows.rows.length == 0) {
+               bootbox.alert("<br><center><h4>请选择需要修改的行</h4></center><br>");       
+               return;
+           }  else if (selrows.rows.length > 1) {
+               bootbox.alert("<br><center><h4>只能编辑一行</h4></center><br>");
+               return;
+           }
+ 
+  	  	       	 
+    	//自定义模态弹出框   --- 传两参数（自定义页面id,初始化页面id, xtable的初始化参数）
+	  	   var custom_dust_tableform_id = '#my__dust_tableform'; 
+    	   var _dust_tableform_id = '#__dust_tableform';
+	       var xwajson = XWATable.getXwajson();
+	  	   custom_dialog(custom_dust_tableform_id, _dust_tableform_id, xwajson); 
+	  		
+		     
+	  	  	 selrow = selrows.rows[0];
+	    	var selr = JSON.parse(JSON.stringify(selrow));
+	    	
+	    	$("#name").attr("value", selr.name);
+	    	$("#binglibenhao").attr("value", selr.binglibenhao);
+	    	$("#zhuangui").attr("value", selr.zhuangui);
+	    //	$("#zhuanguitype").attr("value", selr.zhuanguitype);
+	    	$("#zhuanguiyuanyin").attr("value", selr.zhuanguiyuanyin);
+	    	$("#qitayuanyin").attr("value", selr.qitayuanyin);
+	    	$("#createdate").attr("value", selr.createdate);
+	    	$("#beizhu").attr("value", selr.beizhu);
+	
+       }) ; 
+       
+       
+ 
+    function   custom_dialog(custom_dust_tableform_id, _dust_tableform_id, xwajson){
+
+      //xtable的初始化参数  
+       var xwjson = xwajson;
+      //自定义页面id
+       var custom_tableform_id = custom_dust_tableform_id;
+      //初始化也页面id 
+      var  tableform_id =  _dust_tableform_id;
+      
+       var my_tbforms = Duster.buildArr($(custom_tableform_id));
+       
+       var coldefs = xwjson.coldefs;
+       var modjson = JSON.parse(JSON.stringify(coldefs));
+       var xwaOptions = xwjson;
+       $.each(coldefs, function(index, val) {
+           if(val['new_value'])
+           {
+               modjson[index]['default_value'] = val['new_value'].f();
+           }
+           modjson[index]['readonly']="";
+       });
+       
+       var handleDefCtrl=function(diag){
+           handleCustomBuilder(diag);
+
+           handleDatePickers(diag);
+           handlechosen(diag);
+       }
+       
+       var handleCustomBuilder= function (diag){
+           $.each(diag.find(".editcustom"), function(index, ele) {
+               console.log("builder=="+$(ele).attr("data-builder"));
+               var builder=$(ele).attr("data-builder");
+               var data_val=$(ele).attr("data-value");
+               console.log("call:val="+data_val)
+               var inner=eval(builder+"("+data_val+");");
+               $(ele).replaceWith(inner);
+           });
+       }
+       
+       
+       var queryURL = function(url){
+           // console.log("url=="+url+"::match="+url.match(/.*\?.*/));
+           if(url.match(/.*\?.*/)){
+               if(url.match(/\&$/)||url.match(/\?$/)){
+                   return url;
+               }
+               else return url+"&";
+           }
+           return url+"?";
+       }
+       
+       
+       var handlechosen = function(diag){
+           $.each(diag.find("select.chosen-select"), function(index, selEle) {
+
+               var url=$(selEle).attr("data-ref-url");
+               if(url){
+                   var ref_name=$(selEle).attr("data-ref-name");
+                   var ref_val=$(selEle).attr("data-ref-value");
+                   var data_val=$(selEle).attr("data-value");
+                   // console.log("getselected::"+data_val);
+
+                   // console.log("select="+url+":"+ref_name+":"+ref_val);
+                   $.ajax({
+                       url: queryURL(url)+'fields={"'+ref_name+'":1,"'+ref_val+'":1}',
+                       dataType: 'json',
+                       async:false
+                   })
+                   .done(function(data) {
+                       // console.log("success::"+JSON.stringify(data));
+                       var opts='<option ></option>';
+                       console.log("op:"+$(selEle).attr('id')+JSON.stringify(xwaOptions['cols'][$(selEle).attr('id')]))
+                       $.each(data, function(index, val) {
+                           opts+='<option value="'+val[ref_val]+'"';
+
+                           if(val[ref_val]==data_val) opts+=' selected ';
+                           
+                           if(val[ref_val] == val[ref_name]||
+                               xwaOptions['cols'][$(selEle).attr('id')]['hidecode']==true){
+                               opts+='>'+val[ref_name]+'</option>'
+                           } else {
+                               opts+='>'+val[ref_val]+'('+val[ref_name]+')</option>'
+                           }
+                       });
+                       $(selEle).html(opts);
+
+                   });
+               }
+               console.log("selct::"+$(selEle))
+               $(selEle).chosen({width:"100%"});
+
+
+                /* iterate through array or object */
+           });
+       }
+       
+       
+       var handleDatePickers = function (diag) {
+           $.each(diag.find(".date-picker"), function(index, ele) {
+               $(ele).datepicker({
+                   //rtl: Metronic.isRTL(),
+                   autoclose: true
+               });
+               var data_val=$(ele).attr("data-value");
+               if(data_val)
+               {
+                   $(ele).children("input").val(data_val);
+               }else{
+                   //$(ele).children("input").val($.datepicker.formatDate('yy-mm-dd', new Date()));
+               }
+
+              });
+       };
+
+
+       
+       
+       var diag=bootbox.dialog({
+           message:  my_tbforms(modjson),
+         //   message: str,
+            title: "医生确认",
+            buttons: {
+                success: {
+                    label: "保存",
+                    className: "green",
+                    callback: function() {
+
+                        var moditem = {};
+                        $.each($('#my__editform input'), function(index, val) {
+                            console.log(val.name+"::"+val.value);
+                            if (val.name == "_id"||!val.name||val.name.length==0) return;
+                            if (val.name == "leaf"){
+                                if($("#leaf").attr("checked")){
+                                    moditem[val.name] = 1;
+                                }else{
+                                   moditem[val.name] = 0;
+                                }
+                            }else{
+                                moditem[val.name] = val.value;
+                            }
+                        });
+                        $.each($('#my__editform select'), function(index, val) {
+                            console.log(val.name+"::"+val.value);
+                            if (val.name == "_id"||!val.name||val.name.length==0) return;
+                            moditem[val.name] = val.value;
+                        });
+                        var sendjson = {
+                            "$set": moditem
+                        };
+                        // sendjson["_id"]=selrow["_id"];
+                        
+                       var restURL = XWATable.getRestURL();
+                       console.log("restURL::" + restURL);
+                        console.log("submit2::" + JSON.stringify(sendjson));
+                        Restful.update(restURL,
+                            selrow["_id"], moditem
+                        );
+                        var ret=w.update();
+
+                        if(xwaOptions['onUpdated']){
+                            xwaOptions['onUpdated'](ret,moditem);
+                        }
+                    
+                    }
+                },
+                danger: {
+                    label: "取消",
+                    className: "gray",
+                    callback: function() {}
+                },
+
+            }
+        },{show:false,keyboard:false});
+        handleDefCtrl(diag);
+        console.log("ready to show");
+        diag.show();
+    
+        Duster.buildArr($(tableform_id));
+   
+    }
+    
+    
+    
+    function  myc(){
+    	
+    	bootbox.dialog({
+    		title: "This is a form in a modal.",
+    		message: '<div class="row"> ' +
+    		'<div class="col-md-12"> ' +
+    		'<form class="form-horizontal"> ' +
+    		'<div class="form-group"> ' +
+    		'<label class="col-md-4 control-label" for="name">Name</label> ' +
+    		'<div class="col-md-4"> ' +
+    		'<input id="name" name="name" type="text" placeholder="Your name" class="form-control input-md"> ' +
+    		'<span class="help-block">Here goes your name</span> </div> ' +
+    		'</div> ' +
+    		'<div class="form-group"> ' +
+    		'<label class="col-md-4 control-label" for="awesomeness">How awesome is this?</label> ' +
+    		'<div class="col-md-4"> <div class="radio"> <label for="awesomeness-0"> ' +
+    		'<input type="radio" name="awesomeness" id="awesomeness-0" value="Really awesome" checked="checked"> ' +
+    		'Really awesome </label> ' +
+    		'</div><div class="radio"> <label for="awesomeness-1"> ' +
+    		'<input type="radio" name="awesomeness" id="awesomeness-1" value="Super awesome"> Super awesome </label> ' +
+    		'</div> ' +
+    		'</div> </div>' +
+    		'</form> </div> </div>',
+    		buttons: {
+    		success: {
+    		label: "Save",
+    		className: "btn-success",
+    		callback: function () {
+    		var name = $('#name').val();
+    		var answer = $("input[name='awesomeness']:checked").val()
+    		Example.show("Hello " + name + ". You've chosen <b>" + answer + "</b>");
+    		}
+    		}
+    		}
+    		}
+    		);
+
+    }
+</script>
+
+
+
+
+
+
+
+
+	

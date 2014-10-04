@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta charset="utf-8" />
+		<title>Dashboard - NPE</title>
+		<script type="text/javascript" src="parts/js/header.js"></script>
+	</head>
+
+	<body class="no-skin">
+		<script type="text/javascript">$.include("parts/pages/navbar.shtml")</script>
+
+		<div class="main-container" id="main-container">
+			<script type="text/javascript">
+				try{ace.settings.check('main-container' , 'fixed')}catch(e){}
+			</script>
+			<!-- #section:basics/sidebar -->
+			<script type="text/javascript">$.include("parts/pages/sidebar.shtml")</script>
+
+			<!-- /section:basics/sidebar -->
+			<div class="main-content">
+				<script type="text/javascript">$.include("parts/pages/content_title.shtml")</script>
+				<!-- /section:basics/content.breadcrumbs -->
+				<div class="page-content">
+					<div class="page-content-area">
+						<div class="page-header">
+							<h1>
+								Dashboard
+								<small>
+									<i class="ace-icon fa fa-angle-double-right"></i>
+									overview &amp; stats
+								</small>
+							</h1>
+						</div><!-- /.page-header -->
+
+						<div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <i class="fa fa-fire fa-5x"></i>
+                                </div>
+                                <div class="col-md-7 text-right">
+                                    <div class="huge totalcc jumbo" id="totalcc_0">0</div>
+                                    <div>流程新建数</div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#">
+                            <div class="panel-footer">
+                                <span class="pull-left jumbo " id="speedcc_0">0 (个/秒)</span>
+                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                <div class="clearfix"></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="panel panel-green">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa fa-tasks fa-5x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge totalcc jumbo" id="totalcc_1">0</div>
+                                    <div>工作项获取数</div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#">
+                            <div class="panel-footer">
+                                <span class="pull-left" id="speedcc_1"> (个/秒)</span>
+                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                <div class="clearfix"></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="panel panel-yellow">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa fa-leaf fa-5x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge totalcc  jumbo" id="totalcc_2">0</div>
+                                    <div>工作项提交数</div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#">
+                            <div class="panel-footer">
+                                <span class="pull-left" id="speedcc_2"> (个/秒)</span>
+                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                <div class="clearfix"></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="panel btn-info">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa fa-road fa-5x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge totalcc jumbo" id="totalcc_3">0</div>
+                                    <div>流程完成数</div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#">
+                            <div class="panel-footer">
+                                <span class="pull-left" id="speedcc_3"> (个/秒)</span>
+                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                <div class="clearfix"></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+						</div><!-- /.row -->
+
+
+
+						<div class="row">
+									<div class="col-sm-5">
+										<div class="widget-box">
+											<div class="widget-header widget-header-flat">
+												<h4 class="widget-title lighter">
+													<i class="ace-icon fa fa-star orange"></i>
+													角色任务列表排行
+												</h4>
+
+												<div class="widget-toolbar">
+													<a href="#" data-action="collapse">
+														<i class="ace-icon fa fa-chevron-up"></i>
+													</a>
+												</div>
+											</div>
+
+											<div class="widget-body">
+												<div class="widget-main no-padding">
+													<table class="table table-bordered table-striped">
+														<thead class="thin-border-bottom">
+															<tr>
+																<th>
+																	<i class="ace-icon fa fa-caret-right blue"></i>任务名称
+																</th>
+																<th class="">
+																	<i class="ace-icon fa fa-caret-right blue"></i>队列个数
+																</th>
+
+																<th >
+																	<i class="ace-icon fa fa-caret-right blue"></i>完成比例
+																</th>
+																<th >
+																	<i class="ace-icon fa fa-caret-right blue"></i>完成总数
+																</th>
+																
+															</tr>
+														</thead>
+
+														<tbody>
+															<tr>
+																<td>扫描</td>
+																<td>
+																	<span class="label label-info arrowed-right arrowed-in">242</span>
+																</td>
+																<td>
+																	<b class="green">234</b>
+																</td>
+																<td>
+																	<b class="green">234</b>
+																</td>
+
+															</tr>
+
+															<tr>
+																<td>验印</td>
+
+																<td>
+																	<span class="label label-success arrowed  ">22</span>
+																</td>
+
+																<td >
+																	<b class="green">234</b>
+																</td>
+																<td>
+																	<b class="green">234</b>
+																</td>
+															</tr>
+
+															
+														</tbody>
+													</table>
+												</div><!-- /.widget-main -->
+											</div><!-- /.widget-body -->
+										</div><!-- /.widget-box -->
+									</div><!-- /.col -->
+
+									<div class="col-sm-7">
+									<div class="widget-box">
+											<div class="widget-header widget-header-flat widget-header-small">
+												<h5 class="widget-title">
+													<i class="ace-icon fa fa-signal"></i>
+													作业中心比例监控
+												</h5>
+
+												<div class="widget-toolbar no-border">
+													<div class="widget-toolbar">
+													<a href="#" data-action="collapse">
+														<i class="ace-icon fa fa-chevron-up"></i>
+													</a>
+												</div>
+												</div>
+											</div>
+
+											<div class="widget-body">
+												<div class="widget-main">
+													<!-- #section:plugins/charts.flotchart -->
+													<div id="piechart-placeholder"></div>
+
+
+													<!-- /section:plugins/charts.flotchart -->
+													<div class="hr hr8 hr-double"></div>
+
+													<div class="clearfix">
+														<!-- #section:custom/extra.grid -->
+														<div class="grid4">
+															<span class="grey">
+																<i class="ace-icon fa fa-cogs fa-2x red"></i>
+																&nbsp; 新建流程
+															</span>
+															<h4 class="bigger pull-right">1,255</h4>
+														</div>
+
+														<div class="grid4">
+															<span class="grey">
+																<i class="ace-icon fa fa-envelope-o fa-2x red"></i>
+
+																&nbsp; 提交任务
+															</span>
+															<h4 class="bigger pull-right">941</h4>
+														</div>
+
+														<div class="grid4">
+															<span class="grey">
+																<i class="ace-icon fa fa-envelope fa-2x red"></i>
+																&nbsp; 待取任务
+															</span>
+															<h4 class="bigger pull-right">1,050</h4>
+														</div>
+														<div class="grid4">
+															<span class="grey">
+																<i class="ace-icon fa fa-coffee fa-2x red"></i>
+																&nbsp; 完成流程
+															</span>
+															<h4 class="bigger pull-right">1,050</h4>
+														</div>
+
+														<!-- /section:custom/extra.grid -->
+													</div>
+												</div><!-- /.widget-main -->
+											</div><!-- /.widget-body -->
+										</div>
+										
+									</div><!-- /.col -->
+								</div>
+								<div class="hr hr32 hr-dotted"></div>
+								<div class="row">
+									<div class="col-sm-6">
+										<div class="widget-box transparent" id="recent-box">
+											<div class="widget-header">
+												<h4 class="widget-title lighter smaller">
+													<i class="ace-icon fa fa-rss orange"></i>Recent
+												</h4>
+
+												<div class="widget-toolbar no-border">
+													<ul class="nav nav-tabs" id="recent-tab">
+														<li class="active">
+															<a data-toggle="tab" href="#task-tab">任务日志</a>
+														</li>
+
+														<li class="">
+															<a data-toggle="tab" href="#member-tab">在线人员</a>
+														</li>
+													</ul>
+												</div>
+											</div>
+
+											<div class="widget-body">
+												<div class="widget-main padding-4">
+													<div class="tab-content padding-8">
+														<div id="task-tab" class="tab-pane active">
+															
+															<!-- #section:pages/dashboard.tasks -->
+															<ul id="tasks" class="item-list ui-sortable">
+																<li class="item-orange clearfix ui-sortable-handle">
+																	<label class="inline">
+																		<span class="lbl"> Blob获取任务：扫描录入</span>
+																	</label>
+
+																	<div class="pull-right easy-pie-chart percentage" >
+																		2014-09-20 14:30:15</div>
+																</li>
+																<li class="item-orange clearfix ui-sortable-handle">
+																	<label class="inline">
+																		
+																		<span class="lbl"> Clus 提交任务：扫描录入</span>
+																	</label>
+
+																	<div class="pull-right easy-pie-chart percentage" >
+																		2014-09-20 14:30:15</div>
+																</li>
+																<li class="item-orange clearfix ui-sortable-handle">
+																	<label class="inline">
+																		<span class="lbl"> 机器人提交任务：记账</span>
+																	</label>
+
+																	<div class="pull-right easy-pie-chart percentage" >
+																		2014-09-20 14:30:15</div>
+																</li>
+
+																
+															</ul>
+
+															<!-- /section:pages/dashboard.tasks -->
+														</div>
+
+														<div id="member-tab" class="tab-pane">
+															<!-- #section:pages/dashboard.members -->
+															<div class="clearfix">
+																<div class="itemdiv memberdiv">
+																	<div class="user">
+																		<img alt="Bob Doe's avatar" src="assets/avatars/user.jpg">
+																	</div>
+
+																	<div class="body">
+																		<div class="name">
+																			<a href="#">Bob Doe</a>
+																		</div>
+
+																		<div class="time">
+																			<i class="ace-icon fa fa-clock-o"></i>
+																			<span class="green">20 min</span>
+																		</div>
+
+																		<div>
+																			<span class="label label-warning label-sm">pending</span>
+
+																			<div class="inline position-relative">
+																				<button class="btn btn-minier btn-yellow btn-no-border dropdown-toggle" data-toggle="dropdown" data-position="auto">
+																					<i class="ace-icon fa fa-angle-down icon-only bigger-120"></i>
+																				</button>
+
+																				<ul class="dropdown-menu dropdown-only-icon dropdown-yellow dropdown-menu-right dropdown-caret dropdown-close">
+																					<li>
+																						<a href="#" class="tooltip-success" data-rel="tooltip" title="" data-original-title="Approve">
+																							<span class="green">
+																								<i class="ace-icon fa fa-check bigger-110"></i>
+																							</span>
+																						</a>
+																					</li>
+
+																					<li>
+																						<a href="#" class="tooltip-warning" data-rel="tooltip" title="" data-original-title="Reject">
+																							<span class="orange">
+																								<i class="ace-icon fa fa-times bigger-110"></i>
+																							</span>
+																						</a>
+																					</li>
+
+																					<li>
+																						<a href="#" class="tooltip-error" data-rel="tooltip" title="" data-original-title="Delete">
+																							<span class="red">
+																								<i class="ace-icon fa fa-trash-o bigger-110"></i>
+																							</span>
+																						</a>
+																					</li>
+																				</ul>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+
+																<div class="itemdiv memberdiv">
+																	<div class="user">
+																		<img alt="Joe Doe's avatar" src="assets/avatars/avatar2.png">
+																	</div>
+
+																	<div class="body">
+																		<div class="name">
+																			<a href="#">Joe Doe</a>
+																		</div>
+
+																		<div class="time">
+																			<i class="ace-icon fa fa-clock-o"></i>
+																			<span class="green">1 hour</span>
+																		</div>
+
+																		<div>
+																			<span class="label label-warning label-sm">pending</span>
+
+																			<div class="inline position-relative">
+																				<button class="btn btn-minier btn-yellow btn-no-border dropdown-toggle" data-toggle="dropdown" data-position="auto">
+																					<i class="ace-icon fa fa-angle-down icon-only bigger-120"></i>
+																				</button>
+
+																				<ul class="dropdown-menu dropdown-only-icon dropdown-yellow dropdown-menu-right dropdown-caret dropdown-close">
+																					<li>
+																						<a href="#" class="tooltip-success" data-rel="tooltip" title="" data-original-title="Approve">
+																							<span class="green">
+																								<i class="ace-icon fa fa-check bigger-110"></i>
+																							</span>
+																						</a>
+																					</li>
+
+																					<li>
+																						<a href="#" class="tooltip-warning" data-rel="tooltip" title="" data-original-title="Reject">
+																							<span class="orange">
+																								<i class="ace-icon fa fa-times bigger-110"></i>
+																							</span>
+																						</a>
+																					</li>
+
+																					<li>
+																						<a href="#" class="tooltip-error" data-rel="tooltip" title="" data-original-title="Delete">
+																							<span class="red">
+																								<i class="ace-icon fa fa-trash-o bigger-110"></i>
+																							</span>
+																						</a>
+																					</li>
+																				</ul>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+
+																<div class="itemdiv memberdiv">
+																	<div class="user">
+																		<img alt="Jim Doe's avatar" src="assets/avatars/avatar.png">
+																	</div>
+
+																	<div class="body">
+																		<div class="name">
+																			<a href="#">Jim Doe</a>
+																		</div>
+
+																		<div class="time">
+																			<i class="ace-icon fa fa-clock-o"></i>
+																			<span class="green">2 hour</span>
+																		</div>
+
+																		<div>
+																			<span class="label label-warning label-sm">pending</span>
+
+																			<div class="inline position-relative">
+																				<button class="btn btn-minier btn-yellow btn-no-border dropdown-toggle" data-toggle="dropdown" data-position="auto">
+																					<i class="ace-icon fa fa-angle-down icon-only bigger-120"></i>
+																				</button>
+
+																				<ul class="dropdown-menu dropdown-only-icon dropdown-yellow dropdown-menu-right dropdown-caret dropdown-close">
+																					<li>
+																						<a href="#" class="tooltip-success" data-rel="tooltip" title="" data-original-title="Approve">
+																							<span class="green">
+																								<i class="ace-icon fa fa-check bigger-110"></i>
+																							</span>
+																						</a>
+																					</li>
+
+																					<li>
+																						<a href="#" class="tooltip-warning" data-rel="tooltip" title="" data-original-title="Reject">
+																							<span class="orange">
+																								<i class="ace-icon fa fa-times bigger-110"></i>
+																							</span>
+																						</a>
+																					</li>
+
+																					<li>
+																						<a href="#" class="tooltip-error" data-rel="tooltip" title="" data-original-title="Delete">
+																							<span class="red">
+																								<i class="ace-icon fa fa-trash-o bigger-110"></i>
+																							</span>
+																						</a>
+																					</li>
+																				</ul>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+
+																<div class="itemdiv memberdiv">
+																	<div class="user">
+																		<img alt="Alex Doe's avatar" src="assets/avatars/avatar5.png">
+																	</div>
+
+																	<div class="body">
+																		<div class="name">
+																			<a href="#">Alex Doe</a>
+																		</div>
+
+																		<div class="time">
+																			<i class="ace-icon fa fa-clock-o"></i>
+																			<span class="green">3 hour</span>
+																		</div>
+
+																		<div>
+																			<span class="label label-danger label-sm">blocked</span>
+																		</div>
+																	</div>
+																</div>
+
+																<div class="itemdiv memberdiv">
+																	<div class="user">
+																		<img alt="Bob Doe's avatar" src="assets/avatars/avatar2.png">
+																	</div>
+
+																	<div class="body">
+																		<div class="name">
+																			<a href="#">Bob Doe</a>
+																		</div>
+
+																		<div class="time">
+																			<i class="ace-icon fa fa-clock-o"></i>
+																			<span class="green">6 hour</span>
+																		</div>
+
+																		<div>
+																			<span class="label label-success label-sm arrowed-in">approved</span>
+																		</div>
+																	</div>
+																</div>
+
+																<div class="itemdiv memberdiv">
+																	<div class="user">
+																		<img alt="Susan's avatar" src="assets/avatars/avatar3.png">
+																	</div>
+
+																	<div class="body">
+																		<div class="name">
+																			<a href="#">Susan</a>
+																		</div>
+
+																		<div class="time">
+																			<i class="ace-icon fa fa-clock-o"></i>
+																			<span class="green">yesterday</span>
+																		</div>
+
+																		<div>
+																			<span class="label label-success label-sm arrowed-in">approved</span>
+																		</div>
+																	</div>
+																</div>
+
+																<div class="itemdiv memberdiv">
+																	<div class="user">
+																		<img alt="Phil Doe's avatar" src="assets/avatars/avatar4.png">
+																	</div>
+
+																	<div class="body">
+																		<div class="name">
+																			<a href="#">Phil Doe</a>
+																		</div>
+
+																		<div class="time">
+																			<i class="ace-icon fa fa-clock-o"></i>
+																			<span class="green">2 days ago</span>
+																		</div>
+
+																		<div>
+																			<span class="label label-info label-sm arrowed-in arrowed-in-right">online</span>
+																		</div>
+																	</div>
+																</div>
+
+																<div class="itemdiv memberdiv">
+																	<div class="user">
+																		<img alt="Alexa Doe's avatar" src="assets/avatars/avatar1.png">
+																	</div>
+
+																	<div class="body">
+																		<div class="name">
+																			<a href="#">Alexa Doe</a>
+																		</div>
+
+																		<div class="time">
+																			<i class="ace-icon fa fa-clock-o"></i>
+																			<span class="green">3 days ago</span>
+																		</div>
+
+																		<div>
+																			<span class="label label-success label-sm arrowed-in">approved</span>
+																		</div>
+																	</div>
+																</div>
+															</div>
+
+															<div class="space-4"></div>
+
+															<div class="center">
+																<i class="ace-icon fa fa-users fa-2x green middle"></i>
+
+																&nbsp;
+																<a href="#" class="btn btn-sm btn-white btn-info">
+																	See all members &nbsp;
+																	<i class="ace-icon fa fa-arrow-right"></i>
+																</a>
+															</div>
+
+															<div class="hr hr-double hr8"></div>
+
+															<!-- /section:pages/dashboard.members -->
+														</div><!-- /.#member-tab -->
+
+														
+													</div>
+												</div><!-- /.widget-main -->
+											</div><!-- /.widget-body -->
+										</div><!-- /.widget-box -->
+									</div><!-- /.col -->
+
+									<div class="col-sm-6">
+										<div class="widget-box">
+											<div class="widget-header">
+												<h4 class="widget-title lighter smaller">
+													<i class="ace-icon fa fa-bell red"></i>
+													预警日志
+												</h4>
+											</div>
+
+											<div class="widget-body">
+												<div class="widget-main no-padding">
+													<!-- #section:pages/dashboard.conversations -->
+													<div class="dialogs ace-scroll scroll-active"><div class="scroll-track" style="display: block; height: 300px;"><div class="scroll-bar" style="height: 236px; top: 0px;"></div></div><div class="scroll-content" style="max-height: 300px;">
+														<div class="itemdiv dialogdiv">
+															<div class="user">
+																<img alt="Alexa's Avatar" src="assets/avatars/avatar1.png">
+															</div>
+
+															<div class="body">
+																<div class="time">
+																	<i class="ace-icon fa fa-clock-o"></i>
+																	<span class="green">4 sec</span>
+																</div>
+
+																<div class="name">
+																	<a href="#">Alexa</a>
+																</div>
+																<div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque commodo massa sed ipsum porttitor facilisis.</div>
+
+																<div class="tools">
+																	<a href="#" class="btn btn-minier btn-info">
+																		<i class="icon-only ace-icon fa fa-share"></i>
+																	</a>
+																</div>
+															</div>
+														</div>
+
+														<div class="itemdiv dialogdiv">
+															<div class="user">
+																<img alt="John's Avatar" src="assets/avatars/avatar.png">
+															</div>
+
+															<div class="body">
+																<div class="time">
+																	<i class="ace-icon fa fa-clock-o"></i>
+																	<span class="blue">38 sec</span>
+																</div>
+
+																<div class="name">
+																	<a href="#">John</a>
+																</div>
+																<div class="text">Raw denim you probably haven't heard of them jean shorts Austin.</div>
+
+																<div class="tools">
+																	<a href="#" class="btn btn-minier btn-info">
+																		<i class="icon-only ace-icon fa fa-share"></i>
+																	</a>
+																</div>
+															</div>
+														</div>
+
+														<div class="itemdiv dialogdiv">
+															<div class="user">
+																<img alt="Bob's Avatar" src="assets/avatars/user.jpg">
+															</div>
+
+															<div class="body">
+																<div class="time">
+																	<i class="ace-icon fa fa-clock-o"></i>
+																	<span class="orange">2 min</span>
+																</div>
+
+																<div class="name">
+																	<a href="#">Bob</a>
+																	<span class="label label-info arrowed arrowed-in-right">admin</span>
+																</div>
+																<div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque commodo massa sed ipsum porttitor facilisis.</div>
+
+																<div class="tools">
+																	<a href="#" class="btn btn-minier btn-info">
+																		<i class="icon-only ace-icon fa fa-share"></i>
+																	</a>
+																</div>
+															</div>
+														</div>
+
+														<div class="itemdiv dialogdiv">
+															<div class="user">
+																<img alt="Jim's Avatar" src="assets/avatars/avatar4.png">
+															</div>
+
+															<div class="body">
+																<div class="time">
+																	<i class="ace-icon fa fa-clock-o"></i>
+																	<span class="grey">3 min</span>
+																</div>
+
+																<div class="name">
+																	<a href="#">Jim</a>
+																</div>
+																<div class="text">Raw denim you probably haven't heard of them jean shorts Austin.</div>
+
+																<div class="tools">
+																	<a href="#" class="btn btn-minier btn-info">
+																		<i class="icon-only ace-icon fa fa-share"></i>
+																	</a>
+																</div>
+															</div>
+														</div>
+
+														<div class="itemdiv dialogdiv">
+															<div class="user">
+																<img alt="Alexa's Avatar" src="assets/avatars/avatar1.png">
+															</div>
+
+															<div class="body">
+																<div class="time">
+																	<i class="ace-icon fa fa-clock-o"></i>
+																	<span class="green">4 min</span>
+																</div>
+
+																<div class="name">
+																	<a href="#">Alexa</a>
+																</div>
+																<div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+
+																<div class="tools">
+																	<a href="#" class="btn btn-minier btn-info">
+																		<i class="icon-only ace-icon fa fa-share"></i>
+																	</a>
+																</div>
+															</div>
+														</div>
+													</div></div>
+
+													<!-- /section:pages/dashboard.conversations -->
+													<form>
+														<div class="form-actions">
+															<div class="input-group">
+																<input placeholder="Type your message here ..." type="text" class="form-control" name="message">
+																<span class="input-group-btn">
+																	<button class="btn btn-sm btn-info no-radius" type="button">
+																		<i class="ace-icon fa fa-share"></i>
+																		Send
+																	</button>
+																</span>
+															</div>
+														</div>
+													</form>
+												</div><!-- /.widget-main -->
+											</div><!-- /.widget-body -->
+										</div><!-- /.widget-box -->
+									</div><!-- /.col -->
+								</div>
+
+					</div><!-- /.page-content-area -->
+				</div><!-- /.page-content -->
+			</div><!-- /.main-content -->
+
+			<script type="text/javascript">$.include("parts/pages/copyright.shtml")</script>
+
+		</div><!-- /.main-container -->
+
+			<script type="text/javascript">$.include("parts/pages/foot.shtml")</script>
+
+<script type="text/javascript" src="assets/addons/jquery.counterup.min.js"></script>
+	</body>
+	<script type="text/javascript" src="assets/addons/countUp.js"></script>
+	<script type="text/javascript" src="js/dashboards.js"></script>
+
+	<!-- inline scripts related to this page -->
+	<script type="text/javascript">
+	var updateInterval = 1000*5;
+
+var options = {
+  useEasing : true, 
+  useGrouping : true, 
+  separator : ',', 
+  decimal : '.' ,
+  prefix : '' ,
+  suffix : '' 
+}
+var speedoptions = {
+  useEasing : true, 
+  useGrouping : true, 
+  separator : ',', 
+  decimal : '.' ,
+  prefix : '每秒  ' ,
+  suffix : '  个' 
+}
+
+	var lasttotalv=[0,0,0,0]
+	var lastspeedv=[0,0,0,0]
+
+	var updateCounter=function(){
+
+
+		$.ajax({
+			url: '/procdef/fsmstats',
+			type: 'GET',
+			dataType: 'JSON',
+		})
+		.done(function(data) {
+			
+
+			var lastv=data[data.length-1]
+		 	 var last2v=data[data.length-2]
+
+			console.log("success:"+JSON.stringify(lastv));
+
+			var totalv=[0,0,0,0]
+			var total2v=[0,0,0,0]
+
+			$.each(lastv, function(index, val) {
+				 $.each(totalv, function(indext, valt) {
+				 	totalv[indext]+= val[indext]				 	
+				 });
+			});
+			$.each(last2v, function(index, val) {
+				 $.each(total2v, function(indext, valt) {
+				 	total2v[indext]+= val[indext]				 	
+				 });
+			});
+
+			$.each(totalv, function(indext, valt) {
+				var demo = new countUp("totalcc_"+indext, lasttotalv[indext], totalv[indext], 0, 10, options);		
+				demo.start();
+
+				var curspeed=(totalv[indext]-total2v[indext])/5.0
+				var speed = new countUp("speedcc_"+indext, lastspeedv[indext], 
+					lastspeedv[indext], 2, 10, speedoptions);		
+
+
+				speed.start();
+				lastspeedv[indext]=curspeed
+				lasttotalv[indext]=totalv[indext]
+			});
+			console.log("totalv="+totalv)
+
+
+
+
+		})
+		.always(function() {
+			console.log("complete");
+		});
+		
+		setTimeout(updateCounter, updateInterval);
+
+	}
+		jQuery(function($) {//初始化函数
+			setTitlePath("Home","首页");
+
+			updateCounter();
+
+			Boards.drawPie()
+
+			
+			
+		})
+
+
+
+	</script>
+</html>
