@@ -1,0 +1,12 @@
+[
+{"name":"bob","role":"扫描","time":2323030200,"type":"obtain"},
+{"name":"bob","role":"验印","time":2323030200,"type":"submit"},
+{"name":"bob","role":"一次录入","time":2323030200,"type":"obtain"},
+{"name":"bob","role":"二次录入","time":2323030200,"type":"submit"},
+{"name":"bob","role":"核对","time":2323030200,"type":"obtain"},
+{"name":"bob","role":"票审","time":2323030200,"type":"submit"},
+{"name":"bob","role":"记账","time":2323030200,"type":"submit"},
+{"name":"bob","role":"金额录入","time":2323030200,"type":"obtain"},
+{"name":"bob","role":"要素组合","time":2323030200,"type":"obtain"}
+
+]

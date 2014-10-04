@@ -1,0 +1,114 @@
+[
+  {
+    "name": "流程管理",
+    "url": "#",
+    "icon": "fa-globe",
+    "children": [
+      {
+        "name": "流程定义",
+        "url": "#",
+        "icon": "fa-desktop",
+        "children": [
+          {
+            "name": "上传",
+            "url": "manager/upload.html",
+            "icon": "fa-desktop"
+          },
+          {
+            "name": "校验",
+            "url": "#",
+            "icon": "fa-desktop"
+          }
+        ]
+      },
+      {
+        "name": "流程监控",
+        "url": "#",
+        "icon": "fa-desktop"
+      }
+    ]
+  },
+  {
+    "name": "任务项管理",
+    "url": "#",
+    "icon": "fa-tasks",
+    "children": [
+      {
+        "name": "作业中心定义",
+        "url": "#",
+        "icon": "fa-desktop"
+      },
+      {
+        "name": "角色定义",
+        "url": "#",
+        "icon": "fa-desktop"
+      }
+    ]
+  },
+  {
+    "name": "业务监控",
+    "url": "#",
+    "icon": "fa-eye",
+    "children": [
+      {
+        "name": "实例监控",
+        "url": "#",
+        "icon": "fa-desktop"
+      },
+      {
+        "name": "任务监控",
+        "url": "#",
+        "icon": "fa-desktop"
+      }
+    ]
+  },
+  {
+    "name": "系统监控",
+    "url": "#",
+    "icon": "fa-desktop",
+    "children": [
+      {
+        "name": "运行监控",
+        "url": "#",
+        "icon": "fa-desktop"
+      },
+      {
+        "name": "集群节点",
+        "url": "#",
+        "icon": "fa-desktop"
+      }
+    ]
+  },
+  {
+    "name": "压力测试",
+    "url": "#",
+    "icon": "fa-tint"
+  },
+  {
+    "name": "系统管理",
+    "url": "#",
+    "icon": "fa-cog",
+    "children": [
+      {
+        "name": "用户管理",
+        "url": "#",
+        "icon": "fa-desktop"
+      },
+      {
+        "name": "用户角色管理",
+        "url": "#",
+        "icon": "fa-desktop"
+      },
+      {
+        "name": "权限管理",
+        "url": "#",
+        "icon": "fa-desktop"
+      },
+      {
+        "name": "资源管理",
+        "url": "#",
+        "icon": "fa-desktop"
+      }
+    ]
+  }
+]

@@ -1,0 +1,37 @@
+[
+  {
+    "name": "中心1",
+    "newcc": 100,
+    "obtaincc": 100,
+    "submitcc": 100,
+    "termcc": 100
+  },
+  {
+    "name": "中心2",
+    "newcc": 100,
+    "obtaincc": 100,
+    "submitcc": 100,
+    "termcc": 100
+  },
+  {
+    "name": "中心3",
+    "newcc": 100,
+    "obtaincc": 100,
+    "submitcc": 100,
+    "termcc": 100
+  },
+  {
+    "name": "中心4",
+    "newcc": 100,
+    "obtaincc": 100,
+    "submitcc": 100,
+    "termcc": 100
+  },
+  {
+    "name": "att5",
+    "newcc": 100,
+    "obtaincc": 100,
+    "submitcc": 100,
+    "termcc": 100
+  }
+]
