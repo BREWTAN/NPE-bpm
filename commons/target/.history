@@ -18,3 +18,5 @@ package
 cd ..
 package
 project npe
+compile
+project fsm

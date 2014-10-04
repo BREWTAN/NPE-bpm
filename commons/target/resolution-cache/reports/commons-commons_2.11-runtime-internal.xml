@@ -7,16 +7,16 @@
 		revision="1.0.0"
 		conf="runtime-internal"
 		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool"
-		date="20140914062315"/>
+		date="20140928003407"/>
 	<dependencies>
 		<module organisation="org.scala-lang.modules" name="scala-xml_2.11">
-			<revision name="1.0.2" status="release" pubdate="20140520041040" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scala-lang.org/" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="4">
+			<revision name="1.0.2" status="release" pubdate="20140520161040" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scala-lang.org/" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="4">
 				<license name="BSD 3-clause" url="http://opensource.org/licenses/BSD-3-Clause"/>
-				<metadata-artifact status="no" details="" size="2976" time="0" location="/Users/brew/.ivy2/cache/org.scala-lang.modules/scala-xml_2.11/ivy-1.0.2.xml" searched="false" origin-is-local="false" origin-location="file:/Users/brew/NPE/activator-1.2.10/repository/org.scala-lang.modules/scala-xml_2.11/1.0.2/ivys/ivy.xml"/>
+				<metadata-artifact status="no" details="" size="2987" time="0" location="/home/brew/.ivy2/cache/org.scala-lang.modules/scala-xml_2.11/ivy-1.0.2.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/scala-lang/modules/scala-xml_2.11/1.0.2/scala-xml_2.11-1.0.2.pom"/>
 				<caller organisation="commons" name="commons_2.11" conf="optional, compile, runtime, runtime-internal" rev="1.0.2" rev-constraint-default="1.0.2" rev-constraint-dynamic="1.0.2" callerrev="1.0.0"/>
 				<artifacts>
-					<artifact name="scala-xml_2.11" type="bundle" ext="jar" status="no" details="" size="648678" time="0" location="/Users/brew/.ivy2/cache/org.scala-lang.modules/scala-xml_2.11/bundles/scala-xml_2.11-1.0.2.jar">
-						<origin-location is-local="false" location="file:/Users/brew/NPE/activator-1.2.10/repository/org.scala-lang.modules/scala-xml_2.11/1.0.2/bundles/scala-xml_2.11.jar"/>
+					<artifact name="scala-xml_2.11" type="bundle" ext="jar" status="no" details="" size="648678" time="0" location="/home/brew/.ivy2/cache/org.scala-lang.modules/scala-xml_2.11/bundles/scala-xml_2.11-1.0.2.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/scala-lang/modules/scala-xml_2.11/1.0.2/scala-xml_2.11-1.0.2.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
@@ -24,49 +24,49 @@
 		<module organisation="com.typesafe.scala-logging" name="scala-logging_2.11">
 			<revision name="3.1.0" status="release" pubdate="20140813223855" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/typesafehub/scala-logging" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="1">
 				<license name="Apache 2.0 License" url="http://www.apache.org/licenses/LICENSE-2.0.html"/>
-				<metadata-artifact status="no" details="" size="3186" time="0" location="/Users/brew/.ivy2/cache/com.typesafe.scala-logging/scala-logging_2.11/ivy-3.1.0.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/com/typesafe/scala-logging/scala-logging_2.11/3.1.0/scala-logging_2.11-3.1.0.pom"/>
+				<metadata-artifact status="no" details="" size="3186" time="0" location="/home/brew/.ivy2/cache/com.typesafe.scala-logging/scala-logging_2.11/ivy-3.1.0.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/com/typesafe/scala-logging/scala-logging_2.11/3.1.0/scala-logging_2.11-3.1.0.pom"/>
 				<caller organisation="commons" name="commons_2.11" conf="optional, compile, runtime, runtime-internal" rev="3.1.0" rev-constraint-default="3.1.0" rev-constraint-dynamic="3.1.0" callerrev="1.0.0"/>
 				<artifacts>
-					<artifact name="scala-logging_2.11" type="jar" ext="jar" status="no" details="" size="34335" time="0" location="/Users/brew/.ivy2/cache/com.typesafe.scala-logging/scala-logging_2.11/jars/scala-logging_2.11-3.1.0.jar">
+					<artifact name="scala-logging_2.11" type="jar" ext="jar" status="no" details="" size="34335" time="0" location="/home/brew/.ivy2/cache/com.typesafe.scala-logging/scala-logging_2.11/jars/scala-logging_2.11-3.1.0.jar">
 						<origin-location is-local="false" location="http://repo1.maven.org/maven2/com/typesafe/scala-logging/scala-logging_2.11/3.1.0/scala-logging_2.11-3.1.0.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="org.slf4j" name="slf4j-api">
-			<revision name="1.7.7" status="release" pubdate="20140404071248" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.slf4j.org" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="3">
-				<metadata-artifact status="no" details="" size="4557" time="0" location="/Users/brew/.ivy2/cache/org.slf4j/slf4j-api/ivy-1.7.7.xml" searched="false" origin-is-local="false" origin-location="file:/Users/brew/NPE/activator-1.2.10/repository/org.slf4j/slf4j-api/1.7.7/ivys/ivy.xml"/>
+			<revision name="1.7.7" status="release" pubdate="20140404191248" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.slf4j.org" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="3">
+				<metadata-artifact status="no" details="" size="4567" time="0" location="/home/brew/.ivy2/cache/org.slf4j/slf4j-api/ivy-1.7.7.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/slf4j/slf4j-api/1.7.7/slf4j-api-1.7.7.pom"/>
 				<caller organisation="com.typesafe.scala-logging" name="scala-logging_2.11" conf="default, compile, runtime, master" rev="1.7.7" rev-constraint-default="1.7.7" rev-constraint-dynamic="1.7.7" callerrev="3.1.0"/>
 				<artifacts>
-					<artifact name="slf4j-api" type="jar" ext="jar" status="no" details="" size="29257" time="0" location="/Users/brew/.ivy2/cache/org.slf4j/slf4j-api/jars/slf4j-api-1.7.7.jar">
-						<origin-location is-local="false" location="file:/Users/brew/NPE/activator-1.2.10/repository/org.slf4j/slf4j-api/1.7.7/jars/slf4j-api.jar"/>
+					<artifact name="slf4j-api" type="jar" ext="jar" status="no" details="" size="29257" time="0" location="/home/brew/.ivy2/cache/org.slf4j/slf4j-api/jars/slf4j-api-1.7.7.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/slf4j/slf4j-api/1.7.7/slf4j-api-1.7.7.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="org.scala-lang" name="scala-reflect">
-			<revision name="2.11.1" status="release" pubdate="20140520040246" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scala-lang.org/" extra-info.apiURL="http://www.scala-lang.org/api/2.11.1/" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="2">
+			<revision name="2.11.1" status="release" pubdate="20140520160246" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scala-lang.org/" extra-info.apiURL="http://www.scala-lang.org/api/2.11.1/" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="2">
 				<license name="BSD 3-Clause" url="http://www.scala-lang.org/license.html"/>
-				<metadata-artifact status="no" details="" size="2806" time="0" location="/Users/brew/.ivy2/cache/org.scala-lang/scala-reflect/ivy-2.11.1.xml" searched="false" origin-is-local="false" origin-location="file:/Users/brew/NPE/activator-1.2.10/repository/org.scala-lang/scala-reflect/2.11.1/ivys/ivy.xml"/>
+				<metadata-artifact status="no" details="" size="2819" time="0" location="/home/brew/.ivy2/cache/org.scala-lang/scala-reflect/ivy-2.11.1.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.11.1/scala-reflect-2.11.1.pom"/>
 				<caller organisation="com.typesafe.scala-logging" name="scala-logging_2.11" conf="default, compile, runtime, master" rev="2.11.1" rev-constraint-default="2.11.1" rev-constraint-dynamic="2.11.1" callerrev="3.1.0"/>
 				<artifacts>
-					<artifact name="scala-reflect" type="jar" ext="jar" status="no" details="" size="4372892" time="0" location="/Users/brew/.ivy2/cache/org.scala-lang/scala-reflect/jars/scala-reflect-2.11.1.jar">
-						<origin-location is-local="false" location="file:/Users/brew/NPE/activator-1.2.10/repository/org.scala-lang/scala-reflect/2.11.1/jars/scala-reflect.jar"/>
+					<artifact name="scala-reflect" type="jar" ext="jar" status="no" details="" size="4372892" time="0" location="/home/brew/.ivy2/cache/org.scala-lang/scala-reflect/jars/scala-reflect-2.11.1.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.11.1/scala-reflect-2.11.1.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="org.scala-lang" name="scala-library">
-			<revision name="2.11.1" status="release" pubdate="20140520040221" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scala-lang.org/" extra-info.apiURL="http://www.scala-lang.org/api/2.11.1/" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, master(*), compile(*), runtime, runtime(*), master" position="0">
+			<revision name="2.11.1" status="release" pubdate="20140520160221" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scala-lang.org/" extra-info.apiURL="http://www.scala-lang.org/api/2.11.1/" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, master(*), compile(*), runtime, runtime(*), master" position="0">
 				<license name="BSD 3-Clause" url="http://www.scala-lang.org/license.html"/>
-				<metadata-artifact status="no" details="" size="2640" time="0" location="/Users/brew/.ivy2/cache/org.scala-lang/scala-library/ivy-2.11.1.xml" searched="false" origin-is-local="false" origin-location="file:/Users/brew/NPE/activator-1.2.10/repository/org.scala-lang/scala-library/2.11.1/ivys/ivy.xml"/>
+				<metadata-artifact status="no" details="" size="2653" time="0" location="/home/brew/.ivy2/cache/org.scala-lang/scala-library/ivy-2.11.1.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/scala-lang/scala-library/2.11.1/scala-library-2.11.1.pom"/>
 				<caller organisation="commons" name="commons_2.11" conf="optional, compile, runtime, runtime-internal" rev="2.11.1" rev-constraint-default="2.11.1" rev-constraint-dynamic="2.11.1" callerrev="1.0.0"/>
 				<caller organisation="org.scala-lang" name="scala-reflect" conf="compile, runtime" rev="2.11.1" rev-constraint-default="2.11.1" rev-constraint-dynamic="2.11.1" callerrev="2.11.1"/>
 				<caller organisation="org.scala-lang.modules" name="scala-xml_2.11" conf="default, compile, runtime, master" rev="2.11.1" rev-constraint-default="2.11.1" rev-constraint-dynamic="2.11.1" callerrev="1.0.2"/>
 				<caller organisation="com.typesafe.scala-logging" name="scala-logging_2.11" conf="default, compile, runtime, master" rev="2.11.1" rev-constraint-default="2.11.1" rev-constraint-dynamic="2.11.1" callerrev="3.1.0"/>
 				<artifacts>
-					<artifact name="scala-library" type="jar" ext="jar" status="no" details="" size="5538130" time="0" location="/Users/brew/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.11.1.jar">
-						<origin-location is-local="false" location="file:/Users/brew/NPE/activator-1.2.10/repository/org.scala-lang/scala-library/2.11.1/jars/scala-library.jar"/>
+					<artifact name="scala-library" type="jar" ext="jar" status="no" details="" size="5538130" time="0" location="/home/brew/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.11.1.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/scala-lang/scala-library/2.11.1/scala-library-2.11.1.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>

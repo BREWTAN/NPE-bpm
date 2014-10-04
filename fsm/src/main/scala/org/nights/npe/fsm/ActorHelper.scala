@@ -62,7 +62,7 @@ trait ActorHelper { this: Actor ⇒
   
   lazy val stateClusterStores = context.actorSelection("/user/fsm/statestores")
 
-  lazy val submitors = context.actorSelection("/user/fsm/submitor")
+  lazy val submitors = context.actorSelection("/user/submitor")
 
   lazy val tansitionworkers = context.actorSelection("/user/transitionworker")
 

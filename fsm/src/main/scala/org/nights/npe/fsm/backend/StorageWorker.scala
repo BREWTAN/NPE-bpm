@@ -57,8 +57,8 @@ class StorageWorker extends Actor with ActorLogging with ActorHelper {
     "/tmp/fsm/" + hostport.replaceAll("akka://", "_").replaceAll("/", "_")
   }
 //    val store = EhCacheStorage
-//  val store = MySqlStorage
-      val store = MySqlInsertStorage
+  val store = MySqlStorage
+//      val store = MySqlInsertStorage
 
   override def preStart(): Unit = {
     log.info("instanceCacheMan startup@{}", self)
@@ -90,8 +90,21 @@ class StorageWorker extends Actor with ActorLogging with ActorHelper {
     case PipeEnvelope(ObtainedStates(state, obtainer, ctxData), nextActor) => {
       log.info("get ObtainedStates:{}@{},next={}", state, obtainer, nextActor)
       store.doObtainedStates(state, obtainer) andThen {
-        case _ =>
-          forword(ObtainedStates(state, obtainer, ctxData), nextActor, state.taskInstId)
+//        case _ =>
+//          forword(ObtainedStates(state, obtainer, ctxData), nextActor, state.taskInstId)
+         case Success(qr: QueryResult) => {
+          if (qr.rowsAffected > 0) {
+            log.debug(" obtainer OKOK!!:" + qr)
+            forword(ObtainedStates(state, obtainer, ctxData), nextActor, state.taskInstId)
+          } else {
+            log.error(" obtainer Error!!:Duplicate  obtainer" + qr+"::"+state)
+          }
+        }
+        case a @ _ =>
+          {
+            log.error(" obtainer Uknow result!!:" + a)
+            //            
+          }
       }
     }
 
@@ -108,7 +121,7 @@ class StorageWorker extends Actor with ActorLogging with ActorHelper {
         }
         case a @ _ =>
           {
-            log.debug("submit Uknow result!!:" + a)
+            log.error("submit Uknow result!!:" + a)
             //            
           }
       }

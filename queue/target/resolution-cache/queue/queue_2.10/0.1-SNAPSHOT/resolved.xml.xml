@@ -4,7 +4,7 @@
 		module="queue_2.10"
 		revision="0.1-SNAPSHOT"
 		status="integration"
-		publication="20140914062315"
+		publication="20140928003406"
 	>
 		<description>
 		queue
