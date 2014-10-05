@@ -4,9 +4,9 @@
   <classpathentry output="target/scala-2.11/test-classes" kind="src" path="src/test/scala"/>
   <classpathentry output="target/scala-2.11/test-classes" kind="src" path="src/test/java"/>
   <classpathentry kind="con" path="org.scala-ide.sdt.launching.SCALA_CONTAINER"/>
-  <classpathentry kind="lib" path="/home/brew/.ivy2/cache/com.typesafe.scala-logging/scala-logging_2.11/jars/scala-logging_2.11-3.1.0.jar"/>
-  <classpathentry kind="lib" path="/home/brew/.ivy2/cache/org.slf4j/slf4j-api/jars/slf4j-api-1.7.7.jar"/>
-  <classpathentry kind="lib" path="/home/brew/.ivy2/cache/org.scala-lang.modules/scala-xml_2.11/bundles/scala-xml_2.11-1.0.2.jar"/>
+  <classpathentry kind="lib" path="/Users/brew/.ivy2/cache/com.typesafe.scala-logging/scala-logging_2.11/jars/scala-logging_2.11-3.1.0.jar"/>
+  <classpathentry kind="lib" path="/Users/brew/.ivy2/cache/org.slf4j/slf4j-api/jars/slf4j-api-1.7.7.jar"/>
+  <classpathentry kind="lib" path="/Users/brew/.ivy2/cache/org.scala-lang.modules/scala-xml_2.11/bundles/scala-xml_2.11-1.0.2.jar"/>
   <classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
   <classpathentry kind="output" path="bin"/>
 </classpath>
