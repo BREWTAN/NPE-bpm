@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta charset="utf-8" />
+		<title>系统用户管理</title>
+		    <base href="../">
+	<link rel="stylesheet" type="text/css" href="assets/js/bootstrap-select/bootstrap-select.min.css">
+	<link rel="stylesheet" href="assets/css/chosen.css" />
+
+	<link rel="stylesheet" type="text/css" href="assets/css/datepicker.css"/>
+    <link rel='stylesheet' href='assets/js/jquery-watable/watable.css'/>
+    <link rel='stylesheet' href='assets/js/jquery-watable/animate.min.css'/>
+
+	<script type="text/javascript" src="parts/js/header.js"></script>
+    
+	</head>
+
+	<body class="no-skin">
+		<script type="text/javascript">$.include("parts/pages/navbar.shtml")</script>
+
+		<div class="main-container" id="main-container">
+			<script type="text/javascript">
+				try{ace.settings.check('main-container' , 'fixed')}catch(e){}
+			</script>
+			<!-- #section:basics/sidebar -->
+			<script type="text/javascript">$.include("parts/pages/sidebar.shtml")</script>
+
+			<!-- /section:basics/sidebar -->
+			<div class="main-content">
+				<script type="text/javascript">$.include("parts/pages/content_title.shtml")</script>
+				<!-- /section:basics/content.breadcrumbs -->
+				<div class="page-content">
+					<div class="page-content-area">
+						
+
+						<div class="row">
+
+							<div class="note note-success container col-sm-12" style="padding-bottom:0px">
+                <div class="col-sm-3 form-group">
+                    <div class="btn-group input-group">
+                    <!-- 查询条件控件 -->
+                        <div class="input-group-addon">用户名</div>
+                        <input id="find_username" class="inputclear form-control" type="text" placeholder="键">
+                        <span class="inputclear glyphicon glyphicon-remove-circle hide" ></span>
+                    </div>
+                </div>
+                <div class="col-sm-2 form-group">
+                    <div class="btn-group input-group">
+                        <div class="input-group-addon">状态</div>
+                        <select class="chosen-select" id="find_status">
+                            <option value="-1">所有</option>
+                            <option value="0">无效</option>
+                            <option value="1">有效</option>
+                        </select>
+
+                    </div>
+                </div>
+                <div class="col-sm-7 form-group">
+                    <script>$.include("parts/pages/crudbtn.shtml");</script>
+                </div>
+            </div>
+            <div class="container-fluid">
+                <div id="divtable" class="table-responsive container col-sm-12" >
+                </div>
+            </div>
+
+
+						</div><!-- /.row -->
+					</div><!-- /.page-content-area -->
+				</div><!-- /.page-content -->
+			</div><!-- /.main-content -->
+
+			<script type="text/javascript">$.include("parts/pages/copyright.shtml")</script>
+
+
+			
+		</div><!-- /.main-container -->
+
+			<script type="text/javascript">$.include("parts/pages/foot.shtml")</script>
+
+	</body>
+
+	<script type="text/javascript">$.include("parts/pages/xwatable-form.shtml")</script>
+
+
+
+	<script type="text/javascript" src="assets/js/date-time/bootstrap-datepicker.min.js"></script>
+
+<script type="text/javascript" src="assets/js/bootstrap-select/bootstrap-select.min.js"></script>
+
+<script src="assets/js/chosen.jquery.min.js"></script>
+
+
+
+<script type="text/javascript" src="assets/js/jquery-watable/jquery.watable.js"></script>
+<script type="text/javascript" src="assets/addons/rqlbuilder.js"></script>
+<script type="text/javascript" src="assets/addons/xwatable.js"></script>
+<script type="text/javascript" src="assets/addons/rest.js"></script>
+<script type="text/javascript" src="assets/addons/refhelper.js"></script>
+<script type="text/javascript" src="assets/addons/jquery-dateFormat.min.js"></script>
+
+
+			<script type="text/javascript"> ace.vars['base'] = '..'; </script>
+
+	<!-- inline scripts related to this page -->
+	<script type="text/javascript">
+		jQuery(function($) {//初始化函数
+			setTitlePath("系统管理","用户管理")
+			
+		})
+
+		var statusFormatter=function(){
+		    return {
+		        f: function(val){
+		            if(val&&val==1) return "有效"
+		            return "无效";
+		        },
+		    }
+		}();
+		var passwdFM=function(){
+		    return {
+		        f: function(val){
+		            return "******";
+		        },
+		    }
+		}();
+
+		var roleHelper=RefHelper.create({
+		    ref_url:"/tx/t_admin_role",
+		    ref_col:"rolecode",
+		    ref_display:"rolename",
+		});
+
+
+		var roleFM=function(){
+		    return {
+		        f: function(val){
+		            return val+"("+roleHelper.getDisplay(val)+")";
+		        },
+		    }
+		}();
+
+		var statusEditBuilder=function(val){
+		    console.log("setBuilder::"+val);
+		    if(val)
+		     {
+		        return "<select id='status' name='status' class='chosen-select '><option value=1 selected>有效</option><option value=0>无效</option></select>";
+		     }   
+		    return "<select id='status' name='status' class='chosen-select'><option value=1>有效</option><option value=0 selected>无效</option></select>";
+		}
+
+		var newCreateDate=function(){
+		    return {
+		        f: function(val){
+		            if(!val)
+		            {
+		                return "";
+		            }
+		            return jQuery.format.toBrowserTimeZone(new Date(parseInt(val)));
+		        },
+		    }
+		}();
+
+
+		$(function(){ 
+
+		     var xw=XWATable.init(
+		        {
+		            //----------------table的选项-------
+		            pageSize: 5,                //Initial pagesize
+		                    // filter: true,               //Show filter fields
+		                    // sorting: true,              //Enable sorting
+		            columnPicker: true,         //Show the columnPicker button
+		            transition: 'fade',  //(bounce, fade, flip, rotate, scroll, slide).
+		            // pageSizes: [1,5,8,12,200],  //Set custom pageSizes. Leave empty array to hide button.
+		            // hidePagerOnEmpty: true,     //Removes the pager if data is empty.
+		            checkboxes: true,           //Make rows checkable. (Note. You need a column with the 'unique' property)
+		            checkAllToggle:true,        //Show the check-all toggle//+RQLBuilder.like("KEYY", "a").rql()
+		            rowClicked: function(data) {    
+		                console.log('row clicked');   //data.event holds the original jQuery event.
+		                console.log(data);            //data.row holds the underlying row you supplied.
+		            },
+		            //----------------基本restful地址---
+		            restbase: '/t_admin_operator',
+		            //---------------行定义
+		            coldefs: [
+		                        {      
+		                            col:"username",
+		                            friendly: "用户ID",
+		                            unique: true,
+		                            readonly:"readonly",  
+		                            // default_value: "aa",
+		                            // sortOrder: "asc", //Data will initially be sorted by this column. Possible are "asc" or "desc"
+		                        },
+		                        {
+		                            col:"realname",
+		                            friendly: "用户名",
+		                        },
+		                        {
+		                            col:"rolecode",
+		                            friendly: "角色代码",
+		                            inputsource: "select",
+		                            format: roleFM,
+
+		                             ref_url: "/tx/t_admin_role",
+		                             ref_name:"rolename",
+		                             ref_value:"rolecode",
+		                        },
+		                        {
+		                            col:"status", 
+		                            friendly: "状态",
+		                            type: "string",
+		                            format: statusFormatter,
+		                            inputsource: "custom",
+		                            inputbuilder: "statusEditBuilder",
+		                        },
+		                        {
+		                            col:"lastdate",
+		                            friendly: "最后登录时间",
+		                            //nonedit: "nosend",
+		                            format:newCreateDate,
+		                            inputsource:"datepicker"
+		                        },
+		                        {
+		                            col:"createdate",
+		                            friendly: "创建时间",
+		                            format:newCreateDate,
+		                            //nonedit: 1,
+		                            
+		                            nonedit: "nosend",
+		                        },
+		                        {
+		                            col:"password",
+		                            friendly: "密码",
+		                            type: "string",
+		                            format: passwdFM
+		                        },
+		                ],
+		            //---------------查询时过滤条件
+		            findFilter: function(){//find function
+		                // RQBuilder.and(rqls)
+		                var filter_name=undefined;
+		                var filter_leaf=undefined;
+		                var filter_status=undefined;
+
+		                if($('#find_username').val())
+		                {   
+		                    filter_name=RQLBuilder.like("realname",$('#find_username').val());
+		                }
+		                
+		                if($('#find_status').val()!=-1)
+		                {   
+		                    filter_status=RQLBuilder.equal("status",$('#find_status').val());
+		                }
+		                var filter=RQLBuilder.and([
+		                        filter_name,filter_leaf,filter_status
+		                    ]);
+		                return filter.rql();
+		            },//--findFilter
+		            onAdded: function(ret,jsondata){
+		                console.log("added callback:"+ret+",obj="+JSON.stringify(jsondata));
+		            },
+		            onUpdated: function(ret,jsondata){
+		                console.log("onUpdated callback:"+ret+",obj="+JSON.stringify(jsondata));
+		            },
+		            onDeleted: function(ret,jsondata){
+		                console.log("onDeleted callback:"+ret+",obj="+JSON.stringify(jsondata));
+		            },
+		        }//--init
+		    );//--end init
+
+			$('#find_status').chosen(); 
+		    //$('#find_status').select2();
+		    $('#find_username').on('input',function(e){
+		        console.log("changing::"+e.target.value)
+		        if(!e.target.value){
+		            xw.autoResetSearch();
+		        }
+		    });
+
+		    
+		//-----------------ENDOFSCIPT------
+		}
+		);
+	</script>
+</html>

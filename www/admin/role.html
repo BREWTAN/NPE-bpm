@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta charset="utf-8" />
+		<title>系统角色管理</title>
+		    <base href="../">
+	<link rel="stylesheet" type="text/css" href="assets/js/bootstrap-select/bootstrap-select.min.css">
+	<link rel="stylesheet" href="assets/css/chosen.css" />
+
+	<link rel="stylesheet" type="text/css" href="assets/css/datepicker.css"/>
+    <link rel='stylesheet' href='assets/js/jquery-watable/watable.css'/>
+    <link rel='stylesheet' href='assets/js/jquery-watable/animate.min.css'/>
+
+	<script type="text/javascript" src="parts/js/header.js"></script>
+    
+	</head>
+
+	<body class="no-skin">
+		<script type="text/javascript">$.include("parts/pages/navbar.shtml")</script>
+
+		<div class="main-container" id="main-container">
+			<script type="text/javascript">
+				try{ace.settings.check('main-container' , 'fixed')}catch(e){}
+			</script>
+			<!-- #section:basics/sidebar -->
+			<script type="text/javascript">$.include("parts/pages/sidebar.shtml")</script>
+
+			<!-- /section:basics/sidebar -->
+			<div class="main-content">
+				<script type="text/javascript">$.include("parts/pages/content_title.shtml")</script>
+				<!-- /section:basics/content.breadcrumbs -->
+				<div class="page-content">
+					<div class="page-content-area">
+						
+
+						<div class="row">
+
+							<div class="note note-success container col-sm-12" style="padding-bottom:0px">
+                <div class="col-sm-3 form-group">
+                    <div class="btn-group input-group">
+                    <!-- 查询条件控件 -->
+                        <div class="input-group-addon">角色名称</div>
+                        <input id="find_rolename" class="inputclear form-control" type="text" placeholder="键">
+                        <span class="inputclear glyphicon glyphicon-remove-circle hide" ></span>
+                    </div>
+                </div>
+                <div class="col-sm-7 form-group">
+                    <script>$.include("parts/pages/crudbtn.shtml");</script>
+                </div>
+            </div>
+            <div class="container-fluid">
+                <div id="divtable" class="table-responsive container col-md-12" >
+                </div>
+            </div>
+
+
+						</div><!-- /.row -->
+					</div><!-- /.page-content-area -->
+				</div><!-- /.page-content -->
+			</div><!-- /.main-content -->
+
+			<script type="text/javascript">$.include("parts/pages/copyright.shtml")</script>
+
+
+			
+		</div><!-- /.main-container -->
+
+			<script type="text/javascript">$.include("parts/pages/foot.shtml")</script>
+
+	</body>
+
+	<script type="text/javascript">$.include("parts/pages/xwatable-form.shtml")</script>
+
+
+
+	<script type="text/javascript" src="assets/js/date-time/bootstrap-datepicker.min.js"></script>
+
+<script type="text/javascript" src="assets/js/bootstrap-select/bootstrap-select.min.js"></script>
+
+<script src="assets/js/chosen.jquery.min.js"></script>
+
+
+
+<script type="text/javascript" src="assets/js/jquery-watable/jquery.watable.js"></script>
+<script type="text/javascript" src="assets/addons/rqlbuilder.js"></script>
+<script type="text/javascript" src="assets/addons/xwatable.js"></script>
+<script type="text/javascript" src="assets/addons/rest.js"></script>
+<script type="text/javascript" src="assets/addons/utils.js"></script>
+<script type="text/javascript" src="assets/addons/refhelper.js"></script>
+<script type="text/javascript" src="assets/addons/jquery-dateFormat.min.js"></script>
+
+
+			<script type="text/javascript"> ace.vars['base'] = '..'; </script>
+
+	<!-- inline scripts related to this page -->
+	<script type="text/javascript">
+		jQuery(function($) {//初始化函数
+			setTitlePath("系统管理","角色管理")
+			
+		})
+
+		
+		$(function(){ 
+
+		     XWATable.init(
+		        {
+		            //----------------table的选项-------
+		            pageSize: 5,                //Initial pagesize
+		                    // filter: true,               //Show filter fields
+		                    // sorting: true,              //Enable sorting
+		            columnPicker: true,         //Show the columnPicker button
+		            transition: 'fade',  //(bounce, fade, flip, rotate, scroll, slide).
+		            // pageSizes: [1,5,8,12,200],  //Set custom pageSizes. Leave empty array to hide button.
+		            // hidePagerOnEmpty: true,     //Removes the pager if data is empty.
+		            checkboxes: true,           //Make rows checkable. (Note. You need a column with the 'unique' property)
+		            checkAllToggle:true,        //Show the check-all toggle//+RQLBuilder.like("KEYY", "a").rql()
+		            rowClicked: function(data) {    
+		                console.log('row clicked');   //data.event holds the original jQuery event.
+		                console.log(data);            //data.row holds the underlying row you supplied.
+		            },
+		            //----------------基本restful地址---
+		            restbase: '/t_admin_role',
+		            //---------------行定义
+		            coldefs: [
+		                        {      
+		                            col:"rolename",
+		                            friendly: "角色名称",
+		                            unique: true,
+		                            readonly:"readonly",  
+		                            // default_value: "aa",
+		                            // sortOrder: "asc", //Data will initially be sorted by this column. Possible are "asc" or "desc"
+		                        },
+		                        {
+		                            col:"rolecode",
+		                            friendly: "角色代码",
+		                        }		                      
+		                ],
+		            //---------------查询时过滤条件
+		            findFilter: function(){//find function
+		                // RQBuilder.and(rqls)
+		                var filter_name=undefined;
+		                if($('#find_rolename').val())
+		                {   
+		                    filter_name=RQLBuilder.like("realname",$('#find_rolename').val());
+		                }
+		              	return filter_name.rql();
+		            },//--findFilter
+		        }//--init
+		    );//--end init
+		    //$('#find_status').select2();
+		    $('#find_rolename').on('input',function(e){
+		        console.log("changing::"+e.target.value)
+		        if(!e.target.value){
+		            XWATable.autoResetSearch();
+		        }
+		    });
+
+		    
+		//-----------------ENDOFSCIPT------
+		}
+		);
+	</script>
+</html>
