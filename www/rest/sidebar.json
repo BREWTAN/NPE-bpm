@@ -16,7 +16,7 @@
           },
           {
             "name": "校验",
-            "url": "#",
+            "url": "manager/validate.html",
             "icon": "fa-desktop"
           }
         ]
