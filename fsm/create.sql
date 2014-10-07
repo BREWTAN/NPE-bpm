@@ -3,11 +3,16 @@ use npe;
 
 DROP TABLE IF EXISTS procdef;
 
-
 CREATE TABLE procdef (
-  defid VARCHAR(32) NOT NULL,
-  jsonbody LONGTEXT NULL,
-  PRIMARY KEY (defid)) CHARACTER SET = gbk;
+  defid VARCHAR(48) NOT NULL,
+  defname VARCHAR(64),
+  topid VARCHAR(48),
+  version VARCHAR(64),
+  package VARCHAR(64),
+  xmlbody LONGTEXT NULL,
+  subelements VARCHAR(512),
+  createtime LONG ,
+  PRIMARY KEY (defid)) CHARACTER SET = gbk; 
 
 
 DROP TABLE IF EXISTS tasks;
