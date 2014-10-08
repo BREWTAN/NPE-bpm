@@ -1,0 +1,152 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>front - org.nights.npe.fsm.front</title>
+          <meta name="description" content="front - org.nights.npe.fsm.front" />
+          <meta name="keywords" content="front org.nights.npe.fsm.front" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../../../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../../../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../../../lib/tools.tooltip.js"></script>
+      
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../../../index.html';
+            var hash = 'org.nights.npe.fsm.front.package';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img src="../../../../../lib/package_big.png" />
+        <p id="owner"><a href="../../../../package.html" class="extype" name="org">org</a>.<a href="../../../package.html" class="extype" name="org.nights">nights</a>.<a href="../../package.html" class="extype" name="org.nights.npe">npe</a>.<a href="../package.html" class="extype" name="org.nights.npe.fsm">fsm</a></p>
+        <h1>front</h1> <span class="permalink">
+      <a href="../../../../../index.html#org.nights.npe.fsm.front.package" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">front</span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        
+        
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="org.nights.npe.fsm.front.ANewProcess" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ANewProcessextendsProductwithSerializable"></a>
+      <a id="ANewProcess:ANewProcess"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="ANewProcess.html"><span class="name">ANewProcess</span></a><span class="params">(<span name="procInstId">procInstId: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="submitter">submitter: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="procDefId">procDefId: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="data">data: <a href="../ContextData.html" class="extype" name="org.nights.npe.fsm.ContextData">ContextData</a></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#org.nights.npe.fsm.front.package@ANewProcessextendsProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li><li name="org.nights.npe.fsm.front.Submitor" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="SubmitorextendsActorwithActorLoggingwithActorHelper"></a>
+      <a id="Submitor:Submitor"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="Submitor.html"><span class="name">Submitor</span></a><span class="result"> extends <span class="extype" name="akka.actor.Actor">Actor</span> with <span class="extype" name="akka.actor.ActorLogging">ActorLogging</span> with <a href="../ActorHelper.html" class="extype" name="org.nights.npe.fsm.ActorHelper">ActorHelper</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#org.nights.npe.fsm.front.package@SubmitorextendsActorwithActorLoggingwithActorHelper" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li><li name="org.nights.npe.fsm.front.TaskDone" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="TaskDoneextendsProductwithSerializable"></a>
+      <a id="TaskDone:TaskDone"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="TaskDone.html"><span class="name">TaskDone</span></a><span class="params">(<span name="doneState">doneState: <a href="../DoneStateContext.html" class="extype" name="org.nights.npe.fsm.DoneStateContext">DoneStateContext</a></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#org.nights.npe.fsm.front.package@TaskDoneextendsProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li></ol>
+            </div>
+
+        
+
+        
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">  </div>
+
+
+    </body>
+      </html>

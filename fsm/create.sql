@@ -8,7 +8,7 @@ CREATE TABLE procdef (
   defname VARCHAR(64),
   topid VARCHAR(48),
   version VARCHAR(64),
-  package VARCHAR(64),
+  packages VARCHAR(64),
   xmlbody LONGTEXT NULL,
   subelements VARCHAR(512),
   createtime LONG ,

@@ -15,7 +15,7 @@ var XWATable = function() {
 	            var coldefs;
 	            var xwaOptions; 
 	            var curSeachFilter;
-	            var basePath="/tx";
+	            var basePath="/nperest";
 	            xjson = xwajson;
 
             var queryURL = function(url){

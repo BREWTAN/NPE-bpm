@@ -11,7 +11,7 @@ import com.github.mauricio.async.db.RowData
 import akka.actor.Actor
 
 object ADBPool {
- 
+
   val config = ConfigFactory.load
   config.checkValid(ConfigFactory.defaultReference)
 
@@ -23,9 +23,10 @@ object ADBPool {
   val dbPoolMaxObjects = config.getInt("tcp-async.db.pool.maxObjects")
   val dbPoolMaxIdle = config.getInt("tcp-async.db.pool.maxIdle")
   val dbPoolMaxQueueSize = config.getInt("tcp-async.db.pool.maxQueueSize")
- 
+
   val configuration = new Configuration(username = dbUsername,
     port = dbPort,
+    host = "127.0.0.1",
     password = Some(dbPassword),
     database = Some(dbName))
 
@@ -34,7 +35,7 @@ object ADBPool {
 
 }
 
-trait AsyncDBPool { 
+trait AsyncDBPool {
   import scala.concurrent.ExecutionContext.Implicits.global
   val pool = ADBPool.pool
 
@@ -44,7 +45,7 @@ trait AsyncDBPool {
     else
       pool.sendQuery(query)
   }
- 
+
   def fetch(query: String, values: Any*): Future[Option[Seq[RowData]]] =
     execute(query, values: _*).map(_.rows)
 

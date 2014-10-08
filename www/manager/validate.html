@@ -86,6 +86,17 @@
 
 	<!-- inline scripts related to this page -->
 	<script type="text/javascript">
+	var newCreateDate=function(){
+		    return {
+		        f: function(val){
+		            if(!val)
+		            {
+		                return "";
+		            }
+		            return jQuery.format.toBrowserTimeZone(new Date(parseInt(val)));
+		        },
+		    }
+		}();
 		jQuery(function($) {//初始化函数
 			setTitlePath("流程定义","验证")
 
@@ -121,26 +132,16 @@
 		                            col:"rolecode",
 		                            friendly: "角色代码",
 		                            inputsource: "select",
-		                            format: roleFM,
-
-		                             ref_url: "/tx/t_admin_role",
-		                             ref_name:"rolename",
-		                             ref_value:"rolecode",
 		                        },
 		                        {
 		                            col:"status", 
 		                            friendly: "状态",
 		                            type: "string",
-		                            format: statusFormatter,
-		                            inputsource: "custom",
-		                            inputbuilder: "statusEditBuilder",
 		                        },
 		                        {
 		                            col:"lastdate",
 		                            friendly: "最后登录时间",
 		                            //nonedit: "nosend",
-		                            format:newCreateDate,
-		                            inputsource:"datepicker"
 		                        },
 		                        {
 		                            col:"createdate",
@@ -149,14 +150,8 @@
 		                            //nonedit: 1,
 		                            
 		                            nonedit: "nosend",
-		                        },
-		                        {
-		                            col:"password",
-		                            friendly: "密码",
-		                            type: "string",
-		                            format: passwdFM
-		                        },
-		                ],
+		                        }
+			                ],
 		            //---------------查询时过滤条件
 		            findFilter: function(){//find function
 		                // RQBuilder.and(rqls)

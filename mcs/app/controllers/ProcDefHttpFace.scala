@@ -1,25 +1,37 @@
 package controllers
 
 import java.io.FileInputStream
-
+import scala.concurrent.ExecutionContext
 import org.nights.npe.util.POHelper
-
-import akka.actor.Actor
-import akka.actor.Props
 import akka.actor.actorRef2Scala
-import akka.routing.Broadcast
-import akka.routing.FromConfig
 import play.api.libs.json.JsArray
 import play.api.libs.json.Json
 import play.api.libs.json.Json.toJsFieldJsValueWrapper
 import play.api.mvc.Action
 import play.api.mvc.Controller
+import play.api.mvc.Result
+import play.libs.Akka
+import org.nights.npe.fsm.backend.db.ProcDefDAO
+import org.nights.npe.fsm.backend.db.Range
+import com.github.mauricio.async.db.QueryResult
+import scala.concurrent.Future
+import play.mvc.SimpleResult
 
 object ProcDefHttpFace extends Controller {
+
+  implicit val simpleDbLookups: ExecutionContext = Akka.system.dispatchers.lookup("simple-db-lookups")
 
   def test = Action {
     Ok("kkk");
     //    Ok("Got request [" + request + "]")
+  }
+
+  def getByPage(skip: Int, limit: Int) = Action.async { request =>
+    val result = ProcDefDAO.findAll(Range(skip, limit))
+    result.map { qr =>
+        Ok("getPage At:" + qr)
+    }
+
   }
 
   def upload = Action(parse.multipartFormData) { request =>
@@ -35,13 +47,12 @@ object ProcDefHttpFace extends Controller {
         val process = POHelper.fromXML(x);
         println("x==" + x);
         if (process.isvalid) {
-        	ret = ret.+:(Json.obj("name" -> f.filename,
-                        "url" -> "/npe/procdef/import.html#",
+          ret = ret.+:(Json.obj("name" -> f.filename,
+            "url" -> "/npe/procdef/import.html#",
             "delete_url" -> "/npe/procdef/import.html#delete",
             "delete_type" -> "DELETE",
             "type" -> "xml/text",
-        	"size" -> filesize
-        	));
+            "size" -> filesize));
         } else {
           ret = ret.+:(Json.obj("name" -> f.filename,
             "size" -> filesize,
@@ -62,26 +73,7 @@ object ProcDefHttpFace extends Controller {
       }
 
     };
-    //      println("data=="+request.body.asMultipartFormData);
-    //    ret = Json.arr( 
-    //      Json.obj(
-    //        "name" -> "file",
-    //        "size" -> 100
-    //      )
-    //        
-    //    );
-    println("return ::" + ret)
     Ok(Json.obj("files" -> ret));
 
-    //      request.body.file("picture").map { picture =>
-    //        import java.io.File
-    //        val filename = picture.filename
-    //        val contentType = picture.contentType
-    //        picture.ref.moveTo(new File("/tmp/picture"))
-    //        Ok("File uploaded")
-    //      }.getOrElse {
-    //        Redirect(routes.Application.index).flashing(
-    //          "error" -> "Missing file")
-    //      }
   }
 }
