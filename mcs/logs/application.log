@@ -1,228 +1,124 @@
-2014-10-09 01:40:17,533 - [INFO] - from play in pool-17-thread-3 
+2014-10-09 03:17:20,011 - [INFO] - from play in pool-70-thread-3 
 Listening for HTTP on /0:0:0:0:0:0:0:0:9000
 
-2014-10-09 01:40:32,818 - [INFO] - from application in play-internal-execution-context-1 
+2014-10-09 03:17:25,875 - [INFO] - from application in play-internal-execution-context-1 
 Application has started
 
-2014-10-09 01:40:32,907 - [INFO] - from play in play-internal-execution-context-1 
+2014-10-09 03:17:25,958 - [INFO] - from play in play-internal-execution-context-1 
 Application started (Dev)
 
-2014-10-09 01:40:32,945 - [INFO] - from play in New I/O worker #1 
+2014-10-09 03:17:26,011 - [INFO] - from play in New I/O worker #1 
 Starting application default Akka system.
 
-2014-10-09 03:10:33,296 - [INFO] - from application in play-internal-execution-context-4 
+2014-10-09 03:17:26,182 - [ERROR] - from com.github.mauricio.async.db.mysql.MySQLConnection in db-async-netty-thread-1 
+Received an error message -> ErrorMessage(1054,#42S22,Unknown column '__count' in 'field list')
+
+2014-10-09 03:17:26,198 - [ERROR] - from application in application-simple-db-lookups-6 
+
+
+! @6jnab95ii - Internal server error, for (GET) [/procdef?skip=1&limit=10] ->
+
+play.api.Application$$anon$1: Execution exception[[MySQLException: Error 1054 - #42S22 - Unknown column '__count' in 'field list']]
+	at play.api.Application$class.handleError(Application.scala:296) ~[play_2.11-2.3.3.jar:2.3.3]
+	at play.api.DefaultApplication.handleError(Application.scala:402) [play_2.11-2.3.3.jar:2.3.3]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$14$$anonfun$apply$1.applyOrElse(PlayDefaultUpstreamHandler.scala:205) [play_2.11-2.3.3.jar:2.3.3]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$14$$anonfun$apply$1.applyOrElse(PlayDefaultUpstreamHandler.scala:202) [play_2.11-2.3.3.jar:2.3.3]
+	at scala.runtime.AbstractPartialFunction.apply(AbstractPartialFunction.scala:36) [scala-library-2.11.2.jar:na]
+	at scala.util.Failure$$anonfun$recover$1.apply(Try.scala:215) [scala-library-2.11.2.jar:na]
+	at scala.util.Try$.apply(Try.scala:191) [scala-library-2.11.2.jar:na]
+	at scala.util.Failure.recover(Try.scala:215) [scala-library-2.11.2.jar:na]
+	at scala.concurrent.Future$$anonfun$recover$1.apply(Future.scala:324) [scala-library-2.11.2.jar:na]
+	at scala.concurrent.Future$$anonfun$recover$1.apply(Future.scala:324) [scala-library-2.11.2.jar:na]
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32) [scala-library-2.11.2.jar:na]
+	at play.api.libs.iteratee.Execution$trampoline$.execute(Execution.scala:46) [play-iteratees_2.11-2.3.3.jar:2.3.3]
+	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:40) [scala-library-2.11.2.jar:na]
+	at scala.concurrent.impl.Promise$DefaultPromise.tryComplete(Promise.scala:248) [scala-library-2.11.2.jar:na]
+	at scala.concurrent.Promise$class.complete(Promise.scala:55) [scala-library-2.11.2.jar:na]
+	at scala.concurrent.impl.Promise$DefaultPromise.complete(Promise.scala:153) [scala-library-2.11.2.jar:na]
+	at scala.concurrent.Future$$anonfun$map$1.apply(Future.scala:235) [scala-library-2.11.2.jar:na]
+	at scala.concurrent.Future$$anonfun$map$1.apply(Future.scala:235) [scala-library-2.11.2.jar:na]
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32) [scala-library-2.11.2.jar:na]
+	at akka.dispatch.BatchingExecutor$Batch$$anonfun$run$1.processBatch$1(BatchingExecutor.scala:67) [akka-actor_2.11-2.3.5.jar:na]
+	at akka.dispatch.BatchingExecutor$Batch$$anonfun$run$1.apply$mcV$sp(BatchingExecutor.scala:82) [akka-actor_2.11-2.3.5.jar:na]
+	at akka.dispatch.BatchingExecutor$Batch$$anonfun$run$1.apply(BatchingExecutor.scala:59) [akka-actor_2.11-2.3.5.jar:na]
+	at akka.dispatch.BatchingExecutor$Batch$$anonfun$run$1.apply(BatchingExecutor.scala:59) [akka-actor_2.11-2.3.5.jar:na]
+	at scala.concurrent.BlockContext$.withBlockContext(BlockContext.scala:72) [scala-library-2.11.2.jar:na]
+	at akka.dispatch.BatchingExecutor$Batch.run(BatchingExecutor.scala:58) [akka-actor_2.11-2.3.5.jar:na]
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:41) [akka-actor_2.11-2.3.5.jar:na]
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:393) [akka-actor_2.11-2.3.5.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) [scala-library-2.11.2.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) [scala-library-2.11.2.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) [scala-library-2.11.2.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) [scala-library-2.11.2.jar:na]
+Caused by: com.github.mauricio.async.db.mysql.exceptions.MySQLException: Error 1054 - #42S22 - Unknown column '__count' in 'field list'
+	at com.github.mauricio.async.db.mysql.MySQLConnection.onError(MySQLConnection.scala:124) ~[mysql-async_2.11-0.2.14.jar:0.2.14]
+	at com.github.mauricio.async.db.mysql.codec.MySQLConnectionHandler.channelRead0(MySQLConnectionHandler.scala:101) ~[mysql-async_2.11-0.2.14.jar:0.2.14]
+	at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:105) ~[netty-all-4.0.23.Final.jar:4.0.23.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:333) ~[netty-all-4.0.23.Final.jar:4.0.23.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:319) ~[netty-all-4.0.23.Final.jar:4.0.23.Final]
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:163) ~[netty-all-4.0.23.Final.jar:4.0.23.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:333) ~[netty-all-4.0.23.Final.jar:4.0.23.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:319) ~[netty-all-4.0.23.Final.jar:4.0.23.Final]
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:787) ~[netty-all-4.0.23.Final.jar:4.0.23.Final]
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:130) ~[netty-all-4.0.23.Final.jar:4.0.23.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:511) ~[netty-all-4.0.23.Final.jar:4.0.23.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:468) ~[netty-all-4.0.23.Final.jar:4.0.23.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:382) ~[netty-all-4.0.23.Final.jar:4.0.23.Final]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:354) ~[netty-all-4.0.23.Final.jar:4.0.23.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:116) ~[netty-all-4.0.23.Final.jar:4.0.23.Final]
+	at java.lang.Thread.run(Thread.java:745) ~[na:1.7.0_67]
+
+2014-10-09 03:18:08,403 - [INFO] - from application in play-internal-execution-context-1 
 Application shutdown...
 
-2014-10-09 03:10:33,305 - [INFO] - from play in play-internal-execution-context-4 
+2014-10-09 03:18:08,403 - [INFO] - from play in play-internal-execution-context-1 
 Shutdown application default Akka system.
 
-2014-10-09 03:10:33,593 - [INFO] - from application in play-internal-execution-context-4 
+2014-10-09 03:18:08,509 - [INFO] - from application in play-internal-execution-context-1 
 Application has started
 
-2014-10-09 03:10:33,602 - [INFO] - from play in play-internal-execution-context-4 
+2014-10-09 03:18:08,518 - [INFO] - from play in play-internal-execution-context-1 
 Application started (Dev)
 
-2014-10-09 03:10:33,615 - [INFO] - from play in New I/O worker #12 
+2014-10-09 03:18:08,531 - [INFO] - from play in New I/O worker #2 
 Starting application default Akka system.
 
-2014-10-09 03:10:33,644 - [ERROR] - from com.github.mauricio.async.db.mysql.MySQLConnection in db-async-netty-thread-9 
-Received an error message -> ErrorMessage(1054,#42S22,Unknown column '__count' in 'field list')
-
-2014-10-09 03:10:33,711 - [ERROR] - from application in application-simple-db-lookups-6 
-
-
-! @6jnaabjd9 - Internal server error, for (GET) [/procdef?skip=1&limit=10] ->
-
-play.api.Application$$anon$1: Execution exception[[MySQLException: Error 1054 - #42S22 - Unknown column '__count' in 'field list']]
-	at play.api.Application$class.handleError(Application.scala:296) ~[play_2.11-2.3.3.jar:2.3.3]
-	at play.api.DefaultApplication.handleError(Application.scala:402) [play_2.11-2.3.3.jar:2.3.3]
-	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$14$$anonfun$apply$1.applyOrElse(PlayDefaultUpstreamHandler.scala:205) [play_2.11-2.3.3.jar:2.3.3]
-	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$14$$anonfun$apply$1.applyOrElse(PlayDefaultUpstreamHandler.scala:202) [play_2.11-2.3.3.jar:2.3.3]
-	at scala.runtime.AbstractPartialFunction.apply(AbstractPartialFunction.scala:36) [scala-library-2.11.2.jar:na]
-	at scala.util.Failure$$anonfun$recover$1.apply(Try.scala:215) [scala-library-2.11.2.jar:na]
-	at scala.util.Try$.apply(Try.scala:191) [scala-library-2.11.2.jar:na]
-	at scala.util.Failure.recover(Try.scala:215) [scala-library-2.11.2.jar:na]
-	at scala.concurrent.Future$$anonfun$recover$1.apply(Future.scala:324) [scala-library-2.11.2.jar:na]
-	at scala.concurrent.Future$$anonfun$recover$1.apply(Future.scala:324) [scala-library-2.11.2.jar:na]
-	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32) [scala-library-2.11.2.jar:na]
-	at play.api.libs.iteratee.Execution$trampoline$.execute(Execution.scala:46) [play-iteratees_2.11-2.3.3.jar:2.3.3]
-	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:40) [scala-library-2.11.2.jar:na]
-	at scala.concurrent.impl.Promise$DefaultPromise.tryComplete(Promise.scala:248) [scala-library-2.11.2.jar:na]
-	at scala.concurrent.Promise$class.complete(Promise.scala:55) [scala-library-2.11.2.jar:na]
-	at scala.concurrent.impl.Promise$DefaultPromise.complete(Promise.scala:153) [scala-library-2.11.2.jar:na]
-	at scala.concurrent.Future$$anonfun$map$1.apply(Future.scala:235) [scala-library-2.11.2.jar:na]
-	at scala.concurrent.Future$$anonfun$map$1.apply(Future.scala:235) [scala-library-2.11.2.jar:na]
-	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32) [scala-library-2.11.2.jar:na]
-	at akka.dispatch.BatchingExecutor$Batch$$anonfun$run$1.processBatch$1(BatchingExecutor.scala:67) [akka-actor_2.11-2.3.5.jar:na]
-	at akka.dispatch.BatchingExecutor$Batch$$anonfun$run$1.apply$mcV$sp(BatchingExecutor.scala:82) [akka-actor_2.11-2.3.5.jar:na]
-	at akka.dispatch.BatchingExecutor$Batch$$anonfun$run$1.apply(BatchingExecutor.scala:59) [akka-actor_2.11-2.3.5.jar:na]
-	at akka.dispatch.BatchingExecutor$Batch$$anonfun$run$1.apply(BatchingExecutor.scala:59) [akka-actor_2.11-2.3.5.jar:na]
-	at scala.concurrent.BlockContext$.withBlockContext(BlockContext.scala:72) [scala-library-2.11.2.jar:na]
-	at akka.dispatch.BatchingExecutor$Batch.run(BatchingExecutor.scala:58) [akka-actor_2.11-2.3.5.jar:na]
-	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:41) [akka-actor_2.11-2.3.5.jar:na]
-	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:393) [akka-actor_2.11-2.3.5.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) [scala-library-2.11.2.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) [scala-library-2.11.2.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) [scala-library-2.11.2.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) [scala-library-2.11.2.jar:na]
-Caused by: com.github.mauricio.async.db.mysql.exceptions.MySQLException: Error 1054 - #42S22 - Unknown column '__count' in 'field list'
-	at com.github.mauricio.async.db.mysql.MySQLConnection.onError(MySQLConnection.scala:124) ~[mysql-async_2.11-0.2.14.jar:0.2.14]
-	at com.github.mauricio.async.db.mysql.codec.MySQLConnectionHandler.channelRead0(MySQLConnectionHandler.scala:101) ~[mysql-async_2.11-0.2.14.jar:0.2.14]
-	at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:105) ~[netty-all-4.0.23.Final.jar:4.0.23.Final]
-	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:333) ~[netty-all-4.0.23.Final.jar:4.0.23.Final]
-	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:319) ~[netty-all-4.0.23.Final.jar:4.0.23.Final]
-	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:163) ~[netty-all-4.0.23.Final.jar:4.0.23.Final]
-	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:333) ~[netty-all-4.0.23.Final.jar:4.0.23.Final]
-	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:319) ~[netty-all-4.0.23.Final.jar:4.0.23.Final]
-	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:787) ~[netty-all-4.0.23.Final.jar:4.0.23.Final]
-	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:130) ~[netty-all-4.0.23.Final.jar:4.0.23.Final]
-	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:511) ~[netty-all-4.0.23.Final.jar:4.0.23.Final]
-	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:468) ~[netty-all-4.0.23.Final.jar:4.0.23.Final]
-	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:382) ~[netty-all-4.0.23.Final.jar:4.0.23.Final]
-	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:354) ~[netty-all-4.0.23.Final.jar:4.0.23.Final]
-	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:116) ~[netty-all-4.0.23.Final.jar:4.0.23.Final]
-	at java.lang.Thread.run(Thread.java:745) ~[na:1.7.0_67]
-
-2014-10-09 03:12:48,199 - [ERROR] - from com.github.mauricio.async.db.mysql.MySQLConnection in db-async-netty-thread-10 
-Received an error message -> ErrorMessage(1054,#42S22,Unknown column '__count' in 'field list')
-
-2014-10-09 03:12:48,204 - [ERROR] - from application in application-simple-db-lookups-7 
-
-
-! @6jnaajack - Internal server error, for (GET) [/procdef?skip=1&limit=10] ->
-
-play.api.Application$$anon$1: Execution exception[[MySQLException: Error 1054 - #42S22 - Unknown column '__count' in 'field list']]
-	at play.api.Application$class.handleError(Application.scala:296) ~[play_2.11-2.3.3.jar:2.3.3]
-	at play.api.DefaultApplication.handleError(Application.scala:402) [play_2.11-2.3.3.jar:2.3.3]
-	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$14$$anonfun$apply$1.applyOrElse(PlayDefaultUpstreamHandler.scala:205) [play_2.11-2.3.3.jar:2.3.3]
-	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$14$$anonfun$apply$1.applyOrElse(PlayDefaultUpstreamHandler.scala:202) [play_2.11-2.3.3.jar:2.3.3]
-	at scala.runtime.AbstractPartialFunction.apply(AbstractPartialFunction.scala:36) [scala-library-2.11.2.jar:na]
-	at scala.util.Failure$$anonfun$recover$1.apply(Try.scala:215) [scala-library-2.11.2.jar:na]
-	at scala.util.Try$.apply(Try.scala:191) [scala-library-2.11.2.jar:na]
-	at scala.util.Failure.recover(Try.scala:215) [scala-library-2.11.2.jar:na]
-	at scala.concurrent.Future$$anonfun$recover$1.apply(Future.scala:324) [scala-library-2.11.2.jar:na]
-	at scala.concurrent.Future$$anonfun$recover$1.apply(Future.scala:324) [scala-library-2.11.2.jar:na]
-	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32) [scala-library-2.11.2.jar:na]
-	at play.api.libs.iteratee.Execution$trampoline$.execute(Execution.scala:46) [play-iteratees_2.11-2.3.3.jar:2.3.3]
-	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:40) [scala-library-2.11.2.jar:na]
-	at scala.concurrent.impl.Promise$DefaultPromise.tryComplete(Promise.scala:248) [scala-library-2.11.2.jar:na]
-	at scala.concurrent.Promise$class.complete(Promise.scala:55) [scala-library-2.11.2.jar:na]
-	at scala.concurrent.impl.Promise$DefaultPromise.complete(Promise.scala:153) [scala-library-2.11.2.jar:na]
-	at scala.concurrent.Future$$anonfun$map$1.apply(Future.scala:235) [scala-library-2.11.2.jar:na]
-	at scala.concurrent.Future$$anonfun$map$1.apply(Future.scala:235) [scala-library-2.11.2.jar:na]
-	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32) [scala-library-2.11.2.jar:na]
-	at akka.dispatch.BatchingExecutor$Batch$$anonfun$run$1.processBatch$1(BatchingExecutor.scala:67) [akka-actor_2.11-2.3.5.jar:na]
-	at akka.dispatch.BatchingExecutor$Batch$$anonfun$run$1.apply$mcV$sp(BatchingExecutor.scala:82) [akka-actor_2.11-2.3.5.jar:na]
-	at akka.dispatch.BatchingExecutor$Batch$$anonfun$run$1.apply(BatchingExecutor.scala:59) [akka-actor_2.11-2.3.5.jar:na]
-	at akka.dispatch.BatchingExecutor$Batch$$anonfun$run$1.apply(BatchingExecutor.scala:59) [akka-actor_2.11-2.3.5.jar:na]
-	at scala.concurrent.BlockContext$.withBlockContext(BlockContext.scala:72) [scala-library-2.11.2.jar:na]
-	at akka.dispatch.BatchingExecutor$Batch.run(BatchingExecutor.scala:58) [akka-actor_2.11-2.3.5.jar:na]
-	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:41) [akka-actor_2.11-2.3.5.jar:na]
-	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:393) [akka-actor_2.11-2.3.5.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) [scala-library-2.11.2.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) [scala-library-2.11.2.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) [scala-library-2.11.2.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) [scala-library-2.11.2.jar:na]
-Caused by: com.github.mauricio.async.db.mysql.exceptions.MySQLException: Error 1054 - #42S22 - Unknown column '__count' in 'field list'
-	at com.github.mauricio.async.db.mysql.MySQLConnection.onError(MySQLConnection.scala:124) ~[mysql-async_2.11-0.2.14.jar:0.2.14]
-	at com.github.mauricio.async.db.mysql.codec.MySQLConnectionHandler.channelRead0(MySQLConnectionHandler.scala:101) ~[mysql-async_2.11-0.2.14.jar:0.2.14]
-	at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:105) ~[netty-all-4.0.23.Final.jar:4.0.23.Final]
-	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:333) ~[netty-all-4.0.23.Final.jar:4.0.23.Final]
-	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:319) ~[netty-all-4.0.23.Final.jar:4.0.23.Final]
-	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:163) ~[netty-all-4.0.23.Final.jar:4.0.23.Final]
-	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:333) ~[netty-all-4.0.23.Final.jar:4.0.23.Final]
-	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:319) ~[netty-all-4.0.23.Final.jar:4.0.23.Final]
-	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:787) ~[netty-all-4.0.23.Final.jar:4.0.23.Final]
-	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:130) ~[netty-all-4.0.23.Final.jar:4.0.23.Final]
-	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:511) ~[netty-all-4.0.23.Final.jar:4.0.23.Final]
-	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:468) ~[netty-all-4.0.23.Final.jar:4.0.23.Final]
-	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:382) ~[netty-all-4.0.23.Final.jar:4.0.23.Final]
-	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:354) ~[netty-all-4.0.23.Final.jar:4.0.23.Final]
-	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:116) ~[netty-all-4.0.23.Final.jar:4.0.23.Final]
-	at java.lang.Thread.run(Thread.java:745) ~[na:1.7.0_67]
-
-2014-10-09 03:14:00,797 - [ERROR] - from com.github.mauricio.async.db.mysql.MySQLConnection in db-async-netty-thread-11 
-Received an error message -> ErrorMessage(1054,#42S22,Unknown column '__count' in 'field list')
-
-2014-10-09 03:14:00,799 - [ERROR] - from application in application-simple-db-lookups-8 
-
-
-! @6jnaandmn - Internal server error, for (GET) [/procdef?skip=1&limit=10] ->
-
-play.api.Application$$anon$1: Execution exception[[MySQLException: Error 1054 - #42S22 - Unknown column '__count' in 'field list']]
-	at play.api.Application$class.handleError(Application.scala:296) ~[play_2.11-2.3.3.jar:2.3.3]
-	at play.api.DefaultApplication.handleError(Application.scala:402) [play_2.11-2.3.3.jar:2.3.3]
-	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$14$$anonfun$apply$1.applyOrElse(PlayDefaultUpstreamHandler.scala:205) [play_2.11-2.3.3.jar:2.3.3]
-	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$14$$anonfun$apply$1.applyOrElse(PlayDefaultUpstreamHandler.scala:202) [play_2.11-2.3.3.jar:2.3.3]
-	at scala.runtime.AbstractPartialFunction.apply(AbstractPartialFunction.scala:36) [scala-library-2.11.2.jar:na]
-	at scala.util.Failure$$anonfun$recover$1.apply(Try.scala:215) [scala-library-2.11.2.jar:na]
-	at scala.util.Try$.apply(Try.scala:191) [scala-library-2.11.2.jar:na]
-	at scala.util.Failure.recover(Try.scala:215) [scala-library-2.11.2.jar:na]
-	at scala.concurrent.Future$$anonfun$recover$1.apply(Future.scala:324) [scala-library-2.11.2.jar:na]
-	at scala.concurrent.Future$$anonfun$recover$1.apply(Future.scala:324) [scala-library-2.11.2.jar:na]
-	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32) [scala-library-2.11.2.jar:na]
-	at play.api.libs.iteratee.Execution$trampoline$.execute(Execution.scala:46) [play-iteratees_2.11-2.3.3.jar:2.3.3]
-	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:40) [scala-library-2.11.2.jar:na]
-	at scala.concurrent.impl.Promise$DefaultPromise.tryComplete(Promise.scala:248) [scala-library-2.11.2.jar:na]
-	at scala.concurrent.Promise$class.complete(Promise.scala:55) [scala-library-2.11.2.jar:na]
-	at scala.concurrent.impl.Promise$DefaultPromise.complete(Promise.scala:153) [scala-library-2.11.2.jar:na]
-	at scala.concurrent.Future$$anonfun$map$1.apply(Future.scala:235) [scala-library-2.11.2.jar:na]
-	at scala.concurrent.Future$$anonfun$map$1.apply(Future.scala:235) [scala-library-2.11.2.jar:na]
-	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32) [scala-library-2.11.2.jar:na]
-	at akka.dispatch.BatchingExecutor$Batch$$anonfun$run$1.processBatch$1(BatchingExecutor.scala:67) [akka-actor_2.11-2.3.5.jar:na]
-	at akka.dispatch.BatchingExecutor$Batch$$anonfun$run$1.apply$mcV$sp(BatchingExecutor.scala:82) [akka-actor_2.11-2.3.5.jar:na]
-	at akka.dispatch.BatchingExecutor$Batch$$anonfun$run$1.apply(BatchingExecutor.scala:59) [akka-actor_2.11-2.3.5.jar:na]
-	at akka.dispatch.BatchingExecutor$Batch$$anonfun$run$1.apply(BatchingExecutor.scala:59) [akka-actor_2.11-2.3.5.jar:na]
-	at scala.concurrent.BlockContext$.withBlockContext(BlockContext.scala:72) [scala-library-2.11.2.jar:na]
-	at akka.dispatch.BatchingExecutor$Batch.run(BatchingExecutor.scala:58) [akka-actor_2.11-2.3.5.jar:na]
-	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:41) [akka-actor_2.11-2.3.5.jar:na]
-	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:393) [akka-actor_2.11-2.3.5.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) [scala-library-2.11.2.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) [scala-library-2.11.2.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) [scala-library-2.11.2.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) [scala-library-2.11.2.jar:na]
-Caused by: com.github.mauricio.async.db.mysql.exceptions.MySQLException: Error 1054 - #42S22 - Unknown column '__count' in 'field list'
-	at com.github.mauricio.async.db.mysql.MySQLConnection.onError(MySQLConnection.scala:124) ~[mysql-async_2.11-0.2.14.jar:0.2.14]
-	at com.github.mauricio.async.db.mysql.codec.MySQLConnectionHandler.channelRead0(MySQLConnectionHandler.scala:101) ~[mysql-async_2.11-0.2.14.jar:0.2.14]
-	at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:105) ~[netty-all-4.0.23.Final.jar:4.0.23.Final]
-	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:333) ~[netty-all-4.0.23.Final.jar:4.0.23.Final]
-	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:319) ~[netty-all-4.0.23.Final.jar:4.0.23.Final]
-	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:163) ~[netty-all-4.0.23.Final.jar:4.0.23.Final]
-	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:333) ~[netty-all-4.0.23.Final.jar:4.0.23.Final]
-	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:319) ~[netty-all-4.0.23.Final.jar:4.0.23.Final]
-	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:787) ~[netty-all-4.0.23.Final.jar:4.0.23.Final]
-	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:130) ~[netty-all-4.0.23.Final.jar:4.0.23.Final]
-	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:511) ~[netty-all-4.0.23.Final.jar:4.0.23.Final]
-	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:468) ~[netty-all-4.0.23.Final.jar:4.0.23.Final]
-	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:382) ~[netty-all-4.0.23.Final.jar:4.0.23.Final]
-	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:354) ~[netty-all-4.0.23.Final.jar:4.0.23.Final]
-	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:116) ~[netty-all-4.0.23.Final.jar:4.0.23.Final]
-	at java.lang.Thread.run(Thread.java:745) ~[na:1.7.0_67]
-
-2014-10-09 03:14:26,826 - [INFO] - from application in play-internal-execution-context-4 
+2014-10-09 03:20:05,358 - [INFO] - from application in play-internal-execution-context-1 
 Application shutdown...
 
-2014-10-09 03:14:26,827 - [INFO] - from play in play-internal-execution-context-4 
+2014-10-09 03:20:05,358 - [INFO] - from play in play-internal-execution-context-1 
 Shutdown application default Akka system.
 
-2014-10-09 03:14:26,919 - [INFO] - from application in play-internal-execution-context-4 
+2014-10-09 03:20:05,441 - [INFO] - from application in play-internal-execution-context-1 
 Application has started
 
-2014-10-09 03:14:26,931 - [INFO] - from play in play-internal-execution-context-4 
+2014-10-09 03:20:05,449 - [INFO] - from play in play-internal-execution-context-1 
 Application started (Dev)
 
-2014-10-09 03:14:26,946 - [INFO] - from play in New I/O worker #15 
+2014-10-09 03:20:05,460 - [INFO] - from play in New I/O worker #3 
 Starting application default Akka system.
 
-2014-10-09 03:14:26,953 - [ERROR] - from com.github.mauricio.async.db.mysql.MySQLConnection in db-async-netty-thread-12 
-Received an error message -> ErrorMessage(1054,#42S22,Unknown column '__count' in 'field list')
+2014-10-09 03:21:44,600 - [INFO] - from application in play-internal-execution-context-1 
+Application shutdown...
 
-2014-10-09 03:14:26,955 - [ERROR] - from application in application-simple-db-lookups-5 
+2014-10-09 03:21:44,600 - [INFO] - from play in play-internal-execution-context-1 
+Shutdown application default Akka system.
+
+2014-10-09 03:21:44,696 - [INFO] - from application in play-internal-execution-context-1 
+Application has started
+
+2014-10-09 03:21:44,706 - [INFO] - from play in play-internal-execution-context-1 
+Application started (Dev)
+
+2014-10-09 03:21:44,719 - [INFO] - from play in New I/O worker #4 
+Starting application default Akka system.
+
+2014-10-09 03:21:44,733 - [ERROR] - from application in application-simple-db-lookups-4 
 
 
-! @6jnaap0en - Internal server error, for (GET) [/procdef?skip=1&limit=10] ->
+! @6jnabno4e - Internal server error, for (GET) [/procdef?skip=1&limit=10] ->
 
-play.api.Application$$anon$1: Execution exception[[MySQLException: Error 1054 - #42S22 - Unknown column '__count' in 'field list']]
+play.api.Application$$anon$1: Execution exception[[NullPointerException: null]]
 	at play.api.Application$class.handleError(Application.scala:296) ~[play_2.11-2.3.3.jar:2.3.3]
 	at play.api.DefaultApplication.handleError(Application.scala:402) [play_2.11-2.3.3.jar:2.3.3]
 	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$14$$anonfun$apply$1.applyOrElse(PlayDefaultUpstreamHandler.scala:205) [play_2.11-2.3.3.jar:2.3.3]
@@ -254,21 +150,84 @@ play.api.Application$$anon$1: Execution exception[[MySQLException: Error 1054 - 
 	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) [scala-library-2.11.2.jar:na]
 	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) [scala-library-2.11.2.jar:na]
 	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) [scala-library-2.11.2.jar:na]
-Caused by: com.github.mauricio.async.db.mysql.exceptions.MySQLException: Error 1054 - #42S22 - Unknown column '__count' in 'field list'
-	at com.github.mauricio.async.db.mysql.MySQLConnection.onError(MySQLConnection.scala:124) ~[mysql-async_2.11-0.2.14.jar:0.2.14]
-	at com.github.mauricio.async.db.mysql.codec.MySQLConnectionHandler.channelRead0(MySQLConnectionHandler.scala:101) ~[mysql-async_2.11-0.2.14.jar:0.2.14]
-	at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:105) ~[netty-all-4.0.23.Final.jar:4.0.23.Final]
-	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:333) ~[netty-all-4.0.23.Final.jar:4.0.23.Final]
-	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:319) ~[netty-all-4.0.23.Final.jar:4.0.23.Final]
-	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:163) ~[netty-all-4.0.23.Final.jar:4.0.23.Final]
-	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:333) ~[netty-all-4.0.23.Final.jar:4.0.23.Final]
-	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:319) ~[netty-all-4.0.23.Final.jar:4.0.23.Final]
-	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:787) ~[netty-all-4.0.23.Final.jar:4.0.23.Final]
-	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:130) ~[netty-all-4.0.23.Final.jar:4.0.23.Final]
-	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:511) ~[netty-all-4.0.23.Final.jar:4.0.23.Final]
-	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:468) ~[netty-all-4.0.23.Final.jar:4.0.23.Final]
-	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:382) ~[netty-all-4.0.23.Final.jar:4.0.23.Final]
-	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:354) ~[netty-all-4.0.23.Final.jar:4.0.23.Final]
-	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:116) ~[netty-all-4.0.23.Final.jar:4.0.23.Final]
-	at java.lang.Thread.run(Thread.java:745) ~[na:1.7.0_67]
+Caused by: java.lang.NullPointerException: null
+	at controllers.ProcDefHttpFace$$anonfun$getByPage$1$$anonfun$apply$2$$anonfun$2$$anonfun$apply$3.apply(ProcDefHttpFace.scala:44) ~[classes/:na]
+	at controllers.ProcDefHttpFace$$anonfun$getByPage$1$$anonfun$apply$2$$anonfun$2$$anonfun$apply$3.apply(ProcDefHttpFace.scala:43) ~[classes/:na]
+	at scala.collection.TraversableLike$$anonfun$map$1.apply(TraversableLike.scala:245) ~[scala-library-2.11.2.jar:na]
+	at scala.collection.TraversableLike$$anonfun$map$1.apply(TraversableLike.scala:245) ~[scala-library-2.11.2.jar:na]
+	at scala.collection.Iterator$class.foreach(Iterator.scala:743) ~[scala-library-2.11.2.jar:na]
+	at scala.collection.AbstractIterator.foreach(Iterator.scala:1177) ~[scala-library-2.11.2.jar:na]
+	at scala.collection.IterableLike$class.foreach(IterableLike.scala:72) ~[scala-library-2.11.2.jar:na]
+	at com.github.mauricio.async.db.general.ArrayRowData.foreach(ArrayRowData.scala:22) ~[db-async-common_2.11-0.2.14.jar:0.2.14]
+	at scala.collection.TraversableLike$class.map(TraversableLike.scala:245) ~[scala-library-2.11.2.jar:na]
+	at com.github.mauricio.async.db.general.ArrayRowData.map(ArrayRowData.scala:22) ~[db-async-common_2.11-0.2.14.jar:0.2.14]
+	at controllers.ProcDefHttpFace$$anonfun$getByPage$1$$anonfun$apply$2$$anonfun$2.apply(ProcDefHttpFace.scala:43) ~[classes/:na]
+	at controllers.ProcDefHttpFace$$anonfun$getByPage$1$$anonfun$apply$2$$anonfun$2.apply(ProcDefHttpFace.scala:42) ~[classes/:na]
+	at scala.Option.map(Option.scala:145) ~[scala-library-2.11.2.jar:na]
+	at controllers.ProcDefHttpFace$$anonfun$getByPage$1$$anonfun$apply$2.apply(ProcDefHttpFace.scala:42) ~[classes/:na]
+	at controllers.ProcDefHttpFace$$anonfun$getByPage$1$$anonfun$apply$2.apply(ProcDefHttpFace.scala:37) ~[classes/:na]
+	at scala.util.Success$$anonfun$map$1.apply(Try.scala:236) ~[scala-library-2.11.2.jar:na]
+	at scala.util.Try$.apply(Try.scala:191) [scala-library-2.11.2.jar:na]
+	at scala.util.Success.map(Try.scala:236) ~[scala-library-2.11.2.jar:na]
+	... 15 common frames omitted
+
+2014-10-09 03:22:12,239 - [INFO] - from application in play-internal-execution-context-1 
+Application shutdown...
+
+2014-10-09 03:22:12,239 - [INFO] - from play in play-internal-execution-context-1 
+Shutdown application default Akka system.
+
+2014-10-09 03:22:12,316 - [INFO] - from application in play-internal-execution-context-1 
+Application has started
+
+2014-10-09 03:22:12,323 - [INFO] - from play in play-internal-execution-context-1 
+Application started (Dev)
+
+2014-10-09 03:22:12,335 - [INFO] - from play in New I/O worker #5 
+Starting application default Akka system.
+
+2014-10-09 03:23:09,904 - [INFO] - from application in play-internal-execution-context-1 
+Application shutdown...
+
+2014-10-09 03:23:09,904 - [INFO] - from play in play-internal-execution-context-1 
+Shutdown application default Akka system.
+
+2014-10-09 03:23:09,983 - [INFO] - from application in play-internal-execution-context-1 
+Application has started
+
+2014-10-09 03:23:09,991 - [INFO] - from play in play-internal-execution-context-1 
+Application started (Dev)
+
+2014-10-09 03:23:10,004 - [INFO] - from play in New I/O worker #7 
+Starting application default Akka system.
+
+2014-10-09 03:30:37,547 - [INFO] - from application in play-internal-execution-context-1 
+Application shutdown...
+
+2014-10-09 03:30:37,547 - [INFO] - from play in play-internal-execution-context-1 
+Shutdown application default Akka system.
+
+2014-10-09 03:30:37,630 - [INFO] - from application in play-internal-execution-context-1 
+Application has started
+
+2014-10-09 03:30:37,638 - [INFO] - from play in play-internal-execution-context-1 
+Application started (Dev)
+
+2014-10-09 03:30:37,649 - [INFO] - from play in New I/O worker #9 
+Starting application default Akka system.
+
+2014-10-09 03:35:51,506 - [INFO] - from application in play-internal-execution-context-1 
+Application shutdown...
+
+2014-10-09 03:35:51,507 - [INFO] - from play in play-internal-execution-context-1 
+Shutdown application default Akka system.
+
+2014-10-09 03:35:51,579 - [INFO] - from application in play-internal-execution-context-1 
+Application has started
+
+2014-10-09 03:35:51,584 - [INFO] - from play in play-internal-execution-context-1 
+Application started (Dev)
+
+2014-10-09 03:35:51,594 - [INFO] - from play in New I/O worker #14 
+Starting application default Akka system.
 

@@ -33,3 +33,6 @@ run
 reload
 eclipse
 run
+reload
+clean
+run

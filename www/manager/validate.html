@@ -113,44 +113,48 @@
 		                console.log(data);            //data.row holds the underlying row you supplied.
 		            },
 		            //----------------基本restful地址---
-		            restbase: '/t_admin_operator',
+		            restbase: '/procdef',
 		            //---------------行定义
 		            coldefs: [
 		                        {      
-		                            col:"username",
-		                            friendly: "用户ID",
+		                            col:"defid",
+		                            friendly: "定义ID",
 		                            unique: true,
 		                            readonly:"readonly",  
 		                            // default_value: "aa",
 		                            // sortOrder: "asc", //Data will initially be sorted by this column. Possible are "asc" or "desc"
 		                        },
 		                        {
-		                            col:"realname",
-		                            friendly: "用户名",
+		                            col:"defname",
+		                            friendly: "定义名",
 		                        },
 		                        {
-		                            col:"rolecode",
-		                            friendly: "角色代码",
-		                            inputsource: "select",
+		                            col:"version",
+		                            friendly: "版本",
+		                            
 		                        },
 		                        {
-		                            col:"status", 
-		                            friendly: "状态",
+		                            col:"packages", 
+		                            friendly: "包名",
 		                            type: "string",
 		                        },
-		                        {
-		                            col:"lastdate",
-		                            friendly: "最后登录时间",
-		                            //nonedit: "nosend",
+		                         {
+		                            col:"subelements",
+		                            friendly: "子流程",
 		                        },
 		                        {
-		                            col:"createdate",
+		                            col:"createtime",
 		                            friendly: "创建时间",
 		                            format:newCreateDate,
-		                            //nonedit: 1,
-		                            
-		                            nonedit: "nosend",
-		                        }
+		                            inputsource:"datepicker"
+		                        },
+		                        {
+		                            col:"xmlbody",
+		                            friendly: "XML内容",
+		                            hidden:true
+		                            //nonedit: "nosend",
+		                        },
+		                       
 			                ],
 		            //---------------查询时过滤条件
 		            findFilter: function(){//find function

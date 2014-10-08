@@ -7,7 +7,7 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies for mcs#mcs_2.11;1.0-SNAPSHOT [compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies mcs#mcs_2.11;1.0-SNAPSHOT->org.scala-lang#scala-library;2.11.1 [compile->default(compile)][0m
 [0m[[0minfo[0m] [0mResolving org.scala-lang#scala-library;2.11.1 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@11f6837c[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@5f02929a[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.scala-lang#scala-library;2.11.1[0m
 [0m[[0mdebug[0m] [0m	local: revision in cache: org.scala-lang#scala-library;2.11.1[0m
 [0m[[0mdebug[0m] [0m	found org.scala-lang#scala-library;2.11.1 in sbt-chain[0m
@@ -10940,8 +10940,6 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies mcs#mcs_2.11;1.0-SNAPSHOT->com.typesafe.trace#trace-sigar-libs;0.1.6 [echo-sigar->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies mcs#mcs_2.11;1.0-SNAPSHOT->com.typesafe.trace#trace-sigar-libs;0.1.6 [echo-sigar->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies mcs#mcs_2.11;1.0-SNAPSHOT->com.typesafe.trace#trace-sigar-libs;0.1.6 [echo-sigar->master][0m
-[0m[[0mdebug[0m] [0mcircular dependency found: org.scala-lang.modules#scala-xml_2.11;1.0.1->org.scala-lang#scala-compiler;2.11.0->...[0m
-[0m[[0mdebug[0m] [0mcircular dependency found: org.scala-lang.modules#scala-xml_2.11;1.0.2->org.scala-lang#scala-compiler;2.11.1->...[0m
 [0m[[0mdebug[0m] [0mall callers are evicted for com.google.code.findbugs#jsr305;1.3.9: evicting too[0m
 [0m[[0mdebug[0m] [0mall callers are evicted for com.google.code.findbugs#jsr305;1.3.9: evicting too[0m
 [0m[[0mdebug[0m] [0mall callers are evicted for com.google.code.findbugs#jsr305;1.3.9: evicting too[0m
@@ -11116,7 +11114,7 @@
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] log4j#log4j;1.2.15!log4j.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.aspectj#aspectjweaver;1.7.3!aspectjweaver.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.typesafe.trace#trace-sigar-libs;0.1.6!trace-sigar-libs.jar[0m
-[0m[[0mdebug[0m] [0m:: resolution report :: resolve 4305ms :: artifacts dl 48ms[0m
+[0m[[0mdebug[0m] [0m:: resolution report :: resolve 2961ms :: artifacts dl 45ms[0m
 [0m[[0mdebug[0m] [0m	report for mcs#mcs_2.11;1.0-SNAPSHOT compile produced in /home/brew/git/npe/mcs/target/resolution-cache/reports/mcs-mcs_2.11-compile.xml[0m
 [0m[[0mdebug[0m] [0m	report for mcs#mcs_2.11;1.0-SNAPSHOT runtime produced in /home/brew/git/npe/mcs/target/resolution-cache/reports/mcs-mcs_2.11-runtime.xml[0m
 [0m[[0mdebug[0m] [0m	report for mcs#mcs_2.11;1.0-SNAPSHOT test produced in /home/brew/git/npe/mcs/target/resolution-cache/reports/mcs-mcs_2.11-test.xml[0m
@@ -11129,11 +11127,10 @@
 [0m[[0mdebug[0m] [0m	report for mcs#mcs_2.11;1.0-SNAPSHOT sources produced in /home/brew/git/npe/mcs/target/resolution-cache/reports/mcs-mcs_2.11-sources.xml[0m
 [0m[[0mdebug[0m] [0m	report for mcs#mcs_2.11;1.0-SNAPSHOT docs produced in /home/brew/git/npe/mcs/target/resolution-cache/reports/mcs-mcs_2.11-docs.xml[0m
 [0m[[0mdebug[0m] [0m	report for mcs#mcs_2.11;1.0-SNAPSHOT pom produced in /home/brew/git/npe/mcs/target/resolution-cache/reports/mcs-mcs_2.11-pom.xml[0m
-[0m[[0mdebug[0m] [0mcircular dependency found: org.scala-lang#scala-compiler;2.11.1->org.scala-lang.modules#scala-xml_2.11;1.0.2->...[0m
 [0m[[0mdebug[0m] [0m	report for mcs#mcs_2.11;1.0-SNAPSHOT scala-tool produced in /home/brew/git/npe/mcs/target/resolution-cache/reports/mcs-mcs_2.11-scala-tool.xml[0m
 [0m[[0mdebug[0m] [0m	report for mcs#mcs_2.11;1.0-SNAPSHOT echo-trace-compile produced in /home/brew/git/npe/mcs/target/resolution-cache/reports/mcs-mcs_2.11-echo-trace-compile.xml[0m
 [0m[[0mdebug[0m] [0m	report for mcs#mcs_2.11;1.0-SNAPSHOT echo-trace-test produced in /home/brew/git/npe/mcs/target/resolution-cache/reports/mcs-mcs_2.11-echo-trace-test.xml[0m
 [0m[[0mdebug[0m] [0m	report for mcs#mcs_2.11;1.0-SNAPSHOT echo-weave produced in /home/brew/git/npe/mcs/target/resolution-cache/reports/mcs-mcs_2.11-echo-weave.xml[0m
 [0m[[0mdebug[0m] [0m	report for mcs#mcs_2.11;1.0-SNAPSHOT echo-sigar produced in /home/brew/git/npe/mcs/target/resolution-cache/reports/mcs-mcs_2.11-echo-sigar.xml[0m
-[0m[[0mdebug[0m] [0m	resolve done (4305ms resolve - 48ms download)[0m
+[0m[[0mdebug[0m] [0m	resolve done (2961ms resolve - 45ms download)[0m
 [0m[[0minfo[0m] [0mDone updating.[0m

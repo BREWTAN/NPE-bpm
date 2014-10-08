@@ -186,7 +186,7 @@ trait SimpleDAO[T] extends AsyncDBPool {
   }
   def exec(query: String, values: Seq[Any] = List())(implicit f: DBResult => Unit = null, noexec: Boolean = false): Future[QueryResult] = {
     log.info("exec:" + query + ",obj=" + values)
-
+    println("exxc=="+query)
     if (noexec) return Future { new QueryResultWithArray(values, 0L, query) }
 
     val result = pool.sendPreparedStatement(query, values)
@@ -234,7 +234,7 @@ trait SimpleDAO[T] extends AsyncDBPool {
     ("SELECT ") + fields.map({ _.getName() }).mkString(",") + " from " + tablename;
   }
   private def CountString: String = {
-    "SELECT COUNT(1)  as __count FROM " + tablename;
+    "SELECT COUNT(1) FROM " + tablename;
   }
 
   private def rangeStr(range: Range): String = {
@@ -252,7 +252,7 @@ trait SimpleDAO[T] extends AsyncDBPool {
       fields.filter(_.get(bean) != null).map({ _.getName() }).mkString("", "=(?) AND ", "=(?) ")
   }
   private def CountByCond(cond: String): String = {
-    "SELECT COUNT(1) as __count from " + tablename + " WHERE " + cond
+    "SELECT COUNT(1) from " + tablename + " WHERE " + cond
   }
 
   private lazy val InsertOrUpdate: String = {

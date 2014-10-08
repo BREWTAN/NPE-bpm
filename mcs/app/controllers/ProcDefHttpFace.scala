@@ -34,8 +34,25 @@ object ProcDefHttpFace extends Controller {
       rows <- ProcDefDAO.findAll(Range(skip, limit))
     } yield (total, rows)
 
-    results.map({ f=>
-       Ok("getPage At:" + f)
+    results.map({ f =>
+      val jsonRet = Json.obj("total_rows" -> f._1.get,
+        "count" -> f._2.rowsAffected,
+        "fromRow" -> skip,
+        "limit" -> limit,
+        "rows" -> f._2.rows.map({ rs =>
+          rs.map({ row =>
+            Json.obj("defid" -> row("defid").asInstanceOf[String],
+              "defname" -> row("defname").asInstanceOf[String],
+              "version" -> row("version").asInstanceOf[String],
+              "packages" -> row("packages").asInstanceOf[String],
+              "xmlbody" -> row("xmlbody").asInstanceOf[String],
+              "subelements" -> row("subelements").asInstanceOf[String],
+              "createtime" -> row("createtime").asInstanceOf[String])
+          })
+        }))
+
+      Ok(jsonRet)
+
     })
     //     result.map { qr =>
     //        Ok("getPage At:" + qr)

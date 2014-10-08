@@ -7,7 +7,7 @@
 		revision="1.0-SNAPSHOT"
 		conf="runtime-internal"
 		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool, echo-trace-compile, echo-trace-test, echo-weave, echo-sigar"
-		date="20141009013558"/>
+		date="20141009031716"/>
 	<dependencies>
 		<module organisation="com.github.mauricio" name="mysql-async_2.11">
 			<revision name="0.2.14" status="release" pubdate="20140830115118" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/mauricio/postgresql-async" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="71">
@@ -68,7 +68,7 @@
 			</revision>
 		</module>
 		<module organisation="net.sf.ehcache" name="ehcache">
-			<revision name="2.8.3" status="release" pubdate="20141009013600" resolver="local" artresolver="local" downloaded="false" searched="true" default="true" conf="default(compile), default" position="68">
+			<revision name="2.8.3" status="release" pubdate="20141009031717" resolver="local" artresolver="local" downloaded="false" searched="true" default="true" conf="default(compile), default" position="68">
 				<metadata-artifact status="no" details="" size="0" time="0" location="/home/brew/.ivy2/cache/net.sf.ehcache/ehcache/ivy-2.8.3.xml" searched="true"/>
 				<caller organisation="mcs" name="mcs_2.11" conf="optional, compile, runtime, runtime-internal" rev="2.8.3" rev-constraint-default="2.8.3" rev-constraint-dynamic="2.8.3" callerrev="1.0-SNAPSHOT"/>
 				<artifacts>
