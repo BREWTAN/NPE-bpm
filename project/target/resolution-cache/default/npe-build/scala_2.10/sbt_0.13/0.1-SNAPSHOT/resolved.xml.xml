@@ -4,7 +4,7 @@
 		module="npe-build"
 		revision="0.1-SNAPSHOT"
 		status="integration"
-		publication="20141004075023"
+		publication="20141008201001"
 		e:scalaVersion="2.10" e:sbtVersion="0.13"
 	>
 		<description>

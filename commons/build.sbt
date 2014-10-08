@@ -1,3 +1,6 @@
+
+organization := "org.nights.npe"
+
 name := """commons"""
 
 version := "1.0.0"

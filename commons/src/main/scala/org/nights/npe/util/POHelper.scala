@@ -107,6 +107,7 @@ object POHelper {
 
   def ParseProcess(xmlnode: Node): Process = {
     implicit val proc = new Process(ele(xmlnode))
+    proc.xmlBody = xmlnode.toString
     xmlnode.child.foreach { implicit child =>
       val result = parse;
       result match {

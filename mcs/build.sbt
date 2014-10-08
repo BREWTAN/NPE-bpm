@@ -20,7 +20,7 @@ libraryDependencies += "com.typesafe.akka" %% "akka-contrib" % "2.3.5"
 
 libraryDependencies += "com.typesafe.akka" %% "akka-slf4j" % "2.3.5"
 
-libraryDependencies += "org.nights.npe" %% "npecommon" % "1.0.0"	
+libraryDependencies += "org.nights.npe" %% "commons" % "1.0.0"	
 
 libraryDependencies ++= Seq(
   jdbc,

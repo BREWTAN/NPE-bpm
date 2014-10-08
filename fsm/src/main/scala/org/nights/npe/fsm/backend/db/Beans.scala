@@ -12,7 +12,16 @@ class Beans {
 
 case class KOParams(val keyy: String, val valuee: String)
 
-case class KOProcdef(val keyy: String, val jsonbody: String)
+case class KOProcdef(
+  val defid: String = null, 
+  val defname: String = null, 
+  val version: String = null, 
+  val packages: String = null, 
+  val xmlbody: String = null,  
+  val subelements: String = null, 
+  val createtime: Option[Long] = null)
+  
+case class KOProcdefCounter(val __count:Option[Long]) 
 
 case class KOTasks(val taskinstid: String, // varchar(32) not null,
   val procdefid: String = null, // varchar(32) not null,

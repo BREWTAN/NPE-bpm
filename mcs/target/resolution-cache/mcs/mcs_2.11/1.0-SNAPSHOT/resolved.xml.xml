@@ -4,7 +4,7 @@
 		module="mcs_2.11"
 		revision="1.0-SNAPSHOT"
 		status="integration"
-		publication="20141008044818"
+		publication="20141009013558"
 	>
 		<description>
 		mcs
@@ -49,7 +49,7 @@
 		<dependency org="com.typesafe.akka" name="akka-cluster_2.11" rev="2.3.5" conf="compile->default(compile)"/>
 		<dependency org="com.typesafe.akka" name="akka-contrib_2.11" rev="2.3.5" conf="compile->default(compile)"/>
 		<dependency org="com.typesafe.akka" name="akka-slf4j_2.11" rev="2.3.5" conf="compile->default(compile)"/>
-		<dependency org="org.nights.npe" name="npecommon_2.11" rev="1.0.0" conf="compile->default(compile)"/>
+		<dependency org="org.nights.npe" name="commons_2.11" rev="1.0.0" conf="compile->default(compile)"/>
 		<dependency org="com.typesafe.play" name="play-jdbc_2.11" rev="2.3.3" conf="compile->default(compile)"/>
 		<dependency org="com.typesafe.play" name="anorm_2.11" rev="2.3.3" conf="compile->default(compile)"/>
 		<dependency org="com.typesafe.play" name="play-cache_2.11" rev="2.3.3" conf="compile->default(compile)"/>

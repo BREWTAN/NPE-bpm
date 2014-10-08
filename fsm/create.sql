@@ -6,7 +6,6 @@ DROP TABLE IF EXISTS procdef;
 CREATE TABLE procdef (
   defid VARCHAR(48) NOT NULL,
   defname VARCHAR(64),
-  topid VARCHAR(48),
   version VARCHAR(64),
   packages VARCHAR(64),
   xmlbody LONGTEXT NULL,

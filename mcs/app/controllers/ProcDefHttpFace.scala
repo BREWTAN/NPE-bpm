@@ -2,7 +2,13 @@ package controllers
 
 import java.io.FileInputStream
 import scala.concurrent.ExecutionContext
+import scala.concurrent.Future
+import org.nights.npe.fsm.backend.db.KOProcdef
+import org.nights.npe.fsm.backend.db.ProcDefDAO
+import org.nights.npe.fsm.backend.db.Range
+import org.nights.npe.po.Definition.CallActivity
 import org.nights.npe.util.POHelper
+import com.github.mauricio.async.db.QueryResult
 import akka.actor.actorRef2Scala
 import play.api.libs.json.JsArray
 import play.api.libs.json.Json
@@ -11,11 +17,7 @@ import play.api.mvc.Action
 import play.api.mvc.Controller
 import play.api.mvc.Result
 import play.libs.Akka
-import org.nights.npe.fsm.backend.db.ProcDefDAO
-import org.nights.npe.fsm.backend.db.Range
-import com.github.mauricio.async.db.QueryResult
-import scala.concurrent.Future
-import play.mvc.SimpleResult
+import scala.util.Success
 
 object ProcDefHttpFace extends Controller {
 
@@ -27,11 +29,33 @@ object ProcDefHttpFace extends Controller {
   }
 
   def getByPage(skip: Int, limit: Int) = Action.async { request =>
-    val result = ProcDefDAO.findAll(Range(skip, limit))
-    result.map { qr =>
-        Ok("getPage At:" + qr)
-    }
+    val results = for {
+      total <- ProcDefDAO.countAll
+      rows <- ProcDefDAO.findAll(Range(skip, limit))
+    } yield (total, rows)
 
+    results.map({ f=>
+       Ok("getPage At:" + f)
+    })
+    //     result.map { qr =>
+    //        Ok("getPage At:" + qr)
+    //      }
+    //    totalf.andThen {
+    //      case Success(Some(r)) =>
+    //      case _ =>
+    //        Ok("kkk")
+    //    }
+
+  }
+
+  def validate() = Action.async { request =>
+    val result = ProcDefDAO.findAll()
+    result.map { qr =>
+      qr.rows.map(_.asInstanceOf[KOProcdef]).map { ko =>
+        println(ko.xmlbody)
+      }
+      Ok("getPage At:" + qr)
+    }
   }
 
   def upload = Action(parse.multipartFormData) { request =>
@@ -53,6 +77,18 @@ object ProcDefHttpFace extends Controller {
             "delete_type" -> "DELETE",
             "type" -> "xml/text",
             "size" -> filesize));
+
+          val procdef = KOProcdef(
+            process.id,
+            process.taskName,
+            process.Version,
+            process.Package,
+            process.xmlBody,
+            process.nodes.filter(_._2.isInstanceOf[CallActivity]).mapValues(_.asInstanceOf[CallActivity].calledElement).values.mkString(","),
+            Some(System.currentTimeMillis()));
+
+          ProcDefDAO.insert(procdef)
+
         } else {
           ret = ret.+:(Json.obj("name" -> f.filename,
             "size" -> filesize,

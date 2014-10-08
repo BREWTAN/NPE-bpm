@@ -20,3 +20,16 @@ eclipse
 run
 compile
 run
+ls
+eclipse
+run last *:update
+reload
+run last *:update
+exit
+eclipse
+reload
+eclipse
+run
+reload
+eclipse
+run

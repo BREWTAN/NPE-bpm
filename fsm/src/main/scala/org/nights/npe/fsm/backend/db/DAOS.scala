@@ -12,8 +12,15 @@ object ProcDefDAO extends SimpleDAO[KOProcdef] {
   val ttag = classTag[KOProcdef];
   val tablename = "procdef";
   val keyname = "defid"
-
 }
+
+
+object ProcDefCounterDAO extends SimpleDAO[KOProcdefCounter] {
+  val ttag = classTag[KOProcdefCounter];
+  val tablename = "procdef";
+  val keyname = "defid"
+}
+
 
 object TasksDAO extends SimpleDAO[KOTasks] {
   val ttag = classTag[KOTasks];

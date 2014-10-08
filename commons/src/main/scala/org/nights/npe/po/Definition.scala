@@ -32,7 +32,8 @@ object Definition {
     val nodes: HashMap[String, _Node] = HashMap.empty,
     val parseError: MutableList[String] = MutableList.empty,
     var endNodesCount: Int=0, 
-    val flows: MutableList[SequenceFlow] = MutableList.empty) extends _Node {
+    val flows: MutableList[SequenceFlow] = MutableList.empty,
+    var xmlBody :String = null) extends _Node {
 
     def getNode(key: String): _Node = nodes.getOrElse(key, NoneNode.asInstanceOf[_Node])
 

@@ -1,20 +1,24 @@
 package org.nights.npe.fsm.backend.db
 
 import java.lang.reflect.Field
+
 import scala.collection.mutable.ArrayBuffer
 import scala.collection.mutable.ListBuffer
+import scala.concurrent.ExecutionContext
 import scala.concurrent.ExecutionContext.Implicits.global
 import scala.concurrent.Future
 import scala.reflect.ClassTag
 import scala.util.Failure
 import scala.util.Success
+
 import org.slf4j.LoggerFactory
+
+import com.github.mauricio.async.db.Connection
 import com.github.mauricio.async.db.QueryResult
 import com.github.mauricio.async.db.QueryResult
 import com.github.mauricio.async.db.ResultSet
+
 import akka.util.Timeout
-import scala.concurrent.ExecutionContext
-import com.github.mauricio.async.db.Connection
 
 case class DBResult(t: Any)
 case class Range(offset: Int, limit: Int)
@@ -53,7 +57,7 @@ trait SimpleDAO[T] extends AsyncDBPool {
       case Some(rs) =>
         for (row <- queryResult.rows.head) ret.append({
           val map = fields.map({ field =>
-            //            println("FF:" + field.getName() + ",=>" + row(field.getName()) + ",type=" + row(field.getName()).getClass)
+            println("FF:" + field.getName() + ",=>" + row(field.getName()) + ",dbtype=" + row(field.getName()).getClass + ",classtype=" + field.getType())
             if (row(field.getName()) == null) {
               null
             } else {
@@ -61,7 +65,7 @@ trait SimpleDAO[T] extends AsyncDBPool {
               //              println("FF:" + field.getName() +"("+ field.getType()+")"+ ",=>" + row(field.getName())+",type="+row(field.getName()).getClass)
               if (field.getType() == classOf[String]) {
                 row(field.getName()).asInstanceOf[String]
-              } else if (field.getType() == classOf[Option[Int]]) {
+              } else if (field.getType() == classOf[Option[Int]] && row(field.getName()).isInstanceOf[java.lang.Integer]) {
                 row(field.getName()) match {
                   case str: String =>
                     Some(str.toLong)
@@ -69,9 +73,9 @@ trait SimpleDAO[T] extends AsyncDBPool {
                     Some(a.asInstanceOf[Int])
                 }
 
-              } else if (field.getType() == classOf[Option[Float]]) {
+              } else if (field.getType() == classOf[Option[Float]] && row(field.getName()).isInstanceOf[java.lang.Float]) {
                 Option(row(field.getName()).asInstanceOf[Float])
-              } else if (field.getType() == classOf[Option[Long]]) {
+              } else if (field.getType() == classOf[Option[Long]] && row(field.getName()).isInstanceOf[java.lang.Long]) {
                 Option(row(field.getName()).asInstanceOf[Long])
               } else {
                 row(field.getName()).asInstanceOf[String]
@@ -167,6 +171,19 @@ trait SimpleDAO[T] extends AsyncDBPool {
     field.get(bean) != null && field.getName() != keyname
   })
 
+  def getInt(queryResultO: Option[QueryResult]): Int = {
+    queryResultO match {
+      case Some(queryResult) =>
+        queryResult.rows match {
+          case Some(rs) =>
+            queryResult.rows.head(0).asInstanceOf[Int]
+          case _ =>
+            -1
+        }
+      case _ => -1
+    }
+
+  }
   def exec(query: String, values: Seq[Any] = List())(implicit f: DBResult => Unit = null, noexec: Boolean = false): Future[QueryResult] = {
     log.info("exec:" + query + ",obj=" + values)
 
@@ -182,7 +199,7 @@ trait SimpleDAO[T] extends AsyncDBPool {
         case Failure(failure) => f(DBResult(failure))
       }
     } else {
-      //       val ff=Await.result(result, timeout.duration);
+      //      val ff = Await.result(result, timeout.duration);
 
     }
     return result
@@ -200,7 +217,7 @@ trait SimpleDAO[T] extends AsyncDBPool {
         case Failure(failure) => f(DBResult(failure))
       }
     } else {
-      //       val ff=Await.result(result, timeout.duration);
+      //      val ff = Await.result(result, timeout.duration);
 
     }
     return result
@@ -216,6 +233,9 @@ trait SimpleDAO[T] extends AsyncDBPool {
   private def SelectString: String = {
     ("SELECT ") + fields.map({ _.getName() }).mkString(",") + " from " + tablename;
   }
+  private def CountString: String = {
+    "SELECT COUNT(1)  as __count FROM " + tablename;
+  }
 
   private def rangeStr(range: Range): String = {
     if (range == null) ""
@@ -230,6 +250,9 @@ trait SimpleDAO[T] extends AsyncDBPool {
   private def SelectByCond(bean: T): String = {
     ("SELECT ") + fields.map({ _.getName() }).mkString(",") + " from " + tablename + " WHERE " +
       fields.filter(_.get(bean) != null).map({ _.getName() }).mkString("", "=(?) AND ", "=(?) ")
+  }
+  private def CountByCond(cond: String): String = {
+    "SELECT COUNT(1) as __count from " + tablename + " WHERE " + cond
   }
 
   private lazy val InsertOrUpdate: String = {
@@ -305,6 +328,18 @@ trait SimpleDAO[T] extends AsyncDBPool {
 
   def findAll(range: Range = null)(implicit f: DBResult => Unit = null, noexec: Boolean = false): Future[QueryResult] = exec(SelectString + rangeStr(range))(f, noexec)
 
+  def countAll(): Future[Option[Long]] = exec(CountString).map({ result =>
+    result.rows.map({ row =>
+      row.head(0).asInstanceOf[Long]
+    })
+  })
+
+  def countByCond(cond: String): Future[Option[Long]] = exec(CountByCond(cond)).map({ result =>
+    result.rows.map({ row =>
+      row.head(0).asInstanceOf[Long]
+    })
+  })
+  
   def hb() = exec("SELECT " + keyname + " FROM " + tablename + " LIMIT 1")
 
   import reflect.runtime.universe._
@@ -321,9 +356,9 @@ trait SimpleDAO[T] extends AsyncDBPool {
   }
   def execList(fs: List[QueryResult], i: Int, c: Connection): Future[QueryResult] = {
     if (i < fs.size - 1)
-      execListSub(fs(i),c).flatMap(r => execList(fs, i + 1, c))
+      execListSub(fs(i), c).flatMap(r => execList(fs, i + 1, c))
     else
-      execListSub(fs(i),c)
+      execListSub(fs(i), c)
   }
 
   def execInBatch(fs: List[QueryResult])(implicit executionContext: ExecutionContext): Future[QueryResult] = {

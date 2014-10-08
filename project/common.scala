@@ -21,7 +21,7 @@ lazy val publishM2 =
   
   lazy val publishTo = Resolver.file("Local", Path.userHome / ".m2" / "repository" asFile)
   
- val organization = "org.nights.npe"
+ // val organization = "org.nights.npe"
 
 
 }

@@ -1,16 +1,18 @@
 package org.nights.npe.fsm.backend.db
+trait Countable {
+	val __count:Option[Int] = null
+}
 
-case class KOParams(val keyy: String, val valuee: String)
+case class KOParams(val keyy: String, val valuee: String) extends Countable
 
 case class KOProcdef(
   val defid: String = null, 
   val defname: String = null, 
-  val topid: String = null, 
   val version: String = null, 
   val packages: String = null, 
   val xmlbody: String = null, 
   val subelements: String = null, 
-  val createtime: Option[Long] = null)
+  val createtime: Option[Long] = null) extends Countable
 
 case class KOTasks(val taskinstid: String, // varchar(32) not null,
   val procdefid: String = null, // varchar(32) not null,
@@ -33,7 +35,7 @@ case class KOTasks(val taskinstid: String, // varchar(32) not null,
   val jsondata: String = null,
   val submitter: String = null,
   val submittime: Option[Float] = null,
-  val createtime: Option[Long] = Some(System.currentTimeMillis()))
+  val createtime: Option[Long] = Some(System.currentTimeMillis())) extends Countable
 
 
   

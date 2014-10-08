@@ -1,6 +1,6 @@
-// @SOURCE:/Users/brew/NPE/gits/mcs/conf/routes
+// @SOURCE:/home/brew/git/npe/mcs/conf/routes
 // @HASH:64fc91812493b70d9acfd4f99838e07ce97a4593
-// @DATE:Wed Oct 08 09:52:48 GMT 2014
+// @DATE:Thu Oct 09 00:26:48 CST 2014
 
 import Routes.{prefix => _prefix, defaultPrefix => _defaultPrefix}
 import play.core._
