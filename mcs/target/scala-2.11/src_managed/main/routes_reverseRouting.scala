@@ -1,6 +1,6 @@
 // @SOURCE:/Users/brew/NPE/gits/mcs/conf/routes
-// @HASH:64fc91812493b70d9acfd4f99838e07ce97a4593
-// @DATE:Thu Oct 09 03:21:56 GMT 2014
+// @HASH:788d8f4bcd0ebece1e04faef1636a29913ff15d7
+// @DATE:Thu Oct 09 10:34:50 GMT 2014
 
 import Routes.{prefix => _prefix, defaultPrefix => _defaultPrefix}
 import play.core._
@@ -14,6 +14,9 @@ import _root_.controllers.Assets.Asset
 import Router.queryString
 
 
+// @LINE:34
+// @LINE:32
+// @LINE:30
 // @LINE:28
 // @LINE:24
 // @LINE:21
@@ -65,18 +68,14 @@ def getJson(): Call = {
 }
                           
 
+// @LINE:34
+// @LINE:32
+// @LINE:30
 // @LINE:28
 // @LINE:24
 // @LINE:21
 class ReverseProcDefHttpFace {
 
-
-// @LINE:28
-def getByPage(skip:Int = 0, limit:Int = 10): Call = {
-   import ReverseRouteContext.empty
-   Call("GET", _prefix + { _defaultPrefix } + "procdef" + queryString(List(if(skip == 0) None else Some(implicitly[QueryStringBindable[Int]].unbind("skip", skip)), if(limit == 10) None else Some(implicitly[QueryStringBindable[Int]].unbind("limit", limit)))))
-}
-                        
 
 // @LINE:24
 def upload(): Call = {
@@ -85,10 +84,38 @@ def upload(): Call = {
 }
                         
 
+// @LINE:28
+def getByPage(skip:Int = 0, limit:Int = 10): Call = {
+   import ReverseRouteContext.empty
+   Call("GET", _prefix + { _defaultPrefix } + "procdef" + queryString(List(if(skip == 0) None else Some(implicitly[QueryStringBindable[Int]].unbind("skip", skip)), if(limit == 10) None else Some(implicitly[QueryStringBindable[Int]].unbind("limit", limit)))))
+}
+                        
+
 // @LINE:21
 def test(): Call = {
    import ReverseRouteContext.empty
    Call("GET", _prefix + { _defaultPrefix } + "uploadtest")
+}
+                        
+
+// @LINE:32
+def delete(defid:String): Call = {
+   import ReverseRouteContext.empty
+   Call("DELETE", _prefix + { _defaultPrefix } + "procdef/" + implicitly[PathBindable[String]].unbind("defid", dynamicString(defid)))
+}
+                        
+
+// @LINE:34
+def update(defid:String): Call = {
+   import ReverseRouteContext.empty
+   Call("PUT", _prefix + { _defaultPrefix } + "procdef/" + implicitly[PathBindable[String]].unbind("defid", dynamicString(defid)))
+}
+                        
+
+// @LINE:30
+def validate(): Call = {
+   import ReverseRouteContext.empty
+   Call("GET", _prefix + { _defaultPrefix } + "procdef/check")
 }
                         
 
@@ -112,6 +139,9 @@ def index(): Call = {
                   
 
 
+// @LINE:34
+// @LINE:32
+// @LINE:30
 // @LINE:28
 // @LINE:24
 // @LINE:21
@@ -176,22 +206,14 @@ def getJson : JavascriptReverseRoute = JavascriptReverseRoute(
 }
               
 
+// @LINE:34
+// @LINE:32
+// @LINE:30
 // @LINE:28
 // @LINE:24
 // @LINE:21
 class ReverseProcDefHttpFace {
 
-
-// @LINE:28
-def getByPage : JavascriptReverseRoute = JavascriptReverseRoute(
-   "controllers.ProcDefHttpFace.getByPage",
-   """
-      function(skip,limit) {
-      return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "procdef" + _qS([(skip == null ? null : (""" + implicitly[QueryStringBindable[Int]].javascriptUnbind + """)("skip", skip)), (limit == null ? null : (""" + implicitly[QueryStringBindable[Int]].javascriptUnbind + """)("limit", limit))])})
-      }
-   """
-)
-                        
 
 // @LINE:24
 def upload : JavascriptReverseRoute = JavascriptReverseRoute(
@@ -204,12 +226,56 @@ def upload : JavascriptReverseRoute = JavascriptReverseRoute(
 )
                         
 
+// @LINE:28
+def getByPage : JavascriptReverseRoute = JavascriptReverseRoute(
+   "controllers.ProcDefHttpFace.getByPage",
+   """
+      function(skip,limit) {
+      return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "procdef" + _qS([(skip == null ? null : (""" + implicitly[QueryStringBindable[Int]].javascriptUnbind + """)("skip", skip)), (limit == null ? null : (""" + implicitly[QueryStringBindable[Int]].javascriptUnbind + """)("limit", limit))])})
+      }
+   """
+)
+                        
+
 // @LINE:21
 def test : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.ProcDefHttpFace.test",
    """
       function() {
       return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "uploadtest"})
+      }
+   """
+)
+                        
+
+// @LINE:32
+def delete : JavascriptReverseRoute = JavascriptReverseRoute(
+   "controllers.ProcDefHttpFace.delete",
+   """
+      function(defid) {
+      return _wA({method:"DELETE", url:"""" + _prefix + { _defaultPrefix } + """" + "procdef/" + (""" + implicitly[PathBindable[String]].javascriptUnbind + """)("defid", encodeURIComponent(defid))})
+      }
+   """
+)
+                        
+
+// @LINE:34
+def update : JavascriptReverseRoute = JavascriptReverseRoute(
+   "controllers.ProcDefHttpFace.update",
+   """
+      function(defid) {
+      return _wA({method:"PUT", url:"""" + _prefix + { _defaultPrefix } + """" + "procdef/" + (""" + implicitly[PathBindable[String]].javascriptUnbind + """)("defid", encodeURIComponent(defid))})
+      }
+   """
+)
+                        
+
+// @LINE:30
+def validate : JavascriptReverseRoute = JavascriptReverseRoute(
+   "controllers.ProcDefHttpFace.validate",
+   """
+      function() {
+      return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "procdef/check"})
       }
    """
 )
@@ -239,6 +305,9 @@ def index : JavascriptReverseRoute = JavascriptReverseRoute(
         
 
 
+// @LINE:34
+// @LINE:32
+// @LINE:30
 // @LINE:28
 // @LINE:24
 // @LINE:21
@@ -288,17 +357,14 @@ def getJson(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
 }
                           
 
+// @LINE:34
+// @LINE:32
+// @LINE:30
 // @LINE:28
 // @LINE:24
 // @LINE:21
 class ReverseProcDefHttpFace {
 
-
-// @LINE:28
-def getByPage(skip:Int, limit:Int): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
-   controllers.ProcDefHttpFace.getByPage(skip, limit), HandlerDef(this.getClass.getClassLoader, "", "controllers.ProcDefHttpFace", "getByPage", Seq(classOf[Int], classOf[Int]), "GET", """# rest for procdef""", _prefix + """procdef""")
-)
-                      
 
 // @LINE:24
 def upload(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
@@ -306,9 +372,33 @@ def upload(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
 )
                       
 
+// @LINE:28
+def getByPage(skip:Int, limit:Int): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.ProcDefHttpFace.getByPage(skip, limit), HandlerDef(this.getClass.getClassLoader, "", "controllers.ProcDefHttpFace", "getByPage", Seq(classOf[Int], classOf[Int]), "GET", """# rest for procdef""", _prefix + """procdef""")
+)
+                      
+
 // @LINE:21
 def test(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.ProcDefHttpFace.test(), HandlerDef(this.getClass.getClassLoader, "", "controllers.ProcDefHttpFace", "test", Seq(), "GET", """""", _prefix + """uploadtest""")
+)
+                      
+
+// @LINE:32
+def delete(defid:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.ProcDefHttpFace.delete(defid), HandlerDef(this.getClass.getClassLoader, "", "controllers.ProcDefHttpFace", "delete", Seq(classOf[String]), "DELETE", """""", _prefix + """procdef/$defid<[^/]+>""")
+)
+                      
+
+// @LINE:34
+def update(defid:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.ProcDefHttpFace.update(defid), HandlerDef(this.getClass.getClassLoader, "", "controllers.ProcDefHttpFace", "update", Seq(classOf[String]), "PUT", """""", _prefix + """procdef/$defid<[^/]+>""")
+)
+                      
+
+// @LINE:30
+def validate(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.ProcDefHttpFace.validate(), HandlerDef(this.getClass.getClassLoader, "", "controllers.ProcDefHttpFace", "validate", Seq(), "GET", """""", _prefix + """procdef/check""")
 )
                       
 

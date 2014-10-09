@@ -17,7 +17,7 @@
 [0m[[0minfo[0m] [0mCompiling 31 Scala sources to /Users/brew/NPE/gits/fsm/target/scala-2.11/classes...[0m
 [0m[[0mdebug[0m] [0mGetting compiler-interface from component compiler for Scala 2.11.1[0m
 [0m[[0mdebug[0m] [0mGetting compiler-interface from component compiler for Scala 2.11.1[0m
-[0m[[0mdebug[0m] [0mRunning cached compiler 7385e6f7, interfacing (CompilerInterface) with Scala compiler version 2.11.1[0m
+[0m[[0mdebug[0m] [0mRunning cached compiler 3fb11af8, interfacing (CompilerInterface) with Scala compiler version 2.11.1[0m
 [0m[[0mdebug[0m] [0mCalling Scala compiler with arguments  (CompilerInterface):[0m
 [0m[[0mdebug[0m] [0m	-bootclasspath[0m
 [0m[[0mdebug[0m] [0m	/Library/Java/JavaVirtualMachines/jdk1.7.0_51.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_51.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_51.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_51.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_51.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_51.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_51.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_51.jdk/Contents/Home/jre/classes:/Users/brew/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.11.1.jar[0m
@@ -32,7 +32,7 @@
 [0m[[33mwarn[0m] [0mthere were 4 deprecation warning(s); re-run with -deprecation for details[0m
 [0m[[33mwarn[0m] [0mthere were 16 feature warning(s); re-run with -feature for details[0m
 [0m[[33mwarn[0m] [0mfour warnings found[0m
-[0m[[0mdebug[0m] [0mScala compilation took 15.115847 s[0m
+[0m[[0mdebug[0m] [0mScala compilation took 3.275792 s[0m
 [0m[[0mdebug[0m] [0mNew invalidations:[0m
 [0m[[0mdebug[0m] [0m	Set()[0m
 [0m[[0mdebug[0m] [0mInitial set of included nodes: Set()[0m

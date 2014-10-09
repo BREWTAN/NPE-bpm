@@ -8,8 +8,8 @@
 [0m[[0mdebug[0m] [0m	  /Users/brew/NPE/gits/commons/target/scala-2.11/classes/org/nights/npe/backend/db/SimpleDAO$$anonfun$bean2NoKeyArray$1.class[0m
 [0m[[0mdebug[0m] [0m	org/nights/npe/backend/db/SimpleDAO$$anonfun$bean2KeyArray$1.class[0m
 [0m[[0mdebug[0m] [0m	  /Users/brew/NPE/gits/commons/target/scala-2.11/classes/org/nights/npe/backend/db/SimpleDAO$$anonfun$bean2KeyArray$1.class[0m
-[0m[[0mdebug[0m] [0m	org/nights/npe/utils/ProcDefHelper$$anonfun$processDef$1.class[0m
-[0m[[0mdebug[0m] [0m	  /Users/brew/NPE/gits/commons/target/scala-2.11/classes/org/nights/npe/utils/ProcDefHelper$$anonfun$processDef$1.class[0m
+[0m[[0mdebug[0m] [0m	org/nights/npe/utils/ProcDefMap$$anonfun$checkIntegrity$1.class[0m
+[0m[[0mdebug[0m] [0m	  /Users/brew/NPE/gits/commons/target/scala-2.11/classes/org/nights/npe/utils/ProcDefMap$$anonfun$checkIntegrity$1.class[0m
 [0m[[0mdebug[0m] [0m	org/nights/npe/backend/db/ProcinstsDAO.class[0m
 [0m[[0mdebug[0m] [0m	  /Users/brew/NPE/gits/commons/target/scala-2.11/classes/org/nights/npe/backend/db/ProcinstsDAO.class[0m
 [0m[[0mdebug[0m] [0m	org/nights/npe/backend/db/KOProcdef.class[0m
@@ -98,6 +98,8 @@
 [0m[[0mdebug[0m] [0m	  /Users/brew/NPE/gits/commons/target/scala-2.11/classes/org/nights/npe/backend/db/SimpleDAO$$anonfun$UpdateCondString$2.class[0m
 [0m[[0mdebug[0m] [0m	org/nights/npe/backend/db/SimpleDAO$$anonfun$bean2KeyLastArray$1.class[0m
 [0m[[0mdebug[0m] [0m	  /Users/brew/NPE/gits/commons/target/scala-2.11/classes/org/nights/npe/backend/db/SimpleDAO$$anonfun$bean2KeyLastArray$1.class[0m
+[0m[[0mdebug[0m] [0m	org/nights/npe/utils/ProcDefMap$$anonfun$processDef$1.class[0m
+[0m[[0mdebug[0m] [0m	  /Users/brew/NPE/gits/commons/target/scala-2.11/classes/org/nights/npe/utils/ProcDefMap$$anonfun$processDef$1.class[0m
 [0m[[0mdebug[0m] [0m	org/nights/npe/backend/db/Range.class[0m
 [0m[[0mdebug[0m] [0m	  /Users/brew/NPE/gits/commons/target/scala-2.11/classes/org/nights/npe/backend/db/Range.class[0m
 [0m[[0mdebug[0m] [0m	org/nights/npe/backend/db/SimpleDAO$$anonfun$SelectString$1.class[0m
@@ -110,8 +112,6 @@
 [0m[[0mdebug[0m] [0m	  /Users/brew/NPE/gits/commons/target/scala-2.11/classes/org/nights/npe/utils[0m
 [0m[[0mdebug[0m] [0m	org/nights/npe/po/Definition$ANDDiverging$.class[0m
 [0m[[0mdebug[0m] [0m	  /Users/brew/NPE/gits/commons/target/scala-2.11/classes/org/nights/npe/po/Definition$ANDDiverging$.class[0m
-[0m[[0mdebug[0m] [0m	org/nights/npe/utils/ProcDefHelper$$anonfun$checkIntegrity$1$$anonfun$apply$1.class[0m
-[0m[[0mdebug[0m] [0m	  /Users/brew/NPE/gits/commons/target/scala-2.11/classes/org/nights/npe/utils/ProcDefHelper$$anonfun$checkIntegrity$1$$anonfun$apply$1.class[0m
 [0m[[0mdebug[0m] [0m	org/nights/npe/utils/POHelper$$anonfun$ParseProcess$2$$anonfun$1.class[0m
 [0m[[0mdebug[0m] [0m	  /Users/brew/NPE/gits/commons/target/scala-2.11/classes/org/nights/npe/utils/POHelper$$anonfun$ParseProcess$2$$anonfun$1.class[0m
 [0m[[0mdebug[0m] [0m	org/nights/npe/backend/db/KOObtainTasks.class[0m
@@ -134,8 +134,6 @@
 [0m[[0mdebug[0m] [0m	  /Users/brew/NPE/gits/commons/target/scala-2.11/classes/org/nights/npe/po/Definition$.class[0m
 [0m[[0mdebug[0m] [0m	org/nights/npe/backend/db/KO$.class[0m
 [0m[[0mdebug[0m] [0m	  /Users/brew/NPE/gits/commons/target/scala-2.11/classes/org/nights/npe/backend/db/KO$.class[0m
-[0m[[0mdebug[0m] [0m	org/nights/npe/utils/ProcDefHelper$$anonfun$checkIntegrity$1.class[0m
-[0m[[0mdebug[0m] [0m	  /Users/brew/NPE/gits/commons/target/scala-2.11/classes/org/nights/npe/utils/ProcDefHelper$$anonfun$checkIntegrity$1.class[0m
 [0m[[0mdebug[0m] [0m	org/nights/npe/backend/db/Range$.class[0m
 [0m[[0mdebug[0m] [0m	  /Users/brew/NPE/gits/commons/target/scala-2.11/classes/org/nights/npe/backend/db/Range$.class[0m
 [0m[[0mdebug[0m] [0m	org/nights/npe/po/Definition$SequenceFlow.class[0m
@@ -222,6 +220,8 @@
 [0m[[0mdebug[0m] [0m	  /Users/brew/NPE/gits/commons/target/scala-2.11/classes/org/nights/npe/backend/db/SimpleDAO$class.class[0m
 [0m[[0mdebug[0m] [0m	org/nights/npe/po/Definition$CallActivity$.class[0m
 [0m[[0mdebug[0m] [0m	  /Users/brew/NPE/gits/commons/target/scala-2.11/classes/org/nights/npe/po/Definition$CallActivity$.class[0m
+[0m[[0mdebug[0m] [0m	org/nights/npe/utils/ProcDefMap$$anonfun$checkIntegrity$1$$anonfun$apply$1.class[0m
+[0m[[0mdebug[0m] [0m	  /Users/brew/NPE/gits/commons/target/scala-2.11/classes/org/nights/npe/utils/ProcDefMap$$anonfun$checkIntegrity$1$$anonfun$apply$1.class[0m
 [0m[[0mdebug[0m] [0m	org/nights/npe/backend/db/InterState.class[0m
 [0m[[0mdebug[0m] [0m	  /Users/brew/NPE/gits/commons/target/scala-2.11/classes/org/nights/npe/backend/db/InterState.class[0m
 [0m[[0mdebug[0m] [0m	org/nights/npe/backend/db/ProcDefDAO$.class[0m
@@ -292,6 +292,8 @@
 [0m[[0mdebug[0m] [0m	  /Users/brew/NPE/gits/commons/target/scala-2.11/classes/org/nights/npe/backend/db/SimpleDAO$$anonfun$beans2Array$1$$anonfun$apply$5.class[0m
 [0m[[0mdebug[0m] [0m	org/nights/npe/backend/db/ADBPool$.class[0m
 [0m[[0mdebug[0m] [0m	  /Users/brew/NPE/gits/commons/target/scala-2.11/classes/org/nights/npe/backend/db/ADBPool$.class[0m
+[0m[[0mdebug[0m] [0m	org/nights/npe/utils/ProcDefMap.class[0m
+[0m[[0mdebug[0m] [0m	  /Users/brew/NPE/gits/commons/target/scala-2.11/classes/org/nights/npe/utils/ProcDefMap.class[0m
 [0m[[0mdebug[0m] [0m	org/nights/npe/backend/db/SimpleDAO$$anonfun$beanValue$1.class[0m
 [0m[[0mdebug[0m] [0m	  /Users/brew/NPE/gits/commons/target/scala-2.11/classes/org/nights/npe/backend/db/SimpleDAO$$anonfun$beanValue$1.class[0m
 [0m[[0mdebug[0m] [0m	org/nights/npe/backend/db/KOObtainTasks$.class[0m

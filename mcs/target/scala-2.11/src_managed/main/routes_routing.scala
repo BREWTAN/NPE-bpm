@@ -1,6 +1,6 @@
 // @SOURCE:/Users/brew/NPE/gits/mcs/conf/routes
-// @HASH:64fc91812493b70d9acfd4f99838e07ce97a4593
-// @DATE:Thu Oct 09 03:21:56 GMT 2014
+// @HASH:788d8f4bcd0ebece1e04faef1636a29913ff15d7
+// @DATE:Thu Oct 09 10:34:50 GMT 2014
 
 
 import play.core._
@@ -79,7 +79,28 @@ private[this] lazy val controllers_ProcDefHttpFace_getByPage6_invoker = createIn
 controllers.ProcDefHttpFace.getByPage(fakeValue[Int], fakeValue[Int]),
 HandlerDef(this.getClass.getClassLoader, "", "controllers.ProcDefHttpFace", "getByPage", Seq(classOf[Int], classOf[Int]),"GET", """# rest for procdef""", Routes.prefix + """procdef"""))
         
-def documentation = List(("""GET""", prefix,"""controllers.Application.index"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """assets/$file<.+>""","""controllers.Assets.at(path:String = "/public", file:String)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """fsmstats""","""controllers.FSMViewer.stats"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """test1""","""controllers.Test1.getJson"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """uploadtest""","""controllers.ProcDefHttpFace.test"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """upload""","""controllers.ProcDefHttpFace.upload"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """procdef""","""controllers.ProcDefHttpFace.getByPage(skip:Int ?= 0, limit:Int ?= 10)""")).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
+
+// @LINE:30
+private[this] lazy val controllers_ProcDefHttpFace_validate7_route = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("procdef/check"))))
+private[this] lazy val controllers_ProcDefHttpFace_validate7_invoker = createInvoker(
+controllers.ProcDefHttpFace.validate,
+HandlerDef(this.getClass.getClassLoader, "", "controllers.ProcDefHttpFace", "validate", Nil,"GET", """""", Routes.prefix + """procdef/check"""))
+        
+
+// @LINE:32
+private[this] lazy val controllers_ProcDefHttpFace_delete8_route = Route("DELETE", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("procdef/"),DynamicPart("defid", """[^/]+""",true))))
+private[this] lazy val controllers_ProcDefHttpFace_delete8_invoker = createInvoker(
+controllers.ProcDefHttpFace.delete(fakeValue[String]),
+HandlerDef(this.getClass.getClassLoader, "", "controllers.ProcDefHttpFace", "delete", Seq(classOf[String]),"DELETE", """""", Routes.prefix + """procdef/$defid<[^/]+>"""))
+        
+
+// @LINE:34
+private[this] lazy val controllers_ProcDefHttpFace_update9_route = Route("PUT", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("procdef/"),DynamicPart("defid", """[^/]+""",true))))
+private[this] lazy val controllers_ProcDefHttpFace_update9_invoker = createInvoker(
+controllers.ProcDefHttpFace.update(fakeValue[String]),
+HandlerDef(this.getClass.getClassLoader, "", "controllers.ProcDefHttpFace", "update", Seq(classOf[String]),"PUT", """""", Routes.prefix + """procdef/$defid<[^/]+>"""))
+        
+def documentation = List(("""GET""", prefix,"""controllers.Application.index"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """assets/$file<.+>""","""controllers.Assets.at(path:String = "/public", file:String)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """fsmstats""","""controllers.FSMViewer.stats"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """test1""","""controllers.Test1.getJson"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """uploadtest""","""controllers.ProcDefHttpFace.test"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """upload""","""controllers.ProcDefHttpFace.upload"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """procdef""","""controllers.ProcDefHttpFace.getByPage(skip:Int ?= 0, limit:Int ?= 10)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """procdef/check""","""controllers.ProcDefHttpFace.validate"""),("""DELETE""", prefix + (if(prefix.endsWith("/")) "" else "/") + """procdef/$defid<[^/]+>""","""controllers.ProcDefHttpFace.delete(defid:String)"""),("""PUT""", prefix + (if(prefix.endsWith("/")) "" else "/") + """procdef/$defid<[^/]+>""","""controllers.ProcDefHttpFace.update(defid:String)""")).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
   case r @ (_,_,_) => s :+ r.asInstanceOf[(String,String,String)]
   case l => s ++ l.asInstanceOf[List[(String,String,String)]]
 }}
@@ -139,6 +160,30 @@ case controllers_ProcDefHttpFace_upload5_route(params) => {
 case controllers_ProcDefHttpFace_getByPage6_route(params) => {
    call(params.fromQuery[Int]("skip", Some(0)), params.fromQuery[Int]("limit", Some(10))) { (skip, limit) =>
         controllers_ProcDefHttpFace_getByPage6_invoker.call(controllers.ProcDefHttpFace.getByPage(skip, limit))
+   }
+}
+        
+
+// @LINE:30
+case controllers_ProcDefHttpFace_validate7_route(params) => {
+   call { 
+        controllers_ProcDefHttpFace_validate7_invoker.call(controllers.ProcDefHttpFace.validate)
+   }
+}
+        
+
+// @LINE:32
+case controllers_ProcDefHttpFace_delete8_route(params) => {
+   call(params.fromPath[String]("defid", None)) { (defid) =>
+        controllers_ProcDefHttpFace_delete8_invoker.call(controllers.ProcDefHttpFace.delete(defid))
+   }
+}
+        
+
+// @LINE:34
+case controllers_ProcDefHttpFace_update9_route(params) => {
+   call(params.fromPath[String]("defid", None)) { (defid) =>
+        controllers_ProcDefHttpFace_update9_invoker.call(controllers.ProcDefHttpFace.update(defid))
    }
 }
         

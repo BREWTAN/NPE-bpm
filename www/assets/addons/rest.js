@@ -154,7 +154,7 @@ var Restful = function() {
         update:function(restURL, id, json) {
             var bool = false;
             $.ajax({
-                url: restURL + "/" + id+'/',
+                url: restURL + "/" + id,
                 type: 'PUT',
                 dataType: 'json',
                 contentType: "application/json; charset=utf-8",

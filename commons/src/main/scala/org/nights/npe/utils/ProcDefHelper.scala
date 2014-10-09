@@ -5,12 +5,16 @@ import org.nights.npe.po.Definition._
 import scala.collection.mutable.MutableList
 import scala.collection.mutable.HashMap
 
-object ProcDefHelper {
-
+class ProcDefMap {
   val procDefs: HashMap[String, Process] = new HashMap[String, Process]
 
   def appendDefFile(filename: String) {
     val process: Process = POHelper.fromXMLFile(filename)
+    procDefs.put(process.e.id, process)
+  }
+  
+  def appendDefXML(xml: String) {
+    val process: Process = POHelper.fromXML(xml)
     procDefs.put(process.e.id, process)
   }
 
@@ -24,7 +28,7 @@ object ProcDefHelper {
   def nodeDefAt(nid: String)(implicit p: Process): StateNodeDef = StateNodeDef(p.id, nid);
 
   def checkIntegrity: Boolean = {
-	 var ret=true;
+    var ret = true;
     procDefs.foreach { keyVal =>
       val p: Process = keyVal._2;
       p.nodes.foreach({ nodeKV =>
@@ -33,7 +37,7 @@ object ProcDefHelper {
           if (call.calledElement == null ||
             !procDefs.contains(call.calledElement)) {
             p.isvalid = false;
-            ret=false;
+            ret = false;
             p.parseError.+=:("调用的子流程不存在:" + call.calledElement)
           }
         }
@@ -41,6 +45,10 @@ object ProcDefHelper {
     }
     ret
   }
+}
+
+object ProcDefHelper extends ProcDefMap {
+
 }
 
 case class StateNodeDef(procId: String, nodeid: String) {

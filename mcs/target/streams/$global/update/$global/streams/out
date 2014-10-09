@@ -7,7 +7,7 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies for mcs#mcs_2.11;1.0-SNAPSHOT [compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies mcs#mcs_2.11;1.0-SNAPSHOT->org.scala-lang#scala-library;2.11.1 [compile->default(compile)][0m
 [0m[[0minfo[0m] [0mResolving org.scala-lang#scala-library;2.11.1 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@e139e3e[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@2c53124c[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.scala-lang#scala-library;2.11.1[0m
 [0m[[0mdebug[0m] [0m	local: revision in cache: org.scala-lang#scala-library;2.11.1[0m
 [0m[[0mdebug[0m] [0m	found org.scala-lang#scala-library;2.11.1 in sbt-chain[0m
@@ -1278,6 +1278,108 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.github.mauricio#mysql-async_2.11;0.2.14->com.github.mauricio#db-async-common_2.11;0.2.14 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.github.mauricio#mysql-async_2.11;0.2.14->com.github.mauricio#db-async-common_2.11;0.2.14 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies mcs#mcs_2.11;1.0-SNAPSHOT->com.github.mauricio#mysql-async_2.11;0.2.14 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies mcs#mcs_2.11;1.0-SNAPSHOT->com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2 [compile->default(compile)][0m
+[0m[[0minfo[0m] [0mResolving com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2 ...[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2 {compile=[default(compile)]}[0m
+[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2[0m
+[0m[[0mdebug[0m] [0m	local: revision in cache: com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2[0m
+[0m[[0mdebug[0m] [0m	found com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2 in sbt-chain[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies mcs#mcs_2.11;1.0-SNAPSHOT->com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies mcs#mcs_2.11;1.0-SNAPSHOT->com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->org.scala-lang#scala-library;2.11.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->org.scala-lang#scala-library;2.11.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->org.scala-lang#scala-reflect;2.11.2 [compile->master(*)][0m
+[0m[[0minfo[0m] [0mResolving org.scala-lang#scala-reflect;2.11.2 ...[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.scala-lang#scala-reflect;2.11.2 {compile=[compile(*), master(*)], runtime=[runtime(*)]}[0m
+[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.scala-lang#scala-reflect;2.11.2[0m
+[0m[[0mdebug[0m] [0m	local: revision in cache: org.scala-lang#scala-reflect;2.11.2[0m
+[0m[[0mdebug[0m] [0m	found org.scala-lang#scala-reflect;2.11.2 in sbt-chain[0m
+[0m[[0mdebug[0m] [0m	[2.11.2] org.scala-lang#scala-reflect;2.11.2[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->org.scala-lang#scala-reflect;2.11.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.11.2->org.scala-lang#scala-library;2.11.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.11.2->org.scala-lang#scala-library;2.11.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->org.scala-lang#scala-reflect;2.11.2 [compile->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->org.scala-lang#scala-reflect;2.11.2 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.11.2->org.scala-lang#scala-library;2.11.2 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.11.2->org.scala-lang#scala-library;2.11.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.fasterxml.jackson.core#jackson-core;2.4.2 [compile->master(*)][0m
+[0m[[0minfo[0m] [0mResolving com.fasterxml.jackson.core#jackson-core;2.4.2 ...[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: com.fasterxml.jackson.core#jackson-core;2.4.2 {compile=[compile(*), master(*)], runtime=[runtime(*)]}[0m
+[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: com.fasterxml.jackson.core#jackson-core;2.4.2[0m
+[0m[[0mdebug[0m] [0m	local: revision in cache: com.fasterxml.jackson.core#jackson-core;2.4.2[0m
+[0m[[0mdebug[0m] [0m	found com.fasterxml.jackson.core#jackson-core;2.4.2 in sbt-chain[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.fasterxml.jackson.core#jackson-core;2.4.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.fasterxml.jackson.core#jackson-core;2.4.2 [compile->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.fasterxml.jackson.core#jackson-core;2.4.2 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.fasterxml.jackson.core#jackson-annotations;2.4.2 [compile->master(*)][0m
+[0m[[0minfo[0m] [0mResolving com.fasterxml.jackson.core#jackson-annotations;2.4.2 ...[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: com.fasterxml.jackson.core#jackson-annotations;2.4.2 {compile=[compile(*), master(*)], runtime=[runtime(*)]}[0m
+[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: com.fasterxml.jackson.core#jackson-annotations;2.4.2[0m
+[0m[[0mdebug[0m] [0m	local: revision in cache: com.fasterxml.jackson.core#jackson-annotations;2.4.2[0m
+[0m[[0mdebug[0m] [0m	found com.fasterxml.jackson.core#jackson-annotations;2.4.2 in sbt-chain[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.fasterxml.jackson.core#jackson-annotations;2.4.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.fasterxml.jackson.core#jackson-annotations;2.4.2 [compile->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.fasterxml.jackson.core#jackson-annotations;2.4.2 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.fasterxml.jackson.core#jackson-databind;2.4.2 [compile->master(*)][0m
+[0m[[0minfo[0m] [0mResolving com.fasterxml.jackson.core#jackson-databind;2.4.2 ...[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: com.fasterxml.jackson.core#jackson-databind;2.4.2 {compile=[compile(*), master(*)], runtime=[runtime(*)]}[0m
+[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: com.fasterxml.jackson.core#jackson-databind;2.4.2[0m
+[0m[[0mdebug[0m] [0m	local: revision in cache: com.fasterxml.jackson.core#jackson-databind;2.4.2[0m
+[0m[[0mdebug[0m] [0m	found com.fasterxml.jackson.core#jackson-databind;2.4.2 in sbt-chain[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.fasterxml.jackson.core#jackson-databind;2.4.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.core#jackson-databind;2.4.2->com.fasterxml.jackson.core#jackson-annotations;2.4.0 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.core#jackson-databind;2.4.2->com.fasterxml.jackson.core#jackson-annotations;2.4.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.core#jackson-databind;2.4.2->com.fasterxml.jackson.core#jackson-annotations;2.4.0 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.core#jackson-databind;2.4.2->com.fasterxml.jackson.core#jackson-annotations;2.4.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.core#jackson-databind;2.4.2->com.fasterxml.jackson.core#jackson-core;2.4.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.core#jackson-databind;2.4.2->com.fasterxml.jackson.core#jackson-core;2.4.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.fasterxml.jackson.core#jackson-databind;2.4.2 [compile->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.fasterxml.jackson.core#jackson-databind;2.4.2 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.core#jackson-databind;2.4.2->com.fasterxml.jackson.core#jackson-annotations;2.4.0 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.core#jackson-databind;2.4.2->com.fasterxml.jackson.core#jackson-annotations;2.4.2 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.core#jackson-databind;2.4.2->com.fasterxml.jackson.core#jackson-annotations;2.4.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.core#jackson-databind;2.4.2->com.fasterxml.jackson.core#jackson-core;2.4.2 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.core#jackson-databind;2.4.2->com.fasterxml.jackson.core#jackson-core;2.4.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.thoughtworks.paranamer#paranamer;2.6 [compile->master(*)][0m
+[0m[[0minfo[0m] [0mResolving com.thoughtworks.paranamer#paranamer;2.6 ...[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: com.thoughtworks.paranamer#paranamer;2.6 {compile=[compile(*), master(*)], runtime=[runtime(*)]}[0m
+[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: com.thoughtworks.paranamer#paranamer;2.6[0m
+[0m[[0mdebug[0m] [0m	local: revision in cache: com.thoughtworks.paranamer#paranamer;2.6[0m
+[0m[[0mdebug[0m] [0m	found com.thoughtworks.paranamer#paranamer;2.6 in sbt-chain[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.thoughtworks.paranamer#paranamer;2.6 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.thoughtworks.paranamer#paranamer;2.6 [compile->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.thoughtworks.paranamer#paranamer;2.6 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.google.code.findbugs#jsr305;2.0.1 [compile->master(*)][0m
+[0m[[0minfo[0m] [0mResolving com.google.code.findbugs#jsr305;2.0.1 ...[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: com.google.code.findbugs#jsr305;2.0.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}[0m
+[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: com.google.code.findbugs#jsr305;2.0.1[0m
+[0m[[0mdebug[0m] [0m	local: revision in cache: com.google.code.findbugs#jsr305;2.0.1[0m
+[0m[[0mdebug[0m] [0m	found com.google.code.findbugs#jsr305;2.0.1 in sbt-chain[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.google.code.findbugs#jsr305;2.0.1 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.google.code.findbugs#jsr305;2.0.1 [compile->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.google.code.findbugs#jsr305;2.0.1 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.google.guava#guava;15.0 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.google.guava#guava;16.0.1 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.google.guava#guava;15.0 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.google.guava#guava;16.0.1 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->org.scala-lang#scala-library;2.11.2 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->org.scala-lang#scala-library;2.11.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->org.scala-lang#scala-reflect;2.11.2 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->org.scala-lang#scala-reflect;2.11.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.fasterxml.jackson.core#jackson-core;2.4.2 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.fasterxml.jackson.core#jackson-core;2.4.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.fasterxml.jackson.core#jackson-annotations;2.4.2 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.fasterxml.jackson.core#jackson-annotations;2.4.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.fasterxml.jackson.core#jackson-databind;2.4.2 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.fasterxml.jackson.core#jackson-databind;2.4.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.thoughtworks.paranamer#paranamer;2.6 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.thoughtworks.paranamer#paranamer;2.6 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.google.code.findbugs#jsr305;2.0.1 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.google.code.findbugs#jsr305;2.0.1 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.google.guava#guava;15.0 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.google.guava#guava;16.0.1 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.google.guava#guava;16.0.1 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies mcs#mcs_2.11;1.0-SNAPSHOT->com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2 [compile->master][0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'runtime'[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for mcs#mcs_2.11;1.0-SNAPSHOT [runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for mcs#mcs_2.11;1.0-SNAPSHOT [compile][0m
@@ -2043,6 +2145,60 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.github.mauricio#db-async-common_2.11;0.2.14->org.javassist#javassist;3.18.2-GA [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.github.mauricio#db-async-common_2.11;0.2.14->org.javassist#javassist;3.18.2-GA [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies mcs#mcs_2.11;1.0-SNAPSHOT->com.github.mauricio#mysql-async_2.11;0.2.14 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies mcs#mcs_2.11;1.0-SNAPSHOT->com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies mcs#mcs_2.11;1.0-SNAPSHOT->com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies mcs#mcs_2.11;1.0-SNAPSHOT->com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->org.scala-lang#scala-library;2.11.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->org.scala-lang#scala-library;2.11.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->org.scala-lang#scala-reflect;2.11.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->org.scala-lang#scala-reflect;2.11.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.11.2->org.scala-lang#scala-library;2.11.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.11.2->org.scala-lang#scala-library;2.11.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.fasterxml.jackson.core#jackson-core;2.4.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.fasterxml.jackson.core#jackson-core;2.4.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.fasterxml.jackson.core#jackson-annotations;2.4.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.fasterxml.jackson.core#jackson-annotations;2.4.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.fasterxml.jackson.core#jackson-databind;2.4.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.fasterxml.jackson.core#jackson-databind;2.4.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.core#jackson-databind;2.4.2->com.fasterxml.jackson.core#jackson-annotations;2.4.0 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.core#jackson-databind;2.4.2->com.fasterxml.jackson.core#jackson-annotations;2.4.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.core#jackson-databind;2.4.2->com.fasterxml.jackson.core#jackson-annotations;2.4.0 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.core#jackson-databind;2.4.2->com.fasterxml.jackson.core#jackson-annotations;2.4.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.core#jackson-databind;2.4.2->com.fasterxml.jackson.core#jackson-core;2.4.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.core#jackson-databind;2.4.2->com.fasterxml.jackson.core#jackson-core;2.4.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.thoughtworks.paranamer#paranamer;2.6 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.thoughtworks.paranamer#paranamer;2.6 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.google.code.findbugs#jsr305;2.0.1 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.google.code.findbugs#jsr305;2.0.1 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.google.guava#guava;15.0 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.google.guava#guava;16.0.1 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.google.guava#guava;15.0 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.google.guava#guava;16.0.1 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->org.scala-lang#scala-library;2.11.2 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->org.scala-lang#scala-library;2.11.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->org.scala-lang#scala-reflect;2.11.2 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->org.scala-lang#scala-reflect;2.11.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.11.2->org.scala-lang#scala-library;2.11.2 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.11.2->org.scala-lang#scala-library;2.11.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.fasterxml.jackson.core#jackson-core;2.4.2 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.fasterxml.jackson.core#jackson-core;2.4.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.fasterxml.jackson.core#jackson-annotations;2.4.2 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.fasterxml.jackson.core#jackson-annotations;2.4.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.fasterxml.jackson.core#jackson-databind;2.4.2 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.fasterxml.jackson.core#jackson-databind;2.4.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.core#jackson-databind;2.4.2->com.fasterxml.jackson.core#jackson-annotations;2.4.0 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.core#jackson-databind;2.4.2->com.fasterxml.jackson.core#jackson-annotations;2.4.2 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.core#jackson-databind;2.4.2->com.fasterxml.jackson.core#jackson-annotations;2.4.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.core#jackson-databind;2.4.2->com.fasterxml.jackson.core#jackson-core;2.4.2 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.core#jackson-databind;2.4.2->com.fasterxml.jackson.core#jackson-core;2.4.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.thoughtworks.paranamer#paranamer;2.6 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.thoughtworks.paranamer#paranamer;2.6 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.google.code.findbugs#jsr305;2.0.1 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.google.code.findbugs#jsr305;2.0.1 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.google.guava#guava;15.0 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.google.guava#guava;16.0.1 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.google.guava#guava;16.0.1 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies mcs#mcs_2.11;1.0-SNAPSHOT->com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2 [compile->master][0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'test'[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for mcs#mcs_2.11;1.0-SNAPSHOT [test][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for mcs#mcs_2.11;1.0-SNAPSHOT [runtime][0m
@@ -2809,6 +2965,60 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.github.mauricio#db-async-common_2.11;0.2.14->org.javassist#javassist;3.18.2-GA [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.github.mauricio#db-async-common_2.11;0.2.14->org.javassist#javassist;3.18.2-GA [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies mcs#mcs_2.11;1.0-SNAPSHOT->com.github.mauricio#mysql-async_2.11;0.2.14 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies mcs#mcs_2.11;1.0-SNAPSHOT->com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies mcs#mcs_2.11;1.0-SNAPSHOT->com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies mcs#mcs_2.11;1.0-SNAPSHOT->com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->org.scala-lang#scala-library;2.11.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->org.scala-lang#scala-library;2.11.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->org.scala-lang#scala-reflect;2.11.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->org.scala-lang#scala-reflect;2.11.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.11.2->org.scala-lang#scala-library;2.11.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.11.2->org.scala-lang#scala-library;2.11.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.fasterxml.jackson.core#jackson-core;2.4.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.fasterxml.jackson.core#jackson-core;2.4.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.fasterxml.jackson.core#jackson-annotations;2.4.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.fasterxml.jackson.core#jackson-annotations;2.4.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.fasterxml.jackson.core#jackson-databind;2.4.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.fasterxml.jackson.core#jackson-databind;2.4.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.core#jackson-databind;2.4.2->com.fasterxml.jackson.core#jackson-annotations;2.4.0 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.core#jackson-databind;2.4.2->com.fasterxml.jackson.core#jackson-annotations;2.4.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.core#jackson-databind;2.4.2->com.fasterxml.jackson.core#jackson-annotations;2.4.0 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.core#jackson-databind;2.4.2->com.fasterxml.jackson.core#jackson-annotations;2.4.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.core#jackson-databind;2.4.2->com.fasterxml.jackson.core#jackson-core;2.4.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.core#jackson-databind;2.4.2->com.fasterxml.jackson.core#jackson-core;2.4.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.thoughtworks.paranamer#paranamer;2.6 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.thoughtworks.paranamer#paranamer;2.6 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.google.code.findbugs#jsr305;2.0.1 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.google.code.findbugs#jsr305;2.0.1 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.google.guava#guava;15.0 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.google.guava#guava;16.0.1 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.google.guava#guava;15.0 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.google.guava#guava;16.0.1 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->org.scala-lang#scala-library;2.11.2 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->org.scala-lang#scala-library;2.11.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->org.scala-lang#scala-reflect;2.11.2 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->org.scala-lang#scala-reflect;2.11.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.11.2->org.scala-lang#scala-library;2.11.2 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.11.2->org.scala-lang#scala-library;2.11.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.fasterxml.jackson.core#jackson-core;2.4.2 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.fasterxml.jackson.core#jackson-core;2.4.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.fasterxml.jackson.core#jackson-annotations;2.4.2 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.fasterxml.jackson.core#jackson-annotations;2.4.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.fasterxml.jackson.core#jackson-databind;2.4.2 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.fasterxml.jackson.core#jackson-databind;2.4.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.core#jackson-databind;2.4.2->com.fasterxml.jackson.core#jackson-annotations;2.4.0 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.core#jackson-databind;2.4.2->com.fasterxml.jackson.core#jackson-annotations;2.4.2 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.core#jackson-databind;2.4.2->com.fasterxml.jackson.core#jackson-annotations;2.4.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.core#jackson-databind;2.4.2->com.fasterxml.jackson.core#jackson-core;2.4.2 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.core#jackson-databind;2.4.2->com.fasterxml.jackson.core#jackson-core;2.4.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.thoughtworks.paranamer#paranamer;2.6 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.thoughtworks.paranamer#paranamer;2.6 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.google.code.findbugs#jsr305;2.0.1 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.google.code.findbugs#jsr305;2.0.1 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.google.guava#guava;15.0 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.google.guava#guava;16.0.1 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.google.guava#guava;16.0.1 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies mcs#mcs_2.11;1.0-SNAPSHOT->com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2 [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies mcs#mcs_2.11;1.0-SNAPSHOT->com.typesafe.play#play-test_2.11;2.3.3 [test->default(compile)][0m
 [0m[[0minfo[0m] [0mResolving com.typesafe.play#play-test_2.11;2.3.3 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: com.typesafe.play#play-test_2.11;2.3.3 {test=[default(compile)]}[0m
@@ -2920,8 +3130,9 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scalaz#scalaz-effect_2.11;7.0.6->org.scalaz#scalaz-core_2.11;7.0.6 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.specs2#specs2-common_2.11;2.3.12->org.scala-lang#scala-reflect;2.11.0 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.specs2#specs2-common_2.11;2.3.12->org.scala-lang#scala-reflect;2.11.1 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.specs2#specs2-common_2.11;2.3.12->org.scala-lang#scala-reflect;2.11.2 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.specs2#specs2-common_2.11;2.3.12->org.scala-lang#scala-reflect;2.11.0 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.specs2#specs2-common_2.11;2.3.12->org.scala-lang#scala-reflect;2.11.1 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.specs2#specs2-common_2.11;2.3.12->org.scala-lang#scala-reflect;2.11.2 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-test_2.11;2.3.3->org.specs2#specs2-core_2.11;2.3.12 [compile->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-test_2.11;2.3.3->org.specs2#specs2-core_2.11;2.3.12 [compile->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.specs2#specs2-core_2.11;2.3.12->org.scala-lang#scala-library;2.11.0 [runtime->runtime(*)][0m
@@ -2962,8 +3173,8 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scalaz#scalaz-effect_2.11;7.0.6->org.scalaz#scalaz-core_2.11;7.0.6 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scalaz#scalaz-effect_2.11;7.0.6->org.scalaz#scalaz-core_2.11;7.0.6 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.specs2#specs2-common_2.11;2.3.12->org.scala-lang#scala-reflect;2.11.0 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.specs2#specs2-common_2.11;2.3.12->org.scala-lang#scala-reflect;2.11.1 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.specs2#specs2-common_2.11;2.3.12->org.scala-lang#scala-reflect;2.11.1 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.specs2#specs2-common_2.11;2.3.12->org.scala-lang#scala-reflect;2.11.2 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.specs2#specs2-common_2.11;2.3.12->org.scala-lang#scala-reflect;2.11.2 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-test_2.11;2.3.3->org.specs2#specs2-junit_2.11;2.3.12 [compile->master(*)][0m
 [0m[[0minfo[0m] [0mResolving org.specs2#specs2-junit_2.11;2.3.12 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.specs2#specs2-junit_2.11;2.3.12 {compile=[compile(*), master(*)], runtime=[runtime(*)]}[0m
@@ -3067,9 +3278,9 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.11.0->org.scala-lang#scala-library;2.11.0 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.11.0->org.scala-lang#scala-library;2.11.2 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.11.0->org.scala-lang#scala-reflect;2.11.0 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.11.0->org.scala-lang#scala-reflect;2.11.1 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.11.0->org.scala-lang#scala-reflect;2.11.2 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.11.0->org.scala-lang#scala-reflect;2.11.0 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.11.0->org.scala-lang#scala-reflect;2.11.1 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.11.0->org.scala-lang#scala-reflect;2.11.2 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.11.0->org.scala-lang.modules#scala-xml_2.11;1.0.1 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.11.0->org.scala-lang.modules#scala-xml_2.11;1.0.2 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.11.0->org.scala-lang.modules#scala-xml_2.11;1.0.1 [compile->compile(*)][0m
@@ -3106,8 +3317,8 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.11.0->org.scala-lang#scala-library;2.11.2 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.11.0->org.scala-lang#scala-library;2.11.2 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.11.0->org.scala-lang#scala-reflect;2.11.0 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.11.0->org.scala-lang#scala-reflect;2.11.1 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.11.0->org.scala-lang#scala-reflect;2.11.1 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.11.0->org.scala-lang#scala-reflect;2.11.2 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.11.0->org.scala-lang#scala-reflect;2.11.2 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.11.0->org.scala-lang.modules#scala-xml_2.11;1.0.1 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.11.0->org.scala-lang.modules#scala-xml_2.11;1.0.2 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.11.0->org.scala-lang.modules#scala-xml_2.11;1.0.2 [runtime->compile][0m
@@ -4940,6 +5151,60 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.github.mauricio#db-async-common_2.11;0.2.14->org.javassist#javassist;3.18.2-GA [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.github.mauricio#db-async-common_2.11;0.2.14->org.javassist#javassist;3.18.2-GA [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies mcs#mcs_2.11;1.0-SNAPSHOT->com.github.mauricio#mysql-async_2.11;0.2.14 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies mcs#mcs_2.11;1.0-SNAPSHOT->com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies mcs#mcs_2.11;1.0-SNAPSHOT->com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies mcs#mcs_2.11;1.0-SNAPSHOT->com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->org.scala-lang#scala-library;2.11.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->org.scala-lang#scala-library;2.11.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->org.scala-lang#scala-reflect;2.11.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->org.scala-lang#scala-reflect;2.11.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.11.2->org.scala-lang#scala-library;2.11.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.11.2->org.scala-lang#scala-library;2.11.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.fasterxml.jackson.core#jackson-core;2.4.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.fasterxml.jackson.core#jackson-core;2.4.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.fasterxml.jackson.core#jackson-annotations;2.4.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.fasterxml.jackson.core#jackson-annotations;2.4.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.fasterxml.jackson.core#jackson-databind;2.4.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.fasterxml.jackson.core#jackson-databind;2.4.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.core#jackson-databind;2.4.2->com.fasterxml.jackson.core#jackson-annotations;2.4.0 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.core#jackson-databind;2.4.2->com.fasterxml.jackson.core#jackson-annotations;2.4.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.core#jackson-databind;2.4.2->com.fasterxml.jackson.core#jackson-annotations;2.4.0 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.core#jackson-databind;2.4.2->com.fasterxml.jackson.core#jackson-annotations;2.4.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.core#jackson-databind;2.4.2->com.fasterxml.jackson.core#jackson-core;2.4.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.core#jackson-databind;2.4.2->com.fasterxml.jackson.core#jackson-core;2.4.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.thoughtworks.paranamer#paranamer;2.6 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.thoughtworks.paranamer#paranamer;2.6 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.google.code.findbugs#jsr305;2.0.1 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.google.code.findbugs#jsr305;2.0.1 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.google.guava#guava;15.0 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.google.guava#guava;16.0.1 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.google.guava#guava;15.0 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.google.guava#guava;16.0.1 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->org.scala-lang#scala-library;2.11.2 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->org.scala-lang#scala-library;2.11.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->org.scala-lang#scala-reflect;2.11.2 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->org.scala-lang#scala-reflect;2.11.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.11.2->org.scala-lang#scala-library;2.11.2 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.11.2->org.scala-lang#scala-library;2.11.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.fasterxml.jackson.core#jackson-core;2.4.2 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.fasterxml.jackson.core#jackson-core;2.4.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.fasterxml.jackson.core#jackson-annotations;2.4.2 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.fasterxml.jackson.core#jackson-annotations;2.4.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.fasterxml.jackson.core#jackson-databind;2.4.2 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.fasterxml.jackson.core#jackson-databind;2.4.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.core#jackson-databind;2.4.2->com.fasterxml.jackson.core#jackson-annotations;2.4.0 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.core#jackson-databind;2.4.2->com.fasterxml.jackson.core#jackson-annotations;2.4.2 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.core#jackson-databind;2.4.2->com.fasterxml.jackson.core#jackson-annotations;2.4.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.core#jackson-databind;2.4.2->com.fasterxml.jackson.core#jackson-core;2.4.2 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.core#jackson-databind;2.4.2->com.fasterxml.jackson.core#jackson-core;2.4.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.thoughtworks.paranamer#paranamer;2.6 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.thoughtworks.paranamer#paranamer;2.6 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.google.code.findbugs#jsr305;2.0.1 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.google.code.findbugs#jsr305;2.0.1 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.google.guava#guava;15.0 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.google.guava#guava;16.0.1 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.google.guava#guava;16.0.1 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies mcs#mcs_2.11;1.0-SNAPSHOT->com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2 [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for mcs#mcs_2.11;1.0-SNAPSHOT [optional][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for mcs#mcs_2.11;1.0-SNAPSHOT [provided][0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'runtime-internal'[0m
@@ -5708,6 +5973,60 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.github.mauricio#db-async-common_2.11;0.2.14->org.javassist#javassist;3.18.2-GA [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.github.mauricio#db-async-common_2.11;0.2.14->org.javassist#javassist;3.18.2-GA [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies mcs#mcs_2.11;1.0-SNAPSHOT->com.github.mauricio#mysql-async_2.11;0.2.14 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies mcs#mcs_2.11;1.0-SNAPSHOT->com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies mcs#mcs_2.11;1.0-SNAPSHOT->com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies mcs#mcs_2.11;1.0-SNAPSHOT->com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->org.scala-lang#scala-library;2.11.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->org.scala-lang#scala-library;2.11.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->org.scala-lang#scala-reflect;2.11.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->org.scala-lang#scala-reflect;2.11.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.11.2->org.scala-lang#scala-library;2.11.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.11.2->org.scala-lang#scala-library;2.11.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.fasterxml.jackson.core#jackson-core;2.4.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.fasterxml.jackson.core#jackson-core;2.4.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.fasterxml.jackson.core#jackson-annotations;2.4.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.fasterxml.jackson.core#jackson-annotations;2.4.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.fasterxml.jackson.core#jackson-databind;2.4.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.fasterxml.jackson.core#jackson-databind;2.4.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.core#jackson-databind;2.4.2->com.fasterxml.jackson.core#jackson-annotations;2.4.0 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.core#jackson-databind;2.4.2->com.fasterxml.jackson.core#jackson-annotations;2.4.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.core#jackson-databind;2.4.2->com.fasterxml.jackson.core#jackson-annotations;2.4.0 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.core#jackson-databind;2.4.2->com.fasterxml.jackson.core#jackson-annotations;2.4.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.core#jackson-databind;2.4.2->com.fasterxml.jackson.core#jackson-core;2.4.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.core#jackson-databind;2.4.2->com.fasterxml.jackson.core#jackson-core;2.4.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.thoughtworks.paranamer#paranamer;2.6 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.thoughtworks.paranamer#paranamer;2.6 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.google.code.findbugs#jsr305;2.0.1 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.google.code.findbugs#jsr305;2.0.1 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.google.guava#guava;15.0 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.google.guava#guava;16.0.1 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.google.guava#guava;15.0 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.google.guava#guava;16.0.1 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->org.scala-lang#scala-library;2.11.2 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->org.scala-lang#scala-library;2.11.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->org.scala-lang#scala-reflect;2.11.2 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->org.scala-lang#scala-reflect;2.11.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.11.2->org.scala-lang#scala-library;2.11.2 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.11.2->org.scala-lang#scala-library;2.11.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.fasterxml.jackson.core#jackson-core;2.4.2 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.fasterxml.jackson.core#jackson-core;2.4.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.fasterxml.jackson.core#jackson-annotations;2.4.2 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.fasterxml.jackson.core#jackson-annotations;2.4.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.fasterxml.jackson.core#jackson-databind;2.4.2 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.fasterxml.jackson.core#jackson-databind;2.4.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.core#jackson-databind;2.4.2->com.fasterxml.jackson.core#jackson-annotations;2.4.0 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.core#jackson-databind;2.4.2->com.fasterxml.jackson.core#jackson-annotations;2.4.2 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.core#jackson-databind;2.4.2->com.fasterxml.jackson.core#jackson-annotations;2.4.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.core#jackson-databind;2.4.2->com.fasterxml.jackson.core#jackson-core;2.4.2 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.core#jackson-databind;2.4.2->com.fasterxml.jackson.core#jackson-core;2.4.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.thoughtworks.paranamer#paranamer;2.6 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.thoughtworks.paranamer#paranamer;2.6 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.google.code.findbugs#jsr305;2.0.1 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.google.code.findbugs#jsr305;2.0.1 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.google.guava#guava;15.0 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.google.guava#guava;16.0.1 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.google.guava#guava;16.0.1 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies mcs#mcs_2.11;1.0-SNAPSHOT->com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2 [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for mcs#mcs_2.11;1.0-SNAPSHOT [optional][0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'test-internal'[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for mcs#mcs_2.11;1.0-SNAPSHOT [test-internal][0m
@@ -6476,6 +6795,60 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.github.mauricio#db-async-common_2.11;0.2.14->org.javassist#javassist;3.18.2-GA [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.github.mauricio#db-async-common_2.11;0.2.14->org.javassist#javassist;3.18.2-GA [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies mcs#mcs_2.11;1.0-SNAPSHOT->com.github.mauricio#mysql-async_2.11;0.2.14 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies mcs#mcs_2.11;1.0-SNAPSHOT->com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies mcs#mcs_2.11;1.0-SNAPSHOT->com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies mcs#mcs_2.11;1.0-SNAPSHOT->com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->org.scala-lang#scala-library;2.11.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->org.scala-lang#scala-library;2.11.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->org.scala-lang#scala-reflect;2.11.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->org.scala-lang#scala-reflect;2.11.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.11.2->org.scala-lang#scala-library;2.11.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.11.2->org.scala-lang#scala-library;2.11.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.fasterxml.jackson.core#jackson-core;2.4.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.fasterxml.jackson.core#jackson-core;2.4.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.fasterxml.jackson.core#jackson-annotations;2.4.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.fasterxml.jackson.core#jackson-annotations;2.4.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.fasterxml.jackson.core#jackson-databind;2.4.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.fasterxml.jackson.core#jackson-databind;2.4.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.core#jackson-databind;2.4.2->com.fasterxml.jackson.core#jackson-annotations;2.4.0 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.core#jackson-databind;2.4.2->com.fasterxml.jackson.core#jackson-annotations;2.4.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.core#jackson-databind;2.4.2->com.fasterxml.jackson.core#jackson-annotations;2.4.0 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.core#jackson-databind;2.4.2->com.fasterxml.jackson.core#jackson-annotations;2.4.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.core#jackson-databind;2.4.2->com.fasterxml.jackson.core#jackson-core;2.4.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.core#jackson-databind;2.4.2->com.fasterxml.jackson.core#jackson-core;2.4.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.thoughtworks.paranamer#paranamer;2.6 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.thoughtworks.paranamer#paranamer;2.6 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.google.code.findbugs#jsr305;2.0.1 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.google.code.findbugs#jsr305;2.0.1 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.google.guava#guava;15.0 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.google.guava#guava;16.0.1 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.google.guava#guava;15.0 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.google.guava#guava;16.0.1 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->org.scala-lang#scala-library;2.11.2 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->org.scala-lang#scala-library;2.11.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->org.scala-lang#scala-reflect;2.11.2 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->org.scala-lang#scala-reflect;2.11.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.11.2->org.scala-lang#scala-library;2.11.2 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.11.2->org.scala-lang#scala-library;2.11.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.fasterxml.jackson.core#jackson-core;2.4.2 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.fasterxml.jackson.core#jackson-core;2.4.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.fasterxml.jackson.core#jackson-annotations;2.4.2 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.fasterxml.jackson.core#jackson-annotations;2.4.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.fasterxml.jackson.core#jackson-databind;2.4.2 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.fasterxml.jackson.core#jackson-databind;2.4.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.core#jackson-databind;2.4.2->com.fasterxml.jackson.core#jackson-annotations;2.4.0 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.core#jackson-databind;2.4.2->com.fasterxml.jackson.core#jackson-annotations;2.4.2 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.core#jackson-databind;2.4.2->com.fasterxml.jackson.core#jackson-annotations;2.4.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.core#jackson-databind;2.4.2->com.fasterxml.jackson.core#jackson-core;2.4.2 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.core#jackson-databind;2.4.2->com.fasterxml.jackson.core#jackson-core;2.4.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.thoughtworks.paranamer#paranamer;2.6 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.thoughtworks.paranamer#paranamer;2.6 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.google.code.findbugs#jsr305;2.0.1 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.google.code.findbugs#jsr305;2.0.1 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.google.guava#guava;15.0 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.google.guava#guava;16.0.1 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.google.guava#guava;16.0.1 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies mcs#mcs_2.11;1.0-SNAPSHOT->com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2 [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies mcs#mcs_2.11;1.0-SNAPSHOT->com.typesafe.play#play-test_2.11;2.3.3 [test->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies mcs#mcs_2.11;1.0-SNAPSHOT->com.typesafe.play#play-test_2.11;2.3.3 [test->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies mcs#mcs_2.11;1.0-SNAPSHOT->com.typesafe.play#play-test_2.11;2.3.3 [test->compile][0m
@@ -6538,8 +6911,9 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scalaz#scalaz-effect_2.11;7.0.6->org.scalaz#scalaz-core_2.11;7.0.6 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.specs2#specs2-common_2.11;2.3.12->org.scala-lang#scala-reflect;2.11.0 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.specs2#specs2-common_2.11;2.3.12->org.scala-lang#scala-reflect;2.11.1 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.specs2#specs2-common_2.11;2.3.12->org.scala-lang#scala-reflect;2.11.2 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.specs2#specs2-common_2.11;2.3.12->org.scala-lang#scala-reflect;2.11.0 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.specs2#specs2-common_2.11;2.3.12->org.scala-lang#scala-reflect;2.11.1 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.specs2#specs2-common_2.11;2.3.12->org.scala-lang#scala-reflect;2.11.2 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-test_2.11;2.3.3->org.specs2#specs2-junit_2.11;2.3.12 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-test_2.11;2.3.3->org.specs2#specs2-junit_2.11;2.3.12 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.specs2#specs2-junit_2.11;2.3.12->org.scala-lang#scala-library;2.11.0 [compile->master(*)][0m
@@ -6583,9 +6957,9 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.11.0->org.scala-lang#scala-library;2.11.0 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.11.0->org.scala-lang#scala-library;2.11.2 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.11.0->org.scala-lang#scala-reflect;2.11.0 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.11.0->org.scala-lang#scala-reflect;2.11.1 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.11.0->org.scala-lang#scala-reflect;2.11.2 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.11.0->org.scala-lang#scala-reflect;2.11.0 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.11.0->org.scala-lang#scala-reflect;2.11.1 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.11.0->org.scala-lang#scala-reflect;2.11.2 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.11.0->org.scala-lang.modules#scala-xml_2.11;1.0.1 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.11.0->org.scala-lang.modules#scala-xml_2.11;1.0.2 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.11.0->org.scala-lang.modules#scala-xml_2.11;1.0.1 [compile->compile(*)][0m
@@ -7306,8 +7680,8 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scalaz#scalaz-effect_2.11;7.0.6->org.scalaz#scalaz-core_2.11;7.0.6 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scalaz#scalaz-effect_2.11;7.0.6->org.scalaz#scalaz-core_2.11;7.0.6 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.specs2#specs2-common_2.11;2.3.12->org.scala-lang#scala-reflect;2.11.0 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.specs2#specs2-common_2.11;2.3.12->org.scala-lang#scala-reflect;2.11.1 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.specs2#specs2-common_2.11;2.3.12->org.scala-lang#scala-reflect;2.11.1 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.specs2#specs2-common_2.11;2.3.12->org.scala-lang#scala-reflect;2.11.2 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.specs2#specs2-common_2.11;2.3.12->org.scala-lang#scala-reflect;2.11.2 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-test_2.11;2.3.3->org.specs2#specs2-junit_2.11;2.3.12 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-test_2.11;2.3.3->org.specs2#specs2-junit_2.11;2.3.12 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.specs2#specs2-junit_2.11;2.3.12->org.scala-lang#scala-library;2.11.0 [runtime->runtime(*)][0m
@@ -7346,8 +7720,8 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.11.0->org.scala-lang#scala-library;2.11.2 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.11.0->org.scala-lang#scala-library;2.11.2 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.11.0->org.scala-lang#scala-reflect;2.11.0 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.11.0->org.scala-lang#scala-reflect;2.11.1 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.11.0->org.scala-lang#scala-reflect;2.11.1 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.11.0->org.scala-lang#scala-reflect;2.11.2 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.11.0->org.scala-lang#scala-reflect;2.11.2 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.11.0->org.scala-lang.modules#scala-xml_2.11;1.0.1 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.11.0->org.scala-lang.modules#scala-xml_2.11;1.0.2 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.11.0->org.scala-lang.modules#scala-xml_2.11;1.0.2 [runtime->compile][0m
@@ -8766,6 +9140,60 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.github.mauricio#db-async-common_2.11;0.2.14->org.javassist#javassist;3.18.2-GA [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.github.mauricio#db-async-common_2.11;0.2.14->org.javassist#javassist;3.18.2-GA [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies mcs#mcs_2.11;1.0-SNAPSHOT->com.github.mauricio#mysql-async_2.11;0.2.14 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies mcs#mcs_2.11;1.0-SNAPSHOT->com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies mcs#mcs_2.11;1.0-SNAPSHOT->com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies mcs#mcs_2.11;1.0-SNAPSHOT->com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->org.scala-lang#scala-library;2.11.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->org.scala-lang#scala-library;2.11.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->org.scala-lang#scala-reflect;2.11.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->org.scala-lang#scala-reflect;2.11.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.11.2->org.scala-lang#scala-library;2.11.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.11.2->org.scala-lang#scala-library;2.11.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.fasterxml.jackson.core#jackson-core;2.4.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.fasterxml.jackson.core#jackson-core;2.4.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.fasterxml.jackson.core#jackson-annotations;2.4.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.fasterxml.jackson.core#jackson-annotations;2.4.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.fasterxml.jackson.core#jackson-databind;2.4.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.fasterxml.jackson.core#jackson-databind;2.4.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.core#jackson-databind;2.4.2->com.fasterxml.jackson.core#jackson-annotations;2.4.0 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.core#jackson-databind;2.4.2->com.fasterxml.jackson.core#jackson-annotations;2.4.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.core#jackson-databind;2.4.2->com.fasterxml.jackson.core#jackson-annotations;2.4.0 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.core#jackson-databind;2.4.2->com.fasterxml.jackson.core#jackson-annotations;2.4.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.core#jackson-databind;2.4.2->com.fasterxml.jackson.core#jackson-core;2.4.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.core#jackson-databind;2.4.2->com.fasterxml.jackson.core#jackson-core;2.4.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.thoughtworks.paranamer#paranamer;2.6 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.thoughtworks.paranamer#paranamer;2.6 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.google.code.findbugs#jsr305;2.0.1 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.google.code.findbugs#jsr305;2.0.1 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.google.guava#guava;15.0 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.google.guava#guava;16.0.1 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.google.guava#guava;15.0 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.google.guava#guava;16.0.1 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->org.scala-lang#scala-library;2.11.2 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->org.scala-lang#scala-library;2.11.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->org.scala-lang#scala-reflect;2.11.2 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->org.scala-lang#scala-reflect;2.11.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.11.2->org.scala-lang#scala-library;2.11.2 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.11.2->org.scala-lang#scala-library;2.11.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.fasterxml.jackson.core#jackson-core;2.4.2 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.fasterxml.jackson.core#jackson-core;2.4.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.fasterxml.jackson.core#jackson-annotations;2.4.2 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.fasterxml.jackson.core#jackson-annotations;2.4.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.fasterxml.jackson.core#jackson-databind;2.4.2 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.fasterxml.jackson.core#jackson-databind;2.4.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.core#jackson-databind;2.4.2->com.fasterxml.jackson.core#jackson-annotations;2.4.0 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.core#jackson-databind;2.4.2->com.fasterxml.jackson.core#jackson-annotations;2.4.2 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.core#jackson-databind;2.4.2->com.fasterxml.jackson.core#jackson-annotations;2.4.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.core#jackson-databind;2.4.2->com.fasterxml.jackson.core#jackson-core;2.4.2 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.core#jackson-databind;2.4.2->com.fasterxml.jackson.core#jackson-core;2.4.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.thoughtworks.paranamer#paranamer;2.6 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.thoughtworks.paranamer#paranamer;2.6 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.google.code.findbugs#jsr305;2.0.1 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.google.code.findbugs#jsr305;2.0.1 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.google.guava#guava;15.0 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.google.guava#guava;16.0.1 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.google.guava#guava;16.0.1 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies mcs#mcs_2.11;1.0-SNAPSHOT->com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2 [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for mcs#mcs_2.11;1.0-SNAPSHOT [optional][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies mcs#mcs_2.11;1.0-SNAPSHOT->com.typesafe.trace#trace-play-2.3.3_2.11;0.1.6 [echo-trace-compile->default(compile)][0m
 [0m[[0minfo[0m] [0mResolving com.typesafe.trace#trace-play-2.3.3_2.11;0.1.6 ...[0m
@@ -9726,6 +10154,60 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.github.mauricio#db-async-common_2.11;0.2.14->org.javassist#javassist;3.18.2-GA [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.github.mauricio#db-async-common_2.11;0.2.14->org.javassist#javassist;3.18.2-GA [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies mcs#mcs_2.11;1.0-SNAPSHOT->com.github.mauricio#mysql-async_2.11;0.2.14 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies mcs#mcs_2.11;1.0-SNAPSHOT->com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies mcs#mcs_2.11;1.0-SNAPSHOT->com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies mcs#mcs_2.11;1.0-SNAPSHOT->com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->org.scala-lang#scala-library;2.11.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->org.scala-lang#scala-library;2.11.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->org.scala-lang#scala-reflect;2.11.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->org.scala-lang#scala-reflect;2.11.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.11.2->org.scala-lang#scala-library;2.11.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.11.2->org.scala-lang#scala-library;2.11.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.fasterxml.jackson.core#jackson-core;2.4.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.fasterxml.jackson.core#jackson-core;2.4.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.fasterxml.jackson.core#jackson-annotations;2.4.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.fasterxml.jackson.core#jackson-annotations;2.4.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.fasterxml.jackson.core#jackson-databind;2.4.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.fasterxml.jackson.core#jackson-databind;2.4.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.core#jackson-databind;2.4.2->com.fasterxml.jackson.core#jackson-annotations;2.4.0 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.core#jackson-databind;2.4.2->com.fasterxml.jackson.core#jackson-annotations;2.4.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.core#jackson-databind;2.4.2->com.fasterxml.jackson.core#jackson-annotations;2.4.0 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.core#jackson-databind;2.4.2->com.fasterxml.jackson.core#jackson-annotations;2.4.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.core#jackson-databind;2.4.2->com.fasterxml.jackson.core#jackson-core;2.4.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.core#jackson-databind;2.4.2->com.fasterxml.jackson.core#jackson-core;2.4.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.thoughtworks.paranamer#paranamer;2.6 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.thoughtworks.paranamer#paranamer;2.6 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.google.code.findbugs#jsr305;2.0.1 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.google.code.findbugs#jsr305;2.0.1 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.google.guava#guava;15.0 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.google.guava#guava;16.0.1 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.google.guava#guava;15.0 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.google.guava#guava;16.0.1 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->org.scala-lang#scala-library;2.11.2 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->org.scala-lang#scala-library;2.11.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->org.scala-lang#scala-reflect;2.11.2 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->org.scala-lang#scala-reflect;2.11.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.11.2->org.scala-lang#scala-library;2.11.2 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.11.2->org.scala-lang#scala-library;2.11.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.fasterxml.jackson.core#jackson-core;2.4.2 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.fasterxml.jackson.core#jackson-core;2.4.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.fasterxml.jackson.core#jackson-annotations;2.4.2 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.fasterxml.jackson.core#jackson-annotations;2.4.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.fasterxml.jackson.core#jackson-databind;2.4.2 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.fasterxml.jackson.core#jackson-databind;2.4.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.core#jackson-databind;2.4.2->com.fasterxml.jackson.core#jackson-annotations;2.4.0 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.core#jackson-databind;2.4.2->com.fasterxml.jackson.core#jackson-annotations;2.4.2 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.core#jackson-databind;2.4.2->com.fasterxml.jackson.core#jackson-annotations;2.4.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.core#jackson-databind;2.4.2->com.fasterxml.jackson.core#jackson-core;2.4.2 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.core#jackson-databind;2.4.2->com.fasterxml.jackson.core#jackson-core;2.4.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.thoughtworks.paranamer#paranamer;2.6 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.thoughtworks.paranamer#paranamer;2.6 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.google.code.findbugs#jsr305;2.0.1 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.google.code.findbugs#jsr305;2.0.1 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.google.guava#guava;15.0 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.google.guava#guava;16.0.1 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.google.guava#guava;16.0.1 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies mcs#mcs_2.11;1.0-SNAPSHOT->com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2 [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for mcs#mcs_2.11;1.0-SNAPSHOT [optional][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies mcs#mcs_2.11;1.0-SNAPSHOT->com.typesafe.trace#trace-play-2.3.3_2.11;0.1.6 [echo-trace-compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies mcs#mcs_2.11;1.0-SNAPSHOT->com.typesafe.trace#trace-play-2.3.3_2.11;0.1.6 [echo-trace-compile->runtime][0m
@@ -9928,8 +10410,9 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scalaz#scalaz-effect_2.11;7.0.6->org.scalaz#scalaz-core_2.11;7.0.6 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.specs2#specs2-common_2.11;2.3.12->org.scala-lang#scala-reflect;2.11.0 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.specs2#specs2-common_2.11;2.3.12->org.scala-lang#scala-reflect;2.11.1 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.specs2#specs2-common_2.11;2.3.12->org.scala-lang#scala-reflect;2.11.2 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.specs2#specs2-common_2.11;2.3.12->org.scala-lang#scala-reflect;2.11.0 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.specs2#specs2-common_2.11;2.3.12->org.scala-lang#scala-reflect;2.11.1 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.specs2#specs2-common_2.11;2.3.12->org.scala-lang#scala-reflect;2.11.2 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-test_2.11;2.3.3->org.specs2#specs2-junit_2.11;2.3.12 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-test_2.11;2.3.3->org.specs2#specs2-junit_2.11;2.3.12 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.specs2#specs2-junit_2.11;2.3.12->org.scala-lang#scala-library;2.11.0 [compile->master(*)][0m
@@ -9973,9 +10456,9 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.11.0->org.scala-lang#scala-library;2.11.0 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.11.0->org.scala-lang#scala-library;2.11.2 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.11.0->org.scala-lang#scala-reflect;2.11.0 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.11.0->org.scala-lang#scala-reflect;2.11.1 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.11.0->org.scala-lang#scala-reflect;2.11.2 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.11.0->org.scala-lang#scala-reflect;2.11.0 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.11.0->org.scala-lang#scala-reflect;2.11.1 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.11.0->org.scala-lang#scala-reflect;2.11.2 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.11.0->org.scala-lang.modules#scala-xml_2.11;1.0.1 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.11.0->org.scala-lang.modules#scala-xml_2.11;1.0.2 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.11.0->org.scala-lang.modules#scala-xml_2.11;1.0.1 [compile->compile(*)][0m
@@ -10696,8 +11179,8 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scalaz#scalaz-effect_2.11;7.0.6->org.scalaz#scalaz-core_2.11;7.0.6 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scalaz#scalaz-effect_2.11;7.0.6->org.scalaz#scalaz-core_2.11;7.0.6 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.specs2#specs2-common_2.11;2.3.12->org.scala-lang#scala-reflect;2.11.0 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.specs2#specs2-common_2.11;2.3.12->org.scala-lang#scala-reflect;2.11.1 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.specs2#specs2-common_2.11;2.3.12->org.scala-lang#scala-reflect;2.11.1 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.specs2#specs2-common_2.11;2.3.12->org.scala-lang#scala-reflect;2.11.2 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.specs2#specs2-common_2.11;2.3.12->org.scala-lang#scala-reflect;2.11.2 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-test_2.11;2.3.3->org.specs2#specs2-junit_2.11;2.3.12 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-test_2.11;2.3.3->org.specs2#specs2-junit_2.11;2.3.12 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.specs2#specs2-junit_2.11;2.3.12->org.scala-lang#scala-library;2.11.0 [runtime->runtime(*)][0m
@@ -10736,8 +11219,8 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.11.0->org.scala-lang#scala-library;2.11.2 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.11.0->org.scala-lang#scala-library;2.11.2 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.11.0->org.scala-lang#scala-reflect;2.11.0 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.11.0->org.scala-lang#scala-reflect;2.11.1 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.11.0->org.scala-lang#scala-reflect;2.11.1 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.11.0->org.scala-lang#scala-reflect;2.11.2 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.11.0->org.scala-lang#scala-reflect;2.11.2 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.11.0->org.scala-lang.modules#scala-xml_2.11;1.0.1 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.11.0->org.scala-lang.modules#scala-xml_2.11;1.0.2 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.11.0->org.scala-lang.modules#scala-xml_2.11;1.0.2 [runtime->compile][0m
@@ -10940,14 +11423,8 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies mcs#mcs_2.11;1.0-SNAPSHOT->com.typesafe.trace#trace-sigar-libs;0.1.6 [echo-sigar->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies mcs#mcs_2.11;1.0-SNAPSHOT->com.typesafe.trace#trace-sigar-libs;0.1.6 [echo-sigar->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies mcs#mcs_2.11;1.0-SNAPSHOT->com.typesafe.trace#trace-sigar-libs;0.1.6 [echo-sigar->master][0m
-[0m[[0mdebug[0m] [0mall callers are evicted for com.google.code.findbugs#jsr305;1.3.9: evicting too[0m
-[0m[[0mdebug[0m] [0mall callers are evicted for com.google.code.findbugs#jsr305;1.3.9: evicting too[0m
-[0m[[0mdebug[0m] [0mall callers are evicted for com.google.code.findbugs#jsr305;1.3.9: evicting too[0m
-[0m[[0mdebug[0m] [0mall callers are evicted for com.google.code.findbugs#jsr305;1.3.9: evicting too[0m
-[0m[[0mdebug[0m] [0mall callers are evicted for com.google.code.findbugs#jsr305;1.3.9: evicting too[0m
-[0m[[0mdebug[0m] [0mall callers are evicted for com.google.code.findbugs#jsr305;1.3.9: evicting too[0m
-[0m[[0mdebug[0m] [0mall callers are evicted for com.google.code.findbugs#jsr305;1.3.9: evicting too[0m
-[0m[[0mdebug[0m] [0mall callers are evicted for com.google.code.findbugs#jsr305;1.3.9: evicting too[0m
+[0m[[0mdebug[0m] [0mcircular dependency found: org.scala-lang.modules#scala-xml_2.11;1.0.1->org.scala-lang#scala-compiler;2.11.0->...[0m
+[0m[[0mdebug[0m] [0mcircular dependency found: org.scala-lang.modules#scala-xml_2.11;1.0.2->org.scala-lang#scala-compiler;2.11.1->...[0m
 [0m[[0mdebug[0m] [0mall callers are evicted for commons-logging#commons-logging;1.1.1: evicting too[0m
 [0m[[0mdebug[0m] [0mall callers are evicted for commons-logging#commons-logging;1.1.1: evicting too[0m
 [0m[[0mdebug[0m] [0mall callers are evicted for commons-logging#commons-logging;1.1.1: evicting too[0m
@@ -10970,6 +11447,7 @@
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] net.sf.ehcache#ehcache-jgroupsreplication;1.7!ehcache-jgroupsreplication.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] javax.transaction#jta;1.1!jta.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.github.mauricio#mysql-async_2.11;0.2.14!mysql-async_2.11.jar[0m
+[0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2!jackson-module-scala_2.11.jar(bundle)[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.apache.commons#commons-lang3;3.1!commons-lang3.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang.modules#scala-xml_2.11;1.0.1!scala-xml_2.11.jar(bundle)[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.typesafe.play#build-link;2.3.3!build-link.jar[0m
@@ -11032,6 +11510,33 @@
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.jgroups#jgroups;3.1.0.Final!jgroups.jar(bundle)[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.github.mauricio#db-async-common_2.11;0.2.14!db-async-common_2.11.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] io.netty#netty-all;4.0.23.Final!netty-all.jar[0m
+[0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#scala-reflect;2.11.2!scala-reflect.jar[0m
+[0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.fasterxml.jackson.core#jackson-core;2.4.2!jackson-core.jar(bundle)[0m
+[0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.fasterxml.jackson.core#jackson-annotations;2.4.2!jackson-annotations.jar(bundle)[0m
+[0m[[0mdebug[0m] [0m		tried /Users/brew/.ivy2/local/com.fasterxml.jackson.core/jackson-databind/2.4.2/bundles/jackson-databind.jar[0m
+[0m[[0mdebug[0m] [0m		tried file:/Users/brew/NPE/activator-1.2.10/repository/com.fasterxml.jackson.core/jackson-databind/2.4.2/bundles/jackson-databind.jar[0m
+[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.4.2/jackson-databind-2.4.2.jar[0m
+[0m[[0minfo[0m] [0mdownloading http://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.4.2/jackson-databind-2.4.2.jar ...[0m
+[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.4.2/jackson-databind-2.4.2.jar[0m
+[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.4.2/jackson-databind-2.4.2.jar.sha1[0m
+[0m[[0mdebug[0m] [0msha1 OK for http://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.4.2/jackson-databind-2.4.2.jar[0m
+[0m[[0minfo[0m] [0m	[SUCCESSFUL ] com.fasterxml.jackson.core#jackson-databind;2.4.2!jackson-databind.jar(bundle) (20317ms)[0m
+[0m[[0mdebug[0m] [0m		tried /Users/brew/.ivy2/local/com.thoughtworks.paranamer/paranamer/2.6/jars/paranamer.jar[0m
+[0m[[0mdebug[0m] [0m		tried file:/Users/brew/NPE/activator-1.2.10/repository/com.thoughtworks.paranamer/paranamer/2.6/jars/paranamer.jar[0m
+[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/com/thoughtworks/paranamer/paranamer/2.6/paranamer-2.6.jar[0m
+[0m[[0minfo[0m] [0mdownloading http://repo1.maven.org/maven2/com/thoughtworks/paranamer/paranamer/2.6/paranamer-2.6.jar ...[0m
+[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/com/thoughtworks/paranamer/paranamer/2.6/paranamer-2.6.jar[0m
+[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/com/thoughtworks/paranamer/paranamer/2.6/paranamer-2.6.jar.sha1[0m
+[0m[[0mdebug[0m] [0msha1 OK for http://repo1.maven.org/maven2/com/thoughtworks/paranamer/paranamer/2.6/paranamer-2.6.jar[0m
+[0m[[0minfo[0m] [0m	[SUCCESSFUL ] com.thoughtworks.paranamer#paranamer;2.6!paranamer.jar (1611ms)[0m
+[0m[[0mdebug[0m] [0m		tried /Users/brew/.ivy2/local/com.google.code.findbugs/jsr305/2.0.1/jars/jsr305.jar[0m
+[0m[[0mdebug[0m] [0m		tried file:/Users/brew/NPE/activator-1.2.10/repository/com.google.code.findbugs/jsr305/2.0.1/jars/jsr305.jar[0m
+[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/com/google/code/findbugs/jsr305/2.0.1/jsr305-2.0.1.jar[0m
+[0m[[0minfo[0m] [0mdownloading http://repo1.maven.org/maven2/com/google/code/findbugs/jsr305/2.0.1/jsr305-2.0.1.jar ...[0m
+[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/com/google/code/findbugs/jsr305/2.0.1/jsr305-2.0.1.jar[0m
+[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/com/google/code/findbugs/jsr305/2.0.1/jsr305-2.0.1.jar.sha1[0m
+[0m[[0mdebug[0m] [0msha1 OK for http://repo1.maven.org/maven2/com/google/code/findbugs/jsr305/2.0.1/jsr305-2.0.1.jar[0m
+[0m[[0minfo[0m] [0m	[SUCCESSFUL ] com.google.code.findbugs#jsr305;2.0.1!jsr305.jar (1782ms)[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.typesafe.play#play-test_2.11;2.3.3!play-test_2.11.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] junit#junit;4.11!junit.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.specs2#specs2-core_2.11;2.3.12!specs2-core_2.11.jar[0m
@@ -11114,7 +11619,7 @@
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] log4j#log4j;1.2.15!log4j.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.aspectj#aspectjweaver;1.7.3!aspectjweaver.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.typesafe.trace#trace-sigar-libs;0.1.6!trace-sigar-libs.jar[0m
-[0m[[0mdebug[0m] [0m:: resolution report :: resolve 2891ms :: artifacts dl 46ms[0m
+[0m[[0mdebug[0m] [0m:: resolution report :: resolve 5907ms :: artifacts dl 23844ms[0m
 [0m[[0mdebug[0m] [0m	report for mcs#mcs_2.11;1.0-SNAPSHOT compile produced in /Users/brew/NPE/gits/mcs/target/resolution-cache/reports/mcs-mcs_2.11-compile.xml[0m
 [0m[[0mdebug[0m] [0m	report for mcs#mcs_2.11;1.0-SNAPSHOT runtime produced in /Users/brew/NPE/gits/mcs/target/resolution-cache/reports/mcs-mcs_2.11-runtime.xml[0m
 [0m[[0mdebug[0m] [0m	report for mcs#mcs_2.11;1.0-SNAPSHOT test produced in /Users/brew/NPE/gits/mcs/target/resolution-cache/reports/mcs-mcs_2.11-test.xml[0m
@@ -11127,10 +11632,11 @@
 [0m[[0mdebug[0m] [0m	report for mcs#mcs_2.11;1.0-SNAPSHOT sources produced in /Users/brew/NPE/gits/mcs/target/resolution-cache/reports/mcs-mcs_2.11-sources.xml[0m
 [0m[[0mdebug[0m] [0m	report for mcs#mcs_2.11;1.0-SNAPSHOT docs produced in /Users/brew/NPE/gits/mcs/target/resolution-cache/reports/mcs-mcs_2.11-docs.xml[0m
 [0m[[0mdebug[0m] [0m	report for mcs#mcs_2.11;1.0-SNAPSHOT pom produced in /Users/brew/NPE/gits/mcs/target/resolution-cache/reports/mcs-mcs_2.11-pom.xml[0m
+[0m[[0mdebug[0m] [0mcircular dependency found: org.scala-lang#scala-compiler;2.11.1->org.scala-lang.modules#scala-xml_2.11;1.0.2->...[0m
 [0m[[0mdebug[0m] [0m	report for mcs#mcs_2.11;1.0-SNAPSHOT scala-tool produced in /Users/brew/NPE/gits/mcs/target/resolution-cache/reports/mcs-mcs_2.11-scala-tool.xml[0m
 [0m[[0mdebug[0m] [0m	report for mcs#mcs_2.11;1.0-SNAPSHOT echo-trace-compile produced in /Users/brew/NPE/gits/mcs/target/resolution-cache/reports/mcs-mcs_2.11-echo-trace-compile.xml[0m
 [0m[[0mdebug[0m] [0m	report for mcs#mcs_2.11;1.0-SNAPSHOT echo-trace-test produced in /Users/brew/NPE/gits/mcs/target/resolution-cache/reports/mcs-mcs_2.11-echo-trace-test.xml[0m
 [0m[[0mdebug[0m] [0m	report for mcs#mcs_2.11;1.0-SNAPSHOT echo-weave produced in /Users/brew/NPE/gits/mcs/target/resolution-cache/reports/mcs-mcs_2.11-echo-weave.xml[0m
 [0m[[0mdebug[0m] [0m	report for mcs#mcs_2.11;1.0-SNAPSHOT echo-sigar produced in /Users/brew/NPE/gits/mcs/target/resolution-cache/reports/mcs-mcs_2.11-echo-sigar.xml[0m
-[0m[[0mdebug[0m] [0m	resolve done (2891ms resolve - 46ms download)[0m
+[0m[[0mdebug[0m] [0m	resolve done (5907ms resolve - 23844ms download)[0m
 [0m[[0minfo[0m] [0mDone updating.[0m

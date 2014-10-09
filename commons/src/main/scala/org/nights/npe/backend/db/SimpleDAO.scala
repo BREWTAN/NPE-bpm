@@ -37,7 +37,7 @@ class NoneQueryResult()
 trait SimpleDAO[T] extends AsyncDBPool {
   val log = LoggerFactory.getLogger("SimpleDAO")
   import scala.concurrent.ExecutionContext.Implicits.global
-//  implicit val timeout = Timeout(60000)
+  //  implicit val timeout = Timeout(60000)
   //  def mapToBean(row: RowData): T;
   val ttag: ClassTag[T];
   val tablename: String;
@@ -57,12 +57,11 @@ trait SimpleDAO[T] extends AsyncDBPool {
       case Some(rs) =>
         for (row <- queryResult.rows.head) ret.append({
           val map = fields.map({ field =>
-            println("FF:" + field.getName() + ",=>" + row(field.getName()) + ",dbtype=" + row(field.getName()).getClass + ",classtype=" + field.getType())
+//            println("FF:" + field.getName() + ",=>" + row(field.getName()))
             if (row(field.getName()) == null) {
               null
             } else {
-
-              //              println("FF:" + field.getName() +"("+ field.getType()+")"+ ",=>" + row(field.getName())+",type="+row(field.getName()).getClass)
+//              println("FF:" + field.getName() + "(" + field.getType() + ")" + ",=>" + row(field.getName()) + ",type=" + row(field.getName()).getClass)
               if (field.getType() == classOf[String]) {
                 row(field.getName()).asInstanceOf[String]
               } else if (field.getType() == classOf[Option[Int]] && row(field.getName()).isInstanceOf[java.lang.Integer]) {
@@ -75,8 +74,8 @@ trait SimpleDAO[T] extends AsyncDBPool {
 
               } else if (field.getType() == classOf[Option[Float]] && row(field.getName()).isInstanceOf[java.lang.Float]) {
                 Option(row(field.getName()).asInstanceOf[Float])
-              } else if (field.getType() == classOf[Option[Long]] && row(field.getName()).isInstanceOf[java.lang.Long]) {
-                Option(row(field.getName()).asInstanceOf[Long])
+              } else if (field.getType() == classOf[Option[Long]] && row(field.getName()).isInstanceOf[scala.math.BigDecimal]) {
+                Option(row(field.getName()).asInstanceOf[scala.math.BigDecimal].toLong)
               } else {
                 row(field.getName()).asInstanceOf[String]
                 //          row(field.getName()).asInstanceOf[String]
@@ -339,7 +338,7 @@ trait SimpleDAO[T] extends AsyncDBPool {
       row.head(0).asInstanceOf[Long]
     })
   })
-  
+
   def hb() = exec("SELECT " + keyname + " FROM " + tablename + " LIMIT 1")
 
   import reflect.runtime.universe._

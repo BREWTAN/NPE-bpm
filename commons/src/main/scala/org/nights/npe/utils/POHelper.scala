@@ -163,6 +163,6 @@ object POHelper {
 
   def fromXMLFile(filename: String): Process = fromXML(XML.loadFile(filename));
   
-  def fromXML(xml:String) :Process=fromXML(XML.load(xml))
+  def fromXML(xml:String) :Process=fromXML(XML.loadString(xml))
   
 }

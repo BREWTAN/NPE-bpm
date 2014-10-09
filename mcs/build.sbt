@@ -33,6 +33,7 @@ libraryDependencies ++= Seq(
    "net.sf.ehcache" % "ehcache" % "2.8.3" from "http://repo1.maven.org/maven2/net/sf/ehcache/ehcache/2.8.3/ehcache-2.8.3.pom",
    "net.sf.ehcache" % "ehcache-jgroupsreplication" % "1.7",
    "javax.transaction" % "jta" % "1.1",
-   "com.github.mauricio" %% "mysql-async" % "0.2.14"
+   "com.github.mauricio" %% "mysql-async" % "0.2.14",
+   "com.fasterxml.jackson.module" %% "jackson-module-scala" % "2.4.2"
 )
 

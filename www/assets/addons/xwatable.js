@@ -1,14 +1,10 @@
 var XWATable = function() {
-	 var xjson;
-	 var rURL;
 	    
 	return {
 	    	
-	     getXwajson:function(){
-	        	return xjson;
-	        },
-	    	
 	    init: function(xwajson) {
+
+
 	            var tbform;
 	            var restURL;
 	            var waTable;
@@ -16,7 +12,7 @@ var XWATable = function() {
 	            var xwaOptions; 
 	            var curSeachFilter;
 	            var basePath="/nperest";
-	            xjson = xwajson;
+
 
             var queryURL = function(url){
                 // console.log("url=="+url+"::match="+url.match(/.*\?.*/));
@@ -129,7 +125,7 @@ var XWATable = function() {
                                 var sendjson = {};
                                 $.each($('#__editform input'), function(index, val) {
                                     // console.log(val.name+"::"+val.value);
-                                    if (val.name == "_id"||!val.name||val.name.length==0) return;
+                                    if (val.name == xwaOptions["key_column"]||!val.name||val.name.length==0) return;
                                     if(val.name == "leaf"){
                                         if($("#leaf").attr("checked")){
                                             sendjson[val.name] = 1;
@@ -143,12 +139,12 @@ var XWATable = function() {
                                 });
                                 $.each($('#__editform select'), function(index, val) {
                                     console.log(val.name+"::"+val.value);
-                                    if (val.name == "_id"||!val.name||val.name.length==0) return;
+                                    if (val.name == xwaOptions["key_column"]||!val.name||val.name.length==0) return;
                                     sendjson[val.name] = val.value;
                                 });
                                 $.each($('#__editform textarea'), function(index, val) {
                                     console.log(val.name+"::"+val.value);
-                                    if (val.name == "_id"||!val.name||val.name.length==0) return;
+                                    if (val.name == xwaOptions["key_column"]||!val.name||val.name.length==0) return;
                                     sendjson[val.name] = val.value;
                                 });
                                 console.log("submit::" + JSON.stringify(sendjson));
@@ -203,7 +199,7 @@ var XWATable = function() {
                                 var moditem = {};
                                 $.each($('#__editform input'), function(index, val) {
                                     console.log(val.name+"::"+val.value);
-                                    if (val.name == "_id"||!val.name||val.name.length==0) return;
+                                    if (!val.name||val.name.length==0) return;
                                     if (val.name == "leaf"){
                                         if($("#leaf").attr("checked")){
                                             moditem[val.name] = 1;
@@ -216,21 +212,21 @@ var XWATable = function() {
                                 });
                                 $.each($('#__editform select'), function(index, val) {
                                     console.log(val.name+"::"+val.value);
-                                    if (val.name == "_id"||!val.name||val.name.length==0) return;
+                                    if (val.name == xwaOptions["key_column"]||!val.name||val.name.length==0) return;
                                     moditem[val.name] = val.value;
                                 });
                                 $.each($('#__editform textarea'), function(index, val) {
                                     console.log(val.name+"::"+val.value);
-                                    if (val.name == "_id"||!val.name||val.name.length==0) return;
+                                    if (val.name == xwaOptions["key_column"]||!val.name||val.name.length==0) return;
                                     sendjson[val.name] = val.value;
                                 });
                                 var sendjson = {
                                     "$set": moditem
                                 };
-                                // sendjson["_id"]=selrow["_id"];
+                                
                                 console.log("submit::" + JSON.stringify(sendjson));
                                 Restful.update(restURL,
-                                    selrow["_id"], moditem
+                                    selrow[xwaOptions["key_column"]], moditem
                                 );
                                 var ret=waTable.update();
 
@@ -263,9 +259,7 @@ var XWATable = function() {
                             if (!result) return;
                             var ids=[];
                             $.each(selrow, function(index, row) {
-                                ids.push(row["_id"]);
-                                // console.log("del::" + row["_id"]);
-                                // Restful.delByID(restURL, row["_id"]);
+                                ids.push(row[xwaOptions["key_column"]]);
                             });
                             console.log("delete:"+JSON.stringify(ids));
                             var ret=Restful.delByIDS(restURL, ids);
@@ -318,7 +312,7 @@ var XWATable = function() {
 	                               var sendjson = {};
 	                               $.each($('#'+formId+' input'), function(index, val) {
 	                                   // console.log(val.name+"::"+val.value);
-	                                   if (val.name == "_id"||!val.name||val.name.length==0) return;
+	                                   if (val.name == xwaOptions["key_column"]||!val.name||val.name.length==0) return;
 	                                   if(val.name == "leaf"){
 	                                       if($("#leaf").attr("checked")){
 	                                           sendjson[val.name] = 1;
@@ -332,7 +326,7 @@ var XWATable = function() {
 	                               });
 	                               $.each($('#'+formId+' select'), function(index, val) {
 	                                   console.log(val.name+"::"+val.value);
-	                                   if (val.name == "_id"||!val.name||val.name.length==0) return;
+	                                   if (val.name == xwaOptions["key_column"]||!val.name||val.name.length==0) return;
 	                                   sendjson[val.name] = val.value;
 	                               });
 	
@@ -376,7 +370,7 @@ var XWATable = function() {
                                        var moditem = {};
                                        $.each($('#'+formId+' input'), function(index, val) {
                                            console.log(val.name+"::"+val.value);
-                                           if (val.name == "_id"||!val.name||val.name.length==0) return;
+                                           if (val.name == xwaOptions["key_column"]||!val.name||val.name.length==0) return;
                                            if (val.name == "leaf"){
                                                if($("#leaf").attr("checked")){
                                                    moditem[val.name] = 1;
@@ -389,16 +383,16 @@ var XWATable = function() {
                                        });
                                        $.each($('#'+formId+' select'), function(index, val) {
                                            console.log(val.name+"::"+val.value);
-                                           if (val.name == "_id"||!val.name||val.name.length==0) return;
+                                           if (val.name == xwaOptions["key_column"]||!val.name||val.name.length==0) return;
                                            moditem[val.name] = val.value;
                                        });
                                        var sendjson = {
                                            "$set": moditem
                                        };
-                                       // sendjson["_id"]=selrow["_id"];
+                                       
                                        console.log("submit::" + JSON.stringify(sendjson));
                                        Restful.update(restURL,
-                                           selrow["_id"], moditem
+                                           selrow[xwaOptions["key_column"]], moditem
                                        );
                                        var ret=waTable.update();
 
@@ -424,6 +418,9 @@ var XWATable = function() {
             
             
         	xwaOptions=xwajson;
+            if(!xwaOptions["key_column"]){
+                xwaOptions["key_column"]='_id'
+            }
             onNew=xwaOptions.onNew;
             tbform = Duster.buildArr($('#__dust_tableform'));
             restURL = basePath+xwajson.restbase;
@@ -513,7 +510,10 @@ var XWATable = function() {
                 },
                 getTable:function(){
                     return waTable;
-                }
+                },
+                getXWAOptions:function(){
+                    return xwaOptions;
+                },
 
 
             };

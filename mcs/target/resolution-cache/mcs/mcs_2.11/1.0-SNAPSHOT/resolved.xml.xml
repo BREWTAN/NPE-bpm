@@ -4,7 +4,7 @@
 		module="mcs_2.11"
 		revision="1.0-SNAPSHOT"
 		status="integration"
-		publication="20141009040411"
+		publication="20141009111054"
 	>
 		<description>
 		mcs
@@ -60,6 +60,7 @@
 		<dependency org="net.sf.ehcache" name="ehcache-jgroupsreplication" rev="1.7" conf="compile->default(compile)"/>
 		<dependency org="javax.transaction" name="jta" rev="1.1" conf="compile->default(compile)"/>
 		<dependency org="com.github.mauricio" name="mysql-async_2.11" rev="0.2.14" conf="compile->default(compile)"/>
+		<dependency org="com.fasterxml.jackson.module" name="jackson-module-scala_2.11" rev="2.4.2" conf="compile->default(compile)"/>
 		<dependency org="com.typesafe.trace" name="trace-play-2.3.3_2.11" rev="0.1.6" conf="echo-trace-compile->default(compile)"/>
 	</dependencies>
 </ivy-module>

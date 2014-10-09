@@ -25,4 +25,10 @@ POST 	/upload				controllers.ProcDefHttpFace.upload
 
 
 ## rest for procdef
-GET  /procdef			controllers.ProcDefHttpFace.getByPage(skip: Int?=0, limit: Int?=10)
+GET  	/procdef			controllers.ProcDefHttpFace.getByPage(skip: Int?=0, limit: Int?=10)
+
+GET 	/procdef/check		controllers.ProcDefHttpFace.validate
+
+DELETE  /procdef/:defid 	controllers.ProcDefHttpFace.delete(defid:String)
+
+PUT     /procdef/:defid		controllers.ProcDefHttpFace.update(defid:String)

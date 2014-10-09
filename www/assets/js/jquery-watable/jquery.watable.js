@@ -725,7 +725,7 @@
                     async: false
                 })
                 .done(function(data) {
-                    console.log("succes::"+JSON.stringify(data));
+                    //console.log("succes::"+JSON.stringify(data));
                     // pageData=data;
                     priv.setData({
                             rows: data.rows,
