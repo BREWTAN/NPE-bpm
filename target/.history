@@ -95,3 +95,14 @@ use commons
 project commons
 publishM2
  project commons
+publishM2
+project commons
+clean
+package
+publishM2
+exit
+clean
+eclipse
+compile
+publishM2
+exit

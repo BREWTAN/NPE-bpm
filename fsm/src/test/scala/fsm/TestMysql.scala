@@ -5,23 +5,22 @@ import scala.reflect.ClassTag
 import scala.reflect.classTag
 import org.nights.npe.fsm.FsmActorsController
 import org.nights.npe.fsm.InlineCmdActor
-import org.nights.npe.fsm.backend.db.DBResult
-import org.nights.npe.fsm.backend.db.KOParams
-import org.nights.npe.fsm.backend.db.ParamsDAO
-import org.nights.npe.fsm.backend.db.TasksDAO
 import com.github.mauricio.async.db.exceptions.DatabaseException
 import com.github.mauricio.async.db.mysql.exceptions.MySQLException
 import com.typesafe.config.ConfigFactory
 import akka.actor.ActorSystem
 import akka.actor.actorRef2Scala
 import akka.cluster.Cluster
-import org.nights.npe.fsm.backend.db.KOTasks
 import com.github.mauricio.async.db.QueryResult
 import java.util.concurrent.atomic.AtomicLong
 import java.util.UUID
-import org.nights.npe.fsm.backend.db.SubmitTasksDAO
-import org.nights.npe.fsm.backend.db.KOSubmitTasks
-import org.nights.npe.fsm.backend.db.KO
+import org.nights.npe.backend.db.TasksDAO
+import org.nights.npe.backend.db.SubmitTasksDAO
+import org.nights.npe.backend.db.KOTasks
+import org.nights.npe.backend.db.KOSubmitTasks
+import org.nights.npe.backend.db.DBResult
+import org.nights.npe.backend.db.KOParams
+import org.nights.npe.backend.db.KO
 
 object TestMysql {
 

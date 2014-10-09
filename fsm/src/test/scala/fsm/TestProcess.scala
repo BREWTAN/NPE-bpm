@@ -1,7 +1,7 @@
 package fsm
 
 import org.nights.npe.fsm.TransitionWorker
-import org.nights.npe.fsm.defs.ProcDefHelper
+import org.nights.npe.utils.ProcDefHelper
 import org.nights.npe.po.Definition._
 
 import com.typesafe.config.ConfigFactory

@@ -1,18 +1,16 @@
 package fsm
 
 import java.io.File
-import org.nights.npe.fsm.backend.db.KOProcdef
-import org.nights.npe.fsm.backend.db.ProcDefCounterDAO
-import org.nights.npe.fsm.defs.ProcDefHelper
+import org.nights.npe.backend.db.ProcDefDAO
+import org.nights.npe.utils.ProcDefHelper
 import org.nights.npe.po.Definition.CallActivity
 import com.github.mauricio.async.db.QueryResult
 import scala.util.Success
 import com.github.mauricio.async.db.exceptions.DatabaseException
-import org.nights.npe.fsm.backend.db.DBResult
-import org.nights.npe.fsm.backend.db.ProcDefDAO
+import org.nights.npe.backend.db.DBResult
 import scala.util.Failure
 import akka.dispatch.OnComplete
-import akka.dispatch.OnComplete
+import org.nights.npe.backend.db.KOProcdef
 
 object TestProcessUpload {
 
@@ -41,11 +39,13 @@ object TestProcessUpload {
       procdef
     })
 
-    // ProcDefDAO.insertBatch(beans.toList)
+     
+    ProcDefDAO.insertBatch(beans.toList)
 
+     
     println("OKOK")
 
-    import scala.concurrent.ExecutionContext.Implicits.global
+import scala.concurrent.ExecutionContext.Implicits.global
 
     ProcDefDAO.countAll().andThen({ 
       case Success(s) =>

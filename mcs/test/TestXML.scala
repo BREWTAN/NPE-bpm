@@ -1,7 +1,7 @@
 import scala.xml.NodeSeq
 import scala.xml.XML
 
-import org.nights.npe.util.POHelper
+import org.nights.npe.utils.POHelper
 
 object TestXML {
 

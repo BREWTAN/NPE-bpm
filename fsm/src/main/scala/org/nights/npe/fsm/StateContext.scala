@@ -2,7 +2,7 @@ package org.nights.npe.fsm
 
 import scala.collection.mutable.HashMap
 
-import org.nights.npe.fsm.defs.ProcDefHelper
+import org.nights.npe.utils.ProcDefHelper
 
 /**
  * 任务上下文

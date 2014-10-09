@@ -12,7 +12,7 @@ import akka.dispatch.Futures.future
 import akka.pattern.Patterns.pipe
 import org.nights.npe.fsm.CMDSubmit
 import org.nights.npe.fsm.MessageHelper
-import org.nights.npe.fsm.defs.ProcDefHelper
+import org.nights.npe.utils.ProcDefHelper
 import org.nights.npe.fsm.backend.ProcDefStorage
 
 object TestFSM_1 {

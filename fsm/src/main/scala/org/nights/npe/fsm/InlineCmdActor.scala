@@ -1,15 +1,13 @@
 package org.nights.npe.fsm
 
 import scala.util.Failure
-
-import org.nights.npe.fsm.backend.db.DBResult
-import org.nights.npe.fsm.backend.db.SimpleDAO
 import org.nights.npe.fsm.front.ANewProcess
-
 import akka.actor.Actor
 import akka.actor.ActorLogging
 import akka.actor.ActorSelection.toScala
 import akka.routing.ConsistentHashingRouter.ConsistentHashableEnvelope
+import org.nights.npe.backend.db.SimpleDAO
+import org.nights.npe.backend.db.DBResult
 
 case class CMDSubmit(cmd: Any)
 case class RecoverFor(cluster:String)

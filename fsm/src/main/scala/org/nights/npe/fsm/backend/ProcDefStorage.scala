@@ -3,11 +3,11 @@ package org.nights.npe.fsm.backend
 import java.io.File
 
 import org.nights.npe.fsm.ActorHelper
-import org.nights.npe.fsm.defs.ProcDefHelper
-import org.nights.npe.po.Definition._
+import org.nights.npe.utils.ProcDefHelper
 
 import akka.actor.Actor
 import akka.actor.ActorLogging
+import akka.actor.actorRef2Scala
 
 case class LoadDefFile(filename: String);
 case class LoadDefDir(dir: String);

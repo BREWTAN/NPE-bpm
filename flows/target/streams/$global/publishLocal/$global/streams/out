@@ -1,7 +1,0 @@
-[0m[[0mdebug[0m] [0mlocal do not support transaction. ivy pattern does not use revision as a directory[0m
-[0m[[0mdebug[0m] [0mno default cache defined: set to /home/brew/.ivy2/cache[0m
-[0m[[0minfo[0m] [0m	published flows_2.10 to /home/brew/.ivy2/local/flows/flows_2.10/0.1-SNAPSHOT/poms/flows_2.10.pom[0m
-[0m[[0minfo[0m] [0m	published flows_2.10 to /home/brew/.ivy2/local/flows/flows_2.10/0.1-SNAPSHOT/jars/flows_2.10.jar[0m
-[0m[[0minfo[0m] [0m	published flows_2.10 to /home/brew/.ivy2/local/flows/flows_2.10/0.1-SNAPSHOT/srcs/flows_2.10-sources.jar[0m
-[0m[[0minfo[0m] [0m	published flows_2.10 to /home/brew/.ivy2/local/flows/flows_2.10/0.1-SNAPSHOT/docs/flows_2.10-javadoc.jar[0m
-[0m[[0minfo[0m] [0m	published ivy to /home/brew/.ivy2/local/flows/flows_2.10/0.1-SNAPSHOT/ivys/ivy.xml[0m

@@ -7,7 +7,7 @@ import org.nights.npe.fsm.StateContext
 import org.nights.npe.fsm.StatsCounter
 import org.nights.npe.fsm.Tansitionworkers
 import org.nights.npe.fsm.backend.SubmitStates
-import org.nights.npe.fsm.defs.ProcDefHelper
+import org.nights.npe.utils.ProcDefHelper
 import org.nights.npe.po.AskResult
 import org.nights.npe.po.Definition.NoneProcess
 import akka.actor.Actor

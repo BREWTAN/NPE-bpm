@@ -6,14 +6,6 @@ import scala.concurrent.Future
 import scala.concurrent.duration.DurationInt
 import org.nights.npe.fsm.ContextData
 import org.nights.npe.fsm.StateContext
-import org.nights.npe.fsm.backend.db.KOTasks
-import org.nights.npe.fsm.backend.db.KOTasks
-import org.nights.npe.fsm.backend.db.KOTasks
-import org.nights.npe.fsm.backend.db.ObtainTasksDAO
-import org.nights.npe.fsm.backend.db.ProcDefDAO
-import org.nights.npe.fsm.backend.db.ProcinstsDAO
-import org.nights.npe.fsm.backend.db.SubmitTasksDAO
-import org.nights.npe.fsm.backend.db.TasksDAO
 import org.nights.npe.po.AskResult
 import org.nights.npe.po.AskResult
 import org.slf4j.LoggerFactory
@@ -26,13 +18,16 @@ import scala.concurrent.impl.Future
 import scala.concurrent.ExecutionContext
 import scala.concurrent.impl.Future
 import akka.dispatch.ExecutionContexts
-import org.nights.npe.fsm.backend.db.KOConvergeCounter
-import org.nights.npe.fsm.backend.db.ConvergeDAO
-import org.nights.npe.fsm.backend.db.TermUpdateTasksDAO
-import org.nights.npe.fsm.backend.db.InObtainTasksDAO
-import org.nights.npe.fsm.backend.db.InSubmitTasksDAO
 import org.nights.npe.fsm.FSMGlobal
-import org.nights.npe.fsm.backend.db.InTermTasksDAO
+import org.nights.npe.backend.db.InObtainTasksDAO
+import org.nights.npe.backend.db.ConvergeDAO
+import org.nights.npe.backend.db.TasksDAO
+import org.nights.npe.backend.db.KOConvergeCounter
+import org.nights.npe.backend.db.ProcinstsDAO
+import org.nights.npe.backend.db.KOTasks
+import org.nights.npe.backend.db.InSubmitTasksDAO
+import org.nights.npe.backend.db.InTermTasksDAO
+import org.nights.npe.backend.db.ProcDefDAO
 
 /**
  * MySqlUpdate的模式

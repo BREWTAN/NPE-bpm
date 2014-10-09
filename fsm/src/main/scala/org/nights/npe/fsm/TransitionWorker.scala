@@ -2,8 +2,8 @@ package org.nights.npe.fsm
 
 import java.util.UUID
 import scala.collection.mutable.ListBuffer
-import org.nights.npe.fsm.defs.ProcDefHelper
-import org.nights.npe.fsm.defs.StateNodeDef
+import org.nights.npe.utils.ProcDefHelper
+import org.nights.npe.utils.StateNodeDef
 import akka.actor.Actor
 import akka.actor.ActorLogging
 import akka.actor.ActorSelection.toScala

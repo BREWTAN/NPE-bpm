@@ -5,24 +5,27 @@ import scala.collection.mutable.MutableList
 import scala.concurrent.Await
 import scala.concurrent.ExecutionContext.Implicits.global
 import scala.concurrent.duration.DurationInt
+
+import org.nights.npe.backend.db.ProcDefDAO
+import org.nights.npe.backend.db.TasksDAO
+
 import com.typesafe.config.ConfigFactory
+
 import akka.actor.Actor
 import akka.actor.ActorSystem
 import akka.cluster.Cluster
 import akka.cluster.ClusterEvent.CurrentClusterState
+import akka.cluster.ClusterEvent.MemberEvent
 import akka.cluster.ClusterEvent.MemberRemoved
 import akka.cluster.ClusterEvent.MemberUp
 import akka.pattern.ask
 import akka.routing.ConsistentHashingRouter.ConsistentHashableEnvelope
 import akka.util.Timeout
-import play.api._
+import play.api.Application
 import play.api.GlobalSettings
 import play.api.Logger
 import play.api.mvc.Action
 import play.api.mvc.Controller
-import akka.cluster.ClusterEvent.MemberEvent
-import org.nights.npe.fsm.backend.db.ProcDefDAO
-import org.nights.npe.fsm.backend.db.TasksDAO
 
 class FsmCollector extends Actor {
   val cluster = Cluster(context.system)

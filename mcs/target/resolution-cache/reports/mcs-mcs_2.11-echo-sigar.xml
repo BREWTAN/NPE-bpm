@@ -7,14 +7,14 @@
 		revision="1.0-SNAPSHOT"
 		conf="echo-sigar"
 		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool, echo-trace-compile, echo-trace-test, echo-weave, echo-sigar"
-		date="20141009031716"/>
+		date="20141009040411"/>
 	<dependencies>
 		<module organisation="com.typesafe.trace" name="trace-sigar-libs">
-			<revision name="0.1.6" status="release" pubdate="20141008131619" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="0">
-				<metadata-artifact status="no" details="" size="2245" time="0" location="/home/brew/.ivy2/cache/com.typesafe.trace/trace-sigar-libs/ivy-0.1.6.xml" searched="false" origin-is-local="false" origin-location="http://repo.typesafe.com/typesafe/releases/com/typesafe/trace/trace-sigar-libs/0.1.6/trace-sigar-libs-0.1.6.pom"/>
+			<revision name="0.1.6" status="release" pubdate="20140830131804" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="0">
+				<metadata-artifact status="no" details="" size="2245" time="0" location="/Users/brew/.ivy2/cache/com.typesafe.trace/trace-sigar-libs/ivy-0.1.6.xml" searched="false" origin-is-local="false" origin-location="http://repo.typesafe.com/typesafe/releases/com/typesafe/trace/trace-sigar-libs/0.1.6/trace-sigar-libs-0.1.6.pom"/>
 				<caller organisation="mcs" name="mcs_2.11" conf="echo-sigar" rev="0.1.6" rev-constraint-default="0.1.6" rev-constraint-dynamic="0.1.6" callerrev="1.0-SNAPSHOT"/>
 				<artifacts>
-					<artifact name="trace-sigar-libs" type="jar" ext="jar" status="no" details="" size="2099398" time="0" location="/home/brew/.ivy2/cache/com.typesafe.trace/trace-sigar-libs/jars/trace-sigar-libs-0.1.6.jar">
+					<artifact name="trace-sigar-libs" type="jar" ext="jar" status="no" details="" size="2099398" time="0" location="/Users/brew/.ivy2/cache/com.typesafe.trace/trace-sigar-libs/jars/trace-sigar-libs-0.1.6.jar">
 						<origin-location is-local="false" location="http://repo.typesafe.com/typesafe/releases/com/typesafe/trace/trace-sigar-libs/0.1.6/trace-sigar-libs-0.1.6.jar"/>
 					</artifact>
 				</artifacts>

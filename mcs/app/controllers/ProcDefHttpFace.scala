@@ -1,14 +1,18 @@
 package controllers
 
 import java.io.FileInputStream
+
 import scala.concurrent.ExecutionContext
 import scala.concurrent.Future
-import org.nights.npe.fsm.backend.db.KOProcdef
-import org.nights.npe.fsm.backend.db.ProcDefDAO
-import org.nights.npe.fsm.backend.db.Range
+
+import org.nights.npe.backend.db.ProcDefDAO;
+import org.nights.npe.backend.db.KOProcdef
+import org.nights.npe.backend.db.Range
 import org.nights.npe.po.Definition.CallActivity
-import org.nights.npe.util.POHelper
+import org.nights.npe.utils.POHelper
+
 import com.github.mauricio.async.db.QueryResult
+
 import akka.actor.actorRef2Scala
 import play.api.libs.json.JsArray
 import play.api.libs.json.Json
@@ -50,19 +54,9 @@ object ProcDefHttpFace extends Controller {
               "createtime" -> row("createtime").asInstanceOf[String])
           })
         }))
-
       Ok(jsonRet)
 
     })
-    //     result.map { qr =>
-    //        Ok("getPage At:" + qr)
-    //      }
-    //    totalf.andThen {
-    //      case Success(Some(r)) =>
-    //      case _ =>
-    //        Ok("kkk")
-    //    }
-
   }
 
   def validate() = Action.async { request =>
@@ -104,7 +98,7 @@ object ProcDefHttpFace extends Controller {
             process.nodes.filter(_._2.isInstanceOf[CallActivity]).mapValues(_.asInstanceOf[CallActivity].calledElement).values.mkString(","),
             Some(System.currentTimeMillis()));
 
-          ProcDefDAO.insert(procdef)
+          ProcDefDAO.insertOrUpdate(procdef)
 
         } else {
           ret = ret.+:(Json.obj("name" -> f.filename,

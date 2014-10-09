@@ -1,5 +1,0 @@
-[0m[[0minfo[0m] [0m:: delivering :: flows#flows_2.10;0.1-SNAPSHOT :: 0.1-SNAPSHOT :: integration :: Thu Oct 09 00:03:37 CST 2014[0m
-[0m[[0mdebug[0m] [0m	options = status=integration pubdate=Thu Oct 09 00:03:37 CST 2014 validate=true resolveDynamicRevisions=true merge=true resolveId=null pubBranch=null[0m
-[0m[[0minfo[0m] [0m	delivering ivy file to /home/brew/git/npe/flows/target/scala-2.10/ivy-0.1-SNAPSHOT.xml[0m
-[0m[[0mdebug[0m] [0mno default cache defined: set to /home/brew/.ivy2/cache[0m
-[0m[[0mdebug[0m] [0m	deliver done (5ms)[0m

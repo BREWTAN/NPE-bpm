@@ -5,7 +5,7 @@ import scala.concurrent.duration.DurationInt
 
 import org.nights.npe.fsm.backend.ObtainedStates
 import org.nights.npe.fsm.backend.Transition
-import org.nights.npe.fsm.defs.ProcDefHelper
+import org.nights.npe.utils.ProcDefHelper
 import org.nights.npe.po.Definition.UserTask
 import org.nights.npe.queue.RolePIOQueue
 

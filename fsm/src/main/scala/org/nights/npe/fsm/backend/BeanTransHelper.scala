@@ -3,23 +3,19 @@ package org.nights.npe.fsm.backend
 import org.nights.npe.fsm.ContextData
 import org.nights.npe.fsm.StateContext
 import org.nights.npe.fsm.StateContext
-import org.nights.npe.fsm.backend.db.KOObtainTasks
-import org.nights.npe.fsm.backend.db.KOSubmitTasks
-import org.nights.npe.fsm.backend.db.KOTasks
-import org.nights.npe.fsm.backend.db.KOTasks
-import org.nights.npe.fsm.backend.db.KOTermTask
-import org.nights.npe.fsm.backend.db.KOTermTask
-import org.nights.npe.fsm.backend.db.KOTermTask
 import org.nights.npe.fsm.ParentContext
 import org.nights.npe.fsm.InterStateNew
 import org.nights.npe.fsm.InterStateObtain
 import org.nights.npe.fsm.InterStateSubmit
 import org.nights.npe.fsm.InterStateTerminate
 import scala.collection.mutable.HashMap
-import org.nights.npe.fsm.backend.db.KOConvergeCounter
 import org.nights.npe.fsm.InterStateSubmit
 import org.slf4j.LoggerFactory
-import org.nights.npe.fsm.backend.db.KOInTermTask
+import org.nights.npe.backend.db.KOTermTask
+import org.nights.npe.backend.db.KOObtainTasks
+import org.nights.npe.backend.db.KOTasks
+import org.nights.npe.backend.db.KOSubmitTasks
+import org.nights.npe.backend.db.KOInTermTask
 
 object BeanTransHelper {
 	val log=LoggerFactory.getLogger(BeanTransHelper.getClass())

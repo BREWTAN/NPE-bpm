@@ -4,7 +4,7 @@
 		module="commons_2.11"
 		revision="1.0.0"
 		status="integration"
-		publication="20141009002635"
+		publication="20141009040243"
 	>
 		<description>
 		commons
@@ -35,6 +35,9 @@
 		<dependency org="org.scala-lang" name="scala-compiler" rev="2.11.1" conf="scala-tool->default,optional(default)"/>
 		<dependency org="org.scala-lang" name="scala-library" rev="2.11.1" conf="scala-tool->default,optional(default);compile->default(compile)"/>
 		<dependency org="com.typesafe.scala-logging" name="scala-logging_2.11" rev="3.1.0" conf="compile->default(compile)"/>
+		<dependency org="com.typesafe.akka" name="akka-contrib_2.11" rev="2.3.5" conf="compile->default(compile)"/>
 		<dependency org="org.scala-lang.modules" name="scala-xml_2.11" rev="1.0.2" conf="compile->default(compile)"/>
+		<dependency org="javax.transaction" name="jta" rev="1.1" conf="compile->default(compile)"/>
+		<dependency org="com.github.mauricio" name="mysql-async_2.11" rev="0.2.14" conf="compile->default(compile)"/>
 	</dependencies>
 </ivy-module>

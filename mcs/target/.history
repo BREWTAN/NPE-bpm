@@ -36,3 +36,11 @@ run
 reload
 clean
 run
+elcipse
+eclipse
+reload
+eclipse
+compile
+eclipse
+compile
+eclipse

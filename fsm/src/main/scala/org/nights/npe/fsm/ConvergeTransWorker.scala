@@ -5,7 +5,7 @@ import scala.collection.mutable.ListBuffer
 import org.nights.npe.fsm.backend.EHConverger
 import org.nights.npe.fsm.backend.GatewayStates
 import org.nights.npe.fsm.backend.UpdateStates
-import org.nights.npe.fsm.defs.ProcDefHelper
+import org.nights.npe.utils.ProcDefHelper
 
 import akka.actor.Actor
 import akka.actor.ActorLogging

@@ -1,6 +1,6 @@
-// @SOURCE:/home/brew/git/npe/mcs/conf/routes
+// @SOURCE:/Users/brew/NPE/gits/mcs/conf/routes
 // @HASH:64fc91812493b70d9acfd4f99838e07ce97a4593
-// @DATE:Thu Oct 09 03:17:21 CST 2014
+// @DATE:Thu Oct 09 03:21:56 GMT 2014
 
 package controllers;
 

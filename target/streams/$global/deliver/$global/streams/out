@@ -1,4 +1,0 @@
-[0m[[0minfo[0m] [0m:: delivering :: default#npe_2.11;1.0.0 :: 1.0.0 :: release :: Thu Oct 09 00:03:37 CST 2014[0m
-[0m[[0mdebug[0m] [0m	options = status=release pubdate=Thu Oct 09 00:03:37 CST 2014 validate=true resolveDynamicRevisions=true merge=true resolveId=null pubBranch=null[0m
-[0m[[0minfo[0m] [0m	delivering ivy file to /home/brew/git/npe/target/scala-2.11/ivy-1.0.0.xml[0m
-[0m[[0mdebug[0m] [0m	deliver done (5ms)[0m

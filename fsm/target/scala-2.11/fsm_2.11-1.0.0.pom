@@ -17,7 +17,7 @@
             <version>2.11.1</version>
         </dependency>
         <dependency>
-            <groupId>commons</groupId>
+            <groupId>org.nights.npe</groupId>
             <artifactId>commons_2.11</artifactId>
             <version>1.0.0</version>
         </dependency>
