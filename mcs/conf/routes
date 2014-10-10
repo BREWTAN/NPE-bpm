@@ -32,3 +32,12 @@ GET 	/procdef/check		controllers.ProcDefHttpFace.validate
 DELETE  /procdef/:defid 	controllers.ProcDefHttpFace.delete(defid:String)
 
 PUT     /procdef/:defid		controllers.ProcDefHttpFace.update(defid:String)
+
+
+##############
+# procinst
+GET  	/procinst			controllers.ProcInstFace.getByPage(skip: Int?=0, limit: Int?=10,status:Int?=0, query:String?=null)
+
+DELETE  /procinst/:defid 	controllers.ProcInstFace.delete(defid:String)
+
+

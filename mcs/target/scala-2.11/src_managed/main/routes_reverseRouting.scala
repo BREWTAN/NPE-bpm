@@ -1,6 +1,6 @@
-// @SOURCE:/Users/brew/NPE/gits/mcs/conf/routes
-// @HASH:788d8f4bcd0ebece1e04faef1636a29913ff15d7
-// @DATE:Thu Oct 09 10:34:50 GMT 2014
+// @SOURCE:/home/brew/git/npe/mcs/conf/routes
+// @HASH:109f4e6317bc5d4bdfa473fd0622bf8e642896e2
+// @DATE:Fri Oct 10 07:58:06 CST 2014
 
 import Routes.{prefix => _prefix, defaultPrefix => _defaultPrefix}
 import play.core._
@@ -14,6 +14,8 @@ import _root_.controllers.Assets.Asset
 import Router.queryString
 
 
+// @LINE:41
+// @LINE:39
 // @LINE:34
 // @LINE:32
 // @LINE:30
@@ -34,6 +36,28 @@ class ReverseAssets {
 def at(file:String): Call = {
    implicit val _rrc = new ReverseRouteContext(Map(("path", "/public")))
    Call("GET", _prefix + { _defaultPrefix } + "assets/" + implicitly[PathBindable[String]].unbind("file", file))
+}
+                        
+
+}
+                          
+
+// @LINE:41
+// @LINE:39
+class ReverseProcInstFace {
+
+
+// @LINE:41
+def delete(defid:String): Call = {
+   import ReverseRouteContext.empty
+   Call("DELETE", _prefix + { _defaultPrefix } + "procinst/" + implicitly[PathBindable[String]].unbind("defid", dynamicString(defid)))
+}
+                        
+
+// @LINE:39
+def getByPage(skip:Int = 0, limit:Int = 10, status:Int = 0, query:String = null): Call = {
+   import ReverseRouteContext.empty
+   Call("GET", _prefix + { _defaultPrefix } + "procinst" + queryString(List(if(skip == 0) None else Some(implicitly[QueryStringBindable[Int]].unbind("skip", skip)), if(limit == 10) None else Some(implicitly[QueryStringBindable[Int]].unbind("limit", limit)), if(status == 0) None else Some(implicitly[QueryStringBindable[Int]].unbind("status", status)), if(query == null) None else Some(implicitly[QueryStringBindable[String]].unbind("query", query)))))
 }
                         
 
@@ -139,6 +163,8 @@ def index(): Call = {
                   
 
 
+// @LINE:41
+// @LINE:39
 // @LINE:34
 // @LINE:32
 // @LINE:30
@@ -162,6 +188,36 @@ def at : JavascriptReverseRoute = JavascriptReverseRoute(
    """
       function(file) {
       return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "assets/" + (""" + implicitly[PathBindable[String]].javascriptUnbind + """)("file", file)})
+      }
+   """
+)
+                        
+
+}
+              
+
+// @LINE:41
+// @LINE:39
+class ReverseProcInstFace {
+
+
+// @LINE:41
+def delete : JavascriptReverseRoute = JavascriptReverseRoute(
+   "controllers.ProcInstFace.delete",
+   """
+      function(defid) {
+      return _wA({method:"DELETE", url:"""" + _prefix + { _defaultPrefix } + """" + "procinst/" + (""" + implicitly[PathBindable[String]].javascriptUnbind + """)("defid", encodeURIComponent(defid))})
+      }
+   """
+)
+                        
+
+// @LINE:39
+def getByPage : JavascriptReverseRoute = JavascriptReverseRoute(
+   "controllers.ProcInstFace.getByPage",
+   """
+      function(skip,limit,status,query) {
+      return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "procinst" + _qS([(skip == null ? null : (""" + implicitly[QueryStringBindable[Int]].javascriptUnbind + """)("skip", skip)), (limit == null ? null : (""" + implicitly[QueryStringBindable[Int]].javascriptUnbind + """)("limit", limit)), (status == null ? null : (""" + implicitly[QueryStringBindable[Int]].javascriptUnbind + """)("status", status)), (query == null ? null : (""" + implicitly[QueryStringBindable[String]].javascriptUnbind + """)("query", query))])})
       }
    """
 )
@@ -305,6 +361,8 @@ def index : JavascriptReverseRoute = JavascriptReverseRoute(
         
 
 
+// @LINE:41
+// @LINE:39
 // @LINE:34
 // @LINE:32
 // @LINE:30
@@ -325,6 +383,27 @@ class ReverseAssets {
 // @LINE:9
 def at(path:String, file:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.Assets.at(path, file), HandlerDef(this.getClass.getClassLoader, "", "controllers.Assets", "at", Seq(classOf[String], classOf[String]), "GET", """ Map static resources from the /public folder to the /assets URL path""", _prefix + """assets/$file<.+>""")
+)
+                      
+
+}
+                          
+
+// @LINE:41
+// @LINE:39
+class ReverseProcInstFace {
+
+
+// @LINE:41
+def delete(defid:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.ProcInstFace.delete(defid), HandlerDef(this.getClass.getClassLoader, "", "controllers.ProcInstFace", "delete", Seq(classOf[String]), "DELETE", """""", _prefix + """procinst/$defid<[^/]+>""")
+)
+                      
+
+// @LINE:39
+def getByPage(skip:Int, limit:Int, status:Int, query:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.ProcInstFace.getByPage(skip, limit, status, query), HandlerDef(this.getClass.getClassLoader, "", "controllers.ProcInstFace", "getByPage", Seq(classOf[Int], classOf[Int], classOf[Int], classOf[String]), "GET", """#############
+ procinst""", _prefix + """procinst""")
 )
                       
 

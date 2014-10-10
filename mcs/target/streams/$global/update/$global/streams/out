@@ -1,4 +1,4 @@
-[0m[[0minfo[0m] [0mUpdating {file:/Users/brew/NPE/gits/mcs/}root...[0m
+[0m[[0minfo[0m] [0mUpdating {file:/home/brew/git/npe/mcs/}root...[0m
 [0m[[0mdebug[0m] [0m:: resolving dependencies :: mcs#mcs_2.11;1.0-SNAPSHOT[0m
 [0m[[0mdebug[0m] [0m	confs: [compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool, echo-trace-compile, echo-trace-test, echo-weave, echo-sigar][0m
 [0m[[0mdebug[0m] [0m	validate = true[0m
@@ -7,7 +7,7 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies for mcs#mcs_2.11;1.0-SNAPSHOT [compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies mcs#mcs_2.11;1.0-SNAPSHOT->org.scala-lang#scala-library;2.11.1 [compile->default(compile)][0m
 [0m[[0minfo[0m] [0mResolving org.scala-lang#scala-library;2.11.1 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@2c53124c[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@66aa5740[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.scala-lang#scala-library;2.11.1[0m
 [0m[[0mdebug[0m] [0m	local: revision in cache: org.scala-lang#scala-library;2.11.1[0m
 [0m[[0mdebug[0m] [0m	found org.scala-lang#scala-library;2.11.1 in sbt-chain[0m
@@ -1166,8 +1166,8 @@
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: net.sf.ehcache#ehcache;2.8.3 {compile=[default(compile)]}[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: net.sf.ehcache#ehcache;2.8.3[0m
 [0m[[0mdebug[0m] [0m	local: found revision in cache: net.sf.ehcache#ehcache;2.8.3 (resolved by sbt-chain): but it's a default one, maybe we can find a better one[0m
-[0m[[0mdebug[0m] [0m		tried /Users/brew/.ivy2/local/net.sf.ehcache/ehcache/2.8.3/ivys/ivy.xml[0m
-[0m[[0mdebug[0m] [0m		tried /Users/brew/.ivy2/local/net.sf.ehcache/ehcache/2.8.3/poms/ehcache.pom[0m
+[0m[[0mdebug[0m] [0m		tried /home/brew/.ivy2/local/net.sf.ehcache/ehcache/2.8.3/ivys/ivy.xml[0m
+[0m[[0mdebug[0m] [0m		tried /home/brew/.ivy2/local/net.sf.ehcache/ehcache/2.8.3/poms/ehcache.pom[0m
 [0m[[0mdebug[0m] [0m	using url for net.sf.ehcache#ehcache;2.8.3!ehcache.pom: http://repo1.maven.org/maven2/net/sf/ehcache/ehcache/2.8.3/ehcache-2.8.3.pom[0m
 [0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/net/sf/ehcache/ehcache/2.8.3/ehcache-2.8.3.pom[0m
 [0m[[0mdebug[0m] [0m	local: no ivy file found for net.sf.ehcache#ehcache;2.8.3: using default data[0m
@@ -1281,9 +1281,22 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies mcs#mcs_2.11;1.0-SNAPSHOT->com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2 [compile->default(compile)][0m
 [0m[[0minfo[0m] [0mResolving com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2 {compile=[default(compile)]}[0m
-[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2[0m
-[0m[[0mdebug[0m] [0m	local: revision in cache: com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2[0m
-[0m[[0mdebug[0m] [0m	found com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2 in sbt-chain[0m
+[0m[[0mdebug[0m] [0m		tried /home/brew/.ivy2/local/com.fasterxml.jackson.module/jackson-module-scala_2.11/2.4.2/ivys/ivy.xml[0m
+[0m[[0mdebug[0m] [0m	local: no ivy file found for com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2[0m
+[0m[[0mdebug[0m] [0m		tried file:/usr/local/activator-1.2.10/repository/com.fasterxml.jackson.module/jackson-module-scala_2.11/2.4.2/ivys/ivy.xml[0m
+[0m[[0mdebug[0m] [0m	activator-local: no ivy file found for com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2[0m
+[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/com/fasterxml/jackson/module/jackson-module-scala_2.11/2.4.2/jackson-module-scala_2.11-2.4.2.pom[0m
+[0m[[0mdebug[0m] [0m	public: found md file for com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2[0m
+[0m[[0mdebug[0m] [0m		=> http://repo1.maven.org/maven2/com/fasterxml/jackson/module/jackson-module-scala_2.11/2.4.2/jackson-module-scala_2.11-2.4.2.pom (2.4.2)[0m
+[0m[[0mdebug[0m] [0mdownloading http://repo1.maven.org/maven2/com/fasterxml/jackson/module/jackson-module-scala_2.11/2.4.2/jackson-module-scala_2.11-2.4.2.pom ...[0m
+[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/com/fasterxml/jackson/module/jackson-module-scala_2.11/2.4.2/jackson-module-scala_2.11-2.4.2.pom[0m
+[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/com/fasterxml/jackson/module/jackson-module-scala_2.11/2.4.2/jackson-module-scala_2.11-2.4.2.pom.sha1[0m
+[0m[[0mdebug[0m] [0msha1 OK for http://repo1.maven.org/maven2/com/fasterxml/jackson/module/jackson-module-scala_2.11/2.4.2/jackson-module-scala_2.11-2.4.2.pom[0m
+[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2!jackson-module-scala_2.11.pom(pom.original) (1140ms)[0m
+[0m[[0mdebug[0m] [0m		tried /home/brew/.ivy2/local/com.fasterxml.jackson.module/jackson-module-scala_2.11/2.4.2/bundles/jackson-module-scala_2.11.jar[0m
+[0m[[0mdebug[0m] [0m		tried file:/usr/local/activator-1.2.10/repository/com.fasterxml.jackson.module/jackson-module-scala_2.11/2.4.2/bundles/jackson-module-scala_2.11.jar[0m
+[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/com/fasterxml/jackson/module/jackson-module-scala_2.11/2.4.2/jackson-module-scala_2.11-2.4.2.jar[0m
+[0m[[0mdebug[0m] [0m	found com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2 in public[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies mcs#mcs_2.11;1.0-SNAPSHOT->com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2 [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies mcs#mcs_2.11;1.0-SNAPSHOT->com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2 [compile->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->org.scala-lang#scala-library;2.11.2 [compile->master(*)][0m
@@ -1291,9 +1304,22 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->org.scala-lang#scala-reflect;2.11.2 [compile->master(*)][0m
 [0m[[0minfo[0m] [0mResolving org.scala-lang#scala-reflect;2.11.2 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.scala-lang#scala-reflect;2.11.2 {compile=[compile(*), master(*)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.scala-lang#scala-reflect;2.11.2[0m
-[0m[[0mdebug[0m] [0m	local: revision in cache: org.scala-lang#scala-reflect;2.11.2[0m
-[0m[[0mdebug[0m] [0m	found org.scala-lang#scala-reflect;2.11.2 in sbt-chain[0m
+[0m[[0mdebug[0m] [0m		tried /home/brew/.ivy2/local/org.scala-lang/scala-reflect/2.11.2/ivys/ivy.xml[0m
+[0m[[0mdebug[0m] [0m	local: no ivy file found for org.scala-lang#scala-reflect;2.11.2[0m
+[0m[[0mdebug[0m] [0m		tried file:/usr/local/activator-1.2.10/repository/org.scala-lang/scala-reflect/2.11.2/ivys/ivy.xml[0m
+[0m[[0mdebug[0m] [0m	activator-local: no ivy file found for org.scala-lang#scala-reflect;2.11.2[0m
+[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.11.2/scala-reflect-2.11.2.pom[0m
+[0m[[0mdebug[0m] [0m	public: found md file for org.scala-lang#scala-reflect;2.11.2[0m
+[0m[[0mdebug[0m] [0m		=> http://repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.11.2/scala-reflect-2.11.2.pom (2.11.2)[0m
+[0m[[0mdebug[0m] [0mdownloading http://repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.11.2/scala-reflect-2.11.2.pom ...[0m
+[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.11.2/scala-reflect-2.11.2.pom[0m
+[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.11.2/scala-reflect-2.11.2.pom.sha1[0m
+[0m[[0mdebug[0m] [0msha1 OK for http://repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.11.2/scala-reflect-2.11.2.pom[0m
+[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] org.scala-lang#scala-reflect;2.11.2!scala-reflect.pom(pom.original) (1676ms)[0m
+[0m[[0mdebug[0m] [0m		tried /home/brew/.ivy2/local/org.scala-lang/scala-reflect/2.11.2/jars/scala-reflect.jar[0m
+[0m[[0mdebug[0m] [0m		tried file:/usr/local/activator-1.2.10/repository/org.scala-lang/scala-reflect/2.11.2/jars/scala-reflect.jar[0m
+[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.11.2/scala-reflect-2.11.2.jar[0m
+[0m[[0mdebug[0m] [0m	found org.scala-lang#scala-reflect;2.11.2 in public[0m
 [0m[[0mdebug[0m] [0m	[2.11.2] org.scala-lang#scala-reflect;2.11.2[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->org.scala-lang#scala-reflect;2.11.2 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.11.2->org.scala-lang#scala-library;2.11.2 [compile->master(*)][0m
@@ -1305,27 +1331,128 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.fasterxml.jackson.core#jackson-core;2.4.2 [compile->master(*)][0m
 [0m[[0minfo[0m] [0mResolving com.fasterxml.jackson.core#jackson-core;2.4.2 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: com.fasterxml.jackson.core#jackson-core;2.4.2 {compile=[compile(*), master(*)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: com.fasterxml.jackson.core#jackson-core;2.4.2[0m
-[0m[[0mdebug[0m] [0m	local: revision in cache: com.fasterxml.jackson.core#jackson-core;2.4.2[0m
-[0m[[0mdebug[0m] [0m	found com.fasterxml.jackson.core#jackson-core;2.4.2 in sbt-chain[0m
+[0m[[0mdebug[0m] [0m		tried /home/brew/.ivy2/local/com.fasterxml.jackson.core/jackson-core/2.4.2/ivys/ivy.xml[0m
+[0m[[0mdebug[0m] [0m	local: no ivy file found for com.fasterxml.jackson.core#jackson-core;2.4.2[0m
+[0m[[0mdebug[0m] [0m		tried file:/usr/local/activator-1.2.10/repository/com.fasterxml.jackson.core/jackson-core/2.4.2/ivys/ivy.xml[0m
+[0m[[0mdebug[0m] [0m	activator-local: no ivy file found for com.fasterxml.jackson.core#jackson-core;2.4.2[0m
+[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-core/2.4.2/jackson-core-2.4.2.pom[0m
+[0m[[0mdebug[0m] [0m	public: found md file for com.fasterxml.jackson.core#jackson-core;2.4.2[0m
+[0m[[0mdebug[0m] [0m		=> http://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-core/2.4.2/jackson-core-2.4.2.pom (2.4.2)[0m
+[0m[[0mdebug[0m] [0mdownloading http://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-core/2.4.2/jackson-core-2.4.2.pom ...[0m
+[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-core/2.4.2/jackson-core-2.4.2.pom[0m
+[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-core/2.4.2/jackson-core-2.4.2.pom.sha1[0m
+[0m[[0mdebug[0m] [0msha1 OK for http://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-core/2.4.2/jackson-core-2.4.2.pom[0m
+[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] com.fasterxml.jackson.core#jackson-core;2.4.2!jackson-core.pom(pom.original) (1128ms)[0m
+[0m[[0minfo[0m] [0mResolving com.fasterxml.jackson#jackson-parent;2.4 ...[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: com.fasterxml.jackson#jackson-parent;2.4 {}[0m
+[0m[[0mdebug[0m] [0m		tried /home/brew/.ivy2/local/com.fasterxml.jackson/jackson-parent/2.4/ivys/ivy.xml[0m
+[0m[[0mdebug[0m] [0m	local: no ivy file found for com.fasterxml.jackson#jackson-parent;2.4[0m
+[0m[[0mdebug[0m] [0m		tried file:/usr/local/activator-1.2.10/repository/com.fasterxml.jackson/jackson-parent/2.4/ivys/ivy.xml[0m
+[0m[[0mdebug[0m] [0m	activator-local: no ivy file found for com.fasterxml.jackson#jackson-parent;2.4[0m
+[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/com/fasterxml/jackson/jackson-parent/2.4/jackson-parent-2.4.pom[0m
+[0m[[0mdebug[0m] [0m	public: found md file for com.fasterxml.jackson#jackson-parent;2.4[0m
+[0m[[0mdebug[0m] [0m		=> http://repo1.maven.org/maven2/com/fasterxml/jackson/jackson-parent/2.4/jackson-parent-2.4.pom (2.4)[0m
+[0m[[0mdebug[0m] [0mdownloading http://repo1.maven.org/maven2/com/fasterxml/jackson/jackson-parent/2.4/jackson-parent-2.4.pom ...[0m
+[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/com/fasterxml/jackson/jackson-parent/2.4/jackson-parent-2.4.pom[0m
+[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/com/fasterxml/jackson/jackson-parent/2.4/jackson-parent-2.4.pom.sha1[0m
+[0m[[0mdebug[0m] [0msha1 OK for http://repo1.maven.org/maven2/com/fasterxml/jackson/jackson-parent/2.4/jackson-parent-2.4.pom[0m
+[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] com.fasterxml.jackson#jackson-parent;2.4!jackson-parent.pom(pom.original) (1231ms)[0m
+[0m[[0minfo[0m] [0mResolving com.fasterxml#oss-parent;16 ...[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: com.fasterxml#oss-parent;16 {}[0m
+[0m[[0mdebug[0m] [0m		tried /home/brew/.ivy2/local/com.fasterxml/oss-parent/16/ivys/ivy.xml[0m
+[0m[[0mdebug[0m] [0m	local: no ivy file found for com.fasterxml#oss-parent;16[0m
+[0m[[0mdebug[0m] [0m		tried file:/usr/local/activator-1.2.10/repository/com.fasterxml/oss-parent/16/ivys/ivy.xml[0m
+[0m[[0mdebug[0m] [0m	activator-local: no ivy file found for com.fasterxml#oss-parent;16[0m
+[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/com/fasterxml/oss-parent/16/oss-parent-16.pom[0m
+[0m[[0mdebug[0m] [0m	public: found md file for com.fasterxml#oss-parent;16[0m
+[0m[[0mdebug[0m] [0m		=> http://repo1.maven.org/maven2/com/fasterxml/oss-parent/16/oss-parent-16.pom (16)[0m
+[0m[[0mdebug[0m] [0mdownloading http://repo1.maven.org/maven2/com/fasterxml/oss-parent/16/oss-parent-16.pom ...[0m
+[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/com/fasterxml/oss-parent/16/oss-parent-16.pom[0m
+[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/com/fasterxml/oss-parent/16/oss-parent-16.pom.sha1[0m
+[0m[[0mdebug[0m] [0msha1 OK for http://repo1.maven.org/maven2/com/fasterxml/oss-parent/16/oss-parent-16.pom[0m
+[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] com.fasterxml#oss-parent;16!oss-parent.pom(pom.original) (1636ms)[0m
+[0m[[0mdebug[0m] [0m		tried /home/brew/.ivy2/local/com.fasterxml/oss-parent/16/jars/oss-parent.jar[0m
+[0m[[0mdebug[0m] [0m		tried file:/usr/local/activator-1.2.10/repository/com.fasterxml/oss-parent/16/jars/oss-parent.jar[0m
+[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/com/fasterxml/oss-parent/16/oss-parent-16.jar[0m
+[0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=http://repo1.maven.org/maven2/com/fasterxml/oss-parent/16/oss-parent-16.jar[0m
+[0m[[0mdebug[0m] [0m		tried http://repo.typesafe.com/typesafe/releases/com/fasterxml/oss-parent/16/oss-parent-16.jar[0m
+[0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=http://repo.typesafe.com/typesafe/releases/com/fasterxml/oss-parent/16/oss-parent-16.jar[0m
+[0m[[0mdebug[0m] [0m		tried http://repo.typesafe.com/typesafe/ivy-releases/com.fasterxml/oss-parent/16/jars/oss-parent.jar[0m
+[0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=http://repo.typesafe.com/typesafe/ivy-releases/com.fasterxml/oss-parent/16/jars/oss-parent.jar[0m
+[0m[[0mdebug[0m] [0m		tried http://repo.typesafe.com/typesafe/releases/com/fasterxml/oss-parent/16/oss-parent-16.jar[0m
+[0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=http://repo.typesafe.com/typesafe/releases/com/fasterxml/oss-parent/16/oss-parent-16.jar[0m
+[0m[[0mdebug[0m] [0m		tried http://repo.typesafe.com/typesafe/releases/com/fasterxml/oss-parent/16/oss-parent-16.jar[0m
+[0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=http://repo.typesafe.com/typesafe/releases/com/fasterxml/oss-parent/16/oss-parent-16.jar[0m
+[0m[[0mdebug[0m] [0m		tried file:///home/brew/.m2/repository/com/fasterxml/oss-parent/16/oss-parent-16.jar[0m
+[0m[[0mdebug[0m] [0m		tried /home/brew/.ivy2/local/com.fasterxml.jackson/jackson-parent/2.4/jars/jackson-parent.jar[0m
+[0m[[0mdebug[0m] [0m		tried file:/usr/local/activator-1.2.10/repository/com.fasterxml.jackson/jackson-parent/2.4/jars/jackson-parent.jar[0m
+[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/com/fasterxml/jackson/jackson-parent/2.4/jackson-parent-2.4.jar[0m
+[0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=http://repo1.maven.org/maven2/com/fasterxml/jackson/jackson-parent/2.4/jackson-parent-2.4.jar[0m
+[0m[[0mdebug[0m] [0m		tried http://repo.typesafe.com/typesafe/releases/com/fasterxml/jackson/jackson-parent/2.4/jackson-parent-2.4.jar[0m
+[0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=http://repo.typesafe.com/typesafe/releases/com/fasterxml/jackson/jackson-parent/2.4/jackson-parent-2.4.jar[0m
+[0m[[0mdebug[0m] [0m		tried http://repo.typesafe.com/typesafe/ivy-releases/com.fasterxml.jackson/jackson-parent/2.4/jars/jackson-parent.jar[0m
+[0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=http://repo.typesafe.com/typesafe/ivy-releases/com.fasterxml.jackson/jackson-parent/2.4/jars/jackson-parent.jar[0m
+[0m[[0mdebug[0m] [0m		tried http://repo.typesafe.com/typesafe/releases/com/fasterxml/jackson/jackson-parent/2.4/jackson-parent-2.4.jar[0m
+[0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=http://repo.typesafe.com/typesafe/releases/com/fasterxml/jackson/jackson-parent/2.4/jackson-parent-2.4.jar[0m
+[0m[[0mdebug[0m] [0m		tried http://repo.typesafe.com/typesafe/releases/com/fasterxml/jackson/jackson-parent/2.4/jackson-parent-2.4.jar[0m
+[0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=http://repo.typesafe.com/typesafe/releases/com/fasterxml/jackson/jackson-parent/2.4/jackson-parent-2.4.jar[0m
+[0m[[0mdebug[0m] [0m		tried file:///home/brew/.m2/repository/com/fasterxml/jackson/jackson-parent/2.4/jackson-parent-2.4.jar[0m
+[0m[[0mdebug[0m] [0m		tried /home/brew/.ivy2/local/com.fasterxml.jackson.core/jackson-core/2.4.2/bundles/jackson-core.jar[0m
+[0m[[0mdebug[0m] [0m		tried file:/usr/local/activator-1.2.10/repository/com.fasterxml.jackson.core/jackson-core/2.4.2/bundles/jackson-core.jar[0m
+[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-core/2.4.2/jackson-core-2.4.2.jar[0m
+[0m[[0mdebug[0m] [0m	found com.fasterxml.jackson.core#jackson-core;2.4.2 in public[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.fasterxml.jackson.core#jackson-core;2.4.2 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.fasterxml.jackson.core#jackson-core;2.4.2 [compile->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.fasterxml.jackson.core#jackson-core;2.4.2 [compile->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.fasterxml.jackson.core#jackson-annotations;2.4.2 [compile->master(*)][0m
 [0m[[0minfo[0m] [0mResolving com.fasterxml.jackson.core#jackson-annotations;2.4.2 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: com.fasterxml.jackson.core#jackson-annotations;2.4.2 {compile=[compile(*), master(*)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: com.fasterxml.jackson.core#jackson-annotations;2.4.2[0m
-[0m[[0mdebug[0m] [0m	local: revision in cache: com.fasterxml.jackson.core#jackson-annotations;2.4.2[0m
-[0m[[0mdebug[0m] [0m	found com.fasterxml.jackson.core#jackson-annotations;2.4.2 in sbt-chain[0m
+[0m[[0mdebug[0m] [0m		tried /home/brew/.ivy2/local/com.fasterxml.jackson.core/jackson-annotations/2.4.2/ivys/ivy.xml[0m
+[0m[[0mdebug[0m] [0m	local: no ivy file found for com.fasterxml.jackson.core#jackson-annotations;2.4.2[0m
+[0m[[0mdebug[0m] [0m		tried file:/usr/local/activator-1.2.10/repository/com.fasterxml.jackson.core/jackson-annotations/2.4.2/ivys/ivy.xml[0m
+[0m[[0mdebug[0m] [0m	activator-local: no ivy file found for com.fasterxml.jackson.core#jackson-annotations;2.4.2[0m
+[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.4.2/jackson-annotations-2.4.2.pom[0m
+[0m[[0mdebug[0m] [0m	public: found md file for com.fasterxml.jackson.core#jackson-annotations;2.4.2[0m
+[0m[[0mdebug[0m] [0m		=> http://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.4.2/jackson-annotations-2.4.2.pom (2.4.2)[0m
+[0m[[0mdebug[0m] [0mdownloading http://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.4.2/jackson-annotations-2.4.2.pom ...[0m
+[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.4.2/jackson-annotations-2.4.2.pom[0m
+[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.4.2/jackson-annotations-2.4.2.pom.sha1[0m
+[0m[[0mdebug[0m] [0msha1 OK for http://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.4.2/jackson-annotations-2.4.2.pom[0m
+[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] com.fasterxml.jackson.core#jackson-annotations;2.4.2!jackson-annotations.pom(pom.original) (1283ms)[0m
+[0m[[0minfo[0m] [0mResolving com.fasterxml.jackson#jackson-parent;2.4 ...[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: com.fasterxml.jackson#jackson-parent;2.4 {}[0m
+[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: com.fasterxml.jackson#jackson-parent;2.4[0m
+[0m[[0mdebug[0m] [0m	local: revision in cache: com.fasterxml.jackson#jackson-parent;2.4[0m
+[0m[[0mdebug[0m] [0m		tried /home/brew/.ivy2/local/com.fasterxml.jackson.core/jackson-annotations/2.4.2/bundles/jackson-annotations.jar[0m
+[0m[[0mdebug[0m] [0m		tried file:/usr/local/activator-1.2.10/repository/com.fasterxml.jackson.core/jackson-annotations/2.4.2/bundles/jackson-annotations.jar[0m
+[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.4.2/jackson-annotations-2.4.2.jar[0m
+[0m[[0mdebug[0m] [0m	found com.fasterxml.jackson.core#jackson-annotations;2.4.2 in public[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.fasterxml.jackson.core#jackson-annotations;2.4.2 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.fasterxml.jackson.core#jackson-annotations;2.4.2 [compile->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.fasterxml.jackson.core#jackson-annotations;2.4.2 [compile->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.fasterxml.jackson.core#jackson-databind;2.4.2 [compile->master(*)][0m
 [0m[[0minfo[0m] [0mResolving com.fasterxml.jackson.core#jackson-databind;2.4.2 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: com.fasterxml.jackson.core#jackson-databind;2.4.2 {compile=[compile(*), master(*)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: com.fasterxml.jackson.core#jackson-databind;2.4.2[0m
-[0m[[0mdebug[0m] [0m	local: revision in cache: com.fasterxml.jackson.core#jackson-databind;2.4.2[0m
-[0m[[0mdebug[0m] [0m	found com.fasterxml.jackson.core#jackson-databind;2.4.2 in sbt-chain[0m
+[0m[[0mdebug[0m] [0m		tried /home/brew/.ivy2/local/com.fasterxml.jackson.core/jackson-databind/2.4.2/ivys/ivy.xml[0m
+[0m[[0mdebug[0m] [0m	local: no ivy file found for com.fasterxml.jackson.core#jackson-databind;2.4.2[0m
+[0m[[0mdebug[0m] [0m		tried file:/usr/local/activator-1.2.10/repository/com.fasterxml.jackson.core/jackson-databind/2.4.2/ivys/ivy.xml[0m
+[0m[[0mdebug[0m] [0m	activator-local: no ivy file found for com.fasterxml.jackson.core#jackson-databind;2.4.2[0m
+[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.4.2/jackson-databind-2.4.2.pom[0m
+[0m[[0mdebug[0m] [0m	public: found md file for com.fasterxml.jackson.core#jackson-databind;2.4.2[0m
+[0m[[0mdebug[0m] [0m		=> http://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.4.2/jackson-databind-2.4.2.pom (2.4.2)[0m
+[0m[[0mdebug[0m] [0mdownloading http://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.4.2/jackson-databind-2.4.2.pom ...[0m
+[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.4.2/jackson-databind-2.4.2.pom[0m
+[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.4.2/jackson-databind-2.4.2.pom.sha1[0m
+[0m[[0mdebug[0m] [0msha1 OK for http://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.4.2/jackson-databind-2.4.2.pom[0m
+[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] com.fasterxml.jackson.core#jackson-databind;2.4.2!jackson-databind.pom(pom.original) (1212ms)[0m
+[0m[[0minfo[0m] [0mResolving com.fasterxml.jackson#jackson-parent;2.4 ...[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: com.fasterxml.jackson#jackson-parent;2.4 {}[0m
+[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: com.fasterxml.jackson#jackson-parent;2.4[0m
+[0m[[0mdebug[0m] [0m	local: revision in cache: com.fasterxml.jackson#jackson-parent;2.4[0m
+[0m[[0mdebug[0m] [0m		tried /home/brew/.ivy2/local/com.fasterxml.jackson.core/jackson-databind/2.4.2/bundles/jackson-databind.jar[0m
+[0m[[0mdebug[0m] [0m		tried file:/usr/local/activator-1.2.10/repository/com.fasterxml.jackson.core/jackson-databind/2.4.2/bundles/jackson-databind.jar[0m
+[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.4.2/jackson-databind-2.4.2.jar[0m
+[0m[[0mdebug[0m] [0m	found com.fasterxml.jackson.core#jackson-databind;2.4.2 in public[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.fasterxml.jackson.core#jackson-databind;2.4.2 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.core#jackson-databind;2.4.2->com.fasterxml.jackson.core#jackson-annotations;2.4.0 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.core#jackson-databind;2.4.2->com.fasterxml.jackson.core#jackson-annotations;2.4.2 [compile->master(*)][0m
@@ -1343,18 +1470,98 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.thoughtworks.paranamer#paranamer;2.6 [compile->master(*)][0m
 [0m[[0minfo[0m] [0mResolving com.thoughtworks.paranamer#paranamer;2.6 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: com.thoughtworks.paranamer#paranamer;2.6 {compile=[compile(*), master(*)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: com.thoughtworks.paranamer#paranamer;2.6[0m
-[0m[[0mdebug[0m] [0m	local: revision in cache: com.thoughtworks.paranamer#paranamer;2.6[0m
-[0m[[0mdebug[0m] [0m	found com.thoughtworks.paranamer#paranamer;2.6 in sbt-chain[0m
+[0m[[0mdebug[0m] [0m		tried /home/brew/.ivy2/local/com.thoughtworks.paranamer/paranamer/2.6/ivys/ivy.xml[0m
+[0m[[0mdebug[0m] [0m	local: no ivy file found for com.thoughtworks.paranamer#paranamer;2.6[0m
+[0m[[0mdebug[0m] [0m		tried file:/usr/local/activator-1.2.10/repository/com.thoughtworks.paranamer/paranamer/2.6/ivys/ivy.xml[0m
+[0m[[0mdebug[0m] [0m	activator-local: no ivy file found for com.thoughtworks.paranamer#paranamer;2.6[0m
+[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/com/thoughtworks/paranamer/paranamer/2.6/paranamer-2.6.pom[0m
+[0m[[0mdebug[0m] [0m	public: found md file for com.thoughtworks.paranamer#paranamer;2.6[0m
+[0m[[0mdebug[0m] [0m		=> http://repo1.maven.org/maven2/com/thoughtworks/paranamer/paranamer/2.6/paranamer-2.6.pom (2.6)[0m
+[0m[[0mdebug[0m] [0mdownloading http://repo1.maven.org/maven2/com/thoughtworks/paranamer/paranamer/2.6/paranamer-2.6.pom ...[0m
+[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/com/thoughtworks/paranamer/paranamer/2.6/paranamer-2.6.pom[0m
+[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/com/thoughtworks/paranamer/paranamer/2.6/paranamer-2.6.pom.sha1[0m
+[0m[[0mdebug[0m] [0msha1 OK for http://repo1.maven.org/maven2/com/thoughtworks/paranamer/paranamer/2.6/paranamer-2.6.pom[0m
+[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] com.thoughtworks.paranamer#paranamer;2.6!paranamer.pom(pom.original) (1260ms)[0m
+[0m[[0minfo[0m] [0mResolving com.thoughtworks.paranamer#paranamer-parent;2.6 ...[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: com.thoughtworks.paranamer#paranamer-parent;2.6 {}[0m
+[0m[[0mdebug[0m] [0m		tried /home/brew/.ivy2/local/com.thoughtworks.paranamer/paranamer-parent/2.6/ivys/ivy.xml[0m
+[0m[[0mdebug[0m] [0m	local: no ivy file found for com.thoughtworks.paranamer#paranamer-parent;2.6[0m
+[0m[[0mdebug[0m] [0m		tried file:/usr/local/activator-1.2.10/repository/com.thoughtworks.paranamer/paranamer-parent/2.6/ivys/ivy.xml[0m
+[0m[[0mdebug[0m] [0m	activator-local: no ivy file found for com.thoughtworks.paranamer#paranamer-parent;2.6[0m
+[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/com/thoughtworks/paranamer/paranamer-parent/2.6/paranamer-parent-2.6.pom[0m
+[0m[[0mdebug[0m] [0m	public: found md file for com.thoughtworks.paranamer#paranamer-parent;2.6[0m
+[0m[[0mdebug[0m] [0m		=> http://repo1.maven.org/maven2/com/thoughtworks/paranamer/paranamer-parent/2.6/paranamer-parent-2.6.pom (2.6)[0m
+[0m[[0mdebug[0m] [0mdownloading http://repo1.maven.org/maven2/com/thoughtworks/paranamer/paranamer-parent/2.6/paranamer-parent-2.6.pom ...[0m
+[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/com/thoughtworks/paranamer/paranamer-parent/2.6/paranamer-parent-2.6.pom[0m
+[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/com/thoughtworks/paranamer/paranamer-parent/2.6/paranamer-parent-2.6.pom.sha1[0m
+[0m[[0mdebug[0m] [0msha1 OK for http://repo1.maven.org/maven2/com/thoughtworks/paranamer/paranamer-parent/2.6/paranamer-parent-2.6.pom[0m
+[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] com.thoughtworks.paranamer#paranamer-parent;2.6!paranamer-parent.pom(pom.original) (1276ms)[0m
+[0m[[0minfo[0m] [0mResolving org.codehaus#codehaus-parent;4 ...[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.codehaus#codehaus-parent;4 {}[0m
+[0m[[0mdebug[0m] [0m		tried /home/brew/.ivy2/local/org.codehaus/codehaus-parent/4/ivys/ivy.xml[0m
+[0m[[0mdebug[0m] [0m	local: no ivy file found for org.codehaus#codehaus-parent;4[0m
+[0m[[0mdebug[0m] [0m		tried file:/usr/local/activator-1.2.10/repository/org.codehaus/codehaus-parent/4/ivys/ivy.xml[0m
+[0m[[0mdebug[0m] [0m	activator-local: no ivy file found for org.codehaus#codehaus-parent;4[0m
+[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/org/codehaus/codehaus-parent/4/codehaus-parent-4.pom[0m
+[0m[[0mdebug[0m] [0m	public: found md file for org.codehaus#codehaus-parent;4[0m
+[0m[[0mdebug[0m] [0m		=> http://repo1.maven.org/maven2/org/codehaus/codehaus-parent/4/codehaus-parent-4.pom (4)[0m
+[0m[[0mdebug[0m] [0mdownloading http://repo1.maven.org/maven2/org/codehaus/codehaus-parent/4/codehaus-parent-4.pom ...[0m
+[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/org/codehaus/codehaus-parent/4/codehaus-parent-4.pom[0m
+[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/org/codehaus/codehaus-parent/4/codehaus-parent-4.pom.sha1[0m
+[0m[[0mdebug[0m] [0msha1 OK for http://repo1.maven.org/maven2/org/codehaus/codehaus-parent/4/codehaus-parent-4.pom[0m
+[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] org.codehaus#codehaus-parent;4!codehaus-parent.pom(pom.original) (1616ms)[0m
+[0m[[0mdebug[0m] [0m		tried /home/brew/.ivy2/local/org.codehaus/codehaus-parent/4/jars/codehaus-parent.jar[0m
+[0m[[0mdebug[0m] [0m		tried file:/usr/local/activator-1.2.10/repository/org.codehaus/codehaus-parent/4/jars/codehaus-parent.jar[0m
+[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/org/codehaus/codehaus-parent/4/codehaus-parent-4.jar[0m
+[0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=http://repo1.maven.org/maven2/org/codehaus/codehaus-parent/4/codehaus-parent-4.jar[0m
+[0m[[0mdebug[0m] [0m		tried http://repo.typesafe.com/typesafe/releases/org/codehaus/codehaus-parent/4/codehaus-parent-4.jar[0m
+[0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=http://repo.typesafe.com/typesafe/releases/org/codehaus/codehaus-parent/4/codehaus-parent-4.jar[0m
+[0m[[0mdebug[0m] [0m		tried http://repo.typesafe.com/typesafe/ivy-releases/org.codehaus/codehaus-parent/4/jars/codehaus-parent.jar[0m
+[0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=http://repo.typesafe.com/typesafe/ivy-releases/org.codehaus/codehaus-parent/4/jars/codehaus-parent.jar[0m
+[0m[[0mdebug[0m] [0m		tried http://repo.typesafe.com/typesafe/releases/org/codehaus/codehaus-parent/4/codehaus-parent-4.jar[0m
+[0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=http://repo.typesafe.com/typesafe/releases/org/codehaus/codehaus-parent/4/codehaus-parent-4.jar[0m
+[0m[[0mdebug[0m] [0m		tried http://repo.typesafe.com/typesafe/releases/org/codehaus/codehaus-parent/4/codehaus-parent-4.jar[0m
+[0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=http://repo.typesafe.com/typesafe/releases/org/codehaus/codehaus-parent/4/codehaus-parent-4.jar[0m
+[0m[[0mdebug[0m] [0m		tried file:///home/brew/.m2/repository/org/codehaus/codehaus-parent/4/codehaus-parent-4.jar[0m
+[0m[[0mdebug[0m] [0m		tried /home/brew/.ivy2/local/com.thoughtworks.paranamer/paranamer-parent/2.6/jars/paranamer-parent.jar[0m
+[0m[[0mdebug[0m] [0m		tried file:/usr/local/activator-1.2.10/repository/com.thoughtworks.paranamer/paranamer-parent/2.6/jars/paranamer-parent.jar[0m
+[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/com/thoughtworks/paranamer/paranamer-parent/2.6/paranamer-parent-2.6.jar[0m
+[0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=http://repo1.maven.org/maven2/com/thoughtworks/paranamer/paranamer-parent/2.6/paranamer-parent-2.6.jar[0m
+[0m[[0mdebug[0m] [0m		tried http://repo.typesafe.com/typesafe/releases/com/thoughtworks/paranamer/paranamer-parent/2.6/paranamer-parent-2.6.jar[0m
+[0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=http://repo.typesafe.com/typesafe/releases/com/thoughtworks/paranamer/paranamer-parent/2.6/paranamer-parent-2.6.jar[0m
+[0m[[0mdebug[0m] [0m		tried http://repo.typesafe.com/typesafe/ivy-releases/com.thoughtworks.paranamer/paranamer-parent/2.6/jars/paranamer-parent.jar[0m
+[0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=http://repo.typesafe.com/typesafe/ivy-releases/com.thoughtworks.paranamer/paranamer-parent/2.6/jars/paranamer-parent.jar[0m
+[0m[[0mdebug[0m] [0m		tried http://repo.typesafe.com/typesafe/releases/com/thoughtworks/paranamer/paranamer-parent/2.6/paranamer-parent-2.6.jar[0m
+[0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=http://repo.typesafe.com/typesafe/releases/com/thoughtworks/paranamer/paranamer-parent/2.6/paranamer-parent-2.6.jar[0m
+[0m[[0mdebug[0m] [0m		tried http://repo.typesafe.com/typesafe/releases/com/thoughtworks/paranamer/paranamer-parent/2.6/paranamer-parent-2.6.jar[0m
+[0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=http://repo.typesafe.com/typesafe/releases/com/thoughtworks/paranamer/paranamer-parent/2.6/paranamer-parent-2.6.jar[0m
+[0m[[0mdebug[0m] [0m		tried file:///home/brew/.m2/repository/com/thoughtworks/paranamer/paranamer-parent/2.6/paranamer-parent-2.6.jar[0m
+[0m[[0mdebug[0m] [0m		tried /home/brew/.ivy2/local/com.thoughtworks.paranamer/paranamer/2.6/jars/paranamer.jar[0m
+[0m[[0mdebug[0m] [0m		tried file:/usr/local/activator-1.2.10/repository/com.thoughtworks.paranamer/paranamer/2.6/jars/paranamer.jar[0m
+[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/com/thoughtworks/paranamer/paranamer/2.6/paranamer-2.6.jar[0m
+[0m[[0mdebug[0m] [0m	found com.thoughtworks.paranamer#paranamer;2.6 in public[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.thoughtworks.paranamer#paranamer;2.6 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.thoughtworks.paranamer#paranamer;2.6 [compile->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.thoughtworks.paranamer#paranamer;2.6 [compile->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.google.code.findbugs#jsr305;2.0.1 [compile->master(*)][0m
 [0m[[0minfo[0m] [0mResolving com.google.code.findbugs#jsr305;2.0.1 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: com.google.code.findbugs#jsr305;2.0.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: com.google.code.findbugs#jsr305;2.0.1[0m
-[0m[[0mdebug[0m] [0m	local: revision in cache: com.google.code.findbugs#jsr305;2.0.1[0m
-[0m[[0mdebug[0m] [0m	found com.google.code.findbugs#jsr305;2.0.1 in sbt-chain[0m
+[0m[[0mdebug[0m] [0m		tried /home/brew/.ivy2/local/com.google.code.findbugs/jsr305/2.0.1/ivys/ivy.xml[0m
+[0m[[0mdebug[0m] [0m	local: no ivy file found for com.google.code.findbugs#jsr305;2.0.1[0m
+[0m[[0mdebug[0m] [0m		tried file:/usr/local/activator-1.2.10/repository/com.google.code.findbugs/jsr305/2.0.1/ivys/ivy.xml[0m
+[0m[[0mdebug[0m] [0m	activator-local: no ivy file found for com.google.code.findbugs#jsr305;2.0.1[0m
+[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/com/google/code/findbugs/jsr305/2.0.1/jsr305-2.0.1.pom[0m
+[0m[[0mdebug[0m] [0m	public: found md file for com.google.code.findbugs#jsr305;2.0.1[0m
+[0m[[0mdebug[0m] [0m		=> http://repo1.maven.org/maven2/com/google/code/findbugs/jsr305/2.0.1/jsr305-2.0.1.pom (2.0.1)[0m
+[0m[[0mdebug[0m] [0mdownloading http://repo1.maven.org/maven2/com/google/code/findbugs/jsr305/2.0.1/jsr305-2.0.1.pom ...[0m
+[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/com/google/code/findbugs/jsr305/2.0.1/jsr305-2.0.1.pom[0m
+[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/com/google/code/findbugs/jsr305/2.0.1/jsr305-2.0.1.pom.sha1[0m
+[0m[[0mdebug[0m] [0msha1 OK for http://repo1.maven.org/maven2/com/google/code/findbugs/jsr305/2.0.1/jsr305-2.0.1.pom[0m
+[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] com.google.code.findbugs#jsr305;2.0.1!jsr305.pom(pom.original) (1184ms)[0m
+[0m[[0mdebug[0m] [0m		tried /home/brew/.ivy2/local/com.google.code.findbugs/jsr305/2.0.1/jars/jsr305.jar[0m
+[0m[[0mdebug[0m] [0m		tried file:/usr/local/activator-1.2.10/repository/com.google.code.findbugs/jsr305/2.0.1/jars/jsr305.jar[0m
+[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/com/google/code/findbugs/jsr305/2.0.1/jsr305-2.0.1.jar[0m
+[0m[[0mdebug[0m] [0m	found com.google.code.findbugs#jsr305;2.0.1 in public[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.google.code.findbugs#jsr305;2.0.1 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.google.code.findbugs#jsr305;2.0.1 [compile->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2->com.google.code.findbugs#jsr305;2.0.1 [compile->compile][0m
@@ -11447,7 +11654,12 @@
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] net.sf.ehcache#ehcache-jgroupsreplication;1.7!ehcache-jgroupsreplication.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] javax.transaction#jta;1.1!jta.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.github.mauricio#mysql-async_2.11;0.2.14!mysql-async_2.11.jar[0m
-[0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2!jackson-module-scala_2.11.jar(bundle)[0m
+[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/com/fasterxml/jackson/module/jackson-module-scala_2.11/2.4.2/jackson-module-scala_2.11-2.4.2.jar[0m
+[0m[[0minfo[0m] [0mdownloading http://repo1.maven.org/maven2/com/fasterxml/jackson/module/jackson-module-scala_2.11/2.4.2/jackson-module-scala_2.11-2.4.2.jar ...[0m
+[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/com/fasterxml/jackson/module/jackson-module-scala_2.11/2.4.2/jackson-module-scala_2.11-2.4.2.jar[0m
+[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/com/fasterxml/jackson/module/jackson-module-scala_2.11/2.4.2/jackson-module-scala_2.11-2.4.2.jar.sha1[0m
+[0m[[0mdebug[0m] [0msha1 OK for http://repo1.maven.org/maven2/com/fasterxml/jackson/module/jackson-module-scala_2.11/2.4.2/jackson-module-scala_2.11-2.4.2.jar[0m
+[0m[[0minfo[0m] [0m	[SUCCESSFUL ] com.fasterxml.jackson.module#jackson-module-scala_2.11;2.4.2!jackson-module-scala_2.11.jar(bundle) (16647ms)[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.apache.commons#commons-lang3;3.1!commons-lang3.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang.modules#scala-xml_2.11;1.0.1!scala-xml_2.11.jar(bundle)[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.typesafe.play#build-link;2.3.3!build-link.jar[0m
@@ -11510,33 +11722,42 @@
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.jgroups#jgroups;3.1.0.Final!jgroups.jar(bundle)[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.github.mauricio#db-async-common_2.11;0.2.14!db-async-common_2.11.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] io.netty#netty-all;4.0.23.Final!netty-all.jar[0m
-[0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#scala-reflect;2.11.2!scala-reflect.jar[0m
-[0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.fasterxml.jackson.core#jackson-core;2.4.2!jackson-core.jar(bundle)[0m
-[0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.fasterxml.jackson.core#jackson-annotations;2.4.2!jackson-annotations.jar(bundle)[0m
-[0m[[0mdebug[0m] [0m		tried /Users/brew/.ivy2/local/com.fasterxml.jackson.core/jackson-databind/2.4.2/bundles/jackson-databind.jar[0m
-[0m[[0mdebug[0m] [0m		tried file:/Users/brew/NPE/activator-1.2.10/repository/com.fasterxml.jackson.core/jackson-databind/2.4.2/bundles/jackson-databind.jar[0m
+[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.11.2/scala-reflect-2.11.2.jar[0m
+[0m[[0minfo[0m] [0mdownloading http://repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.11.2/scala-reflect-2.11.2.jar ...[0m
+[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.11.2/scala-reflect-2.11.2.jar[0m
+[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.11.2/scala-reflect-2.11.2.jar.sha1[0m
+[0m[[0mdebug[0m] [0msha1 OK for http://repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.11.2/scala-reflect-2.11.2.jar[0m
+[0m[[0minfo[0m] [0m	[SUCCESSFUL ] org.scala-lang#scala-reflect;2.11.2!scala-reflect.jar (155429ms)[0m
+[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-core/2.4.2/jackson-core-2.4.2.jar[0m
+[0m[[0minfo[0m] [0mdownloading http://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-core/2.4.2/jackson-core-2.4.2.jar ...[0m
+[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-core/2.4.2/jackson-core-2.4.2.jar[0m
+[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-core/2.4.2/jackson-core-2.4.2.jar.sha1[0m
+[0m[[0mdebug[0m] [0msha1 OK for http://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-core/2.4.2/jackson-core-2.4.2.jar[0m
+[0m[[0minfo[0m] [0m	[SUCCESSFUL ] com.fasterxml.jackson.core#jackson-core;2.4.2!jackson-core.jar(bundle) (9505ms)[0m
+[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.4.2/jackson-annotations-2.4.2.jar[0m
+[0m[[0minfo[0m] [0mdownloading http://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.4.2/jackson-annotations-2.4.2.jar ...[0m
+[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.4.2/jackson-annotations-2.4.2.jar[0m
+[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.4.2/jackson-annotations-2.4.2.jar.sha1[0m
+[0m[[0mdebug[0m] [0msha1 OK for http://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.4.2/jackson-annotations-2.4.2.jar[0m
+[0m[[0minfo[0m] [0m	[SUCCESSFUL ] com.fasterxml.jackson.core#jackson-annotations;2.4.2!jackson-annotations.jar(bundle) (2375ms)[0m
 [0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.4.2/jackson-databind-2.4.2.jar[0m
 [0m[[0minfo[0m] [0mdownloading http://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.4.2/jackson-databind-2.4.2.jar ...[0m
 [0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.4.2/jackson-databind-2.4.2.jar[0m
 [0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.4.2/jackson-databind-2.4.2.jar.sha1[0m
 [0m[[0mdebug[0m] [0msha1 OK for http://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.4.2/jackson-databind-2.4.2.jar[0m
-[0m[[0minfo[0m] [0m	[SUCCESSFUL ] com.fasterxml.jackson.core#jackson-databind;2.4.2!jackson-databind.jar(bundle) (20317ms)[0m
-[0m[[0mdebug[0m] [0m		tried /Users/brew/.ivy2/local/com.thoughtworks.paranamer/paranamer/2.6/jars/paranamer.jar[0m
-[0m[[0mdebug[0m] [0m		tried file:/Users/brew/NPE/activator-1.2.10/repository/com.thoughtworks.paranamer/paranamer/2.6/jars/paranamer.jar[0m
+[0m[[0minfo[0m] [0m	[SUCCESSFUL ] com.fasterxml.jackson.core#jackson-databind;2.4.2!jackson-databind.jar(bundle) (39142ms)[0m
 [0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/com/thoughtworks/paranamer/paranamer/2.6/paranamer-2.6.jar[0m
 [0m[[0minfo[0m] [0mdownloading http://repo1.maven.org/maven2/com/thoughtworks/paranamer/paranamer/2.6/paranamer-2.6.jar ...[0m
 [0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/com/thoughtworks/paranamer/paranamer/2.6/paranamer-2.6.jar[0m
 [0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/com/thoughtworks/paranamer/paranamer/2.6/paranamer-2.6.jar.sha1[0m
 [0m[[0mdebug[0m] [0msha1 OK for http://repo1.maven.org/maven2/com/thoughtworks/paranamer/paranamer/2.6/paranamer-2.6.jar[0m
-[0m[[0minfo[0m] [0m	[SUCCESSFUL ] com.thoughtworks.paranamer#paranamer;2.6!paranamer.jar (1611ms)[0m
-[0m[[0mdebug[0m] [0m		tried /Users/brew/.ivy2/local/com.google.code.findbugs/jsr305/2.0.1/jars/jsr305.jar[0m
-[0m[[0mdebug[0m] [0m		tried file:/Users/brew/NPE/activator-1.2.10/repository/com.google.code.findbugs/jsr305/2.0.1/jars/jsr305.jar[0m
+[0m[[0minfo[0m] [0m	[SUCCESSFUL ] com.thoughtworks.paranamer#paranamer;2.6!paranamer.jar (1865ms)[0m
 [0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/com/google/code/findbugs/jsr305/2.0.1/jsr305-2.0.1.jar[0m
 [0m[[0minfo[0m] [0mdownloading http://repo1.maven.org/maven2/com/google/code/findbugs/jsr305/2.0.1/jsr305-2.0.1.jar ...[0m
 [0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/com/google/code/findbugs/jsr305/2.0.1/jsr305-2.0.1.jar[0m
 [0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/com/google/code/findbugs/jsr305/2.0.1/jsr305-2.0.1.jar.sha1[0m
 [0m[[0mdebug[0m] [0msha1 OK for http://repo1.maven.org/maven2/com/google/code/findbugs/jsr305/2.0.1/jsr305-2.0.1.jar[0m
-[0m[[0minfo[0m] [0m	[SUCCESSFUL ] com.google.code.findbugs#jsr305;2.0.1!jsr305.jar (1782ms)[0m
+[0m[[0minfo[0m] [0m	[SUCCESSFUL ] com.google.code.findbugs#jsr305;2.0.1!jsr305.jar (2362ms)[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.typesafe.play#play-test_2.11;2.3.3!play-test_2.11.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] junit#junit;4.11!junit.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.specs2#specs2-core_2.11;2.3.12!specs2-core_2.11.jar[0m
@@ -11619,24 +11840,24 @@
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] log4j#log4j;1.2.15!log4j.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.aspectj#aspectjweaver;1.7.3!aspectjweaver.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.typesafe.trace#trace-sigar-libs;0.1.6!trace-sigar-libs.jar[0m
-[0m[[0mdebug[0m] [0m:: resolution report :: resolve 5907ms :: artifacts dl 23844ms[0m
-[0m[[0mdebug[0m] [0m	report for mcs#mcs_2.11;1.0-SNAPSHOT compile produced in /Users/brew/NPE/gits/mcs/target/resolution-cache/reports/mcs-mcs_2.11-compile.xml[0m
-[0m[[0mdebug[0m] [0m	report for mcs#mcs_2.11;1.0-SNAPSHOT runtime produced in /Users/brew/NPE/gits/mcs/target/resolution-cache/reports/mcs-mcs_2.11-runtime.xml[0m
-[0m[[0mdebug[0m] [0m	report for mcs#mcs_2.11;1.0-SNAPSHOT test produced in /Users/brew/NPE/gits/mcs/target/resolution-cache/reports/mcs-mcs_2.11-test.xml[0m
-[0m[[0mdebug[0m] [0m	report for mcs#mcs_2.11;1.0-SNAPSHOT provided produced in /Users/brew/NPE/gits/mcs/target/resolution-cache/reports/mcs-mcs_2.11-provided.xml[0m
-[0m[[0mdebug[0m] [0m	report for mcs#mcs_2.11;1.0-SNAPSHOT optional produced in /Users/brew/NPE/gits/mcs/target/resolution-cache/reports/mcs-mcs_2.11-optional.xml[0m
-[0m[[0mdebug[0m] [0m	report for mcs#mcs_2.11;1.0-SNAPSHOT compile-internal produced in /Users/brew/NPE/gits/mcs/target/resolution-cache/reports/mcs-mcs_2.11-compile-internal.xml[0m
-[0m[[0mdebug[0m] [0m	report for mcs#mcs_2.11;1.0-SNAPSHOT runtime-internal produced in /Users/brew/NPE/gits/mcs/target/resolution-cache/reports/mcs-mcs_2.11-runtime-internal.xml[0m
-[0m[[0mdebug[0m] [0m	report for mcs#mcs_2.11;1.0-SNAPSHOT test-internal produced in /Users/brew/NPE/gits/mcs/target/resolution-cache/reports/mcs-mcs_2.11-test-internal.xml[0m
-[0m[[0mdebug[0m] [0m	report for mcs#mcs_2.11;1.0-SNAPSHOT plugin produced in /Users/brew/NPE/gits/mcs/target/resolution-cache/reports/mcs-mcs_2.11-plugin.xml[0m
-[0m[[0mdebug[0m] [0m	report for mcs#mcs_2.11;1.0-SNAPSHOT sources produced in /Users/brew/NPE/gits/mcs/target/resolution-cache/reports/mcs-mcs_2.11-sources.xml[0m
-[0m[[0mdebug[0m] [0m	report for mcs#mcs_2.11;1.0-SNAPSHOT docs produced in /Users/brew/NPE/gits/mcs/target/resolution-cache/reports/mcs-mcs_2.11-docs.xml[0m
-[0m[[0mdebug[0m] [0m	report for mcs#mcs_2.11;1.0-SNAPSHOT pom produced in /Users/brew/NPE/gits/mcs/target/resolution-cache/reports/mcs-mcs_2.11-pom.xml[0m
+[0m[[0mdebug[0m] [0m:: resolution report :: resolve 30927ms :: artifacts dl 227482ms[0m
+[0m[[0mdebug[0m] [0m	report for mcs#mcs_2.11;1.0-SNAPSHOT compile produced in /home/brew/git/npe/mcs/target/resolution-cache/reports/mcs-mcs_2.11-compile.xml[0m
+[0m[[0mdebug[0m] [0m	report for mcs#mcs_2.11;1.0-SNAPSHOT runtime produced in /home/brew/git/npe/mcs/target/resolution-cache/reports/mcs-mcs_2.11-runtime.xml[0m
+[0m[[0mdebug[0m] [0m	report for mcs#mcs_2.11;1.0-SNAPSHOT test produced in /home/brew/git/npe/mcs/target/resolution-cache/reports/mcs-mcs_2.11-test.xml[0m
+[0m[[0mdebug[0m] [0m	report for mcs#mcs_2.11;1.0-SNAPSHOT provided produced in /home/brew/git/npe/mcs/target/resolution-cache/reports/mcs-mcs_2.11-provided.xml[0m
+[0m[[0mdebug[0m] [0m	report for mcs#mcs_2.11;1.0-SNAPSHOT optional produced in /home/brew/git/npe/mcs/target/resolution-cache/reports/mcs-mcs_2.11-optional.xml[0m
+[0m[[0mdebug[0m] [0m	report for mcs#mcs_2.11;1.0-SNAPSHOT compile-internal produced in /home/brew/git/npe/mcs/target/resolution-cache/reports/mcs-mcs_2.11-compile-internal.xml[0m
+[0m[[0mdebug[0m] [0m	report for mcs#mcs_2.11;1.0-SNAPSHOT runtime-internal produced in /home/brew/git/npe/mcs/target/resolution-cache/reports/mcs-mcs_2.11-runtime-internal.xml[0m
+[0m[[0mdebug[0m] [0m	report for mcs#mcs_2.11;1.0-SNAPSHOT test-internal produced in /home/brew/git/npe/mcs/target/resolution-cache/reports/mcs-mcs_2.11-test-internal.xml[0m
+[0m[[0mdebug[0m] [0m	report for mcs#mcs_2.11;1.0-SNAPSHOT plugin produced in /home/brew/git/npe/mcs/target/resolution-cache/reports/mcs-mcs_2.11-plugin.xml[0m
+[0m[[0mdebug[0m] [0m	report for mcs#mcs_2.11;1.0-SNAPSHOT sources produced in /home/brew/git/npe/mcs/target/resolution-cache/reports/mcs-mcs_2.11-sources.xml[0m
+[0m[[0mdebug[0m] [0m	report for mcs#mcs_2.11;1.0-SNAPSHOT docs produced in /home/brew/git/npe/mcs/target/resolution-cache/reports/mcs-mcs_2.11-docs.xml[0m
+[0m[[0mdebug[0m] [0m	report for mcs#mcs_2.11;1.0-SNAPSHOT pom produced in /home/brew/git/npe/mcs/target/resolution-cache/reports/mcs-mcs_2.11-pom.xml[0m
 [0m[[0mdebug[0m] [0mcircular dependency found: org.scala-lang#scala-compiler;2.11.1->org.scala-lang.modules#scala-xml_2.11;1.0.2->...[0m
-[0m[[0mdebug[0m] [0m	report for mcs#mcs_2.11;1.0-SNAPSHOT scala-tool produced in /Users/brew/NPE/gits/mcs/target/resolution-cache/reports/mcs-mcs_2.11-scala-tool.xml[0m
-[0m[[0mdebug[0m] [0m	report for mcs#mcs_2.11;1.0-SNAPSHOT echo-trace-compile produced in /Users/brew/NPE/gits/mcs/target/resolution-cache/reports/mcs-mcs_2.11-echo-trace-compile.xml[0m
-[0m[[0mdebug[0m] [0m	report for mcs#mcs_2.11;1.0-SNAPSHOT echo-trace-test produced in /Users/brew/NPE/gits/mcs/target/resolution-cache/reports/mcs-mcs_2.11-echo-trace-test.xml[0m
-[0m[[0mdebug[0m] [0m	report for mcs#mcs_2.11;1.0-SNAPSHOT echo-weave produced in /Users/brew/NPE/gits/mcs/target/resolution-cache/reports/mcs-mcs_2.11-echo-weave.xml[0m
-[0m[[0mdebug[0m] [0m	report for mcs#mcs_2.11;1.0-SNAPSHOT echo-sigar produced in /Users/brew/NPE/gits/mcs/target/resolution-cache/reports/mcs-mcs_2.11-echo-sigar.xml[0m
-[0m[[0mdebug[0m] [0m	resolve done (5907ms resolve - 23844ms download)[0m
+[0m[[0mdebug[0m] [0m	report for mcs#mcs_2.11;1.0-SNAPSHOT scala-tool produced in /home/brew/git/npe/mcs/target/resolution-cache/reports/mcs-mcs_2.11-scala-tool.xml[0m
+[0m[[0mdebug[0m] [0m	report for mcs#mcs_2.11;1.0-SNAPSHOT echo-trace-compile produced in /home/brew/git/npe/mcs/target/resolution-cache/reports/mcs-mcs_2.11-echo-trace-compile.xml[0m
+[0m[[0mdebug[0m] [0m	report for mcs#mcs_2.11;1.0-SNAPSHOT echo-trace-test produced in /home/brew/git/npe/mcs/target/resolution-cache/reports/mcs-mcs_2.11-echo-trace-test.xml[0m
+[0m[[0mdebug[0m] [0m	report for mcs#mcs_2.11;1.0-SNAPSHOT echo-weave produced in /home/brew/git/npe/mcs/target/resolution-cache/reports/mcs-mcs_2.11-echo-weave.xml[0m
+[0m[[0mdebug[0m] [0m	report for mcs#mcs_2.11;1.0-SNAPSHOT echo-sigar produced in /home/brew/git/npe/mcs/target/resolution-cache/reports/mcs-mcs_2.11-echo-sigar.xml[0m
+[0m[[0mdebug[0m] [0m	resolve done (30927ms resolve - 227482ms download)[0m
 [0m[[0minfo[0m] [0mDone updating.[0m

@@ -23,7 +23,7 @@
       },
       {
         "name": "流程监控",
-        "url": "#",
+        "url": "manager/flowsmon.html",
         "icon": "fa-desktop"
       }
     ]
