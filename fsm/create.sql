@@ -10,7 +10,7 @@ CREATE TABLE procdef (
   packages VARCHAR(64),
   xmlbody LONGTEXT NULL,
   subelements VARCHAR(512),
-  createtime LONG ,
+  createtime decimal(16,0) ,
   PRIMARY KEY (defid)) CHARACTER SET = gbk; 
 
 
@@ -37,10 +37,12 @@ create table tasks(
 	taskname varchar(64),
 	jsondata longtext,
 	submitter  varchar(64),
-	submittime long ,
+	submittime decimal(16,0) ,
 	obtainer   varchar(64),  
-	obtaintime long,
-	createtime long,
+	obtaintime decimal(16,0),
+	createtime decimal(16,0),
+	taskcenter	varchar(64),
+	rootproc	varchar(64),
 PRIMARY KEY (taskinstid)) CHARACTER SET = gbk  ENGINE=InnoDB;
 
 ALTER TABLE tasks 
@@ -53,7 +55,7 @@ create table tasks_obtain(
 	taskinstid   varchar(48) not null,
 	interstate integer not null default 0,
 	obtainer   varchar(64),  
-	obtaintime long,
+	obtaintime decimal(16,0),
 PRIMARY KEY (taskinstid)) CHARACTER SET = gbk  ENGINE=InnoDB;
 
 
@@ -74,27 +76,32 @@ create table tasks_submit(
 	taskname varchar(64),
 	jsondata longtext,
 	submitter  varchar(64),
-	submittime long ,
+	submittime decimal(16,0) ,
 PRIMARY KEY (taskinstid)) CHARACTER SET = gbk  ENGINE=InnoDB;
 
 
+DROP TABLE IF EXISTS taskcenter;
 
-DROP TABLE IF EXISTS convergecounter;
-
-create table convergecounter(
-	keyy	INT NOT NULL AUTO_INCREMENT ,
-	convergeid		varchar(128) not null,
-	taskinstids   longtext,
-	state int default 0,
-PRIMARY KEY (keyy)) CHARACTER SET = gbk  ENGINE=InnoDB;
+create table taskcenter(
+	centerid   varchar(48) not null,
+	centername varchar(64),  
+	createtime decimal(16,0),
+	modtime	decimal(16,0),
+PRIMARY KEY (centerid)) CHARACTER SET = gbk  ENGINE=InnoDB;
 
 
-DROP TABLE IF EXISTS procinsts;
+DROP TABLE IF EXISTS taskrole;
 
-create table procinsts(
-  procdefid  varchar(32) not null,
-  procinstid  varchar(32) not null,
-PRIMARY KEY (procinstid)) CHARACTER SET = gbk;
+create table taskrole(
+	roleid   varchar(48) not null,
+	rolename varchar(64),  
+	centerid decimal(16,0),
+	createtime decimal(16,0),
+	modtime	decimal(16,0),
+PRIMARY KEY (roleid)) CHARACTER SET = gbk  ENGINE=InnoDB;
+
+
+
 
 DROP TABLE IF EXISTS params;
 
