@@ -27,6 +27,7 @@ import com.fasterxml.jackson.module.scala.DefaultScalaModule
 import com.fasterxml.jackson.databind.DeserializationFeature
 import org.nights.npe.backend.db.TasksDAO
 import org.nights.npe.backend.db.KOTasks
+import org.nights.npe.backend.db.KOTasks
 
 object ProcInstFace extends Controller {
 
@@ -34,19 +35,38 @@ object ProcInstFace extends Controller {
 
   def test = Action {
     Ok("kkk");
-    //    Ok("Got request [" + request + "]")
   }
-  def getOrNone(value:Any):String= {
-    if(value==null) null
+  def getOrNone(value: Any): String = {
+    if (value == null) null
     else
       value.asInstanceOf[String]
   }
-  def getByPage(skip: Int, limit: Int, status: Int,query:String) = Action.async { request =>
-//    val query=request.getQueryString("query")
-    println("query=="+query)
+
+  def getByPage(skip: Int, limit: Int, status: Int, query: String) = Action.async { request =>
+
+    println("query==" + query)
+    var qq="";
+
+    if(query!=null&&query.length()>0){
+        val mapper = new ObjectMapper()
+        mapper.registerModule(DefaultScalaModule)
+        mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+        val querytask = mapper.readValue(query, classOf[KOTasks])
+       if(querytask.procdefid!=null&&querytask.procdefid.length()>0)qq+=" and procdefid like '%"+querytask.procdefid+"%'"
+       
+       if(querytask.procinstid!=null&&querytask.procinstid.length()>0)qq+=" and procinstid like '%"+querytask.procinstid+"%'"
+       
+       querytask.interstate match{
+         case Some(v) if v>=0 => qq+=" and interstate = "+v
+         case Some(v) if v == (-2) => qq+=" and interstate not in ( 0,1,2,3,8)" 
+
+         case _ =>
+       }
+    }
+    println("query.qq="+qq)
     val results = for {
-      total <- TasksDAO.countByCond("taskdefid='_1'")
-      rows <- TasksDAO.findByCond("taskdefid='_1'", Range(skip, limit))
+      total <- TasksDAO.countByCond("taskdefid='_1'"+qq)
+      rows <- TasksDAO.findByCond("taskdefid='_1'"+qq, Range(skip, limit))
     } yield (total, rows)
 
     results.map({ f =>
@@ -60,7 +80,7 @@ object ProcInstFace extends Controller {
               "procdefid" -> row("procdefid").asInstanceOf[String],
               "status" -> row("interstate").asInstanceOf[Int],
               "createtime" -> row("createtime").asInstanceOf[String],
-              "termtime" -> getOrNone(row("obtaintime")),
+              "termtime" -> getOrNone(row("submittime")),
               "procPIO" -> row("procPIO").asInstanceOf[Int],
               "idata1" -> row("idata1").asInstanceOf[Int],
               "idata2" -> row("idata2").asInstanceOf[Int],
@@ -77,10 +97,12 @@ object ProcInstFace extends Controller {
 
     })
   }
+  
 
   def delete(defid: String) = Action.async { request =>
-    val cond = KOTasks(null, null, defid, null);
+    val cond = KOTasks(null,null , defid, null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null);
     TasksDAO.deleteByCond(cond).map({ f =>
+      println("okok:rowsAffected="+f.rowsAffected)
       Ok(Json.obj("rowsAffected" -> f.rowsAffected))
     })
   }

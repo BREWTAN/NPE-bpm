@@ -70,10 +70,14 @@ eclipse
 run
 reload
 run
+eclipse
+run
 reload
 run
-compil
-compile
 reload
-compile
+run
+reload
+eclipse
+run
+eclipse 
 run

@@ -43,6 +43,9 @@ create table tasks(
 	createtime long,
 PRIMARY KEY (taskinstid)) CHARACTER SET = gbk  ENGINE=InnoDB;
 
+ALTER TABLE tasks 
+ADD INDEX index_procinst (procinstid ASC);
+
 
 DROP TABLE IF EXISTS tasks_obtain;
 

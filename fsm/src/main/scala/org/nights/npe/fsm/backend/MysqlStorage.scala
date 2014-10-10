@@ -29,6 +29,10 @@ import org.nights.npe.backend.db.ProcDefDAO
 import org.nights.npe.backend.db.KO
 import org.nights.npe.backend.db.KOTasks
 import org.nights.npe.backend.db.Range
+import org.nights.npe.backend.db.KOSubmitTasks
+import org.nights.npe.backend.db.InterState
+import org.nights.npe.backend.db.TermProcDAO
+import org.nights.npe.backend.db.KOTermProc
 
 /**
  * MySqlUpdate的模式
@@ -42,7 +46,7 @@ object MySqlStorage extends StateStore {
       ProcinstsDAO.hb
       ProcDefDAO.hb
     }
-
+ 
   }
   def shutdown() = synchronized {
 
@@ -57,8 +61,13 @@ object MySqlStorage extends StateStore {
     val prevs = states.foldLeft(List[String]())(_ ++ _.prevStateInstIds).distinct
     val upbeans = prevs.map { BeanTransHelper.koTermFromString(_) }
     val future2 = upbeans.map { TermUpdateTasksDAO.update(_) }
+    val future3= states.filter(_.isTerminate ).map{ state =>
+      println(TermProcDAO.keyname +"::"+TermProcDAO.ttag+"::"+TermProcDAO.tablename  )
+      TermProcDAO.updateByCond(KOTermProc(null,null),KOTermProc(state.procInstId,"_1",null,null))
+    }
+    
     implicit val exec = FSMGlobal.exec
-    val result = Await.ready(Future.sequence(List(future1) ::: future2), 100 seconds)
+    val result = Await.ready(Future.sequence(List(future1) ::: future2:::future3), 100 seconds)
     log.debug("resultready==" + result.value.get.get)
     TasksDAO.execInBatch(result.value.get.get)
 

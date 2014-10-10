@@ -7,197 +7,197 @@
 		revision="1.0.0"
 		conf="runtime-internal"
 		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool"
-		date="20141009210158"/>
+		date="20141010015321"/>
 	<dependencies>
 		<module organisation="com.github.mauricio" name="mysql-async_2.11">
-			<revision name="0.2.14" status="release" pubdate="20140830115118" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/mauricio/postgresql-async" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="27">
+			<revision name="0.2.14" status="release" pubdate="20140830035118" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/mauricio/postgresql-async" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="27">
 				<license name="APACHE-2.0" url="http://www.apache.org/licenses/LICENSE-2.0"/>
-				<metadata-artifact status="no" details="" size="2926" time="0" location="/home/brew/.ivy2/cache/com.github.mauricio/mysql-async_2.11/ivy-0.2.14.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/com/github/mauricio/mysql-async_2.11/0.2.14/mysql-async_2.11-0.2.14.pom"/>
+				<metadata-artifact status="no" details="" size="2926" time="0" location="/Users/brew/.ivy2/cache/com.github.mauricio/mysql-async_2.11/ivy-0.2.14.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/com/github/mauricio/mysql-async_2.11/0.2.14/mysql-async_2.11-0.2.14.pom"/>
 				<caller organisation="org.nights.npe" name="commons_2.11" conf="optional, compile, runtime, runtime-internal" rev="0.2.14" rev-constraint-default="0.2.14" rev-constraint-dynamic="0.2.14" callerrev="1.0.0"/>
 				<artifacts>
-					<artifact name="mysql-async_2.11" type="jar" ext="jar" status="no" details="" size="295809" time="0" location="/home/brew/.ivy2/cache/com.github.mauricio/mysql-async_2.11/jars/mysql-async_2.11-0.2.14.jar">
+					<artifact name="mysql-async_2.11" type="jar" ext="jar" status="no" details="" size="295809" time="0" location="/Users/brew/.ivy2/cache/com.github.mauricio/mysql-async_2.11/jars/mysql-async_2.11-0.2.14.jar">
 						<origin-location is-local="false" location="http://repo1.maven.org/maven2/com/github/mauricio/mysql-async_2.11/0.2.14/mysql-async_2.11-0.2.14.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="com.github.mauricio" name="db-async-common_2.11">
-			<revision name="0.2.14" status="release" pubdate="20140830115135" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/mauricio/postgresql-async" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="28">
+			<revision name="0.2.14" status="release" pubdate="20140830035135" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/mauricio/postgresql-async" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="28">
 				<license name="APACHE-2.0" url="http://www.apache.org/licenses/LICENSE-2.0"/>
-				<metadata-artifact status="no" details="" size="3452" time="0" location="/home/brew/.ivy2/cache/com.github.mauricio/db-async-common_2.11/ivy-0.2.14.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/com/github/mauricio/db-async-common_2.11/0.2.14/db-async-common_2.11-0.2.14.pom"/>
+				<metadata-artifact status="no" details="" size="3452" time="0" location="/Users/brew/.ivy2/cache/com.github.mauricio/db-async-common_2.11/ivy-0.2.14.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/com/github/mauricio/db-async-common_2.11/0.2.14/db-async-common_2.11-0.2.14.pom"/>
 				<caller organisation="com.github.mauricio" name="mysql-async_2.11" conf="default, compile, runtime, master" rev="0.2.14" rev-constraint-default="0.2.14" rev-constraint-dynamic="0.2.14" callerrev="0.2.14"/>
 				<artifacts>
-					<artifact name="db-async-common_2.11" type="jar" ext="jar" status="no" details="" size="196212" time="0" location="/home/brew/.ivy2/cache/com.github.mauricio/db-async-common_2.11/jars/db-async-common_2.11-0.2.14.jar">
+					<artifact name="db-async-common_2.11" type="jar" ext="jar" status="no" details="" size="196212" time="0" location="/Users/brew/.ivy2/cache/com.github.mauricio/db-async-common_2.11/jars/db-async-common_2.11-0.2.14.jar">
 						<origin-location is-local="false" location="http://repo1.maven.org/maven2/com/github/mauricio/db-async-common_2.11/0.2.14/db-async-common_2.11-0.2.14.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="org.javassist" name="javassist">
-			<revision name="3.18.1-GA" status="release" pubdate="20130831005932" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.javassist.org/" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="32">
+			<revision name="3.18.1-GA" status="release" pubdate="20130830165932" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.javassist.org/" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="32">
 				<license name="MPL 1.1" url="http://www.mozilla.org/MPL/MPL-1.1.html"/>
 				<license name="LGPL 2.1" url="http://www.gnu.org/licenses/lgpl-2.1.html"/>
 				<license name="Apache License 2.0" url="http://www.apache.org/licenses/"/>
-				<metadata-artifact status="no" details="" size="3067" time="0" location="/home/brew/.ivy2/cache/org.javassist/javassist/ivy-3.18.1-GA.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/javassist/javassist/3.18.1-GA/javassist-3.18.1-GA.pom"/>
+				<metadata-artifact status="no" details="" size="3067" time="0" location="/Users/brew/.ivy2/cache/org.javassist/javassist/ivy-3.18.1-GA.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/javassist/javassist/3.18.1-GA/javassist-3.18.1-GA.pom"/>
 				<caller organisation="com.github.mauricio" name="db-async-common_2.11" conf="compile, runtime" rev="3.18.1-GA" rev-constraint-default="3.18.1-GA" rev-constraint-dynamic="3.18.1-GA" callerrev="0.2.14"/>
 				<artifacts>
-					<artifact name="javassist" type="bundle" ext="jar" status="no" details="" size="714194" time="0" location="/home/brew/.ivy2/cache/org.javassist/javassist/bundles/javassist-3.18.1-GA.jar">
+					<artifact name="javassist" type="bundle" ext="jar" status="no" details="" size="714194" time="0" location="/Users/brew/.ivy2/cache/org.javassist/javassist/bundles/javassist-3.18.1-GA.jar">
 						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/javassist/javassist/3.18.1-GA/javassist-3.18.1-GA.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="io.netty" name="netty-all">
-			<revision name="4.0.23.Final" status="release" pubdate="20140816020640" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="31">
-				<metadata-artifact status="no" details="" size="15751" time="0" location="/home/brew/.ivy2/cache/io.netty/netty-all/ivy-4.0.23.Final.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/io/netty/netty-all/4.0.23.Final/netty-all-4.0.23.Final.pom"/>
+			<revision name="4.0.23.Final" status="release" pubdate="20140815180640" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="31">
+				<metadata-artifact status="no" details="" size="15751" time="0" location="/Users/brew/.ivy2/cache/io.netty/netty-all/ivy-4.0.23.Final.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/io/netty/netty-all/4.0.23.Final/netty-all-4.0.23.Final.pom"/>
 				<caller organisation="com.github.mauricio" name="db-async-common_2.11" conf="compile, runtime" rev="4.0.23.Final" rev-constraint-default="4.0.23.Final" rev-constraint-dynamic="4.0.23.Final" callerrev="0.2.14"/>
 				<artifacts>
-					<artifact name="netty-all" type="jar" ext="jar" status="no" details="" size="1779991" time="0" location="/home/brew/.ivy2/cache/io.netty/netty-all/jars/netty-all-4.0.23.Final.jar">
+					<artifact name="netty-all" type="jar" ext="jar" status="no" details="" size="1779991" time="0" location="/Users/brew/.ivy2/cache/io.netty/netty-all/jars/netty-all-4.0.23.Final.jar">
 						<origin-location is-local="false" location="http://repo1.maven.org/maven2/io/netty/netty-all/4.0.23.Final/netty-all-4.0.23.Final.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="org.joda" name="joda-convert">
-			<revision name="1.5" status="release" pubdate="20130917224839" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.joda.org/joda-convert/" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="30">
+			<revision name="1.5" status="release" pubdate="20130917144839" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.joda.org/joda-convert/" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="30">
 				<license name="Apache 2" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
-				<metadata-artifact status="no" details="" size="6116" time="0" location="/home/brew/.ivy2/cache/org.joda/joda-convert/ivy-1.5.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/joda/joda-convert/1.5/joda-convert-1.5.pom"/>
+				<metadata-artifact status="no" details="" size="6116" time="0" location="/Users/brew/.ivy2/cache/org.joda/joda-convert/ivy-1.5.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/joda/joda-convert/1.5/joda-convert-1.5.pom"/>
 				<caller organisation="com.github.mauricio" name="db-async-common_2.11" conf="compile, runtime" rev="1.5" rev-constraint-default="1.5" rev-constraint-dynamic="1.5" callerrev="0.2.14"/>
 				<artifacts>
-					<artifact name="joda-convert" type="jar" ext="jar" status="no" details="" size="96614" time="0" location="/home/brew/.ivy2/cache/org.joda/joda-convert/jars/joda-convert-1.5.jar">
+					<artifact name="joda-convert" type="jar" ext="jar" status="no" details="" size="96614" time="0" location="/Users/brew/.ivy2/cache/org.joda/joda-convert/jars/joda-convert-1.5.jar">
 						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/joda/joda-convert/1.5/joda-convert-1.5.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="joda-time" name="joda-time">
-			<revision name="2.3" status="release" pubdate="20130817013125" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.joda.org/joda-time/" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="29">
+			<revision name="2.3" status="release" pubdate="20130816133125" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.joda.org/joda-time/" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="29">
 				<license name="Apache 2" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
-				<metadata-artifact status="no" details="" size="6364" time="0" location="/home/brew/.ivy2/cache/joda-time/joda-time/ivy-2.3.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/joda-time/joda-time/2.3/joda-time-2.3.pom"/>
+				<metadata-artifact status="no" details="" size="6353" time="0" location="/Users/brew/.ivy2/cache/joda-time/joda-time/ivy-2.3.xml" searched="false" origin-is-local="false" origin-location="file:/Users/brew/NPE/activator-1.2.10/repository/joda-time/joda-time/2.3/ivys/ivy.xml"/>
 				<caller organisation="com.github.mauricio" name="db-async-common_2.11" conf="compile, runtime" rev="2.3" rev-constraint-default="2.3" rev-constraint-dynamic="2.3" callerrev="0.2.14"/>
 				<artifacts>
-					<artifact name="joda-time" type="jar" ext="jar" status="no" details="" size="581571" time="0" location="/home/brew/.ivy2/cache/joda-time/joda-time/jars/joda-time-2.3.jar">
-						<origin-location is-local="false" location="http://repo1.maven.org/maven2/joda-time/joda-time/2.3/joda-time-2.3.jar"/>
+					<artifact name="joda-time" type="jar" ext="jar" status="no" details="" size="581571" time="0" location="/Users/brew/.ivy2/cache/joda-time/joda-time/jars/joda-time-2.3.jar">
+						<origin-location is-local="false" location="file:/Users/brew/NPE/activator-1.2.10/repository/joda-time/joda-time/2.3/jars/joda-time.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="javax.transaction" name="jta">
-			<revision name="1.1" status="release" pubdate="20081028092721" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://java.sun.com/products/jta" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="26">
-				<metadata-artifact status="no" details="" size="2353" time="0" location="/home/brew/.ivy2/cache/javax.transaction/jta/ivy-1.1.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/javax/transaction/jta/1.1/jta-1.1.pom"/>
+			<revision name="1.1" status="release" pubdate="20081027212721" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://java.sun.com/products/jta" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="26">
+				<metadata-artifact status="no" details="" size="2343" time="0" location="/Users/brew/.ivy2/cache/javax.transaction/jta/ivy-1.1.xml" searched="false" origin-is-local="false" origin-location="file:/Users/brew/NPE/activator-1.2.10/repository/javax.transaction/jta/1.1/ivys/ivy.xml"/>
 				<caller organisation="org.nights.npe" name="commons_2.11" conf="optional, compile, runtime, runtime-internal" rev="1.1" rev-constraint-default="1.1" rev-constraint-dynamic="1.1" callerrev="1.0.0"/>
 				<artifacts>
-					<artifact name="jta" type="jar" ext="jar" status="no" details="" size="15071" time="0" location="/home/brew/.ivy2/cache/javax.transaction/jta/jars/jta-1.1.jar">
-						<origin-location is-local="false" location="http://repo1.maven.org/maven2/javax/transaction/jta/1.1/jta-1.1.jar"/>
+					<artifact name="jta" type="jar" ext="jar" status="no" details="" size="15071" time="0" location="/Users/brew/.ivy2/cache/javax.transaction/jta/jars/jta-1.1.jar">
+						<origin-location is-local="false" location="file:/Users/brew/NPE/activator-1.2.10/repository/javax.transaction/jta/1.1/jars/jta.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="org.scala-lang.modules" name="scala-xml_2.11">
-			<revision name="1.0.2" status="release" pubdate="20140520161040" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scala-lang.org/" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="25">
+			<revision name="1.0.2" status="release" pubdate="20140520041040" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scala-lang.org/" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="25">
 				<license name="BSD 3-clause" url="http://opensource.org/licenses/BSD-3-Clause"/>
-				<metadata-artifact status="no" details="" size="2987" time="0" location="/home/brew/.ivy2/cache/org.scala-lang.modules/scala-xml_2.11/ivy-1.0.2.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/scala-lang/modules/scala-xml_2.11/1.0.2/scala-xml_2.11-1.0.2.pom"/>
+				<metadata-artifact status="no" details="" size="2976" time="0" location="/Users/brew/.ivy2/cache/org.scala-lang.modules/scala-xml_2.11/ivy-1.0.2.xml" searched="false" origin-is-local="false" origin-location="file:/Users/brew/NPE/activator-1.2.10/repository/org.scala-lang.modules/scala-xml_2.11/1.0.2/ivys/ivy.xml"/>
 				<caller organisation="org.nights.npe" name="commons_2.11" conf="optional, compile, runtime, runtime-internal" rev="1.0.2" rev-constraint-default="1.0.2" rev-constraint-dynamic="1.0.2" callerrev="1.0.0"/>
 				<artifacts>
-					<artifact name="scala-xml_2.11" type="bundle" ext="jar" status="no" details="" size="648678" time="0" location="/home/brew/.ivy2/cache/org.scala-lang.modules/scala-xml_2.11/bundles/scala-xml_2.11-1.0.2.jar">
-						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/scala-lang/modules/scala-xml_2.11/1.0.2/scala-xml_2.11-1.0.2.jar"/>
+					<artifact name="scala-xml_2.11" type="bundle" ext="jar" status="no" details="" size="648678" time="0" location="/Users/brew/.ivy2/cache/org.scala-lang.modules/scala-xml_2.11/bundles/scala-xml_2.11-1.0.2.jar">
+						<origin-location is-local="false" location="file:/Users/brew/NPE/activator-1.2.10/repository/org.scala-lang.modules/scala-xml_2.11/1.0.2/bundles/scala-xml_2.11.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="com.typesafe.akka" name="akka-contrib_2.11">
-			<revision name="2.3.5" status="release" pubdate="20140814025319" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://akka.io/" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="3">
+			<revision name="2.3.5" status="release" pubdate="20140813185319" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://akka.io/" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="3">
 				<license name="Apache License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0"/>
-				<metadata-artifact status="no" details="" size="3853" time="0" location="/home/brew/.ivy2/cache/com.typesafe.akka/akka-contrib_2.11/ivy-2.3.5.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/com/typesafe/akka/akka-contrib_2.11/2.3.5/akka-contrib_2.11-2.3.5.pom"/>
+				<metadata-artifact status="no" details="" size="3853" time="0" location="/Users/brew/.ivy2/cache/com.typesafe.akka/akka-contrib_2.11/ivy-2.3.5.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/com/typesafe/akka/akka-contrib_2.11/2.3.5/akka-contrib_2.11-2.3.5.pom"/>
 				<caller organisation="org.nights.npe" name="commons_2.11" conf="optional, compile, runtime, runtime-internal" rev="2.3.5" rev-constraint-default="2.3.5" rev-constraint-dynamic="2.3.5" callerrev="1.0.0"/>
 				<artifacts>
-					<artifact name="akka-contrib_2.11" type="jar" ext="jar" status="no" details="" size="823888" time="0" location="/home/brew/.ivy2/cache/com.typesafe.akka/akka-contrib_2.11/jars/akka-contrib_2.11-2.3.5.jar">
+					<artifact name="akka-contrib_2.11" type="jar" ext="jar" status="no" details="" size="823888" time="0" location="/Users/brew/.ivy2/cache/com.typesafe.akka/akka-contrib_2.11/jars/akka-contrib_2.11-2.3.5.jar">
 						<origin-location is-local="false" location="http://repo1.maven.org/maven2/com/typesafe/akka/akka-contrib_2.11/2.3.5/akka-contrib_2.11-2.3.5.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="com.typesafe.akka" name="akka-persistence-experimental_2.11">
-			<revision name="2.3.5" status="release" pubdate="20140814025241" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://akka.io/" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="12">
+			<revision name="2.3.5" status="release" pubdate="20140813185241" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://akka.io/" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="12">
 				<license name="Apache License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0"/>
-				<metadata-artifact status="no" details="" size="4292" time="0" location="/home/brew/.ivy2/cache/com.typesafe.akka/akka-persistence-experimental_2.11/ivy-2.3.5.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/com/typesafe/akka/akka-persistence-experimental_2.11/2.3.5/akka-persistence-experimental_2.11-2.3.5.pom"/>
+				<metadata-artifact status="no" details="" size="4292" time="0" location="/Users/brew/.ivy2/cache/com.typesafe.akka/akka-persistence-experimental_2.11/ivy-2.3.5.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/com/typesafe/akka/akka-persistence-experimental_2.11/2.3.5/akka-persistence-experimental_2.11-2.3.5.pom"/>
 				<caller organisation="com.typesafe.akka" name="akka-contrib_2.11" conf="default, compile, runtime, master" rev="2.3.5" rev-constraint-default="2.3.5" rev-constraint-dynamic="2.3.5" callerrev="2.3.5"/>
 				<artifacts>
-					<artifact name="akka-persistence-experimental_2.11" type="jar" ext="jar" status="no" details="" size="825773" time="0" location="/home/brew/.ivy2/cache/com.typesafe.akka/akka-persistence-experimental_2.11/jars/akka-persistence-experimental_2.11-2.3.5.jar">
+					<artifact name="akka-persistence-experimental_2.11" type="jar" ext="jar" status="no" details="" size="825773" time="0" location="/Users/brew/.ivy2/cache/com.typesafe.akka/akka-persistence-experimental_2.11/jars/akka-persistence-experimental_2.11-2.3.5.jar">
 						<origin-location is-local="false" location="http://repo1.maven.org/maven2/com/typesafe/akka/akka-persistence-experimental_2.11/2.3.5/akka-persistence-experimental_2.11-2.3.5.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="org.fusesource.leveldbjni" name="leveldbjni-all">
-			<revision name="1.7" status="release" pubdate="20130513211202" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="17">
-				<metadata-artifact status="no" details="" size="4350" time="0" location="/home/brew/.ivy2/cache/org.fusesource.leveldbjni/leveldbjni-all/ivy-1.7.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/fusesource/leveldbjni/leveldbjni-all/1.7/leveldbjni-all-1.7.pom"/>
+			<revision name="1.7" status="release" pubdate="20130513091202" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="17">
+				<metadata-artifact status="no" details="" size="4340" time="0" location="/Users/brew/.ivy2/cache/org.fusesource.leveldbjni/leveldbjni-all/ivy-1.7.xml" searched="false" origin-is-local="false" origin-location="file:/Users/brew/NPE/activator-1.2.10/repository/org.fusesource.leveldbjni/leveldbjni-all/1.7/ivys/ivy.xml"/>
 				<caller organisation="com.typesafe.akka" name="akka-persistence-experimental_2.11" conf="compile, runtime" rev="1.7" rev-constraint-default="1.7" rev-constraint-dynamic="1.7" callerrev="2.3.5"/>
 				<artifacts>
-					<artifact name="leveldbjni-all" type="bundle" ext="jar" status="no" details="" size="1035468" time="0" location="/home/brew/.ivy2/cache/org.fusesource.leveldbjni/leveldbjni-all/bundles/leveldbjni-all-1.7.jar">
-						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/fusesource/leveldbjni/leveldbjni-all/1.7/leveldbjni-all-1.7.jar"/>
+					<artifact name="leveldbjni-all" type="bundle" ext="jar" status="no" details="" size="1035468" time="0" location="/Users/brew/.ivy2/cache/org.fusesource.leveldbjni/leveldbjni-all/bundles/leveldbjni-all-1.7.jar">
+						<origin-location is-local="false" location="file:/Users/brew/NPE/activator-1.2.10/repository/org.fusesource.leveldbjni/leveldbjni-all/1.7/bundles/leveldbjni-all.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="org.fusesource.leveldbjni" name="leveldbjni-win64">
-			<revision name="1.5" status="release" pubdate="20130124063052" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="24">
-				<metadata-artifact status="no" details="" size="3609" time="0" location="/home/brew/.ivy2/cache/org.fusesource.leveldbjni/leveldbjni-win64/ivy-1.5.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/fusesource/leveldbjni/leveldbjni-win64/1.5/leveldbjni-win64-1.5.pom"/>
+			<revision name="1.5" status="release" pubdate="20130123173052" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="24">
+				<metadata-artifact status="no" details="" size="3599" time="0" location="/Users/brew/.ivy2/cache/org.fusesource.leveldbjni/leveldbjni-win64/ivy-1.5.xml" searched="false" origin-is-local="false" origin-location="file:/Users/brew/NPE/activator-1.2.10/repository/org.fusesource.leveldbjni/leveldbjni-win64/1.5/ivys/ivy.xml"/>
 				<caller organisation="org.fusesource.leveldbjni" name="leveldbjni-all" conf="compile, runtime" rev="1.5" rev-constraint-default="1.5" rev-constraint-dynamic="1.5" callerrev="1.7"/>
 				<artifacts>
-					<artifact name="leveldbjni-win64" type="jar" ext="jar" status="no" details="" size="126331" time="0" location="/home/brew/.ivy2/cache/org.fusesource.leveldbjni/leveldbjni-win64/jars/leveldbjni-win64-1.5.jar">
-						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/fusesource/leveldbjni/leveldbjni-win64/1.5/leveldbjni-win64-1.5.jar"/>
+					<artifact name="leveldbjni-win64" type="jar" ext="jar" status="no" details="" size="126331" time="0" location="/Users/brew/.ivy2/cache/org.fusesource.leveldbjni/leveldbjni-win64/jars/leveldbjni-win64-1.5.jar">
+						<origin-location is-local="false" location="file:/Users/brew/NPE/activator-1.2.10/repository/org.fusesource.leveldbjni/leveldbjni-win64/1.5/jars/leveldbjni-win64.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="org.fusesource.leveldbjni" name="leveldbjni-win32">
-			<revision name="1.5" status="release" pubdate="20130124063254" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="23">
-				<metadata-artifact status="no" details="" size="3609" time="0" location="/home/brew/.ivy2/cache/org.fusesource.leveldbjni/leveldbjni-win32/ivy-1.5.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/fusesource/leveldbjni/leveldbjni-win32/1.5/leveldbjni-win32-1.5.pom"/>
+			<revision name="1.5" status="release" pubdate="20130123173254" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="23">
+				<metadata-artifact status="no" details="" size="3599" time="0" location="/Users/brew/.ivy2/cache/org.fusesource.leveldbjni/leveldbjni-win32/ivy-1.5.xml" searched="false" origin-is-local="false" origin-location="file:/Users/brew/NPE/activator-1.2.10/repository/org.fusesource.leveldbjni/leveldbjni-win32/1.5/ivys/ivy.xml"/>
 				<caller organisation="org.fusesource.leveldbjni" name="leveldbjni-all" conf="compile, runtime" rev="1.5" rev-constraint-default="1.5" rev-constraint-dynamic="1.5" callerrev="1.7"/>
 				<artifacts>
-					<artifact name="leveldbjni-win32" type="jar" ext="jar" status="no" details="" size="111686" time="0" location="/home/brew/.ivy2/cache/org.fusesource.leveldbjni/leveldbjni-win32/jars/leveldbjni-win32-1.5.jar">
-						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/fusesource/leveldbjni/leveldbjni-win32/1.5/leveldbjni-win32-1.5.jar"/>
+					<artifact name="leveldbjni-win32" type="jar" ext="jar" status="no" details="" size="111686" time="0" location="/Users/brew/.ivy2/cache/org.fusesource.leveldbjni/leveldbjni-win32/jars/leveldbjni-win32-1.5.jar">
+						<origin-location is-local="false" location="file:/Users/brew/NPE/activator-1.2.10/repository/org.fusesource.leveldbjni/leveldbjni-win32/1.5/jars/leveldbjni-win32.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="org.fusesource.leveldbjni" name="leveldbjni-linux64">
-			<revision name="1.5" status="release" pubdate="20130124061810" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="22">
-				<metadata-artifact status="no" details="" size="3607" time="0" location="/home/brew/.ivy2/cache/org.fusesource.leveldbjni/leveldbjni-linux64/ivy-1.5.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/fusesource/leveldbjni/leveldbjni-linux64/1.5/leveldbjni-linux64-1.5.pom"/>
+			<revision name="1.5" status="release" pubdate="20130123171810" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="22">
+				<metadata-artifact status="no" details="" size="3597" time="0" location="/Users/brew/.ivy2/cache/org.fusesource.leveldbjni/leveldbjni-linux64/ivy-1.5.xml" searched="false" origin-is-local="false" origin-location="file:/Users/brew/NPE/activator-1.2.10/repository/org.fusesource.leveldbjni/leveldbjni-linux64/1.5/ivys/ivy.xml"/>
 				<caller organisation="org.fusesource.leveldbjni" name="leveldbjni-all" conf="compile, runtime" rev="1.5" rev-constraint-default="1.5" rev-constraint-dynamic="1.5" callerrev="1.7"/>
 				<artifacts>
-					<artifact name="leveldbjni-linux64" type="jar" ext="jar" status="no" details="" size="280537" time="0" location="/home/brew/.ivy2/cache/org.fusesource.leveldbjni/leveldbjni-linux64/jars/leveldbjni-linux64-1.5.jar">
-						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/fusesource/leveldbjni/leveldbjni-linux64/1.5/leveldbjni-linux64-1.5.jar"/>
+					<artifact name="leveldbjni-linux64" type="jar" ext="jar" status="no" details="" size="280537" time="0" location="/Users/brew/.ivy2/cache/org.fusesource.leveldbjni/leveldbjni-linux64/jars/leveldbjni-linux64-1.5.jar">
+						<origin-location is-local="false" location="file:/Users/brew/NPE/activator-1.2.10/repository/org.fusesource.leveldbjni/leveldbjni-linux64/1.5/jars/leveldbjni-linux64.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="org.fusesource.leveldbjni" name="leveldbjni-linux32">
-			<revision name="1.5" status="release" pubdate="20130124061810" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="21">
-				<metadata-artifact status="no" details="" size="3607" time="0" location="/home/brew/.ivy2/cache/org.fusesource.leveldbjni/leveldbjni-linux32/ivy-1.5.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/fusesource/leveldbjni/leveldbjni-linux32/1.5/leveldbjni-linux32-1.5.pom"/>
+			<revision name="1.5" status="release" pubdate="20130123171810" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="21">
+				<metadata-artifact status="no" details="" size="3597" time="0" location="/Users/brew/.ivy2/cache/org.fusesource.leveldbjni/leveldbjni-linux32/ivy-1.5.xml" searched="false" origin-is-local="false" origin-location="file:/Users/brew/NPE/activator-1.2.10/repository/org.fusesource.leveldbjni/leveldbjni-linux32/1.5/ivys/ivy.xml"/>
 				<caller organisation="org.fusesource.leveldbjni" name="leveldbjni-all" conf="compile, runtime" rev="1.5" rev-constraint-default="1.5" rev-constraint-dynamic="1.5" callerrev="1.7"/>
 				<artifacts>
-					<artifact name="leveldbjni-linux32" type="jar" ext="jar" status="no" details="" size="281930" time="0" location="/home/brew/.ivy2/cache/org.fusesource.leveldbjni/leveldbjni-linux32/jars/leveldbjni-linux32-1.5.jar">
-						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/fusesource/leveldbjni/leveldbjni-linux32/1.5/leveldbjni-linux32-1.5.jar"/>
+					<artifact name="leveldbjni-linux32" type="jar" ext="jar" status="no" details="" size="281930" time="0" location="/Users/brew/.ivy2/cache/org.fusesource.leveldbjni/leveldbjni-linux32/jars/leveldbjni-linux32-1.5.jar">
+						<origin-location is-local="false" location="file:/Users/brew/NPE/activator-1.2.10/repository/org.fusesource.leveldbjni/leveldbjni-linux32/1.5/jars/leveldbjni-linux32.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="org.fusesource.leveldbjni" name="leveldbjni-osx">
-			<revision name="1.5" status="release" pubdate="20130124060531" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="20">
-				<metadata-artifact status="no" details="" size="3942" time="0" location="/home/brew/.ivy2/cache/org.fusesource.leveldbjni/leveldbjni-osx/ivy-1.5.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/fusesource/leveldbjni/leveldbjni-osx/1.5/leveldbjni-osx-1.5.pom"/>
+			<revision name="1.5" status="release" pubdate="20130123170531" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="20">
+				<metadata-artifact status="no" details="" size="3932" time="0" location="/Users/brew/.ivy2/cache/org.fusesource.leveldbjni/leveldbjni-osx/ivy-1.5.xml" searched="false" origin-is-local="false" origin-location="file:/Users/brew/NPE/activator-1.2.10/repository/org.fusesource.leveldbjni/leveldbjni-osx/1.5/ivys/ivy.xml"/>
 				<caller organisation="org.fusesource.leveldbjni" name="leveldbjni-all" conf="compile, runtime" rev="1.5" rev-constraint-default="1.5" rev-constraint-dynamic="1.5" callerrev="1.7"/>
 				<artifacts>
-					<artifact name="leveldbjni-osx" type="jar" ext="jar" status="no" details="" size="167140" time="0" location="/home/brew/.ivy2/cache/org.fusesource.leveldbjni/leveldbjni-osx/jars/leveldbjni-osx-1.5.jar">
-						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/fusesource/leveldbjni/leveldbjni-osx/1.5/leveldbjni-osx-1.5.jar"/>
+					<artifact name="leveldbjni-osx" type="jar" ext="jar" status="no" details="" size="167140" time="0" location="/Users/brew/.ivy2/cache/org.fusesource.leveldbjni/leveldbjni-osx/jars/leveldbjni-osx-1.5.jar">
+						<origin-location is-local="false" location="file:/Users/brew/NPE/activator-1.2.10/repository/org.fusesource.leveldbjni/leveldbjni-osx/1.5/jars/leveldbjni-osx.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="org.fusesource.leveldbjni" name="leveldbjni">
-			<revision name="1.7" status="release" pubdate="20130513211129" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="18">
-				<metadata-artifact status="no" details="" size="4038" time="0" location="/home/brew/.ivy2/cache/org.fusesource.leveldbjni/leveldbjni/ivy-1.7.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/fusesource/leveldbjni/leveldbjni/1.7/leveldbjni-1.7.pom"/>
+			<revision name="1.7" status="release" pubdate="20130513091129" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="18">
+				<metadata-artifact status="no" details="" size="4028" time="0" location="/Users/brew/.ivy2/cache/org.fusesource.leveldbjni/leveldbjni/ivy-1.7.xml" searched="false" origin-is-local="false" origin-location="file:/Users/brew/NPE/activator-1.2.10/repository/org.fusesource.leveldbjni/leveldbjni/1.7/ivys/ivy.xml"/>
 				<caller organisation="org.fusesource.leveldbjni" name="leveldbjni-win32" conf="compile, runtime" rev="1.5" rev-constraint-default="1.5" rev-constraint-dynamic="1.5" callerrev="1.5"/>
 				<caller organisation="org.fusesource.leveldbjni" name="leveldbjni-linux32" conf="compile, runtime" rev="1.5" rev-constraint-default="1.5" rev-constraint-dynamic="1.5" callerrev="1.5"/>
 				<caller organisation="org.fusesource.leveldbjni" name="leveldbjni-all" conf="compile, runtime" rev="1.7" rev-constraint-default="1.7" rev-constraint-dynamic="1.7" callerrev="1.7"/>
@@ -205,8 +205,8 @@
 				<caller organisation="org.fusesource.leveldbjni" name="leveldbjni-osx" conf="compile, runtime" rev="1.5" rev-constraint-default="1.5" rev-constraint-dynamic="1.5" callerrev="1.5"/>
 				<caller organisation="org.fusesource.leveldbjni" name="leveldbjni-win64" conf="compile, runtime" rev="1.5" rev-constraint-default="1.5" rev-constraint-dynamic="1.5" callerrev="1.5"/>
 				<artifacts>
-					<artifact name="leveldbjni" type="jar" ext="jar" status="no" details="" size="56368" time="0" location="/home/brew/.ivy2/cache/org.fusesource.leveldbjni/leveldbjni/jars/leveldbjni-1.7.jar">
-						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/fusesource/leveldbjni/leveldbjni/1.7/leveldbjni-1.7.jar"/>
+					<artifact name="leveldbjni" type="jar" ext="jar" status="no" details="" size="56368" time="0" location="/Users/brew/.ivy2/cache/org.fusesource.leveldbjni/leveldbjni/jars/leveldbjni-1.7.jar">
+						<origin-location is-local="false" location="file:/Users/brew/NPE/activator-1.2.10/repository/org.fusesource.leveldbjni/leveldbjni/1.7/jars/leveldbjni.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
@@ -222,153 +222,153 @@
 			</revision>
 		</module>
 		<module organisation="org.fusesource.hawtjni" name="hawtjni-runtime">
-			<revision name="1.8" status="release" pubdate="20130513205423" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="19">
-				<metadata-artifact status="no" details="" size="3652" time="0" location="/home/brew/.ivy2/cache/org.fusesource.hawtjni/hawtjni-runtime/ivy-1.8.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/fusesource/hawtjni/hawtjni-runtime/1.8/hawtjni-runtime-1.8.pom"/>
+			<revision name="1.8" status="release" pubdate="20130513085423" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="19">
+				<metadata-artifact status="no" details="" size="3642" time="0" location="/Users/brew/.ivy2/cache/org.fusesource.hawtjni/hawtjni-runtime/ivy-1.8.xml" searched="false" origin-is-local="false" origin-location="file:/Users/brew/NPE/activator-1.2.10/repository/org.fusesource.hawtjni/hawtjni-runtime/1.8/ivys/ivy.xml"/>
 				<caller organisation="org.fusesource.leveldbjni" name="leveldbjni" conf="compile, runtime" rev="1.8" rev-constraint-default="1.8" rev-constraint-dynamic="1.8" callerrev="1.7"/>
 				<artifacts>
-					<artifact name="hawtjni-runtime" type="jar" ext="jar" status="no" details="" size="19705" time="0" location="/home/brew/.ivy2/cache/org.fusesource.hawtjni/hawtjni-runtime/jars/hawtjni-runtime-1.8.jar">
-						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/fusesource/hawtjni/hawtjni-runtime/1.8/hawtjni-runtime-1.8.jar"/>
+					<artifact name="hawtjni-runtime" type="jar" ext="jar" status="no" details="" size="19705" time="0" location="/Users/brew/.ivy2/cache/org.fusesource.hawtjni/hawtjni-runtime/jars/hawtjni-runtime-1.8.jar">
+						<origin-location is-local="false" location="file:/Users/brew/NPE/activator-1.2.10/repository/org.fusesource.hawtjni/hawtjni-runtime/1.8/jars/hawtjni-runtime.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="org.iq80.leveldb" name="leveldb">
-			<revision name="0.5" status="release" pubdate="20130123024104" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="13">
-				<metadata-artifact status="no" details="" size="3736" time="0" location="/home/brew/.ivy2/cache/org.iq80.leveldb/leveldb/ivy-0.5.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/iq80/leveldb/leveldb/0.5/leveldb-0.5.pom"/>
+			<revision name="0.5" status="release" pubdate="20130122134104" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="13">
+				<metadata-artifact status="no" details="" size="3726" time="0" location="/Users/brew/.ivy2/cache/org.iq80.leveldb/leveldb/ivy-0.5.xml" searched="false" origin-is-local="false" origin-location="file:/Users/brew/NPE/activator-1.2.10/repository/org.iq80.leveldb/leveldb/0.5/ivys/ivy.xml"/>
 				<caller organisation="com.typesafe.akka" name="akka-persistence-experimental_2.11" conf="compile, runtime" rev="0.5" rev-constraint-default="0.5" rev-constraint-dynamic="0.5" callerrev="2.3.5"/>
 				<artifacts>
-					<artifact name="leveldb" type="jar" ext="jar" status="no" details="" size="227716" time="0" location="/home/brew/.ivy2/cache/org.iq80.leveldb/leveldb/jars/leveldb-0.5.jar">
-						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/iq80/leveldb/leveldb/0.5/leveldb-0.5.jar"/>
+					<artifact name="leveldb" type="jar" ext="jar" status="no" details="" size="227716" time="0" location="/Users/brew/.ivy2/cache/org.iq80.leveldb/leveldb/jars/leveldb-0.5.jar">
+						<origin-location is-local="false" location="file:/Users/brew/NPE/activator-1.2.10/repository/org.iq80.leveldb/leveldb/0.5/jars/leveldb.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="com.google.guava" name="guava">
-			<revision name="12.0" status="release" pubdate="20120501024217" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="15">
-				<metadata-artifact status="no" details="" size="3535" time="0" location="/home/brew/.ivy2/cache/com.google.guava/guava/ivy-12.0.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/com/google/guava/guava/12.0/guava-12.0.pom"/>
+			<revision name="12.0" status="release" pubdate="20120430184217" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="15">
+				<metadata-artifact status="no" details="" size="3535" time="0" location="/Users/brew/.ivy2/cache/com.google.guava/guava/ivy-12.0.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/com/google/guava/guava/12.0/guava-12.0.pom"/>
 				<caller organisation="org.iq80.leveldb" name="leveldb" conf="compile, runtime" rev="12.0" rev-constraint-default="12.0" rev-constraint-dynamic="12.0" callerrev="0.5"/>
 				<artifacts>
-					<artifact name="guava" type="jar" ext="jar" status="no" details="" size="1795936" time="0" location="/home/brew/.ivy2/cache/com.google.guava/guava/jars/guava-12.0.jar">
+					<artifact name="guava" type="jar" ext="jar" status="no" details="" size="1795936" time="0" location="/Users/brew/.ivy2/cache/com.google.guava/guava/jars/guava-12.0.jar">
 						<origin-location is-local="false" location="http://repo1.maven.org/maven2/com/google/guava/guava/12.0/guava-12.0.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="com.google.code.findbugs" name="jsr305">
-			<revision name="1.3.9" status="release" pubdate="20090825062822" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://findbugs.sourceforge.net/" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="16">
+			<revision name="1.3.9" status="release" pubdate="20090824222822" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://findbugs.sourceforge.net/" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="16">
 				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
-				<metadata-artifact status="no" details="" size="2393" time="0" location="/home/brew/.ivy2/cache/com.google.code.findbugs/jsr305/ivy-1.3.9.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/com/google/code/findbugs/jsr305/1.3.9/jsr305-1.3.9.pom"/>
+				<metadata-artifact status="no" details="" size="2393" time="0" location="/Users/brew/.ivy2/cache/com.google.code.findbugs/jsr305/ivy-1.3.9.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/com/google/code/findbugs/jsr305/1.3.9/jsr305-1.3.9.pom"/>
 				<caller organisation="com.google.guava" name="guava" conf="compile, runtime" rev="1.3.9" rev-constraint-default="1.3.9" rev-constraint-dynamic="1.3.9" callerrev="12.0"/>
 				<artifacts>
-					<artifact name="jsr305" type="jar" ext="jar" status="no" details="" size="33015" time="0" location="/home/brew/.ivy2/cache/com.google.code.findbugs/jsr305/jars/jsr305-1.3.9.jar">
+					<artifact name="jsr305" type="jar" ext="jar" status="no" details="" size="33015" time="0" location="/Users/brew/.ivy2/cache/com.google.code.findbugs/jsr305/jars/jsr305-1.3.9.jar">
 						<origin-location is-local="false" location="http://repo1.maven.org/maven2/com/google/code/findbugs/jsr305/1.3.9/jsr305-1.3.9.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="org.iq80.leveldb" name="leveldb-api">
-			<revision name="0.5" status="release" pubdate="20130123023949" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="14">
-				<metadata-artifact status="no" details="" size="2744" time="0" location="/home/brew/.ivy2/cache/org.iq80.leveldb/leveldb-api/ivy-0.5.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/iq80/leveldb/leveldb-api/0.5/leveldb-api-0.5.pom"/>
+			<revision name="0.5" status="release" pubdate="20130122133949" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="14">
+				<metadata-artifact status="no" details="" size="2734" time="0" location="/Users/brew/.ivy2/cache/org.iq80.leveldb/leveldb-api/ivy-0.5.xml" searched="false" origin-is-local="false" origin-location="file:/Users/brew/NPE/activator-1.2.10/repository/org.iq80.leveldb/leveldb-api/0.5/ivys/ivy.xml"/>
 				<caller organisation="org.iq80.leveldb" name="leveldb" conf="compile, runtime" rev="0.5" rev-constraint-default="0.5" rev-constraint-dynamic="0.5" callerrev="0.5"/>
 				<caller organisation="org.fusesource.leveldbjni" name="leveldbjni" conf="compile, runtime" rev="0.5" rev-constraint-default="0.5" rev-constraint-dynamic="0.5" callerrev="1.7"/>
 				<artifacts>
-					<artifact name="leveldb-api" type="jar" ext="jar" status="no" details="" size="9233" time="0" location="/home/brew/.ivy2/cache/org.iq80.leveldb/leveldb-api/jars/leveldb-api-0.5.jar">
-						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/iq80/leveldb/leveldb-api/0.5/leveldb-api-0.5.jar"/>
+					<artifact name="leveldb-api" type="jar" ext="jar" status="no" details="" size="9233" time="0" location="/Users/brew/.ivy2/cache/org.iq80.leveldb/leveldb-api/jars/leveldb-api-0.5.jar">
+						<origin-location is-local="false" location="file:/Users/brew/NPE/activator-1.2.10/repository/org.iq80.leveldb/leveldb-api/0.5/jars/leveldb-api.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="com.typesafe.akka" name="akka-cluster_2.11">
-			<revision name="2.3.5" status="release" pubdate="20140814025256" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://akka.io/" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="11">
+			<revision name="2.3.5" status="release" pubdate="20140813185256" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://akka.io/" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="11">
 				<license name="Apache License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0"/>
-				<metadata-artifact status="no" details="" size="3144" time="0" location="/home/brew/.ivy2/cache/com.typesafe.akka/akka-cluster_2.11/ivy-2.3.5.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/com/typesafe/akka/akka-cluster_2.11/2.3.5/akka-cluster_2.11-2.3.5.pom"/>
+				<metadata-artifact status="no" details="" size="3144" time="0" location="/Users/brew/.ivy2/cache/com.typesafe.akka/akka-cluster_2.11/ivy-2.3.5.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/com/typesafe/akka/akka-cluster_2.11/2.3.5/akka-cluster_2.11-2.3.5.pom"/>
 				<caller organisation="com.typesafe.akka" name="akka-contrib_2.11" conf="default, compile, runtime, master" rev="2.3.5" rev-constraint-default="2.3.5" rev-constraint-dynamic="2.3.5" callerrev="2.3.5"/>
 				<artifacts>
-					<artifact name="akka-cluster_2.11" type="jar" ext="jar" status="no" details="" size="1046371" time="0" location="/home/brew/.ivy2/cache/com.typesafe.akka/akka-cluster_2.11/jars/akka-cluster_2.11-2.3.5.jar">
+					<artifact name="akka-cluster_2.11" type="jar" ext="jar" status="no" details="" size="1046371" time="0" location="/Users/brew/.ivy2/cache/com.typesafe.akka/akka-cluster_2.11/jars/akka-cluster_2.11-2.3.5.jar">
 						<origin-location is-local="false" location="http://repo1.maven.org/maven2/com/typesafe/akka/akka-cluster_2.11/2.3.5/akka-cluster_2.11-2.3.5.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="com.typesafe.akka" name="akka-remote_2.11">
-			<revision name="2.3.5" status="release" pubdate="20140814025231" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://akka.io/" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="5">
+			<revision name="2.3.5" status="release" pubdate="20140813185231" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://akka.io/" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="5">
 				<license name="Apache License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0"/>
-				<metadata-artifact status="no" details="" size="3768" time="0" location="/home/brew/.ivy2/cache/com.typesafe.akka/akka-remote_2.11/ivy-2.3.5.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/com/typesafe/akka/akka-remote_2.11/2.3.5/akka-remote_2.11-2.3.5.pom"/>
+				<metadata-artifact status="no" details="" size="3768" time="0" location="/Users/brew/.ivy2/cache/com.typesafe.akka/akka-remote_2.11/ivy-2.3.5.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/com/typesafe/akka/akka-remote_2.11/2.3.5/akka-remote_2.11-2.3.5.pom"/>
 				<caller organisation="com.typesafe.akka" name="akka-cluster_2.11" conf="compile, runtime" rev="2.3.5" rev-constraint-default="2.3.5" rev-constraint-dynamic="2.3.5" callerrev="2.3.5"/>
 				<caller organisation="com.typesafe.akka" name="akka-contrib_2.11" conf="default, compile, runtime, master" rev="2.3.5" rev-constraint-default="2.3.5" rev-constraint-dynamic="2.3.5" callerrev="2.3.5"/>
 				<artifacts>
-					<artifact name="akka-remote_2.11" type="jar" ext="jar" status="no" details="" size="1324740" time="0" location="/home/brew/.ivy2/cache/com.typesafe.akka/akka-remote_2.11/jars/akka-remote_2.11-2.3.5.jar">
+					<artifact name="akka-remote_2.11" type="jar" ext="jar" status="no" details="" size="1324740" time="0" location="/Users/brew/.ivy2/cache/com.typesafe.akka/akka-remote_2.11/jars/akka-remote_2.11-2.3.5.jar">
 						<origin-location is-local="false" location="http://repo1.maven.org/maven2/com/typesafe/akka/akka-remote_2.11/2.3.5/akka-remote_2.11-2.3.5.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="org.uncommons.maths" name="uncommons-maths">
-			<revision name="1.2.2a" status="release" pubdate="20110408215605" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://maths.uncommons.org/" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="10">
+			<revision name="1.2.2a" status="release" pubdate="20110408095605" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://maths.uncommons.org/" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="10">
 				<license name="Apache License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.html"/>
-				<metadata-artifact status="no" details="" size="2738" time="0" location="/home/brew/.ivy2/cache/org.uncommons.maths/uncommons-maths/ivy-1.2.2a.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/uncommons/maths/uncommons-maths/1.2.2a/uncommons-maths-1.2.2a.pom"/>
+				<metadata-artifact status="no" details="" size="2727" time="0" location="/Users/brew/.ivy2/cache/org.uncommons.maths/uncommons-maths/ivy-1.2.2a.xml" searched="false" origin-is-local="false" origin-location="file:/Users/brew/NPE/activator-1.2.10/repository/org.uncommons.maths/uncommons-maths/1.2.2a/ivys/ivy.xml"/>
 				<caller organisation="com.typesafe.akka" name="akka-remote_2.11" conf="compile, runtime" rev="1.2.2a" rev-constraint-default="1.2.2a" rev-constraint-dynamic="1.2.2a" callerrev="2.3.5"/>
 				<artifacts>
-					<artifact name="uncommons-maths" type="jar" ext="jar" status="no" details="" size="49019" time="0" location="/home/brew/.ivy2/cache/org.uncommons.maths/uncommons-maths/jars/uncommons-maths-1.2.2a.jar">
-						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/uncommons/maths/uncommons-maths/1.2.2a/uncommons-maths-1.2.2a.jar"/>
+					<artifact name="uncommons-maths" type="jar" ext="jar" status="no" details="" size="49019" time="0" location="/Users/brew/.ivy2/cache/org.uncommons.maths/uncommons-maths/jars/uncommons-maths-1.2.2a.jar">
+						<origin-location is-local="false" location="file:/Users/brew/NPE/activator-1.2.10/repository/org.uncommons.maths/uncommons-maths/1.2.2a/jars/uncommons-maths.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="io.netty" name="netty">
-			<revision name="3.8.0.Final" status="release" pubdate="20131107172312" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://netty.io/" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="8">
+			<revision name="3.8.0.Final" status="release" pubdate="20131107042312" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://netty.io/" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="8">
 				<license name="Apache License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0"/>
-				<metadata-artifact status="no" details="" size="6425" time="0" location="/home/brew/.ivy2/cache/io.netty/netty/ivy-3.8.0.Final.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/io/netty/netty/3.8.0.Final/netty-3.8.0.Final.pom"/>
+				<metadata-artifact status="no" details="" size="6414" time="0" location="/Users/brew/.ivy2/cache/io.netty/netty/ivy-3.8.0.Final.xml" searched="false" origin-is-local="false" origin-location="file:/Users/brew/NPE/activator-1.2.10/repository/io.netty/netty/3.8.0.Final/ivys/ivy.xml"/>
 				<caller organisation="com.typesafe.akka" name="akka-remote_2.11" conf="compile, runtime" rev="3.8.0.Final" rev-constraint-default="3.8.0.Final" rev-constraint-dynamic="3.8.0.Final" callerrev="2.3.5"/>
 				<artifacts>
-					<artifact name="netty" type="bundle" ext="jar" status="no" details="" size="1230201" time="0" location="/home/brew/.ivy2/cache/io.netty/netty/bundles/netty-3.8.0.Final.jar">
-						<origin-location is-local="false" location="http://repo1.maven.org/maven2/io/netty/netty/3.8.0.Final/netty-3.8.0.Final.jar"/>
+					<artifact name="netty" type="bundle" ext="jar" status="no" details="" size="1230201" time="0" location="/Users/brew/.ivy2/cache/io.netty/netty/bundles/netty-3.8.0.Final.jar">
+						<origin-location is-local="false" location="file:/Users/brew/NPE/activator-1.2.10/repository/io.netty/netty/3.8.0.Final/bundles/netty.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="com.google.protobuf" name="protobuf-java">
-			<revision name="2.5.0" status="release" pubdate="20130308081811" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://code.google.com/p/protobuf" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="9">
+			<revision name="2.5.0" status="release" pubdate="20130307191811" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://code.google.com/p/protobuf" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="9">
 				<license name="New BSD license" url="http://www.opensource.org/licenses/bsd-license.php"/>
-				<metadata-artifact status="no" details="" size="2995" time="0" location="/home/brew/.ivy2/cache/com.google.protobuf/protobuf-java/ivy-2.5.0.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/com/google/protobuf/protobuf-java/2.5.0/protobuf-java-2.5.0.pom"/>
+				<metadata-artifact status="no" details="" size="2984" time="0" location="/Users/brew/.ivy2/cache/com.google.protobuf/protobuf-java/ivy-2.5.0.xml" searched="false" origin-is-local="false" origin-location="file:/Users/brew/NPE/activator-1.2.10/repository/com.google.protobuf/protobuf-java/2.5.0/ivys/ivy.xml"/>
 				<caller organisation="com.typesafe.akka" name="akka-persistence-experimental_2.11" conf="compile, runtime" rev="2.5.0" rev-constraint-default="2.5.0" rev-constraint-dynamic="2.5.0" callerrev="2.3.5"/>
 				<caller organisation="com.typesafe.akka" name="akka-remote_2.11" conf="compile, runtime" rev="2.5.0" rev-constraint-default="2.5.0" rev-constraint-dynamic="2.5.0" callerrev="2.3.5"/>
 				<artifacts>
-					<artifact name="protobuf-java" type="bundle" ext="jar" status="no" details="" size="533455" time="0" location="/home/brew/.ivy2/cache/com.google.protobuf/protobuf-java/bundles/protobuf-java-2.5.0.jar">
-						<origin-location is-local="false" location="http://repo1.maven.org/maven2/com/google/protobuf/protobuf-java/2.5.0/protobuf-java-2.5.0.jar"/>
+					<artifact name="protobuf-java" type="bundle" ext="jar" status="no" details="" size="533455" time="0" location="/Users/brew/.ivy2/cache/com.google.protobuf/protobuf-java/bundles/protobuf-java-2.5.0.jar">
+						<origin-location is-local="false" location="file:/Users/brew/NPE/activator-1.2.10/repository/com.google.protobuf/protobuf-java/2.5.0/bundles/protobuf-java.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="com.typesafe.akka" name="akka-actor_2.11">
-			<revision name="2.3.5" status="release" pubdate="20140814025140" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://akka.io/" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="6">
+			<revision name="2.3.5" status="release" pubdate="20140813185140" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://akka.io/" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="6">
 				<license name="Apache License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0"/>
-				<metadata-artifact status="no" details="" size="2654" time="0" location="/home/brew/.ivy2/cache/com.typesafe.akka/akka-actor_2.11/ivy-2.3.5.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/com/typesafe/akka/akka-actor_2.11/2.3.5/akka-actor_2.11-2.3.5.pom"/>
+				<metadata-artifact status="no" details="" size="2654" time="0" location="/Users/brew/.ivy2/cache/com.typesafe.akka/akka-actor_2.11/ivy-2.3.5.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/com/typesafe/akka/akka-actor_2.11/2.3.5/akka-actor_2.11-2.3.5.pom"/>
 				<caller organisation="com.typesafe.akka" name="akka-persistence-experimental_2.11" conf="compile, runtime" rev="2.3.5" rev-constraint-default="2.3.5" rev-constraint-dynamic="2.3.5" callerrev="2.3.5"/>
 				<caller organisation="com.typesafe.akka" name="akka-remote_2.11" conf="compile, runtime" rev="2.3.5" rev-constraint-default="2.3.5" rev-constraint-dynamic="2.3.5" callerrev="2.3.5"/>
 				<artifacts>
-					<artifact name="akka-actor_2.11" type="jar" ext="jar" status="no" details="" size="2545875" time="0" location="/home/brew/.ivy2/cache/com.typesafe.akka/akka-actor_2.11/jars/akka-actor_2.11-2.3.5.jar">
+					<artifact name="akka-actor_2.11" type="jar" ext="jar" status="no" details="" size="2545875" time="0" location="/Users/brew/.ivy2/cache/com.typesafe.akka/akka-actor_2.11/jars/akka-actor_2.11-2.3.5.jar">
 						<origin-location is-local="false" location="http://repo1.maven.org/maven2/com/typesafe/akka/akka-actor_2.11/2.3.5/akka-actor_2.11-2.3.5.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="com.typesafe" name="config">
-			<revision name="1.2.1" status="release" pubdate="20140502225416" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/typesafehub/config" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="7">
+			<revision name="1.2.1" status="release" pubdate="20140502105416" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/typesafehub/config" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="7">
 				<license name="Apache License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0"/>
-				<metadata-artifact status="no" details="" size="2734" time="0" location="/home/brew/.ivy2/cache/com.typesafe/config/ivy-1.2.1.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/com/typesafe/config/1.2.1/config-1.2.1.pom"/>
+				<metadata-artifact status="no" details="" size="2723" time="0" location="/Users/brew/.ivy2/cache/com.typesafe/config/ivy-1.2.1.xml" searched="false" origin-is-local="false" origin-location="file:/Users/brew/NPE/activator-1.2.10/repository/com.typesafe/config/1.2.1/ivys/ivy.xml"/>
 				<caller organisation="com.typesafe.akka" name="akka-actor_2.11" conf="compile, runtime" rev="1.2.1" rev-constraint-default="1.2.1" rev-constraint-dynamic="1.2.1" callerrev="2.3.5"/>
 				<artifacts>
-					<artifact name="config" type="bundle" ext="jar" status="no" details="" size="219554" time="0" location="/home/brew/.ivy2/cache/com.typesafe/config/bundles/config-1.2.1.jar">
-						<origin-location is-local="false" location="http://repo1.maven.org/maven2/com/typesafe/config/1.2.1/config-1.2.1.jar"/>
+					<artifact name="config" type="bundle" ext="jar" status="no" details="" size="219554" time="0" location="/Users/brew/.ivy2/cache/com.typesafe/config/bundles/config-1.2.1.jar">
+						<origin-location is-local="false" location="file:/Users/brew/NPE/activator-1.2.10/repository/com.typesafe/config/1.2.1/bundles/config.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="org.scala-lang" name="scala-library">
-			<revision name="2.11.2" status="release" pubdate="20140723143853" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scala-lang.org/" extra-info.apiURL="http://www.scala-lang.org/api/2.11.2/" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master, default(compile), default" position="4">
+			<revision name="2.11.2" status="release" pubdate="20140723063853" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scala-lang.org/" extra-info.apiURL="http://www.scala-lang.org/api/2.11.2/" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master, default(compile), default" position="4">
 				<license name="BSD 3-Clause" url="http://www.scala-lang.org/license.html"/>
-				<metadata-artifact status="no" details="" size="2653" time="0" location="/home/brew/.ivy2/cache/org.scala-lang/scala-library/ivy-2.11.2.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/scala-lang/scala-library/2.11.2/scala-library-2.11.2.pom"/>
+				<metadata-artifact status="no" details="" size="2653" time="0" location="/Users/brew/.ivy2/cache/org.scala-lang/scala-library/ivy-2.11.2.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/scala-lang/scala-library/2.11.2/scala-library-2.11.2.pom"/>
 				<caller organisation="com.github.mauricio" name="db-async-common_2.11" conf="compile, runtime" rev="2.11.0" rev-constraint-default="2.11.0" rev-constraint-dynamic="2.11.0" callerrev="0.2.14"/>
 				<caller organisation="com.typesafe.akka" name="akka-persistence-experimental_2.11" conf="compile, runtime" rev="2.11.2" rev-constraint-default="2.11.2" rev-constraint-dynamic="2.11.2" callerrev="2.3.5"/>
 				<caller organisation="com.typesafe.akka" name="akka-cluster_2.11" conf="compile, runtime" rev="2.11.2" rev-constraint-default="2.11.2" rev-constraint-dynamic="2.11.2" callerrev="2.3.5"/>
@@ -381,14 +381,14 @@
 				<caller organisation="com.typesafe.akka" name="akka-actor_2.11" conf="compile, runtime" rev="2.11.2" rev-constraint-default="2.11.2" rev-constraint-dynamic="2.11.2" callerrev="2.3.5"/>
 				<caller organisation="com.typesafe.scala-logging" name="scala-logging_2.11" conf="default, compile, runtime, master" rev="2.11.1" rev-constraint-default="2.11.1" rev-constraint-dynamic="2.11.1" callerrev="3.1.0"/>
 				<artifacts>
-					<artifact name="scala-library" type="jar" ext="jar" status="no" details="" size="5545300" time="0" location="/home/brew/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.11.2.jar">
+					<artifact name="scala-library" type="jar" ext="jar" status="no" details="" size="5545300" time="0" location="/Users/brew/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.11.2.jar">
 						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/scala-lang/scala-library/2.11.2/scala-library-2.11.2.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
-			<revision name="2.11.1" status="release" pubdate="20140520160221" resolver="sbt-chain" artresolver="sbt-chain" evicted="latest-revision" evicted-reason="" homepage="http://www.scala-lang.org/" extra-info.apiURL="http://www.scala-lang.org/api/2.11.1/" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, master(*), compile(*), runtime, runtime(*), master" position="-1">
+			<revision name="2.11.1" status="release" pubdate="20140520040221" resolver="sbt-chain" artresolver="sbt-chain" evicted="latest-revision" evicted-reason="" homepage="http://www.scala-lang.org/" extra-info.apiURL="http://www.scala-lang.org/api/2.11.1/" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, master(*), compile(*), runtime, runtime(*), master" position="-1">
 				<license name="BSD 3-Clause" url="http://www.scala-lang.org/license.html"/>
-				<metadata-artifact status="no" details="" size="2653" time="0" location="/home/brew/.ivy2/cache/org.scala-lang/scala-library/ivy-2.11.1.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/scala-lang/scala-library/2.11.1/scala-library-2.11.1.pom"/>
+				<metadata-artifact status="no" details="" size="2640" time="0" location="/Users/brew/.ivy2/cache/org.scala-lang/scala-library/ivy-2.11.1.xml" searched="false" origin-is-local="false" origin-location="file:/Users/brew/NPE/activator-1.2.10/repository/org.scala-lang/scala-library/2.11.1/ivys/ivy.xml"/>
 				<evicted-by rev="2.11.2"/>
 				<caller organisation="org.nights.npe" name="commons_2.11" conf="optional, compile, runtime, runtime-internal" rev="2.11.1" rev-constraint-default="2.11.1" rev-constraint-dynamic="2.11.1" callerrev="1.0.0"/>
 				<caller organisation="org.scala-lang" name="scala-reflect" conf="compile, runtime" rev="2.11.1" rev-constraint-default="2.11.1" rev-constraint-dynamic="2.11.1" callerrev="2.11.1"/>
@@ -408,23 +408,23 @@
 		<module organisation="com.typesafe.scala-logging" name="scala-logging_2.11">
 			<revision name="3.1.0" status="release" pubdate="20140813223855" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/typesafehub/scala-logging" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="0">
 				<license name="Apache 2.0 License" url="http://www.apache.org/licenses/LICENSE-2.0.html"/>
-				<metadata-artifact status="no" details="" size="3186" time="0" location="/home/brew/.ivy2/cache/com.typesafe.scala-logging/scala-logging_2.11/ivy-3.1.0.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/com/typesafe/scala-logging/scala-logging_2.11/3.1.0/scala-logging_2.11-3.1.0.pom"/>
+				<metadata-artifact status="no" details="" size="3186" time="0" location="/Users/brew/.ivy2/cache/com.typesafe.scala-logging/scala-logging_2.11/ivy-3.1.0.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/com/typesafe/scala-logging/scala-logging_2.11/3.1.0/scala-logging_2.11-3.1.0.pom"/>
 				<caller organisation="org.nights.npe" name="commons_2.11" conf="optional, compile, runtime, runtime-internal" rev="3.1.0" rev-constraint-default="3.1.0" rev-constraint-dynamic="3.1.0" callerrev="1.0.0"/>
 				<artifacts>
-					<artifact name="scala-logging_2.11" type="jar" ext="jar" status="no" details="" size="34335" time="0" location="/home/brew/.ivy2/cache/com.typesafe.scala-logging/scala-logging_2.11/jars/scala-logging_2.11-3.1.0.jar">
+					<artifact name="scala-logging_2.11" type="jar" ext="jar" status="no" details="" size="34335" time="0" location="/Users/brew/.ivy2/cache/com.typesafe.scala-logging/scala-logging_2.11/jars/scala-logging_2.11-3.1.0.jar">
 						<origin-location is-local="false" location="http://repo1.maven.org/maven2/com/typesafe/scala-logging/scala-logging_2.11/3.1.0/scala-logging_2.11-3.1.0.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="org.slf4j" name="slf4j-api">
-			<revision name="1.7.7" status="release" pubdate="20140404191248" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.slf4j.org" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="2">
-				<metadata-artifact status="no" details="" size="4567" time="0" location="/home/brew/.ivy2/cache/org.slf4j/slf4j-api/ivy-1.7.7.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/slf4j/slf4j-api/1.7.7/slf4j-api-1.7.7.pom"/>
+			<revision name="1.7.7" status="release" pubdate="20140404071248" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.slf4j.org" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="2">
+				<metadata-artifact status="no" details="" size="4557" time="0" location="/Users/brew/.ivy2/cache/org.slf4j/slf4j-api/ivy-1.7.7.xml" searched="false" origin-is-local="false" origin-location="file:/Users/brew/NPE/activator-1.2.10/repository/org.slf4j/slf4j-api/1.7.7/ivys/ivy.xml"/>
 				<caller organisation="com.github.mauricio" name="db-async-common_2.11" conf="compile, runtime" rev="1.7.5" rev-constraint-default="1.7.5" rev-constraint-dynamic="1.7.5" callerrev="0.2.14"/>
 				<caller organisation="com.typesafe.scala-logging" name="scala-logging_2.11" conf="default, compile, runtime, master" rev="1.7.7" rev-constraint-default="1.7.7" rev-constraint-dynamic="1.7.7" callerrev="3.1.0"/>
 				<artifacts>
-					<artifact name="slf4j-api" type="jar" ext="jar" status="no" details="" size="29257" time="0" location="/home/brew/.ivy2/cache/org.slf4j/slf4j-api/jars/slf4j-api-1.7.7.jar">
-						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/slf4j/slf4j-api/1.7.7/slf4j-api-1.7.7.jar"/>
+					<artifact name="slf4j-api" type="jar" ext="jar" status="no" details="" size="29257" time="0" location="/Users/brew/.ivy2/cache/org.slf4j/slf4j-api/jars/slf4j-api-1.7.7.jar">
+						<origin-location is-local="false" location="file:/Users/brew/NPE/activator-1.2.10/repository/org.slf4j/slf4j-api/1.7.7/jars/slf4j-api.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
@@ -436,13 +436,13 @@
 			</revision>
 		</module>
 		<module organisation="org.scala-lang" name="scala-reflect">
-			<revision name="2.11.1" status="release" pubdate="20140520160246" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scala-lang.org/" extra-info.apiURL="http://www.scala-lang.org/api/2.11.1/" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="1">
+			<revision name="2.11.1" status="release" pubdate="20140520040246" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scala-lang.org/" extra-info.apiURL="http://www.scala-lang.org/api/2.11.1/" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="1">
 				<license name="BSD 3-Clause" url="http://www.scala-lang.org/license.html"/>
-				<metadata-artifact status="no" details="" size="2819" time="0" location="/home/brew/.ivy2/cache/org.scala-lang/scala-reflect/ivy-2.11.1.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.11.1/scala-reflect-2.11.1.pom"/>
+				<metadata-artifact status="no" details="" size="2806" time="0" location="/Users/brew/.ivy2/cache/org.scala-lang/scala-reflect/ivy-2.11.1.xml" searched="false" origin-is-local="false" origin-location="file:/Users/brew/NPE/activator-1.2.10/repository/org.scala-lang/scala-reflect/2.11.1/ivys/ivy.xml"/>
 				<caller organisation="com.typesafe.scala-logging" name="scala-logging_2.11" conf="default, compile, runtime, master" rev="2.11.1" rev-constraint-default="2.11.1" rev-constraint-dynamic="2.11.1" callerrev="3.1.0"/>
 				<artifacts>
-					<artifact name="scala-reflect" type="jar" ext="jar" status="no" details="" size="4372892" time="0" location="/home/brew/.ivy2/cache/org.scala-lang/scala-reflect/jars/scala-reflect-2.11.1.jar">
-						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.11.1/scala-reflect-2.11.1.jar"/>
+					<artifact name="scala-reflect" type="jar" ext="jar" status="no" details="" size="4372892" time="0" location="/Users/brew/.ivy2/cache/org.scala-lang/scala-reflect/jars/scala-reflect-2.11.1.jar">
+						<origin-location is-local="false" location="file:/Users/brew/NPE/activator-1.2.10/repository/org.scala-lang/scala-reflect/2.11.1/jars/scala-reflect.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>

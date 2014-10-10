@@ -1,19 +1,19 @@
-[0m[[0minfo[0m] [0mPackaging /home/brew/git/npe/commons/target/scala-2.11/commons_2.11-1.0.0-sources.jar ...[0m
+[0m[[0minfo[0m] [0mPackaging /Users/brew/NPE/gits/commons/target/scala-2.11/commons_2.11-1.0.0-sources.jar ...[0m
 [0m[[0mdebug[0m] [0mInput file mappings:[0m
 [0m[[0mdebug[0m] [0m	org/nights/npe/po/Definition.scala[0m
-[0m[[0mdebug[0m] [0m	  /home/brew/git/npe/commons/src/main/scala/org/nights/npe/po/Definition.scala[0m
-[0m[[0mdebug[0m] [0m	org/nights/npe/po/AskResult.scala[0m
-[0m[[0mdebug[0m] [0m	  /home/brew/git/npe/commons/src/main/scala/org/nights/npe/po/AskResult.scala[0m
-[0m[[0mdebug[0m] [0m	org/nights/npe/utils/POHelper.scala[0m
-[0m[[0mdebug[0m] [0m	  /home/brew/git/npe/commons/src/main/scala/org/nights/npe/utils/POHelper.scala[0m
-[0m[[0mdebug[0m] [0m	org/nights/npe/backend/db/Beans.scala[0m
-[0m[[0mdebug[0m] [0m	  /home/brew/git/npe/commons/src/main/scala/org/nights/npe/backend/db/Beans.scala[0m
-[0m[[0mdebug[0m] [0m	org/nights/npe/backend/db/AsyncDB.scala[0m
-[0m[[0mdebug[0m] [0m	  /home/brew/git/npe/commons/src/main/scala/org/nights/npe/backend/db/AsyncDB.scala[0m
-[0m[[0mdebug[0m] [0m	org/nights/npe/backend/db/SimpleDAO.scala[0m
-[0m[[0mdebug[0m] [0m	  /home/brew/git/npe/commons/src/main/scala/org/nights/npe/backend/db/SimpleDAO.scala[0m
-[0m[[0mdebug[0m] [0m	org/nights/npe/utils/ProcDefHelper.scala[0m
-[0m[[0mdebug[0m] [0m	  /home/brew/git/npe/commons/src/main/scala/org/nights/npe/utils/ProcDefHelper.scala[0m
+[0m[[0mdebug[0m] [0m	  /Users/brew/NPE/gits/commons/src/main/scala/org/nights/npe/po/Definition.scala[0m
 [0m[[0mdebug[0m] [0m	org/nights/npe/backend/db/DAOS.scala[0m
-[0m[[0mdebug[0m] [0m	  /home/brew/git/npe/commons/src/main/scala/org/nights/npe/backend/db/DAOS.scala[0m
+[0m[[0mdebug[0m] [0m	  /Users/brew/NPE/gits/commons/src/main/scala/org/nights/npe/backend/db/DAOS.scala[0m
+[0m[[0mdebug[0m] [0m	org/nights/npe/backend/db/SimpleDAO.scala[0m
+[0m[[0mdebug[0m] [0m	  /Users/brew/NPE/gits/commons/src/main/scala/org/nights/npe/backend/db/SimpleDAO.scala[0m
+[0m[[0mdebug[0m] [0m	org/nights/npe/utils/ProcDefHelper.scala[0m
+[0m[[0mdebug[0m] [0m	  /Users/brew/NPE/gits/commons/src/main/scala/org/nights/npe/utils/ProcDefHelper.scala[0m
+[0m[[0mdebug[0m] [0m	org/nights/npe/backend/db/Beans.scala[0m
+[0m[[0mdebug[0m] [0m	  /Users/brew/NPE/gits/commons/src/main/scala/org/nights/npe/backend/db/Beans.scala[0m
+[0m[[0mdebug[0m] [0m	org/nights/npe/utils/POHelper.scala[0m
+[0m[[0mdebug[0m] [0m	  /Users/brew/NPE/gits/commons/src/main/scala/org/nights/npe/utils/POHelper.scala[0m
+[0m[[0mdebug[0m] [0m	org/nights/npe/backend/db/AsyncDB.scala[0m
+[0m[[0mdebug[0m] [0m	  /Users/brew/NPE/gits/commons/src/main/scala/org/nights/npe/backend/db/AsyncDB.scala[0m
+[0m[[0mdebug[0m] [0m	org/nights/npe/po/AskResult.scala[0m
+[0m[[0mdebug[0m] [0m	  /Users/brew/NPE/gits/commons/src/main/scala/org/nights/npe/po/AskResult.scala[0m
 [0m[[0minfo[0m] [0mDone packaging.[0m

@@ -59,6 +59,13 @@ object TermUpdateTasksDAO extends SimpleDAO[KOTermTask] {
   val keyname = "taskinstid"
 }
 
+
+object TermProcDAO extends SimpleDAO[KOTermProc] {
+  val ttag = classTag[KOTermProc];
+  val tablename = "tasks";
+  val keyname = "procinstid"
+}
+
 object UpdateObtainTasksDAO extends SimpleDAO[KOObtainTasks] {
   val ttag = classTag[KOObtainTasks];
   val tablename = "tasks";

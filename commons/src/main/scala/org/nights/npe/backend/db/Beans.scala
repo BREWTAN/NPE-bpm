@@ -1,30 +1,29 @@
 package org.nights.npe.backend.db
 
-
 class Beans {
-	
-  
+
 }
 
 object InterState {
-  val New:Int = 0
-  val Obtain:Int = 1
-  val Submit:Int = 2
-  val Terminate:Int = 3
+  val New: Int = 0
+  val Obtain: Int = 1
+  val Submit: Int = 2
+  val Terminate: Int = 3
+  val ProcessEnd: Int = 8
 }
 
 case class KOParams(val keyy: String, val valuee: String)
 
 case class KOProcdef(
-  val defid: String = null, 
-  val defname: String = null, 
-  val version: String = null, 
-  val packages: String = null, 
-  val xmlbody: String = null,  
-  val subelements: String = null, 
+  val defid: String = null,
+  val defname: String = null,
+  val version: String = null,
+  val packages: String = null,
+  val xmlbody: String = null,
+  val subelements: String = null,
   val createtime: Option[Long] = null)
-  
-case class KOProcdefCounter(val __count:Option[Long]) 
+
+case class KOProcdefCounter(val __count: Option[Long])
 
 case class KOTasks(val taskinstid: String, // varchar(32) not null,
   val procdefid: String = null, // varchar(32) not null,
@@ -54,11 +53,11 @@ case class KOObtainTasks(val taskinstid: String,
   val obtaintime: Long = System.currentTimeMillis(),
   val interstate: Option[Int] = Some(1))
 
- case class KOInTermTask(val taskinstid: String,
+case class KOInTermTask(val taskinstid: String,
   val cluster: String,
   val calctime: Long = System.currentTimeMillis(),
   val interstate: Option[Int] = Some(InterState.Terminate))
-  
+
 case class KOSubmitTasks(val taskinstid: String,
   val procdefid: String = null, // varchar(32) not null,
   val procinstid: String = null, //  varchar(32) not null,
@@ -78,9 +77,17 @@ case class KOSubmitTasks(val taskinstid: String,
   val jsondata: String = null,
   val submittime: Option[Long] = Some(System.currentTimeMillis())) {
 }
+
+case class KOTermProc(
+  val procinstid: String = null, //  varchar(32) not null,
+  val taskdefid: String = "_1",
+  val interstate: Option[Int] = Some(InterState.ProcessEnd),
+  val submittime: Option[Long] = Some(System.currentTimeMillis())) {
+}
+
 object KO {
   def submitFilter(taskinstid: String, state: Int): KOSubmitTasks = {
-    KOSubmitTasks(taskinstid,null, null, null,  null, Some(state), null, null, null, null, null, null, null, null, null, null, null)
+    KOSubmitTasks(taskinstid, null, null, null, null, Some(state), null, null, null, null, null, null, null, null, null, null, null)
   }
 }
 

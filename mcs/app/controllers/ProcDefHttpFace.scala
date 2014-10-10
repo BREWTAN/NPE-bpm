@@ -72,7 +72,7 @@ object ProcDefHttpFace extends Controller {
     //    val json = request.body.asJson.get;
     val mapper = new ObjectMapper()
     mapper.registerModule(DefaultScalaModule)
-mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+    mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
 
     val body = mapper.readValue(request.body.asJson.get.toString, classOf[KOProcdef])
     println("body==" + body)

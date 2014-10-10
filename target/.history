@@ -121,3 +121,10 @@ exit
 eclipse
 pushishM2
 publishM2
+eclipse
+exit
+publishM2
+compile
+publishM2
+eclipse
+publishM2
