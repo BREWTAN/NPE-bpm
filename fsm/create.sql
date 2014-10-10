@@ -10,7 +10,7 @@ CREATE TABLE procdef (
   packages VARCHAR(64),
   xmlbody LONGTEXT NULL,
   subelements VARCHAR(512),
-  createtime decimal(16,0) ,
+  createtime long ,
   PRIMARY KEY (defid)) CHARACTER SET = gbk; 
 
 
@@ -37,16 +37,17 @@ create table tasks(
 	taskname varchar(64),
 	jsondata longtext,
 	submitter  varchar(64),
-	submittime decimal(16,0) ,
+	submittime long ,
 	obtainer   varchar(64),  
-	obtaintime decimal(16,0),
-	createtime decimal(16,0),
+	obtaintime long,
+	createtime long,
 	taskcenter	varchar(64),
 	rootproc	varchar(64),
 PRIMARY KEY (taskinstid)) CHARACTER SET = gbk  ENGINE=InnoDB;
 
-ALTER TABLE tasks 
-ADD INDEX index_procinst (procinstid ASC);
+ALTER TABLE tasks ADD INDEX index_procinst (procinstid ASC);
+
+ALTER TABLE tasks ADD INDEX index_rootproc (rootproc ASC);
 
 
 DROP TABLE IF EXISTS tasks_obtain;
@@ -55,7 +56,7 @@ create table tasks_obtain(
 	taskinstid   varchar(48) not null,
 	interstate integer not null default 0,
 	obtainer   varchar(64),  
-	obtaintime decimal(16,0),
+	obtaintime long,
 PRIMARY KEY (taskinstid)) CHARACTER SET = gbk  ENGINE=InnoDB;
 
 
@@ -76,7 +77,7 @@ create table tasks_submit(
 	taskname varchar(64),
 	jsondata longtext,
 	submitter  varchar(64),
-	submittime decimal(16,0) ,
+	submittime long ,
 PRIMARY KEY (taskinstid)) CHARACTER SET = gbk  ENGINE=InnoDB;
 
 
@@ -84,9 +85,10 @@ DROP TABLE IF EXISTS taskcenter;
 
 create table taskcenter(
 	centerid   varchar(48) not null,
-	centername varchar(64),  
-	createtime decimal(16,0),
-	modtime	decimal(16,0),
+	centername varchar(64),
+	status	integer default 0,
+	createtime long,
+	modtime	long,
 PRIMARY KEY (centerid)) CHARACTER SET = gbk  ENGINE=InnoDB;
 
 
@@ -95,9 +97,10 @@ DROP TABLE IF EXISTS taskrole;
 create table taskrole(
 	roleid   varchar(48) not null,
 	rolename varchar(64),  
-	centerid decimal(16,0),
-	createtime decimal(16,0),
-	modtime	decimal(16,0),
+	status	integer default 0,
+	centerid long,
+	createtime long,
+	modtime	long,
 PRIMARY KEY (roleid)) CHARACTER SET = gbk  ENGINE=InnoDB;
 
 

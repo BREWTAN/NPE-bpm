@@ -25,7 +25,7 @@ POST 	/upload				controllers.ProcDefHttpFace.upload
 
 
 ## rest for procdef
-GET  	/procdef			controllers.ProcDefHttpFace.getByPage(skip: Int?=0, limit: Int?=10)
+GET  	/procdef			controllers.ProcDefHttpFace.getByPage(skip: Int?=0, limit: Int?=10,page:Boolean?=false)
 
 GET 	/procdef/check		controllers.ProcDefHttpFace.validate
 
@@ -36,8 +36,25 @@ PUT     /procdef/:defid		controllers.ProcDefHttpFace.update(defid:String)
 
 ##############
 # procinst
-GET  	/procinst			controllers.ProcInstFace.getByPage(skip: Int?=0, limit: Int?=10,status:Int?=0, query:String?=null)
+GET  	/procinst			controllers.ProcInstFace.getByPage(skip: Int?=0, limit: Int?=10,status:Int?=0, query:String?=null,page:Boolean?=false)
 
 DELETE  /procinst/:defid 	controllers.ProcInstFace.delete(defid:String)
 
 
+##################
+# taskcenter
+
+GET 	/taskcenter			controllers.TaskCenterFace.getByPage(skip: Int?=0, limit: Int?=10,status:Int?=0, query:String?=null,page:Boolean?=false)
+DELETE  /taskcenter/:keyy 	controllers.TaskCenterFace.delete(keyy:String)
+POST	/taskcenter			controllers.TaskCenterFace.insert
+PUT		/taskcenter/:keyy	controllers.TaskCenterFace.update(keyy:String)
+
+##################
+# taskrole
+
+GET 	/taskrole			controllers.TaskRoleFace.getByPage(skip: Int?=0, limit: Int?=10,status:Int?=0, query:String?=null,page:Boolean?=false)
+DELETE  /taskrole/:keyy 	controllers.TaskRoleFace.delete(keyy:String)
+POST	/taskrole			controllers.TaskRoleFace.insert
+PUT		/taskrole/:keyy		controllers.TaskRoleFace.update(keyy:String)
+
+GET		/taskrole/import	controllers.TaskRoleFace.importFromFlows

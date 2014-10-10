@@ -46,6 +46,8 @@ case class KOTasks(val taskinstid: String, // varchar(32) not null,
   val jsondata: String = null,
   val submitter: String = null,
   val submittime: Option[Float] = null,
+  val taskcenter: String = null,
+  val rootproc: String = null,
   val createtime: Option[Long] = Some(System.currentTimeMillis()))
 
 case class KOObtainTasks(val taskinstid: String,
@@ -103,6 +105,21 @@ case class KOConvergeCounter(
   val convergeid: String,
   val taskinstids: String = null,
   val state: Option[Int] = Some(0))
+
+case class KOTaskCenter(
+  val centerid: String,
+  val centername: String = null,
+  val status:Option[Int] =  Some(0),
+  val createtime: Option[Long] = Some(System.currentTimeMillis()),
+  val modtime: Option[Long] = Some(System.currentTimeMillis()))
+
+case class KOTaskRole(
+  val roleid: String,
+  val centerid: String,
+  val rolename: String = null,
+  val status:Option[Int] =  Some(0),
+  val createtime: Option[Long] = Some(System.currentTimeMillis()),
+  val modtime: Option[Long] = Some(System.currentTimeMillis()))
 
   
 

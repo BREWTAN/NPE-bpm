@@ -35,12 +35,12 @@
     "children": [
       {
         "name": "作业中心定义",
-        "url": "#",
+        "url": "manager/taskcenter.html",
         "icon": "fa-desktop"
       },
       {
         "name": "角色定义",
-        "url": "#",
+        "url": "manager/taskrole.html",
         "icon": "fa-desktop"
       }
     ]

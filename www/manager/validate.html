@@ -250,24 +250,40 @@
 		        }
 		    });
 
-		     $.ajax({
+		    
+
+		     $('#check_button').on('click',function(e){
+		     	check_errors=[];
+				check_errorids=[];
+
+		        check_status=-99
+		     	 $.ajax({
 	            url: "/nperest/procdef/check",
 	            dataType: 'json',
-	            async: true,
+	            async: false,
 	        })
 	        .done(function(data) {
+
 	        	check_status=data["status"]
 	        	check_errors=data["error"]
-	        	$.each(check_errors, function(index, row) {
-	        		 check_errorids[row['id']] = row['message']
-	        	});
+	        	if(check_errors)
+	        	{
+	        		
+	        		$.each(check_errors, function(index, row) {
+	        		 	check_errorids[row['id']] = row['message']
+	        		});
+					bootbox.alert("<br><center><h4>验证失败("+check_errors.length+")个</h4></center><br>");
+
+	        	}
+	        	else{
+	  					bootbox.alert("<br><center><h4>全部验证成功</h4></center><br>");
+
+	        	}
 	        	
 	        	xw.autoResetSearch();
 
 	        });
-
-		     $('#check_button').on('click',function(e){
-	            xw.autoResetSearch();
+		     			
 		    });
 		})
 	</script>

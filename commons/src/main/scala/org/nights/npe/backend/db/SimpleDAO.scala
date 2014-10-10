@@ -76,7 +76,10 @@ trait SimpleDAO[T] extends AsyncDBPool {
                 Option(row(field.getName()).asInstanceOf[Float])
               } else if (field.getType() == classOf[Option[Long]] && row(field.getName()).isInstanceOf[scala.math.BigDecimal]) {
                 Option(row(field.getName()).asInstanceOf[scala.math.BigDecimal].toLong)
+              } else if (field.getType() == classOf[Option[Long]] && row(field.getName()).isInstanceOf[java.lang.String]) {
+                Option(row(field.getName()).asInstanceOf[String].toLong)
               } else {
+                
                 row(field.getName()).asInstanceOf[String]
                 //          row(field.getName()).asInstanceOf[String]
               }

@@ -42,7 +42,7 @@ object ProcInstFace extends Controller {
       value.asInstanceOf[String]
   }
 
-  def getByPage(skip: Int, limit: Int, status: Int, query: String) = Action.async { request =>
+  def getByPage(skip: Int, limit: Int, status: Int, query: String,page:Boolean) = Action.async { request =>
 
     println("query==" + query)
     var qq="";
@@ -100,7 +100,7 @@ object ProcInstFace extends Controller {
   
 
   def delete(defid: String) = Action.async { request =>
-    val cond = KOTasks(null,null , defid, null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null);
+    val cond = KOTasks(null,null , null, null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,defid,null);
     TasksDAO.deleteByCond(cond).map({ f =>
       println("okok:rowsAffected="+f.rowsAffected)
       Ok(Json.obj("rowsAffected" -> f.rowsAffected))

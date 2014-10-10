@@ -125,12 +125,18 @@ var XWATable = function() {
                                 var sendjson = {};
                                 $.each($('#__editform input'), function(index, val) {
                                     // console.log(val.name+"::"+val.value);
-                                    if (val.name == xwaOptions["key_column"]||!val.name||val.name.length==0) return;
+                                    if(!val.name||val.name.length==0) return;
                                     if(val.name == "leaf"){
                                         if($("#leaf").attr("checked")){
                                             sendjson[val.name] = 1;
                                         }else{
                                             sendjson[val.name] = 0;
+                                        }
+                                    }if (val.name == "status"){
+                                        if($("#status").get(0).checked){
+                                            sendjson[val.name] = 1;
+                                        }else{
+                                           sendjson[val.name] = 0;
                                         }
                                     }else{
                                         sendjson[val.name] = val.value;
@@ -202,6 +208,13 @@ var XWATable = function() {
                                     if (!val.name||val.name.length==0) return;
                                     if (val.name == "leaf"){
                                         if($("#leaf").attr("checked")){
+                                            moditem[val.name] = 1;
+                                        }else{
+                                           moditem[val.name] = 0;
+                                        }
+                                    }if (val.name == "status"){
+                                        console.log("checkkk:status=="+$("#status").get(0).checked)
+                                        if($("#status").get(0).checked){
                                             moditem[val.name] = 1;
                                         }else{
                                            moditem[val.name] = 0;

@@ -43,7 +43,7 @@
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <span class="name">ContextData</span><span class="params">(<span name="procPIO">procPIO: <span class="extype" name="scala.Int">Int</span> = <span class="symbol">0</span></span>, <span name="taskPIO">taskPIO: <span class="extype" name="scala.Int">Int</span> = <span class="symbol">0</span></span>, <span name="rolemark">rolemark: <span class="extype" name="scala.Predef.String">String</span> = <span class="symbol">null</span></span>, <span name="startMS">startMS: <span class="extype" name="scala.Long">Long</span> = <span class="symbol">System.currentTimeMillis()</span></span>, <span name="idata1">idata1: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Int">Int</span>] = <span class="symbol">null</span></span>, <span name="idata2">idata2: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Int">Int</span>] = <span class="symbol">null</span></span>, <span name="strdata1">strdata1: <span class="extype" name="scala.Predef.String">String</span> = <span class="symbol">null</span></span>, <span name="strdata2">strdata2: <span class="extype" name="scala.Predef.String">String</span> = <span class="symbol">null</span></span>, <span name="fdata1">fdata1: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Float">Float</span>] = <span class="symbol">null</span></span>, <span name="fdata2">fdata2: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Float">Float</span>] = <span class="symbol">null</span></span>, <span name="extra">extra: <span class="extype" name="scala.collection.mutable.HashMap">HashMap</span>[<span class="extype" name="scala.Predef.String">String</span>, <span class="extype" name="scala.Any">Any</span>] = <span class="symbol">HashMap.empty</span></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+        <span class="name">ContextData</span><span class="params">(<span name="procPIO">procPIO: <span class="extype" name="scala.Int">Int</span> = <span class="symbol">0</span></span>, <span name="taskPIO">taskPIO: <span class="extype" name="scala.Int">Int</span> = <span class="symbol">0</span></span>, <span name="rolemark">rolemark: <span class="extype" name="scala.Predef.String">String</span> = <span class="symbol">null</span></span>, <span name="startMS">startMS: <span class="extype" name="scala.Long">Long</span> = <span class="symbol">System.currentTimeMillis()</span></span>, <span name="idata1">idata1: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Int">Int</span>] = <span class="symbol">null</span></span>, <span name="idata2">idata2: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Int">Int</span>] = <span class="symbol">null</span></span>, <span name="strdata1">strdata1: <span class="extype" name="scala.Predef.String">String</span> = <span class="symbol">null</span></span>, <span name="strdata2">strdata2: <span class="extype" name="scala.Predef.String">String</span> = <span class="symbol">null</span></span>, <span name="fdata1">fdata1: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Float">Float</span>] = <span class="symbol">null</span></span>, <span name="fdata2">fdata2: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Float">Float</span>] = <span class="symbol">null</span></span>, <span name="taskcenter">taskcenter: <span class="extype" name="scala.Predef.String">String</span> = <span class="symbol">null</span></span>, <span name="rootproc">rootproc: <span class="extype" name="scala.Predef.String">String</span> = <span class="symbol">null</span></span>, <span name="extra">extra: <span class="extype" name="scala.collection.mutable.HashMap">HashMap</span>[<span class="extype" name="scala.Predef.String">String</span>, <span class="extype" name="scala.Any">Any</span>] = <span class="symbol">HashMap.empty</span></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
       </span>
       </h4>
       
@@ -88,7 +88,7 @@
         <div id="constructors" class="members">
               <h3>Instance Constructors</h3>
               <ol><li name="org.nights.npe.fsm.ContextData#&lt;init&gt;" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="&lt;init&gt;(procPIO:Int,taskPIO:Int,rolemark:String,startMS:Long,idata1:Option[Int],idata2:Option[Int],strdata1:String,strdata2:String,fdata1:Option[Float],fdata2:Option[Float],extra:scala.collection.mutable.HashMap[String,Any]):org.nights.npe.fsm.ContextData"></a>
+      <a id="&lt;init&gt;(procPIO:Int,taskPIO:Int,rolemark:String,startMS:Long,idata1:Option[Int],idata2:Option[Int],strdata1:String,strdata2:String,fdata1:Option[Float],fdata2:Option[Float],taskcenter:String,rootproc:String,extra:scala.collection.mutable.HashMap[String,Any]):org.nights.npe.fsm.ContextData"></a>
       <a id="&lt;init&gt;:ContextData"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -96,10 +96,10 @@
         <span class="kind">new</span>
       </span>
       <span class="symbol">
-        <span class="name">ContextData</span><span class="params">(<span name="procPIO">procPIO: <span class="extype" name="scala.Int">Int</span> = <span class="symbol">0</span></span>, <span name="taskPIO">taskPIO: <span class="extype" name="scala.Int">Int</span> = <span class="symbol">0</span></span>, <span name="rolemark">rolemark: <span class="extype" name="scala.Predef.String">String</span> = <span class="symbol">null</span></span>, <span name="startMS">startMS: <span class="extype" name="scala.Long">Long</span> = <span class="symbol">System.currentTimeMillis()</span></span>, <span name="idata1">idata1: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Int">Int</span>] = <span class="symbol">null</span></span>, <span name="idata2">idata2: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Int">Int</span>] = <span class="symbol">null</span></span>, <span name="strdata1">strdata1: <span class="extype" name="scala.Predef.String">String</span> = <span class="symbol">null</span></span>, <span name="strdata2">strdata2: <span class="extype" name="scala.Predef.String">String</span> = <span class="symbol">null</span></span>, <span name="fdata1">fdata1: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Float">Float</span>] = <span class="symbol">null</span></span>, <span name="fdata2">fdata2: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Float">Float</span>] = <span class="symbol">null</span></span>, <span name="extra">extra: <span class="extype" name="scala.collection.mutable.HashMap">HashMap</span>[<span class="extype" name="scala.Predef.String">String</span>, <span class="extype" name="scala.Any">Any</span>] = <span class="symbol">HashMap.empty</span></span>)</span>
+        <span class="name">ContextData</span><span class="params">(<span name="procPIO">procPIO: <span class="extype" name="scala.Int">Int</span> = <span class="symbol">0</span></span>, <span name="taskPIO">taskPIO: <span class="extype" name="scala.Int">Int</span> = <span class="symbol">0</span></span>, <span name="rolemark">rolemark: <span class="extype" name="scala.Predef.String">String</span> = <span class="symbol">null</span></span>, <span name="startMS">startMS: <span class="extype" name="scala.Long">Long</span> = <span class="symbol">System.currentTimeMillis()</span></span>, <span name="idata1">idata1: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Int">Int</span>] = <span class="symbol">null</span></span>, <span name="idata2">idata2: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Int">Int</span>] = <span class="symbol">null</span></span>, <span name="strdata1">strdata1: <span class="extype" name="scala.Predef.String">String</span> = <span class="symbol">null</span></span>, <span name="strdata2">strdata2: <span class="extype" name="scala.Predef.String">String</span> = <span class="symbol">null</span></span>, <span name="fdata1">fdata1: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Float">Float</span>] = <span class="symbol">null</span></span>, <span name="fdata2">fdata2: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Float">Float</span>] = <span class="symbol">null</span></span>, <span name="taskcenter">taskcenter: <span class="extype" name="scala.Predef.String">String</span> = <span class="symbol">null</span></span>, <span name="rootproc">rootproc: <span class="extype" name="scala.Predef.String">String</span> = <span class="symbol">null</span></span>, <span name="extra">extra: <span class="extype" name="scala.collection.mutable.HashMap">HashMap</span>[<span class="extype" name="scala.Predef.String">String</span>, <span class="extype" name="scala.Any">Any</span>] = <span class="symbol">HashMap.empty</span></span>)</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#org.nights.npe.fsm.ContextData@&lt;init&gt;(procPIO:Int,taskPIO:Int,rolemark:String,startMS:Long,idata1:Option[Int],idata2:Option[Int],strdata1:String,strdata2:String,fdata1:Option[Float],fdata2:Option[Float],extra:scala.collection.mutable.HashMap[String,Any]):org.nights.npe.fsm.ContextData" title="Permalink" target="_top">
+      <a href="../../../../index.html#org.nights.npe.fsm.ContextData@&lt;init&gt;(procPIO:Int,taskPIO:Int,rolemark:String,startMS:Long,idata1:Option[Int],idata2:Option[Int],strdata1:String,strdata2:String,fdata1:Option[Float],fdata2:Option[Float],taskcenter:String,rootproc:String,extra:scala.collection.mutable.HashMap[String,Any]):org.nights.npe.fsm.ContextData" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" />
       </a>
     </span>
@@ -215,6 +215,23 @@
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+    </li><li name="org.nights.npe.fsm.ContextData#asNewProcData" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="asNewProcData(procinstid:String):org.nights.npe.fsm.ContextData"></a>
+      <a id="asNewProcData(String):ContextData"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">asNewProcData</span><span class="params">(<span name="procinstid">procinstid: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <a href="" class="extype" name="org.nights.npe.fsm.ContextData">ContextData</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#org.nights.npe.fsm.ContextData@asNewProcData(procinstid:String):org.nights.npe.fsm.ContextData" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" />
+      </a>
+    </span>
+      
     </li><li name="scala.AnyRef#clone" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="clone():Object"></a>
       <a id="clone():AnyRef"></a>
@@ -499,6 +516,23 @@
       </a>
     </span>
       
+    </li><li name="org.nights.npe.fsm.ContextData#rootproc" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="rootproc:String"></a>
+      <a id="rootproc:String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">rootproc</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#org.nights.npe.fsm.ContextData@rootproc:String" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" />
+      </a>
+    </span>
+      
     </li><li name="org.nights.npe.fsm.ContextData#startMS" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="startMS:Long"></a>
       <a id="startMS:Long"></a>
@@ -580,6 +614,23 @@
       </span>
       </h4><span class="permalink">
       <a href="../../../../index.html#org.nights.npe.fsm.ContextData@taskPIO:Int" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li><li name="org.nights.npe.fsm.ContextData#taskcenter" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="taskcenter:String"></a>
+      <a id="taskcenter:String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">taskcenter</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#org.nights.npe.fsm.ContextData@taskcenter:String" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" />
       </a>
     </span>

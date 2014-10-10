@@ -102,4 +102,15 @@ object ConvergeDAO extends SimpleDAO[KOConvergeCounter] {
   val keyname = "keyy"
 }
 
+object TaskCenterDAO extends SimpleDAO[KOTaskCenter] {
+  val ttag = classTag[KOTaskCenter];
+  val tablename = "taskcenter";
+  val keyname = "centerid"
+}
 
+
+object TaskRoleDAO extends SimpleDAO[KOTaskRole] {
+  val ttag = classTag[KOTaskRole];
+  val tablename = "taskrole";
+  val keyname = "roleid"
+}

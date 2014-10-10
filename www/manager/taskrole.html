@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta charset="utf-8" />
+	<title>操作角色管理-NPE</title>
+	<base href="../" >
+	<link rel="stylesheet" type="text/css" href="assets/js/bootstrap-select/bootstrap-select.min.css">
+	<link rel="stylesheet" href="assets/css/chosen.css" />
+
+	<link rel="stylesheet" type="text/css" href="assets/css/datepicker.css"/>
+	<link rel='stylesheet' href='assets/js/jquery-watable/watable.css'/>
+	<link rel='stylesheet' href='assets/js/jquery-watable/animate.min.css'/>
+	<!-- bootstrap & fontawesome -->
+	<script type="text/javascript" src="parts/js/header.js"></script>
+	<style type="text/css" >
+		input[type=checkbox].ace.ace-switch.ace-switch-5 + .lbl::before {
+  			content: "启用a0\a0\a0\a0\a0停止";
+		}
+	</style>
+</head>
+<body class="no-skin">
+	<script type="text/javascript">$.include("parts/pages/navbar.shtml")</script>
+
+	<div class="main-container" id="main-container">
+		<script type="text/javascript">
+				try{ace.settings.check('main-container' , 'fixed')}catch(e){}
+			</script>
+		<!-- #section:basics/sidebar -->
+		<script type="text/javascript">$.include("parts/pages/sidebar.shtml")</script>
+
+		<!-- /section:basics/sidebar -->
+		<div class="main-content">
+			<script type="text/javascript">$.include("parts/pages/content_title.shtml")</script>
+			<!-- /section:basics/content.breadcrumbs -->
+			<div class="page-content">
+				<div class="page-content-area">
+
+					<div class="row">
+
+						<div class="note note-success container col-sm-12" style="padding-bottom:0px">
+							<div class="col-sm-2 form-group">
+								<div class="btn-group input-group">
+									<!-- 查询条件控件 -->
+									<div class="input-group-addon">角色ID</div>
+									<input id="find_roleid" class="inputclear form-control" type="text" placeholder="键">
+									<span class="inputclear glyphicon glyphicon-remove-circle hide" ></span>
+								</div>
+							</div>
+							<div class="col-sm-2 form-group">
+								<div class="btn-group input-group">
+									<!-- 查询条件控件 -->
+									<div class="input-group-addon">归属中心ID</div>
+									<input id="find_centerid" class="inputclear form-control" type="text" placeholder="键">
+									<span class="inputclear glyphicon glyphicon-remove-circle hide" ></span>
+								</div>
+							</div>
+							<div class="col-sm-2 form-group">
+			                    <div class="btn-group input-group">
+			                        <div class="input-group-addon">状态</div>
+			                        <select class="chosen-select" id="find_status">
+			                            <option value="-1">所有</option>
+			                            <option value="1">启用</option>
+			                          	<option value="0">停止</option>
+			                        </select>
+
+			                    </div>
+			                </div>							
+							<div class="col-sm-4 form-group">
+								<script>$.include("parts/pages/crudbtn.shtml");</script>
+							</div>
+							<div class="col-sm-2 form-group">
+								<div class="btn-group btn-sm">
+								    <button id="import_button" class="btn btn-sm btn-info" data-target="#stack1" data-toggle="modal">
+								        从流程导入&nbsp; <i class="fa fa-download"></i>
+								    </button>
+								</div>
+
+							</div>
+						</div>
+						<div class="container-fluid">
+							<div id="divtable" class="table-responsive container col-sm-12" ></div>
+						</div>
+					</div>
+					<!-- /.row -->
+				</div>
+				<!-- /.page-content-area -->
+			</div>
+			<!-- /.page-content -->
+		</div>
+		<!-- /.main-content -->
+
+		<script type="text/javascript">$.include("parts/pages/copyright.shtml")</script>
+
+	</div>
+	<!-- /.main-container -->
+
+	<script type="text/javascript">$.include("parts/pages/foot.shtml")</script>
+
+</body>
+	<script type="text/javascript">$.include("parts/pages/xwatable-form.shtml")</script>
+
+	<script type="text/javascript" src="assets/js/date-time/bootstrap-datepicker.min.js"></script>
+
+	<script type="text/javascript" src="assets/js/bootstrap-select/bootstrap-select.min.js"></script>
+
+	<script src="assets/js/chosen.jquery.min.js"></script>
+
+	<script type="text/javascript" src="assets/js/jquery-watable/jquery.watable.js"></script>
+	<script type="text/javascript" src="assets/addons/rqlbuilder.js"></script>
+	<script type="text/javascript" src="assets/addons/xwatable.js"></script>
+	<script type="text/javascript" src="assets/addons/rest.js"></script>
+	<script type="text/javascript" src="assets/addons/refhelper.js"></script>
+	<script type="text/javascript" src="assets/addons/jquery-dateFormat.min.js"></script>
+
+	<script type="text/javascript">ace.vars['base'] = '..'; </script>
+
+	<!-- inline scripts related to this page -->
+	<script type="text/javascript">
+		var newCreateDate=function(){
+		    return {
+		        f: function(val){
+		            if(!val)
+		            {
+		                return "";
+		            }
+		            return jQuery.format.toBrowserTimeZone(new Date(parseInt(val)));
+		        },
+		    }
+		}();
+ 		var statusFMM=function(){
+		    return {
+		        f: function(val,row){
+		        	 console.log(row['roleid']+"::ststus"+val)
+		        	if(val==1)
+		        		return '<span class="badge badge-success">启用</span>'
+		        	else if(val==0)
+		        		return '<span class="badge badge-danger">停止</span>'
+		        		
+		        },
+		    }
+		}();
+
+		var statusEditBuilder=function(val){
+		    console.log("setBuilder::"+val);
+		    if(val)
+		     {
+		        return '<input id="status" name="status" checked="true" type="checkbox" class="ace ace-switch ace-switch-5" /><span class="lbl middle"></span>';
+		     }   
+		    return '<input id="status" name="status" type="checkbox" class="ace ace-switch ace-switch-5" /><span class="lbl middle"></span>';
+		}
+
+
+
+		var roleHelper=RefHelper.create({
+		    ref_url:"/nperest/taskcenter",
+		    ref_col:"cenerid",
+		    ref_display:"centername",
+		});
+
+		var roleFM=function(){
+		    return {
+		        f: function(val){
+		        	if(val){
+		        		console.log("role==:"+JSON.stringify(roleHelper.getData()))
+
+		            	return val+"("+roleHelper.getDisplay(val)+")";
+		            }else{
+		            	return "全部";
+		            }
+		        },
+		    }
+		}();
+
+		jQuery(function($) {//初始化函数
+			setTitlePath("角色中心","任务项管理")
+
+		     var xw=XWATable.init(
+		        {
+		            //----------------table的选项-------
+		            pageSize: 5,                //Initial pagesize
+		            columnPicker: true,         //Show the columnPicker button
+		            transition: 'fade',  //(bounce, fade, flip, rotate, scroll, slide).
+		            checkboxes: true,           //Make rows checkable. (Note. You need a column with the 'unique' property)
+		            checkAllToggle:true,        //Show the check-all toggle//+RQLBuilder.like("KEYY", "a").rql()
+		            rowClicked: function(data) {    
+		                console.log('row clicked');   //data.event holds the original jQuery event.
+		                console.log(data);            //data.row holds the underlying row you supplied.
+		            },
+		            //----------------基本restful地址---
+		            restbase: '/taskrole',
+		            key_column: "roleid",
+		            //---------------行定义
+		            coldefs: [
+		                        {      
+		                            col:"roleid",
+		                            friendly: "角色ID",
+		                            unique: true,
+		                        },
+		                        {
+		                            col:"rolename",
+		                            friendly: "角色名称",
+		                        },
+		                         {
+		                            col:"centerid",
+		                            friendly: "所属中心",
+		                            inputsource: "select",
+		                            format: roleFM,
+
+		                             ref_url: "/nperest/taskcenter",
+		                             ref_name:"centerid",
+		                             ref_value:"centername",
+		                        },
+		                        {
+		                            col:"status",
+		                            friendly: "状态",
+		                            format: statusFMM,
+		                       		inputsource: "custom",
+				                    inputbuilder: "statusEditBuilder",
+		                        },
+		                        {
+		                            col:"createtime",
+		                            friendly: "创建时间",
+		                            format:newCreateDate,
+		                            nonedit:"nosend",  
+		                        },
+		                        {
+		                            col:"modtime",
+		                            friendly: "修改时间",
+		                            format:newCreateDate,
+		                           	nonedit:"nosend",  
+		                        },
+		                       
+			                ],
+		            //---------------查询时过滤条件
+		            findFilter: function(){//find function
+		                // RQBuilder.and(rqls)
+		                var filter_instid=undefined;
+		                var filter_defid=undefined;
+		                var filter_status=undefined;
+
+		                var filter=RQLBuilder.and([
+		                        filter_instid,filter_defid,filter_status
+		                    ]);
+		                return '{"roleid":"'+$('#find_roleid').val()+'","centerid":"'+$('#find_centerid').val()+'","status":'+$('#find_status').val()+'}';
+		            },//--findFilter
+		            onAdded: function(ret,jsondata){
+		                console.log("added callback:"+ret+",obj="+JSON.stringify(jsondata));
+		            },
+		            onUpdated: function(ret,jsondata){
+		                console.log("onUpdated callback:"+ret+",obj="+JSON.stringify(jsondata));
+		            },
+		            onDeleted: function(ret,jsondata){
+		                console.log("onDeleted callback:"+ret+",obj="+JSON.stringify(jsondata));
+		            },
+		            
+
+		        }//--init
+		    );//--end init
+			
+			$('#find_status').chosen(); 
+
+			 $('#find_roleid').on('input',function(e){
+					        console.log("changing::"+e.target.value)
+					        if(!e.target.value){
+					            xw.autoResetSearch();
+					        }
+					    });
+			  $('#find_rolename').on('input',function(e){
+					        console.log("changing::"+e.target.value)
+					        if(!e.target.value){
+					            xw.autoResetSearch();
+					        }
+					    });
+			 $('#import_button').on('click',function(e){
+			 	 $.ajax({
+	                url: "/nperest/taskrole/import",
+	                dataType: 'json',
+	                async: false,
+	            })
+	            .done(function(data) {
+	                if(data["status"]>=0)
+	                {
+	  					bootbox.alert("<br><center><h4>成功插入("+data["status"]+")个角色</h4></center><br>");
+	                }
+	                else{
+	                	bootbox.alert("<br><center><h4>插入失败("+data["message"]+")</h4></center><br>");
+	                }
+	          		xw.autoResetSearch();
+
+	            });
+
+
+			 })
+		})
+	</script>
+</html>

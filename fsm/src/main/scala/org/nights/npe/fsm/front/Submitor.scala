@@ -45,7 +45,7 @@ class Submitor extends Actor with ActorLogging with ActorHelper {
           startDefNode.nodeid)
         
         StatsCounter.newprocs.incrementAndGet(); 
-        val subdata=ctxData.asHigerPIODData
+        val subdata=ctxData.asNewProcData(procInstId)
         stateStores ! wrapToPipeMessage(NewProcess(state asSubmit, submitter,subdata), Tansitionworkers(), taskInstId);
         sender ! AskResult(1, procInstId)
           

@@ -77,19 +77,25 @@ case class ContextData(
   val strdata2: String = null, //text,
   val fdata1: Option[Float] = null, //float,
   val fdata2: Option[Float] = null, //float,
+  val taskcenter:String = null,
+  val rootproc:String = null,
   val extra: HashMap[String, Any] = HashMap.empty) {
   def PIO=procPIO+taskPIO;
   
   def merge(other: ContextData): ContextData={
     if(PIO>=other.PIO){
-      ContextData(procPIO,taskPIO,rolemark,startMS,idata1,idata2,strdata1,strdata2,fdata1,fdata2,other.extra.++:(extra))
+      ContextData(procPIO,taskPIO,rolemark,startMS,idata1,idata2,strdata1,strdata2,fdata1,fdata2,taskcenter,rootproc,other.extra.++:(extra))
     }else{
       other.merge(this) 
     }
   }
   def asHigerPIODData() : ContextData={
-      ContextData(procPIO,taskPIO+1,rolemark,startMS,idata1,idata2,strdata1,strdata2,fdata1,fdata2,extra) 
+      ContextData(procPIO,taskPIO+1,rolemark,startMS,idata1,idata2,strdata1,strdata2,fdata1,fdata2,taskcenter,rootproc,extra) 
   }
+  def asNewProcData(procinstid:String) : ContextData={
+      ContextData(procPIO,taskPIO+1,rolemark,startMS,idata1,idata2,strdata1,strdata2,fdata1,fdata2,taskcenter,procinstid,extra) 
+  }
+
 }
 case class StateContextWithData(val sc: StateContext, val dt: ContextData) extends PriorityAware {
   def pio = dt.procPIO + dt.taskPIO

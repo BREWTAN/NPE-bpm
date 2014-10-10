@@ -1,6 +1,6 @@
-// @SOURCE:/Users/brew/NPE/gits/mcs/conf/routes
-// @HASH:109f4e6317bc5d4bdfa473fd0622bf8e642896e2
-// @DATE:Fri Oct 10 01:52:35 GMT 2014
+// @SOURCE:/home/brew/git/npe/mcs/conf/routes
+// @HASH:6266c05919103fed1a9e1d16c545745bfd9545c7
+// @DATE:Sat Oct 11 02:04:09 CST 2014
 
 import Routes.{prefix => _prefix, defaultPrefix => _defaultPrefix}
 import play.core._
@@ -14,6 +14,15 @@ import _root_.controllers.Assets.Asset
 import Router.queryString
 
 
+// @LINE:60
+// @LINE:58
+// @LINE:57
+// @LINE:56
+// @LINE:55
+// @LINE:50
+// @LINE:49
+// @LINE:48
+// @LINE:47
 // @LINE:41
 // @LINE:39
 // @LINE:34
@@ -42,6 +51,90 @@ def at(file:String): Call = {
 }
                           
 
+// @LINE:60
+// @LINE:58
+// @LINE:57
+// @LINE:56
+// @LINE:55
+class ReverseTaskRoleFace {
+
+
+// @LINE:60
+def importFromFlows(): Call = {
+   import ReverseRouteContext.empty
+   Call("GET", _prefix + { _defaultPrefix } + "taskrole/import")
+}
+                        
+
+// @LINE:57
+def insert(): Call = {
+   import ReverseRouteContext.empty
+   Call("POST", _prefix + { _defaultPrefix } + "taskrole")
+}
+                        
+
+// @LINE:56
+def delete(keyy:String): Call = {
+   import ReverseRouteContext.empty
+   Call("DELETE", _prefix + { _defaultPrefix } + "taskrole/" + implicitly[PathBindable[String]].unbind("keyy", dynamicString(keyy)))
+}
+                        
+
+// @LINE:58
+def update(keyy:String): Call = {
+   import ReverseRouteContext.empty
+   Call("PUT", _prefix + { _defaultPrefix } + "taskrole/" + implicitly[PathBindable[String]].unbind("keyy", dynamicString(keyy)))
+}
+                        
+
+// @LINE:55
+def getByPage(skip:Int = 0, limit:Int = 10, status:Int = 0, query:String = null, page:Boolean = false): Call = {
+   import ReverseRouteContext.empty
+   Call("GET", _prefix + { _defaultPrefix } + "taskrole" + queryString(List(if(skip == 0) None else Some(implicitly[QueryStringBindable[Int]].unbind("skip", skip)), if(limit == 10) None else Some(implicitly[QueryStringBindable[Int]].unbind("limit", limit)), if(status == 0) None else Some(implicitly[QueryStringBindable[Int]].unbind("status", status)), if(query == null) None else Some(implicitly[QueryStringBindable[String]].unbind("query", query)), if(page == false) None else Some(implicitly[QueryStringBindable[Boolean]].unbind("page", page)))))
+}
+                        
+
+}
+                          
+
+// @LINE:50
+// @LINE:49
+// @LINE:48
+// @LINE:47
+class ReverseTaskCenterFace {
+
+
+// @LINE:48
+def delete(keyy:String): Call = {
+   import ReverseRouteContext.empty
+   Call("DELETE", _prefix + { _defaultPrefix } + "taskcenter/" + implicitly[PathBindable[String]].unbind("keyy", dynamicString(keyy)))
+}
+                        
+
+// @LINE:49
+def insert(): Call = {
+   import ReverseRouteContext.empty
+   Call("POST", _prefix + { _defaultPrefix } + "taskcenter")
+}
+                        
+
+// @LINE:47
+def getByPage(skip:Int = 0, limit:Int = 10, status:Int = 0, query:String = null, page:Boolean = false): Call = {
+   import ReverseRouteContext.empty
+   Call("GET", _prefix + { _defaultPrefix } + "taskcenter" + queryString(List(if(skip == 0) None else Some(implicitly[QueryStringBindable[Int]].unbind("skip", skip)), if(limit == 10) None else Some(implicitly[QueryStringBindable[Int]].unbind("limit", limit)), if(status == 0) None else Some(implicitly[QueryStringBindable[Int]].unbind("status", status)), if(query == null) None else Some(implicitly[QueryStringBindable[String]].unbind("query", query)), if(page == false) None else Some(implicitly[QueryStringBindable[Boolean]].unbind("page", page)))))
+}
+                        
+
+// @LINE:50
+def update(keyy:String): Call = {
+   import ReverseRouteContext.empty
+   Call("PUT", _prefix + { _defaultPrefix } + "taskcenter/" + implicitly[PathBindable[String]].unbind("keyy", dynamicString(keyy)))
+}
+                        
+
+}
+                          
+
 // @LINE:41
 // @LINE:39
 class ReverseProcInstFace {
@@ -55,9 +148,9 @@ def delete(defid:String): Call = {
                         
 
 // @LINE:39
-def getByPage(skip:Int = 0, limit:Int = 10, status:Int = 0, query:String = null): Call = {
+def getByPage(skip:Int = 0, limit:Int = 10, status:Int = 0, query:String = null, page:Boolean = false): Call = {
    import ReverseRouteContext.empty
-   Call("GET", _prefix + { _defaultPrefix } + "procinst" + queryString(List(if(skip == 0) None else Some(implicitly[QueryStringBindable[Int]].unbind("skip", skip)), if(limit == 10) None else Some(implicitly[QueryStringBindable[Int]].unbind("limit", limit)), if(status == 0) None else Some(implicitly[QueryStringBindable[Int]].unbind("status", status)), if(query == null) None else Some(implicitly[QueryStringBindable[String]].unbind("query", query)))))
+   Call("GET", _prefix + { _defaultPrefix } + "procinst" + queryString(List(if(skip == 0) None else Some(implicitly[QueryStringBindable[Int]].unbind("skip", skip)), if(limit == 10) None else Some(implicitly[QueryStringBindable[Int]].unbind("limit", limit)), if(status == 0) None else Some(implicitly[QueryStringBindable[Int]].unbind("status", status)), if(query == null) None else Some(implicitly[QueryStringBindable[String]].unbind("query", query)), if(page == false) None else Some(implicitly[QueryStringBindable[Boolean]].unbind("page", page)))))
 }
                         
 
@@ -109,9 +202,9 @@ def upload(): Call = {
                         
 
 // @LINE:28
-def getByPage(skip:Int = 0, limit:Int = 10): Call = {
+def getByPage(skip:Int = 0, limit:Int = 10, page:Boolean = false): Call = {
    import ReverseRouteContext.empty
-   Call("GET", _prefix + { _defaultPrefix } + "procdef" + queryString(List(if(skip == 0) None else Some(implicitly[QueryStringBindable[Int]].unbind("skip", skip)), if(limit == 10) None else Some(implicitly[QueryStringBindable[Int]].unbind("limit", limit)))))
+   Call("GET", _prefix + { _defaultPrefix } + "procdef" + queryString(List(if(skip == 0) None else Some(implicitly[QueryStringBindable[Int]].unbind("skip", skip)), if(limit == 10) None else Some(implicitly[QueryStringBindable[Int]].unbind("limit", limit)), if(page == false) None else Some(implicitly[QueryStringBindable[Boolean]].unbind("page", page)))))
 }
                         
 
@@ -163,6 +256,15 @@ def index(): Call = {
                   
 
 
+// @LINE:60
+// @LINE:58
+// @LINE:57
+// @LINE:56
+// @LINE:55
+// @LINE:50
+// @LINE:49
+// @LINE:48
+// @LINE:47
 // @LINE:41
 // @LINE:39
 // @LINE:34
@@ -196,6 +298,126 @@ def at : JavascriptReverseRoute = JavascriptReverseRoute(
 }
               
 
+// @LINE:60
+// @LINE:58
+// @LINE:57
+// @LINE:56
+// @LINE:55
+class ReverseTaskRoleFace {
+
+
+// @LINE:60
+def importFromFlows : JavascriptReverseRoute = JavascriptReverseRoute(
+   "controllers.TaskRoleFace.importFromFlows",
+   """
+      function() {
+      return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "taskrole/import"})
+      }
+   """
+)
+                        
+
+// @LINE:57
+def insert : JavascriptReverseRoute = JavascriptReverseRoute(
+   "controllers.TaskRoleFace.insert",
+   """
+      function() {
+      return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "taskrole"})
+      }
+   """
+)
+                        
+
+// @LINE:56
+def delete : JavascriptReverseRoute = JavascriptReverseRoute(
+   "controllers.TaskRoleFace.delete",
+   """
+      function(keyy) {
+      return _wA({method:"DELETE", url:"""" + _prefix + { _defaultPrefix } + """" + "taskrole/" + (""" + implicitly[PathBindable[String]].javascriptUnbind + """)("keyy", encodeURIComponent(keyy))})
+      }
+   """
+)
+                        
+
+// @LINE:58
+def update : JavascriptReverseRoute = JavascriptReverseRoute(
+   "controllers.TaskRoleFace.update",
+   """
+      function(keyy) {
+      return _wA({method:"PUT", url:"""" + _prefix + { _defaultPrefix } + """" + "taskrole/" + (""" + implicitly[PathBindable[String]].javascriptUnbind + """)("keyy", encodeURIComponent(keyy))})
+      }
+   """
+)
+                        
+
+// @LINE:55
+def getByPage : JavascriptReverseRoute = JavascriptReverseRoute(
+   "controllers.TaskRoleFace.getByPage",
+   """
+      function(skip,limit,status,query,page) {
+      return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "taskrole" + _qS([(skip == null ? null : (""" + implicitly[QueryStringBindable[Int]].javascriptUnbind + """)("skip", skip)), (limit == null ? null : (""" + implicitly[QueryStringBindable[Int]].javascriptUnbind + """)("limit", limit)), (status == null ? null : (""" + implicitly[QueryStringBindable[Int]].javascriptUnbind + """)("status", status)), (query == null ? null : (""" + implicitly[QueryStringBindable[String]].javascriptUnbind + """)("query", query)), (page == null ? null : (""" + implicitly[QueryStringBindable[Boolean]].javascriptUnbind + """)("page", page))])})
+      }
+   """
+)
+                        
+
+}
+              
+
+// @LINE:50
+// @LINE:49
+// @LINE:48
+// @LINE:47
+class ReverseTaskCenterFace {
+
+
+// @LINE:48
+def delete : JavascriptReverseRoute = JavascriptReverseRoute(
+   "controllers.TaskCenterFace.delete",
+   """
+      function(keyy) {
+      return _wA({method:"DELETE", url:"""" + _prefix + { _defaultPrefix } + """" + "taskcenter/" + (""" + implicitly[PathBindable[String]].javascriptUnbind + """)("keyy", encodeURIComponent(keyy))})
+      }
+   """
+)
+                        
+
+// @LINE:49
+def insert : JavascriptReverseRoute = JavascriptReverseRoute(
+   "controllers.TaskCenterFace.insert",
+   """
+      function() {
+      return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "taskcenter"})
+      }
+   """
+)
+                        
+
+// @LINE:47
+def getByPage : JavascriptReverseRoute = JavascriptReverseRoute(
+   "controllers.TaskCenterFace.getByPage",
+   """
+      function(skip,limit,status,query,page) {
+      return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "taskcenter" + _qS([(skip == null ? null : (""" + implicitly[QueryStringBindable[Int]].javascriptUnbind + """)("skip", skip)), (limit == null ? null : (""" + implicitly[QueryStringBindable[Int]].javascriptUnbind + """)("limit", limit)), (status == null ? null : (""" + implicitly[QueryStringBindable[Int]].javascriptUnbind + """)("status", status)), (query == null ? null : (""" + implicitly[QueryStringBindable[String]].javascriptUnbind + """)("query", query)), (page == null ? null : (""" + implicitly[QueryStringBindable[Boolean]].javascriptUnbind + """)("page", page))])})
+      }
+   """
+)
+                        
+
+// @LINE:50
+def update : JavascriptReverseRoute = JavascriptReverseRoute(
+   "controllers.TaskCenterFace.update",
+   """
+      function(keyy) {
+      return _wA({method:"PUT", url:"""" + _prefix + { _defaultPrefix } + """" + "taskcenter/" + (""" + implicitly[PathBindable[String]].javascriptUnbind + """)("keyy", encodeURIComponent(keyy))})
+      }
+   """
+)
+                        
+
+}
+              
+
 // @LINE:41
 // @LINE:39
 class ReverseProcInstFace {
@@ -216,8 +438,8 @@ def delete : JavascriptReverseRoute = JavascriptReverseRoute(
 def getByPage : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.ProcInstFace.getByPage",
    """
-      function(skip,limit,status,query) {
-      return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "procinst" + _qS([(skip == null ? null : (""" + implicitly[QueryStringBindable[Int]].javascriptUnbind + """)("skip", skip)), (limit == null ? null : (""" + implicitly[QueryStringBindable[Int]].javascriptUnbind + """)("limit", limit)), (status == null ? null : (""" + implicitly[QueryStringBindable[Int]].javascriptUnbind + """)("status", status)), (query == null ? null : (""" + implicitly[QueryStringBindable[String]].javascriptUnbind + """)("query", query))])})
+      function(skip,limit,status,query,page) {
+      return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "procinst" + _qS([(skip == null ? null : (""" + implicitly[QueryStringBindable[Int]].javascriptUnbind + """)("skip", skip)), (limit == null ? null : (""" + implicitly[QueryStringBindable[Int]].javascriptUnbind + """)("limit", limit)), (status == null ? null : (""" + implicitly[QueryStringBindable[Int]].javascriptUnbind + """)("status", status)), (query == null ? null : (""" + implicitly[QueryStringBindable[String]].javascriptUnbind + """)("query", query)), (page == null ? null : (""" + implicitly[QueryStringBindable[Boolean]].javascriptUnbind + """)("page", page))])})
       }
    """
 )
@@ -286,8 +508,8 @@ def upload : JavascriptReverseRoute = JavascriptReverseRoute(
 def getByPage : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.ProcDefHttpFace.getByPage",
    """
-      function(skip,limit) {
-      return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "procdef" + _qS([(skip == null ? null : (""" + implicitly[QueryStringBindable[Int]].javascriptUnbind + """)("skip", skip)), (limit == null ? null : (""" + implicitly[QueryStringBindable[Int]].javascriptUnbind + """)("limit", limit))])})
+      function(skip,limit,page) {
+      return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "procdef" + _qS([(skip == null ? null : (""" + implicitly[QueryStringBindable[Int]].javascriptUnbind + """)("skip", skip)), (limit == null ? null : (""" + implicitly[QueryStringBindable[Int]].javascriptUnbind + """)("limit", limit)), (page == null ? null : (""" + implicitly[QueryStringBindable[Boolean]].javascriptUnbind + """)("page", page))])})
       }
    """
 )
@@ -361,6 +583,15 @@ def index : JavascriptReverseRoute = JavascriptReverseRoute(
         
 
 
+// @LINE:60
+// @LINE:58
+// @LINE:57
+// @LINE:56
+// @LINE:55
+// @LINE:50
+// @LINE:49
+// @LINE:48
+// @LINE:47
 // @LINE:41
 // @LINE:39
 // @LINE:34
@@ -389,6 +620,81 @@ def at(path:String, file:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.
 }
                           
 
+// @LINE:60
+// @LINE:58
+// @LINE:57
+// @LINE:56
+// @LINE:55
+class ReverseTaskRoleFace {
+
+
+// @LINE:60
+def importFromFlows(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.TaskRoleFace.importFromFlows(), HandlerDef(this.getClass.getClassLoader, "", "controllers.TaskRoleFace", "importFromFlows", Seq(), "GET", """""", _prefix + """taskrole/import""")
+)
+                      
+
+// @LINE:57
+def insert(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.TaskRoleFace.insert(), HandlerDef(this.getClass.getClassLoader, "", "controllers.TaskRoleFace", "insert", Seq(), "POST", """""", _prefix + """taskrole""")
+)
+                      
+
+// @LINE:56
+def delete(keyy:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.TaskRoleFace.delete(keyy), HandlerDef(this.getClass.getClassLoader, "", "controllers.TaskRoleFace", "delete", Seq(classOf[String]), "DELETE", """""", _prefix + """taskrole/$keyy<[^/]+>""")
+)
+                      
+
+// @LINE:58
+def update(keyy:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.TaskRoleFace.update(keyy), HandlerDef(this.getClass.getClassLoader, "", "controllers.TaskRoleFace", "update", Seq(classOf[String]), "PUT", """""", _prefix + """taskrole/$keyy<[^/]+>""")
+)
+                      
+
+// @LINE:55
+def getByPage(skip:Int, limit:Int, status:Int, query:String, page:Boolean): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.TaskRoleFace.getByPage(skip, limit, status, query, page), HandlerDef(this.getClass.getClassLoader, "", "controllers.TaskRoleFace", "getByPage", Seq(classOf[Int], classOf[Int], classOf[Int], classOf[String], classOf[Boolean]), "GET", """""", _prefix + """taskrole""")
+)
+                      
+
+}
+                          
+
+// @LINE:50
+// @LINE:49
+// @LINE:48
+// @LINE:47
+class ReverseTaskCenterFace {
+
+
+// @LINE:48
+def delete(keyy:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.TaskCenterFace.delete(keyy), HandlerDef(this.getClass.getClassLoader, "", "controllers.TaskCenterFace", "delete", Seq(classOf[String]), "DELETE", """""", _prefix + """taskcenter/$keyy<[^/]+>""")
+)
+                      
+
+// @LINE:49
+def insert(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.TaskCenterFace.insert(), HandlerDef(this.getClass.getClassLoader, "", "controllers.TaskCenterFace", "insert", Seq(), "POST", """""", _prefix + """taskcenter""")
+)
+                      
+
+// @LINE:47
+def getByPage(skip:Int, limit:Int, status:Int, query:String, page:Boolean): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.TaskCenterFace.getByPage(skip, limit, status, query, page), HandlerDef(this.getClass.getClassLoader, "", "controllers.TaskCenterFace", "getByPage", Seq(classOf[Int], classOf[Int], classOf[Int], classOf[String], classOf[Boolean]), "GET", """""", _prefix + """taskcenter""")
+)
+                      
+
+// @LINE:50
+def update(keyy:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.TaskCenterFace.update(keyy), HandlerDef(this.getClass.getClassLoader, "", "controllers.TaskCenterFace", "update", Seq(classOf[String]), "PUT", """""", _prefix + """taskcenter/$keyy<[^/]+>""")
+)
+                      
+
+}
+                          
+
 // @LINE:41
 // @LINE:39
 class ReverseProcInstFace {
@@ -401,8 +707,8 @@ def delete(defid:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerR
                       
 
 // @LINE:39
-def getByPage(skip:Int, limit:Int, status:Int, query:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
-   controllers.ProcInstFace.getByPage(skip, limit, status, query), HandlerDef(this.getClass.getClassLoader, "", "controllers.ProcInstFace", "getByPage", Seq(classOf[Int], classOf[Int], classOf[Int], classOf[String]), "GET", """#############
+def getByPage(skip:Int, limit:Int, status:Int, query:String, page:Boolean): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.ProcInstFace.getByPage(skip, limit, status, query, page), HandlerDef(this.getClass.getClassLoader, "", "controllers.ProcInstFace", "getByPage", Seq(classOf[Int], classOf[Int], classOf[Int], classOf[String], classOf[Boolean]), "GET", """#############
  procinst""", _prefix + """procinst""")
 )
                       
@@ -452,8 +758,8 @@ def upload(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
                       
 
 // @LINE:28
-def getByPage(skip:Int, limit:Int): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
-   controllers.ProcDefHttpFace.getByPage(skip, limit), HandlerDef(this.getClass.getClassLoader, "", "controllers.ProcDefHttpFace", "getByPage", Seq(classOf[Int], classOf[Int]), "GET", """# rest for procdef""", _prefix + """procdef""")
+def getByPage(skip:Int, limit:Int, page:Boolean): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.ProcDefHttpFace.getByPage(skip, limit, page), HandlerDef(this.getClass.getClassLoader, "", "controllers.ProcDefHttpFace", "getByPage", Seq(classOf[Int], classOf[Int], classOf[Boolean]), "GET", """# rest for procdef""", _prefix + """procdef""")
 )
                       
 

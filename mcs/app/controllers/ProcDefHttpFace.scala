@@ -35,7 +35,7 @@ object ProcDefHttpFace extends Controller {
     //    Ok("Got request [" + request + "]")
   }
 
-  def getByPage(skip: Int, limit: Int) = Action.async { request =>
+  def getByPage(skip: Int, limit: Int,page:Boolean) = Action.async { request =>
     val results = for {
       total <- ProcDefDAO.countAll
       rows <- ProcDefDAO.findAll(Range(skip, limit))
