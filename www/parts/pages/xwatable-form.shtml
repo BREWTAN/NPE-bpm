@@ -23,7 +23,9 @@
                     {@eq value="select"}
                         <select class="form-control chosen-select" width="100%" id="{col}" name="{col}" 
                                 data-ref-url="{ref_url}" data-ref-name="{ref_name}"
-                                data-ref-value="{ref_value}" data-value="{default_value}">
+                                data-ref-value="{ref_value}" data-value="{default_value}"
+                                data-ref-append="{ref_append}"
+                                >
                         </select> 
                     {/eq}
                     {@eq value="datepicker"}

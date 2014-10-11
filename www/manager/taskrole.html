@@ -161,9 +161,8 @@
 		var roleFM=function(){
 		    return {
 		        f: function(val){
-		        	if(val){
+		        	if(val&&val!=-1){
 		        		console.log("role==:"+JSON.stringify(roleHelper.getData()))
-
 		            	return val+"("+roleHelper.getDisplay(val)+")";
 		            }else{
 		            	return "全部";
@@ -207,9 +206,10 @@
 		                            inputsource: "select",
 		                            format: roleFM,
 
-		                             ref_url: "/nperest/taskcenter",
-		                             ref_name:"centerid",
-		                             ref_value:"centername",
+		                           	ref_url: "/nperest/taskcenter",
+		                            ref_name:"centerid",
+		                            ref_value:"centername",
+		                            ref_append: "全部:,",
 		                        },
 		                        {
 		                            col:"status",

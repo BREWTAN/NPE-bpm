@@ -3,3 +3,4 @@ clean
 compile
 exit
 publishM2
+eclipse

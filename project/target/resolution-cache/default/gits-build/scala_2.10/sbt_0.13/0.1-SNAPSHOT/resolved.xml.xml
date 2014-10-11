@@ -4,7 +4,7 @@
 		module="gits-build"
 		revision="0.1-SNAPSHOT"
 		status="integration"
-		publication="20141010015239"
+		publication="20141011003515"
 		e:scalaVersion="2.10" e:sbtVersion="0.13"
 	>
 		<description>

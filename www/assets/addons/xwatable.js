@@ -44,6 +44,26 @@ var XWATable = function() {
                             // console.log("success::"+JSON.stringify(data));
                             var opts='<option ></option>';
                             console.log("op:"+$(selEle).attr('id')+JSON.stringify(xwaOptions['cols'][$(selEle).attr('id')]))
+                            if($(selEle).attr('data-ref-append'))
+                            {
+
+                                $.each($(selEle).attr('data-ref-append').split(","),function(index, val) {
+                                    var kv=val.split(":")
+                                    if(kv.length!=2)return;
+                                    opts+='<option value="'+kv[1]+'"';
+
+                                    if(kv[1]==data_val) opts+=' selected ';
+                                    
+                                    if(kv[1] == kv[0]||
+                                        xwaOptions['cols'][$(selEle).attr('id')]['hidecode']==true||kv[1].length==0){
+                                        opts+='>'+kv[0]+'</option>'
+                                    } else {
+                                        opts+='>'+kv[0]+'('+kv[1]+')</option>'
+                                    }
+
+                                });
+                            }
+
                             $.each(data, function(index, val) {
                                 opts+='<option value="'+val[ref_val]+'"';
 
@@ -56,6 +76,7 @@ var XWATable = function() {
                                     opts+='>'+val[ref_val]+'('+val[ref_name]+')</option>'
                                 }
                             });
+                            
                             $(selEle).html(opts);
 
                         });
