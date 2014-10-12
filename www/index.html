@@ -814,14 +814,14 @@ var speedoptions = {
   suffix : '  个' 
 }
 
-	var lasttotalv=[0,0,0,0]
-	var lastspeedv=[0,0,0,0]
+	var lasttotalv=[0,0,0,0,0,0,0,0,0]
+	var lastspeedv=[0,0,0,0,0,0,0,0,0]
 
 	var updateCounter=function(){
 
 
 		$.ajax({
-			url: '/procdef/fsmstats',
+			url: '/nperest/fsmstats',
 			type: 'GET',
 			dataType: 'JSON',
 		})
@@ -833,8 +833,8 @@ var speedoptions = {
 
 			console.log("success:"+JSON.stringify(lastv));
 
-			var totalv=[0,0,0,0]
-			var total2v=[0,0,0,0]
+			var totalv=[0,0,0,0,0,0,0,0,0]
+			var total2v=[0,0,0,0,0,0,0,0,0]
 
 			$.each(lastv, function(index, val) {
 				 $.each(totalv, function(indext, valt) {
@@ -848,13 +848,13 @@ var speedoptions = {
 			});
 
 			$.each(totalv, function(indext, valt) {
+				if(indext>=4)return
 				var demo = new countUp("totalcc_"+indext, lasttotalv[indext], totalv[indext], 0, 10, options);		
 				demo.start();
 
-				var curspeed=(totalv[indext]-total2v[indext])/5.0
+				var curspeed=(totalv[indext]-total2v[indext])/(totalv[8]-total2v[8])
 				var speed = new countUp("speedcc_"+indext, lastspeedv[indext], 
 					lastspeedv[indext], 2, 10, speedoptions);		
-
 
 				speed.start();
 				lastspeedv[indext]=curspeed

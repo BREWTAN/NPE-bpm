@@ -5,12 +5,9 @@ import scala.collection.mutable.MutableList
 import scala.concurrent.Await
 import scala.concurrent.ExecutionContext.Implicits.global
 import scala.concurrent.duration.DurationInt
-
 import org.nights.npe.backend.db.ProcDefDAO
 import org.nights.npe.backend.db.TasksDAO
-
 import com.typesafe.config.ConfigFactory
-
 import akka.actor.Actor
 import akka.actor.ActorSystem
 import akka.cluster.Cluster
@@ -26,29 +23,36 @@ import play.api.GlobalSettings
 import play.api.Logger
 import play.api.mvc.Action
 import play.api.mvc.Controller
+import akka.routing.BroadcastGroup
+import akka.actor.Props
+import org.nights.npe.fsm.StatsWorker
+import akka.routing.FromConfig
 
 class FsmCollector extends Actor {
   val cluster = Cluster(context.system)
+ val workerRouter = context.actorOf(FromConfig.props(Props.empty),
+    name = "stats")
   override def preStart(): Unit = {
     Logger.info("preStart")
     //    cluster.subscribe(self, initialStateMode = ClusterEvent.InitialStateAsEvents,
     //      classOf[MemberEvent], classOf[UnreachableMember])
     cluster.subscribe(self, classOf[MemberEvent])
     context.system.scheduler.schedule(5000 millis, 5000 millis, self, "tick")
-
   }
   override def postStop(): Unit = cluster.unsubscribe(self)
-  implicit val timeout = Timeout(10000)
+  implicit val timeout = Timeout(20000)
 
   def receive = {
     case "tick" => {
       val stats = Global.members.map { mem =>
         val fsm = Global.system.actorSelection(mem + "/user/fsm/stats")
-        val result = Await.result(ask(fsm, ConsistentHashableEnvelope("stats", "stats")), timeout.duration) match {
+        println("fsm=="+workerRouter)
+//        workerRouter ! ConsistentHashableEnvelope(ConsistentHashableEnvelope("stats", "stats"), "stats")
+        val result = Await.result(ask(workerRouter,ConsistentHashableEnvelope(ConsistentHashableEnvelope("stats", "stats"), "stats")), timeout.duration) match {
           case fps: String =>
             fps
           case _ =>
-          //            (0, 0, 0, 0,0,0,0)
+//          //            (0, 0, 0, 0,0,0,0)
         }
         println("member" + mem + " result==" + result)
         result
@@ -82,7 +86,6 @@ class FsmCollector extends Actor {
       }
     case MemberUp(member) => {
       Logger.info("Member is Up: " + member.address)
-
       Global.members.add(member.address.toString);
     }
     case _ =>

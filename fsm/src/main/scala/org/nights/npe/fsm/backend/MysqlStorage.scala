@@ -62,7 +62,7 @@ object MySqlStorage extends StateStore {
     val upbeans = prevs.map { BeanTransHelper.koTermFromString(_) }
     val future2 = upbeans.map { TermUpdateTasksDAO.update(_) }
     val future3= states.filter(_.isTerminate ).map{ state =>
-      println(TermProcDAO.keyname +"::"+TermProcDAO.ttag+"::"+TermProcDAO.tablename  )
+//      println(TermProcDAO.keyname +"::"+TermProcDAO.ttag+"::"+TermProcDAO.tablename  )
       TermProcDAO.updateByCond(KOTermProc(null,null),KOTermProc(state.procInstId,"_1",null,null))
     }
     

@@ -43,7 +43,7 @@ class FsmActorsController extends Actor with ActorLogging {
 
     context.actorOf(FromConfig.props.withDispatcher("fsm-thread-pool-dispatcher"), "terminators")
 
-    context.actorOf(FromConfig.props, "stats")
+    context.actorOf(FromConfig.props(Props[StatsWorker]), "stats")
     
     
     val num=20;
@@ -61,7 +61,7 @@ class FsmActorsController extends Actor with ActorLogging {
 
     context.system.actorOf(RoundRobinPool(num).props(Props[ProcessTerminator]).withDispatcher("fsm-thread-pool-dispatcher"), "terminators")
 
-    context.system.actorOf(RoundRobinPool(1).props(Props[StatsWorker]), "stats")
+    context.system.actorOf((Props[StatsWorker]), "stats")
     
     
     context.system.actorOf(ClusterSingletonManager.defaultProps(RoundRobinPool(1).props(akka.actor.Props[RecoveryWorker]), "recovery",
