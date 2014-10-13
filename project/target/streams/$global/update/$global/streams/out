@@ -1,11 +1,11 @@
-[0m[[0minfo[0m] [0mUpdating {file:/Users/brew/NPE/gits/project/}gits-build...[0m
-[0m[[0mdebug[0m] [0m:: resolving dependencies :: default#gits-build;0.1-SNAPSHOT[0m
+[0m[[0minfo[0m] [0mUpdating {file:/home/brew/git/npe/project/}npe-build...[0m
+[0m[[0mdebug[0m] [0m:: resolving dependencies :: default#npe-build;0.1-SNAPSHOT[0m
 [0m[[0mdebug[0m] [0m	confs: [compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool][0m
 [0m[[0mdebug[0m] [0m	validate = true[0m
 [0m[[0mdebug[0m] [0m	refresh = false[0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'compile'[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for default#gits-build;0.1-SNAPSHOT [compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#gits-build;0.1-SNAPSHOT->default#global-plugins;0.0 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#npe-build;0.1-SNAPSHOT [compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#npe-build;0.1-SNAPSHOT->default#global-plugins;0.0 [compile->default(compile)][0m
 [0m[[0minfo[0m] [0mResolving default#global-plugins;0.0 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: default#global-plugins;0.0 {compile=[default(compile)]}[0m
 [0m[[0mdebug[0m] [0m	found default#global-plugins;0.0 in inter-project[0m
@@ -60,16 +60,16 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scalaz#scalaz-effect_2.10;7.0.2->org.scala-lang#scala-library;2.10.1 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scalaz#scalaz-effect_2.10;7.0.2->org.scala-lang#scala-library;2.10.1 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.sbteclipse#sbteclipse-core;2.5.0->org.scalaz#scalaz-effect_2.10;7.0.2 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#gits-build;0.1-SNAPSHOT->com.typesafe.sbteclipse#sbteclipse-plugin;2.3.0 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#gits-build;0.1-SNAPSHOT->com.typesafe.sbteclipse#sbteclipse-plugin;2.5.0 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#gits-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.5.2 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#npe-build;0.1-SNAPSHOT->com.typesafe.sbteclipse#sbteclipse-plugin;2.3.0 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#npe-build;0.1-SNAPSHOT->com.typesafe.sbteclipse#sbteclipse-plugin;2.5.0 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#npe-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.5.2 [compile->default(compile)][0m
 [0m[[0minfo[0m] [0mResolving com.github.mpeltonen#sbt-idea;1.5.2 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: com.github.mpeltonen#sbt-idea;1.5.2 {compile=[default(compile)]}[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: com.github.mpeltonen#sbt-idea;1.5.2[0m
 [0m[[0mdebug[0m] [0m	typesafe-ivy-releases: revision in cache: com.github.mpeltonen#sbt-idea;1.5.2[0m
 [0m[[0mdebug[0m] [0m	found com.github.mpeltonen#sbt-idea;1.5.2 in sbt-chain[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#gits-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.5.2 [compile->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#gits-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.5.2 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#npe-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.5.2 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#npe-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.5.2 [compile->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.github.mpeltonen#sbt-idea;1.5.2->commons-io#commons-io;2.0.1 [compile->master(*)][0m
 [0m[[0minfo[0m] [0mResolving commons-io#commons-io;2.0.1 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: commons-io#commons-io;2.0.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}[0m
@@ -81,12 +81,12 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.github.mpeltonen#sbt-idea;1.5.2->commons-io#commons-io;2.0.1 [compile->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.github.mpeltonen#sbt-idea;1.5.2->commons-io#commons-io;2.0.1 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.github.mpeltonen#sbt-idea;1.5.2->commons-io#commons-io;2.0.1 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#gits-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.5.2 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#gits-build;0.1-SNAPSHOT->com.typesafe.sbteclipse#sbteclipse-plugin;2.5.0 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#npe-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.5.2 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#npe-build;0.1-SNAPSHOT->com.typesafe.sbteclipse#sbteclipse-plugin;2.5.0 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'runtime'[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for default#gits-build;0.1-SNAPSHOT [runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for default#gits-build;0.1-SNAPSHOT [compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#gits-build;0.1-SNAPSHOT->default#global-plugins;0.0 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#npe-build;0.1-SNAPSHOT [runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#npe-build;0.1-SNAPSHOT [compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#npe-build;0.1-SNAPSHOT->default#global-plugins;0.0 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies default#global-plugins;0.0->com.typesafe.sbteclipse#sbteclipse-plugin;2.5.0 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.sbteclipse#sbteclipse-plugin;2.5.0->com.typesafe.sbteclipse#sbteclipse-core;2.5.0 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.sbteclipse#sbteclipse-core;2.5.0->org.scalaz#scalaz-core_2.10;7.0.2 [compile->default(compile)][0m
@@ -109,22 +109,22 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scalaz#scalaz-effect_2.10;7.0.2->org.scala-lang#scala-library;2.10.1 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scalaz#scalaz-effect_2.10;7.0.2->org.scala-lang#scala-library;2.10.1 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.sbteclipse#sbteclipse-core;2.5.0->org.scalaz#scalaz-effect_2.10;7.0.2 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#gits-build;0.1-SNAPSHOT->com.typesafe.sbteclipse#sbteclipse-plugin;2.3.0 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#gits-build;0.1-SNAPSHOT->com.typesafe.sbteclipse#sbteclipse-plugin;2.5.0 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#gits-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.5.2 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#gits-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.5.2 [compile->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#gits-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.5.2 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#npe-build;0.1-SNAPSHOT->com.typesafe.sbteclipse#sbteclipse-plugin;2.3.0 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#npe-build;0.1-SNAPSHOT->com.typesafe.sbteclipse#sbteclipse-plugin;2.5.0 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#npe-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.5.2 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#npe-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.5.2 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#npe-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.5.2 [compile->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.github.mpeltonen#sbt-idea;1.5.2->commons-io#commons-io;2.0.1 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.github.mpeltonen#sbt-idea;1.5.2->commons-io#commons-io;2.0.1 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.github.mpeltonen#sbt-idea;1.5.2->commons-io#commons-io;2.0.1 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.github.mpeltonen#sbt-idea;1.5.2->commons-io#commons-io;2.0.1 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#gits-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.5.2 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#gits-build;0.1-SNAPSHOT->com.typesafe.sbteclipse#sbteclipse-plugin;2.5.0 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#npe-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.5.2 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#npe-build;0.1-SNAPSHOT->com.typesafe.sbteclipse#sbteclipse-plugin;2.5.0 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'test'[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for default#gits-build;0.1-SNAPSHOT [test][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for default#gits-build;0.1-SNAPSHOT [runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for default#gits-build;0.1-SNAPSHOT [compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#gits-build;0.1-SNAPSHOT->default#global-plugins;0.0 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#npe-build;0.1-SNAPSHOT [test][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#npe-build;0.1-SNAPSHOT [runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#npe-build;0.1-SNAPSHOT [compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#npe-build;0.1-SNAPSHOT->default#global-plugins;0.0 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies default#global-plugins;0.0->com.typesafe.sbteclipse#sbteclipse-plugin;2.5.0 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.sbteclipse#sbteclipse-plugin;2.5.0->com.typesafe.sbteclipse#sbteclipse-core;2.5.0 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.sbteclipse#sbteclipse-core;2.5.0->org.scalaz#scalaz-core_2.10;7.0.2 [compile->default(compile)][0m
@@ -147,30 +147,30 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scalaz#scalaz-effect_2.10;7.0.2->org.scala-lang#scala-library;2.10.1 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scalaz#scalaz-effect_2.10;7.0.2->org.scala-lang#scala-library;2.10.1 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.sbteclipse#sbteclipse-core;2.5.0->org.scalaz#scalaz-effect_2.10;7.0.2 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#gits-build;0.1-SNAPSHOT->com.typesafe.sbteclipse#sbteclipse-plugin;2.3.0 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#gits-build;0.1-SNAPSHOT->com.typesafe.sbteclipse#sbteclipse-plugin;2.5.0 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#gits-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.5.2 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#gits-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.5.2 [compile->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#gits-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.5.2 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#npe-build;0.1-SNAPSHOT->com.typesafe.sbteclipse#sbteclipse-plugin;2.3.0 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#npe-build;0.1-SNAPSHOT->com.typesafe.sbteclipse#sbteclipse-plugin;2.5.0 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#npe-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.5.2 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#npe-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.5.2 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#npe-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.5.2 [compile->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.github.mpeltonen#sbt-idea;1.5.2->commons-io#commons-io;2.0.1 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.github.mpeltonen#sbt-idea;1.5.2->commons-io#commons-io;2.0.1 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.github.mpeltonen#sbt-idea;1.5.2->commons-io#commons-io;2.0.1 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.github.mpeltonen#sbt-idea;1.5.2->commons-io#commons-io;2.0.1 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#gits-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.5.2 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#gits-build;0.1-SNAPSHOT->com.typesafe.sbteclipse#sbteclipse-plugin;2.5.0 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#npe-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.5.2 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#npe-build;0.1-SNAPSHOT->com.typesafe.sbteclipse#sbteclipse-plugin;2.5.0 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'provided'[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for default#gits-build;0.1-SNAPSHOT [provided][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#gits-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.4 [provided->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#npe-build;0.1-SNAPSHOT [provided][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#npe-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.4 [provided->default(compile)][0m
 [0m[[0minfo[0m] [0mResolving org.scala-lang#scala-library;2.10.4 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@7b9a2db8[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@79195e17[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.scala-lang#scala-library;2.10.4[0m
 [0m[[0mdebug[0m] [0m	typesafe-ivy-releases: revision in cache: org.scala-lang#scala-library;2.10.4[0m
 [0m[[0mdebug[0m] [0m	found org.scala-lang#scala-library;2.10.4 in sbt-chain[0m
 [0m[[0mdebug[0m] [0m	[2.10.4] org.scala-lang#scala-library;2.10.4[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#gits-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.4 [provided->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#gits-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.4 [provided->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#gits-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.4 [provided->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#gits-build;0.1-SNAPSHOT->org.scala-sbt#sbt;0.13.5 [provided->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#npe-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.4 [provided->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#npe-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.4 [provided->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#npe-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.4 [provided->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#npe-build;0.1-SNAPSHOT->org.scala-sbt#sbt;0.13.5 [provided->default(compile)][0m
 [0m[[0minfo[0m] [0mResolving org.scala-sbt#sbt;0.13.5 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.scala-sbt#sbt;0.13.5 {provided=[default(compile)]}[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.scala-sbt#sbt;0.13.5[0m
@@ -716,11 +716,11 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-sbt#precompiled-2_9_3;0.13.5->org.scala-lang#scala-library;2.10.4 [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-sbt#precompiled-2_9_3;0.13.5->org.scala-sbt#interface;0.13.5 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'optional'[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for default#gits-build;0.1-SNAPSHOT [optional][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#npe-build;0.1-SNAPSHOT [optional][0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'compile-internal'[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for default#gits-build;0.1-SNAPSHOT [compile-internal][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for default#gits-build;0.1-SNAPSHOT [compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#gits-build;0.1-SNAPSHOT->default#global-plugins;0.0 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#npe-build;0.1-SNAPSHOT [compile-internal][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#npe-build;0.1-SNAPSHOT [compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#npe-build;0.1-SNAPSHOT->default#global-plugins;0.0 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies default#global-plugins;0.0->com.typesafe.sbteclipse#sbteclipse-plugin;2.5.0 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.sbteclipse#sbteclipse-plugin;2.5.0->com.typesafe.sbteclipse#sbteclipse-core;2.5.0 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.sbteclipse#sbteclipse-core;2.5.0->org.scalaz#scalaz-core_2.10;7.0.2 [compile->default(compile)][0m
@@ -749,24 +749,24 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scalaz#scalaz-effect_2.10;7.0.2->org.scala-lang#scala-library;2.10.4 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scalaz#scalaz-effect_2.10;7.0.2->org.scala-lang#scala-library;2.10.4 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.sbteclipse#sbteclipse-core;2.5.0->org.scalaz#scalaz-effect_2.10;7.0.2 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#gits-build;0.1-SNAPSHOT->com.typesafe.sbteclipse#sbteclipse-plugin;2.3.0 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#gits-build;0.1-SNAPSHOT->com.typesafe.sbteclipse#sbteclipse-plugin;2.5.0 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#gits-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.5.2 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#gits-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.5.2 [compile->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#gits-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.5.2 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#npe-build;0.1-SNAPSHOT->com.typesafe.sbteclipse#sbteclipse-plugin;2.3.0 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#npe-build;0.1-SNAPSHOT->com.typesafe.sbteclipse#sbteclipse-plugin;2.5.0 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#npe-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.5.2 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#npe-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.5.2 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#npe-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.5.2 [compile->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.github.mpeltonen#sbt-idea;1.5.2->commons-io#commons-io;2.0.1 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.github.mpeltonen#sbt-idea;1.5.2->commons-io#commons-io;2.0.1 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.github.mpeltonen#sbt-idea;1.5.2->commons-io#commons-io;2.0.1 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.github.mpeltonen#sbt-idea;1.5.2->commons-io#commons-io;2.0.1 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#gits-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.5.2 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#gits-build;0.1-SNAPSHOT->com.typesafe.sbteclipse#sbteclipse-plugin;2.5.0 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for default#gits-build;0.1-SNAPSHOT [optional][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for default#gits-build;0.1-SNAPSHOT [provided][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#gits-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.4 [provided->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#gits-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.4 [provided->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#gits-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.4 [provided->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#gits-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.4 [provided->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#gits-build;0.1-SNAPSHOT->org.scala-sbt#sbt;0.13.5 [provided->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#npe-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.5.2 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#npe-build;0.1-SNAPSHOT->com.typesafe.sbteclipse#sbteclipse-plugin;2.5.0 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#npe-build;0.1-SNAPSHOT [optional][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#npe-build;0.1-SNAPSHOT [provided][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#npe-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.4 [provided->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#npe-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.4 [provided->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#npe-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.4 [provided->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#npe-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.4 [provided->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#npe-build;0.1-SNAPSHOT->org.scala-sbt#sbt;0.13.5 [provided->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-sbt#sbt;0.13.5->org.scala-lang#scala-library;2.10.4 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-sbt#sbt;0.13.5->org.scala-lang#scala-library;2.10.4 [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-sbt#sbt;0.13.5->org.scala-lang#scala-library;2.10.4 [compile->compile][0m
@@ -1087,10 +1087,10 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-sbt#precompiled-2_9_3;0.13.5->org.scala-lang#scala-library;2.10.4 [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-sbt#precompiled-2_9_3;0.13.5->org.scala-sbt#interface;0.13.5 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'runtime-internal'[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for default#gits-build;0.1-SNAPSHOT [runtime-internal][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for default#gits-build;0.1-SNAPSHOT [runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for default#gits-build;0.1-SNAPSHOT [compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#gits-build;0.1-SNAPSHOT->default#global-plugins;0.0 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#npe-build;0.1-SNAPSHOT [runtime-internal][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#npe-build;0.1-SNAPSHOT [runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#npe-build;0.1-SNAPSHOT [compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#npe-build;0.1-SNAPSHOT->default#global-plugins;0.0 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies default#global-plugins;0.0->com.typesafe.sbteclipse#sbteclipse-plugin;2.5.0 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.sbteclipse#sbteclipse-plugin;2.5.0->com.typesafe.sbteclipse#sbteclipse-core;2.5.0 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.sbteclipse#sbteclipse-core;2.5.0->org.scalaz#scalaz-core_2.10;7.0.2 [compile->default(compile)][0m
@@ -1113,24 +1113,24 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scalaz#scalaz-effect_2.10;7.0.2->org.scala-lang#scala-library;2.10.1 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scalaz#scalaz-effect_2.10;7.0.2->org.scala-lang#scala-library;2.10.1 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.sbteclipse#sbteclipse-core;2.5.0->org.scalaz#scalaz-effect_2.10;7.0.2 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#gits-build;0.1-SNAPSHOT->com.typesafe.sbteclipse#sbteclipse-plugin;2.3.0 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#gits-build;0.1-SNAPSHOT->com.typesafe.sbteclipse#sbteclipse-plugin;2.5.0 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#gits-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.5.2 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#gits-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.5.2 [compile->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#gits-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.5.2 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#npe-build;0.1-SNAPSHOT->com.typesafe.sbteclipse#sbteclipse-plugin;2.3.0 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#npe-build;0.1-SNAPSHOT->com.typesafe.sbteclipse#sbteclipse-plugin;2.5.0 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#npe-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.5.2 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#npe-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.5.2 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#npe-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.5.2 [compile->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.github.mpeltonen#sbt-idea;1.5.2->commons-io#commons-io;2.0.1 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.github.mpeltonen#sbt-idea;1.5.2->commons-io#commons-io;2.0.1 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.github.mpeltonen#sbt-idea;1.5.2->commons-io#commons-io;2.0.1 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.github.mpeltonen#sbt-idea;1.5.2->commons-io#commons-io;2.0.1 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#gits-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.5.2 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#gits-build;0.1-SNAPSHOT->com.typesafe.sbteclipse#sbteclipse-plugin;2.5.0 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for default#gits-build;0.1-SNAPSHOT [optional][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#npe-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.5.2 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#npe-build;0.1-SNAPSHOT->com.typesafe.sbteclipse#sbteclipse-plugin;2.5.0 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#npe-build;0.1-SNAPSHOT [optional][0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'test-internal'[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for default#gits-build;0.1-SNAPSHOT [test-internal][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for default#gits-build;0.1-SNAPSHOT [test][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for default#gits-build;0.1-SNAPSHOT [runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for default#gits-build;0.1-SNAPSHOT [compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#gits-build;0.1-SNAPSHOT->default#global-plugins;0.0 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#npe-build;0.1-SNAPSHOT [test-internal][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#npe-build;0.1-SNAPSHOT [test][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#npe-build;0.1-SNAPSHOT [runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#npe-build;0.1-SNAPSHOT [compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#npe-build;0.1-SNAPSHOT->default#global-plugins;0.0 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies default#global-plugins;0.0->com.typesafe.sbteclipse#sbteclipse-plugin;2.5.0 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.sbteclipse#sbteclipse-plugin;2.5.0->com.typesafe.sbteclipse#sbteclipse-core;2.5.0 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.sbteclipse#sbteclipse-core;2.5.0->org.scalaz#scalaz-core_2.10;7.0.2 [compile->default(compile)][0m
@@ -1159,24 +1159,24 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scalaz#scalaz-effect_2.10;7.0.2->org.scala-lang#scala-library;2.10.4 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scalaz#scalaz-effect_2.10;7.0.2->org.scala-lang#scala-library;2.10.4 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.sbteclipse#sbteclipse-core;2.5.0->org.scalaz#scalaz-effect_2.10;7.0.2 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#gits-build;0.1-SNAPSHOT->com.typesafe.sbteclipse#sbteclipse-plugin;2.3.0 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#gits-build;0.1-SNAPSHOT->com.typesafe.sbteclipse#sbteclipse-plugin;2.5.0 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#gits-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.5.2 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#gits-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.5.2 [compile->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#gits-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.5.2 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#npe-build;0.1-SNAPSHOT->com.typesafe.sbteclipse#sbteclipse-plugin;2.3.0 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#npe-build;0.1-SNAPSHOT->com.typesafe.sbteclipse#sbteclipse-plugin;2.5.0 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#npe-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.5.2 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#npe-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.5.2 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#npe-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.5.2 [compile->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.github.mpeltonen#sbt-idea;1.5.2->commons-io#commons-io;2.0.1 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.github.mpeltonen#sbt-idea;1.5.2->commons-io#commons-io;2.0.1 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.github.mpeltonen#sbt-idea;1.5.2->commons-io#commons-io;2.0.1 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.github.mpeltonen#sbt-idea;1.5.2->commons-io#commons-io;2.0.1 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#gits-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.5.2 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#gits-build;0.1-SNAPSHOT->com.typesafe.sbteclipse#sbteclipse-plugin;2.5.0 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for default#gits-build;0.1-SNAPSHOT [optional][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for default#gits-build;0.1-SNAPSHOT [provided][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#gits-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.4 [provided->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#gits-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.4 [provided->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#gits-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.4 [provided->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#gits-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.4 [provided->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#gits-build;0.1-SNAPSHOT->org.scala-sbt#sbt;0.13.5 [provided->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#npe-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.5.2 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#npe-build;0.1-SNAPSHOT->com.typesafe.sbteclipse#sbteclipse-plugin;2.5.0 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#npe-build;0.1-SNAPSHOT [optional][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#npe-build;0.1-SNAPSHOT [provided][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#npe-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.4 [provided->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#npe-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.4 [provided->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#npe-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.4 [provided->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#npe-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.4 [provided->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#npe-build;0.1-SNAPSHOT->org.scala-sbt#sbt;0.13.5 [provided->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-sbt#sbt;0.13.5->org.scala-lang#scala-library;2.10.4 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-sbt#sbt;0.13.5->org.scala-lang#scala-library;2.10.4 [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-sbt#sbt;0.13.5->org.scala-lang#scala-library;2.10.4 [compile->compile][0m
@@ -1497,18 +1497,18 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-sbt#precompiled-2_9_3;0.13.5->org.scala-lang#scala-library;2.10.4 [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-sbt#precompiled-2_9_3;0.13.5->org.scala-sbt#interface;0.13.5 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'plugin'[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for default#gits-build;0.1-SNAPSHOT [plugin][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#npe-build;0.1-SNAPSHOT [plugin][0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'sources'[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for default#gits-build;0.1-SNAPSHOT [sources][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#npe-build;0.1-SNAPSHOT [sources][0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'docs'[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for default#gits-build;0.1-SNAPSHOT [docs][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#npe-build;0.1-SNAPSHOT [docs][0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'pom'[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for default#gits-build;0.1-SNAPSHOT [pom][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#npe-build;0.1-SNAPSHOT [pom][0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'scala-tool'[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for default#gits-build;0.1-SNAPSHOT [scala-tool][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#gits-build;0.1-SNAPSHOT->org.scala-lang#scala-compiler;2.10.4 [scala-tool->default][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#gits-build;0.1-SNAPSHOT->org.scala-lang#scala-compiler;2.10.4 [scala-tool->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#gits-build;0.1-SNAPSHOT->org.scala-lang#scala-compiler;2.10.4 [scala-tool->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#npe-build;0.1-SNAPSHOT [scala-tool][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#npe-build;0.1-SNAPSHOT->org.scala-lang#scala-compiler;2.10.4 [scala-tool->default][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#npe-build;0.1-SNAPSHOT->org.scala-lang#scala-compiler;2.10.4 [scala-tool->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#npe-build;0.1-SNAPSHOT->org.scala-lang#scala-compiler;2.10.4 [scala-tool->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.4->org.scala-lang#scala-library;2.10.4 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.4->org.scala-lang#scala-library;2.10.4 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.4->org.scala-lang#scala-library;2.10.4 [compile->default][0m
@@ -1526,8 +1526,8 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.4->org.scala-lang#scala-reflect;2.10.4 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.4->org.scala-lang#scala-library;2.10.4 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.4->org.scala-lang#scala-library;2.10.4 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#gits-build;0.1-SNAPSHOT->org.scala-lang#scala-compiler;2.10.4 [scala-tool->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#gits-build;0.1-SNAPSHOT->org.scala-lang#scala-compiler;2.10.4 [scala-tool->optional(default)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#npe-build;0.1-SNAPSHOT->org.scala-lang#scala-compiler;2.10.4 [scala-tool->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#npe-build;0.1-SNAPSHOT->org.scala-lang#scala-compiler;2.10.4 [scala-tool->optional(default)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.4->org.scala-lang#jline;2.10.4 [optional->master(*)][0m
 [0m[[0minfo[0m] [0mResolving org.scala-lang#jline;2.10.4 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.scala-lang#jline;2.10.4 {optional=[compile(*), master(*)]}[0m
@@ -1542,11 +1542,11 @@
 [0m[[0mdebug[0m] [0m	typesafe-ivy-releases: revision in cache: org.fusesource.jansi#jansi;1.4[0m
 [0m[[0mdebug[0m] [0m	found org.fusesource.jansi#jansi;1.4 in sbt-chain[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#jline;2.10.4->org.fusesource.jansi#jansi;1.4 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#gits-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.4 [scala-tool->default][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#gits-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.4 [scala-tool->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#gits-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.4 [scala-tool->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#gits-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.4 [scala-tool->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#gits-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.4 [scala-tool->optional(default)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#npe-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.4 [scala-tool->default][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#npe-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.4 [scala-tool->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#npe-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.4 [scala-tool->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#npe-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.4 [scala-tool->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#npe-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.4 [scala-tool->optional(default)][0m
 [0m[[0mdebug[0m] [0m	resolved ivy file produced in cache[0m
 [0m[[0mdebug[0m] [0m:: downloading artifacts ::[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.github.mpeltonen#sbt-idea;1.5.2!sbt-idea.jar[0m
@@ -1604,19 +1604,19 @@
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-sbt#apply-macro;0.13.5!apply-macro.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#jline;2.10.4!jline.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.fusesource.jansi#jansi;1.4!jansi.jar[0m
-[0m[[0mdebug[0m] [0m:: resolution report :: resolve 1604ms :: artifacts dl 50ms[0m
-[0m[[0mdebug[0m] [0m	report for default#gits-build;0.1-SNAPSHOT compile produced in /Users/brew/NPE/gits/project/target/resolution-cache/reports/default-gits-build-compile.xml[0m
-[0m[[0mdebug[0m] [0m	report for default#gits-build;0.1-SNAPSHOT runtime produced in /Users/brew/NPE/gits/project/target/resolution-cache/reports/default-gits-build-runtime.xml[0m
-[0m[[0mdebug[0m] [0m	report for default#gits-build;0.1-SNAPSHOT test produced in /Users/brew/NPE/gits/project/target/resolution-cache/reports/default-gits-build-test.xml[0m
-[0m[[0mdebug[0m] [0m	report for default#gits-build;0.1-SNAPSHOT provided produced in /Users/brew/NPE/gits/project/target/resolution-cache/reports/default-gits-build-provided.xml[0m
-[0m[[0mdebug[0m] [0m	report for default#gits-build;0.1-SNAPSHOT optional produced in /Users/brew/NPE/gits/project/target/resolution-cache/reports/default-gits-build-optional.xml[0m
-[0m[[0mdebug[0m] [0m	report for default#gits-build;0.1-SNAPSHOT compile-internal produced in /Users/brew/NPE/gits/project/target/resolution-cache/reports/default-gits-build-compile-internal.xml[0m
-[0m[[0mdebug[0m] [0m	report for default#gits-build;0.1-SNAPSHOT runtime-internal produced in /Users/brew/NPE/gits/project/target/resolution-cache/reports/default-gits-build-runtime-internal.xml[0m
-[0m[[0mdebug[0m] [0m	report for default#gits-build;0.1-SNAPSHOT test-internal produced in /Users/brew/NPE/gits/project/target/resolution-cache/reports/default-gits-build-test-internal.xml[0m
-[0m[[0mdebug[0m] [0m	report for default#gits-build;0.1-SNAPSHOT plugin produced in /Users/brew/NPE/gits/project/target/resolution-cache/reports/default-gits-build-plugin.xml[0m
-[0m[[0mdebug[0m] [0m	report for default#gits-build;0.1-SNAPSHOT sources produced in /Users/brew/NPE/gits/project/target/resolution-cache/reports/default-gits-build-sources.xml[0m
-[0m[[0mdebug[0m] [0m	report for default#gits-build;0.1-SNAPSHOT docs produced in /Users/brew/NPE/gits/project/target/resolution-cache/reports/default-gits-build-docs.xml[0m
-[0m[[0mdebug[0m] [0m	report for default#gits-build;0.1-SNAPSHOT pom produced in /Users/brew/NPE/gits/project/target/resolution-cache/reports/default-gits-build-pom.xml[0m
-[0m[[0mdebug[0m] [0m	report for default#gits-build;0.1-SNAPSHOT scala-tool produced in /Users/brew/NPE/gits/project/target/resolution-cache/reports/default-gits-build-scala-tool.xml[0m
-[0m[[0mdebug[0m] [0m	resolve done (1604ms resolve - 50ms download)[0m
+[0m[[0mdebug[0m] [0m:: resolution report :: resolve 744ms :: artifacts dl 46ms[0m
+[0m[[0mdebug[0m] [0m	report for default#npe-build;0.1-SNAPSHOT compile produced in /home/brew/git/npe/project/target/resolution-cache/reports/default-npe-build-compile.xml[0m
+[0m[[0mdebug[0m] [0m	report for default#npe-build;0.1-SNAPSHOT runtime produced in /home/brew/git/npe/project/target/resolution-cache/reports/default-npe-build-runtime.xml[0m
+[0m[[0mdebug[0m] [0m	report for default#npe-build;0.1-SNAPSHOT test produced in /home/brew/git/npe/project/target/resolution-cache/reports/default-npe-build-test.xml[0m
+[0m[[0mdebug[0m] [0m	report for default#npe-build;0.1-SNAPSHOT provided produced in /home/brew/git/npe/project/target/resolution-cache/reports/default-npe-build-provided.xml[0m
+[0m[[0mdebug[0m] [0m	report for default#npe-build;0.1-SNAPSHOT optional produced in /home/brew/git/npe/project/target/resolution-cache/reports/default-npe-build-optional.xml[0m
+[0m[[0mdebug[0m] [0m	report for default#npe-build;0.1-SNAPSHOT compile-internal produced in /home/brew/git/npe/project/target/resolution-cache/reports/default-npe-build-compile-internal.xml[0m
+[0m[[0mdebug[0m] [0m	report for default#npe-build;0.1-SNAPSHOT runtime-internal produced in /home/brew/git/npe/project/target/resolution-cache/reports/default-npe-build-runtime-internal.xml[0m
+[0m[[0mdebug[0m] [0m	report for default#npe-build;0.1-SNAPSHOT test-internal produced in /home/brew/git/npe/project/target/resolution-cache/reports/default-npe-build-test-internal.xml[0m
+[0m[[0mdebug[0m] [0m	report for default#npe-build;0.1-SNAPSHOT plugin produced in /home/brew/git/npe/project/target/resolution-cache/reports/default-npe-build-plugin.xml[0m
+[0m[[0mdebug[0m] [0m	report for default#npe-build;0.1-SNAPSHOT sources produced in /home/brew/git/npe/project/target/resolution-cache/reports/default-npe-build-sources.xml[0m
+[0m[[0mdebug[0m] [0m	report for default#npe-build;0.1-SNAPSHOT docs produced in /home/brew/git/npe/project/target/resolution-cache/reports/default-npe-build-docs.xml[0m
+[0m[[0mdebug[0m] [0m	report for default#npe-build;0.1-SNAPSHOT pom produced in /home/brew/git/npe/project/target/resolution-cache/reports/default-npe-build-pom.xml[0m
+[0m[[0mdebug[0m] [0m	report for default#npe-build;0.1-SNAPSHOT scala-tool produced in /home/brew/git/npe/project/target/resolution-cache/reports/default-npe-build-scala-tool.xml[0m
+[0m[[0mdebug[0m] [0m	resolve done (744ms resolve - 46ms download)[0m
 [0m[[0minfo[0m] [0mDone updating.[0m

@@ -920,26 +920,19 @@ var speedoptions = {
 			var rawdata=[]
 			$.each(keymap,function(key,value){
 				//console.log("::"+JSON.stringify(value))
-				var v0=0
-				if(key=="End"||key=="End(gateway)"||key.length==0)return
-				if(value[0])v0=value[0]
-				rawdata.push({"taskname":key,"i0":v0,"i1":value[1],"i2":value[2],
-					"i3":value[3],"r":Math.round(value[3]*100.0/(value[3]+v0))})
-			})
-			rawdata.sort(function(a,b){
-				return b["i0"]-a["i0"]
-			})
-			var sorteddata=[]
-			$.each(rawdata,function(index,row){
-				if(index>=8&&row["i0"]==0)return
-				sorteddata.push(row)
+				if(!key||key=="null")key="默认"
+				var v=[0,0,0,0]
+				for(var i=0;i<v.length;i++)if(value[i])v[i]=value[i]
+				
+				rawdata.push({"name":key,"newcc":v[0],"obtaincc":v[1],"submitcc":v[2],
+					"termcc":v[3]})
 			})
 
-			//console.log(JSON.stringify(sorteddata))
-			
-			var inner=tbform(sorteddata)
+			console.log(JSON.stringify(rawdata))
+		
+		  
 			//console.log(inner)
-			$("#__div_qstatbyname").html(inner)
+			//$("#__div_qstatbyname").html(inner)
 
 		})
 		
