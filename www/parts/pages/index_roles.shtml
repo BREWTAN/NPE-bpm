@@ -1,0 +1,45 @@
+<script type="text/x-template" id="__dust_qstatbyname" >
+
+<table class="table table-bordered table-striped">
+	<thead class="thin-border-bottom">
+		<tr>
+			<th>
+				<i class="ace-icon fa fa-caret-right blue"></i>任务名称
+			</th>
+			<th class="">
+				<i class="ace-icon fa fa-caret-right blue"></i>队列个数
+			</th>
+
+			<th >
+				<i class="ace-icon fa fa-caret-right blue"></i>完成比例
+			</th>
+			<th >
+				<i class="ace-icon fa fa-caret-right blue"></i>完成总数
+			</th>
+			
+		</tr>
+	</thead>
+
+	<tbody>
+		
+		{#data}
+		<tr>
+			<td>{taskname}</td>
+			<td>
+				<span class="label label-info arrowed-right arrowed-in">{0}</span>
+			</td>
+			<td>
+				<b class="green">{3}/{0}</b>
+			</td>
+			<td>
+				<b class="green">{3}</b>
+			</td>
+
+		</tr>
+		{/data}
+	
+		
+	</tbody>
+</table>
+</script>
+

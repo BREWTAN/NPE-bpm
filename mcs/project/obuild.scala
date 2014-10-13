@@ -1,5 +1,9 @@
 import sbt._
 import Keys._
-object obuild extends Build {
 
+object ApplicationBuild extends Build {
+
+  lazy val appVersion = "1.0.0"
+
+ 
 }

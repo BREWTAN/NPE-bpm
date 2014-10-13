@@ -1,6 +1,6 @@
 // @SOURCE:/Users/brew/NPE/gits/mcs/conf/routes
-// @HASH:b090a9d9ba30852f5cf775ce8904065377e624c6
-// @DATE:Sat Oct 11 05:08:03 GMT 2014
+// @HASH:789c4b4f8f736a1947d0c986ced5f41833e5b0eb
+// @DATE:Mon Oct 13 09:53:30 GMT 2014
 
 import Routes.{prefix => _prefix, defaultPrefix => _defaultPrefix}
 import play.core._
@@ -14,6 +14,8 @@ import _root_.controllers.Assets.Asset
 import Router.queryString
 
 
+// @LINE:66
+// @LINE:65
 // @LINE:60
 // @LINE:58
 // @LINE:57
@@ -185,6 +187,28 @@ def getJson(): Call = {
 }
                           
 
+// @LINE:66
+// @LINE:65
+class ReverseQueueViewer {
+
+
+// @LINE:66
+def statsByCenter(): Call = {
+   import ReverseRouteContext.empty
+   Call("GET", _prefix + { _defaultPrefix } + "qstatbycenter")
+}
+                        
+
+// @LINE:65
+def statsByName(): Call = {
+   import ReverseRouteContext.empty
+   Call("GET", _prefix + { _defaultPrefix } + "qstatbyname")
+}
+                        
+
+}
+                          
+
 // @LINE:34
 // @LINE:32
 // @LINE:30
@@ -256,6 +280,8 @@ def index(): Call = {
                   
 
 
+// @LINE:66
+// @LINE:65
 // @LINE:60
 // @LINE:58
 // @LINE:57
@@ -484,6 +510,36 @@ def getJson : JavascriptReverseRoute = JavascriptReverseRoute(
 }
               
 
+// @LINE:66
+// @LINE:65
+class ReverseQueueViewer {
+
+
+// @LINE:66
+def statsByCenter : JavascriptReverseRoute = JavascriptReverseRoute(
+   "controllers.QueueViewer.statsByCenter",
+   """
+      function() {
+      return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "qstatbycenter"})
+      }
+   """
+)
+                        
+
+// @LINE:65
+def statsByName : JavascriptReverseRoute = JavascriptReverseRoute(
+   "controllers.QueueViewer.statsByName",
+   """
+      function() {
+      return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "qstatbyname"})
+      }
+   """
+)
+                        
+
+}
+              
+
 // @LINE:34
 // @LINE:32
 // @LINE:30
@@ -583,6 +639,8 @@ def index : JavascriptReverseRoute = JavascriptReverseRoute(
         
 
 
+// @LINE:66
+// @LINE:65
 // @LINE:60
 // @LINE:58
 // @LINE:57
@@ -736,6 +794,27 @@ class ReverseTest1 {
 // @LINE:16
 def getJson(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.Test1.getJson(), HandlerDef(this.getClass.getClassLoader, "", "controllers.Test1", "getJson", Seq(), "GET", """ Test API""", _prefix + """test1""")
+)
+                      
+
+}
+                          
+
+// @LINE:66
+// @LINE:65
+class ReverseQueueViewer {
+
+
+// @LINE:66
+def statsByCenter(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.QueueViewer.statsByCenter(), HandlerDef(this.getClass.getClassLoader, "", "controllers.QueueViewer", "statsByCenter", Seq(), "GET", """""", _prefix + """qstatbycenter""")
+)
+                      
+
+// @LINE:65
+def statsByName(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.QueueViewer.statsByName(), HandlerDef(this.getClass.getClassLoader, "", "controllers.QueueViewer", "statsByName", Seq(), "GET", """################
+ queue views""", _prefix + """qstatbyname""")
 )
                       
 

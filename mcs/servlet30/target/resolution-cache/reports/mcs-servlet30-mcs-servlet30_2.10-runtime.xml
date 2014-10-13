@@ -1,0 +1,797 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="ivy-report.xsl"?>
+<ivy-report version="1.0">
+	<info
+		organisation="mcs-servlet30"
+		module="mcs-servlet30_2.10"
+		revision="1.0.0"
+		conf="runtime"
+		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool"
+		date="20141013133753"/>
+	<dependencies>
+		<module organisation="com.github.play2war.ext" name="redirect-playlogger_2.10">
+			<revision name="1.0.1" status="release" pubdate="20130104002819" resolver="public" artresolver="public" homepage="https://github.com/dlecan/redirect-playlogger" downloaded="true" searched="true" default="false" conf="default(compile), default, compile, runtime, master" position="57">
+				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<metadata-artifact status="successful" details="" size="1599" time="905" location="/JEE/play-2.2.5/framework/../repository/cache/com.github.play2war.ext/redirect-playlogger_2.10/ivy-1.0.1.xml" searched="true" original-local-location="/JEE/play-2.2.5/framework/../repository/cache/com.github.play2war.ext/redirect-playlogger_2.10/ivy-1.0.1.xml.original" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/com/github/play2war/ext/redirect-playlogger_2.10/1.0.1/redirect-playlogger_2.10-1.0.1.pom"/>
+				<caller organisation="mcs-servlet30" name="mcs-servlet30_2.10" conf="compile, runtime" rev="1.0.1" rev-constraint-default="1.0.1" rev-constraint-dynamic="1.0.1" callerrev="1.0.0"/>
+				<artifacts>
+					<artifact name="redirect-playlogger_2.10" type="jar" ext="jar" status="successful" details="" size="5831" time="952" location="/JEE/play-2.2.5/framework/../repository/cache/com.github.play2war.ext/redirect-playlogger_2.10/jars/redirect-playlogger_2.10-1.0.1.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/com/github/play2war/ext/redirect-playlogger_2.10/1.0.1/redirect-playlogger_2.10-1.0.1.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.github.play2war" name="play2-war-core-servlet30_2.10">
+			<revision name="1.3-beta3-SNAPSHOT" status="integration" pubdate="20141004171025" resolver="sonatype-snapshots" artresolver="sonatype-snapshots" homepage="https://github.com/play2war/play2-war-plugin" downloaded="true" searched="true" default="false" conf="default(compile), default, compile, runtime, master" position="55">
+				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<metadata-artifact status="successful" details="" size="2442" time="1370" location="/JEE/play-2.2.5/framework/../repository/cache/com.github.play2war/play2-war-core-servlet30_2.10/ivy-1.3-beta3-SNAPSHOT.xml" searched="true" original-local-location="/JEE/play-2.2.5/framework/../repository/cache/com.github.play2war/play2-war-core-servlet30_2.10/ivy-1.3-beta3-SNAPSHOT.xml.original" origin-is-local="false" origin-location="https://oss.sonatype.org/content/repositories/snapshots/com/github/play2war/play2-war-core-servlet30_2.10/1.3-beta3-SNAPSHOT/play2-war-core-servlet30_2.10-1.3-beta3-SNAPSHOT.pom"/>
+				<caller organisation="mcs-servlet30" name="mcs-servlet30_2.10" conf="compile, runtime" rev="1.3-beta3-SNAPSHOT" rev-constraint-default="1.3-beta3-SNAPSHOT" rev-constraint-dynamic="1.3-beta3-SNAPSHOT" callerrev="1.0.0"/>
+				<artifacts>
+					<artifact name="play2-war-core-servlet30_2.10" type="jar" ext="jar" status="successful" details="" size="18723" time="1571" location="/JEE/play-2.2.5/framework/../repository/cache/com.github.play2war/play2-war-core-servlet30_2.10/jars/play2-war-core-servlet30_2.10-1.3-beta3-SNAPSHOT.jar">
+						<origin-location is-local="false" location="https://oss.sonatype.org/content/repositories/snapshots/com/github/play2war/play2-war-core-servlet30_2.10/1.3-beta3-SNAPSHOT/play2-war-core-servlet30_2.10-1.3-beta3-SNAPSHOT.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.github.play2war" name="play2-war-core-common_2.10">
+			<revision name="1.3-beta3-SNAPSHOT" status="integration" pubdate="20141004171019" resolver="sonatype-snapshots" artresolver="sonatype-snapshots" homepage="https://github.com/play2war/play2-war-plugin" downloaded="true" searched="true" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="56">
+				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<metadata-artifact status="successful" details="" size="2217" time="929" location="/JEE/play-2.2.5/framework/../repository/cache/com.github.play2war/play2-war-core-common_2.10/ivy-1.3-beta3-SNAPSHOT.xml" searched="true" original-local-location="/JEE/play-2.2.5/framework/../repository/cache/com.github.play2war/play2-war-core-common_2.10/ivy-1.3-beta3-SNAPSHOT.xml.original" origin-is-local="false" origin-location="https://oss.sonatype.org/content/repositories/snapshots/com/github/play2war/play2-war-core-common_2.10/1.3-beta3-SNAPSHOT/play2-war-core-common_2.10-1.3-beta3-SNAPSHOT.pom"/>
+				<caller organisation="com.github.play2war" name="play2-war-core-servlet30_2.10" conf="default, compile, runtime, master" rev="1.3-beta3-SNAPSHOT" rev-constraint-default="1.3-beta3-SNAPSHOT" rev-constraint-dynamic="1.3-beta3-SNAPSHOT" callerrev="1.3-beta3-SNAPSHOT"/>
+				<artifacts>
+					<artifact name="play2-war-core-common_2.10" type="jar" ext="jar" status="successful" details="" size="146776" time="4268" location="/JEE/play-2.2.5/framework/../repository/cache/com.github.play2war/play2-war-core-common_2.10/jars/play2-war-core-common_2.10-1.3-beta3-SNAPSHOT.jar">
+						<origin-location is-local="false" location="https://oss.sonatype.org/content/repositories/snapshots/com/github/play2war/play2-war-core-common_2.10/1.3-beta3-SNAPSHOT/play2-war-core-common_2.10-1.3-beta3-SNAPSHOT.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="mcs-common" name="mcs-common_2.10">
+			<revision name="1.0.0" status="integration" pubdate="20141013132227" resolver="inter-project" artresolver="inter-project" downloaded="false" searched="false" default="false" conf="default(compile), compile" position="1">
+				<metadata-artifact status="failed" details="" size="0" time="0" searched="false"/>
+				<caller organisation="mcs-servlet30" name="mcs-servlet30_2.10" conf="compile, runtime" rev="1.0.0" rev-constraint-default="1.0.0" rev-constraint-dynamic="1.0.0" callerrev="1.0.0"/>
+				<artifacts>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.typesafe.play" name="play-java-ws_2.10">
+			<revision name="2.3.3" status="release" pubdate="20141013132336" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="54">
+				<metadata-artifact status="no" details="" size="3996" time="0" location="/JEE/play-2.2.5/framework/../repository/cache/com.typesafe.play/play-java-ws_2.10/ivy-2.3.3.xml" searched="false" origin-is-local="false" origin-location="http://repo.typesafe.com/typesafe/releases/com/typesafe/play/play-java-ws_2.10/2.3.3/play-java-ws_2.10-2.3.3.pom"/>
+				<caller organisation="mcs-common" name="mcs-common_2.10" conf="compile" rev="2.3.3" rev-constraint-default="2.3.3" rev-constraint-dynamic="2.3.3" callerrev="1.0.0"/>
+				<caller organisation="mcs-servlet30" name="mcs-servlet30_2.10" conf="compile, runtime" rev="2.3.3" rev-constraint-default="2.3.3" rev-constraint-dynamic="2.3.3" callerrev="1.0.0"/>
+				<artifacts>
+					<artifact name="play-java-ws_2.10" type="jar" ext="jar" status="no" details="" size="28465" time="0" location="/JEE/play-2.2.5/framework/../repository/cache/com.typesafe.play/play-java-ws_2.10/jars/play-java-ws_2.10-2.3.3.jar">
+						<origin-location is-local="false" location="http://repo.typesafe.com/typesafe/releases/com/typesafe/play/play-java-ws_2.10/2.3.3/play-java-ws_2.10-2.3.3.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.typesafe.play" name="play-ws_2.10">
+			<revision name="2.3.3" status="release" pubdate="20141013132330" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, master(*), compile(*), runtime, runtime(*), master" position="47">
+				<metadata-artifact status="no" details="" size="3816" time="0" location="/JEE/play-2.2.5/framework/../repository/cache/com.typesafe.play/play-ws_2.10/ivy-2.3.3.xml" searched="false" origin-is-local="false" origin-location="http://repo.typesafe.com/typesafe/releases/com/typesafe/play/play-ws_2.10/2.3.3/play-ws_2.10-2.3.3.pom"/>
+				<caller organisation="mcs-common" name="mcs-common_2.10" conf="compile" rev="2.3.3" rev-constraint-default="2.3.3" rev-constraint-dynamic="2.3.3" callerrev="1.0.0"/>
+				<caller organisation="mcs-servlet30" name="mcs-servlet30_2.10" conf="compile, runtime" rev="2.3.3" rev-constraint-default="2.3.3" rev-constraint-dynamic="2.3.3" callerrev="1.0.0"/>
+				<caller organisation="com.typesafe.play" name="play-java-ws_2.10" conf="default, compile, runtime, master" rev="2.3.3" rev-constraint-default="2.3.3" rev-constraint-dynamic="2.3.3" callerrev="2.3.3"/>
+				<artifacts>
+					<artifact name="play-ws_2.10" type="jar" ext="jar" status="no" details="" size="610848" time="0" location="/JEE/play-2.2.5/framework/../repository/cache/com.typesafe.play/play-ws_2.10/jars/play-ws_2.10-2.3.3.jar">
+						<origin-location is-local="false" location="http://repo.typesafe.com/typesafe/releases/com/typesafe/play/play-ws_2.10/2.3.3/play-ws_2.10-2.3.3.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="oauth.signpost" name="signpost-commonshttp4">
+			<revision name="1.2.1.2" status="release" pubdate="20141005224134" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="50">
+				<metadata-artifact status="no" details="" size="3703" time="0" location="/JEE/play-2.2.5/framework/../repository/cache/oauth.signpost/signpost-commonshttp4/ivy-1.2.1.2.xml" searched="false" origin-is-local="true" origin-location="/JEE/play-2.2.5/repository/local/oauth.signpost/signpost-commonshttp4/1.2.1.2/ivys/ivy.xml"/>
+				<caller organisation="com.typesafe.play" name="play-java-ws_2.10" conf="default, compile, runtime, master" rev="1.2.1.2" rev-constraint-default="1.2.1.2" rev-constraint-dynamic="1.2.1.2" callerrev="2.3.3"/>
+				<caller organisation="com.typesafe.play" name="play-ws_2.10" conf="default, compile, runtime, master" rev="1.2.1.2" rev-constraint-default="1.2.1.2" rev-constraint-dynamic="1.2.1.2" callerrev="2.3.3"/>
+				<artifacts>
+					<artifact name="signpost-commonshttp4" type="jar" ext="jar" status="no" details="" size="6512" time="0" location="/JEE/play-2.2.5/repository/local/oauth.signpost/signpost-commonshttp4/1.2.1.2/jars/signpost-commonshttp4.jar">
+						<origin-location is-local="true" location="/JEE/play-2.2.5/repository/local/oauth.signpost/signpost-commonshttp4/1.2.1.2/jars/signpost-commonshttp4.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.apache.httpcomponents" name="httpclient">
+			<revision name="4.0.1" status="release" pubdate="20141005231021" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://hc.apache.org/httpcomponents-client" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="52">
+				<license name="Apache License" url="../LICENSE.txt"/>
+				<metadata-artifact status="no" details="" size="4937" time="0" location="/JEE/play-2.2.5/framework/../repository/cache/org.apache.httpcomponents/httpclient/ivy-4.0.1.xml" searched="false" origin-is-local="true" origin-location="/JEE/play-2.2.5/repository/local/org.apache.httpcomponents/httpclient/4.0.1/ivys/ivy.xml"/>
+				<caller organisation="oauth.signpost" name="signpost-commonshttp4" conf="compile, runtime" rev="4.0.1" rev-constraint-default="4.0.1" rev-constraint-dynamic="4.0.1" callerrev="1.2.1.2"/>
+				<artifacts>
+					<artifact name="httpclient" type="jar" ext="jar" status="no" details="" size="291037" time="0" location="/JEE/play-2.2.5/repository/local/org.apache.httpcomponents/httpclient/4.0.1/jars/httpclient.jar">
+						<origin-location is-local="true" location="/JEE/play-2.2.5/repository/local/org.apache.httpcomponents/httpclient/4.0.1/jars/httpclient.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.apache.httpcomponents" name="httpcore">
+			<revision name="4.0.1" status="release" pubdate="20141005231016" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://hc.apache.org/httpcomponents-core/" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="51">
+				<license name="Apache License" url="http://www.apache.org/licenses/LICENSE-2.0.html"/>
+				<metadata-artifact status="no" details="" size="4237" time="0" location="/JEE/play-2.2.5/framework/../repository/cache/org.apache.httpcomponents/httpcore/ivy-4.0.1.xml" searched="false" origin-is-local="true" origin-location="/JEE/play-2.2.5/repository/local/org.apache.httpcomponents/httpcore/4.0.1/ivys/ivy.xml"/>
+				<caller organisation="oauth.signpost" name="signpost-commonshttp4" conf="compile, runtime" rev="4.0.1" rev-constraint-default="4.0.1" rev-constraint-dynamic="4.0.1" callerrev="1.2.1.2"/>
+				<caller organisation="org.apache.httpcomponents" name="httpclient" conf="compile, runtime" rev="4.0.1" rev-constraint-default="4.0.1" rev-constraint-dynamic="4.0.1" callerrev="4.0.1"/>
+				<artifacts>
+					<artifact name="httpcore" type="jar" ext="jar" status="no" details="" size="172888" time="0" location="/JEE/play-2.2.5/repository/local/org.apache.httpcomponents/httpcore/4.0.1/jars/httpcore.jar">
+						<origin-location is-local="true" location="/JEE/play-2.2.5/repository/local/org.apache.httpcomponents/httpcore/4.0.1/jars/httpcore.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="oauth.signpost" name="signpost-core">
+			<revision name="1.2.1.2" status="release" pubdate="20141005224108" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="49">
+				<metadata-artifact status="no" details="" size="3129" time="0" location="/JEE/play-2.2.5/framework/../repository/cache/oauth.signpost/signpost-core/ivy-1.2.1.2.xml" searched="false" origin-is-local="true" origin-location="/JEE/play-2.2.5/repository/local/oauth.signpost/signpost-core/1.2.1.2/ivys/ivy.xml"/>
+				<caller organisation="oauth.signpost" name="signpost-commonshttp4" conf="compile, runtime" rev="1.2.1.2" rev-constraint-default="1.2.1.2" rev-constraint-dynamic="1.2.1.2" callerrev="1.2.1.2"/>
+				<caller organisation="com.typesafe.play" name="play-java-ws_2.10" conf="default, compile, runtime, master" rev="1.2.1.2" rev-constraint-default="1.2.1.2" rev-constraint-dynamic="1.2.1.2" callerrev="2.3.3"/>
+				<caller organisation="com.typesafe.play" name="play-ws_2.10" conf="default, compile, runtime, master" rev="1.2.1.2" rev-constraint-default="1.2.1.2" rev-constraint-dynamic="1.2.1.2" callerrev="2.3.3"/>
+				<artifacts>
+					<artifact name="signpost-core" type="jar" ext="jar" status="no" details="" size="45277" time="0" location="/JEE/play-2.2.5/repository/local/oauth.signpost/signpost-core/1.2.1.2/jars/signpost-core.jar">
+						<origin-location is-local="true" location="/JEE/play-2.2.5/repository/local/oauth.signpost/signpost-core/1.2.1.2/jars/signpost-core.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.ning" name="async-http-client">
+			<revision name="1.8.8" status="release" pubdate="20140428171702" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://github.com/AsyncHttpClient/async-http-client" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="48">
+				<license name="Apache License 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.html"/>
+				<metadata-artifact status="no" details="" size="6744" time="0" location="/JEE/play-2.2.5/framework/../repository/cache/com.ning/async-http-client/ivy-1.8.8.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/com/ning/async-http-client/1.8.8/async-http-client-1.8.8.pom"/>
+				<caller organisation="com.typesafe.play" name="play-java-ws_2.10" conf="default, compile, runtime, master" rev="1.8.8" rev-constraint-default="1.8.8" rev-constraint-dynamic="1.8.8" callerrev="2.3.3"/>
+				<caller organisation="com.typesafe.play" name="play-ws_2.10" conf="default, compile, runtime, master" rev="1.8.8" rev-constraint-default="1.8.8" rev-constraint-dynamic="1.8.8" callerrev="2.3.3"/>
+				<artifacts>
+					<artifact name="async-http-client" type="jar" ext="jar" status="no" details="" size="526740" time="0" location="/JEE/play-2.2.5/framework/../repository/cache/com.ning/async-http-client/jars/async-http-client-1.8.8.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/com/ning/async-http-client/1.8.8/async-http-client-1.8.8.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.typesafe.play" name="play-java_2.10">
+			<revision name="2.3.3" status="release" pubdate="20141013132306" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, master(*), compile(*), runtime, runtime(*), master" position="33">
+				<metadata-artifact status="no" details="" size="5961" time="0" location="/JEE/play-2.2.5/framework/../repository/cache/com.typesafe.play/play-java_2.10/ivy-2.3.3.xml" searched="false" origin-is-local="false" origin-location="http://repo.typesafe.com/typesafe/releases/com/typesafe/play/play-java_2.10/2.3.3/play-java_2.10-2.3.3.pom"/>
+				<caller organisation="mcs-common" name="mcs-common_2.10" conf="compile" rev="2.3.3" rev-constraint-default="2.3.3" rev-constraint-dynamic="2.3.3" callerrev="1.0.0"/>
+				<caller organisation="mcs-servlet30" name="mcs-servlet30_2.10" conf="compile, runtime" rev="2.3.3" rev-constraint-default="2.3.3" rev-constraint-dynamic="2.3.3" callerrev="1.0.0"/>
+				<caller organisation="com.typesafe.play" name="play-java-ws_2.10" conf="default, compile, runtime, master" rev="2.3.3" rev-constraint-default="2.3.3" rev-constraint-dynamic="2.3.3" callerrev="2.3.3"/>
+				<artifacts>
+					<artifact name="play-java_2.10" type="jar" ext="jar" status="no" details="" size="83880" time="0" location="/JEE/play-2.2.5/framework/../repository/cache/com.typesafe.play/play-java_2.10/jars/play-java_2.10-2.3.3.jar">
+						<origin-location is-local="false" location="http://repo.typesafe.com/typesafe/releases/com/typesafe/play/play-java_2.10/2.3.3/play-java_2.10-2.3.3.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.apache.tomcat" name="tomcat-servlet-api">
+			<revision name="8.0.5" status="release" pubdate="20140325021947" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://tomcat.apache.org/" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="46">
+				<license name="         Apache License, Version 2.0 and         Common Development And Distribution License (CDDL) Version 1.0       " url="         http://www.apache.org/licenses/LICENSE-2.0.txt and         http://www.opensource.org/licenses/cddl1.txt       "/>
+				<metadata-artifact status="no" details="" size="2544" time="0" location="/JEE/play-2.2.5/framework/../repository/cache/org.apache.tomcat/tomcat-servlet-api/ivy-8.0.5.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/apache/tomcat/tomcat-servlet-api/8.0.5/tomcat-servlet-api-8.0.5.pom"/>
+				<caller organisation="com.typesafe.play" name="play-java_2.10" conf="default, compile, runtime, master" rev="8.0.5" rev-constraint-default="8.0.5" rev-constraint-dynamic="8.0.5" callerrev="2.3.3"/>
+				<artifacts>
+					<artifact name="tomcat-servlet-api" type="jar" ext="jar" status="no" details="" size="243533" time="0" location="/JEE/play-2.2.5/framework/../repository/cache/org.apache.tomcat/tomcat-servlet-api/jars/tomcat-servlet-api-8.0.5.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/apache/tomcat/tomcat-servlet-api/8.0.5/tomcat-servlet-api-8.0.5.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.google.code.findbugs" name="jsr305">
+			<revision name="2.0.3" status="release" pubdate="20131231152623" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://code.google.com/p/jsr-305/" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="45">
+				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<metadata-artifact status="no" details="" size="2395" time="0" location="/JEE/play-2.2.5/framework/../repository/cache/com.google.code.findbugs/jsr305/ivy-2.0.3.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/com/google/code/findbugs/jsr305/2.0.3/jsr305-2.0.3.pom"/>
+				<caller organisation="com.typesafe.play" name="play-java_2.10" conf="default, compile, runtime, master" rev="2.0.3" rev-constraint-default="2.0.3" rev-constraint-dynamic="2.0.3" callerrev="2.3.3"/>
+				<artifacts>
+					<artifact name="jsr305" type="jar" ext="jar" status="no" details="" size="33031" time="0" location="/JEE/play-2.2.5/framework/../repository/cache/com.google.code.findbugs/jsr305/jars/jsr305-2.0.3.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/com/google/code/findbugs/jsr305/2.0.3/jsr305-2.0.3.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.reflections" name="reflections">
+			<revision name="0.9.8" status="release" pubdate="20141005223857" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://code.google.com/p/reflections/" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="42">
+				<metadata-artifact status="no" details="" size="3668" time="0" location="/JEE/play-2.2.5/framework/../repository/cache/org.reflections/reflections/ivy-0.9.8.xml" searched="false" origin-is-local="true" origin-location="/JEE/play-2.2.5/repository/local/org.reflections/reflections/0.9.8/ivys/ivy.xml"/>
+				<caller organisation="com.typesafe.play" name="play-java_2.10" conf="default, compile, runtime, master" rev="0.9.8" rev-constraint-default="0.9.8" rev-constraint-dynamic="0.9.8" callerrev="2.3.3"/>
+				<artifacts>
+					<artifact name="reflections" type="jar" ext="jar" status="no" details="" size="102696" time="0" location="/JEE/play-2.2.5/repository/local/org.reflections/reflections/0.9.8/jars/reflections.jar">
+						<origin-location is-local="true" location="/JEE/play-2.2.5/repository/local/org.reflections/reflections/0.9.8/jars/reflections.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.springframework" name="spring-context">
+			<revision name="4.0.3.RELEASE" status="release" pubdate="20140327132732" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/spring-projects/spring-framework" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="39">
+				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<metadata-artifact status="no" details="" size="4530" time="0" location="/JEE/play-2.2.5/framework/../repository/cache/org.springframework/spring-context/ivy-4.0.3.RELEASE.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/springframework/spring-context/4.0.3.RELEASE/spring-context-4.0.3.RELEASE.pom"/>
+				<caller organisation="com.typesafe.play" name="play-java_2.10" conf="default, compile, runtime, master" rev="4.0.3.RELEASE" rev-constraint-default="4.0.3.RELEASE" rev-constraint-dynamic="4.0.3.RELEASE" callerrev="2.3.3"/>
+				<artifacts>
+					<artifact name="spring-context" type="jar" ext="jar" status="no" details="" size="974938" time="0" location="/JEE/play-2.2.5/framework/../repository/cache/org.springframework/spring-context/jars/spring-context-4.0.3.RELEASE.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/springframework/spring-context/4.0.3.RELEASE/spring-context-4.0.3.RELEASE.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.springframework" name="spring-beans">
+			<revision name="4.0.3.RELEASE" status="release" pubdate="20140327132737" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/spring-projects/spring-framework" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="41">
+				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<metadata-artifact status="no" details="" size="2943" time="0" location="/JEE/play-2.2.5/framework/../repository/cache/org.springframework/spring-beans/ivy-4.0.3.RELEASE.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/springframework/spring-beans/4.0.3.RELEASE/spring-beans-4.0.3.RELEASE.pom"/>
+				<caller organisation="com.typesafe.play" name="play-java_2.10" conf="default, compile, runtime, master" rev="4.0.3.RELEASE" rev-constraint-default="4.0.3.RELEASE" rev-constraint-dynamic="4.0.3.RELEASE" callerrev="2.3.3"/>
+				<artifacts>
+					<artifact name="spring-beans" type="jar" ext="jar" status="no" details="" size="669978" time="0" location="/JEE/play-2.2.5/framework/../repository/cache/org.springframework/spring-beans/jars/spring-beans-4.0.3.RELEASE.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/springframework/spring-beans/4.0.3.RELEASE/spring-beans-4.0.3.RELEASE.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.springframework" name="spring-core">
+			<revision name="4.0.3.RELEASE" status="release" pubdate="20140327132739" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/spring-projects/spring-framework" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="40">
+				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<metadata-artifact status="no" details="" size="2925" time="0" location="/JEE/play-2.2.5/framework/../repository/cache/org.springframework/spring-core/ivy-4.0.3.RELEASE.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/springframework/spring-core/4.0.3.RELEASE/spring-core-4.0.3.RELEASE.pom"/>
+				<caller organisation="com.typesafe.play" name="play-java_2.10" conf="default, compile, runtime, master" rev="4.0.3.RELEASE" rev-constraint-default="4.0.3.RELEASE" rev-constraint-dynamic="4.0.3.RELEASE" callerrev="2.3.3"/>
+				<artifacts>
+					<artifact name="spring-core" type="jar" ext="jar" status="no" details="" size="973502" time="0" location="/JEE/play-2.2.5/framework/../repository/cache/org.springframework/spring-core/jars/spring-core-4.0.3.RELEASE.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/springframework/spring-core/4.0.3.RELEASE/spring-core-4.0.3.RELEASE.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.hibernate" name="hibernate-validator">
+			<revision name="5.0.3.Final" status="release" pubdate="20140128181258" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="35">
+				<metadata-artifact status="no" details="" size="23773" time="0" location="/JEE/play-2.2.5/framework/../repository/cache/org.hibernate/hibernate-validator/ivy-5.0.3.Final.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/hibernate/hibernate-validator/5.0.3.Final/hibernate-validator-5.0.3.Final.pom"/>
+				<caller organisation="com.typesafe.play" name="play-java_2.10" conf="default, compile, runtime, master" rev="5.0.3.Final" rev-constraint-default="5.0.3.Final" rev-constraint-dynamic="5.0.3.Final" callerrev="2.3.3"/>
+				<artifacts>
+					<artifact name="hibernate-validator" type="jar" ext="jar" status="no" details="" size="574278" time="0" location="/JEE/play-2.2.5/framework/../repository/cache/org.hibernate/hibernate-validator/jars/hibernate-validator-5.0.3.Final.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/hibernate/hibernate-validator/5.0.3.Final/hibernate-validator-5.0.3.Final.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.fasterxml" name="classmate">
+			<revision name="1.0.0" status="release" pubdate="20131016100851" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://github.com/cowtowncoder/java-classmate" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="38">
+				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<metadata-artifact status="no" details="" size="3253" time="0" location="/JEE/play-2.2.5/framework/../repository/cache/com.fasterxml/classmate/ivy-1.0.0.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/com/fasterxml/classmate/1.0.0/classmate-1.0.0.pom"/>
+				<caller organisation="org.hibernate" name="hibernate-validator" conf="compile, runtime" rev="1.0.0" rev-constraint-default="1.0.0" rev-constraint-dynamic="1.0.0" callerrev="5.0.3.Final"/>
+				<artifacts>
+					<artifact name="classmate" type="bundle" ext="jar" status="no" details="" size="60282" time="0" location="/JEE/play-2.2.5/framework/../repository/cache/com.fasterxml/classmate/bundles/classmate-1.0.0.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/com/fasterxml/classmate/1.0.0/classmate-1.0.0.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.jboss.logging" name="jboss-logging">
+			<revision name="3.1.1.GA" status="release" pubdate="20141005235557" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.jboss.org" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="37">
+				<license name="GNU Lesser General Public License, version 2.1" url="http://www.gnu.org/licenses/lgpl-2.1.txt"/>
+				<metadata-artifact status="no" details="" size="7877" time="0" location="/JEE/play-2.2.5/framework/../repository/cache/org.jboss.logging/jboss-logging/ivy-3.1.1.GA.xml" searched="false" origin-is-local="true" origin-location="/JEE/play-2.2.5/repository/local/org.jboss.logging/jboss-logging/3.1.1.GA/ivys/ivy.xml"/>
+				<caller organisation="org.hibernate" name="hibernate-validator" conf="compile, runtime" rev="3.1.1.GA" rev-constraint-default="3.1.1.GA" rev-constraint-dynamic="3.1.1.GA" callerrev="5.0.3.Final"/>
+				<artifacts>
+					<artifact name="jboss-logging" type="jar" ext="jar" status="no" details="" size="60796" time="0" location="/JEE/play-2.2.5/repository/local/org.jboss.logging/jboss-logging/3.1.1.GA/jars/jboss-logging.jar">
+						<origin-location is-local="true" location="/JEE/play-2.2.5/repository/local/org.jboss.logging/jboss-logging/3.1.1.GA/jars/jboss-logging.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="javax.validation" name="validation-api">
+			<revision name="1.1.0.Final" status="release" pubdate="20141005235556" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://beanvalidation.org" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="36">
+				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<metadata-artifact status="no" details="" size="3057" time="0" location="/JEE/play-2.2.5/framework/../repository/cache/javax.validation/validation-api/ivy-1.1.0.Final.xml" searched="false" origin-is-local="true" origin-location="/JEE/play-2.2.5/repository/local/javax.validation/validation-api/1.1.0.Final/ivys/ivy.xml"/>
+				<caller organisation="org.hibernate" name="hibernate-validator" conf="compile, runtime" rev="1.1.0.Final" rev-constraint-default="1.1.0.Final" rev-constraint-dynamic="1.1.0.Final" callerrev="5.0.3.Final"/>
+				<artifacts>
+					<artifact name="validation-api" type="jar" ext="jar" status="no" details="" size="63777" time="0" location="/JEE/play-2.2.5/repository/local/javax.validation/validation-api/1.1.0.Final/jars/validation-api.jar">
+						<origin-location is-local="true" location="/JEE/play-2.2.5/repository/local/javax.validation/validation-api/1.1.0.Final/jars/validation-api.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.yaml" name="snakeyaml">
+			<revision name="1.13" status="release" pubdate="20130906020959" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.snakeyaml.org" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="34">
+				<license name="Apache License Version 2.0" url="LICENSE.txt"/>
+				<metadata-artifact status="no" details="" size="3408" time="0" location="/JEE/play-2.2.5/framework/../repository/cache/org.yaml/snakeyaml/ivy-1.13.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/yaml/snakeyaml/1.13/snakeyaml-1.13.pom"/>
+				<caller organisation="com.typesafe.play" name="play-java_2.10" conf="default, compile, runtime, master" rev="1.13" rev-constraint-default="1.13" rev-constraint-dynamic="1.13" callerrev="2.3.3"/>
+				<artifacts>
+					<artifact name="snakeyaml" type="bundle" ext="jar" status="no" details="" size="273449" time="0" location="/JEE/play-2.2.5/framework/../repository/cache/org.yaml/snakeyaml/bundles/snakeyaml-1.13.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/yaml/snakeyaml/1.13/snakeyaml-1.13.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.typesafe.play" name="play_2.10">
+			<revision name="2.3.3" status="release" pubdate="20141013132228" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, master(*), compile(*), runtime, runtime(*), master" position="4">
+				<metadata-artifact status="no" details="" size="7191" time="0" location="/JEE/play-2.2.5/framework/../repository/cache/com.typesafe.play/play_2.10/ivy-2.3.3.xml" searched="false" origin-is-local="false" origin-location="http://repo.typesafe.com/typesafe/releases/com/typesafe/play/play_2.10/2.3.3/play_2.10-2.3.3.pom"/>
+				<caller organisation="mcs-common" name="mcs-common_2.10" conf="compile" rev="2.3.3" rev-constraint-default="2.3.3" rev-constraint-dynamic="2.3.3" callerrev="1.0.0"/>
+				<caller organisation="mcs-servlet30" name="mcs-servlet30_2.10" conf="compile, runtime" rev="2.3.3" rev-constraint-default="2.3.3" rev-constraint-dynamic="2.3.3" callerrev="1.0.0"/>
+				<caller organisation="com.typesafe.play" name="play-java-ws_2.10" conf="default, compile, runtime, master" rev="2.3.3" rev-constraint-default="2.3.3" rev-constraint-dynamic="2.3.3" callerrev="2.3.3"/>
+				<caller organisation="com.typesafe.play" name="play-ws_2.10" conf="default, compile, runtime, master" rev="2.3.3" rev-constraint-default="2.3.3" rev-constraint-dynamic="2.3.3" callerrev="2.3.3"/>
+				<caller organisation="com.typesafe.play" name="play-java_2.10" conf="default, compile, runtime, master" rev="2.3.3" rev-constraint-default="2.3.3" rev-constraint-dynamic="2.3.3" callerrev="2.3.3"/>
+				<artifacts>
+					<artifact name="play_2.10" type="jar" ext="jar" status="no" details="" size="3878697" time="0" location="/JEE/play-2.2.5/framework/../repository/cache/com.typesafe.play/play_2.10/jars/play_2.10-2.3.3.jar">
+						<origin-location is-local="false" location="http://repo.typesafe.com/typesafe/releases/com/typesafe/play/play_2.10/2.3.3/play_2.10-2.3.3.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.google.guava" name="guava">
+			<revision name="16.0.1" status="release" pubdate="20140606114657" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="43">
+				<metadata-artifact status="no" details="" size="5927" time="0" location="/JEE/play-2.2.5/framework/../repository/cache/com.google.guava/guava/ivy-16.0.1.xml" searched="false" origin-is-local="true" origin-location="/Users/brew/.m2/repository/com/google/guava/guava/16.0.1/guava-16.0.1.pom"/>
+				<caller organisation="com.typesafe.play" name="play-java-ws_2.10" conf="default, compile, runtime, master" rev="16.0.1" rev-constraint-default="16.0.1" rev-constraint-dynamic="16.0.1" callerrev="2.3.3"/>
+				<caller organisation="com.typesafe.play" name="play-ws_2.10" conf="default, compile, runtime, master" rev="16.0.1" rev-constraint-default="16.0.1" rev-constraint-dynamic="16.0.1" callerrev="2.3.3"/>
+				<caller organisation="com.typesafe.play" name="play-java_2.10" conf="default, compile, runtime, master" rev="16.0.1" rev-constraint-default="16.0.1" rev-constraint-dynamic="16.0.1" callerrev="2.3.3"/>
+				<caller organisation="org.reflections" name="reflections" conf="compile, runtime" rev="11.0.2" rev-constraint-default="11.0.2" rev-constraint-dynamic="11.0.2" callerrev="0.9.8"/>
+				<artifacts>
+					<artifact name="guava" type="bundle" ext="jar" status="no" details="" size="2228009" time="0" location="/Users/brew/.m2/repository/com/google/guava/guava/16.0.1/guava-16.0.1.jar">
+						<origin-location is-local="true" location="/Users/brew/.m2/repository/com/google/guava/guava/16.0.1/guava-16.0.1.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+			<revision name="11.0.2" evicted="latest-revision" evicted-reason="" downloaded="false" searched="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="-1">
+				<evicted-by rev="16.0.1"/>
+				<caller organisation="com.typesafe.play" name="play-java_2.10" conf="default, compile, runtime, master" rev="16.0.1" rev-constraint-default="16.0.1" rev-constraint-dynamic="16.0.1" callerrev="2.3.3"/>
+				<caller organisation="org.reflections" name="reflections" conf="compile, runtime" rev="11.0.2" rev-constraint-default="11.0.2" rev-constraint-dynamic="11.0.2" callerrev="0.9.8"/>
+				<artifacts>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="javax.transaction" name="jta">
+			<revision name="1.1" status="release" pubdate="20141005223419" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://java.sun.com/products/jta" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="32">
+				<metadata-artifact status="no" details="" size="2343" time="0" location="/JEE/play-2.2.5/framework/../repository/cache/javax.transaction/jta/ivy-1.1.xml" searched="false" origin-is-local="true" origin-location="/JEE/play-2.2.5/repository/local/javax.transaction/jta/1.1/ivys/ivy.xml"/>
+				<caller organisation="com.typesafe.play" name="play_2.10" conf="default, compile, runtime, master" rev="1.1" rev-constraint-default="1.1" rev-constraint-dynamic="1.1" callerrev="2.3.3"/>
+				<artifacts>
+					<artifact name="jta" type="jar" ext="jar" status="no" details="" size="15071" time="0" location="/JEE/play-2.2.5/repository/local/javax.transaction/jta/1.1/jars/jta.jar">
+						<origin-location is-local="true" location="/JEE/play-2.2.5/repository/local/javax.transaction/jta/1.1/jars/jta.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="xerces" name="xercesImpl">
+			<revision name="2.11.0" status="release" pubdate="20141005224016" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://xerces.apache.org/xerces2-j/" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="30">
+				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<metadata-artifact status="no" details="" size="4249" time="0" location="/JEE/play-2.2.5/framework/../repository/cache/xerces/xercesImpl/ivy-2.11.0.xml" searched="false" origin-is-local="true" origin-location="/JEE/play-2.2.5/repository/local/xerces/xercesImpl/2.11.0/ivys/ivy.xml"/>
+				<caller organisation="com.typesafe.play" name="play_2.10" conf="default, compile, runtime, master" rev="2.11.0" rev-constraint-default="2.11.0" rev-constraint-dynamic="2.11.0" callerrev="2.3.3"/>
+				<artifacts>
+					<artifact name="xercesImpl" type="jar" ext="jar" status="no" details="" size="1367760" time="0" location="/JEE/play-2.2.5/repository/local/xerces/xercesImpl/2.11.0/jars/xercesImpl.jar">
+						<origin-location is-local="true" location="/JEE/play-2.2.5/repository/local/xerces/xercesImpl/2.11.0/jars/xercesImpl.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="xml-apis" name="xml-apis">
+			<revision name="1.4.01" status="release" pubdate="20141005224017" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://xml.apache.org/commons/components/external/" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="31">
+				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<license name="The SAX License" url="http://www.saxproject.org/copying.html"/>
+				<license name="The W3C License" url="http://www.w3.org/TR/2004/REC-DOM-Level-3-Core-20040407/java-binding.zip"/>
+				<metadata-artifact status="no" details="" size="3119" time="0" location="/JEE/play-2.2.5/framework/../repository/cache/xml-apis/xml-apis/ivy-1.4.01.xml" searched="false" origin-is-local="true" origin-location="/JEE/play-2.2.5/repository/local/xml-apis/xml-apis/1.4.01/ivys/ivy.xml"/>
+				<caller organisation="dom4j" name="dom4j" conf="compile, runtime" rev="1.0.b2" rev-constraint-default="1.0.b2" rev-constraint-dynamic="1.0.b2" callerrev="1.6.1"/>
+				<caller organisation="xerces" name="xercesImpl" conf="compile, runtime" rev="1.4.01" rev-constraint-default="1.4.01" rev-constraint-dynamic="1.4.01" callerrev="2.11.0"/>
+				<artifacts>
+					<artifact name="xml-apis" type="jar" ext="jar" status="no" details="" size="220536" time="0" location="/JEE/play-2.2.5/repository/local/xml-apis/xml-apis/1.4.01/jars/xml-apis.jar">
+						<origin-location is-local="true" location="/JEE/play-2.2.5/repository/local/xml-apis/xml-apis/1.4.01/jars/xml-apis.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+			<revision name="1.0.b2" evicted="latest-revision" evicted-reason="" downloaded="false" searched="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="-1">
+				<evicted-by rev="1.4.01"/>
+				<caller organisation="dom4j" name="dom4j" conf="compile, runtime" rev="1.0.b2" rev-constraint-default="1.0.b2" rev-constraint-dynamic="1.0.b2" callerrev="1.6.1"/>
+				<artifacts>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="commons-codec" name="commons-codec">
+			<revision name="1.9" status="release" pubdate="20140526155940" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://commons.apache.org/proper/commons-codec/" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="29">
+				<metadata-artifact status="no" details="" size="9850" time="0" location="/JEE/play-2.2.5/framework/../repository/cache/commons-codec/commons-codec/ivy-1.9.xml" searched="false" origin-is-local="true" origin-location="/Users/brew/.m2/repository/commons-codec/commons-codec/1.9/commons-codec-1.9.pom"/>
+				<caller organisation="oauth.signpost" name="signpost-core" conf="compile, runtime" rev="1.3" rev-constraint-default="1.3" rev-constraint-dynamic="1.3" callerrev="1.2.1.2"/>
+				<caller organisation="org.apache.httpcomponents" name="httpclient" conf="compile, runtime" rev="1.3" rev-constraint-default="1.3" rev-constraint-dynamic="1.3" callerrev="4.0.1"/>
+				<caller organisation="com.typesafe.play" name="play_2.10" conf="default, compile, runtime, master" rev="1.9" rev-constraint-default="1.9" rev-constraint-dynamic="1.9" callerrev="2.3.3"/>
+				<artifacts>
+					<artifact name="commons-codec" type="jar" ext="jar" status="no" details="" size="263965" time="0" location="/Users/brew/.m2/repository/commons-codec/commons-codec/1.9/commons-codec-1.9.jar">
+						<origin-location is-local="true" location="/Users/brew/.m2/repository/commons-codec/commons-codec/1.9/commons-codec-1.9.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+			<revision name="1.3" evicted="latest-revision" evicted-reason="" downloaded="false" searched="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="-1">
+				<evicted-by rev="1.9"/>
+				<caller organisation="oauth.signpost" name="signpost-core" conf="compile, runtime" rev="1.3" rev-constraint-default="1.3" rev-constraint-dynamic="1.3" callerrev="1.2.1.2"/>
+				<caller organisation="org.apache.httpcomponents" name="httpclient" conf="compile, runtime" rev="1.3" rev-constraint-default="1.3" rev-constraint-dynamic="1.3" callerrev="4.0.1"/>
+				<artifacts>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.typesafe.akka" name="akka-slf4j_2.10">
+			<revision name="2.3.4" status="release" pubdate="20140630194038" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://akka.io/" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="28">
+				<license name="Apache License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0"/>
+				<metadata-artifact status="no" details="" size="3043" time="0" location="/JEE/play-2.2.5/framework/../repository/cache/com.typesafe.akka/akka-slf4j_2.10/ivy-2.3.4.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/com/typesafe/akka/akka-slf4j_2.10/2.3.4/akka-slf4j_2.10-2.3.4.pom"/>
+				<caller organisation="com.typesafe.play" name="play_2.10" conf="default, compile, runtime, master" rev="2.3.4" rev-constraint-default="2.3.4" rev-constraint-dynamic="2.3.4" callerrev="2.3.3"/>
+				<artifacts>
+					<artifact name="akka-slf4j_2.10" type="jar" ext="jar" status="no" details="" size="15517" time="0" location="/JEE/play-2.2.5/framework/../repository/cache/com.typesafe.akka/akka-slf4j_2.10/jars/akka-slf4j_2.10-2.3.4.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/com/typesafe/akka/akka-slf4j_2.10/2.3.4/akka-slf4j_2.10-2.3.4.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.typesafe.akka" name="akka-actor_2.10">
+			<revision name="2.3.4" status="release" pubdate="20140630193924" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://akka.io/" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="27">
+				<license name="Apache License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0"/>
+				<metadata-artifact status="no" details="" size="2654" time="0" location="/JEE/play-2.2.5/framework/../repository/cache/com.typesafe.akka/akka-actor_2.10/ivy-2.3.4.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/com/typesafe/akka/akka-actor_2.10/2.3.4/akka-actor_2.10-2.3.4.pom"/>
+				<caller organisation="com.typesafe.akka" name="akka-slf4j_2.10" conf="compile, runtime" rev="2.3.4" rev-constraint-default="2.3.4" rev-constraint-dynamic="2.3.4" callerrev="2.3.4"/>
+				<caller organisation="com.typesafe.play" name="play_2.10" conf="default, compile, runtime, master" rev="2.3.4" rev-constraint-default="2.3.4" rev-constraint-dynamic="2.3.4" callerrev="2.3.3"/>
+				<artifacts>
+					<artifact name="akka-actor_2.10" type="jar" ext="jar" status="no" details="" size="2554984" time="0" location="/JEE/play-2.2.5/framework/../repository/cache/com.typesafe.akka/akka-actor_2.10/jars/akka-actor_2.10-2.3.4.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/com/typesafe/akka/akka-actor_2.10/2.3.4/akka-actor_2.10-2.3.4.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="ch.qos.logback" name="logback-classic">
+			<revision name="1.1.1" status="release" pubdate="20140206071300" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://logback.qos.ch" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="26">
+				<license name="Eclipse Public License - v 1.0" url="http://www.eclipse.org/legal/epl-v10.html"/>
+				<license name="GNU Lesser General Public License" url="http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html"/>
+				<metadata-artifact status="no" details="" size="10484" time="0" location="/JEE/play-2.2.5/framework/../repository/cache/ch.qos.logback/logback-classic/ivy-1.1.1.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/ch/qos/logback/logback-classic/1.1.1/logback-classic-1.1.1.pom"/>
+				<caller organisation="com.typesafe.play" name="play_2.10" conf="default, compile, runtime, master" rev="1.1.1" rev-constraint-default="1.1.1" rev-constraint-dynamic="1.1.1" callerrev="2.3.3"/>
+				<artifacts>
+					<artifact name="logback-classic" type="jar" ext="jar" status="no" details="" size="270858" time="0" location="/JEE/play-2.2.5/framework/../repository/cache/ch.qos.logback/logback-classic/jars/logback-classic-1.1.1.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/ch/qos/logback/logback-classic/1.1.1/logback-classic-1.1.1.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="dom4j" name="dom4j">
+			<revision name="1.6.1" status="release" pubdate="20140526160201" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://dom4j.org" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="44">
+				<metadata-artifact status="no" details="" size="3653" time="0" location="/JEE/play-2.2.5/framework/../repository/cache/dom4j/dom4j/ivy-1.6.1.xml" searched="false" origin-is-local="true" origin-location="/Users/brew/.m2/repository/dom4j/dom4j/1.6.1/dom4j-1.6.1.pom"/>
+				<caller organisation="org.reflections" name="reflections" conf="compile, runtime" rev="1.6.1" rev-constraint-default="1.6.1" rev-constraint-dynamic="1.6.1" callerrev="0.9.8"/>
+				<artifacts>
+					<artifact name="dom4j" type="jar" ext="jar" status="no" details="" size="313898" time="0" location="/Users/brew/.m2/repository/dom4j/dom4j/1.6.1/dom4j-1.6.1.jar">
+						<origin-location is-local="true" location="/Users/brew/.m2/repository/dom4j/dom4j/1.6.1/dom4j-1.6.1.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="ch.qos.logback" name="logback-core">
+			<revision name="1.1.1" status="release" pubdate="20140206071209" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://logback.qos.ch" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="25">
+				<license name="Eclipse Public License - v 1.0" url="http://www.eclipse.org/legal/epl-v10.html"/>
+				<license name="GNU Lesser General Public License" url="http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html"/>
+				<metadata-artifact status="no" details="" size="9752" time="0" location="/JEE/play-2.2.5/framework/../repository/cache/ch.qos.logback/logback-core/ivy-1.1.1.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/ch/qos/logback/logback-core/1.1.1/logback-core-1.1.1.pom"/>
+				<caller organisation="ch.qos.logback" name="logback-classic" conf="compile, runtime" rev="1.1.1" rev-constraint-default="1.1.1" rev-constraint-dynamic="1.1.1" callerrev="1.1.1"/>
+				<caller organisation="com.typesafe.play" name="play_2.10" conf="default, compile, runtime, master" rev="1.1.1" rev-constraint-default="1.1.1" rev-constraint-dynamic="1.1.1" callerrev="2.3.3"/>
+				<artifacts>
+					<artifact name="logback-core" type="jar" ext="jar" status="no" details="" size="427794" time="0" location="/JEE/play-2.2.5/framework/../repository/cache/ch.qos.logback/logback-core/jars/logback-core-1.1.1.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/ch/qos/logback/logback-core/1.1.1/logback-core-1.1.1.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.slf4j" name="jcl-over-slf4j">
+			<revision name="1.7.6" status="release" pubdate="20140206063958" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.slf4j.org" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="24">
+				<metadata-artifact status="no" details="" size="4731" time="0" location="/JEE/play-2.2.5/framework/../repository/cache/org.slf4j/jcl-over-slf4j/ivy-1.7.6.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/slf4j/jcl-over-slf4j/1.7.6/jcl-over-slf4j-1.7.6.pom"/>
+				<caller organisation="com.typesafe.play" name="play_2.10" conf="default, compile, runtime, master" rev="1.7.6" rev-constraint-default="1.7.6" rev-constraint-dynamic="1.7.6" callerrev="2.3.3"/>
+				<artifacts>
+					<artifact name="jcl-over-slf4j" type="jar" ext="jar" status="no" details="" size="16515" time="0" location="/JEE/play-2.2.5/framework/../repository/cache/org.slf4j/jcl-over-slf4j/jars/jcl-over-slf4j-1.7.6.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/slf4j/jcl-over-slf4j/1.7.6/jcl-over-slf4j-1.7.6.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.slf4j" name="jul-to-slf4j">
+			<revision name="1.7.6" status="release" pubdate="20140206064026" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.slf4j.org" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="23">
+				<metadata-artifact status="no" details="" size="4770" time="0" location="/JEE/play-2.2.5/framework/../repository/cache/org.slf4j/jul-to-slf4j/ivy-1.7.6.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/slf4j/jul-to-slf4j/1.7.6/jul-to-slf4j-1.7.6.pom"/>
+				<caller organisation="com.typesafe.play" name="play_2.10" conf="default, compile, runtime, master" rev="1.7.6" rev-constraint-default="1.7.6" rev-constraint-dynamic="1.7.6" callerrev="2.3.3"/>
+				<artifacts>
+					<artifact name="jul-to-slf4j" type="jar" ext="jar" status="no" details="" size="4959" time="0" location="/JEE/play-2.2.5/framework/../repository/cache/org.slf4j/jul-to-slf4j/jars/jul-to-slf4j-1.7.6.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/slf4j/jul-to-slf4j/1.7.6/jul-to-slf4j-1.7.6.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.slf4j" name="slf4j-api">
+			<revision name="1.7.6" status="release" pubdate="20140526154907" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.slf4j.org" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="22">
+				<metadata-artifact status="no" details="" size="4567" time="0" location="/JEE/play-2.2.5/framework/../repository/cache/org.slf4j/slf4j-api/ivy-1.7.6.xml" searched="false" origin-is-local="true" origin-location="/Users/brew/.m2/repository/org/slf4j/slf4j-api/1.7.6/slf4j-api-1.7.6.pom"/>
+				<caller organisation="com.ning" name="async-http-client" conf="compile, runtime" rev="1.7.5" rev-constraint-default="1.7.5" rev-constraint-dynamic="1.7.5" callerrev="1.8.8"/>
+				<caller organisation="org.slf4j" name="jul-to-slf4j" conf="compile, runtime" rev="1.7.6" rev-constraint-default="1.7.6" rev-constraint-dynamic="1.7.6" callerrev="1.7.6"/>
+				<caller organisation="ch.qos.logback" name="logback-classic" conf="compile, runtime" rev="1.7.6" rev-constraint-default="1.7.6" rev-constraint-dynamic="1.7.6" callerrev="1.1.1"/>
+				<caller organisation="org.slf4j" name="jcl-over-slf4j" conf="compile, runtime" rev="1.7.6" rev-constraint-default="1.7.6" rev-constraint-dynamic="1.7.6" callerrev="1.7.6"/>
+				<caller organisation="com.typesafe.akka" name="akka-slf4j_2.10" conf="compile, runtime" rev="1.7.5" rev-constraint-default="1.7.5" rev-constraint-dynamic="1.7.5" callerrev="2.3.4"/>
+				<caller organisation="com.typesafe.play" name="play_2.10" conf="default, compile, runtime, master" rev="1.7.6" rev-constraint-default="1.7.6" rev-constraint-dynamic="1.7.6" callerrev="2.3.3"/>
+				<artifacts>
+					<artifact name="slf4j-api" type="jar" ext="jar" status="no" details="" size="28688" time="0" location="/Users/brew/.m2/repository/org/slf4j/slf4j-api/1.7.6/slf4j-api-1.7.6.jar">
+						<origin-location is-local="true" location="/Users/brew/.m2/repository/org/slf4j/slf4j-api/1.7.6/slf4j-api-1.7.6.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+			<revision name="1.7.5" evicted="latest-revision" evicted-reason="" downloaded="false" searched="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="-1">
+				<evicted-by rev="1.7.6"/>
+				<caller organisation="com.ning" name="async-http-client" conf="compile, runtime" rev="1.7.5" rev-constraint-default="1.7.5" rev-constraint-dynamic="1.7.5" callerrev="1.8.8"/>
+				<caller organisation="com.typesafe.akka" name="akka-slf4j_2.10" conf="compile, runtime" rev="1.7.5" rev-constraint-default="1.7.5" rev-constraint-dynamic="1.7.5" callerrev="2.3.4"/>
+				<artifacts>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.typesafe.netty" name="netty-http-pipelining">
+			<revision name="1.1.2" status="release" pubdate="20141005221646" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/typesafehub/netty-http-pipelining" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="21">
+				<license name="Apache 2" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<metadata-artifact status="no" details="" size="2722" time="0" location="/JEE/play-2.2.5/framework/../repository/cache/com.typesafe.netty/netty-http-pipelining/ivy-1.1.2.xml" searched="false" origin-is-local="true" origin-location="/JEE/play-2.2.5/repository/local/com.typesafe.netty/netty-http-pipelining/1.1.2/ivys/ivy.xml"/>
+				<caller organisation="com.typesafe.play" name="play_2.10" conf="default, compile, runtime, master" rev="1.1.2" rev-constraint-default="1.1.2" rev-constraint-dynamic="1.1.2" callerrev="2.3.3"/>
+				<artifacts>
+					<artifact name="netty-http-pipelining" type="jar" ext="jar" status="no" details="" size="7012" time="0" location="/JEE/play-2.2.5/repository/local/com.typesafe.netty/netty-http-pipelining/1.1.2/jars/netty-http-pipelining.jar">
+						<origin-location is-local="true" location="/JEE/play-2.2.5/repository/local/com.typesafe.netty/netty-http-pipelining/1.1.2/jars/netty-http-pipelining.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="io.netty" name="netty">
+			<revision name="3.9.2.Final" status="release" pubdate="20140611172254" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://netty.io/" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="20">
+				<license name="Apache License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0"/>
+				<metadata-artifact status="no" details="" size="6971" time="0" location="/JEE/play-2.2.5/framework/../repository/cache/io.netty/netty/ivy-3.9.2.Final.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/io/netty/netty/3.9.2.Final/netty-3.9.2.Final.pom"/>
+				<caller organisation="com.ning" name="async-http-client" conf="compile, runtime" rev="3.9.0.Final" rev-constraint-default="3.9.0.Final" rev-constraint-dynamic="3.9.0.Final" callerrev="1.8.8"/>
+				<caller organisation="com.typesafe.netty" name="netty-http-pipelining" conf="compile, runtime" rev="3.6.3.Final" rev-constraint-default="3.6.3.Final" rev-constraint-dynamic="3.6.3.Final" callerrev="1.1.2"/>
+				<caller organisation="com.typesafe.play" name="play_2.10" conf="default, compile, runtime, master" rev="3.9.2.Final" rev-constraint-default="3.9.2.Final" rev-constraint-dynamic="3.9.2.Final" callerrev="2.3.3"/>
+				<artifacts>
+					<artifact name="netty" type="bundle" ext="jar" status="no" details="" size="1303237" time="0" location="/JEE/play-2.2.5/framework/../repository/cache/io.netty/netty/bundles/netty-3.9.2.Final.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/io/netty/netty/3.9.2.Final/netty-3.9.2.Final.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+			<revision name="3.9.0.Final" evicted="latest-revision" evicted-reason="" downloaded="false" searched="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="-1">
+				<evicted-by rev="3.9.2.Final"/>
+				<caller organisation="com.ning" name="async-http-client" conf="compile, runtime" rev="3.9.0.Final" rev-constraint-default="3.9.0.Final" rev-constraint-dynamic="3.9.0.Final" callerrev="1.8.8"/>
+				<artifacts>
+				</artifacts>
+			</revision>
+			<revision name="3.6.3.Final" evicted="latest-revision" evicted-reason="" downloaded="false" searched="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="-1">
+				<evicted-by rev="3.9.2.Final"/>
+				<caller organisation="com.typesafe.netty" name="netty-http-pipelining" conf="compile, runtime" rev="3.6.3.Final" rev-constraint-default="3.6.3.Final" rev-constraint-dynamic="3.6.3.Final" callerrev="1.1.2"/>
+				<artifacts>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="commons-logging" name="commons-logging">
+			<revision name="1.1.1" status="release" pubdate="20071126122410" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://commons.apache.org/logging" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="53">
+				<metadata-artifact status="no" details="" size="3931" time="0" location="/JEE/play-2.2.5/framework/../repository/cache/commons-logging/commons-logging/ivy-1.1.1.xml" searched="false" origin-is-local="true" origin-location="/JEE/play-2.2.5/repository/local/commons-logging/commons-logging/1.1.1/ivys/ivy.xml"/>
+				<caller organisation="org.apache.httpcomponents" name="httpclient" conf="compile, runtime" rev="1.1.1" rev-constraint-default="1.1.1" rev-constraint-dynamic="1.1.1" callerrev="4.0.1"/>
+				<artifacts>
+					<artifact name="commons-logging" type="jar" ext="jar" status="no" details="" size="60686" time="0" location="/JEE/play-2.2.5/repository/local/commons-logging/commons-logging/1.1.1/jars/commons-logging.jar">
+						<origin-location is-local="true" location="/JEE/play-2.2.5/repository/local/commons-logging/commons-logging/1.1.1/jars/commons-logging.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.typesafe.play" name="play-json_2.10">
+			<revision name="2.3.3" status="release" pubdate="20141013132232" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="11">
+				<metadata-artifact status="no" details="" size="4200" time="0" location="/JEE/play-2.2.5/framework/../repository/cache/com.typesafe.play/play-json_2.10/ivy-2.3.3.xml" searched="false" origin-is-local="false" origin-location="http://repo.typesafe.com/typesafe/releases/com/typesafe/play/play-json_2.10/2.3.3/play-json_2.10-2.3.3.pom"/>
+				<caller organisation="com.typesafe.play" name="play_2.10" conf="default, compile, runtime, master" rev="2.3.3" rev-constraint-default="2.3.3" rev-constraint-dynamic="2.3.3" callerrev="2.3.3"/>
+				<artifacts>
+					<artifact name="play-json_2.10" type="jar" ext="jar" status="no" details="" size="633288" time="0" location="/JEE/play-2.2.5/framework/../repository/cache/com.typesafe.play/play-json_2.10/jars/play-json_2.10-2.3.3.jar">
+						<origin-location is-local="false" location="http://repo.typesafe.com/typesafe/releases/com/typesafe/play/play-json_2.10/2.3.3/play-json_2.10-2.3.3.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.scala-lang" name="scala-reflect">
+			<revision name="2.10.4" status="release" pubdate="20140319054707" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scala-lang.org/" extra-info.apiURL="http://www.scala-lang.org/api/2.10.4/" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="19">
+				<license name="BSD-like" url="http://www.scala-lang.org/downloads/license.html    "/>
+				<metadata-artifact status="no" details="" size="2647" time="0" location="/JEE/play-2.2.5/framework/../repository/cache/org.scala-lang/scala-reflect/ivy-2.10.4.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.10.4/scala-reflect-2.10.4.pom"/>
+				<caller organisation="com.typesafe.play" name="play-json_2.10" conf="compile, runtime" rev="2.10.4" rev-constraint-default="2.10.4" rev-constraint-dynamic="2.10.4" callerrev="2.3.3"/>
+				<caller organisation="com.typesafe.play" name="play_2.10" conf="default, compile, runtime, master" rev="2.10.4" rev-constraint-default="2.10.4" rev-constraint-dynamic="2.10.4" callerrev="2.3.3"/>
+				<artifacts>
+					<artifact name="scala-reflect" type="jar" ext="jar" status="no" details="" size="3203471" time="0" location="/JEE/play-2.2.5/framework/../repository/cache/org.scala-lang/scala-reflect/jars/scala-reflect-2.10.4.jar">
+						<origin-location is-local="false" location="UNKNOWN"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.fasterxml.jackson.core" name="jackson-databind">
+			<revision name="2.3.2" status="release" pubdate="20140302111312" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://wiki.fasterxml.com/JacksonHome" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="18">
+				<metadata-artifact status="no" details="" size="7223" time="0" location="/JEE/play-2.2.5/framework/../repository/cache/com.fasterxml.jackson.core/jackson-databind/ivy-2.3.2.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.3.2/jackson-databind-2.3.2.pom"/>
+				<caller organisation="com.typesafe.play" name="play-json_2.10" conf="compile, runtime" rev="2.3.2" rev-constraint-default="2.3.2" rev-constraint-dynamic="2.3.2" callerrev="2.3.3"/>
+				<caller organisation="com.typesafe.play" name="play_2.10" conf="default, compile, runtime, master" rev="2.3.2" rev-constraint-default="2.3.2" rev-constraint-dynamic="2.3.2" callerrev="2.3.3"/>
+				<artifacts>
+					<artifact name="jackson-databind" type="bundle" ext="jar" status="no" details="" size="915096" time="0" location="/JEE/play-2.2.5/framework/../repository/cache/com.fasterxml.jackson.core/jackson-databind/bundles/jackson-databind-2.3.2.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.3.2/jackson-databind-2.3.2.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.fasterxml.jackson.core" name="jackson-core">
+			<revision name="2.3.2" status="release" pubdate="20140301093828" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://wiki.fasterxml.com/JacksonHome" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="17">
+				<metadata-artifact status="no" details="" size="5473" time="0" location="/JEE/play-2.2.5/framework/../repository/cache/com.fasterxml.jackson.core/jackson-core/ivy-2.3.2.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-core/2.3.2/jackson-core-2.3.2.pom"/>
+				<caller organisation="com.typesafe.play" name="play-json_2.10" conf="compile, runtime" rev="2.3.2" rev-constraint-default="2.3.2" rev-constraint-dynamic="2.3.2" callerrev="2.3.3"/>
+				<caller organisation="com.fasterxml.jackson.core" name="jackson-databind" conf="compile, runtime" rev="2.3.2" rev-constraint-default="2.3.2" rev-constraint-dynamic="2.3.2" callerrev="2.3.2"/>
+				<caller organisation="com.typesafe.play" name="play_2.10" conf="default, compile, runtime, master" rev="2.3.2" rev-constraint-default="2.3.2" rev-constraint-dynamic="2.3.2" callerrev="2.3.3"/>
+				<artifacts>
+					<artifact name="jackson-core" type="bundle" ext="jar" status="no" details="" size="199553" time="0" location="/JEE/play-2.2.5/framework/../repository/cache/com.fasterxml.jackson.core/jackson-core/bundles/jackson-core-2.3.2.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-core/2.3.2/jackson-core-2.3.2.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.fasterxml.jackson.core" name="jackson-annotations">
+			<revision name="2.3.2" status="release" pubdate="20140301093539" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://wiki.fasterxml.com/JacksonHome" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="16">
+				<metadata-artifact status="no" details="" size="4859" time="0" location="/JEE/play-2.2.5/framework/../repository/cache/com.fasterxml.jackson.core/jackson-annotations/ivy-2.3.2.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.3.2/jackson-annotations-2.3.2.pom"/>
+				<caller organisation="com.typesafe.play" name="play-json_2.10" conf="compile, runtime" rev="2.3.2" rev-constraint-default="2.3.2" rev-constraint-dynamic="2.3.2" callerrev="2.3.3"/>
+				<caller organisation="com.fasterxml.jackson.core" name="jackson-databind" conf="compile, runtime" rev="2.3.0" rev-constraint-default="2.3.0" rev-constraint-dynamic="2.3.0" callerrev="2.3.2"/>
+				<caller organisation="com.typesafe.play" name="play_2.10" conf="default, compile, runtime, master" rev="2.3.2" rev-constraint-default="2.3.2" rev-constraint-dynamic="2.3.2" callerrev="2.3.3"/>
+				<artifacts>
+					<artifact name="jackson-annotations" type="bundle" ext="jar" status="no" details="" size="36521" time="0" location="/JEE/play-2.2.5/framework/../repository/cache/com.fasterxml.jackson.core/jackson-annotations/bundles/jackson-annotations-2.3.2.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.3.2/jackson-annotations-2.3.2.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+			<revision name="2.3.0" evicted="latest-revision" evicted-reason="" downloaded="false" searched="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="-1">
+				<evicted-by rev="2.3.2"/>
+				<caller organisation="com.fasterxml.jackson.core" name="jackson-databind" conf="compile, runtime" rev="2.3.0" rev-constraint-default="2.3.0" rev-constraint-dynamic="2.3.0" callerrev="2.3.2"/>
+				<artifacts>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.joda" name="joda-convert">
+			<revision name="1.6" status="release" pubdate="20140128023743" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.joda.org/joda-convert/" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="15">
+				<license name="Apache 2" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<metadata-artifact status="no" details="" size="6116" time="0" location="/JEE/play-2.2.5/framework/../repository/cache/org.joda/joda-convert/ivy-1.6.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/joda/joda-convert/1.6/joda-convert-1.6.pom"/>
+				<caller organisation="com.typesafe.play" name="play-json_2.10" conf="compile, runtime" rev="1.6" rev-constraint-default="1.6" rev-constraint-dynamic="1.6" callerrev="2.3.3"/>
+				<caller organisation="com.typesafe.play" name="play_2.10" conf="default, compile, runtime, master" rev="1.6" rev-constraint-default="1.6" rev-constraint-dynamic="1.6" callerrev="2.3.3"/>
+				<artifacts>
+					<artifact name="joda-convert" type="jar" ext="jar" status="no" details="" size="98818" time="0" location="/JEE/play-2.2.5/framework/../repository/cache/org.joda/joda-convert/jars/joda-convert-1.6.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/joda/joda-convert/1.6/joda-convert-1.6.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="joda-time" name="joda-time">
+			<revision name="2.3" status="release" pubdate="20140526160117" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.joda.org/joda-time/" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="14">
+				<license name="Apache 2" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<metadata-artifact status="no" details="" size="6364" time="0" location="/JEE/play-2.2.5/framework/../repository/cache/joda-time/joda-time/ivy-2.3.xml" searched="false" origin-is-local="true" origin-location="/Users/brew/.m2/repository/joda-time/joda-time/2.3/joda-time-2.3.pom"/>
+				<caller organisation="com.typesafe.play" name="play-json_2.10" conf="compile, runtime" rev="2.3" rev-constraint-default="2.3" rev-constraint-dynamic="2.3" callerrev="2.3.3"/>
+				<caller organisation="com.typesafe.play" name="play_2.10" conf="default, compile, runtime, master" rev="2.3" rev-constraint-default="2.3" rev-constraint-dynamic="2.3" callerrev="2.3.3"/>
+				<artifacts>
+					<artifact name="joda-time" type="jar" ext="jar" status="no" details="" size="581571" time="0" location="/Users/brew/.m2/repository/joda-time/joda-time/2.3/joda-time-2.3.jar">
+						<origin-location is-local="true" location="/Users/brew/.m2/repository/joda-time/joda-time/2.3/joda-time-2.3.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.typesafe.play" name="play-datacommons_2.10">
+			<revision name="2.3.3" status="release" pubdate="20141013132237" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="13">
+				<metadata-artifact status="no" details="" size="2428" time="0" location="/JEE/play-2.2.5/framework/../repository/cache/com.typesafe.play/play-datacommons_2.10/ivy-2.3.3.xml" searched="false" origin-is-local="false" origin-location="http://repo.typesafe.com/typesafe/releases/com/typesafe/play/play-datacommons_2.10/2.3.3/play-datacommons_2.10-2.3.3.pom"/>
+				<caller organisation="com.typesafe.play" name="play-json_2.10" conf="compile, runtime" rev="2.3.3" rev-constraint-default="2.3.3" rev-constraint-dynamic="2.3.3" callerrev="2.3.3"/>
+				<artifacts>
+					<artifact name="play-datacommons_2.10" type="jar" ext="jar" status="no" details="" size="5196" time="0" location="/JEE/play-2.2.5/framework/../repository/cache/com.typesafe.play/play-datacommons_2.10/jars/play-datacommons_2.10-2.3.3.jar">
+						<origin-location is-local="false" location="http://repo.typesafe.com/typesafe/releases/com/typesafe/play/play-datacommons_2.10/2.3.3/play-datacommons_2.10-2.3.3.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.typesafe.play" name="play-functional_2.10">
+			<revision name="2.3.3" status="release" pubdate="20141013132235" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="12">
+				<metadata-artifact status="no" details="" size="2425" time="0" location="/JEE/play-2.2.5/framework/../repository/cache/com.typesafe.play/play-functional_2.10/ivy-2.3.3.xml" searched="false" origin-is-local="false" origin-location="http://repo.typesafe.com/typesafe/releases/com/typesafe/play/play-functional_2.10/2.3.3/play-functional_2.10-2.3.3.pom"/>
+				<caller organisation="com.typesafe.play" name="play-json_2.10" conf="compile, runtime" rev="2.3.3" rev-constraint-default="2.3.3" rev-constraint-dynamic="2.3.3" callerrev="2.3.3"/>
+				<artifacts>
+					<artifact name="play-functional_2.10" type="jar" ext="jar" status="no" details="" size="382921" time="0" location="/JEE/play-2.2.5/framework/../repository/cache/com.typesafe.play/play-functional_2.10/jars/play-functional_2.10-2.3.3.jar">
+						<origin-location is-local="false" location="http://repo.typesafe.com/typesafe/releases/com/typesafe/play/play-functional_2.10/2.3.3/play-functional_2.10-2.3.3.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.typesafe.play" name="play-iteratees_2.10">
+			<revision name="2.3.3" status="release" pubdate="20141013132230" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="8">
+				<metadata-artifact status="no" details="" size="3169" time="0" location="/JEE/play-2.2.5/framework/../repository/cache/com.typesafe.play/play-iteratees_2.10/ivy-2.3.3.xml" searched="false" origin-is-local="false" origin-location="http://repo.typesafe.com/typesafe/releases/com/typesafe/play/play-iteratees_2.10/2.3.3/play-iteratees_2.10-2.3.3.pom"/>
+				<caller organisation="com.typesafe.play" name="play-json_2.10" conf="compile, runtime" rev="2.3.3" rev-constraint-default="2.3.3" rev-constraint-dynamic="2.3.3" callerrev="2.3.3"/>
+				<caller organisation="com.typesafe.play" name="play_2.10" conf="default, compile, runtime, master" rev="2.3.3" rev-constraint-default="2.3.3" rev-constraint-dynamic="2.3.3" callerrev="2.3.3"/>
+				<artifacts>
+					<artifact name="play-iteratees_2.10" type="jar" ext="jar" status="no" details="" size="755869" time="0" location="/JEE/play-2.2.5/framework/../repository/cache/com.typesafe.play/play-iteratees_2.10/jars/play-iteratees_2.10-2.3.3.jar">
+						<origin-location is-local="false" location="http://repo.typesafe.com/typesafe/releases/com/typesafe/play/play-iteratees_2.10/2.3.3/play-iteratees_2.10-2.3.3.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.typesafe" name="config">
+			<revision name="1.2.1" status="release" pubdate="20140502225416" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/typesafehub/config" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="10">
+				<license name="Apache License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0"/>
+				<metadata-artifact status="no" details="" size="2734" time="0" location="/JEE/play-2.2.5/framework/../repository/cache/com.typesafe/config/ivy-1.2.1.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/com/typesafe/config/1.2.1/config-1.2.1.pom"/>
+				<caller organisation="com.typesafe.akka" name="akka-actor_2.10" conf="compile, runtime" rev="1.2.1" rev-constraint-default="1.2.1" rev-constraint-dynamic="1.2.1" callerrev="2.3.4"/>
+				<caller organisation="com.typesafe.play" name="play-iteratees_2.10" conf="compile, runtime" rev="1.2.1" rev-constraint-default="1.2.1" rev-constraint-dynamic="1.2.1" callerrev="2.3.3"/>
+				<artifacts>
+					<artifact name="config" type="bundle" ext="jar" status="no" details="" size="219554" time="0" location="/JEE/play-2.2.5/framework/../repository/cache/com.typesafe/config/bundles/config-1.2.1.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/com/typesafe/config/1.2.1/config-1.2.1.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.scala-stm" name="scala-stm_2.10">
+			<revision name="0.7" status="release" pubdate="20141005235336" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://nbronson.github.com/scala-stm/" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="9">
+				<license name="BSD" url="https://github.com/nbronson/scala-stm/blob/master/LICENSE.txt"/>
+				<metadata-artifact status="no" details="" size="2520" time="0" location="/JEE/play-2.2.5/framework/../repository/cache/org.scala-stm/scala-stm_2.10/ivy-0.7.xml" searched="false" origin-is-local="true" origin-location="/JEE/play-2.2.5/repository/local/org.scala-stm/scala-stm_2.10/0.7/ivys/ivy.xml"/>
+				<caller organisation="com.typesafe.play" name="play-iteratees_2.10" conf="compile, runtime" rev="0.7" rev-constraint-default="0.7" rev-constraint-dynamic="0.7" callerrev="2.3.3"/>
+				<caller organisation="com.typesafe.play" name="play_2.10" conf="default, compile, runtime, master" rev="0.7" rev-constraint-default="0.7" rev-constraint-dynamic="0.7" callerrev="2.3.3"/>
+				<artifacts>
+					<artifact name="scala-stm_2.10" type="jar" ext="jar" status="no" details="" size="650514" time="0" location="/JEE/play-2.2.5/repository/local/org.scala-stm/scala-stm_2.10/0.7/jars/scala-stm_2.10.jar">
+						<origin-location is-local="true" location="/JEE/play-2.2.5/repository/local/org.scala-stm/scala-stm_2.10/0.7/jars/scala-stm_2.10.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.typesafe.play" name="build-link">
+			<revision name="2.3.3" status="release" pubdate="20141008132436" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="5">
+				<metadata-artifact status="no" details="" size="2543" time="0" location="/JEE/play-2.2.5/framework/../repository/cache/com.typesafe.play/build-link/ivy-2.3.3.xml" searched="false" origin-is-local="false" origin-location="http://repo.typesafe.com/typesafe/releases/com/typesafe/play/build-link/2.3.3/build-link-2.3.3.pom"/>
+				<caller organisation="com.typesafe.play" name="play_2.10" conf="default, compile, runtime, master" rev="2.3.3" rev-constraint-default="2.3.3" rev-constraint-dynamic="2.3.3" callerrev="2.3.3"/>
+				<artifacts>
+					<artifact name="build-link" type="jar" ext="jar" status="no" details="" size="11448" time="0" location="/JEE/play-2.2.5/framework/../repository/cache/com.typesafe.play/build-link/jars/build-link-2.3.3.jar">
+						<origin-location is-local="false" location="http://repo.typesafe.com/typesafe/releases/com/typesafe/play/build-link/2.3.3/build-link-2.3.3.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.javassist" name="javassist">
+			<revision name="3.18.2-GA" status="release" pubdate="20140528005509" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.javassist.org/" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="7">
+				<license name="MPL 1.1" url="http://www.mozilla.org/MPL/MPL-1.1.html"/>
+				<license name="LGPL 2.1" url="http://www.gnu.org/licenses/lgpl-2.1.html"/>
+				<license name="Apache License 2.0" url="http://www.apache.org/licenses/"/>
+				<metadata-artifact status="no" details="" size="3067" time="0" location="/JEE/play-2.2.5/framework/../repository/cache/org.javassist/javassist/ivy-3.18.2-GA.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/javassist/javassist/3.18.2-GA/javassist-3.18.2-GA.pom"/>
+				<caller organisation="com.typesafe.play" name="play-java_2.10" conf="default, compile, runtime, master" rev="3.18.2-GA" rev-constraint-default="3.18.2-GA" rev-constraint-dynamic="3.18.2-GA" callerrev="2.3.3"/>
+				<caller organisation="com.typesafe.play" name="build-link" conf="compile, runtime" rev="3.18.2-GA" rev-constraint-default="3.18.2-GA" rev-constraint-dynamic="3.18.2-GA" callerrev="2.3.3"/>
+				<artifacts>
+					<artifact name="javassist" type="bundle" ext="jar" status="no" details="" size="714524" time="0" location="/JEE/play-2.2.5/framework/../repository/cache/org.javassist/javassist/bundles/javassist-3.18.2-GA.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/javassist/javassist/3.18.2-GA/javassist-3.18.2-GA.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.typesafe.play" name="play-exceptions">
+			<revision name="2.3.3" status="release" pubdate="20141008132437" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="6">
+				<metadata-artifact status="no" details="" size="2241" time="0" location="/JEE/play-2.2.5/framework/../repository/cache/com.typesafe.play/play-exceptions/ivy-2.3.3.xml" searched="false" origin-is-local="false" origin-location="http://repo.typesafe.com/typesafe/releases/com/typesafe/play/play-exceptions/2.3.3/play-exceptions-2.3.3.pom"/>
+				<caller organisation="com.typesafe.play" name="play_2.10" conf="default, compile, runtime, master" rev="2.3.3" rev-constraint-default="2.3.3" rev-constraint-dynamic="2.3.3" callerrev="2.3.3"/>
+				<caller organisation="com.typesafe.play" name="build-link" conf="compile, runtime" rev="2.3.3" rev-constraint-default="2.3.3" rev-constraint-dynamic="2.3.3" callerrev="2.3.3"/>
+				<artifacts>
+					<artifact name="play-exceptions" type="jar" ext="jar" status="no" details="" size="4571" time="0" location="/JEE/play-2.2.5/framework/../repository/cache/com.typesafe.play/play-exceptions/jars/play-exceptions-2.3.3.jar">
+						<origin-location is-local="false" location="http://repo.typesafe.com/typesafe/releases/com/typesafe/play/play-exceptions/2.3.3/play-exceptions-2.3.3.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.typesafe.play" name="twirl-api_2.10">
+			<revision name="1.0.2" status="release" pubdate="20140615181007" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/playframework/twirl" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, master(*), compile(*), runtime, runtime(*), master" position="2">
+				<license name="Apache 2" url="http://www.apache.org/licenses/LICENSE-2.0"/>
+				<metadata-artifact status="no" details="" size="2778" time="0" location="/JEE/play-2.2.5/framework/../repository/cache/com.typesafe.play/twirl-api_2.10/ivy-1.0.2.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/com/typesafe/play/twirl-api_2.10/1.0.2/twirl-api_2.10-1.0.2.pom"/>
+				<caller organisation="mcs-common" name="mcs-common_2.10" conf="compile" rev="1.0.2" rev-constraint-default="1.0.2" rev-constraint-dynamic="1.0.2" callerrev="1.0.0"/>
+				<caller organisation="mcs-servlet30" name="mcs-servlet30_2.10" conf="compile, runtime" rev="1.0.2" rev-constraint-default="1.0.2" rev-constraint-dynamic="1.0.2" callerrev="1.0.0"/>
+				<caller organisation="com.typesafe.play" name="play_2.10" conf="default, compile, runtime, master" rev="1.0.2" rev-constraint-default="1.0.2" rev-constraint-dynamic="1.0.2" callerrev="2.3.3"/>
+				<artifacts>
+					<artifact name="twirl-api_2.10" type="jar" ext="jar" status="no" details="" size="61202" time="0" location="/JEE/play-2.2.5/framework/../repository/cache/com.typesafe.play/twirl-api_2.10/jars/twirl-api_2.10-1.0.2.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/com/typesafe/play/twirl-api_2.10/1.0.2/twirl-api_2.10-1.0.2.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.apache.commons" name="commons-lang3">
+			<revision name="3.1" status="release" pubdate="20141005235336" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://commons.apache.org/lang/" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="3">
+				<metadata-artifact status="no" details="" size="7764" time="0" location="/JEE/play-2.2.5/framework/../repository/cache/org.apache.commons/commons-lang3/ivy-3.1.xml" searched="false" origin-is-local="true" origin-location="/JEE/play-2.2.5/repository/local/org.apache.commons/commons-lang3/3.1/ivys/ivy.xml"/>
+				<caller organisation="com.typesafe.play" name="play_2.10" conf="default, compile, runtime, master" rev="3.1" rev-constraint-default="3.1" rev-constraint-dynamic="3.1" callerrev="2.3.3"/>
+				<caller organisation="com.typesafe.play" name="twirl-api_2.10" conf="default, compile, runtime, master" rev="3.1" rev-constraint-default="3.1" rev-constraint-dynamic="3.1" callerrev="1.0.2"/>
+				<artifacts>
+					<artifact name="commons-lang3" type="jar" ext="jar" status="no" details="" size="315805" time="0" location="/JEE/play-2.2.5/repository/local/org.apache.commons/commons-lang3/3.1/jars/commons-lang3.jar">
+						<origin-location is-local="true" location="/JEE/play-2.2.5/repository/local/org.apache.commons/commons-lang3/3.1/jars/commons-lang3.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.scala-lang" name="scala-library">
+			<revision name="2.10.4" status="release" pubdate="20140319054629" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scala-lang.org/" extra-info.apiURL="http://www.scala-lang.org/api/2.10.4/" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, master(*), compile(*), runtime, runtime(*), master" position="0">
+				<license name="BSD-like" url="http://www.scala-lang.org/downloads/license.html          "/>
+				<metadata-artifact status="no" details="" size="2487" time="0" location="/JEE/play-2.2.5/framework/../repository/cache/org.scala-lang/scala-library/ivy-2.10.4.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/scala-lang/scala-library/2.10.4/scala-library-2.10.4.pom"/>
+				<caller organisation="com.typesafe.akka" name="akka-actor_2.10" conf="compile, runtime" rev="2.10.4" rev-constraint-default="2.10.4" rev-constraint-dynamic="2.10.4" callerrev="2.3.4"/>
+				<caller organisation="com.typesafe.play" name="play-json_2.10" conf="compile, runtime" rev="2.10.4" rev-constraint-default="2.10.4" rev-constraint-dynamic="2.10.4" callerrev="2.3.3"/>
+				<caller organisation="com.typesafe.play" name="play-java-ws_2.10" conf="default, compile, runtime, master" rev="2.10.4" rev-constraint-default="2.10.4" rev-constraint-dynamic="2.10.4" callerrev="2.3.3"/>
+				<caller organisation="com.typesafe.akka" name="akka-slf4j_2.10" conf="compile, runtime" rev="2.10.4" rev-constraint-default="2.10.4" rev-constraint-dynamic="2.10.4" callerrev="2.3.4"/>
+				<caller organisation="com.github.play2war" name="play2-war-core-servlet30_2.10" conf="default, compile, runtime, master" rev="2.10.4" rev-constraint-default="2.10.4" rev-constraint-dynamic="2.10.4" callerrev="1.3-beta3-SNAPSHOT"/>
+				<caller organisation="com.typesafe.play" name="play-java_2.10" conf="default, compile, runtime, master" rev="2.10.4" rev-constraint-default="2.10.4" rev-constraint-dynamic="2.10.4" callerrev="2.3.3"/>
+				<caller organisation="com.typesafe.play" name="play_2.10" conf="default, compile, runtime, master" rev="2.10.4" rev-constraint-default="2.10.4" rev-constraint-dynamic="2.10.4" callerrev="2.3.3"/>
+				<caller organisation="com.typesafe.play" name="play-iteratees_2.10" conf="compile, runtime" rev="2.10.4" rev-constraint-default="2.10.4" rev-constraint-dynamic="2.10.4" callerrev="2.3.3"/>
+				<caller organisation="com.typesafe.play" name="play-functional_2.10" conf="compile, runtime" rev="2.10.4" rev-constraint-default="2.10.4" rev-constraint-dynamic="2.10.4" callerrev="2.3.3"/>
+				<caller organisation="com.typesafe.play" name="twirl-api_2.10" conf="default, compile, runtime, master" rev="2.10.4" rev-constraint-default="2.10.4" rev-constraint-dynamic="2.10.4" callerrev="1.0.2"/>
+				<caller organisation="mcs-common" name="mcs-common_2.10" conf="compile" rev="2.10.4" rev-constraint-default="2.10.4" rev-constraint-dynamic="2.10.4" callerrev="1.0.0"/>
+				<caller organisation="org.scala-lang" name="scala-reflect" conf="compile, runtime" rev="2.10.4" rev-constraint-default="2.10.4" rev-constraint-dynamic="2.10.4" callerrev="2.10.4"/>
+				<caller organisation="mcs-servlet30" name="mcs-servlet30_2.10" conf="compile, runtime" rev="2.10.4" rev-constraint-default="2.10.4" rev-constraint-dynamic="2.10.4" callerrev="1.0.0"/>
+				<caller organisation="org.scala-stm" name="scala-stm_2.10" conf="compile, runtime" rev="2.10.0" rev-constraint-default="2.10.0" rev-constraint-dynamic="2.10.0" callerrev="0.7"/>
+				<caller organisation="com.github.play2war" name="play2-war-core-common_2.10" conf="compile, runtime" rev="2.10.4" rev-constraint-default="2.10.4" rev-constraint-dynamic="2.10.4" callerrev="1.3-beta3-SNAPSHOT"/>
+				<caller organisation="com.typesafe.play" name="play-ws_2.10" conf="default, compile, runtime, master" rev="2.10.4" rev-constraint-default="2.10.4" rev-constraint-dynamic="2.10.4" callerrev="2.3.3"/>
+				<caller organisation="com.typesafe.play" name="play-datacommons_2.10" conf="compile, runtime" rev="2.10.4" rev-constraint-default="2.10.4" rev-constraint-dynamic="2.10.4" callerrev="2.3.3"/>
+				<artifacts>
+					<artifact name="scala-library" type="jar" ext="jar" status="no" details="" size="7126372" time="0" location="/JEE/play-2.2.5/framework/../repository/cache/org.scala-lang/scala-library/jars/scala-library-2.10.4.jar">
+						<origin-location is-local="false" location="UNKNOWN"/>
+					</artifact>
+				</artifacts>
+			</revision>
+			<revision name="2.10.0" evicted="latest-revision" evicted-reason="" downloaded="false" searched="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="-1">
+				<evicted-by rev="2.10.4"/>
+				<caller organisation="org.scala-stm" name="scala-stm_2.10" conf="compile, runtime" rev="2.10.0" rev-constraint-default="2.10.0" rev-constraint-dynamic="2.10.0" callerrev="0.7"/>
+				<artifacts>
+				</artifacts>
+			</revision>
+		</module>
+	</dependencies>
+</ivy-report>

@@ -1,6 +1,6 @@
 // @SOURCE:/Users/brew/NPE/gits/mcs/conf/routes
-// @HASH:b090a9d9ba30852f5cf775ce8904065377e624c6
-// @DATE:Sat Oct 11 05:08:03 GMT 2014
+// @HASH:789c4b4f8f736a1947d0c986ced5f41833e5b0eb
+// @DATE:Mon Oct 13 09:53:30 GMT 2014
 
 
 import play.core._
@@ -178,7 +178,22 @@ private[this] lazy val controllers_TaskRoleFace_importFromFlows20_invoker = crea
 controllers.TaskRoleFace.importFromFlows,
 HandlerDef(this.getClass.getClassLoader, "", "controllers.TaskRoleFace", "importFromFlows", Nil,"GET", """""", Routes.prefix + """taskrole/import"""))
         
-def documentation = List(("""GET""", prefix,"""controllers.Application.index"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """assets/$file<.+>""","""controllers.Assets.at(path:String = "/public", file:String)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """fsmstats""","""controllers.FSMViewer.stats"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """test1""","""controllers.Test1.getJson"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """uploadtest""","""controllers.ProcDefHttpFace.test"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """upload""","""controllers.ProcDefHttpFace.upload"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """procdef""","""controllers.ProcDefHttpFace.getByPage(skip:Int ?= 0, limit:Int ?= 10, page:Boolean ?= false)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """procdef/check""","""controllers.ProcDefHttpFace.validate"""),("""DELETE""", prefix + (if(prefix.endsWith("/")) "" else "/") + """procdef/$defid<[^/]+>""","""controllers.ProcDefHttpFace.delete(defid:String)"""),("""PUT""", prefix + (if(prefix.endsWith("/")) "" else "/") + """procdef/$defid<[^/]+>""","""controllers.ProcDefHttpFace.update(defid:String)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """procinst""","""controllers.ProcInstFace.getByPage(skip:Int ?= 0, limit:Int ?= 10, status:Int ?= 0, query:String ?= null, page:Boolean ?= false)"""),("""DELETE""", prefix + (if(prefix.endsWith("/")) "" else "/") + """procinst/$defid<[^/]+>""","""controllers.ProcInstFace.delete(defid:String)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """taskcenter""","""controllers.TaskCenterFace.getByPage(skip:Int ?= 0, limit:Int ?= 10, status:Int ?= 0, query:String ?= null, page:Boolean ?= false)"""),("""DELETE""", prefix + (if(prefix.endsWith("/")) "" else "/") + """taskcenter/$keyy<[^/]+>""","""controllers.TaskCenterFace.delete(keyy:String)"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """taskcenter""","""controllers.TaskCenterFace.insert"""),("""PUT""", prefix + (if(prefix.endsWith("/")) "" else "/") + """taskcenter/$keyy<[^/]+>""","""controllers.TaskCenterFace.update(keyy:String)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """taskrole""","""controllers.TaskRoleFace.getByPage(skip:Int ?= 0, limit:Int ?= 10, status:Int ?= 0, query:String ?= null, page:Boolean ?= false)"""),("""DELETE""", prefix + (if(prefix.endsWith("/")) "" else "/") + """taskrole/$keyy<[^/]+>""","""controllers.TaskRoleFace.delete(keyy:String)"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """taskrole""","""controllers.TaskRoleFace.insert"""),("""PUT""", prefix + (if(prefix.endsWith("/")) "" else "/") + """taskrole/$keyy<[^/]+>""","""controllers.TaskRoleFace.update(keyy:String)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """taskrole/import""","""controllers.TaskRoleFace.importFromFlows""")).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
+
+// @LINE:65
+private[this] lazy val controllers_QueueViewer_statsByName21_route = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("qstatbyname"))))
+private[this] lazy val controllers_QueueViewer_statsByName21_invoker = createInvoker(
+controllers.QueueViewer.statsByName,
+HandlerDef(this.getClass.getClassLoader, "", "controllers.QueueViewer", "statsByName", Nil,"GET", """################
+ queue views""", Routes.prefix + """qstatbyname"""))
+        
+
+// @LINE:66
+private[this] lazy val controllers_QueueViewer_statsByCenter22_route = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("qstatbycenter"))))
+private[this] lazy val controllers_QueueViewer_statsByCenter22_invoker = createInvoker(
+controllers.QueueViewer.statsByCenter,
+HandlerDef(this.getClass.getClassLoader, "", "controllers.QueueViewer", "statsByCenter", Nil,"GET", """""", Routes.prefix + """qstatbycenter"""))
+        
+def documentation = List(("""GET""", prefix,"""controllers.Application.index"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """assets/$file<.+>""","""controllers.Assets.at(path:String = "/public", file:String)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """fsmstats""","""controllers.FSMViewer.stats"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """test1""","""controllers.Test1.getJson"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """uploadtest""","""controllers.ProcDefHttpFace.test"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """upload""","""controllers.ProcDefHttpFace.upload"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """procdef""","""controllers.ProcDefHttpFace.getByPage(skip:Int ?= 0, limit:Int ?= 10, page:Boolean ?= false)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """procdef/check""","""controllers.ProcDefHttpFace.validate"""),("""DELETE""", prefix + (if(prefix.endsWith("/")) "" else "/") + """procdef/$defid<[^/]+>""","""controllers.ProcDefHttpFace.delete(defid:String)"""),("""PUT""", prefix + (if(prefix.endsWith("/")) "" else "/") + """procdef/$defid<[^/]+>""","""controllers.ProcDefHttpFace.update(defid:String)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """procinst""","""controllers.ProcInstFace.getByPage(skip:Int ?= 0, limit:Int ?= 10, status:Int ?= 0, query:String ?= null, page:Boolean ?= false)"""),("""DELETE""", prefix + (if(prefix.endsWith("/")) "" else "/") + """procinst/$defid<[^/]+>""","""controllers.ProcInstFace.delete(defid:String)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """taskcenter""","""controllers.TaskCenterFace.getByPage(skip:Int ?= 0, limit:Int ?= 10, status:Int ?= 0, query:String ?= null, page:Boolean ?= false)"""),("""DELETE""", prefix + (if(prefix.endsWith("/")) "" else "/") + """taskcenter/$keyy<[^/]+>""","""controllers.TaskCenterFace.delete(keyy:String)"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """taskcenter""","""controllers.TaskCenterFace.insert"""),("""PUT""", prefix + (if(prefix.endsWith("/")) "" else "/") + """taskcenter/$keyy<[^/]+>""","""controllers.TaskCenterFace.update(keyy:String)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """taskrole""","""controllers.TaskRoleFace.getByPage(skip:Int ?= 0, limit:Int ?= 10, status:Int ?= 0, query:String ?= null, page:Boolean ?= false)"""),("""DELETE""", prefix + (if(prefix.endsWith("/")) "" else "/") + """taskrole/$keyy<[^/]+>""","""controllers.TaskRoleFace.delete(keyy:String)"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """taskrole""","""controllers.TaskRoleFace.insert"""),("""PUT""", prefix + (if(prefix.endsWith("/")) "" else "/") + """taskrole/$keyy<[^/]+>""","""controllers.TaskRoleFace.update(keyy:String)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """taskrole/import""","""controllers.TaskRoleFace.importFromFlows"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """qstatbyname""","""controllers.QueueViewer.statsByName"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """qstatbycenter""","""controllers.QueueViewer.statsByCenter""")).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
   case r @ (_,_,_) => s :+ r.asInstanceOf[(String,String,String)]
   case l => s ++ l.asInstanceOf[List[(String,String,String)]]
 }}
@@ -350,6 +365,22 @@ case controllers_TaskRoleFace_update19_route(params) => {
 case controllers_TaskRoleFace_importFromFlows20_route(params) => {
    call { 
         controllers_TaskRoleFace_importFromFlows20_invoker.call(controllers.TaskRoleFace.importFromFlows)
+   }
+}
+        
+
+// @LINE:65
+case controllers_QueueViewer_statsByName21_route(params) => {
+   call { 
+        controllers_QueueViewer_statsByName21_invoker.call(controllers.QueueViewer.statsByName)
+   }
+}
+        
+
+// @LINE:66
+case controllers_QueueViewer_statsByCenter22_route(params) => {
+   call { 
+        controllers_QueueViewer_statsByCenter22_invoker.call(controllers.QueueViewer.statsByCenter)
    }
 }
         

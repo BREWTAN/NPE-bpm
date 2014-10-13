@@ -50,7 +50,7 @@ class FsmCollector extends Actor {
 //        workerRouter ! ConsistentHashableEnvelope(ConsistentHashableEnvelope("stats", "stats"), "stats")
         val result = Await.result(ask(workerRouter,ConsistentHashableEnvelope(ConsistentHashableEnvelope("stats", "stats"), "stats")), timeout.duration) match {
           case fps: String =>
-            fps
+            fps+","+mem
           case _ =>
 //          //            (0, 0, 0, 0,0,0,0)
         }

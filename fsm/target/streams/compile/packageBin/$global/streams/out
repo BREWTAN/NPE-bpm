@@ -48,6 +48,8 @@
 [0m[[0mdebug[0m] [0m	  /Users/brew/NPE/gits/fsm/target/scala-2.11/classes/org/nights/npe/fsm/cluster/ConvergeClusterListener.class[0m
 [0m[[0mdebug[0m] [0m	org/nights/npe/fsm/backend/ProcDefStorage.class[0m
 [0m[[0mdebug[0m] [0m	  /Users/brew/NPE/gits/fsm/target/scala-2.11/classes/org/nights/npe/fsm/backend/ProcDefStorage.class[0m
+[0m[[0mdebug[0m] [0m	org/nights/npe/fsm/Starter.class[0m
+[0m[[0mdebug[0m] [0m	  /Users/brew/NPE/gits/fsm/target/scala-2.11/classes/org/nights/npe/fsm/Starter.class[0m
 [0m[[0mdebug[0m] [0m	org/nights/npe/fsm/backend/EhCacheStorage.class[0m
 [0m[[0mdebug[0m] [0m	  /Users/brew/NPE/gits/fsm/target/scala-2.11/classes/org/nights/npe/fsm/backend/EhCacheStorage.class[0m
 [0m[[0mdebug[0m] [0m	org/nights/npe/fsm/backend/NewProcess.class[0m
@@ -58,8 +60,12 @@
 [0m[[0mdebug[0m] [0m	  /Users/brew/NPE/gits/fsm/target/scala-2.11/classes/org/nights/npe/fsm/ActorHelper$$anonfun$fsmActor$1.class[0m
 [0m[[0mdebug[0m] [0m	org/nights/npe/fsm/cluster[0m
 [0m[[0mdebug[0m] [0m	  /Users/brew/NPE/gits/fsm/target/scala-2.11/classes/org/nights/npe/fsm/cluster[0m
+[0m[[0mdebug[0m] [0m	org/nights/npe/fsm/backend/LoadDefFromDB.class[0m
+[0m[[0mdebug[0m] [0m	  /Users/brew/NPE/gits/fsm/target/scala-2.11/classes/org/nights/npe/fsm/backend/LoadDefFromDB.class[0m
 [0m[[0mdebug[0m] [0m	org/nights/npe/fsm/backend/EhCacheStorage$$anonfun$doRemoveConverge$1.class[0m
 [0m[[0mdebug[0m] [0m	  /Users/brew/NPE/gits/fsm/target/scala-2.11/classes/org/nights/npe/fsm/backend/EhCacheStorage$$anonfun$doRemoveConverge$1.class[0m
+[0m[[0mdebug[0m] [0m	org/nights/npe/fsm/backend/ProcDefStorage$$anonfun$receive$1$$anonfun$org$nights$npe$fsm$backend$ProcDefStorage$$anonfun$$f$1$1.class[0m
+[0m[[0mdebug[0m] [0m	  /Users/brew/NPE/gits/fsm/target/scala-2.11/classes/org/nights/npe/fsm/backend/ProcDefStorage$$anonfun$receive$1$$anonfun$org$nights$npe$fsm$backend$ProcDefStorage$$anonfun$$f$1$1.class[0m
 [0m[[0mdebug[0m] [0m	org/nights/npe/fsm/backend/MySqlStorage$$anonfun$4.class[0m
 [0m[[0mdebug[0m] [0m	  /Users/brew/NPE/gits/fsm/target/scala-2.11/classes/org/nights/npe/fsm/backend/MySqlStorage$$anonfun$4.class[0m
 [0m[[0mdebug[0m] [0m	org[0m
@@ -96,10 +102,10 @@
 [0m[[0mdebug[0m] [0m	  /Users/brew/NPE/gits/fsm/target/scala-2.11/classes/org/nights/npe/fsm/ConvergingTrans.class[0m
 [0m[[0mdebug[0m] [0m	org/nights/npe/queue/AdvancePriorityQueue$$anonfun$offer$1$$anonfun$apply$mcV$sp$1.class[0m
 [0m[[0mdebug[0m] [0m	  /Users/brew/NPE/gits/fsm/target/scala-2.11/classes/org/nights/npe/queue/AdvancePriorityQueue$$anonfun$offer$1$$anonfun$apply$mcV$sp$1.class[0m
+[0m[[0mdebug[0m] [0m	org/nights/npe/fsm/Starter$$anonfun$main$1.class[0m
+[0m[[0mdebug[0m] [0m	  /Users/brew/NPE/gits/fsm/target/scala-2.11/classes/org/nights/npe/fsm/Starter$$anonfun$main$1.class[0m
 [0m[[0mdebug[0m] [0m	org/nights/npe/fsm/backend/MySqlInsertStorage.class[0m
 [0m[[0mdebug[0m] [0m	  /Users/brew/NPE/gits/fsm/target/scala-2.11/classes/org/nights/npe/fsm/backend/MySqlInsertStorage.class[0m
-[0m[[0mdebug[0m] [0m	org/nights/npe/fsm/backend/LoadDefDir.class[0m
-[0m[[0mdebug[0m] [0m	  /Users/brew/NPE/gits/fsm/target/scala-2.11/classes/org/nights/npe/fsm/backend/LoadDefDir.class[0m
 [0m[[0mdebug[0m] [0m	org/nights/npe/fsm/FsmActorsController.class[0m
 [0m[[0mdebug[0m] [0m	  /Users/brew/NPE/gits/fsm/target/scala-2.11/classes/org/nights/npe/fsm/FsmActorsController.class[0m
 [0m[[0mdebug[0m] [0m	org/nights/npe/fsm/cluster/SimpleClusterListener.class[0m
@@ -144,8 +150,6 @@
 [0m[[0mdebug[0m] [0m	  /Users/brew/NPE/gits/fsm/target/scala-2.11/classes/org/nights/npe/fsm/backend/BeanTransHelper$$anonfun$koToState$3.class[0m
 [0m[[0mdebug[0m] [0m	org/nights/npe/fsm/backend/FetchProcessStates$.class[0m
 [0m[[0mdebug[0m] [0m	  /Users/brew/NPE/gits/fsm/target/scala-2.11/classes/org/nights/npe/fsm/backend/FetchProcessStates$.class[0m
-[0m[[0mdebug[0m] [0m	org/nights/npe/fsm/backend/ProcDefStorage$$anonfun$receive$1$$anonfun$applyOrElse$4$$anonfun$apply$1.class[0m
-[0m[[0mdebug[0m] [0m	  /Users/brew/NPE/gits/fsm/target/scala-2.11/classes/org/nights/npe/fsm/backend/ProcDefStorage$$anonfun$receive$1$$anonfun$applyOrElse$4$$anonfun$apply$1.class[0m
 [0m[[0mdebug[0m] [0m	org/nights/npe/fsm/InlineCmdActor$$anonfun$receive$1.class[0m
 [0m[[0mdebug[0m] [0m	  /Users/brew/NPE/gits/fsm/target/scala-2.11/classes/org/nights/npe/fsm/InlineCmdActor$$anonfun$receive$1.class[0m
 [0m[[0mdebug[0m] [0m	org/nights/npe/fsm/RecoverFor$.class[0m
@@ -182,8 +186,6 @@
 [0m[[0mdebug[0m] [0m	  /Users/brew/NPE/gits/fsm/target/scala-2.11/classes/org/nights/npe/fsm/cluster/SingleClusterListener$$anonfun$master$1.class[0m
 [0m[[0mdebug[0m] [0m	org/nights/npe/fsm[0m
 [0m[[0mdebug[0m] [0m	  /Users/brew/NPE/gits/fsm/target/scala-2.11/classes/org/nights/npe/fsm[0m
-[0m[[0mdebug[0m] [0m	org/nights/npe/fsm/backend/ProcDefStorage$$anonfun$receive$1$$anonfun$applyOrElse$1.class[0m
-[0m[[0mdebug[0m] [0m	  /Users/brew/NPE/gits/fsm/target/scala-2.11/classes/org/nights/npe/fsm/backend/ProcDefStorage$$anonfun$receive$1$$anonfun$applyOrElse$1.class[0m
 [0m[[0mdebug[0m] [0m	org/nights/npe/fsm/AskNewWork$.class[0m
 [0m[[0mdebug[0m] [0m	  /Users/brew/NPE/gits/fsm/target/scala-2.11/classes/org/nights/npe/fsm/AskNewWork$.class[0m
 [0m[[0mdebug[0m] [0m	org/nights/npe/queue/AdvancePriorityQueue.class[0m
@@ -216,8 +218,6 @@
 [0m[[0mdebug[0m] [0m	  /Users/brew/NPE/gits/fsm/target/scala-2.11/classes/org/nights/npe/fsm/PipeEnvelope.class[0m
 [0m[[0mdebug[0m] [0m	org/nights/npe/queue/RolePIOQueue$$anonfun$insertNewRoleQueue$1.class[0m
 [0m[[0mdebug[0m] [0m	  /Users/brew/NPE/gits/fsm/target/scala-2.11/classes/org/nights/npe/queue/RolePIOQueue$$anonfun$insertNewRoleQueue$1.class[0m
-[0m[[0mdebug[0m] [0m	org/nights/npe/fsm/backend/ProcDefStorage$$anonfun$receive$1$$anonfun$applyOrElse$2.class[0m
-[0m[[0mdebug[0m] [0m	  /Users/brew/NPE/gits/fsm/target/scala-2.11/classes/org/nights/npe/fsm/backend/ProcDefStorage$$anonfun$receive$1$$anonfun$applyOrElse$2.class[0m
 [0m[[0mdebug[0m] [0m	org/nights/npe/fsm/AskNewWork.class[0m
 [0m[[0mdebug[0m] [0m	  /Users/brew/NPE/gits/fsm/target/scala-2.11/classes/org/nights/npe/fsm/AskNewWork.class[0m
 [0m[[0mdebug[0m] [0m	org/nights/npe/fsm/cluster/SimpleClusterListener$$anonfun$receive$1$$anonfun$applyOrElse$2.class[0m
@@ -230,6 +230,8 @@
 [0m[[0mdebug[0m] [0m	  /Users/brew/NPE/gits/fsm/target/scala-2.11/classes/org/nights/npe/fsm/Submitors.class[0m
 [0m[[0mdebug[0m] [0m	org/nights/npe/fsm/backend/FetchProcessStates.class[0m
 [0m[[0mdebug[0m] [0m	  /Users/brew/NPE/gits/fsm/target/scala-2.11/classes/org/nights/npe/fsm/backend/FetchProcessStates.class[0m
+[0m[[0mdebug[0m] [0m	org/nights/npe/fsm/backend/ProcDefStorage$$anonfun$receive$1$$anonfun$org$nights$npe$fsm$backend$ProcDefStorage$$anonfun$$f$1$4.class[0m
+[0m[[0mdebug[0m] [0m	  /Users/brew/NPE/gits/fsm/target/scala-2.11/classes/org/nights/npe/fsm/backend/ProcDefStorage$$anonfun$receive$1$$anonfun$org$nights$npe$fsm$backend$ProcDefStorage$$anonfun$$f$1$4.class[0m
 [0m[[0mdebug[0m] [0m	org/nights/npe/fsm/cluster/ConvergeClusterListener$$anonfun$receiveOther$1$$anonfun$applyOrElse$1.class[0m
 [0m[[0mdebug[0m] [0m	  /Users/brew/NPE/gits/fsm/target/scala-2.11/classes/org/nights/npe/fsm/cluster/ConvergeClusterListener$$anonfun$receiveOther$1$$anonfun$applyOrElse$1.class[0m
 [0m[[0mdebug[0m] [0m	org/nights/npe/fsm/backend/EhCacheStorage$$anonfun$saveTransition$1$$anonfun$apply$1.class[0m
@@ -248,8 +250,6 @@
 [0m[[0mdebug[0m] [0m	  /Users/brew/NPE/gits/fsm/target/scala-2.11/classes/org/nights/npe/fsm/backend/LoadDefFile$.class[0m
 [0m[[0mdebug[0m] [0m	org/nights/npe/fsm/DoneStateContext.class[0m
 [0m[[0mdebug[0m] [0m	  /Users/brew/NPE/gits/fsm/target/scala-2.11/classes/org/nights/npe/fsm/DoneStateContext.class[0m
-[0m[[0mdebug[0m] [0m	org/nights/npe/fsm/backend/ProcDefStorage$$anonfun$receive$1$$anonfun$applyOrElse$4.class[0m
-[0m[[0mdebug[0m] [0m	  /Users/brew/NPE/gits/fsm/target/scala-2.11/classes/org/nights/npe/fsm/backend/ProcDefStorage$$anonfun$receive$1$$anonfun$applyOrElse$4.class[0m
 [0m[[0mdebug[0m] [0m	org/nights/npe/fsm/FsmActorsController$$anonfun$receive$1.class[0m
 [0m[[0mdebug[0m] [0m	  /Users/brew/NPE/gits/fsm/target/scala-2.11/classes/org/nights/npe/fsm/FsmActorsController$$anonfun$receive$1.class[0m
 [0m[[0mdebug[0m] [0m	org/nights/npe/fsm/GlobalQueue$.class[0m
@@ -310,14 +310,16 @@
 [0m[[0mdebug[0m] [0m	  /Users/brew/NPE/gits/fsm/target/scala-2.11/classes/org/nights/npe/queue/PIOQueue.class[0m
 [0m[[0mdebug[0m] [0m	org/nights/npe/fsm/backend/UpdateStates.class[0m
 [0m[[0mdebug[0m] [0m	  /Users/brew/NPE/gits/fsm/target/scala-2.11/classes/org/nights/npe/fsm/backend/UpdateStates.class[0m
-[0m[[0mdebug[0m] [0m	org/nights/npe/fsm/backend/ProcDefStorage$$anonfun$receive$1$$anonfun$applyOrElse$3.class[0m
-[0m[[0mdebug[0m] [0m	  /Users/brew/NPE/gits/fsm/target/scala-2.11/classes/org/nights/npe/fsm/backend/ProcDefStorage$$anonfun$receive$1$$anonfun$applyOrElse$3.class[0m
 [0m[[0mdebug[0m] [0m	org/nights/npe/fsm/backend/ObtainedStates.class[0m
 [0m[[0mdebug[0m] [0m	  /Users/brew/NPE/gits/fsm/target/scala-2.11/classes/org/nights/npe/fsm/backend/ObtainedStates.class[0m
 [0m[[0mdebug[0m] [0m	org/nights/npe/fsm/CMDSubmit$.class[0m
 [0m[[0mdebug[0m] [0m	  /Users/brew/NPE/gits/fsm/target/scala-2.11/classes/org/nights/npe/fsm/CMDSubmit$.class[0m
+[0m[[0mdebug[0m] [0m	org/nights/npe/fsm/backend/LoadDefFromDB$.class[0m
+[0m[[0mdebug[0m] [0m	  /Users/brew/NPE/gits/fsm/target/scala-2.11/classes/org/nights/npe/fsm/backend/LoadDefFromDB$.class[0m
 [0m[[0mdebug[0m] [0m	org/nights/npe/fsm/QueueWorker$$anonfun$receive$1$$anonfun$applyOrElse$1.class[0m
 [0m[[0mdebug[0m] [0m	  /Users/brew/NPE/gits/fsm/target/scala-2.11/classes/org/nights/npe/fsm/QueueWorker$$anonfun$receive$1$$anonfun$applyOrElse$1.class[0m
+[0m[[0mdebug[0m] [0m	org/nights/npe/fsm/backend/ProcDefStorage$$anonfun$receive$1$$anonfun$org$nights$npe$fsm$backend$ProcDefStorage$$anonfun$$f$1$4$$anonfun$apply$1.class[0m
+[0m[[0mdebug[0m] [0m	  /Users/brew/NPE/gits/fsm/target/scala-2.11/classes/org/nights/npe/fsm/backend/ProcDefStorage$$anonfun$receive$1$$anonfun$org$nights$npe$fsm$backend$ProcDefStorage$$anonfun$$f$1$4$$anonfun$apply$1.class[0m
 [0m[[0mdebug[0m] [0m	org/nights/npe/fsm/cluster/SingleClusterListener.class[0m
 [0m[[0mdebug[0m] [0m	  /Users/brew/NPE/gits/fsm/target/scala-2.11/classes/org/nights/npe/fsm/cluster/SingleClusterListener.class[0m
 [0m[[0mdebug[0m] [0m	org/nights/npe/fsm/MessageHelper.class[0m
@@ -334,6 +336,8 @@
 [0m[[0mdebug[0m] [0m	  /Users/brew/NPE/gits/fsm/target/scala-2.11/classes/org/nights/npe/fsm/backend/EHConverger$.class[0m
 [0m[[0mdebug[0m] [0m	org/nights/npe/fsm/ConvergingTrans$.class[0m
 [0m[[0mdebug[0m] [0m	  /Users/brew/NPE/gits/fsm/target/scala-2.11/classes/org/nights/npe/fsm/ConvergingTrans$.class[0m
+[0m[[0mdebug[0m] [0m	org/nights/npe/fsm/Starter$.class[0m
+[0m[[0mdebug[0m] [0m	  /Users/brew/NPE/gits/fsm/target/scala-2.11/classes/org/nights/npe/fsm/Starter$.class[0m
 [0m[[0mdebug[0m] [0m	org/nights/npe/fsm/TransitionWorker$$anonfun$1.class[0m
 [0m[[0mdebug[0m] [0m	  /Users/brew/NPE/gits/fsm/target/scala-2.11/classes/org/nights/npe/fsm/TransitionWorker$$anonfun$1.class[0m
 [0m[[0mdebug[0m] [0m	org/nights/npe/fsm/InterStateObtain.class[0m
@@ -356,6 +360,8 @@
 [0m[[0mdebug[0m] [0m	  /Users/brew/NPE/gits/fsm/target/scala-2.11/classes/org/nights/npe/queue/AdvancePriorityQueue$$anonfun$poll$1$$anonfun$apply$1.class[0m
 [0m[[0mdebug[0m] [0m	org/nights/npe/fsm/cluster/SingleClusterListener$$anonfun$receive$1.class[0m
 [0m[[0mdebug[0m] [0m	  /Users/brew/NPE/gits/fsm/target/scala-2.11/classes/org/nights/npe/fsm/cluster/SingleClusterListener$$anonfun$receive$1.class[0m
+[0m[[0mdebug[0m] [0m	org/nights/npe/fsm/backend/ProcDefStorage$$anonfun$receive$1$$anonfun$org$nights$npe$fsm$backend$ProcDefStorage$$anonfun$$f$1$2.class[0m
+[0m[[0mdebug[0m] [0m	  /Users/brew/NPE/gits/fsm/target/scala-2.11/classes/org/nights/npe/fsm/backend/ProcDefStorage$$anonfun$receive$1$$anonfun$org$nights$npe$fsm$backend$ProcDefStorage$$anonfun$$f$1$2.class[0m
 [0m[[0mdebug[0m] [0m	org/nights/npe/fsm/backend/StorageWorker$$anonfun$receive$1.class[0m
 [0m[[0mdebug[0m] [0m	  /Users/brew/NPE/gits/fsm/target/scala-2.11/classes/org/nights/npe/fsm/backend/StorageWorker$$anonfun$receive$1.class[0m
 [0m[[0mdebug[0m] [0m	org/nights/npe/fsm/front/TaskDone.class[0m
@@ -382,6 +388,8 @@
 [0m[[0mdebug[0m] [0m	  /Users/brew/NPE/gits/fsm/target/scala-2.11/classes/org/nights/npe/fsm/ConvergeTransWorker$$anonfun$doTransite$1.class[0m
 [0m[[0mdebug[0m] [0m	org/nights/npe/fsm/cluster/ConvergeClusterListener$$anonfun$receiveOther$1.class[0m
 [0m[[0mdebug[0m] [0m	  /Users/brew/NPE/gits/fsm/target/scala-2.11/classes/org/nights/npe/fsm/cluster/ConvergeClusterListener$$anonfun$receiveOther$1.class[0m
+[0m[[0mdebug[0m] [0m	org/nights/npe/fsm/backend/ProcDefStorage$$anonfun$receive$1$$anonfun$org$nights$npe$fsm$backend$ProcDefStorage$$anonfun$$f$1$3.class[0m
+[0m[[0mdebug[0m] [0m	  /Users/brew/NPE/gits/fsm/target/scala-2.11/classes/org/nights/npe/fsm/backend/ProcDefStorage$$anonfun$receive$1$$anonfun$org$nights$npe$fsm$backend$ProcDefStorage$$anonfun$$f$1$3.class[0m
 [0m[[0mdebug[0m] [0m	org/nights/npe/fsm/RecoverQueue$.class[0m
 [0m[[0mdebug[0m] [0m	  /Users/brew/NPE/gits/fsm/target/scala-2.11/classes/org/nights/npe/fsm/RecoverQueue$.class[0m
 [0m[[0mdebug[0m] [0m	org/nights/npe/fsm/InterState.class[0m
@@ -426,6 +434,8 @@
 [0m[[0mdebug[0m] [0m	  /Users/brew/NPE/gits/fsm/target/scala-2.11/classes/org/nights[0m
 [0m[[0mdebug[0m] [0m	org/nights/npe/fsm/backend/MySqlStorage$$anonfun$3.class[0m
 [0m[[0mdebug[0m] [0m	  /Users/brew/NPE/gits/fsm/target/scala-2.11/classes/org/nights/npe/fsm/backend/MySqlStorage$$anonfun$3.class[0m
+[0m[[0mdebug[0m] [0m	org/nights/npe/fsm/backend/ProcDefStorage$$anonfun$receive$1$$anonfun$1.class[0m
+[0m[[0mdebug[0m] [0m	  /Users/brew/NPE/gits/fsm/target/scala-2.11/classes/org/nights/npe/fsm/backend/ProcDefStorage$$anonfun$receive$1$$anonfun$1.class[0m
 [0m[[0mdebug[0m] [0m	org/nights/npe/fsm/backend/Transition$.class[0m
 [0m[[0mdebug[0m] [0m	  /Users/brew/NPE/gits/fsm/target/scala-2.11/classes/org/nights/npe/fsm/backend/Transition$.class[0m
 [0m[[0mdebug[0m] [0m	org/nights/npe/fsm/backend/GatewayStates.class[0m
@@ -450,8 +460,6 @@
 [0m[[0mdebug[0m] [0m	  /Users/brew/NPE/gits/fsm/target/scala-2.11/classes/org/nights/npe/fsm/FSMGlobal.class[0m
 [0m[[0mdebug[0m] [0m	org/nights/npe/fsm/backend/EHConverger.class[0m
 [0m[[0mdebug[0m] [0m	  /Users/brew/NPE/gits/fsm/target/scala-2.11/classes/org/nights/npe/fsm/backend/EHConverger.class[0m
-[0m[[0mdebug[0m] [0m	org/nights/npe/fsm/backend/LoadDefDir$.class[0m
-[0m[[0mdebug[0m] [0m	  /Users/brew/NPE/gits/fsm/target/scala-2.11/classes/org/nights/npe/fsm/backend/LoadDefDir$.class[0m
 [0m[[0mdebug[0m] [0m	org/nights/npe/fsm/cluster/ConvergeClusterListener$$anonfun$worker$1.class[0m
 [0m[[0mdebug[0m] [0m	  /Users/brew/NPE/gits/fsm/target/scala-2.11/classes/org/nights/npe/fsm/cluster/ConvergeClusterListener$$anonfun$worker$1.class[0m
 [0m[[0minfo[0m] [0mDone packaging.[0m

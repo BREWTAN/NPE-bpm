@@ -7,7 +7,7 @@
 		revision="1.0.0"
 		conf="compile-internal"
 		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool"
-		date="20141011003657"/>
+		date="20141013074515"/>
 	<dependencies>
 		<module organisation="net.sf.ehcache" name="ehcache-jgroupsreplication">
 			<revision name="1.7" status="release" pubdate="20120725192458" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="40">
@@ -45,7 +45,7 @@
 			</revision>
 		</module>
 		<module organisation="net.sf.ehcache" name="ehcache">
-			<revision name="2.8.3" status="release" pubdate="20141011003658" resolver="local" artresolver="local" downloaded="false" searched="true" default="true" conf="default(compile), default" position="39">
+			<revision name="2.8.3" status="release" pubdate="20141013074516" resolver="local" artresolver="local" downloaded="false" searched="true" default="true" conf="default(compile), default" position="39">
 				<metadata-artifact status="no" details="" size="0" time="0" location="/Users/brew/.ivy2/cache/net.sf.ehcache/ehcache/ivy-2.8.3.xml" searched="true"/>
 				<caller organisation="fsm" name="fsm_2.11" conf="optional, compile, provided, compile-internal" rev="2.8.3" rev-constraint-default="2.8.3" rev-constraint-dynamic="2.8.3" callerrev="1.0.0"/>
 				<artifacts>
@@ -92,7 +92,7 @@
 			</revision>
 		</module>
 		<module organisation="org.nights.npe" name="commons_2.11">
-			<revision name="1.0.0" status="integration" pubdate="20141011003656" resolver="inter-project" artresolver="inter-project" downloaded="false" searched="false" default="false" conf="default(compile), compile" position="0">
+			<revision name="1.0.0" status="integration" pubdate="20141013074514" resolver="inter-project" artresolver="inter-project" downloaded="false" searched="false" default="false" conf="default(compile), compile" position="0">
 				<metadata-artifact status="failed" details="" size="0" time="0" searched="false"/>
 				<caller organisation="fsm" name="fsm_2.11" conf="optional, compile, provided, compile-internal" rev="1.0.0" rev-constraint-default="1.0.0" rev-constraint-dynamic="1.0.0" callerrev="1.0.0"/>
 				<artifacts>

@@ -34,7 +34,9 @@ class StatsWorker extends Actor with ActorLogging {
       sender ! List(StatsCounter.newprocs.get(), StatsCounter.obtains.get(), StatsCounter.submits.get(), StatsCounter.terminates.get(),
         StatsCounter.maxCost.get, StatsCounter.minCost.get,
         StatsCounter.totalCost.get, StatsCounter.totalProcCount.get,System.currentTimeMillis()).mkString("[",",","]")
-
+    case "queue" =>
+      log.info("get queuestat@"+sender)
+      sender ! GlobalQueue.queue .toString
     case _ => log.error("unknow message")
   }
 

@@ -4,7 +4,7 @@
 		module="mcs_2.11"
 		revision="1.0-SNAPSHOT"
 		status="integration"
-		publication="20141011003955"
+		publication="20141013074654"
 	>
 		<description>
 		mcs
@@ -24,10 +24,6 @@
 		<conf name="docs" visibility="private" description=""/>
 		<conf name="pom" visibility="public" description=""/>
 		<conf name="scala-tool" visibility="private" description=""/>
-		<conf name="echo-trace-compile" visibility="private" description="" extends="runtime-internal"/>
-		<conf name="echo-trace-test" visibility="private" description="" extends="echo-trace-compile,test-internal"/>
-		<conf name="echo-weave" visibility="private" description=""/>
-		<conf name="echo-sigar" visibility="private" description=""/>
 	</configurations>
 	<publications>
 		<artifact name="mcs_2.11" type="pom" ext="pom" conf="pom"/>
@@ -42,8 +38,6 @@
 		<dependency org="com.typesafe.play" name="play_2.11" rev="2.3.3" conf="compile->default(compile)"/>
 		<dependency org="com.typesafe.play" name="play-test_2.11" rev="2.3.3" conf="test->default(compile)"/>
 		<dependency org="com.typesafe.play" name="play-docs_2.11" rev="2.3.3" conf="docs->default(compile)"/>
-		<dependency org="org.aspectj" name="aspectjweaver" rev="1.7.3" conf="echo-weave->default(compile)"/>
-		<dependency org="com.typesafe.trace" name="trace-sigar-libs" rev="0.1.6" conf="echo-sigar->default(compile)"/>
 		<dependency org="com.typesafe.scala-logging" name="scala-logging_2.11" rev="3.1.0" conf="compile->default(compile)"/>
 		<dependency org="com.typesafe.akka" name="akka-agent_2.11" rev="2.3.5" conf="compile->default(compile)"/>
 		<dependency org="com.typesafe.akka" name="akka-cluster_2.11" rev="2.3.5" conf="compile->default(compile)"/>
@@ -61,6 +55,5 @@
 		<dependency org="javax.transaction" name="jta" rev="1.1" conf="compile->default(compile)"/>
 		<dependency org="com.github.mauricio" name="mysql-async_2.11" rev="0.2.14" conf="compile->default(compile)"/>
 		<dependency org="com.fasterxml.jackson.module" name="jackson-module-scala_2.11" rev="2.4.2" conf="compile->default(compile)"/>
-		<dependency org="com.typesafe.trace" name="trace-play-2.3.3_2.11" rev="0.1.6" conf="echo-trace-compile->default(compile)"/>
 	</dependencies>
 </ivy-module>

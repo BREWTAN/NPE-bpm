@@ -143,7 +143,8 @@
 											</div>
 
 											<div class="widget-body">
-												<div class="widget-main no-padding">
+												<div class="widget-main no-padding" id="__div_qstatbyname">
+													<script type="text/x-template" id="__dust_qstatbyname" >
 													<table class="table table-bordered table-striped">
 														<thead class="thin-border-bottom">
 															<tr>
@@ -165,38 +166,30 @@
 														</thead>
 
 														<tbody>
+															
+															{#data}
+
 															<tr>
-																<td>扫描</td>
+																<td>{taskname}</td>
 																<td>
-																	<span class="label label-info arrowed-right arrowed-in">242</span>
+																	<span class="label label-info arrowed-right arrowed-in">{i0}</span>
 																</td>
 																<td>
-																	<b class="green">234</b>
+																	<b class="green">{r}%</b>
 																</td>
 																<td>
-																	<b class="green">234</b>
+																	<b class="green">{i3}</b>
 																</td>
 
 															</tr>
-
-															<tr>
-																<td>验印</td>
-
-																<td>
-																	<span class="label label-success arrowed  ">22</span>
-																</td>
-
-																<td >
-																	<b class="green">234</b>
-																</td>
-																<td>
-																	<b class="green">234</b>
-																</td>
-															</tr>
-
+															{/data}
+														
 															
 														</tbody>
 													</table>
+													</script>
+
+
 												</div><!-- /.widget-main -->
 											</div><!-- /.widget-body -->
 										</div><!-- /.widget-box -->
@@ -817,6 +810,8 @@ var speedoptions = {
 	var lasttotalv=[0,0,0,0,0,0,0,0,0]
 	var lastspeedv=[0,0,0,0,0,0,0,0,0]
 
+    tbform = Duster.buildArr($('#__dust_qstatbyname'));
+
 	var updateCounter=function(){
 
 
@@ -826,10 +821,8 @@ var speedoptions = {
 			dataType: 'JSON',
 		})
 		.done(function(data) {
-			
-
 			var lastv=data[data.length-1]
-		 	 var last2v=data[data.length-2]
+		 	var last2v=data[data.length-2]
 
 			console.log("success:"+JSON.stringify(lastv));
 
@@ -863,12 +856,92 @@ var speedoptions = {
 			console.log("totalv="+totalv)
 
 
-
-
 		})
 		.always(function() {
 			console.log("complete");
 		});
+
+
+		$.ajax({
+			url: '/nperest/qstatbyname',
+			type: 'GET',
+			dataType: 'JSON',
+		})
+		.done(function(data) {
+			// console.log("getQ::"+JSON.stringify(data))
+			var keymap={};
+			$.each(data,function(index,row){
+				if(!keymap[row['taskname']]){
+					keymap[row['taskname']]={}
+				}
+				keymap[row['taskname']][row['interstate']]=row['counter']
+			});
+			var rawdata=[]
+			$.each(keymap,function(key,value){
+				//console.log("::"+JSON.stringify(value))
+				var v0=0
+				if(key=="End"||key=="End(gateway)"||key.length==0)return
+				if(value[0])v0=value[0]
+				rawdata.push({"taskname":key,"i0":v0,"i1":value[1],"i2":value[2],
+					"i3":value[3],"r":Math.round(value[3]*100.0/(value[3]+v0))})
+			})
+			rawdata.sort(function(a,b){
+				return b["i0"]-a["i0"]
+			})
+			var sorteddata=[]
+			$.each(rawdata,function(index,row){
+				if(index>=8&&row["i0"]==0)return
+				sorteddata.push(row)
+			})
+
+			//console.log(JSON.stringify(sorteddata))
+			
+			var inner=tbform(sorteddata)
+			//console.log(inner)
+			$("#__div_qstatbyname").html(inner)
+
+		})
+
+
+		$.ajax({
+			url: '/nperest/qstatbycenter',
+			type: 'GET',
+			dataType: 'JSON',
+		})
+		.done(function(data) {
+			// console.log("getQ::"+JSON.stringify(data))
+			var keymap={};
+			$.each(data,function(index,row){
+				if(!keymap[row['taskname']]){
+					keymap[row['taskname']]={}
+				}
+				keymap[row['taskname']][row['interstate']]=row['counter']
+			});
+			var rawdata=[]
+			$.each(keymap,function(key,value){
+				//console.log("::"+JSON.stringify(value))
+				var v0=0
+				if(key=="End"||key=="End(gateway)"||key.length==0)return
+				if(value[0])v0=value[0]
+				rawdata.push({"taskname":key,"i0":v0,"i1":value[1],"i2":value[2],
+					"i3":value[3],"r":Math.round(value[3]*100.0/(value[3]+v0))})
+			})
+			rawdata.sort(function(a,b){
+				return b["i0"]-a["i0"]
+			})
+			var sorteddata=[]
+			$.each(rawdata,function(index,row){
+				if(index>=8&&row["i0"]==0)return
+				sorteddata.push(row)
+			})
+
+			//console.log(JSON.stringify(sorteddata))
+			
+			var inner=tbform(sorteddata)
+			//console.log(inner)
+			$("#__div_qstatbyname").html(inner)
+
+		})
 		
 		setTimeout(updateCounter, updateInterval);
 

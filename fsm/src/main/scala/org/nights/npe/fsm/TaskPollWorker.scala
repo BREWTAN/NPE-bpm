@@ -13,11 +13,10 @@ import akka.routing.Broadcast
 class PollWorker extends Actor with ActorLogging with ActorHelper {
 
   var requestCount = 0;
-  val sc=context.system.scheduler.schedule(100 millis, 10 millis, self, "tick")
+  val sc = context.system.scheduler.schedule(100 millis, 10 millis, self, "tick")
   override def preStart(): Unit = {
-        log.info("startup@{}", self)
-    
-    
+    log.info("startup@{}", self)
+
   }
   override def postStop(): Unit = {
     //    log.info("shutdown:{}", self)
@@ -30,7 +29,7 @@ class PollWorker extends Actor with ActorLogging with ActorHelper {
       context.become(listening)
       queueAllworkers ! Broadcast(AskNewWork(1, self.toString))
     }
-    case obtain:ObtainedStates => {
+    case obtain: ObtainedStates => {
       log.error("return a to queue  {},@{}", obtain, sender)
       sender ! obtain
     }
@@ -52,7 +51,7 @@ class PollWorker extends Actor with ActorLogging with ActorHelper {
     case "tick" =>
       {
         {
-           queueAllworkers ! Broadcast(AskNewWork(1, self.toString))
+          queueAllworkers ! Broadcast(AskNewWork(1, self.toString))
         }
         requestCount += 1;
       }

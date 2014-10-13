@@ -18,6 +18,9 @@ libraryDependencies += "ch.qos.logback" % "logback-classic" % "1.1.2"
 
 libraryDependencies += "org.slf4j" % "slf4j-api" % "1.7.7"
 
+libraryDependencies += "org.nights.npe" %% "commons" % "1.0.0"	
+
+
 //EclipseKeys.withSource := true
 
 resolvers ++= Seq(

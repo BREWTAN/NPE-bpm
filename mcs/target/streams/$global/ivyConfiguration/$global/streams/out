@@ -8,6 +8,5 @@
 [0m[[0mdebug[0m] [0m	typesafe-releases: http://repo.typesafe.com/typesafe/releases[0m
 [0m[[0mdebug[0m] [0m	URLRepository(typesafe-ivy-releasez,Patterns(ivyPatterns=List(http://repo.typesafe.com/typesafe/ivy-releases/[organization]/[module]/(scala_[scalaVersion]/)(sbt_[sbtVersion]/)[revision]/[type]s/[artifact](-[classifier]).[ext]), artifactPatterns=List(http://repo.typesafe.com/typesafe/ivy-releases/[organization]/[module]/(scala_[scalaVersion]/)(sbt_[sbtVersion]/)[revision]/[type]s/[artifact](-[classifier]).[ext]), isMavenCompatible=false, descriptorOptional=false, skipConsistencyCheck=false))[0m
 [0m[[0mdebug[0m] [0m	Typesafe Releases Repository: http://repo.typesafe.com/typesafe/releases/[0m
-[0m[[0mdebug[0m] [0m	Typesafe Releases: http://repo.typesafe.com/typesafe/releases[0m
 [0m[[0mdebug[0m] [0m	Local Maven Repository: file:///Users/brew/.m2/repository[0m
 [0m[[0mdebug[0m] [0mUsing inline dependencies specified in Scala.[0m

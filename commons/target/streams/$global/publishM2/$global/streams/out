@@ -37,6 +37,7 @@
 [0m[[33mwarn[0m] [0mAttempting to overwrite /Users/brew/.m2/repository/org/nights/npe/commons_2.11/1.0.0/commons_2.11-1.0.0-javadoc.jar.sha1[0m
 [0m[[33mwarn[0m] [0m	This usage is deprecated and will be removed in sbt 1.0.[0m
 [0m[[0mdebug[0m] [0m/Users/brew/.m2/repository/org/nights/npe/commons_2.11/1.0.0/commons_2.11-1.0.0-javadoc.jar.md5 already exists, nothing done[0m
+[0m[[0mdebug[0m] [0mno default cache defined: set to /Users/brew/.ivy2/cache[0m
 [0m[[33mwarn[0m] [0mAttempting to overwrite /Users/brew/.m2/repository/org/nights/npe/commons_2.11/1.0.0/commons_2.11-1.0.0-javadoc.jar.md5[0m
 [0m[[33mwarn[0m] [0m	This usage is deprecated and will be removed in sbt 1.0.[0m
 [0m[[0minfo[0m] [0m	published commons_2.11 to /Users/brew/.m2/repository/org/nights/npe/commons_2.11/1.0.0/commons_2.11-1.0.0-javadoc.jar[0m

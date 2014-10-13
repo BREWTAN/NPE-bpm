@@ -156,6 +156,8 @@
 [0m[[0mdebug[0m] [0m	  /Users/brew/NPE/gits/fsm/target/scala-2.11/api/org/nights/npe/fsm/RecoveryWorker.html[0m
 [0m[[0mdebug[0m] [0m	lib/trait_to_object_big.png[0m
 [0m[[0mdebug[0m] [0m	  /Users/brew/NPE/gits/fsm/target/scala-2.11/api/lib/trait_to_object_big.png[0m
+[0m[[0mdebug[0m] [0m	org/nights/npe/fsm/backend/LoadDefFromDB.html[0m
+[0m[[0mdebug[0m] [0m	  /Users/brew/NPE/gits/fsm/target/scala-2.11/api/org/nights/npe/fsm/backend/LoadDefFromDB.html[0m
 [0m[[0mdebug[0m] [0m	org/nights/npe/fsm/StateContext.html[0m
 [0m[[0mdebug[0m] [0m	  /Users/brew/NPE/gits/fsm/target/scala-2.11/api/org/nights/npe/fsm/StateContext.html[0m
 [0m[[0mdebug[0m] [0m	lib/class.png[0m
@@ -208,8 +210,8 @@
 [0m[[0mdebug[0m] [0m	  /Users/brew/NPE/gits/fsm/target/scala-2.11/api/org/nights/npe/fsm/backend/EhCacheStorage$.html[0m
 [0m[[0mdebug[0m] [0m	org/nights/npe/fsm/front/ANewProcess.html[0m
 [0m[[0mdebug[0m] [0m	  /Users/brew/NPE/gits/fsm/target/scala-2.11/api/org/nights/npe/fsm/front/ANewProcess.html[0m
-[0m[[0mdebug[0m] [0m	org/nights/npe/fsm/backend/LoadDefDir.html[0m
-[0m[[0mdebug[0m] [0m	  /Users/brew/NPE/gits/fsm/target/scala-2.11/api/org/nights/npe/fsm/backend/LoadDefDir.html[0m
+[0m[[0mdebug[0m] [0m	org/nights/npe/fsm/Starter$.html[0m
+[0m[[0mdebug[0m] [0m	  /Users/brew/NPE/gits/fsm/target/scala-2.11/api/org/nights/npe/fsm/Starter$.html[0m
 [0m[[0mdebug[0m] [0m	org/nights/npe/fsm[0m
 [0m[[0mdebug[0m] [0m	  /Users/brew/NPE/gits/fsm/target/scala-2.11/api/org/nights/npe/fsm[0m
 [0m[[0mdebug[0m] [0m	lib/navigation-li.png[0m

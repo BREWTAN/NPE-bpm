@@ -17,7 +17,7 @@ class RolePIOQueue[T <: PriorityAware] {
 
   override def toString:String={
 //    queues.mkString("Q", ",", "]")
-    queuesList.mkString("RolePIOQueue[",",","]")
+    queuesList.mkString("[",",","]")
   }
   def insertNewRoleQueue(sc: T,lq: AdvancePriorityQueue[T]): Unit =synchronized{
     var index=queuesPIOList.size;

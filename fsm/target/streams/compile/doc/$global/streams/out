@@ -16,6 +16,7 @@
 [0m[[0mdebug[0m] [0m	/Users/brew/NPE/gits/fsm/src/main/scala/org/nights/npe/fsm/MessageHelper.scala[0m
 [0m[[0mdebug[0m] [0m	/Users/brew/NPE/gits/fsm/src/main/scala/org/nights/npe/fsm/Queues.scala[0m
 [0m[[0mdebug[0m] [0m	/Users/brew/NPE/gits/fsm/src/main/scala/org/nights/npe/fsm/Role.scala[0m
+[0m[[0mdebug[0m] [0m	/Users/brew/NPE/gits/fsm/src/main/scala/org/nights/npe/fsm/Starter.scala[0m
 [0m[[0mdebug[0m] [0m	/Users/brew/NPE/gits/fsm/src/main/scala/org/nights/npe/fsm/StateContext.scala[0m
 [0m[[0mdebug[0m] [0m	/Users/brew/NPE/gits/fsm/src/main/scala/org/nights/npe/fsm/StatsCounter.scala[0m
 [0m[[0mdebug[0m] [0m	/Users/brew/NPE/gits/fsm/src/main/scala/org/nights/npe/fsm/Task.scala[0m
@@ -44,6 +45,6 @@
 [0m[[33mwarn[0m] [0m/Users/brew/NPE/gits/fsm/src/main/scala/org/nights/npe/fsm/TransitionWorker.scala:107: non-variable type argument org.nights.npe.fsm.StateContext in type pattern scala.collection.mutable.ListBuffer[org.nights.npe.fsm.StateContext] is unchecked since it is eliminated by erasure[0m
 [0m[[33mwarn[0m] [0m          case list: ListBuffer[StateContext] => {[0m
 [0m[[33mwarn[0m] [0m                     ^[0m
-[0m[[33mwarn[0m] [0mthere were 16 feature warning(s); re-run with -feature for details[0m
+[0m[[33mwarn[0m] [0mthere were 18 feature warning(s); re-run with -feature for details[0m
 [0m[[33mwarn[0m] [0mthree warnings found[0m
 [0m[[0minfo[0m] [0mMain Scala API documentation successful.[0m
