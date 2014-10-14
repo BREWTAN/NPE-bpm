@@ -16,3 +16,7 @@ reload
 publishM2
 compile 
 publishM2
+clean
+publishM2
+eeclipse
+eclipse

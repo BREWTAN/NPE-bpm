@@ -69,7 +69,7 @@
 												
 											<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> 角色 </label>
 											<div class="col-sm-9">
-												<select class="chosen-select" id="ff_role" data-placeholder="选择角色" >
+												<select class="chosen-select" id="ff-role" data-placeholder="选择角色" >
 														<option value="ALL" selected>全部</option>
 												</select>
 											</div>
@@ -92,7 +92,7 @@
 												<label class="col-sm-4 control-label no-padding-right" for="ff-center">排斥</label>
 												<div class="col-xs-3">
 													<label>
-														<input id="ff_exclude" class="ace ace-switch" type="checkbox" />
+														<input id="ff-exclude" class="ace ace-switch" type="checkbox" />
 														<span class="lbl"></span>
 													</label>
 												</div>
@@ -274,22 +274,31 @@
 			$.each(data,function(index,row){
 				mm+='<option value="'+row["roleid"]+'"> '+row["roleid"]+'</option>'
 			})
-			$("#ff_role").html(mm)
+			$("#ff-role").html(mm)
 			$('.chosen-select').chosen({allow_single_deselect:true}); 
 		})
 
-		$("#ff_role").on('change',function(v1,v2){
-			if($("#ff_role option[value='__ALL']:selected").length==0){
+		$("#ff-role").on('change',function(v1,v2){
+			if($("#ff-role option[value='__ALL']:selected").length==0){
 			}
 		})
 
 		var resetfun=function(){
-			$("#ff_role option[value!='__ALL']:selected").removeAttr("selected");
-			$("#ff_role option[value='__ALL']").prop("selected",true);
-			$('#ff_role').trigger('chosen:updated');
-			$("#ff_obtainer").val("");
-			$("#ff_center").val("");
-			$("#ff_exclude").removeAttr("checked");
+			$("#ff-role option[value!='__ALL']:selected").removeAttr("selected");
+			$("#ff-role option[value='__ALL']").prop("selected",true);
+			$('#ff-role').trigger('chosen:updated');
+			$("#ff-obtainer").val("");
+			$("#ff-center").val("");
+			$("#ff-exclude").removeAttr("checked");
+
+
+			$.each($('#taskshow input'),function(index,v){
+					//console.log("setV:"+$(v).attr('id')+"==>"+$(v).val())
+					
+						$(v).val('')	
+					
+				})
+			
 		}
 		$('#btn_reset').on("click",resetfun)
 		var obtaindata=null
@@ -302,19 +311,19 @@
 				$('#btn_obtain span').html('获取中...')
 				$('#btn_obtain').removeClass("btn-primary").addClass('btn-grey')
 				var query="?1=1"
-				if($("#ff_role option[value='__ALL']:selected").length==0){
+				if($("#ff-role option[value='__ALL']:selected").length==0){
 					query+="&role="
-					$.each($("#ff_role option[value!='__ALL']:selected"),function(index,v){
+					$.each($("#ff-role option[value!='__ALL']:selected"),function(index,v){
 						query+=$(v).val()
 					})
 				}
-//				if($("#ff_obtainer").val()!=undefined)
+//				if($("#ff-obtainer").val()!=undefined)
 				{
-					query+="&obtainer="+$("#ff_obtainer").val()
+					query+="&obtainer="+$("#ff-obtainer").val()
 				}
-//				if($("#ff_center").val()!=undefined)
+//				if($("#ff-center").val()!=undefined)
 				{
-					query+="&center="+$("#ff_center").val()
+					query+="&center="+$("#ff-center").val()
 				}
 
 				console.log("query=="+query)
@@ -374,11 +383,18 @@
 					submitdata['ctxData']['procPIO']=parseInt(submitdata['ctxData']['procPIO'])
 					submitdata['ctxData']['taskPIO']=parseInt(submitdata['ctxData']['taskPIO'])
 					submitdata['ctxData']['idata1']=parseInt(submitdata['ctxData']['idata1'])
-
 					submitdata['ctxData']['idata2']=parseInt(submitdata['ctxData']['idata2'])
 					submitdata['ctxData']['fdata1']=parseFloat(submitdata['ctxData']['fdata1'])
 					submitdata['ctxData']['fdata2']=parseFloat(submitdata['ctxData']['fdata2'])
 					submitdata['submitter']=$('ff-obtainer').val()+""
+		
+					var extra=$('#ff-extra').val()
+					if(extra!=undefined&&extra.length>0)
+					{
+						submitdata['ctxData']['extra']=JSON.parse($('#ff-extra').val())
+					}else{
+						submitdata['ctxData']['extra']={}
+					}
 
 					console.log("dosubmit::"+JSON.stringify(submitdata))
 
@@ -391,7 +407,6 @@
 						type: 'POST',
 						dataType: 'JSON',	
 		                contentType: "application/json; charset=utf-8",
-		                async: false,
 		                data: JSON.stringify(submitdata),
 					})
 					.done(function(data) {

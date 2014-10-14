@@ -17,6 +17,8 @@ object ADBPool {
   val dbUsername = config.getString("tcp-async.db.username")
   val dbPassword = config.getString("tcp-async.db.password")
   val dbPort = config.getInt("tcp-async.db.port")
+  val dbHost = config.getString("tcp-async.db.host")
+
   val dbName = config.getString("tcp-async.db.name")
 
   val dbPoolMaxObjects = config.getInt("tcp-async.db.pool.maxObjects")
@@ -25,7 +27,7 @@ object ADBPool {
 
   val configuration = new Configuration(username = dbUsername,
     port = dbPort,
-    host = "127.0.0.1",
+    host = dbHost,
     password = Some(dbPassword),
     database = Some(dbName))
 

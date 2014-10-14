@@ -17,6 +17,8 @@ object Starter {
         PoisonPill, "compute"), "singleton");
 
       val cmd = system.actorOf(akka.actor.Props[InlineCmdActor], "cmd");
+      Thread.sleep(10000)
+      cmd ! RecoverFor("")
     }
     val start = System.currentTimeMillis()
 
@@ -32,7 +34,6 @@ object Starter {
         + ",term=" + StatsCounter.terminates.get()
         + ",submits=" + StatsCounter.submits.get()
         + ",obtains=" + StatsCounter.obtains.get() + ")");
-
       println("roles:" + GlobalQueue.queue)
     }
   }

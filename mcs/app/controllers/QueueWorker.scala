@@ -1,6 +1,7 @@
 package controllers
 
 import scala.collection.mutable.ListBuffer
+
 import scala.concurrent.ExecutionContext
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.module.scala.DefaultScalaModule
@@ -23,9 +24,20 @@ import org.nights.npe.po.ParentContext
 import play.api.libs.json.Json
 import org.nights.npe.po.DoneStateContext
 import org.nights.npe.mo.TaskDone
+import org.nights.npe.mo.ANewProcess
+import org.nights.npe.po.ContextData
+import java.util.UUID
+import play.api.libs.json.Reads
+import scala.collection.mutable.HashMap
+import play.api.libs.json._
+import play.api.libs.functional.syntax._
+import play.api.libs.json.Format
+import play.api.libs.json.JsObject
+import play.api.libs.json.JsValue
 
 object QueueWorker
   extends Controller {
+  import org.nights.npe.mcs.akka.JerksonHelper._
 
   implicit val simpleDbLookups: ExecutionContext = Akka.system.dispatchers.lookup("simple-db-lookups")
 
@@ -43,27 +55,38 @@ object QueueWorker
       case e: akka.pattern.AskTimeoutException => Ok("{}")
     }
   }
+  def newProc(submiter: String, center: String, procdef: String) = Action { request =>
+    val jsonbody = request.body.asJson.get
+
+
+    val ss = Json.fromJson[ContextData](jsonbody)
+    if (ss.isSuccess) {
+      //ANewProcess(procInstId: String, submitter: String, procDefId: String, data: ContextData)
+      println("success==" + ss)
+      submitor ! ANewProcess(UUID.randomUUID().toString(), submiter, procdef, ss.get)
+      Ok("{\"status\":0}")
+    } else {
+      println("error==" + ss)
+      Ok("{\"status\":-1,\"msg\":" + mapper.writeValueAsString(ss) + "}")
+    }
+  }
 
   lazy val submitor = Global.system.actorSelection("/user/submitor");
 
-  import org.nights.npe.mcs.akka.JerksonHelper._
-  
   def submit = Action { request =>
     val jsonbody = request.body.asJson.get
-        println("jsonboy=="+ jsonbody)
+    println("jsonboy==" + jsonbody)
 
-    val ss=Json.fromJson[SubmitStates](jsonbody)
-    
-    if(ss.isSuccess)
-    {
-      println("success=="+ ss )
-      val sub=ss.get
-      submitor ! DoneStateContext(sub.state ,sub.ctxData ,sub.submitter )
+    val ss = Json.fromJson[SubmitStates](jsonbody)
+
+    if (ss.isSuccess) {
+      println("success==" + ss)
+      val sub = ss.get
+      submitor ! DoneStateContext(sub.state, sub.ctxData, sub.submitter)
       Ok("{\"status\":0}")
-    }else{
-      println("error=="+ ss)
-      Ok("{\"status\":-1,\"msg\":"+ss+"}")
+    } else {
+      println("error==" + ss)
+      Ok("{\"status\":-1,\"msg\":" + ss + "}")
     }
-    
   }
 }

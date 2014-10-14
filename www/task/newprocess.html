@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta charset="utf-8" />
+	<title>新流程-NPE</title>
+	<base href="../" >
+	<link rel="stylesheet" type="text/css" href="assets/js/bootstrap-select/bootstrap-select.min.css">
+	<link rel="stylesheet" href="assets/css/chosen.css" />
+
+	<link rel="stylesheet" type="text/css" href="assets/css/datepicker.css"/>
+	<link rel='stylesheet' href='assets/js/jquery-watable/watable.css'/>
+	<link rel='stylesheet' href='assets/js/jquery-watable/animate.min.css'/>
+	<!-- bootstrap & fontawesome -->
+	<script type="text/javascript" src="parts/js/header.js"></script>
+
+</head>
+<body class="no-skin">
+	<script type="text/javascript">$.include("parts/pages/navbar.shtml")</script>
+
+	<div class="main-container" id="main-container">
+		<script type="text/javascript">
+				try{ace.settings.check('main-container' , 'fixed')}catch(e){}
+			</script>
+		<!-- #section:basics/sidebar -->
+		<script type="text/javascript">$.include("parts/pages/sidebar.shtml")</script>
+
+		<!-- /section:basics/sidebar -->
+		<div class="main-content">
+			<script type="text/javascript">$.include("parts/pages/content_title.shtml")</script>
+			<!-- /section:basics/content.breadcrumbs -->
+			<div class="page-content">
+				<div class="page-content-area">
+
+					<div class="row">
+						<div class="col-sm-10">
+
+						<div class="widget-box">
+							<div class="widget-header">
+								<h4 class="widget-title">新建流程</h4>
+
+								<span class="widget-toolbar">
+									<button class="btn btn-xs btn-primary newproc" id='btn_obtain' type="button">
+										<i class="ace-icon fa fa-pencil-square-o bigger-120"></i>
+										<span class="bigger-110 no-text-shadow">新建</span>
+									</button>
+											&nbsp; &nbsp; &nbsp;
+									<button class="btn btn-xs" id='btn_reset' type="reset">
+										<i class="ace-icon fa fa-undo bigger-110"></i>
+										<span class="bigger-110 no-text-shadow">清空</span>
+										
+									</button>
+											&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+									<a href="#" data-action="collapse">
+										<i class="ace-icon fa fa-chevron-up"></i>
+									</a>
+									
+								</span>
+							</div>
+
+							<div class="widget-body">
+								<div class="widget-main">
+
+
+									<!-- PAGE CONTENT BEGINS -->
+									<form class="form-horizontal" role="form">
+										<!-- #section:elements.form -->
+										<div class="form-group">
+												
+											<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> 主流程 </label>
+											<div class="col-sm-9">
+												<select class="chosen-select" id="ff-newproc" data-placeholder="选择角色" >
+														
+												</select>
+											</div>
+										</div>
+
+										<div class="form-group col-sm-12">
+											<div class="form-group col-sm-5">
+												<label class="col-sm-4 control-label no-padding-right" for="ff-obtainer">提交者&nbsp; &nbsp;</label>
+												<div>
+													<input type="text" id="ff-obtainer" class="col-xs-10 col-sm-8" />
+												</div>
+											</div>
+											<div class="form-group col-sm-5">
+												<label class="col-sm-4 control-label no-padding-right" for="ff-center">中心&nbsp; &nbsp;</label>
+												<div >
+													<input type="text" id="ff-center"  class="col-xs-10 col-sm-8" />
+												</div>
+											</div>
+										</div>
+
+									
+										
+										<div id="taskshow" > 
+										
+											<div class="form-group col-sm-12">
+												<div class="form-group col-sm-6">
+													<label class="col-sm-4 control-label no-padding-right" for="ff-taskPIO">String数据区&nbsp; &nbsp;</label>
+													<div>
+														<input type="text" id="ff-strdata1" class="col-xs-10 col-sm-8" />
+													</div>
+												</div>
+												<div class="form-group col-sm-6">
+													<label class="col-sm-4 control-label no-padding-right" for="ff-procPIO">String数据2&nbsp; &nbsp;</label>
+													<div >
+														<input type="text" id="ff-strdata2" class="col-xs-10 col-sm-8" />
+													</div>
+												</div>
+											</div>
+											<div class="form-group col-sm-12">
+												<div class="form-group col-sm-3">
+													<label class="col-sm-4 control-label no-padding-right" for="ff-idata1">Int1&nbsp; &nbsp;</label>
+													<div>
+														<input type="text" id="ff-idata1" class="col-xs-10 col-sm-8" />
+													</div>
+												</div>
+												<div class="form-group col-sm-3">
+													<label class="col-sm-4 control-label no-padding-right" for="ff-idata2">Int2&nbsp; &nbsp;</label>
+													<div >
+														<input type="text" id="ff-idata2" class="col-xs-10 col-sm-8" />
+													</div>
+												</div>
+												<div class="form-group col-sm-3">
+													<label class="col-sm-4 control-label no-padding-right" for="ff-idata1">Float1&nbsp; &nbsp;</label>
+													<div>
+														<input type="text" id="ff-fdata1" class="col-xs-10 col-sm-8" />
+													</div>
+												</div>
+												<div class="form-group col-sm-3">
+													<label class="col-sm-4 control-label no-padding-right" for="ff-idata2">Float2&nbsp; &nbsp;</label>
+													<div >
+														<input type="text" id="ff-fdata2"  class="col-xs-10 col-sm-8" />
+													</div>
+												</div>
+											</div>
+											<div class="form-group col-sm-12">
+												<div class="form-group col-sm-6">
+													<label class="col-sm-4 control-label no-padding-right" for="ff-taskPIO">任务优先级&nbsp; &nbsp;</label>
+													<div>
+														<input type="text" id="ff-taskPIO" class="col-xs-10 col-sm-8" />
+													</div>
+												</div>
+												<div class="form-group col-sm-6">
+													<label class="col-sm-4 control-label no-padding-right" for="ff-procPIO">流程优先级&nbsp; &nbsp;</label>
+													<div >
+														<input type="text" id="ff-procPIO" class="col-xs-10 col-sm-8" />
+													</div>
+												</div>
+											</div>
+											<div class="form-group">
+												<label class="col-sm-2 control-label no-padding-right" for="ff-procinst">Extra数据</label>
+												<div class="col-sm-12">
+													<textarea class="form-control" id="ff-extra"  class="col-xs-10 col-sm-12" ></textarea>
+
+												</div>
+											</div>
+
+											<div class="form-group col-sm-12">
+												<div class="form-group col-sm-6">
+													<label class="col-sm-4 control-label no-padding-right" for="ff-taskInstId">任务ID&nbsp; &nbsp;</label>
+													<div>
+														<input type="text" id="ff-taskInstId" readonly class="col-xs-10 col-sm-8" />
+													</div>
+												</div>
+												<div class="form-group col-sm-6">
+													<label class="col-sm-4 control-label no-padding-right" for="ff-procInstId">流程ID&nbsp; &nbsp;  </label>
+													<div >
+														<input type="text" id="ff-procInstId" readonly class="col-xs-10 col-sm-8" />
+													</div>
+												</div>
+											</div>
+										
+											<div class="form-group">
+												<label class="col-sm-3 control-label no-padding-right" for="ff-procinst">任务调试窗口</label>
+												<div class="col-sm-12">
+													<textarea type="text" id="ff-debug"  readonly class="col-xs-10 col-sm-12" ></textarea>
+
+												</div>
+											</div>
+										
+										</div>
+
+									</form>
+
+								</div>
+							</div>
+						</div>
+
+					</div>
+					<!-- /.row -->
+				</div>
+				<!-- /.page-content-area -->
+			</div>
+			<!-- /.page-content -->
+		</div>
+		<!-- /.main-content -->
+
+		<script type="text/javascript">$.include("parts/pages/copyright.shtml")</script>
+
+	</div>
+	<!-- /.main-container -->
+
+	<script type="text/javascript">$.include("parts/pages/foot.shtml")</script>
+
+</body>
+	<script type="text/javascript">$.include("parts/pages/xwatable-form.shtml")</script>
+
+	<script type="text/javascript" src="assets/js/date-time/bootstrap-datepicker.min.js"></script>
+
+	<script type="text/javascript" src="assets/js/bootstrap-select/bootstrap-select.min.js"></script>
+
+	<script src="assets/js/chosen.jquery.min.js"></script>
+
+	<script type="text/javascript" src="assets/js/jquery-watable/jquery.watable.js"></script>
+	<script type="text/javascript" src="assets/addons/rqlbuilder.js"></script>
+	<script type="text/javascript" src="assets/addons/xwatable.js"></script>
+	<script type="text/javascript" src="assets/addons/rest.js"></script>
+	<script type="text/javascript" src="assets/addons/refhelper.js"></script>
+	<script type="text/javascript" src="assets/addons/jquery-dateFormat.min.js"></script>
+
+	<script type="text/javascript">ace.vars['base'] = '..'; </script>
+
+	<!-- inline scripts related to this page -->
+	<script type="text/javascript">
+		
+		jQuery(function($) {//初始化函数
+			setTitlePath("新建流程","业务操作")		    
+			$.ajax({
+			url: '/nperest/procdef/main',
+			type: 'GET',
+			dataType: 'JSON',
+		})
+		.done(function(data) {
+			var mm=''
+
+			var sdata=data.sort(function(a,b){
+				if(a['defid']=='ccb.main') return 0
+				return 1
+			})
+			console.log("kk")
+			$.each(sdata,function(index,row){
+				mm+='<option value="'+row["defid"]+'"> '+row["defname"]+'</option>'
+			})
+			$("#ff-newproc").html(mm)
+			$('.chosen-select').chosen({allow_single_deselect:true}); 
+		})
+
+		var resetfun=function(){
+			$("#ff-newproc option:selected").removeAttr("selected");
+			$('#ff-newproc').trigger('chosen:updated');
+			$("#ff-obtainer").val("");
+			$("#ff-center").val("");			
+
+			$.each($('#taskshow input'),function(index,v){
+					//console.log("setV:"+$(v).attr('id')+"==>"+$(v).val())
+				$(v).val('')	
+			})
+		}
+		$('#btn_reset').on("click",resetfun)
+		
+		$('#btn_obtain').on('click',function(){
+			console.log("txt="+$('#btn_obtain.newproc').length)
+			if($('#btn_obtain.newproc').length==1){
+				console.log("do obtain")
+				$('#btn_obtain').removeClass("newproc").addClass('submitting')
+				$('#btn_obtain span').html('提交中...')
+				$('#btn_obtain').removeClass("btn-primary").addClass('btn-grey')
+
+				var query="?1=1"
+				query+="&procdef="
+				$.each($("#ff-newproc option:selected"),function(index,v){
+					query+=$(v).val()
+				})
+				{
+					query+="&submiter="+$("#ff-obtainer").val()
+				}
+				{
+					query+="&center="+$("#ff-center").val()
+				}
+				var submitdata={}
+
+				$.each($('#taskshow input'),function(index,v){
+					if(!$(v).attr("readonly"))
+					{
+						submitdata[$(v).attr('id').substr(3)]=$(v).val()					
+					}
+				})
+				var extra=$('#ff-extra').val()
+				if(extra!=undefined&&extra.length>0)
+				{
+					submitdata['extra']=JSON.parse($('#ff-extra').val())
+				}else{
+					submitdata['extra']={}
+				}
+
+				submitdata['procPIO']=(submitdata['procPIO'].length==0?0:parseInt(submitdata['procPIO']))
+				submitdata['taskPIO']=(submitdata['taskPIO'].length==0?0:parseInt(submitdata['taskPIO']))
+				submitdata['idata1']=parseInt(submitdata['idata1'])
+				submitdata['idata2']=parseInt(submitdata['idata2'])
+				submitdata['fdata1']=parseFloat(submitdata['fdata1'])
+				submitdata['fdata2']=parseFloat(submitdata['fdata2'])
+
+				submitdata['taskcenter']=$("#ff-center").val().length==0?"":$("#ff-center").val()
+				submitdata['startMS']=null
+				submitdata['rootproc']=null
+
+
+
+				console.log("query=="+query+",submit="+JSON.stringify(submitdata))
+				$.ajax({
+					url: '/nperest/newproc'+query,
+					type: 'POST',
+					dataType: 'JSON',	
+		            contentType: "application/json; charset=utf-8",
+		            data: JSON.stringify(submitdata),
+		            async: false
+				})
+				.done(function(data) {
+					console.log("new proc::"+JSON.stringify(data))
+					if(data['status']==0){
+						resetfun()
+					}else{
+
+					}
+					$('#taskshow').removeClass('hidden')
+					$('#ff-debug').val(JSON.stringify(data));
+					$('#btn_obtain span').html('新建')
+					$('#btn_obtain').addClass("newproc").removeClass('submitting')
+					$('#btn_obtain').addClass("btn-primary").removeClass('btn-grey')
+
+				})
+
+			}
+		})
+
+		
+
+			
+		})
+	</script>
+</html>

@@ -35,7 +35,7 @@ object ProcDefHttpFace extends Controller {
     //    Ok("Got request [" + request + "]")
   }
 
-  def getByPage(skip: Int, limit: Int,page:Boolean) = Action.async { request =>
+  def getByPage(skip: Int, limit: Int, page: Boolean) = Action.async { request =>
     val results = for {
       total <- ProcDefDAO.countAll
       rows <- ProcDefDAO.findAll(Range(skip, limit))
@@ -62,6 +62,24 @@ object ProcDefHttpFace extends Controller {
     })
   }
 
+  def getMainProc = Action.async { request =>
+
+    ProcDefDAO.findAll().map({ f =>
+      val jsonRet = Json.toJson(f.rows.map({ rs =>
+        rs.map({ row =>
+          Json.obj("defid" -> row("defid").asInstanceOf[String],
+            "defname" -> row("defname").asInstanceOf[String],
+            "version" -> row("version").asInstanceOf[String],
+            "packages" -> row("packages").asInstanceOf[String],
+            "xmlbody" -> row("xmlbody").asInstanceOf[String],
+            "subelements" -> row("subelements").asInstanceOf[String],
+            "createtime" -> row("createtime").toString)
+        })
+      }))
+      Ok(jsonRet)
+
+    })
+  }
   def delete(defid: String) = Action.async { request =>
     ProcDefDAO.delete(defid).map({ f =>
       Ok(Json.obj("rowsAffected" -> f.rowsAffected))

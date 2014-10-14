@@ -33,6 +33,8 @@ DELETE  /procdef/:defid 	controllers.ProcDefHttpFace.delete(defid:String)
 
 PUT     /procdef/:defid		controllers.ProcDefHttpFace.update(defid:String)
 
+GET  	/procdef/main		controllers.ProcDefHttpFace.getMainProc
+
 
 ##############
 # procinst
@@ -78,5 +80,8 @@ GET     /qstatbycenter		controllers.QueueViewer.statsByCenter
 # do work
 GET		/obtain				controllers.QueueWorker.obtainByRole(obtainer:String?=null,role:String ?=null,center:String?=null)
 
-POST		/submit				controllers.QueueWorker.submit()
+POST	/submit				controllers.QueueWorker.submit()
+
+POST 	/newproc			controllers.QueueWorker.newProc(submiter:String?=null,center:String?=null,procdef:String?=null)
+
 

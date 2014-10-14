@@ -84,8 +84,13 @@
     "url": "#",
     "icon": "fa-tint",
     "children": [
+     {
+        "name": "新建流程",
+        "url": "task/newprocess.html",
+        "icon": "fa-desktop"
+      },
       {
-        "name": "任务操作",
+        "name": "任务获取提交",
         "url": "task/worker.html",
         "icon": "fa-desktop"
       }

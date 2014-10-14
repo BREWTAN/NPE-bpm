@@ -19,6 +19,7 @@ import java.util.HashMap
 import scala.concurrent.Future
 import akka.actor.ActorRef
 import org.nights.npe.mo.SubmitStates
+import org.nights.npe.mo.ANewProcess
 
 class SubmitWorker extends Actor with ActorLogging {
 
@@ -42,8 +43,11 @@ class SubmitWorker extends Actor with ActorLogging {
     }
     case submit: DoneStateContext =>
       {
-        workers ! ConsistentHashableEnvelope(ConsistentHashableEnvelope(TaskDone(submit), submit.submitter + "_"),submit.submitter + "_");
+        workers ! ConsistentHashableEnvelope(ConsistentHashableEnvelope(TaskDone(submit), submit.submitter + "_"), submit.submitter + "_");
       }
+    case newproc: ANewProcess => {
+      workers ! ConsistentHashableEnvelope(ConsistentHashableEnvelope(newproc, newproc.submitter + "_"), newproc.submitter + "_");
+    }
     case a @ _ => log.error("unknow message::" + a)
   }
 

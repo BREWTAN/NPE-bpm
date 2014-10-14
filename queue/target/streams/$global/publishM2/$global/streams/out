@@ -1,5 +1,6 @@
 [0m[[0mdebug[0m] [0mpublish-m2-local do not support transaction. overwrite transaction not supported yet[0m
-[0m[[0minfo[0m] [0m	published queue_2.10 to /Users/brew/.m2/repository/queue/queue_2.10/0.1-SNAPSHOT/queue_2.10-0.1-SNAPSHOT.pom[0m
-[0m[[0minfo[0m] [0m	published queue_2.10 to /Users/brew/.m2/repository/queue/queue_2.10/0.1-SNAPSHOT/queue_2.10-0.1-SNAPSHOT.jar[0m
-[0m[[0minfo[0m] [0m	published queue_2.10 to /Users/brew/.m2/repository/queue/queue_2.10/0.1-SNAPSHOT/queue_2.10-0.1-SNAPSHOT-sources.jar[0m
-[0m[[0minfo[0m] [0m	published queue_2.10 to /Users/brew/.m2/repository/queue/queue_2.10/0.1-SNAPSHOT/queue_2.10-0.1-SNAPSHOT-javadoc.jar[0m
+[0m[[0mdebug[0m] [0mno default cache defined: set to /home/brew/.ivy2/cache[0m
+[0m[[0minfo[0m] [0m	published queue_2.10 to /home/brew/.m2/repository/queue/queue_2.10/0.1-SNAPSHOT/queue_2.10-0.1-SNAPSHOT.pom[0m
+[0m[[0minfo[0m] [0m	published queue_2.10 to /home/brew/.m2/repository/queue/queue_2.10/0.1-SNAPSHOT/queue_2.10-0.1-SNAPSHOT.jar[0m
+[0m[[0minfo[0m] [0m	published queue_2.10 to /home/brew/.m2/repository/queue/queue_2.10/0.1-SNAPSHOT/queue_2.10-0.1-SNAPSHOT-sources.jar[0m
+[0m[[0minfo[0m] [0m	published queue_2.10 to /home/brew/.m2/repository/queue/queue_2.10/0.1-SNAPSHOT/queue_2.10-0.1-SNAPSHOT-javadoc.jar[0m

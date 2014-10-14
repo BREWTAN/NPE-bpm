@@ -1,14 +1,14 @@
-[0m[[0minfo[0m] [0mUpdating {file:/Users/brew/NPE/gits/}fsm...[0m
+[0m[[0minfo[0m] [0mUpdating {file:/home/brew/git/npe/}fsm...[0m
 [0m[[0mdebug[0m] [0m:: resolving dependencies :: fsm#fsm_2.11;1.0.0[0m
 [0m[[0mdebug[0m] [0m	confs: [compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool][0m
 [0m[[0mdebug[0m] [0m	validate = true[0m
 [0m[[0mdebug[0m] [0m	refresh = false[0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'compile'[0m
-[0m[[0mdebug[0m] [0mno default cache defined: set to /Users/brew/.ivy2/cache[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for fsm#fsm_2.11;1.0.0 [compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies fsm#fsm_2.11;1.0.0->org.scala-lang#scala-library;2.11.1 [compile->default(compile)][0m
 [0m[[0minfo[0m] [0mResolving org.scala-lang#scala-library;2.11.1 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@4ab6569e[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@2f66243c[0m
+[0m[[0mdebug[0m] [0mno default cache defined: set to /home/brew/.ivy2/cache[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.scala-lang#scala-library;2.11.1[0m
 [0m[[0mdebug[0m] [0m	local: revision in cache: org.scala-lang#scala-library;2.11.1[0m
 [0m[[0mdebug[0m] [0m	found org.scala-lang#scala-library;2.11.1 in sbt-chain[0m
@@ -572,8 +572,8 @@
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: net.sf.ehcache#ehcache;2.8.3 {compile=[default(compile)]}[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: net.sf.ehcache#ehcache;2.8.3[0m
 [0m[[0mdebug[0m] [0m	local: found revision in cache: net.sf.ehcache#ehcache;2.8.3 (resolved by sbt-chain): but it's a default one, maybe we can find a better one[0m
-[0m[[0mdebug[0m] [0m		tried /Users/brew/.ivy2/local/net.sf.ehcache/ehcache/2.8.3/ivys/ivy.xml[0m
-[0m[[0mdebug[0m] [0m		tried /Users/brew/.ivy2/local/net.sf.ehcache/ehcache/2.8.3/poms/ehcache.pom[0m
+[0m[[0mdebug[0m] [0m		tried /home/brew/.ivy2/local/net.sf.ehcache/ehcache/2.8.3/ivys/ivy.xml[0m
+[0m[[0mdebug[0m] [0m		tried /home/brew/.ivy2/local/net.sf.ehcache/ehcache/2.8.3/poms/ehcache.pom[0m
 [0m[[0mdebug[0m] [0m	using url for net.sf.ehcache#ehcache;2.8.3!ehcache.pom: http://repo1.maven.org/maven2/net/sf/ehcache/ehcache/2.8.3/ehcache-2.8.3.pom[0m
 [0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/net/sf/ehcache/ehcache/2.8.3/ehcache-2.8.3.pom[0m
 [0m[[0mdebug[0m] [0m	local: no ivy file found for net.sf.ehcache#ehcache;2.8.3: using default data[0m
@@ -2661,19 +2661,19 @@
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#scala-compiler;2.11.1!scala-compiler.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang.modules#scala-parser-combinators_2.11;1.0.1!scala-parser-combinators_2.11.jar(bundle)[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] jline#jline;2.11!jline.jar[0m
-[0m[[0mdebug[0m] [0m:: resolution report :: resolve 4051ms :: artifacts dl 40ms[0m
-[0m[[0mdebug[0m] [0m	report for fsm#fsm_2.11;1.0.0 compile produced in /Users/brew/NPE/gits/fsm/target/resolution-cache/reports/fsm-fsm_2.11-compile.xml[0m
-[0m[[0mdebug[0m] [0m	report for fsm#fsm_2.11;1.0.0 runtime produced in /Users/brew/NPE/gits/fsm/target/resolution-cache/reports/fsm-fsm_2.11-runtime.xml[0m
-[0m[[0mdebug[0m] [0m	report for fsm#fsm_2.11;1.0.0 test produced in /Users/brew/NPE/gits/fsm/target/resolution-cache/reports/fsm-fsm_2.11-test.xml[0m
-[0m[[0mdebug[0m] [0m	report for fsm#fsm_2.11;1.0.0 provided produced in /Users/brew/NPE/gits/fsm/target/resolution-cache/reports/fsm-fsm_2.11-provided.xml[0m
-[0m[[0mdebug[0m] [0m	report for fsm#fsm_2.11;1.0.0 optional produced in /Users/brew/NPE/gits/fsm/target/resolution-cache/reports/fsm-fsm_2.11-optional.xml[0m
-[0m[[0mdebug[0m] [0m	report for fsm#fsm_2.11;1.0.0 compile-internal produced in /Users/brew/NPE/gits/fsm/target/resolution-cache/reports/fsm-fsm_2.11-compile-internal.xml[0m
-[0m[[0mdebug[0m] [0m	report for fsm#fsm_2.11;1.0.0 runtime-internal produced in /Users/brew/NPE/gits/fsm/target/resolution-cache/reports/fsm-fsm_2.11-runtime-internal.xml[0m
-[0m[[0mdebug[0m] [0m	report for fsm#fsm_2.11;1.0.0 test-internal produced in /Users/brew/NPE/gits/fsm/target/resolution-cache/reports/fsm-fsm_2.11-test-internal.xml[0m
-[0m[[0mdebug[0m] [0m	report for fsm#fsm_2.11;1.0.0 plugin produced in /Users/brew/NPE/gits/fsm/target/resolution-cache/reports/fsm-fsm_2.11-plugin.xml[0m
-[0m[[0mdebug[0m] [0m	report for fsm#fsm_2.11;1.0.0 sources produced in /Users/brew/NPE/gits/fsm/target/resolution-cache/reports/fsm-fsm_2.11-sources.xml[0m
-[0m[[0mdebug[0m] [0m	report for fsm#fsm_2.11;1.0.0 docs produced in /Users/brew/NPE/gits/fsm/target/resolution-cache/reports/fsm-fsm_2.11-docs.xml[0m
-[0m[[0mdebug[0m] [0m	report for fsm#fsm_2.11;1.0.0 pom produced in /Users/brew/NPE/gits/fsm/target/resolution-cache/reports/fsm-fsm_2.11-pom.xml[0m
-[0m[[0mdebug[0m] [0m	report for fsm#fsm_2.11;1.0.0 scala-tool produced in /Users/brew/NPE/gits/fsm/target/resolution-cache/reports/fsm-fsm_2.11-scala-tool.xml[0m
-[0m[[0mdebug[0m] [0m	resolve done (4051ms resolve - 40ms download)[0m
+[0m[[0mdebug[0m] [0m:: resolution report :: resolve 1157ms :: artifacts dl 19ms[0m
+[0m[[0mdebug[0m] [0m	report for fsm#fsm_2.11;1.0.0 compile produced in /home/brew/git/npe/fsm/target/resolution-cache/reports/fsm-fsm_2.11-compile.xml[0m
+[0m[[0mdebug[0m] [0m	report for fsm#fsm_2.11;1.0.0 runtime produced in /home/brew/git/npe/fsm/target/resolution-cache/reports/fsm-fsm_2.11-runtime.xml[0m
+[0m[[0mdebug[0m] [0m	report for fsm#fsm_2.11;1.0.0 test produced in /home/brew/git/npe/fsm/target/resolution-cache/reports/fsm-fsm_2.11-test.xml[0m
+[0m[[0mdebug[0m] [0m	report for fsm#fsm_2.11;1.0.0 provided produced in /home/brew/git/npe/fsm/target/resolution-cache/reports/fsm-fsm_2.11-provided.xml[0m
+[0m[[0mdebug[0m] [0m	report for fsm#fsm_2.11;1.0.0 optional produced in /home/brew/git/npe/fsm/target/resolution-cache/reports/fsm-fsm_2.11-optional.xml[0m
+[0m[[0mdebug[0m] [0m	report for fsm#fsm_2.11;1.0.0 compile-internal produced in /home/brew/git/npe/fsm/target/resolution-cache/reports/fsm-fsm_2.11-compile-internal.xml[0m
+[0m[[0mdebug[0m] [0m	report for fsm#fsm_2.11;1.0.0 runtime-internal produced in /home/brew/git/npe/fsm/target/resolution-cache/reports/fsm-fsm_2.11-runtime-internal.xml[0m
+[0m[[0mdebug[0m] [0m	report for fsm#fsm_2.11;1.0.0 test-internal produced in /home/brew/git/npe/fsm/target/resolution-cache/reports/fsm-fsm_2.11-test-internal.xml[0m
+[0m[[0mdebug[0m] [0m	report for fsm#fsm_2.11;1.0.0 plugin produced in /home/brew/git/npe/fsm/target/resolution-cache/reports/fsm-fsm_2.11-plugin.xml[0m
+[0m[[0mdebug[0m] [0m	report for fsm#fsm_2.11;1.0.0 sources produced in /home/brew/git/npe/fsm/target/resolution-cache/reports/fsm-fsm_2.11-sources.xml[0m
+[0m[[0mdebug[0m] [0m	report for fsm#fsm_2.11;1.0.0 docs produced in /home/brew/git/npe/fsm/target/resolution-cache/reports/fsm-fsm_2.11-docs.xml[0m
+[0m[[0mdebug[0m] [0m	report for fsm#fsm_2.11;1.0.0 pom produced in /home/brew/git/npe/fsm/target/resolution-cache/reports/fsm-fsm_2.11-pom.xml[0m
+[0m[[0mdebug[0m] [0m	report for fsm#fsm_2.11;1.0.0 scala-tool produced in /home/brew/git/npe/fsm/target/resolution-cache/reports/fsm-fsm_2.11-scala-tool.xml[0m
+[0m[[0mdebug[0m] [0m	resolve done (1157ms resolve - 19ms download)[0m
 [0m[[0minfo[0m] [0mDone updating.[0m
