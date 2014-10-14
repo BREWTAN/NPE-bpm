@@ -4,9 +4,8 @@ import java.util.concurrent.atomic.AtomicBoolean
 import scala.concurrent.Await
 import scala.concurrent.Future
 import scala.concurrent.duration.DurationInt
-import org.nights.npe.fsm.ContextData
-import org.nights.npe.fsm.StateContext
-import org.nights.npe.po.AskResult
+import org.nights.npe.po.ContextData
+import org.nights.npe.po.StateContext
 import org.nights.npe.po.AskResult
 import org.slf4j.LoggerFactory
 import com.github.mauricio.async.db.QueryResult

@@ -2,33 +2,24 @@ package org.nights.npe.fsm.backend
 
 import scala.concurrent.Future
 import scala.util.Success
-
 import org.nights.npe.fsm.ActorHelper
-import org.nights.npe.fsm.ContextData
+import org.nights.npe.po.ContextData
 import org.nights.npe.fsm.PipeEnvelope
-import org.nights.npe.fsm.StateContext
+import org.nights.npe.po.StateContext
 import org.nights.npe.po.AskResult
-
 import com.github.mauricio.async.db.QueryResult
-
 import akka.actor.Actor
 import akka.actor.ActorLogging
 import akka.cluster.Cluster
+import org.nights.npe.mo.UpdateStates
+import org.nights.npe.mo.FetchProcessStates
+import org.nights.npe.mo.NewProcess
+import org.nights.npe.mo.SubmitStates
+import org.nights.npe.mo.ObtainedStates
+import org.nights.npe.mo.GatewayStates
+import org.nights.npe.mo.Transition
+import org.nights.npe.fsm.Queueworkers
 //state op
-
-case class Transition(states: List[StateContext], ctxData: ContextData = null)
-
-case class UpdateStates(state: StateContext, ctxData: ContextData = null)
-
-case class SubmitStates(state: StateContext, submitter: String, ctxData: ContextData = null)
-
-case class GatewayStates(state: StateContext, submitter: String, ctxData: ContextData = null)
-
-case class NewProcess(state: StateContext, submitter: String, ctxData: ContextData = null)
-
-case class ObtainedStates(state: StateContext, obtainer: String, ctxData: ContextData)
-
-case class FetchProcessStates(procId: String)
 
 trait StateStore {
   def initStorage(storepath: String)
@@ -56,9 +47,9 @@ class StorageWorker extends Actor with ActorLogging with ActorHelper {
   def addresstoPath(implicit hostport: String): String = {
     "/tmp/fsm/" + hostport.replaceAll("akka://", "_").replaceAll("/", "_")
   }
-//    val store = EhCacheStorage
+  //    val store = EhCacheStorage
   val store = MySqlStorage
-//      val store = MySqlInsertStorage
+  //      val store = MySqlInsertStorage
 
   override def preStart(): Unit = {
     log.info("instanceCacheMan startup@{}", self)
@@ -87,17 +78,17 @@ class StorageWorker extends Actor with ActorLogging with ActorHelper {
       }
     }
 
-    case PipeEnvelope(ObtainedStates(state, obtainer, ctxData), nextActor) => {
+    case PipeEnvelope(ObtainedStates(state, ctxData, obtainer), nextActor) => {
       log.info("get ObtainedStates:{}@{},next={}", state, obtainer, nextActor)
-      store.doObtainedStates(state, obtainer) andThen {
-//        case _ =>
-//          forword(ObtainedStates(state, obtainer, ctxData), nextActor, state.taskInstId)
-         case Success(qr: QueryResult) => {
+      store.doObtainedStates(state, obtainer.uid ) andThen {
+        //        case _ =>
+        //          forword(ObtainedStates(state, obtainer, ctxData), nextActor, state.taskInstId)
+        case Success(qr: QueryResult) => {
           if (qr.rowsAffected > 0) {
             log.debug(" obtainer OKOK!!:" + qr)
-            forword(ObtainedStates(state, obtainer, ctxData), nextActor, state.taskInstId)
+            forword(ObtainedStates(state, ctxData, obtainer), nextActor, state.taskInstId)
           } else {
-            log.error(" obtainer Error!!:Duplicate  obtainer" + qr+"::"+state)
+            log.error(" obtainer Error!!:Duplicate  obtainer" + qr + "::" + state)
           }
         }
         case a @ _ =>
@@ -116,7 +107,7 @@ class StorageWorker extends Actor with ActorLogging with ActorHelper {
             log.debug("submit OKOK!!:" + qr)
             forword(UpdateStates(state, ctxData), nextActor, state.taskInstId)
           } else {
-            log.error("submit Error!!:Duplicate Submit" + qr+"::"+state)
+            log.error("submit Error!!:Duplicate Submit" + qr + "::" + state)
           }
         }
         case a @ _ =>
@@ -139,7 +130,14 @@ class StorageWorker extends Actor with ActorLogging with ActorHelper {
       forword(rel, nextActor, procId)
     }
 
-    case _ => log.error("unknow message")
+    case obtain: ObtainedStates => {
+      log.info("get reput message:" + obtain)
+
+      forword(obtain, Queueworkers(), obtain.obtainer.uid+"_")
+    }
+    case a @ _ => {
+      log.error("unknow message:" + a)
+    }
 
   }
 }

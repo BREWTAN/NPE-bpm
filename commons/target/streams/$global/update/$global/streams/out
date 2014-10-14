@@ -1,4 +1,4 @@
-[0m[[0minfo[0m] [0mUpdating {file:/home/brew/git/npe/}commons...[0m
+[0m[[0minfo[0m] [0mUpdating {file:/Users/brew/NPE/gits/}commons...[0m
 [0m[[0mdebug[0m] [0m:: resolving dependencies :: org.nights.npe#commons_2.11;1.0.0[0m
 [0m[[0mdebug[0m] [0m	confs: [compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool][0m
 [0m[[0mdebug[0m] [0m	validate = true[0m
@@ -6,8 +6,9 @@
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'compile'[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for org.nights.npe#commons_2.11;1.0.0 [compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.nights.npe#commons_2.11;1.0.0->org.scala-lang#scala-library;2.11.1 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0mno default cache defined: set to /Users/brew/.ivy2/cache[0m
 [0m[[0minfo[0m] [0mResolving org.scala-lang#scala-library;2.11.1 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@17ed5e3d[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@6da3f1d6[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.scala-lang#scala-library;2.11.1[0m
 [0m[[0mdebug[0m] [0m	local: revision in cache: org.scala-lang#scala-library;2.11.1[0m
 [0m[[0mdebug[0m] [0m	found org.scala-lang#scala-library;2.11.1 in sbt-chain[0m
@@ -1803,20 +1804,20 @@
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#scala-compiler;2.11.1!scala-compiler.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang.modules#scala-parser-combinators_2.11;1.0.1!scala-parser-combinators_2.11.jar(bundle)[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] jline#jline;2.11!jline.jar[0m
-[0m[[0mdebug[0m] [0m:: resolution report :: resolve 332ms :: artifacts dl 16ms[0m
-[0m[[0mdebug[0m] [0m	report for org.nights.npe#commons_2.11;1.0.0 compile produced in /home/brew/git/npe/commons/target/resolution-cache/reports/org.nights.npe-commons_2.11-compile.xml[0m
-[0m[[0mdebug[0m] [0m	report for org.nights.npe#commons_2.11;1.0.0 runtime produced in /home/brew/git/npe/commons/target/resolution-cache/reports/org.nights.npe-commons_2.11-runtime.xml[0m
-[0m[[0mdebug[0m] [0m	report for org.nights.npe#commons_2.11;1.0.0 test produced in /home/brew/git/npe/commons/target/resolution-cache/reports/org.nights.npe-commons_2.11-test.xml[0m
-[0m[[0mdebug[0m] [0m	report for org.nights.npe#commons_2.11;1.0.0 provided produced in /home/brew/git/npe/commons/target/resolution-cache/reports/org.nights.npe-commons_2.11-provided.xml[0m
-[0m[[0mdebug[0m] [0m	report for org.nights.npe#commons_2.11;1.0.0 optional produced in /home/brew/git/npe/commons/target/resolution-cache/reports/org.nights.npe-commons_2.11-optional.xml[0m
-[0m[[0mdebug[0m] [0m	report for org.nights.npe#commons_2.11;1.0.0 compile-internal produced in /home/brew/git/npe/commons/target/resolution-cache/reports/org.nights.npe-commons_2.11-compile-internal.xml[0m
-[0m[[0mdebug[0m] [0m	report for org.nights.npe#commons_2.11;1.0.0 runtime-internal produced in /home/brew/git/npe/commons/target/resolution-cache/reports/org.nights.npe-commons_2.11-runtime-internal.xml[0m
-[0m[[0mdebug[0m] [0m	report for org.nights.npe#commons_2.11;1.0.0 test-internal produced in /home/brew/git/npe/commons/target/resolution-cache/reports/org.nights.npe-commons_2.11-test-internal.xml[0m
-[0m[[0mdebug[0m] [0m	report for org.nights.npe#commons_2.11;1.0.0 plugin produced in /home/brew/git/npe/commons/target/resolution-cache/reports/org.nights.npe-commons_2.11-plugin.xml[0m
-[0m[[0mdebug[0m] [0m	report for org.nights.npe#commons_2.11;1.0.0 sources produced in /home/brew/git/npe/commons/target/resolution-cache/reports/org.nights.npe-commons_2.11-sources.xml[0m
-[0m[[0mdebug[0m] [0m	report for org.nights.npe#commons_2.11;1.0.0 docs produced in /home/brew/git/npe/commons/target/resolution-cache/reports/org.nights.npe-commons_2.11-docs.xml[0m
-[0m[[0mdebug[0m] [0m	report for org.nights.npe#commons_2.11;1.0.0 pom produced in /home/brew/git/npe/commons/target/resolution-cache/reports/org.nights.npe-commons_2.11-pom.xml[0m
+[0m[[0mdebug[0m] [0m:: resolution report :: resolve 661ms :: artifacts dl 25ms[0m
+[0m[[0mdebug[0m] [0m	report for org.nights.npe#commons_2.11;1.0.0 compile produced in /Users/brew/NPE/gits/commons/target/resolution-cache/reports/org.nights.npe-commons_2.11-compile.xml[0m
+[0m[[0mdebug[0m] [0m	report for org.nights.npe#commons_2.11;1.0.0 runtime produced in /Users/brew/NPE/gits/commons/target/resolution-cache/reports/org.nights.npe-commons_2.11-runtime.xml[0m
+[0m[[0mdebug[0m] [0m	report for org.nights.npe#commons_2.11;1.0.0 test produced in /Users/brew/NPE/gits/commons/target/resolution-cache/reports/org.nights.npe-commons_2.11-test.xml[0m
+[0m[[0mdebug[0m] [0m	report for org.nights.npe#commons_2.11;1.0.0 provided produced in /Users/brew/NPE/gits/commons/target/resolution-cache/reports/org.nights.npe-commons_2.11-provided.xml[0m
+[0m[[0mdebug[0m] [0m	report for org.nights.npe#commons_2.11;1.0.0 optional produced in /Users/brew/NPE/gits/commons/target/resolution-cache/reports/org.nights.npe-commons_2.11-optional.xml[0m
+[0m[[0mdebug[0m] [0m	report for org.nights.npe#commons_2.11;1.0.0 compile-internal produced in /Users/brew/NPE/gits/commons/target/resolution-cache/reports/org.nights.npe-commons_2.11-compile-internal.xml[0m
+[0m[[0mdebug[0m] [0m	report for org.nights.npe#commons_2.11;1.0.0 runtime-internal produced in /Users/brew/NPE/gits/commons/target/resolution-cache/reports/org.nights.npe-commons_2.11-runtime-internal.xml[0m
+[0m[[0mdebug[0m] [0m	report for org.nights.npe#commons_2.11;1.0.0 test-internal produced in /Users/brew/NPE/gits/commons/target/resolution-cache/reports/org.nights.npe-commons_2.11-test-internal.xml[0m
+[0m[[0mdebug[0m] [0m	report for org.nights.npe#commons_2.11;1.0.0 plugin produced in /Users/brew/NPE/gits/commons/target/resolution-cache/reports/org.nights.npe-commons_2.11-plugin.xml[0m
+[0m[[0mdebug[0m] [0m	report for org.nights.npe#commons_2.11;1.0.0 sources produced in /Users/brew/NPE/gits/commons/target/resolution-cache/reports/org.nights.npe-commons_2.11-sources.xml[0m
+[0m[[0mdebug[0m] [0m	report for org.nights.npe#commons_2.11;1.0.0 docs produced in /Users/brew/NPE/gits/commons/target/resolution-cache/reports/org.nights.npe-commons_2.11-docs.xml[0m
+[0m[[0mdebug[0m] [0m	report for org.nights.npe#commons_2.11;1.0.0 pom produced in /Users/brew/NPE/gits/commons/target/resolution-cache/reports/org.nights.npe-commons_2.11-pom.xml[0m
 [0m[[0mdebug[0m] [0mcircular dependency found: org.scala-lang#scala-compiler;2.11.1->org.scala-lang.modules#scala-xml_2.11;1.0.2->...[0m
-[0m[[0mdebug[0m] [0m	report for org.nights.npe#commons_2.11;1.0.0 scala-tool produced in /home/brew/git/npe/commons/target/resolution-cache/reports/org.nights.npe-commons_2.11-scala-tool.xml[0m
-[0m[[0mdebug[0m] [0m	resolve done (332ms resolve - 16ms download)[0m
+[0m[[0mdebug[0m] [0m	report for org.nights.npe#commons_2.11;1.0.0 scala-tool produced in /Users/brew/NPE/gits/commons/target/resolution-cache/reports/org.nights.npe-commons_2.11-scala-tool.xml[0m
+[0m[[0mdebug[0m] [0m	resolve done (661ms resolve - 25ms download)[0m
 [0m[[0minfo[0m] [0mDone updating.[0m

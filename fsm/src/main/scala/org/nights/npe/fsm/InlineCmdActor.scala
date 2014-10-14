@@ -1,7 +1,7 @@
 package org.nights.npe.fsm
 
 import scala.util.Failure
-import org.nights.npe.fsm.front.ANewProcess
+import org.nights.npe.mo.ANewProcess
 import akka.actor.Actor
 import akka.actor.ActorLogging
 import akka.actor.ActorSelection.toScala

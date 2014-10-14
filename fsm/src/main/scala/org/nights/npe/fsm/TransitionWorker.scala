@@ -7,15 +7,21 @@ import org.nights.npe.utils.StateNodeDef
 import akka.actor.Actor
 import akka.actor.ActorLogging
 import akka.actor.ActorSelection.toScala
-import org.nights.npe.fsm.backend.Transition
-import org.nights.npe.fsm.backend.UpdateStates
+import org.nights.npe.mo.Transition
+import org.nights.npe.mo.UpdateStates
 import akka.routing.ConsistentHashingRouter.ConsistentHashableEnvelope
 import akka.actor.ActorRef
 import org.nights.npe.po.Definition._
 import org.nights.npe.fsm.backend.ConvergingResult
 import org.nights.npe.fsm.backend.IncreConverging
-import org.nights.npe.fsm.backend.UpdateStates
+import org.nights.npe.mo.UpdateStates
 import org.nights.npe.fsm.cluster.ConvergeClusterListener
+
+import org.nights.npe.po.ContextData
+import org.nights.npe.po.StateContext
+import org.nights.npe.po.InterStateNew
+import org.nights.npe.po.ParentContext
+
 
 class TransitionWorker extends ConvergeClusterListener {
 

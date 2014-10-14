@@ -1,12 +1,12 @@
 package org.nights.npe.fsm.front
 
 import org.nights.npe.fsm.ActorHelper
-import org.nights.npe.fsm.ContextData
-import org.nights.npe.fsm.DoneStateContext
-import org.nights.npe.fsm.StateContext
+import org.nights.npe.po.ContextData
+import org.nights.npe.po.DoneStateContext
+import org.nights.npe.po.StateContext
 import org.nights.npe.fsm.StatsCounter
 import org.nights.npe.fsm.Tansitionworkers
-import org.nights.npe.fsm.backend.SubmitStates
+import org.nights.npe.mo.SubmitStates
 import org.nights.npe.utils.ProcDefHelper
 import org.nights.npe.po.AskResult
 import org.nights.npe.po.Definition.NoneProcess
@@ -14,11 +14,9 @@ import akka.actor.Actor
 import akka.actor.ActorLogging
 import akka.actor.actorRef2Scala
 import akka.routing.ConsistentHashingRouter.ConsistentHashableEnvelope
-import org.nights.npe.fsm.backend.NewProcess
-
-case class ANewProcess(procInstId: String,submitter:String, procDefId: String, data: ContextData)
-
-case class TaskDone(doneState: DoneStateContext)
+import org.nights.npe.mo.NewProcess
+import org.nights.npe.mo.TaskDone
+import org.nights.npe.mo.ANewProcess
 
 class Submitor extends Actor with ActorLogging with ActorHelper {
 
@@ -52,11 +50,11 @@ class Submitor extends Actor with ActorLogging with ActorHelper {
       }
     }
     case TaskDone(doneState: DoneStateContext) => {
-//      log.info("TaskDone:{}", doneState);
+      log.info("TaskDone:{}", doneState);
       StatsCounter.submits .incrementAndGet();
 
       stateStores ! wrapToPipeMessage(SubmitStates(doneState.state asSubmit,doneState.submitter  , doneState.ctxData.asHigerPIODData), Tansitionworkers(), doneState.state.taskInstId);
     }
-    case _ => log.error("unknow message")
+    case a@_ => log.error("unknow message::"+a)
   }
 }

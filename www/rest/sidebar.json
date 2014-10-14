@@ -52,12 +52,12 @@
     "children": [
       {
         "name": "实例监控",
-        "url": "#",
+        "url": "mon/flows.html",
         "icon": "fa-desktop"
       },
       {
         "name": "任务监控",
-        "url": "#",
+        "url": "mon/tasks.html",
         "icon": "fa-desktop"
       }
     ]
@@ -80,9 +80,16 @@
     ]
   },
   {
-    "name": "压力测试",
+    "name": "业务操作",
     "url": "#",
-    "icon": "fa-tint"
+    "icon": "fa-tint",
+    "children": [
+      {
+        "name": "任务操作",
+        "url": "task/worker.html",
+        "icon": "fa-desktop"
+      }
+      ]
   },
   {
     "name": "系统管理",

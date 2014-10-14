@@ -5,8 +5,8 @@ import scala.collection.mutable.MutableList
 import org.nights.npe.fsm.CMDSubmit
 import org.nights.npe.fsm.ConvergeTransWorker
 import org.nights.npe.fsm.FsmActorsController
-import org.nights.npe.fsm.InlineCmdActor
-import org.nights.npe.fsm.MessageHelper
+import org.nights.npe.fsm.InlineCmdActor 
+import org.nights.npe.utils.MessageHelper
 import org.nights.npe.fsm.StatsCounter
 import org.nights.npe.fsm.backend.ProcDefStorage
 import com.typesafe.config.ConfigFactory
@@ -16,7 +16,7 @@ import akka.actor.actorRef2Scala
 import akka.cluster.Cluster
 import akka.contrib.pattern.ClusterSingletonManager
 import akka.routing.RoundRobinPool
-import org.nights.npe.fsm.ContextData
+import org.nights.npe.po.ContextData
 import org.nights.npe.fsm.GlobalQueue
 
 object TestFSM_CCB_Slave {

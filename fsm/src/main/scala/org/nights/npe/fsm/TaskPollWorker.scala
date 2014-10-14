@@ -2,13 +2,18 @@ package org.nights.npe.fsm
 
 import scala.concurrent.ExecutionContext.Implicits.global
 import scala.concurrent.duration.DurationInt
-import org.nights.npe.fsm.backend.ObtainedStates
+import org.nights.npe.mo.ObtainedStates
 import akka.actor.Actor
 import akka.actor.ActorLogging
 import akka.actor.ActorSelection.toScala
-import org.nights.npe.fsm.front.TaskDone
+import org.nights.npe.mo.TaskDone
 import akka.routing.ConsistentHashingRouter.ConsistentHashableEnvelope
 import akka.routing.Broadcast
+import org.nights.npe.mo.AskNewWork
+import org.nights.npe.po.ContextData
+import org.nights.npe.po.StateContext
+import org.nights.npe.po.DoneStateContext
+import org.nights.npe.mo.Obtainer
 
 class PollWorker extends Actor with ActorLogging with ActorHelper {
 
@@ -27,7 +32,7 @@ class PollWorker extends Actor with ActorLogging with ActorHelper {
     case "tick" => {
       requestCount += 1;
       context.become(listening)
-      queueAllworkers ! Broadcast(AskNewWork(1, self.toString))
+      queueAllworkers ! Broadcast(AskNewWork(1, Obtainer(self.toString)))
     }
     case obtain: ObtainedStates => {
       log.error("return a to queue  {},@{}", obtain, sender)
@@ -37,7 +42,7 @@ class PollWorker extends Actor with ActorLogging with ActorHelper {
     case _ => log.error("unknow message")
   }
   def listening(): Receive = {
-    case ObtainedStates(state, obtainer, ctxData) =>
+    case ObtainedStates(state, ctxData, obtainer) =>
       {
         log.info("get a new work {},@{}", state, obtainer)
         StatsCounter.obtains.incrementAndGet();
@@ -51,7 +56,7 @@ class PollWorker extends Actor with ActorLogging with ActorHelper {
     case "tick" =>
       {
         {
-          queueAllworkers ! Broadcast(AskNewWork(1, self.toString))
+          queueAllworkers ! Broadcast(AskNewWork(1,Obtainer( self.toString)))
         }
         requestCount += 1;
       }

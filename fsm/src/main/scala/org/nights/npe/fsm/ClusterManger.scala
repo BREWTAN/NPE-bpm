@@ -3,9 +3,9 @@ package org.nights.npe.fsm
 import akka.actor.Actor
 import akka.actor.ActorLogging
 import org.nights.npe.fsm.backend.MySqlStorage
-import org.nights.npe.fsm.backend.UpdateStates
+import org.nights.npe.mo.UpdateStates
 import org.nights.npe.fsm.backend.EHConverger
-import org.nights.npe.fsm.backend.Transition
+import org.nights.npe.mo.Transition
 
 case class RecoverSubmit(cluster: String)
 case class RecoverQueue(cluster: String)

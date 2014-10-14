@@ -6,7 +6,6 @@ import org.nights.npe.fsm.CMDSubmit
 import org.nights.npe.fsm.ConvergeTransWorker
 import org.nights.npe.fsm.FsmActorsController
 import org.nights.npe.fsm.InlineCmdActor
-import org.nights.npe.fsm.MessageHelper
 import org.nights.npe.fsm.StatsCounter
 import com.typesafe.config.ConfigFactory
 import akka.actor.ActorSystem
@@ -15,16 +14,17 @@ import akka.actor.actorRef2Scala
 import akka.cluster.Cluster
 import akka.contrib.pattern.ClusterSingletonManager
 import akka.routing.RoundRobinPool
-import org.nights.npe.fsm.ContextData
+import org.nights.npe.po.ContextData
 import org.nights.npe.fsm.GlobalQueue
 import org.nights.npe.fsm.RecoverFor
+import org.nights.npe.utils.MessageHelper
 
 object TestFSM_CCB {
 
   def main(args: Array[String]) {
     var systems: MutableList[ActorSystem] = MutableList.empty;
     var counter = 1;
-    var sleep = 20000;
+    var sleep = 60000; 
     if (args.length >= 1)
       counter = args(0).toInt
     if (args.length >= 2)

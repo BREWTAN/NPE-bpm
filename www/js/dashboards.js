@@ -3,7 +3,6 @@ var Boards = function() {
 	 var rURL;
 	 var central_data=[];
 
-	    var central_sums=[0,0,0,0,0,0]
 
 	    var colors = ['#68BC31','#2091CF','#AF4E96','#DA5430','#FEE074']
 
@@ -13,25 +12,53 @@ var Boards = function() {
 	     drawPie:function(){
 	     
 	          var placeholder = $('#piechart-placeholder').css({'width':'90%' , 'min-height':'150px'});
-	          $.ajax({
-	          	url: './rest/central_status.json',
-	          	type: 'GET',
-	          	dataType: 'json',
-	          })
-	          .done(function(jsdata) {
-	          	console.log("success:"+jsdata);
+	         
+	    var central_sums=[0,0,0,0,0,0]
 
-				central_data=jsdata;
-	          	 $.each(jsdata, function(index, row) {
+		$.ajax({
+					url: '/nperest/qstatbycenter',
+					type: 'GET',
+					dataType: 'JSON',
+				})
+				.done(function(data) {
+					// console.log("getQ::"+JSON.stringify(data))
+					var keymap={};
+					$.each(data,function(index,row){
+						if(!keymap[row['taskname']]){
+							keymap[row['taskname']]={}
+						}
+						keymap[row['taskname']][row['interstate']]=row['counter']
+					});
+					var rawdata=[]
+					$.each(keymap,function(key,value){
+						//console.log("::"+JSON.stringify(value))
+						if(!key||key=="null")key="默认"
+						var v=[0,0,0,0]
+						for(var i=0;i<v.length;i++)if(value[i])v[i]=value[i]
+						
+						rawdata.push({"name":key,"newcc":v[0],"obtaincc":v[1],"submitcc":v[2],
+							"termcc":v[3]})
+					})
+
+					console.log(JSON.stringify(rawdata))
+				
+				  
+			
+				central_data=rawdata;
+	          	 $.each(rawdata, function(index, row) {
 					central_sums[0]+= row["newcc"]
 					central_sums[1]+=row["obtaincc"]
 					central_sums[2]+=row["submitcc"]
 					central_sums[3]+=row["termcc"]
 
 	          	 })
+	          	 $("#cc_new").html(central_sums[0])
+	          	 $("#cc_obtain").html(central_sums[1])
+	          	 $("#cc_submit").html(central_sums[2])
+	          	 $("#cc_term").html(central_sums[3])
 	          	 var data=[];
 
-	          	 $.each(jsdata, function(index, row) {
+	          	 $.each(rawdata, function(index, row) {
 	          	 	data.push({
 	          	 		label:row["name"],
 	          	 		data: row["termcc"] *100.0 / central_sums[3],

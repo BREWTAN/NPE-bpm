@@ -55,7 +55,7 @@ var XWATable = function() {
                                     if(kv[1]==data_val) opts+=' selected ';
                                     
                                     if(kv[1] == kv[0]||
-                                        xwaOptions['cols'][$(selEle).attr('id')]['hidecode']==true||kv[1].length==0dust){
+                                        xwaOptions['cols'][$(selEle).attr('id')]['hidecode']==true||kv[1].length==0){
                                         opts+='>'+kv[0]+'</option>'
                                     } else {
                                         opts+='>'+kv[0]+'('+kv[1]+')</option>'

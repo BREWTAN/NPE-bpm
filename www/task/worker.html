@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta charset="utf-8" />
+	<title>任务操作-NPE</title>
+	<base href="../" >
+	<link rel="stylesheet" type="text/css" href="assets/js/bootstrap-select/bootstrap-select.min.css">
+	<link rel="stylesheet" href="assets/css/chosen.css" />
+
+	<link rel="stylesheet" type="text/css" href="assets/css/datepicker.css"/>
+	<link rel='stylesheet' href='assets/js/jquery-watable/watable.css'/>
+	<link rel='stylesheet' href='assets/js/jquery-watable/animate.min.css'/>
+	<!-- bootstrap & fontawesome -->
+	<script type="text/javascript" src="parts/js/header.js"></script>
+
+</head>
+<body class="no-skin">
+	<script type="text/javascript">$.include("parts/pages/navbar.shtml")</script>
+
+	<div class="main-container" id="main-container">
+		<script type="text/javascript">
+				try{ace.settings.check('main-container' , 'fixed')}catch(e){}
+			</script>
+		<!-- #section:basics/sidebar -->
+		<script type="text/javascript">$.include("parts/pages/sidebar.shtml")</script>
+
+		<!-- /section:basics/sidebar -->
+		<div class="main-content">
+			<script type="text/javascript">$.include("parts/pages/content_title.shtml")</script>
+			<!-- /section:basics/content.breadcrumbs -->
+			<div class="page-content">
+				<div class="page-content-area">
+
+					<div class="row">
+						<div class="col-sm-10">
+
+						<div class="widget-box">
+							<div class="widget-header">
+								<h4 class="widget-title">任务获取</h4>
+
+								<span class="widget-toolbar">
+									<button class="btn btn-xs btn-primary obtain" id='btn_obtain' type="button">
+										<i class="ace-icon fa fa-pencil-square-o bigger-120"></i>
+										<span class="bigger-110 no-text-shadow">获取</span>
+									</button>
+											&nbsp; &nbsp; &nbsp;
+									<button class="btn btn-xs" id='btn_reset' type="reset">
+										<i class="ace-icon fa fa-undo bigger-110"></i>
+										<span class="bigger-110 no-text-shadow">清空</span>
+										
+									</button>
+											&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+									<a href="#" data-action="collapse">
+										<i class="ace-icon fa fa-chevron-up"></i>
+									</a>
+									
+								</span>
+							</div>
+
+							<div class="widget-body">
+								<div class="widget-main">
+
+
+									<!-- PAGE CONTENT BEGINS -->
+									<form class="form-horizontal" role="form">
+										<!-- #section:elements.form -->
+										<div class="form-group">
+												
+											<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> 角色 </label>
+											<div class="col-sm-9">
+												<select class="chosen-select" id="ff_role" data-placeholder="选择角色" >
+														<option value="ALL" selected>全部</option>
+												</select>
+											</div>
+										</div>
+
+										<div class="form-group col-sm-12">
+											<div class="form-group col-sm-5">
+												<label class="col-sm-4 control-label no-padding-right" for="ff-obtainer">获取人&nbsp; &nbsp;</label>
+												<div>
+													<input type="text" id="ff-obtainer" class="col-xs-10 col-sm-8" />
+												</div>
+											</div>
+											<div class="form-group col-sm-5">
+												<label class="col-sm-4 control-label no-padding-right" for="ff-center">中心&nbsp; &nbsp;</label>
+												<div >
+													<input type="text" id="ff-center"  class="col-xs-10 col-sm-8" />
+												</div>
+											</div>
+											<div class="form-group col-sm-2">
+												<label class="col-sm-4 control-label no-padding-right" for="ff-center">排斥</label>
+												<div class="col-xs-3">
+													<label>
+														<input id="ff_exclude" class="ace ace-switch" type="checkbox" />
+														<span class="lbl"></span>
+													</label>
+												</div>
+											</div>
+										</div>
+
+									
+										
+										<div id="taskshow" > 
+											<div class="form-group col-sm-12">
+												<div class="form-group col-sm-6">
+													<label class="col-sm-4 control-label no-padding-right" for="ff-taskName">任务名称&nbsp; &nbsp;</label>
+													<div>
+														<input type="text" id="ff-taskName" readonly class="col-xs-10 col-sm-8" />
+													</div>
+												</div>
+												<div class="form-group col-sm-6">
+													<label class="col-sm-4 control-label no-padding-right" for="ff-procDefId">流程定义&nbsp; &nbsp;</label>
+													<div >
+														<input type="text" id="ff-procDefId"  readonly class="col-xs-10 col-sm-8" />
+													</div>
+												</div>
+											</div>
+											
+											<div class="form-group col-sm-12">
+												<div class="form-group col-sm-6">
+													<label class="col-sm-4 control-label no-padding-right" for="ff-taskPIO">String数据区&nbsp; &nbsp;</label>
+													<div>
+														<input type="text" id="ff-strdata1" class="col-xs-10 col-sm-8" />
+													</div>
+												</div>
+												<div class="form-group col-sm-6">
+													<label class="col-sm-4 control-label no-padding-right" for="ff-procPIO">String数据2&nbsp; &nbsp;</label>
+													<div >
+														<input type="text" id="ff-strdata2" class="col-xs-10 col-sm-8" />
+													</div>
+												</div>
+											</div>
+											<div class="form-group col-sm-12">
+												<div class="form-group col-sm-3">
+													<label class="col-sm-4 control-label no-padding-right" for="ff-idata1">Int1&nbsp; &nbsp;</label>
+													<div>
+														<input type="text" id="ff-idata1" class="col-xs-10 col-sm-8" />
+													</div>
+												</div>
+												<div class="form-group col-sm-3">
+													<label class="col-sm-4 control-label no-padding-right" for="ff-idata2">Int2&nbsp; &nbsp;</label>
+													<div >
+														<input type="text" id="ff-idata2" class="col-xs-10 col-sm-8" />
+													</div>
+												</div>
+												<div class="form-group col-sm-3">
+													<label class="col-sm-4 control-label no-padding-right" for="ff-idata1">Float1&nbsp; &nbsp;</label>
+													<div>
+														<input type="text" id="ff-fdata1" class="col-xs-10 col-sm-8" />
+													</div>
+												</div>
+												<div class="form-group col-sm-3">
+													<label class="col-sm-4 control-label no-padding-right" for="ff-idata2">Float2&nbsp; &nbsp;</label>
+													<div >
+														<input type="text" id="ff-fdata2"  class="col-xs-10 col-sm-8" />
+													</div>
+												</div>
+											</div>
+											<div class="form-group col-sm-12">
+												<div class="form-group col-sm-6">
+													<label class="col-sm-4 control-label no-padding-right" for="ff-taskPIO">任务优先级&nbsp; &nbsp;</label>
+													<div>
+														<input type="text" id="ff-taskPIO" class="col-xs-10 col-sm-8" />
+													</div>
+												</div>
+												<div class="form-group col-sm-6">
+													<label class="col-sm-4 control-label no-padding-right" for="ff-procPIO">流程优先级&nbsp; &nbsp;</label>
+													<div >
+														<input type="text" id="ff-procPIO" class="col-xs-10 col-sm-8" />
+													</div>
+												</div>
+											</div>
+											<div class="form-group">
+												<label class="col-sm-2 control-label no-padding-right" for="ff-procinst">Extra数据</label>
+												<div class="col-sm-12">
+													<textarea class="form-control" id="ff-extra"  class="col-xs-10 col-sm-12" ></textarea>
+
+												</div>
+											</div>
+
+											<div class="form-group col-sm-12">
+												<div class="form-group col-sm-6">
+													<label class="col-sm-4 control-label no-padding-right" for="ff-taskInstId">任务ID&nbsp; &nbsp;</label>
+													<div>
+														<input type="text" id="ff-taskInstId" readonly class="col-xs-10 col-sm-8" />
+													</div>
+												</div>
+												<div class="form-group col-sm-6">
+													<label class="col-sm-4 control-label no-padding-right" for="ff-procInstId">流程ID&nbsp; &nbsp;  </label>
+													<div >
+														<input type="text" id="ff-procInstId" readonly class="col-xs-10 col-sm-8" />
+													</div>
+												</div>
+											</div>
+											<div class="form-group col-sm-12">
+												<div class="form-group col-sm-6">
+													<label class="col-sm-4 control-label no-padding-right" for="ff-taskDefId">任务定义&nbsp; &nbsp;</label>
+													<div >
+														<input type="text" id="ff-taskDefId" readonly class="col-xs-10 col-sm-8" />
+													</div>
+												</div>
+												<div class="form-group col-sm-6">
+													<label class="col-sm-4 control-label no-padding-right" for="ff-rolemark">角色过滤&nbsp; &nbsp;</label>
+													<div >
+														<input type="text" id="ff-rolemark" readonly class="col-xs-10 col-sm-8" />
+													</div>
+												</div>
+											</div>
+											
+											
+											<div class="form-group">
+												<label class="col-sm-3 control-label no-padding-right" for="ff-procinst">任务调试窗口</label>
+												<div class="col-sm-12">
+													<textarea type="text" id="ff-debug"  readonly class="col-xs-10 col-sm-12" ></textarea>
+
+												</div>
+											</div>
+										
+										</div>
+
+									</form>
+
+								</div>
+							</div>
+						</div>
+
+					</div>
+					<!-- /.row -->
+				</div>
+				<!-- /.page-content-area -->
+			</div>
+			<!-- /.page-content -->
+		</div>
+		<!-- /.main-content -->
+
+		<script type="text/javascript">$.include("parts/pages/copyright.shtml")</script>
+
+	</div>
+	<!-- /.main-container -->
+
+	<script type="text/javascript">$.include("parts/pages/foot.shtml")</script>
+
+</body>
+	<script type="text/javascript">$.include("parts/pages/xwatable-form.shtml")</script>
+
+	<script type="text/javascript" src="assets/js/date-time/bootstrap-datepicker.min.js"></script>
+
+	<script type="text/javascript" src="assets/js/bootstrap-select/bootstrap-select.min.js"></script>
+
+	<script src="assets/js/chosen.jquery.min.js"></script>
+
+	<script type="text/javascript" src="assets/js/jquery-watable/jquery.watable.js"></script>
+	<script type="text/javascript" src="assets/addons/rqlbuilder.js"></script>
+	<script type="text/javascript" src="assets/addons/xwatable.js"></script>
+	<script type="text/javascript" src="assets/addons/rest.js"></script>
+	<script type="text/javascript" src="assets/addons/refhelper.js"></script>
+	<script type="text/javascript" src="assets/addons/jquery-dateFormat.min.js"></script>
+
+	<script type="text/javascript">ace.vars['base'] = '..'; </script>
+
+	<!-- inline scripts related to this page -->
+	<script type="text/javascript">
+		
+		jQuery(function($) {//初始化函数
+			setTitlePath("任务操作","业务操作")		    
+			$.ajax({
+			url: '/nperest/taskrole',
+			type: 'GET',
+			dataType: 'JSON',
+		})
+		.done(function(data) {
+			var mm='<option class="__default " value="__ALL" selected> 全部</option>'
+			$.each(data,function(index,row){
+				mm+='<option value="'+row["roleid"]+'"> '+row["roleid"]+'</option>'
+			})
+			$("#ff_role").html(mm)
+			$('.chosen-select').chosen({allow_single_deselect:true}); 
+		})
+
+		$("#ff_role").on('change',function(v1,v2){
+			if($("#ff_role option[value='__ALL']:selected").length==0){
+			}
+		})
+
+		var resetfun=function(){
+			$("#ff_role option[value!='__ALL']:selected").removeAttr("selected");
+			$("#ff_role option[value='__ALL']").prop("selected",true);
+			$('#ff_role').trigger('chosen:updated');
+			$("#ff_obtainer").val("");
+			$("#ff_center").val("");
+			$("#ff_exclude").removeAttr("checked");
+		}
+		$('#btn_reset').on("click",resetfun)
+		var obtaindata=null
+
+		$('#btn_obtain').on('click',function(){
+			console.log("txt="+$('#btn_obtain.obtain').length)
+			if($('#btn_obtain.obtain').length==1){
+				console.log("do obtain")
+				$('#btn_obtain').removeClass("obtain").addClass('obtaining')
+				$('#btn_obtain span').html('获取中...')
+				$('#btn_obtain').removeClass("btn-primary").addClass('btn-grey')
+				var query="?1=1"
+				if($("#ff_role option[value='__ALL']:selected").length==0){
+					query+="&role="
+					$.each($("#ff_role option[value!='__ALL']:selected"),function(index,v){
+						query+=$(v).val()
+					})
+				}
+//				if($("#ff_obtainer").val()!=undefined)
+				{
+					query+="&obtainer="+$("#ff_obtainer").val()
+				}
+//				if($("#ff_center").val()!=undefined)
+				{
+					query+="&center="+$("#ff_center").val()
+				}
+
+				console.log("query=="+query)
+				$.ajax({
+					url: '/nperest/obtain'+query,
+					type: 'GET',
+					dataType: 'JSON',	
+				})
+				.done(function(data) {
+					console.log("get Task::"+data['state'])
+					obtaindata=data;
+					if(data['state']){
+						$('#taskshow').removeClass('hidden')
+						$.each($('#taskshow input'),function(index,v){
+							//console.log("setV:"+$(v).attr('id')+"==>"+$(v).val())
+							if(data['state'].hasOwnProperty($(v).attr('id').substr(3))){
+								$(v).val(data['state'][$(v).attr('id').substr(3)])	
+							}else
+							if(data['ctxData'].hasOwnProperty($(v).attr('id').substr(3))){
+								$(v).val(data['ctxData'][$(v).attr('id').substr(3)])	
+							}else{
+								$(v).val('')	
+							}
+						})
+
+						$('#ff-debug').val(JSON.stringify(data));
+						$('#btn_obtain span').html('提交')
+						$('#btn_obtain').addClass("submit").removeClass('obtaining')
+						$('#btn_obtain').addClass("btn-primary").removeClass('btn-grey')
+					}
+					else{
+						$('#btn_obtain span').html('获取')
+						$('#btn_obtain').addClass("obtain").removeClass('obtaining')
+						$('#btn_obtain').addClass("btn-primary").removeClass('btn-grey')
+					}
+
+				})
+
+			}else if($('#btn_obtain.submit').length==1){
+				console.log("dosubmit")
+				if(obtaindata['state']){
+					var submitdata= JSON.parse(JSON.stringify(obtaindata));
+					$.each($('#taskshow input'),function(index,v){
+						//console.log("setV:"+$(v).attr('id')+"==>"+$(v).val())
+						if(submitdata['state'].hasOwnProperty($(v).attr('id').substr(3))){
+							submitdata['state'][$(v).attr('id').substr(3)]=$(v).val()	
+						}else
+						if(submitdata['ctxData'].hasOwnProperty($(v).attr('id').substr(3))){
+							submitdata['ctxData'][$(v).attr('id').substr(3)]=$(v).val()
+						}else{
+							alert("unknown data::"+$(v).attr('id')+",value="+$(v).val())	
+						}
+					})
+
+					submitdata['state']['interstate']=2
+
+					submitdata['ctxData']['procPIO']=parseInt(submitdata['ctxData']['procPIO'])
+					submitdata['ctxData']['taskPIO']=parseInt(submitdata['ctxData']['taskPIO'])
+					submitdata['ctxData']['idata1']=parseInt(submitdata['ctxData']['idata1'])
+
+					submitdata['ctxData']['idata2']=parseInt(submitdata['ctxData']['idata2'])
+					submitdata['ctxData']['fdata1']=parseFloat(submitdata['ctxData']['fdata1'])
+					submitdata['ctxData']['fdata2']=parseFloat(submitdata['ctxData']['fdata2'])
+					submitdata['submitter']=$('ff-obtainer').val()+""
+
+					console.log("dosubmit::"+JSON.stringify(submitdata))
+
+					$('#btn_obtain').removeClass("submit").addClass('submiting')
+					$('#btn_obtain span').html('提交中...')
+					$('#btn_obtain').removeClass("btn-primary").addClass('btn-grey')
+
+					$.ajax({
+						url: '/nperest/submit',
+						type: 'POST',
+						dataType: 'JSON',	
+		                contentType: "application/json; charset=utf-8",
+		                async: false,
+		                data: JSON.stringify(submitdata),
+					})
+					.done(function(data) {
+						console.log("submit OKOK:"+JSON.stringify(data))
+						if(data['status']==0){
+							$('#btn_obtain span').html('获取')
+							$('#btn_obtain').addClass("obtain").removeClass('submiting')
+							$('#btn_obtain').addClass("btn-primary").removeClass('btn-grey')
+							resetfun()
+						}else{
+							$('#btn_obtain span').html('提交')
+							$('#btn_obtain').addClass("submit").removeClass('obtaining')
+							$('#btn_obtain').addClass("btn-primary").removeClass('btn-grey')
+						}
+					})
+				}
+			}
+		})
+
+		
+
+			
+		})
+	</script>
+</html>

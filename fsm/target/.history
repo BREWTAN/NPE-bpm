@@ -22,3 +22,6 @@ compile
 run org.nights.npe.fsm.Starter
 exit
 run org.nights.npe.fsm.Starter
+eclipse
+project
+project gits

@@ -5,7 +5,7 @@ import java.util.concurrent.locks.ReentrantLock
 import scala.collection.mutable.ListBuffer
 import scala.collection.mutable.Map
 import scala.util.control.Breaks._
-import org.nights.npe.fsm.PriorityAware
+import org.nights.npe.po.PriorityAware
 import java.util.concurrent.atomic.AtomicLong
 import java.util.concurrent.atomic.AtomicInteger
 

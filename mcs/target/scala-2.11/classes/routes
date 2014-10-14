@@ -41,6 +41,14 @@ GET  	/procinst			controllers.ProcInstFace.getByPage(skip: Int?=0, limit: Int?=1
 DELETE  /procinst/:defid 	controllers.ProcInstFace.delete(defid:String)
 
 
+##############
+# procinst
+GET  	/taskinst			controllers.TaskInstFace.getByPage(skip: Int?=0, limit: Int?=10,status:Int?=0, query:String?=null,page:Boolean?=false)
+
+DELETE  /taskinst/:defid 	controllers.TaskInstFace.delete(defid:String)
+
+
+
 ##################
 # taskcenter
 
@@ -64,4 +72,11 @@ GET		/taskrole/import	controllers.TaskRoleFace.importFromFlows
 # queue views
 GET     /qstatbyname		controllers.QueueViewer.statsByName
 GET     /qstatbycenter		controllers.QueueViewer.statsByCenter
+
+
+##################
+# do work
+GET		/obtain				controllers.QueueWorker.obtainByRole(obtainer:String?=null,role:String ?=null,center:String?=null)
+
+POST		/submit				controllers.QueueWorker.submit()
 

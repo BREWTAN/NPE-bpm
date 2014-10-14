@@ -5,8 +5,6 @@ import IvyRepositories.{localDepRepo, localRepoArtifacts, makeLocalRepoSettings,
 
 object obuild extends Build {
 
-  println organization
-
 
 lazy val publishM2Configuration = 
    TaskKey[PublishConfiguration]("publish-m2-configuration", 

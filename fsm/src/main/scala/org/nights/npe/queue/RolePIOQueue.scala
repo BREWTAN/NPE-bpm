@@ -1,20 +1,19 @@
 package org.nights.npe.queue
 
 import java.util.concurrent.locks.ReentrantLock
-
 import scala.collection.mutable.ListBuffer
 import scala.collection.mutable.Map
-
-import org.nights.npe.fsm.PriorityAware
+import org.nights.npe.po.PriorityAware
 import scala.util.control.Breaks._
-
+import org.nights.npe.mo.Obtainer
+ 
 class RolePIOQueue[T <: PriorityAware] {
   val queues: Map[String, AdvancePriorityQueue[T]] = Map.empty
   val queuesList: ListBuffer[AdvancePriorityQueue[T]] = ListBuffer.empty
     val queuesPIOList: ListBuffer[Int] = ListBuffer.empty
 
   val addLock = new ReentrantLock()
-
+ 
   override def toString:String={
 //    queues.mkString("Q", ",", "]")
     queuesList.mkString("[",",","]")
@@ -50,18 +49,18 @@ class RolePIOQueue[T <: PriorityAware] {
     }
   }
 
-  def poll(role: String = null,filter: String = null): Option[T] = {
-    if (role == null) {
+  def poll(obtainer: Obtainer=null): Option[T] = {
+    if (obtainer == null||obtainer.role ==null) {
       for (q <- queuesList) {
-        q.poll(filter) match {
+        q.poll(obtainer.filter ) match {
           case some@Some(task) => return some
           case _ => 
         }
       }
       return None
     } else {
-      queues.get(role) match {
-        case Some(q) => return q.poll(filter)
+      queues.get(obtainer.role ) match {
+        case Some(q) => return q.poll(obtainer.filter)
         case _ => return None
       }
     }

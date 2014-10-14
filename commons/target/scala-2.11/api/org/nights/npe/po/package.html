@@ -83,6 +83,194 @@
       </a>
     </span>
       
+    </li><li name="org.nights.npe.po.ContextData" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ContextDataextendsProductwithSerializable"></a>
+      <a id="ContextData:ContextData"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="ContextData.html"><span class="name">ContextData</span></a><span class="params">(<span name="procPIO">procPIO: <span class="extype" name="scala.Int">Int</span> = <span class="symbol">0</span></span>, <span name="taskPIO">taskPIO: <span class="extype" name="scala.Int">Int</span> = <span class="symbol">0</span></span>, <span name="rolemark">rolemark: <span class="extype" name="scala.Predef.String">String</span> = <span class="symbol">null</span></span>, <span name="startMS">startMS: <span class="extype" name="scala.Long">Long</span> = <span class="symbol">System.currentTimeMillis()</span></span>, <span name="idata1">idata1: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Int">Int</span>] = <span class="symbol">null</span></span>, <span name="idata2">idata2: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Int">Int</span>] = <span class="symbol">null</span></span>, <span name="strdata1">strdata1: <span class="extype" name="scala.Predef.String">String</span> = <span class="symbol">null</span></span>, <span name="strdata2">strdata2: <span class="extype" name="scala.Predef.String">String</span> = <span class="symbol">null</span></span>, <span name="fdata1">fdata1: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Float">Float</span>] = <span class="symbol">null</span></span>, <span name="fdata2">fdata2: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Float">Float</span>] = <span class="symbol">null</span></span>, <span name="taskcenter">taskcenter: <span class="extype" name="scala.Predef.String">String</span> = <span class="symbol">null</span></span>, <span name="rootproc">rootproc: <span class="extype" name="scala.Predef.String">String</span> = <span class="symbol">null</span></span>, <span name="extra">extra: <span class="extype" name="scala.collection.mutable.HashMap">HashMap</span>[<span class="extype" name="scala.Predef.String">String</span>, <span class="extype" name="scala.Any">Any</span>] = <span class="symbol">HashMap.empty</span></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#org.nights.npe.po.package@ContextDataextendsProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li><li name="org.nights.npe.po.DoneStateContext" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="DoneStateContextextendsProductwithSerializable"></a>
+      <a id="DoneStateContext:DoneStateContext"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="DoneStateContext.html"><span class="name">DoneStateContext</span></a><span class="params">(<span name="state">state: <a href="StateContext.html" class="extype" name="org.nights.npe.po.StateContext">StateContext</a></span>, <span name="ctxData">ctxData: <a href="ContextData.html" class="extype" name="org.nights.npe.po.ContextData">ContextData</a></span>, <span name="submitter">submitter: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#org.nights.npe.po.package@DoneStateContextextendsProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li><li name="org.nights.npe.po.InterState" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="InterStateextendsAnyRef"></a>
+      <a id="InterState:InterState"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="InterState.html"><span class="name">InterState</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#org.nights.npe.po.package@InterStateextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">任务上下文
+</p>
+    </li><li name="org.nights.npe.po.InterStateNew" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="InterStateNewextendsInterStatewithProductwithSerializable"></a>
+      <a id="InterStateNew:InterStateNew"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="InterStateNew.html"><span class="name">InterStateNew</span></a><span class="params">(<span name="v">v: <span class="extype" name="scala.Int">Int</span> = <span class="symbol">0</span></span>)</span><span class="result"> extends <a href="InterState.html" class="extype" name="org.nights.npe.po.InterState">InterState</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#org.nights.npe.po.package@InterStateNewextendsInterStatewithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li><li name="org.nights.npe.po.InterStateObtain" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="InterStateObtainextendsInterStatewithProductwithSerializable"></a>
+      <a id="InterStateObtain:InterStateObtain"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="InterStateObtain.html"><span class="name">InterStateObtain</span></a><span class="params">(<span name="v">v: <span class="extype" name="scala.Int">Int</span> = <span class="symbol">1</span></span>)</span><span class="result"> extends <a href="InterState.html" class="extype" name="org.nights.npe.po.InterState">InterState</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#org.nights.npe.po.package@InterStateObtainextendsInterStatewithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li><li name="org.nights.npe.po.InterStateSubmit" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="InterStateSubmitextendsInterStatewithProductwithSerializable"></a>
+      <a id="InterStateSubmit:InterStateSubmit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="InterStateSubmit.html"><span class="name">InterStateSubmit</span></a><span class="params">(<span name="v">v: <span class="extype" name="scala.Int">Int</span> = <span class="symbol">2</span></span>)</span><span class="result"> extends <a href="InterState.html" class="extype" name="org.nights.npe.po.InterState">InterState</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#org.nights.npe.po.package@InterStateSubmitextendsInterStatewithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li><li name="org.nights.npe.po.InterStateTerminate" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="InterStateTerminateextendsInterStatewithProductwithSerializable"></a>
+      <a id="InterStateTerminate:InterStateTerminate"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="InterStateTerminate.html"><span class="name">InterStateTerminate</span></a><span class="params">(<span name="v">v: <span class="extype" name="scala.Int">Int</span> = <span class="symbol">3</span></span>)</span><span class="result"> extends <a href="InterState.html" class="extype" name="org.nights.npe.po.InterState">InterState</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#org.nights.npe.po.package@InterStateTerminateextendsInterStatewithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li><li name="org.nights.npe.po.ParentContext" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ParentContextextendsProductwithSerializable"></a>
+      <a id="ParentContext:ParentContext"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="ParentContext.html"><span class="name">ParentContext</span></a><span class="params">(<span name="procInstId">procInstId: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="procDefId">procDefId: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="subDefId">subDefId: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#org.nights.npe.po.package@ParentContextextendsProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li><li name="org.nights.npe.po.PriorityAware" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="PriorityAwareextendsAnyRef"></a>
+      <a id="PriorityAware:PriorityAware"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="PriorityAware.html"><span class="name">PriorityAware</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#org.nights.npe.po.package@PriorityAwareextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li><li name="org.nights.npe.po.StateContext" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="StateContextextendsSerializablewithProduct"></a>
+      <a id="StateContext:StateContext"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="StateContext.html"><span class="name">StateContext</span></a><span class="params">(<span name="procInstId">procInstId: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="procDefId">procDefId: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="taskInstId">taskInstId: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="taskDefId">taskDefId: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="taskName">taskName: <span class="extype" name="scala.Predef.String">String</span> = <span class="symbol">&quot;&quot;</span></span>, <span name="antecessors">antecessors: <span class="extype" name="scala.List">List</span>[<a href="ParentContext.html" class="extype" name="org.nights.npe.po.ParentContext">ParentContext</a>] = <span class="symbol">List.empty</span></span>, <span name="internalState">internalState: <a href="InterState.html" class="extype" name="org.nights.npe.po.InterState">InterState</a> = <span class="symbol">InterStateNew()</span></span>, <span name="prevStateInstIds">prevStateInstIds: <span class="extype" name="scala.List">List</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">List.empty</span></span>, <span name="procHops">procHops: <span class="extype" name="scala.Int">Int</span> = <span class="symbol">0</span></span>, <span name="isTerminate">isTerminate: <span class="extype" name="scala.Boolean">Boolean</span> = <span class="symbol">false</span></span>)</span><span class="result"> extends <span class="extype" name="scala.Serializable">Serializable</span> with <span class="extype" name="scala.Product">Product</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#org.nights.npe.po.package@StateContextextendsSerializablewithProduct" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li><li name="org.nights.npe.po.StateContextWithData" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="StateContextWithDataextendsPriorityAwarewithProductwithSerializable"></a>
+      <a id="StateContextWithData:StateContextWithData"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="StateContextWithData.html"><span class="name">StateContextWithData</span></a><span class="params">(<span name="sc">sc: <a href="StateContext.html" class="extype" name="org.nights.npe.po.StateContext">StateContext</a></span>, <span name="dt">dt: <a href="ContextData.html" class="extype" name="org.nights.npe.po.ContextData">ContextData</a></span>)</span><span class="result"> extends <a href="PriorityAware.html" class="extype" name="org.nights.npe.po.PriorityAware">PriorityAware</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#org.nights.npe.po.package@StateContextWithDataextendsPriorityAwarewithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" />
+      </a>
+    </span>
+      
     </li></ol>
             </div>
 

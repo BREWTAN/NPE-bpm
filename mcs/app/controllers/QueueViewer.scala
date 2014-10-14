@@ -45,6 +45,7 @@ object QueueViewer
     }
 
   }
+  
   def statsByCenter = Action.async { request =>
     val result = QueueStatDAO.exec("""select taskcenter as taskname,interstate,count(*) as counter 
          from tasks group by taskcenter,interstate order by taskcenter,interstate

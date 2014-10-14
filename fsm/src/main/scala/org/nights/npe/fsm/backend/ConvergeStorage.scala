@@ -1,6 +1,6 @@
 package org.nights.npe.fsm.backend
 
-import org.nights.npe.fsm.ContextData
+import org.nights.npe.po.ContextData
 import org.slf4j.LoggerFactory
 import net.sf.ehcache.Cache
 import net.sf.ehcache.CacheManager

@@ -100,7 +100,7 @@ trait SimpleDAO[T] extends AsyncDBPool {
   def beanValue(bean: T, filter: Field => Boolean): Seq[Any] = {
     fields.filter(filter).map(_.get(bean)).map { v =>
       v match {
-        case opt: Option[Any] => opt.get
+        case opt: Option[Any] => opt.getOrElse(null)
         case list: List[Any] => {
           list.mkString(",")
         }
@@ -112,7 +112,7 @@ trait SimpleDAO[T] extends AsyncDBPool {
   def bean2Array(bean: T): Seq[Any] = {
     fields.map(_.get(bean)).map { v =>
       v match {
-        case opt: Option[Any] => opt.get
+        case opt: Option[Any] => opt.getOrElse(null)
         case list: List[Any] => {
           list.mkString(",")
         }
@@ -122,7 +122,7 @@ trait SimpleDAO[T] extends AsyncDBPool {
   }
   def folder(v: Any): String = {
     v match {
-      case opt: Option[Any] => '"' + opt.get.toString + '"'
+      case opt: Option[Any] => '"' + opt.getOrElse("null").toString + '"'
       case list: List[Any] => {
         (list.mkString(","))
       }
@@ -143,7 +143,7 @@ trait SimpleDAO[T] extends AsyncDBPool {
     val seqs: ArrayBuffer[Any] = ArrayBuffer.empty;
     for (bean <- beans) yield fields.map(_.get(bean)).map { v =>
       v match {
-        case opt: Option[Any] => seqs.+=(opt.get)
+        case opt: Option[Any] => seqs.+=(opt.getOrElse(null))
         case list: List[Any] => {
           seqs.+=(list.mkString(","))
         }

@@ -2,18 +2,21 @@ package org.nights.npe.fsm
 
 import scala.concurrent.ExecutionContext.Implicits.global
 import scala.concurrent.duration.DurationInt
-
-import org.nights.npe.fsm.backend.ObtainedStates
-import org.nights.npe.fsm.backend.Transition
 import org.nights.npe.utils.ProcDefHelper
 import org.nights.npe.po.Definition.UserTask
 import org.nights.npe.queue.RolePIOQueue
-
 import akka.actor.Actor
 import akka.actor.ActorLogging
 import akka.actor.ActorSelection.toScala
+import org.nights.npe.mo.Transition
+import org.nights.npe.mo.AskNewWork
+import org.nights.npe.mo.ObtainedStates
+import org.nights.npe.po.ContextData
+import org.nights.npe.po.StateContext
+import org.nights.npe.po.StateContextWithData
+import org.nights.npe.mo.ObtainedStates
+import org.nights.npe.mo.NoneStateInQueue
 
-case class AskNewWork(count: Int, obtainer: String = null, role: String = null, group: String = null)
 
 object GlobalQueue {
   val queue: RolePIOQueue[StateContextWithData] = new RolePIOQueue
@@ -44,13 +47,20 @@ class QueueWorker extends Actor with ActorLogging with ActorHelper {
         }
       }
     }
-    case AskNewWork(size, obtainer, role, group) => {
-      queue.poll(role, obtainer) match {
-        case Some(task) => stateStores ! wrapToPipeMessage(ObtainedStates(task.sc asObtain, obtainer, task.dt), sender, task.sc.taskInstId)
-        case a @ _ =>
+    case AskNewWork(size, obtainer) => {
+      log.info("AskNewWork@"+sender)
+      queue.poll(obtainer) match {
+        case Some(task) => stateStores ! wrapToPipeMessage(ObtainedStates(task.sc asObtain, task.dt, obtainer), sender, task.sc.taskInstId)
+        case a @ _ => sender ! NoneStateInQueue(obtainer)
       }
     }
-    case a @ _ => log.debug("Unknow::" + a + "@" + self)
+    case ObtainedStates(state,ctxData,obtainer) =>{
+        
+      log.info("get a reput state@"+sender)
+
+      queue.offer(StateContextWithData(state asNew, ctxData));
+    }
+    case a @ _ => log.error("Unknow::" + a + "@" + self)
   }
 }
 

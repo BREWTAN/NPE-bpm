@@ -3,7 +3,7 @@ package fsm
 import scala.collection.mutable.MutableList
 import org.nights.npe.fsm.ActorHelper
 import org.nights.npe.fsm.InlineCmdActor
-import org.nights.npe.fsm.StateContext
+import org.nights.npe.po.StateContext
 import org.nights.npe.fsm.backend.EhCacheStorage
 import com.typesafe.config.ConfigFactory
 import akka.actor.ActorSystem
@@ -11,10 +11,10 @@ import akka.cluster.Cluster
 import akka.dispatch.Futures.future
 import akka.pattern.Patterns.pipe
 import akka.pattern.Patterns.pipe
-import org.nights.npe.fsm.backend.UpdateStates
-import org.nights.npe.fsm.backend.FetchProcessStates
+import org.nights.npe.mo.UpdateStates
+import org.nights.npe.mo.FetchProcessStates
 import org.nights.npe.fsm.FsmActorsController
-import org.nights.npe.fsm.ContextData
+import org.nights.npe.po.ContextData
 import scala.collection.mutable.Map
 
 object TestFSM {

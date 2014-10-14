@@ -1,6 +1,6 @@
-// @SOURCE:/home/brew/git/npe/mcs/conf/routes
-// @HASH:789c4b4f8f736a1947d0c986ced5f41833e5b0eb
-// @DATE:Mon Oct 13 21:13:56 CST 2014
+// @SOURCE:/Users/brew/NPE/gits/mcs/conf/routes
+// @HASH:95c64e8e6c95e3938a3764c7527ff21290597f45
+// @DATE:Tue Oct 14 10:01:13 GMT 2014
 
 import Routes.{prefix => _prefix, defaultPrefix => _defaultPrefix}
 import play.core._
@@ -14,17 +14,21 @@ import _root_.controllers.Assets.Asset
 import Router.queryString
 
 
+// @LINE:81
+// @LINE:79
+// @LINE:74
+// @LINE:73
+// @LINE:68
 // @LINE:66
 // @LINE:65
-// @LINE:60
+// @LINE:64
+// @LINE:63
 // @LINE:58
 // @LINE:57
 // @LINE:56
 // @LINE:55
-// @LINE:50
-// @LINE:49
 // @LINE:48
-// @LINE:47
+// @LINE:46
 // @LINE:41
 // @LINE:39
 // @LINE:34
@@ -53,43 +57,43 @@ def at(file:String): Call = {
 }
                           
 
-// @LINE:60
-// @LINE:58
-// @LINE:57
-// @LINE:56
-// @LINE:55
+// @LINE:68
+// @LINE:66
+// @LINE:65
+// @LINE:64
+// @LINE:63
 class ReverseTaskRoleFace {
 
 
-// @LINE:60
+// @LINE:68
 def importFromFlows(): Call = {
    import ReverseRouteContext.empty
    Call("GET", _prefix + { _defaultPrefix } + "taskrole/import")
 }
                         
 
-// @LINE:57
+// @LINE:65
 def insert(): Call = {
    import ReverseRouteContext.empty
    Call("POST", _prefix + { _defaultPrefix } + "taskrole")
 }
                         
 
-// @LINE:56
+// @LINE:64
 def delete(keyy:String): Call = {
    import ReverseRouteContext.empty
    Call("DELETE", _prefix + { _defaultPrefix } + "taskrole/" + implicitly[PathBindable[String]].unbind("keyy", dynamicString(keyy)))
 }
                         
 
-// @LINE:58
+// @LINE:66
 def update(keyy:String): Call = {
    import ReverseRouteContext.empty
    Call("PUT", _prefix + { _defaultPrefix } + "taskrole/" + implicitly[PathBindable[String]].unbind("keyy", dynamicString(keyy)))
 }
                         
 
-// @LINE:55
+// @LINE:63
 def getByPage(skip:Int = 0, limit:Int = 10, status:Int = 0, query:String = null, page:Boolean = false): Call = {
    import ReverseRouteContext.empty
    Call("GET", _prefix + { _defaultPrefix } + "taskrole" + queryString(List(if(skip == 0) None else Some(implicitly[QueryStringBindable[Int]].unbind("skip", skip)), if(limit == 10) None else Some(implicitly[QueryStringBindable[Int]].unbind("limit", limit)), if(status == 0) None else Some(implicitly[QueryStringBindable[Int]].unbind("status", status)), if(query == null) None else Some(implicitly[QueryStringBindable[String]].unbind("query", query)), if(page == false) None else Some(implicitly[QueryStringBindable[Boolean]].unbind("page", page)))))
@@ -99,35 +103,35 @@ def getByPage(skip:Int = 0, limit:Int = 10, status:Int = 0, query:String = null,
 }
                           
 
-// @LINE:50
-// @LINE:49
-// @LINE:48
-// @LINE:47
+// @LINE:58
+// @LINE:57
+// @LINE:56
+// @LINE:55
 class ReverseTaskCenterFace {
 
 
-// @LINE:48
+// @LINE:56
 def delete(keyy:String): Call = {
    import ReverseRouteContext.empty
    Call("DELETE", _prefix + { _defaultPrefix } + "taskcenter/" + implicitly[PathBindable[String]].unbind("keyy", dynamicString(keyy)))
 }
                         
 
-// @LINE:49
+// @LINE:57
 def insert(): Call = {
    import ReverseRouteContext.empty
    Call("POST", _prefix + { _defaultPrefix } + "taskcenter")
 }
                         
 
-// @LINE:47
+// @LINE:55
 def getByPage(skip:Int = 0, limit:Int = 10, status:Int = 0, query:String = null, page:Boolean = false): Call = {
    import ReverseRouteContext.empty
    Call("GET", _prefix + { _defaultPrefix } + "taskcenter" + queryString(List(if(skip == 0) None else Some(implicitly[QueryStringBindable[Int]].unbind("skip", skip)), if(limit == 10) None else Some(implicitly[QueryStringBindable[Int]].unbind("limit", limit)), if(status == 0) None else Some(implicitly[QueryStringBindable[Int]].unbind("status", status)), if(query == null) None else Some(implicitly[QueryStringBindable[String]].unbind("query", query)), if(page == false) None else Some(implicitly[QueryStringBindable[Boolean]].unbind("page", page)))))
 }
                         
 
-// @LINE:50
+// @LINE:58
 def update(keyy:String): Call = {
    import ReverseRouteContext.empty
    Call("PUT", _prefix + { _defaultPrefix } + "taskcenter/" + implicitly[PathBindable[String]].unbind("keyy", dynamicString(keyy)))
@@ -187,19 +191,63 @@ def getJson(): Call = {
 }
                           
 
-// @LINE:66
-// @LINE:65
+// @LINE:81
+// @LINE:79
+class ReverseQueueWorker {
+
+
+// @LINE:79
+def obtainByRole(obtainer:String = null, role:String = null, center:String = null): Call = {
+   import ReverseRouteContext.empty
+   Call("GET", _prefix + { _defaultPrefix } + "obtain" + queryString(List(if(obtainer == null) None else Some(implicitly[QueryStringBindable[String]].unbind("obtainer", obtainer)), if(role == null) None else Some(implicitly[QueryStringBindable[String]].unbind("role", role)), if(center == null) None else Some(implicitly[QueryStringBindable[String]].unbind("center", center)))))
+}
+                        
+
+// @LINE:81
+def submit(): Call = {
+   import ReverseRouteContext.empty
+   Call("POST", _prefix + { _defaultPrefix } + "submit")
+}
+                        
+
+}
+                          
+
+// @LINE:48
+// @LINE:46
+class ReverseTaskInstFace {
+
+
+// @LINE:48
+def delete(defid:String): Call = {
+   import ReverseRouteContext.empty
+   Call("DELETE", _prefix + { _defaultPrefix } + "taskinst/" + implicitly[PathBindable[String]].unbind("defid", dynamicString(defid)))
+}
+                        
+
+// @LINE:46
+def getByPage(skip:Int = 0, limit:Int = 10, status:Int = 0, query:String = null, page:Boolean = false): Call = {
+   import ReverseRouteContext.empty
+   Call("GET", _prefix + { _defaultPrefix } + "taskinst" + queryString(List(if(skip == 0) None else Some(implicitly[QueryStringBindable[Int]].unbind("skip", skip)), if(limit == 10) None else Some(implicitly[QueryStringBindable[Int]].unbind("limit", limit)), if(status == 0) None else Some(implicitly[QueryStringBindable[Int]].unbind("status", status)), if(query == null) None else Some(implicitly[QueryStringBindable[String]].unbind("query", query)), if(page == false) None else Some(implicitly[QueryStringBindable[Boolean]].unbind("page", page)))))
+}
+                        
+
+}
+                          
+
+// @LINE:74
+// @LINE:73
 class ReverseQueueViewer {
 
 
-// @LINE:66
+// @LINE:74
 def statsByCenter(): Call = {
    import ReverseRouteContext.empty
    Call("GET", _prefix + { _defaultPrefix } + "qstatbycenter")
 }
                         
 
-// @LINE:65
+// @LINE:73
 def statsByName(): Call = {
    import ReverseRouteContext.empty
    Call("GET", _prefix + { _defaultPrefix } + "qstatbyname")
@@ -280,17 +328,21 @@ def index(): Call = {
                   
 
 
+// @LINE:81
+// @LINE:79
+// @LINE:74
+// @LINE:73
+// @LINE:68
 // @LINE:66
 // @LINE:65
-// @LINE:60
+// @LINE:64
+// @LINE:63
 // @LINE:58
 // @LINE:57
 // @LINE:56
 // @LINE:55
-// @LINE:50
-// @LINE:49
 // @LINE:48
-// @LINE:47
+// @LINE:46
 // @LINE:41
 // @LINE:39
 // @LINE:34
@@ -324,15 +376,15 @@ def at : JavascriptReverseRoute = JavascriptReverseRoute(
 }
               
 
-// @LINE:60
-// @LINE:58
-// @LINE:57
-// @LINE:56
-// @LINE:55
+// @LINE:68
+// @LINE:66
+// @LINE:65
+// @LINE:64
+// @LINE:63
 class ReverseTaskRoleFace {
 
 
-// @LINE:60
+// @LINE:68
 def importFromFlows : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.TaskRoleFace.importFromFlows",
    """
@@ -343,7 +395,7 @@ def importFromFlows : JavascriptReverseRoute = JavascriptReverseRoute(
 )
                         
 
-// @LINE:57
+// @LINE:65
 def insert : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.TaskRoleFace.insert",
    """
@@ -354,7 +406,7 @@ def insert : JavascriptReverseRoute = JavascriptReverseRoute(
 )
                         
 
-// @LINE:56
+// @LINE:64
 def delete : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.TaskRoleFace.delete",
    """
@@ -365,7 +417,7 @@ def delete : JavascriptReverseRoute = JavascriptReverseRoute(
 )
                         
 
-// @LINE:58
+// @LINE:66
 def update : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.TaskRoleFace.update",
    """
@@ -376,7 +428,7 @@ def update : JavascriptReverseRoute = JavascriptReverseRoute(
 )
                         
 
-// @LINE:55
+// @LINE:63
 def getByPage : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.TaskRoleFace.getByPage",
    """
@@ -390,14 +442,14 @@ def getByPage : JavascriptReverseRoute = JavascriptReverseRoute(
 }
               
 
-// @LINE:50
-// @LINE:49
-// @LINE:48
-// @LINE:47
+// @LINE:58
+// @LINE:57
+// @LINE:56
+// @LINE:55
 class ReverseTaskCenterFace {
 
 
-// @LINE:48
+// @LINE:56
 def delete : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.TaskCenterFace.delete",
    """
@@ -408,7 +460,7 @@ def delete : JavascriptReverseRoute = JavascriptReverseRoute(
 )
                         
 
-// @LINE:49
+// @LINE:57
 def insert : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.TaskCenterFace.insert",
    """
@@ -419,7 +471,7 @@ def insert : JavascriptReverseRoute = JavascriptReverseRoute(
 )
                         
 
-// @LINE:47
+// @LINE:55
 def getByPage : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.TaskCenterFace.getByPage",
    """
@@ -430,7 +482,7 @@ def getByPage : JavascriptReverseRoute = JavascriptReverseRoute(
 )
                         
 
-// @LINE:50
+// @LINE:58
 def update : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.TaskCenterFace.update",
    """
@@ -510,12 +562,72 @@ def getJson : JavascriptReverseRoute = JavascriptReverseRoute(
 }
               
 
-// @LINE:66
-// @LINE:65
+// @LINE:81
+// @LINE:79
+class ReverseQueueWorker {
+
+
+// @LINE:79
+def obtainByRole : JavascriptReverseRoute = JavascriptReverseRoute(
+   "controllers.QueueWorker.obtainByRole",
+   """
+      function(obtainer,role,center) {
+      return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "obtain" + _qS([(obtainer == null ? null : (""" + implicitly[QueryStringBindable[String]].javascriptUnbind + """)("obtainer", obtainer)), (role == null ? null : (""" + implicitly[QueryStringBindable[String]].javascriptUnbind + """)("role", role)), (center == null ? null : (""" + implicitly[QueryStringBindable[String]].javascriptUnbind + """)("center", center))])})
+      }
+   """
+)
+                        
+
+// @LINE:81
+def submit : JavascriptReverseRoute = JavascriptReverseRoute(
+   "controllers.QueueWorker.submit",
+   """
+      function() {
+      return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "submit"})
+      }
+   """
+)
+                        
+
+}
+              
+
+// @LINE:48
+// @LINE:46
+class ReverseTaskInstFace {
+
+
+// @LINE:48
+def delete : JavascriptReverseRoute = JavascriptReverseRoute(
+   "controllers.TaskInstFace.delete",
+   """
+      function(defid) {
+      return _wA({method:"DELETE", url:"""" + _prefix + { _defaultPrefix } + """" + "taskinst/" + (""" + implicitly[PathBindable[String]].javascriptUnbind + """)("defid", encodeURIComponent(defid))})
+      }
+   """
+)
+                        
+
+// @LINE:46
+def getByPage : JavascriptReverseRoute = JavascriptReverseRoute(
+   "controllers.TaskInstFace.getByPage",
+   """
+      function(skip,limit,status,query,page) {
+      return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "taskinst" + _qS([(skip == null ? null : (""" + implicitly[QueryStringBindable[Int]].javascriptUnbind + """)("skip", skip)), (limit == null ? null : (""" + implicitly[QueryStringBindable[Int]].javascriptUnbind + """)("limit", limit)), (status == null ? null : (""" + implicitly[QueryStringBindable[Int]].javascriptUnbind + """)("status", status)), (query == null ? null : (""" + implicitly[QueryStringBindable[String]].javascriptUnbind + """)("query", query)), (page == null ? null : (""" + implicitly[QueryStringBindable[Boolean]].javascriptUnbind + """)("page", page))])})
+      }
+   """
+)
+                        
+
+}
+              
+
+// @LINE:74
+// @LINE:73
 class ReverseQueueViewer {
 
 
-// @LINE:66
+// @LINE:74
 def statsByCenter : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.QueueViewer.statsByCenter",
    """
@@ -526,7 +638,7 @@ def statsByCenter : JavascriptReverseRoute = JavascriptReverseRoute(
 )
                         
 
-// @LINE:65
+// @LINE:73
 def statsByName : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.QueueViewer.statsByName",
    """
@@ -639,17 +751,21 @@ def index : JavascriptReverseRoute = JavascriptReverseRoute(
         
 
 
+// @LINE:81
+// @LINE:79
+// @LINE:74
+// @LINE:73
+// @LINE:68
 // @LINE:66
 // @LINE:65
-// @LINE:60
+// @LINE:64
+// @LINE:63
 // @LINE:58
 // @LINE:57
 // @LINE:56
 // @LINE:55
-// @LINE:50
-// @LINE:49
 // @LINE:48
-// @LINE:47
+// @LINE:46
 // @LINE:41
 // @LINE:39
 // @LINE:34
@@ -678,39 +794,39 @@ def at(path:String, file:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.
 }
                           
 
-// @LINE:60
-// @LINE:58
-// @LINE:57
-// @LINE:56
-// @LINE:55
+// @LINE:68
+// @LINE:66
+// @LINE:65
+// @LINE:64
+// @LINE:63
 class ReverseTaskRoleFace {
 
 
-// @LINE:60
+// @LINE:68
 def importFromFlows(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.TaskRoleFace.importFromFlows(), HandlerDef(this.getClass.getClassLoader, "", "controllers.TaskRoleFace", "importFromFlows", Seq(), "GET", """""", _prefix + """taskrole/import""")
 )
                       
 
-// @LINE:57
+// @LINE:65
 def insert(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.TaskRoleFace.insert(), HandlerDef(this.getClass.getClassLoader, "", "controllers.TaskRoleFace", "insert", Seq(), "POST", """""", _prefix + """taskrole""")
 )
                       
 
-// @LINE:56
+// @LINE:64
 def delete(keyy:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.TaskRoleFace.delete(keyy), HandlerDef(this.getClass.getClassLoader, "", "controllers.TaskRoleFace", "delete", Seq(classOf[String]), "DELETE", """""", _prefix + """taskrole/$keyy<[^/]+>""")
 )
                       
 
-// @LINE:58
+// @LINE:66
 def update(keyy:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.TaskRoleFace.update(keyy), HandlerDef(this.getClass.getClassLoader, "", "controllers.TaskRoleFace", "update", Seq(classOf[String]), "PUT", """""", _prefix + """taskrole/$keyy<[^/]+>""")
 )
                       
 
-// @LINE:55
+// @LINE:63
 def getByPage(skip:Int, limit:Int, status:Int, query:String, page:Boolean): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.TaskRoleFace.getByPage(skip, limit, status, query, page), HandlerDef(this.getClass.getClassLoader, "", "controllers.TaskRoleFace", "getByPage", Seq(classOf[Int], classOf[Int], classOf[Int], classOf[String], classOf[Boolean]), "GET", """""", _prefix + """taskrole""")
 )
@@ -719,32 +835,32 @@ def getByPage(skip:Int, limit:Int, status:Int, query:String, page:Boolean): play
 }
                           
 
-// @LINE:50
-// @LINE:49
-// @LINE:48
-// @LINE:47
+// @LINE:58
+// @LINE:57
+// @LINE:56
+// @LINE:55
 class ReverseTaskCenterFace {
 
 
-// @LINE:48
+// @LINE:56
 def delete(keyy:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.TaskCenterFace.delete(keyy), HandlerDef(this.getClass.getClassLoader, "", "controllers.TaskCenterFace", "delete", Seq(classOf[String]), "DELETE", """""", _prefix + """taskcenter/$keyy<[^/]+>""")
 )
                       
 
-// @LINE:49
+// @LINE:57
 def insert(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.TaskCenterFace.insert(), HandlerDef(this.getClass.getClassLoader, "", "controllers.TaskCenterFace", "insert", Seq(), "POST", """""", _prefix + """taskcenter""")
 )
                       
 
-// @LINE:47
+// @LINE:55
 def getByPage(skip:Int, limit:Int, status:Int, query:String, page:Boolean): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.TaskCenterFace.getByPage(skip, limit, status, query, page), HandlerDef(this.getClass.getClassLoader, "", "controllers.TaskCenterFace", "getByPage", Seq(classOf[Int], classOf[Int], classOf[Int], classOf[String], classOf[Boolean]), "GET", """""", _prefix + """taskcenter""")
 )
                       
 
-// @LINE:50
+// @LINE:58
 def update(keyy:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.TaskCenterFace.update(keyy), HandlerDef(this.getClass.getClassLoader, "", "controllers.TaskCenterFace", "update", Seq(classOf[String]), "PUT", """""", _prefix + """taskcenter/$keyy<[^/]+>""")
 )
@@ -800,18 +916,60 @@ def getJson(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
 }
                           
 
-// @LINE:66
-// @LINE:65
+// @LINE:81
+// @LINE:79
+class ReverseQueueWorker {
+
+
+// @LINE:79
+def obtainByRole(obtainer:String, role:String, center:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.QueueWorker.obtainByRole(obtainer, role, center), HandlerDef(this.getClass.getClassLoader, "", "controllers.QueueWorker", "obtainByRole", Seq(classOf[String], classOf[String], classOf[String]), "GET", """#################
+ do work""", _prefix + """obtain""")
+)
+                      
+
+// @LINE:81
+def submit(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.QueueWorker.submit(), HandlerDef(this.getClass.getClassLoader, "", "controllers.QueueWorker", "submit", Seq(), "POST", """""", _prefix + """submit""")
+)
+                      
+
+}
+                          
+
+// @LINE:48
+// @LINE:46
+class ReverseTaskInstFace {
+
+
+// @LINE:48
+def delete(defid:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.TaskInstFace.delete(defid), HandlerDef(this.getClass.getClassLoader, "", "controllers.TaskInstFace", "delete", Seq(classOf[String]), "DELETE", """""", _prefix + """taskinst/$defid<[^/]+>""")
+)
+                      
+
+// @LINE:46
+def getByPage(skip:Int, limit:Int, status:Int, query:String, page:Boolean): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.TaskInstFace.getByPage(skip, limit, status, query, page), HandlerDef(this.getClass.getClassLoader, "", "controllers.TaskInstFace", "getByPage", Seq(classOf[Int], classOf[Int], classOf[Int], classOf[String], classOf[Boolean]), "GET", """#############
+ procinst""", _prefix + """taskinst""")
+)
+                      
+
+}
+                          
+
+// @LINE:74
+// @LINE:73
 class ReverseQueueViewer {
 
 
-// @LINE:66
+// @LINE:74
 def statsByCenter(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.QueueViewer.statsByCenter(), HandlerDef(this.getClass.getClassLoader, "", "controllers.QueueViewer", "statsByCenter", Seq(), "GET", """""", _prefix + """qstatbycenter""")
 )
                       
 
-// @LINE:65
+// @LINE:73
 def statsByName(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.QueueViewer.statsByName(), HandlerDef(this.getClass.getClassLoader, "", "controllers.QueueViewer", "statsByName", Seq(), "GET", """################
  queue views""", _prefix + """qstatbyname""")

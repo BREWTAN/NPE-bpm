@@ -1,19 +1,15 @@
 package fsm
 
-import java.util.UUID
 import java.util.concurrent.atomic.AtomicLong
+
 import scala.collection.mutable.MutableList
-import org.nights.npe.fsm.FsmActorsController
-import org.nights.npe.fsm.InlineCmdActor
+
+import org.nights.npe.fsm.backend.ProcDefStorage
+
 import com.typesafe.config.ConfigFactory
+
 import akka.actor.ActorSystem
 import akka.cluster.Cluster
-import akka.dispatch.Futures.future
-import akka.pattern.Patterns.pipe
-import org.nights.npe.fsm.CMDSubmit
-import org.nights.npe.fsm.MessageHelper
-import org.nights.npe.utils.ProcDefHelper
-import org.nights.npe.fsm.backend.ProcDefStorage
 
 object TestFSM_1 {
 
