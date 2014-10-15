@@ -21,6 +21,7 @@ import org.mvel2.MVEL
 import java.util.HashMap
 import org.nights.npe.fsm.backend.BeanTransHelper
 import scala.collection.mutable.MutableList
+import scala.collection.immutable.List
 
 class TransitionWorker extends ConvergeClusterListener {
 
@@ -41,12 +42,43 @@ class TransitionWorker extends ConvergeClusterListener {
       case _ => state.prevStateInstIds
     }
 
-    //1.看看是否需要等待..掠过先
+    val nextallNodes = pd nextNodesFrom state.taskDefId filter (_.id != null);
+    val curnode = pd.getNode(state.taskDefId);
 
-    //3.存储
-
-    //2.生成新的节点
-    val nextThatCanGo = pd nextNodesFrom state.taskDefId filter (_.id != null);
+    val nextThatCanGo = curnode match {
+      case xor: XORDiverging =>
+        val vars = BeanTransHelper.ContextDataToMap(state, ctxData);
+        val follows = curnode.tos.filter({ f =>
+          if (f.compiled == null) {
+            true
+          } else if (!f.compiled.isInstanceOf[Exception]) {
+            try {
+              MVEL.executeExpression(f.compiled, vars).asInstanceOf[Boolean]
+            } catch {
+              case e: Exception => {
+                log.error("xordiverging execute error::" + e)
+                false
+              }
+            }
+          } else {
+            log.error("xordiverging unknow compiled expression::" + f.compiled)
+            false
+          }
+        }) map { f =>
+          pd.getNode(f.targetId)
+        }
+        if (follows.size == 0) {
+          log.error("分支节点去向失败，找不到适合分支,state=" + state + ",data=" + ctxData)
+          MutableList.empty
+        } else if (follows.size >1) {
+          log.error("分支节点去向失败，分支数量》1,state=" + state + ",data=" + ctxData+",follows="+follows)
+          MutableList.empty
+        } else {
+          follows
+        }
+      case _ =>
+        nextallNodes;
+    }
     val nextStates: ListBuffer[StateContext] = ListBuffer.empty
     val endStates: ListBuffer[StateContext] = ListBuffer.empty
 
@@ -64,46 +96,18 @@ class TransitionWorker extends ConvergeClusterListener {
           doTransite(nextSubProc, ctxData, true)
         }
         case conv: ANDConverging => {
-          sendConverge(ConvergingTrans(UpdateStates(state, ctxData), n.froms.size, n.id));
+//          sendConverge(ConvergingTrans(UpdateStates(state, ctxData), n.froms.size, n.id));
+          sendConverge(ConvergingTrans(UpdateStates(StateContext(state.procInstId, state.procDefId, nextUUID,
+        		  n.id, n.taskName+("(AndConverge自动)"), state.antecessors, InterStateNew(), prevIds, state.procHops + 1), ctxData), n.froms.size, n.id))
           null
         }
         case conv: XORConverging => {
           //          sconvergers ! ConvergingTrans(UpdateStates(state, ctxData), 1, n.id);
-          sendConverge(ConvergingTrans(UpdateStates(state, ctxData), 1, n.id))
+          sendConverge(ConvergingTrans(UpdateStates(StateContext(state.procInstId, state.procDefId, nextUUID,
+        		  n.id, n.taskName+("(xorConverge自动)"), state.antecessors, InterStateNew(), prevIds, state.procHops + 1), ctxData), 1, n.id))
           null
         }
-        case div: XORDiverging => {
-          val follows=div.tos.filter({ f =>
-            if (f.compiled == null) {
-              true
-            } else if (!f.compiled.isInstanceOf[Exception]) {
-              val vars=BeanTransHelper.ContextDataToMap(state,ctxData);
-              try {
-                MVEL.executeExpression(f.compiled, vars).asInstanceOf[Boolean]
-              } catch {
-                case e: Exception =>{
-                  log.error("xordiverging execute error::"+e )
-                  false
-                }
-              }
-            } else {
-              log.error("xordiverging unknow compiled expression::"+f.compiled )
-              false
-            }
-          }).map{ f=>
-           
-            val gn= pd.getNode(f.targetId) 
-            StateContext(state.procInstId, state.procDefId, nextUUID,
-            	gn.id, gn.taskName, state.antecessors, InterStateNew(), prevIds, state.procHops + 1)
-          }
-          if(follows.size==0){
-             log.error("分支节点去向失败，找不到适合分支,state="+state+",data="+ctxData )
-             null
-          }else{
-            follows
-          }
-          
-        }
+
         case end: EndEvent if state.antecessors.size == 0 => {
           StateContext(state.procInstId, state.procDefId, nextUUID,
             n.id, n.taskName, List.empty, InterStateNew(), prevIds, state.procHops + 1, true).asTerminate
@@ -168,5 +172,4 @@ class TransitionWorker extends ConvergeClusterListener {
     }
   }
 
-  
 }

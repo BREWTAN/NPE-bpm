@@ -23,7 +23,7 @@ object TestFSM_CCB {
 
   def main(args: Array[String]) {
     var systems: MutableList[ActorSystem] = MutableList.empty;
-    var counter = 1;
+    var counter = 0;
     var sleep = 60000; 
     if (args.length >= 1)
       counter = args(0).toInt
@@ -49,7 +49,7 @@ object TestFSM_CCB {
         //        cmd ! RecoverFor("*")
         val start = System.currentTimeMillis();
 
-//        cmd ! CMDSubmit(MessageHelper.wrappedANewProcess(UUID.randomUUID().toString(), Thread.currentThread().getName(), "ccb.main", ContextData()))
+        cmd ! CMDSubmit(MessageHelper.wrappedANewProcess(UUID.randomUUID().toString(), Thread.currentThread().getName(), "ccb.main", ContextData()))
         //        cmd ! CMDSubmit(MessageHelper.wrappedANewProcess(UUID.randomUUID().toString(), "ccb.main", "MyData"))
         //                cmd ! CMDSubmit(MessageHelper.wrappedANewProcess(UUID.randomUUID().toString(), "ccb.main", "MyData"))
         

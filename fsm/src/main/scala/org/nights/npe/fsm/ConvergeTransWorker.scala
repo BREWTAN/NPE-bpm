@@ -68,13 +68,13 @@ class ConvergeTransWorker extends Actor with ActorLogging with ActorHelper {
 
       EHConverger.removeConverging(state.procInstId + "_" + convNodeId)
 
-      val nextstate = StateContext(state.procInstId, state.procDefId, nextUUID,
-        _node.next(0).id, state.taskName+"(gateway)", state.antecessors, InterStateSubmit(), prevlist.toList, state.procHops + 1)
+      val nextstate = StateContext(state.procInstId, state.procDefId, state.taskInstId ,
+        state.taskDefId , state.taskName, state.antecessors, InterStateSubmit(), prevlist.toList, state.procHops + 1)
 
       val ctxData = map.foldLeft(ContextData(-1, -1)) { (data, kv) =>
         data.merge(kv._2)
       }
-      stateClusterStores ! wrapToPipeMessage(GatewayStates(nextstate, self.toString, ctxData), Tansitionworkers(), nextstate.taskInstId);
+      stateClusterStores ! wrapToPipeMessage(GatewayStates(nextstate, self.toString, ctxData), Tansitionworkers(), state.taskInstId);
 
     } else {
       log.info("ANDConverging ignore:" + state + ",v=" + map)

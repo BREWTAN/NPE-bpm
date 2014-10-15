@@ -19,6 +19,25 @@ import org.nights.npe.po.ContextData
 object BeanTransHelper {
   val log = LoggerFactory.getLogger(BeanTransHelper.getClass())
 
+  def ctxToStr(sc: StateContext, ctx: ContextData): String = {
+    ctx.extra.put("__n", sc.simpleName)
+    ctx.extra.map({ f =>
+      f._1 + ":" + f._2
+    }).mkString(",")
+  }
+  def ctxFromStr(str: String): HashMap[String, Any] = {
+    val ret:HashMap[String,Any] = HashMap.empty
+    str.split(",").map { kvstr =>
+      val kv = kvstr.split(":")
+      if(kv.length==2){ 
+        ret.put(kv(0),kv(1))
+      }
+      //      if(kv.length==2){
+      //        ret.put(kv[0], kv[1])
+      //      }
+    }
+    ret
+  }
   def koFromState(sc: StateContext, dt: ContextData): KOTasks = KOTasks(
     sc.taskInstId, // String, // varchar(32) not null, 
     sc.procDefId, //String=null, // varchar(32) not null,
@@ -38,7 +57,7 @@ object BeanTransHelper {
     dt.fdata1, //Option[Float]=null, //float,
     dt.fdata2, //Option[Float]=null, //float,
     sc.taskName,
-    sc.simpleName, //String=null //longtext null,)
+    ctxToStr(sc,dt), //String=null //longtext null,)
     null,
     null,
     dt.taskcenter,
@@ -63,7 +82,7 @@ object BeanTransHelper {
     dt.fdata1, //Option[Float]=null, //float,
     dt.fdata2, //Option[Float]=null, //float,
     sc.taskName,
-    sc.simpleName, //String=null //longtext null,)
+    ctxToStr(sc,dt),// //String=null //longtext null,)
     submitter,
     Some(System.currentTimeMillis()),
     dt.taskcenter,
@@ -98,8 +117,10 @@ object BeanTransHelper {
         ko.fdata2, //float,
         ko.taskcenter,
         ko.rootproc,
+        ctxFromStr(ko.jsondata)
         // ko.extra: HashMap[String, Any] = 
-        HashMap.empty));
+//        HashMap.empty
+        ));
 
   def koTermFromString(taskInstId: String): KOTermTask = KOTermTask(taskInstId)
 
@@ -122,7 +143,7 @@ object BeanTransHelper {
     dt.fdata1, //Option[Float]=null, //float,
     dt.fdata2, //Option[Float]=null, //float,
     sc.taskName,
-    sc.simpleName, //String=null //longtext null,)
+    ctxToStr(sc,dt),//, //String=null //longtext null,)
     submitter,
     null,
     dt.taskcenter,
@@ -156,10 +177,10 @@ object BeanTransHelper {
     dt.fdata1, //Option[Float]=null, //float,
     dt.fdata2, //Option[Float]=null, //float,
     //    dt.extra.toString //Option[Float]=null, //float,
-    sc.simpleName)
+   ctxToStr(sc,dt))
 
-    def NullOrZero(o:Option[Any])= {
-    if(o==null) 0
+  def NullOrZero(o: Option[Any]) = {
+    if (o == null) 0
     else o.getOrElse(0)
   }
   def ContextDataToMap(sc: StateContext, ctx: ContextData): java.util.HashMap[String, Any] = {
