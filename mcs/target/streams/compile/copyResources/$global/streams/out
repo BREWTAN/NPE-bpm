@@ -1,4 +1,0 @@
-[0m[[0mdebug[0m] [0mCopy resource mappings: [0m
-[0m[[0mdebug[0m] [0m	(/home/brew/git/npe/mcs/conf/routes,/home/brew/git/npe/mcs/target/scala-2.11/classes/routes)[0m
-[0m[[0mdebug[0m] [0m	(/home/brew/git/npe/mcs/conf/application.conf,/home/brew/git/npe/mcs/target/scala-2.11/classes/application.conf)[0m
-[0m[[0mdebug[0m] [0m	(/home/brew/git/npe/mcs/conf/logger.xml,/home/brew/git/npe/mcs/target/scala-2.11/classes/logger.xml)[0m
