@@ -9,7 +9,7 @@
 		extra-scalaVersion="2.10"
 		conf="test"
 		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool"
-		date="20141013143418"/>
+		date="20141015005707"/>
 	<dependencies>
 		<module organisation="com.github.mpeltonen" name="sbt-idea">
 			<revision name="1.5.2" status="release" pubdate="20131013090137" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://your.project.url" extra-sbtVersion="0.13" extra-scalaVersion="2.10" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="6">
@@ -35,7 +35,7 @@
 			</revision>
 		</module>
 		<module organisation="default" name="global-plugins">
-			<revision name="0.0" status="integration" pubdate="20141013143415" resolver="inter-project" artresolver="inter-project" extra-sbtVersion="0.13" extra-scalaVersion="2.10" downloaded="false" searched="false" default="false" conf="default(compile), compile" position="0">
+			<revision name="0.0" status="integration" pubdate="20141015005700" resolver="inter-project" artresolver="inter-project" extra-sbtVersion="0.13" extra-scalaVersion="2.10" downloaded="false" searched="false" default="false" conf="default(compile), compile" position="0">
 				<metadata-artifact status="failed" details="" size="0" time="0" searched="false"/>
 				<caller organisation="default" name="gits-build" conf="test, compile, runtime" rev="0.0" rev-constraint-default="0.0" rev-constraint-dynamic="0.0" callerrev="0.1-SNAPSHOT" extra-sbtVersion="0.13" extra-scalaVersion="2.10"/>
 				<artifacts>
