@@ -7,7 +7,7 @@
 		revision="1.0-SNAPSHOT"
 		conf="test"
 		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool"
-		date="20141015010223"/>
+		date="20141015045923"/>
 	<dependencies>
 		<module organisation="com.fasterxml.jackson.module" name="jackson-module-scala_2.11">
 			<revision name="2.4.2" status="release" pubdate="20140817210059" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://wiki.fasterxml.com/JacksonModuleScala" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="67">
@@ -238,7 +238,7 @@
 			</revision>
 		</module>
 		<module organisation="net.sf.ehcache" name="ehcache">
-			<revision name="2.8.3" status="release" pubdate="20141015010224" resolver="local" artresolver="local" downloaded="false" searched="true" default="true" conf="default(compile), default" position="61">
+			<revision name="2.8.3" status="release" pubdate="20141015045924" resolver="local" artresolver="local" downloaded="false" searched="true" default="true" conf="default(compile), default" position="61">
 				<metadata-artifact status="no" details="" size="0" time="0" location="/Users/brew/.ivy2/cache/net.sf.ehcache/ehcache/ivy-2.8.3.xml" searched="true"/>
 				<caller organisation="mcs" name="mcs_2.11" conf="test, compile, runtime" rev="2.8.3" rev-constraint-default="2.8.3" rev-constraint-dynamic="2.8.3" callerrev="1.0-SNAPSHOT"/>
 				<artifacts>
@@ -886,7 +886,7 @@
 				<metadata-artifact status="no" details="" size="2704" time="0" location="/Users/brew/.ivy2/cache/org.nights.npe/commons_2.11/ivy-1.0.0.xml" searched="false" origin-is-local="true" origin-location="/Users/brew/.m2/repository/org/nights/npe/commons_2.11/1.0.0/commons_2.11-1.0.0.pom"/>
 				<caller organisation="mcs" name="mcs_2.11" conf="test, compile, runtime" rev="1.0.0" rev-constraint-default="1.0.0" rev-constraint-dynamic="1.0.0" callerrev="1.0-SNAPSHOT"/>
 				<artifacts>
-					<artifact name="commons_2.11" type="jar" ext="jar" status="no" details="" size="494724" time="0" location="/Users/brew/.m2/repository/org/nights/npe/commons_2.11/1.0.0/commons_2.11-1.0.0.jar">
+					<artifact name="commons_2.11" type="jar" ext="jar" status="no" details="" size="497894" time="0" location="/Users/brew/.m2/repository/org/nights/npe/commons_2.11/1.0.0/commons_2.11-1.0.0.jar">
 						<origin-location is-local="true" location="/Users/brew/.m2/repository/org/nights/npe/commons_2.11/1.0.0/commons_2.11-1.0.0.jar"/>
 					</artifact>
 				</artifacts>

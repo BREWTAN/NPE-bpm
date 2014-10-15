@@ -7,7 +7,7 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies for org.nights.npe#commons_2.11;1.0.0 [compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.nights.npe#commons_2.11;1.0.0->org.scala-lang#scala-library;2.11.1 [compile->default(compile)][0m
 [0m[[0minfo[0m] [0mResolving org.scala-lang#scala-library;2.11.1 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@682efb74[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@ceb9cf2[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.scala-lang#scala-library;2.11.1[0m
 [0m[[0mdebug[0m] [0m	local: revision in cache: org.scala-lang#scala-library;2.11.1[0m
 [0m[[0mdebug[0m] [0m	found org.scala-lang#scala-library;2.11.1 in sbt-chain[0m
@@ -357,6 +357,15 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-xml_2.11;1.0.2->org.scala-lang#scala-library;2.11.2 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-xml_2.11;1.0.2->org.scala-lang#scala-library;2.11.2 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.nights.npe#commons_2.11;1.0.0->org.scala-lang.modules#scala-xml_2.11;1.0.2 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.nights.npe#commons_2.11;1.0.0->org.mvel#mvel2;2.2.2.Final [compile->default(compile)][0m
+[0m[[0minfo[0m] [0mResolving org.mvel#mvel2;2.2.2.Final ...[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.mvel#mvel2;2.2.2.Final {compile=[default(compile)]}[0m
+[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.mvel#mvel2;2.2.2.Final[0m
+[0m[[0mdebug[0m] [0m	local: revision in cache: org.mvel#mvel2;2.2.2.Final[0m
+[0m[[0mdebug[0m] [0m	found org.mvel#mvel2;2.2.2.Final in sbt-chain[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.nights.npe#commons_2.11;1.0.0->org.mvel#mvel2;2.2.2.Final [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.nights.npe#commons_2.11;1.0.0->org.mvel#mvel2;2.2.2.Final [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.nights.npe#commons_2.11;1.0.0->org.mvel#mvel2;2.2.2.Final [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.nights.npe#commons_2.11;1.0.0->javax.transaction#jta;1.1 [compile->default(compile)][0m
 [0m[[0minfo[0m] [0mResolving javax.transaction#jta;1.1 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: javax.transaction#jta;1.1 {compile=[default(compile)]}[0m
@@ -640,6 +649,10 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-xml_2.11;1.0.2->org.scala-lang#scala-library;2.11.2 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-xml_2.11;1.0.2->org.scala-lang#scala-library;2.11.2 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.nights.npe#commons_2.11;1.0.0->org.scala-lang.modules#scala-xml_2.11;1.0.2 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.nights.npe#commons_2.11;1.0.0->org.mvel#mvel2;2.2.2.Final [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.nights.npe#commons_2.11;1.0.0->org.mvel#mvel2;2.2.2.Final [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.nights.npe#commons_2.11;1.0.0->org.mvel#mvel2;2.2.2.Final [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.nights.npe#commons_2.11;1.0.0->org.mvel#mvel2;2.2.2.Final [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.nights.npe#commons_2.11;1.0.0->javax.transaction#jta;1.1 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.nights.npe#commons_2.11;1.0.0->javax.transaction#jta;1.1 [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.nights.npe#commons_2.11;1.0.0->javax.transaction#jta;1.1 [compile->compile][0m
@@ -887,6 +900,10 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-xml_2.11;1.0.2->org.scala-lang#scala-library;2.11.2 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-xml_2.11;1.0.2->org.scala-lang#scala-library;2.11.2 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.nights.npe#commons_2.11;1.0.0->org.scala-lang.modules#scala-xml_2.11;1.0.2 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.nights.npe#commons_2.11;1.0.0->org.mvel#mvel2;2.2.2.Final [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.nights.npe#commons_2.11;1.0.0->org.mvel#mvel2;2.2.2.Final [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.nights.npe#commons_2.11;1.0.0->org.mvel#mvel2;2.2.2.Final [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.nights.npe#commons_2.11;1.0.0->org.mvel#mvel2;2.2.2.Final [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.nights.npe#commons_2.11;1.0.0->javax.transaction#jta;1.1 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.nights.npe#commons_2.11;1.0.0->javax.transaction#jta;1.1 [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.nights.npe#commons_2.11;1.0.0->javax.transaction#jta;1.1 [compile->compile][0m
@@ -1137,6 +1154,10 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-xml_2.11;1.0.2->org.scala-lang#scala-library;2.11.2 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-xml_2.11;1.0.2->org.scala-lang#scala-library;2.11.2 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.nights.npe#commons_2.11;1.0.0->org.scala-lang.modules#scala-xml_2.11;1.0.2 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.nights.npe#commons_2.11;1.0.0->org.mvel#mvel2;2.2.2.Final [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.nights.npe#commons_2.11;1.0.0->org.mvel#mvel2;2.2.2.Final [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.nights.npe#commons_2.11;1.0.0->org.mvel#mvel2;2.2.2.Final [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.nights.npe#commons_2.11;1.0.0->org.mvel#mvel2;2.2.2.Final [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.nights.npe#commons_2.11;1.0.0->javax.transaction#jta;1.1 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.nights.npe#commons_2.11;1.0.0->javax.transaction#jta;1.1 [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.nights.npe#commons_2.11;1.0.0->javax.transaction#jta;1.1 [compile->compile][0m
@@ -1386,6 +1407,10 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-xml_2.11;1.0.2->org.scala-lang#scala-library;2.11.2 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-xml_2.11;1.0.2->org.scala-lang#scala-library;2.11.2 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.nights.npe#commons_2.11;1.0.0->org.scala-lang.modules#scala-xml_2.11;1.0.2 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.nights.npe#commons_2.11;1.0.0->org.mvel#mvel2;2.2.2.Final [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.nights.npe#commons_2.11;1.0.0->org.mvel#mvel2;2.2.2.Final [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.nights.npe#commons_2.11;1.0.0->org.mvel#mvel2;2.2.2.Final [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.nights.npe#commons_2.11;1.0.0->org.mvel#mvel2;2.2.2.Final [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.nights.npe#commons_2.11;1.0.0->javax.transaction#jta;1.1 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.nights.npe#commons_2.11;1.0.0->javax.transaction#jta;1.1 [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.nights.npe#commons_2.11;1.0.0->javax.transaction#jta;1.1 [compile->compile][0m
@@ -1635,6 +1660,10 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-xml_2.11;1.0.2->org.scala-lang#scala-library;2.11.2 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-xml_2.11;1.0.2->org.scala-lang#scala-library;2.11.2 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.nights.npe#commons_2.11;1.0.0->org.scala-lang.modules#scala-xml_2.11;1.0.2 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.nights.npe#commons_2.11;1.0.0->org.mvel#mvel2;2.2.2.Final [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.nights.npe#commons_2.11;1.0.0->org.mvel#mvel2;2.2.2.Final [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.nights.npe#commons_2.11;1.0.0->org.mvel#mvel2;2.2.2.Final [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.nights.npe#commons_2.11;1.0.0->org.mvel#mvel2;2.2.2.Final [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.nights.npe#commons_2.11;1.0.0->javax.transaction#jta;1.1 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.nights.npe#commons_2.11;1.0.0->javax.transaction#jta;1.1 [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.nights.npe#commons_2.11;1.0.0->javax.transaction#jta;1.1 [compile->compile][0m
@@ -1770,6 +1799,7 @@
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.typesafe.scala-logging#scala-logging_2.11;3.1.0!scala-logging_2.11.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.typesafe.akka#akka-contrib_2.11;2.3.5!akka-contrib_2.11.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang.modules#scala-xml_2.11;1.0.2!scala-xml_2.11.jar(bundle)[0m
+[0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.mvel#mvel2;2.2.2.Final!mvel2.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] javax.transaction#jta;1.1!jta.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.github.mauricio#mysql-async_2.11;0.2.14!mysql-async_2.11.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#scala-reflect;2.11.1!scala-reflect.jar[0m
@@ -1803,7 +1833,7 @@
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#scala-compiler;2.11.1!scala-compiler.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang.modules#scala-parser-combinators_2.11;1.0.1!scala-parser-combinators_2.11.jar(bundle)[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] jline#jline;2.11!jline.jar[0m
-[0m[[0mdebug[0m] [0m:: resolution report :: resolve 686ms :: artifacts dl 27ms[0m
+[0m[[0mdebug[0m] [0m:: resolution report :: resolve 985ms :: artifacts dl 33ms[0m
 [0m[[0mdebug[0m] [0m	report for org.nights.npe#commons_2.11;1.0.0 compile produced in /Users/brew/NPE/gits/commons/target/resolution-cache/reports/org.nights.npe-commons_2.11-compile.xml[0m
 [0m[[0mdebug[0m] [0m	report for org.nights.npe#commons_2.11;1.0.0 runtime produced in /Users/brew/NPE/gits/commons/target/resolution-cache/reports/org.nights.npe-commons_2.11-runtime.xml[0m
 [0m[[0mdebug[0m] [0m	report for org.nights.npe#commons_2.11;1.0.0 test produced in /Users/brew/NPE/gits/commons/target/resolution-cache/reports/org.nights.npe-commons_2.11-test.xml[0m
@@ -1818,5 +1848,5 @@
 [0m[[0mdebug[0m] [0m	report for org.nights.npe#commons_2.11;1.0.0 pom produced in /Users/brew/NPE/gits/commons/target/resolution-cache/reports/org.nights.npe-commons_2.11-pom.xml[0m
 [0m[[0mdebug[0m] [0mcircular dependency found: org.scala-lang#scala-compiler;2.11.1->org.scala-lang.modules#scala-xml_2.11;1.0.2->...[0m
 [0m[[0mdebug[0m] [0m	report for org.nights.npe#commons_2.11;1.0.0 scala-tool produced in /Users/brew/NPE/gits/commons/target/resolution-cache/reports/org.nights.npe-commons_2.11-scala-tool.xml[0m
-[0m[[0mdebug[0m] [0m	resolve done (686ms resolve - 27ms download)[0m
+[0m[[0mdebug[0m] [0m	resolve done (985ms resolve - 33ms download)[0m
 [0m[[0minfo[0m] [0mDone updating.[0m

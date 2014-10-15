@@ -3,6 +3,8 @@ package org.nights.npe.po
 import scala.collection.mutable.HashMap
 import scala.collection.mutable.MutableList
 
+import org.mvel2.MVEL
+
 object Definition {
 
   final val NodeStart: String = "__start"
@@ -14,7 +16,7 @@ object Definition {
     val tos: MutableList[SequenceFlow] = MutableList.empty
     val next: MutableList[_Node] = MutableList.empty
     def id: String = e.id
-    def taskName:String = e.name 
+    def taskName: String = e.name
 
   }
   val NoneEle: _ele = _ele("", "")
@@ -31,11 +33,16 @@ object Definition {
     val vars: HashMap[String, Any] = HashMap.empty,
     val nodes: HashMap[String, _Node] = HashMap.empty,
     val parseError: MutableList[String] = MutableList.empty,
-    var endNodesCount: Int=0, 
+    var endNodesCount: Int = 0,
     val flows: MutableList[SequenceFlow] = MutableList.empty,
-    var xmlBody :String = null) extends _Node {
+    var xmlBody: String = null) extends _Node {
 
-    def getNode(key: String): _Node = nodes.getOrElse(key, NoneNode.asInstanceOf[_Node])
+    def getNode(key: String): _Node = {
+      if(!nodes.contains(key)){
+        println("cannot get Node::"+key+":"+nodes+","+e)
+      }
+      nodes.getOrElse(key, NoneNode())
+    }
 
     def nextNodesFrom(cur: String): MutableList[_Node] = getNode(cur) next
 
@@ -63,21 +70,21 @@ object Definition {
   case class Gateway(val gatewaytype: String, val direction: String)(
     implicit val e: _ele) extends _Node
 
-  case class ANDDiverging(direction:String="Diverging")(implicit val e: _ele) extends _Node
+  case class ANDDiverging(direction: String = "Diverging")(implicit val e: _ele) extends _Node
 
-  case class XORDiverging(direction:String="Diverging")(implicit val e: _ele) extends _Node
+  case class XORDiverging(direction: String = "Diverging")(implicit val e: _ele) extends _Node
 
-  case class ORDiverging(direction:String="Diverging")(implicit val e: _ele) extends _Node
+  case class ORDiverging(direction: String = "Diverging")(implicit val e: _ele) extends _Node
 
-  case class ANDConverging(direction:String="Converging")(implicit val e: _ele) extends _Node
+  case class ANDConverging(direction: String = "Converging")(implicit val e: _ele) extends _Node
 
-  case class XORConverging(direction:String="Converging")(implicit val e: _ele) extends _Node
+  case class XORConverging(direction: String = "Converging")(implicit val e: _ele) extends _Node
 
   case class UserTask(
     val actorId: String = null,
-//    val comment: String = null,
-//    val content: String = null,
-//    val groupId: String = null,
+    //    val comment: String = null,
+    //    val content: String = null,
+    //    val groupId: String = null,
     val priority: Integer = 0,
     override val taskName: String = null,
     val entryActions: MutableList[String] = MutableList.empty,
@@ -96,9 +103,24 @@ object Definition {
     val id: String,
     val sourceId: String,
     val targetId: String,
-    val hasContraint:Option[Any] =None,
+    val hasContraint: Option[Any] = None,
     val priority: String = null,
     val xsitype: String = null,
-    val expression: String = null) 
+    val expression: String = null) {
+    val compiled = expression match {
+      case str: String if (str != null && str.length() > 0) =>
+        val compile= try {
+          MVEL.compileExpression(str);
+        } catch {
+          case e: org.mvel2.CompileException =>
+           e
+          case e: RuntimeException  => e
+        }finally{
+        }
+//        println("compile=="+compile)
+        compile
+      case _ => null
+    }
+  }
 
 }

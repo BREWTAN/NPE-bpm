@@ -14,6 +14,7 @@ import org.nights.npe.backend.db.KOObtainTasks
 import org.nights.npe.backend.db.KOTasks
 import org.nights.npe.backend.db.KOSubmitTasks
 import org.nights.npe.backend.db.KOInTermTask
+import org.nights.npe.po.ContextData
 
 object BeanTransHelper {
   val log = LoggerFactory.getLogger(BeanTransHelper.getClass())
@@ -40,10 +41,8 @@ object BeanTransHelper {
     sc.simpleName, //String=null //longtext null,)
     null,
     null,
-    dt.taskcenter ,
-    dt.rootproc
-
-    )
+    dt.taskcenter,
+    dt.rootproc)
 
   def koFromState(sc: StateContext, submitter: String, dt: ContextData): KOTasks = KOTasks(
     sc.taskInstId, // String, // varchar(32) not null, 
@@ -67,7 +66,7 @@ object BeanTransHelper {
     sc.simpleName, //String=null //longtext null,)
     submitter,
     Some(System.currentTimeMillis()),
-    dt.taskcenter ,
+    dt.taskcenter,
     dt.rootproc)
 
   def koToState(ko: KOTasks): (StateContext, ContextData) = (
@@ -159,4 +158,30 @@ object BeanTransHelper {
     //    dt.extra.toString //Option[Float]=null, //float,
     sc.simpleName)
 
+    def NullOrZero(o:Option[Any])= {
+    if(o==null) 0
+    else o.getOrElse(0)
+  }
+  def ContextDataToMap(sc: StateContext, ctx: ContextData): java.util.HashMap[String, Any] = {
+    val ret = new java.util.HashMap[String, Any]
+    ret.put("taskName", sc.taskName)
+    ret.put("procInstId", sc.procInstId)
+    ret.put("taskInstId", sc.taskInstId)
+    ret.put("procDefId", sc.procDefId)
+    ret.put("taskDefId", sc.taskDefId)
+    ret.put("antecessors", sc.antecessors)
+    ret.put("idata1", NullOrZero(ctx.idata1))
+    ret.put("idata2", NullOrZero(ctx.idata2))
+    ret.put("strdata1", ctx.strdata1)
+    ret.put("strdata2", ctx.strdata2)
+    ret.put("fdata1", NullOrZero(ctx.fdata1))
+    ret.put("fdata2", NullOrZero(ctx.fdata2))
+    ret.put("taskcenter", ctx.taskcenter)
+    ret.put("procPIO", ctx.procPIO)
+    ret.put("rolemark", ctx.rolemark)
+    ret.put("taskPIO", ctx.taskPIO)
+    ret.put("rootproc", ctx.rootproc)
+    ret.put("extra", ctx.extra)
+    ret
+  }
 }

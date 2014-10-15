@@ -7,12 +7,11 @@ import scala.collection.mutable.HashMap
 
 class ProcDefMap {
   val procDefs: HashMap[String, Process] = new HashMap[String, Process]
-
   def appendDefFile(filename: String) {
     val process: Process = POHelper.fromXMLFile(filename)
     procDefs.put(process.e.id, process)
   }
-  
+
   def appendDefXML(xml: String) {
     val process: Process = POHelper.fromXML(xml)
     procDefs.put(process.e.id, process)
@@ -31,6 +30,7 @@ class ProcDefMap {
     var ret = true;
     procDefs.foreach { keyVal =>
       val p: Process = keyVal._2;
+     
       p.nodes.foreach({ nodeKV =>
         if (nodeKV._2.isInstanceOf[CallActivity]) {
           val call = nodeKV._2.asInstanceOf[CallActivity];
@@ -41,7 +41,30 @@ class ProcDefMap {
             p.parseError.+=:("调用的子流程不存在:" + call.calledElement)
           }
         }
+        nodeKV._2.tos.filter({ f =>
+          f.compiled match {
+            case e: Exception => true
+            case _ => false
+          }
+        }).map { f =>
+          p.isvalid = false;
+          ret = false;
+          p.parseError.+=:("流程表达式错误:@" + f.id + ",from=" + f.sourceId + ",to=" + f.targetId + ",express=" + f.expression)
+        }
       })
+       val xsize=p.nodes.filter({nodeKV=>
+        nodeKV._2.isInstanceOf[XORDiverging]
+      }).size
+      val vsize=p.nodes.filter({nodeKV=>
+        nodeKV._2.isInstanceOf[XORConverging]
+      }).size
+      
+      if(xsize!=vsize){
+          p.isvalid = false;
+          ret = false;
+          p.parseError.+=:("流程定义错误，异或分支数不等于异或合并数:" +xsize+","+vsize)
+        
+      }
     }
     ret
   }

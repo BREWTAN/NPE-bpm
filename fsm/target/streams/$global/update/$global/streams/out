@@ -7,7 +7,7 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies for fsm#fsm_2.11;1.0.0 [compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies fsm#fsm_2.11;1.0.0->org.scala-lang#scala-library;2.11.1 [compile->default(compile)][0m
 [0m[[0minfo[0m] [0mResolving org.scala-lang#scala-library;2.11.1 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@3b7b64a3[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@24da1ddb[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.scala-lang#scala-library;2.11.1[0m
 [0m[[0mdebug[0m] [0m	local: revision in cache: org.scala-lang#scala-library;2.11.1[0m
 [0m[[0mdebug[0m] [0m	found org.scala-lang#scala-library;2.11.1 in sbt-chain[0m
@@ -17,7 +17,7 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies fsm#fsm_2.11;1.0.0->org.scala-lang#scala-library;2.11.1 [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies fsm#fsm_2.11;1.0.0->org.nights.npe#commons_2.11;1.0.0 [compile->default(compile)][0m
 [0m[[0minfo[0m] [0mResolving org.nights.npe#commons_2.11;1.0.0 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@29e62d7e[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.nights.npe#commons_2.11;1.0.0 {compile=[default(compile)]}[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.nights.npe#commons_2.11;1.0.0[0m
 [0m[[0mdebug[0m] [0m	found org.nights.npe#commons_2.11;1.0.0 in inter-project[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.nights.npe#commons_2.11;1.0.0->org.scala-lang#scala-library;2.11.1 [compile->default(compile)][0m
@@ -378,6 +378,15 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-xml_2.11;1.0.2->org.scala-lang#scala-library;2.11.2 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-xml_2.11;1.0.2->org.scala-lang#scala-library;2.11.2 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.nights.npe#commons_2.11;1.0.0->org.scala-lang.modules#scala-xml_2.11;1.0.2 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.nights.npe#commons_2.11;1.0.0->org.mvel#mvel2;2.2.2.Final [compile->default(compile)][0m
+[0m[[0minfo[0m] [0mResolving org.mvel#mvel2;2.2.2.Final ...[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.mvel#mvel2;2.2.2.Final {compile=[default(compile)]}[0m
+[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.mvel#mvel2;2.2.2.Final[0m
+[0m[[0mdebug[0m] [0m	local: revision in cache: org.mvel#mvel2;2.2.2.Final[0m
+[0m[[0mdebug[0m] [0m	found org.mvel#mvel2;2.2.2.Final in sbt-chain[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.nights.npe#commons_2.11;1.0.0->org.mvel#mvel2;2.2.2.Final [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.nights.npe#commons_2.11;1.0.0->org.mvel#mvel2;2.2.2.Final [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.nights.npe#commons_2.11;1.0.0->org.mvel#mvel2;2.2.2.Final [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.nights.npe#commons_2.11;1.0.0->javax.transaction#jta;1.1 [compile->default(compile)][0m
 [0m[[0minfo[0m] [0mResolving javax.transaction#jta;1.1 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: javax.transaction#jta;1.1 {compile=[default(compile)]}[0m
@@ -566,6 +575,10 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies fsm#fsm_2.11;1.0.0->org.slf4j#slf4j-api;1.7.7 [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies fsm#fsm_2.11;1.0.0->org.slf4j#slf4j-api;1.7.7 [compile->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies fsm#fsm_2.11;1.0.0->org.slf4j#slf4j-api;1.7.7 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies fsm#fsm_2.11;1.0.0->org.mvel#mvel2;2.2.2.Final [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies fsm#fsm_2.11;1.0.0->org.mvel#mvel2;2.2.2.Final [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies fsm#fsm_2.11;1.0.0->org.mvel#mvel2;2.2.2.Final [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies fsm#fsm_2.11;1.0.0->org.mvel#mvel2;2.2.2.Final [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies fsm#fsm_2.11;1.0.0->net.sf.ehcache#ehcache;2.8.3 [compile->default(compile)][0m
 [0m[[0minfo[0m] [0mResolving net.sf.ehcache#ehcache;2.8.3 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: net.sf.ehcache#ehcache;2.8.3 {compile=[default(compile)]}[0m
@@ -848,6 +861,10 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-xml_2.11;1.0.2->org.scala-lang#scala-library;2.11.2 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-xml_2.11;1.0.2->org.scala-lang#scala-library;2.11.2 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.nights.npe#commons_2.11;1.0.0->org.scala-lang.modules#scala-xml_2.11;1.0.2 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.nights.npe#commons_2.11;1.0.0->org.mvel#mvel2;2.2.2.Final [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.nights.npe#commons_2.11;1.0.0->org.mvel#mvel2;2.2.2.Final [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.nights.npe#commons_2.11;1.0.0->org.mvel#mvel2;2.2.2.Final [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.nights.npe#commons_2.11;1.0.0->org.mvel#mvel2;2.2.2.Final [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.nights.npe#commons_2.11;1.0.0->javax.transaction#jta;1.1 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.nights.npe#commons_2.11;1.0.0->javax.transaction#jta;1.1 [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.nights.npe#commons_2.11;1.0.0->javax.transaction#jta;1.1 [compile->compile][0m
@@ -970,6 +987,10 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies fsm#fsm_2.11;1.0.0->org.slf4j#slf4j-api;1.7.7 [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies fsm#fsm_2.11;1.0.0->org.slf4j#slf4j-api;1.7.7 [compile->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies fsm#fsm_2.11;1.0.0->org.slf4j#slf4j-api;1.7.7 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies fsm#fsm_2.11;1.0.0->org.mvel#mvel2;2.2.2.Final [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies fsm#fsm_2.11;1.0.0->org.mvel#mvel2;2.2.2.Final [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies fsm#fsm_2.11;1.0.0->org.mvel#mvel2;2.2.2.Final [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies fsm#fsm_2.11;1.0.0->org.mvel#mvel2;2.2.2.Final [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies fsm#fsm_2.11;1.0.0->net.sf.ehcache#ehcache;2.8.3 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies fsm#fsm_2.11;1.0.0->net.sf.ehcache#ehcache-jgroupsreplication;1.7 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies fsm#fsm_2.11;1.0.0->net.sf.ehcache#ehcache-jgroupsreplication;1.7 [compile->runtime][0m
@@ -1224,6 +1245,10 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-xml_2.11;1.0.2->org.scala-lang#scala-library;2.11.2 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-xml_2.11;1.0.2->org.scala-lang#scala-library;2.11.2 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.nights.npe#commons_2.11;1.0.0->org.scala-lang.modules#scala-xml_2.11;1.0.2 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.nights.npe#commons_2.11;1.0.0->org.mvel#mvel2;2.2.2.Final [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.nights.npe#commons_2.11;1.0.0->org.mvel#mvel2;2.2.2.Final [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.nights.npe#commons_2.11;1.0.0->org.mvel#mvel2;2.2.2.Final [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.nights.npe#commons_2.11;1.0.0->org.mvel#mvel2;2.2.2.Final [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.nights.npe#commons_2.11;1.0.0->javax.transaction#jta;1.1 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.nights.npe#commons_2.11;1.0.0->javax.transaction#jta;1.1 [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.nights.npe#commons_2.11;1.0.0->javax.transaction#jta;1.1 [compile->compile][0m
@@ -1346,6 +1371,10 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies fsm#fsm_2.11;1.0.0->org.slf4j#slf4j-api;1.7.7 [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies fsm#fsm_2.11;1.0.0->org.slf4j#slf4j-api;1.7.7 [compile->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies fsm#fsm_2.11;1.0.0->org.slf4j#slf4j-api;1.7.7 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies fsm#fsm_2.11;1.0.0->org.mvel#mvel2;2.2.2.Final [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies fsm#fsm_2.11;1.0.0->org.mvel#mvel2;2.2.2.Final [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies fsm#fsm_2.11;1.0.0->org.mvel#mvel2;2.2.2.Final [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies fsm#fsm_2.11;1.0.0->org.mvel#mvel2;2.2.2.Final [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies fsm#fsm_2.11;1.0.0->net.sf.ehcache#ehcache;2.8.3 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies fsm#fsm_2.11;1.0.0->net.sf.ehcache#ehcache-jgroupsreplication;1.7 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies fsm#fsm_2.11;1.0.0->net.sf.ehcache#ehcache-jgroupsreplication;1.7 [compile->runtime][0m
@@ -1603,6 +1632,10 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-xml_2.11;1.0.2->org.scala-lang#scala-library;2.11.2 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-xml_2.11;1.0.2->org.scala-lang#scala-library;2.11.2 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.nights.npe#commons_2.11;1.0.0->org.scala-lang.modules#scala-xml_2.11;1.0.2 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.nights.npe#commons_2.11;1.0.0->org.mvel#mvel2;2.2.2.Final [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.nights.npe#commons_2.11;1.0.0->org.mvel#mvel2;2.2.2.Final [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.nights.npe#commons_2.11;1.0.0->org.mvel#mvel2;2.2.2.Final [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.nights.npe#commons_2.11;1.0.0->org.mvel#mvel2;2.2.2.Final [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.nights.npe#commons_2.11;1.0.0->javax.transaction#jta;1.1 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.nights.npe#commons_2.11;1.0.0->javax.transaction#jta;1.1 [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.nights.npe#commons_2.11;1.0.0->javax.transaction#jta;1.1 [compile->compile][0m
@@ -1725,6 +1758,10 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies fsm#fsm_2.11;1.0.0->org.slf4j#slf4j-api;1.7.7 [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies fsm#fsm_2.11;1.0.0->org.slf4j#slf4j-api;1.7.7 [compile->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies fsm#fsm_2.11;1.0.0->org.slf4j#slf4j-api;1.7.7 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies fsm#fsm_2.11;1.0.0->org.mvel#mvel2;2.2.2.Final [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies fsm#fsm_2.11;1.0.0->org.mvel#mvel2;2.2.2.Final [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies fsm#fsm_2.11;1.0.0->org.mvel#mvel2;2.2.2.Final [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies fsm#fsm_2.11;1.0.0->org.mvel#mvel2;2.2.2.Final [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies fsm#fsm_2.11;1.0.0->net.sf.ehcache#ehcache;2.8.3 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies fsm#fsm_2.11;1.0.0->net.sf.ehcache#ehcache-jgroupsreplication;1.7 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies fsm#fsm_2.11;1.0.0->net.sf.ehcache#ehcache-jgroupsreplication;1.7 [compile->runtime][0m
@@ -1981,6 +2018,10 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-xml_2.11;1.0.2->org.scala-lang#scala-library;2.11.2 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-xml_2.11;1.0.2->org.scala-lang#scala-library;2.11.2 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.nights.npe#commons_2.11;1.0.0->org.scala-lang.modules#scala-xml_2.11;1.0.2 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.nights.npe#commons_2.11;1.0.0->org.mvel#mvel2;2.2.2.Final [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.nights.npe#commons_2.11;1.0.0->org.mvel#mvel2;2.2.2.Final [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.nights.npe#commons_2.11;1.0.0->org.mvel#mvel2;2.2.2.Final [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.nights.npe#commons_2.11;1.0.0->org.mvel#mvel2;2.2.2.Final [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.nights.npe#commons_2.11;1.0.0->javax.transaction#jta;1.1 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.nights.npe#commons_2.11;1.0.0->javax.transaction#jta;1.1 [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.nights.npe#commons_2.11;1.0.0->javax.transaction#jta;1.1 [compile->compile][0m
@@ -2103,6 +2144,10 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies fsm#fsm_2.11;1.0.0->org.slf4j#slf4j-api;1.7.7 [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies fsm#fsm_2.11;1.0.0->org.slf4j#slf4j-api;1.7.7 [compile->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies fsm#fsm_2.11;1.0.0->org.slf4j#slf4j-api;1.7.7 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies fsm#fsm_2.11;1.0.0->org.mvel#mvel2;2.2.2.Final [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies fsm#fsm_2.11;1.0.0->org.mvel#mvel2;2.2.2.Final [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies fsm#fsm_2.11;1.0.0->org.mvel#mvel2;2.2.2.Final [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies fsm#fsm_2.11;1.0.0->org.mvel#mvel2;2.2.2.Final [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies fsm#fsm_2.11;1.0.0->net.sf.ehcache#ehcache;2.8.3 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies fsm#fsm_2.11;1.0.0->net.sf.ehcache#ehcache-jgroupsreplication;1.7 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies fsm#fsm_2.11;1.0.0->net.sf.ehcache#ehcache-jgroupsreplication;1.7 [compile->runtime][0m
@@ -2359,6 +2404,10 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-xml_2.11;1.0.2->org.scala-lang#scala-library;2.11.2 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-xml_2.11;1.0.2->org.scala-lang#scala-library;2.11.2 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.nights.npe#commons_2.11;1.0.0->org.scala-lang.modules#scala-xml_2.11;1.0.2 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.nights.npe#commons_2.11;1.0.0->org.mvel#mvel2;2.2.2.Final [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.nights.npe#commons_2.11;1.0.0->org.mvel#mvel2;2.2.2.Final [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.nights.npe#commons_2.11;1.0.0->org.mvel#mvel2;2.2.2.Final [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.nights.npe#commons_2.11;1.0.0->org.mvel#mvel2;2.2.2.Final [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.nights.npe#commons_2.11;1.0.0->javax.transaction#jta;1.1 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.nights.npe#commons_2.11;1.0.0->javax.transaction#jta;1.1 [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.nights.npe#commons_2.11;1.0.0->javax.transaction#jta;1.1 [compile->compile][0m
@@ -2481,6 +2530,10 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies fsm#fsm_2.11;1.0.0->org.slf4j#slf4j-api;1.7.7 [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies fsm#fsm_2.11;1.0.0->org.slf4j#slf4j-api;1.7.7 [compile->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies fsm#fsm_2.11;1.0.0->org.slf4j#slf4j-api;1.7.7 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies fsm#fsm_2.11;1.0.0->org.mvel#mvel2;2.2.2.Final [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies fsm#fsm_2.11;1.0.0->org.mvel#mvel2;2.2.2.Final [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies fsm#fsm_2.11;1.0.0->org.mvel#mvel2;2.2.2.Final [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies fsm#fsm_2.11;1.0.0->org.mvel#mvel2;2.2.2.Final [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies fsm#fsm_2.11;1.0.0->net.sf.ehcache#ehcache;2.8.3 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies fsm#fsm_2.11;1.0.0->net.sf.ehcache#ehcache-jgroupsreplication;1.7 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies fsm#fsm_2.11;1.0.0->net.sf.ehcache#ehcache-jgroupsreplication;1.7 [compile->runtime][0m
@@ -2611,7 +2664,6 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies fsm#fsm_2.11;1.0.0->org.scala-lang#scala-library;2.11.1 [scala-tool->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies fsm#fsm_2.11;1.0.0->org.scala-lang#scala-library;2.11.1 [scala-tool->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies fsm#fsm_2.11;1.0.0->org.scala-lang#scala-library;2.11.1 [scala-tool->optional(default)][0m
-[0m[[0mdebug[0m] [0mcircular dependency found: org.scala-lang#scala-compiler;2.11.1->org.scala-lang.modules#scala-xml_2.11;1.0.2->...[0m
 [0m[[0mdebug[0m] [0m	resolved ivy file produced in cache[0m
 [0m[[0mdebug[0m] [0m:: downloading artifacts ::[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#scala-library;2.11.1!scala-library.jar[0m
@@ -2622,6 +2674,7 @@
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.typesafe.akka#akka-slf4j_2.11;2.3.5!akka-slf4j_2.11.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] ch.qos.logback#logback-classic;1.1.2!logback-classic.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.slf4j#slf4j-api;1.7.7!slf4j-api.jar[0m
+[0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.mvel#mvel2;2.2.2.Final!mvel2.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] net.sf.ehcache#ehcache;2.8.3!ehcache.pom[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] net.sf.ehcache#ehcache-jgroupsreplication;1.7!ehcache-jgroupsreplication.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] javax.transaction#jta;1.1!jta.jar[0m
@@ -2660,7 +2713,7 @@
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#scala-compiler;2.11.1!scala-compiler.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang.modules#scala-parser-combinators_2.11;1.0.1!scala-parser-combinators_2.11.jar(bundle)[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] jline#jline;2.11!jline.jar[0m
-[0m[[0mdebug[0m] [0m:: resolution report :: resolve 2369ms :: artifacts dl 54ms[0m
+[0m[[0mdebug[0m] [0m:: resolution report :: resolve 1156ms :: artifacts dl 26ms[0m
 [0m[[0mdebug[0m] [0m	report for fsm#fsm_2.11;1.0.0 compile produced in /Users/brew/NPE/gits/fsm/target/resolution-cache/reports/fsm-fsm_2.11-compile.xml[0m
 [0m[[0mdebug[0m] [0m	report for fsm#fsm_2.11;1.0.0 runtime produced in /Users/brew/NPE/gits/fsm/target/resolution-cache/reports/fsm-fsm_2.11-runtime.xml[0m
 [0m[[0mdebug[0m] [0m	report for fsm#fsm_2.11;1.0.0 test produced in /Users/brew/NPE/gits/fsm/target/resolution-cache/reports/fsm-fsm_2.11-test.xml[0m
@@ -2674,5 +2727,5 @@
 [0m[[0mdebug[0m] [0m	report for fsm#fsm_2.11;1.0.0 docs produced in /Users/brew/NPE/gits/fsm/target/resolution-cache/reports/fsm-fsm_2.11-docs.xml[0m
 [0m[[0mdebug[0m] [0m	report for fsm#fsm_2.11;1.0.0 pom produced in /Users/brew/NPE/gits/fsm/target/resolution-cache/reports/fsm-fsm_2.11-pom.xml[0m
 [0m[[0mdebug[0m] [0m	report for fsm#fsm_2.11;1.0.0 scala-tool produced in /Users/brew/NPE/gits/fsm/target/resolution-cache/reports/fsm-fsm_2.11-scala-tool.xml[0m
-[0m[[0mdebug[0m] [0m	resolve done (2369ms resolve - 54ms download)[0m
+[0m[[0mdebug[0m] [0m	resolve done (1156ms resolve - 26ms download)[0m
 [0m[[0minfo[0m] [0mDone updating.[0m

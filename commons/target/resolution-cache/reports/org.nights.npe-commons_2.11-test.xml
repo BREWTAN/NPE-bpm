@@ -7,10 +7,10 @@
 		revision="1.0.0"
 		conf="test"
 		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool"
-		date="20141015005919"/>
+		date="20141015033545"/>
 	<dependencies>
 		<module organisation="com.github.mauricio" name="mysql-async_2.11">
-			<revision name="0.2.14" status="release" pubdate="20140830035118" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/mauricio/postgresql-async" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="27">
+			<revision name="0.2.14" status="release" pubdate="20140830035118" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/mauricio/postgresql-async" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="28">
 				<license name="APACHE-2.0" url="http://www.apache.org/licenses/LICENSE-2.0"/>
 				<metadata-artifact status="no" details="" size="2926" time="0" location="/Users/brew/.ivy2/cache/com.github.mauricio/mysql-async_2.11/ivy-0.2.14.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/com/github/mauricio/mysql-async_2.11/0.2.14/mysql-async_2.11-0.2.14.pom"/>
 				<caller organisation="org.nights.npe" name="commons_2.11" conf="test, compile, runtime" rev="0.2.14" rev-constraint-default="0.2.14" rev-constraint-dynamic="0.2.14" callerrev="1.0.0"/>
@@ -22,7 +22,7 @@
 			</revision>
 		</module>
 		<module organisation="com.github.mauricio" name="db-async-common_2.11">
-			<revision name="0.2.14" status="release" pubdate="20140830035135" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/mauricio/postgresql-async" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="28">
+			<revision name="0.2.14" status="release" pubdate="20140830035135" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/mauricio/postgresql-async" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="29">
 				<license name="APACHE-2.0" url="http://www.apache.org/licenses/LICENSE-2.0"/>
 				<metadata-artifact status="no" details="" size="3452" time="0" location="/Users/brew/.ivy2/cache/com.github.mauricio/db-async-common_2.11/ivy-0.2.14.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/com/github/mauricio/db-async-common_2.11/0.2.14/db-async-common_2.11-0.2.14.pom"/>
 				<caller organisation="com.github.mauricio" name="mysql-async_2.11" conf="default, compile, runtime, master" rev="0.2.14" rev-constraint-default="0.2.14" rev-constraint-dynamic="0.2.14" callerrev="0.2.14"/>
@@ -34,7 +34,7 @@
 			</revision>
 		</module>
 		<module organisation="org.javassist" name="javassist">
-			<revision name="3.18.1-GA" status="release" pubdate="20130830165932" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.javassist.org/" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="32">
+			<revision name="3.18.1-GA" status="release" pubdate="20130830165932" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.javassist.org/" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="33">
 				<license name="MPL 1.1" url="http://www.mozilla.org/MPL/MPL-1.1.html"/>
 				<license name="LGPL 2.1" url="http://www.gnu.org/licenses/lgpl-2.1.html"/>
 				<license name="Apache License 2.0" url="http://www.apache.org/licenses/"/>
@@ -48,7 +48,7 @@
 			</revision>
 		</module>
 		<module organisation="io.netty" name="netty-all">
-			<revision name="4.0.23.Final" status="release" pubdate="20140815180640" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="31">
+			<revision name="4.0.23.Final" status="release" pubdate="20140815180640" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="32">
 				<metadata-artifact status="no" details="" size="15751" time="0" location="/Users/brew/.ivy2/cache/io.netty/netty-all/ivy-4.0.23.Final.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/io/netty/netty-all/4.0.23.Final/netty-all-4.0.23.Final.pom"/>
 				<caller organisation="com.github.mauricio" name="db-async-common_2.11" conf="compile, runtime" rev="4.0.23.Final" rev-constraint-default="4.0.23.Final" rev-constraint-dynamic="4.0.23.Final" callerrev="0.2.14"/>
 				<artifacts>
@@ -59,7 +59,7 @@
 			</revision>
 		</module>
 		<module organisation="org.joda" name="joda-convert">
-			<revision name="1.5" status="release" pubdate="20130917144839" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.joda.org/joda-convert/" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="30">
+			<revision name="1.5" status="release" pubdate="20130917144839" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.joda.org/joda-convert/" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="31">
 				<license name="Apache 2" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
 				<metadata-artifact status="no" details="" size="6116" time="0" location="/Users/brew/.ivy2/cache/org.joda/joda-convert/ivy-1.5.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/joda/joda-convert/1.5/joda-convert-1.5.pom"/>
 				<caller organisation="com.github.mauricio" name="db-async-common_2.11" conf="compile, runtime" rev="1.5" rev-constraint-default="1.5" rev-constraint-dynamic="1.5" callerrev="0.2.14"/>
@@ -71,7 +71,7 @@
 			</revision>
 		</module>
 		<module organisation="joda-time" name="joda-time">
-			<revision name="2.3" status="release" pubdate="20130816133125" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.joda.org/joda-time/" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="29">
+			<revision name="2.3" status="release" pubdate="20130816133125" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.joda.org/joda-time/" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="30">
 				<license name="Apache 2" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
 				<metadata-artifact status="no" details="" size="6353" time="0" location="/Users/brew/.ivy2/cache/joda-time/joda-time/ivy-2.3.xml" searched="false" origin-is-local="false" origin-location="file:/Users/brew/NPE/activator-1.2.10/repository/joda-time/joda-time/2.3/ivys/ivy.xml"/>
 				<caller organisation="com.github.mauricio" name="db-async-common_2.11" conf="compile, runtime" rev="2.3" rev-constraint-default="2.3" rev-constraint-dynamic="2.3" callerrev="0.2.14"/>
@@ -83,12 +83,24 @@
 			</revision>
 		</module>
 		<module organisation="javax.transaction" name="jta">
-			<revision name="1.1" status="release" pubdate="20081027212721" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://java.sun.com/products/jta" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="26">
+			<revision name="1.1" status="release" pubdate="20081027212721" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://java.sun.com/products/jta" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="27">
 				<metadata-artifact status="no" details="" size="2343" time="0" location="/Users/brew/.ivy2/cache/javax.transaction/jta/ivy-1.1.xml" searched="false" origin-is-local="false" origin-location="file:/Users/brew/NPE/activator-1.2.10/repository/javax.transaction/jta/1.1/ivys/ivy.xml"/>
 				<caller organisation="org.nights.npe" name="commons_2.11" conf="test, compile, runtime" rev="1.1" rev-constraint-default="1.1" rev-constraint-dynamic="1.1" callerrev="1.0.0"/>
 				<artifacts>
 					<artifact name="jta" type="jar" ext="jar" status="no" details="" size="15071" time="0" location="/Users/brew/.ivy2/cache/javax.transaction/jta/jars/jta-1.1.jar">
 						<origin-location is-local="false" location="file:/Users/brew/NPE/activator-1.2.10/repository/javax.transaction/jta/1.1/jars/jta.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.mvel" name="mvel2">
+			<revision name="2.2.2.Final" status="release" pubdate="20141003153918" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://mvel.codehaus.org/" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="26">
+				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<metadata-artifact status="no" details="" size="3297" time="0" location="/Users/brew/.ivy2/cache/org.mvel/mvel2/ivy-2.2.2.Final.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/mvel/mvel2/2.2.2.Final/mvel2-2.2.2.Final.pom"/>
+				<caller organisation="org.nights.npe" name="commons_2.11" conf="test, compile, runtime" rev="2.2.2.Final" rev-constraint-default="2.2.2.Final" rev-constraint-dynamic="2.2.2.Final" callerrev="1.0.0"/>
+				<artifacts>
+					<artifact name="mvel2" type="jar" ext="jar" status="no" details="" size="1012100" time="0" location="/Users/brew/.ivy2/cache/org.mvel/mvel2/jars/mvel2-2.2.2.Final.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/mvel/mvel2/2.2.2.Final/mvel2-2.2.2.Final.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>

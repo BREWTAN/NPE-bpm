@@ -48,7 +48,7 @@ class QueueWorker extends Actor with ActorLogging with ActorHelper {
       }
     }
     case AskNewWork(size, obtainer) => {
-      log.info("AskNewWork@"+sender)
+//      log.info("AskNewWork@"+sender)
       queue.poll(obtainer) match {
         case Some(task) => stateStores ! wrapToPipeMessage(ObtainedStates(task.sc asObtain, task.dt, obtainer), sender, task.sc.taskInstId)
         case a @ _ => sender ! NoneStateInQueue(obtainer)

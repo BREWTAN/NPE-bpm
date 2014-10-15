@@ -250,6 +250,8 @@
 [0m[[0mdebug[0m] [0m	  /Users/brew/NPE/gits/fsm/target/scala-2.11/classes/org/nights/npe/queue/AdvancePriorityQueue$$anonfun$toString$3.class[0m
 [0m[[0mdebug[0m] [0m	org/nights/npe/fsm/backend/StorageWorker$$anonfun$receive$1$$anonfun$applyOrElse$3.class[0m
 [0m[[0mdebug[0m] [0m	  /Users/brew/NPE/gits/fsm/target/scala-2.11/classes/org/nights/npe/fsm/backend/StorageWorker$$anonfun$receive$1$$anonfun$applyOrElse$3.class[0m
+[0m[[0mdebug[0m] [0m	org/nights/npe/fsm/TransitionWorker$$anonfun$doTransite$1$$anonfun$3.class[0m
+[0m[[0mdebug[0m] [0m	  /Users/brew/NPE/gits/fsm/target/scala-2.11/classes/org/nights/npe/fsm/TransitionWorker$$anonfun$doTransite$1$$anonfun$3.class[0m
 [0m[[0mdebug[0m] [0m	org/nights/npe/fsm/backend/MySqlInsertStorage$.class[0m
 [0m[[0mdebug[0m] [0m	  /Users/brew/NPE/gits/fsm/target/scala-2.11/classes/org/nights/npe/fsm/backend/MySqlInsertStorage$.class[0m
 [0m[[0mdebug[0m] [0m	org/nights/npe/fsm/cluster/SimpleClusterListener$$anonfun$worker$1.class[0m
@@ -338,6 +340,8 @@
 [0m[[0mdebug[0m] [0m	  /Users/brew/NPE/gits/fsm/target/scala-2.11/classes/org/nights/npe/fsm/RecoveryWorker.class[0m
 [0m[[0mdebug[0m] [0m	org/nights/npe/fsm/TransitionWorker$$anonfun$doTransite$1.class[0m
 [0m[[0mdebug[0m] [0m	  /Users/brew/NPE/gits/fsm/target/scala-2.11/classes/org/nights/npe/fsm/TransitionWorker$$anonfun$doTransite$1.class[0m
+[0m[[0mdebug[0m] [0m	org/nights/npe/fsm/TransitionWorker$$anonfun$doTransite$1$$anonfun$2.class[0m
+[0m[[0mdebug[0m] [0m	  /Users/brew/NPE/gits/fsm/target/scala-2.11/classes/org/nights/npe/fsm/TransitionWorker$$anonfun$doTransite$1$$anonfun$2.class[0m
 [0m[[0mdebug[0m] [0m	org/nights/npe/fsm/ObtainTimeOutChecker$$anonfun$receive$2.class[0m
 [0m[[0mdebug[0m] [0m	  /Users/brew/NPE/gits/fsm/target/scala-2.11/classes/org/nights/npe/fsm/ObtainTimeOutChecker$$anonfun$receive$2.class[0m
 [0m[[0mdebug[0m] [0m	org/nights/npe/fsm/backend/MySqlInsertStorage$$anonfun$2.class[0m

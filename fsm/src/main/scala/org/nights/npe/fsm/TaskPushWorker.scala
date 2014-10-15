@@ -14,12 +14,13 @@ import org.nights.npe.po.StateContext
 import org.nights.npe.po.DoneStateContext
 import org.nights.npe.mo.AskNewWork
 import org.nights.npe.mo.Obtainer
+import org.nights.npe.mo.NoneStateInQueue
 
 class PushWorker extends Actor with ActorLogging with ActorHelper {
 
   override def preStart(): Unit = {
 //    log.info("startup@{}", self)
-//    context.system.scheduler.schedule(100 millis, 1000 millis, self, "tick")
+    context.system.scheduler.schedule(100 millis, 1000 millis, self, "tick")
   }
   override def postStop(): Unit = {
 //    log.info("shutdown:{}", self)
@@ -36,7 +37,9 @@ class PushWorker extends Actor with ActorLogging with ActorHelper {
       submitors ! ConsistentHashableEnvelope(TaskDone(
         DoneStateContext(state, ctxData, self.toString())), state.taskInstId)
     }
-
-    case _ => log.error("unknow message")
+    case none:NoneStateInQueue =>{
+      
+    }
+    case a@_ => log.error("unknow message:at:"+a)
   }
 }

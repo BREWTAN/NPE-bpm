@@ -13,6 +13,8 @@ libraryDependencies += "com.typesafe.akka" %% "akka-contrib" % "2.3.5"
 
 libraryDependencies += "org.scala-lang.modules" %% "scala-xml" % "1.0.2"
 
+libraryDependencies += "org.mvel" % "mvel2" % "2.2.2.Final"
+
 libraryDependencies ++= Seq(
    "javax.transaction" % "jta" % "1.1",
    "com.github.mauricio" %% "mysql-async" % "0.2.14"
