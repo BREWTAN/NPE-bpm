@@ -265,7 +265,7 @@
 		jQuery(function($) {//初始化函数
 			setTitlePath("任务操作","业务操作")		    
 			$.ajax({
-			url: '/nperest/taskrole',
+			url: '/nperest/taskrole?limit=10000',
 			type: 'GET',
 			dataType: 'JSON',
 		})
