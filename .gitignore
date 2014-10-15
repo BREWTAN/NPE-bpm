@@ -1,2 +1,7 @@
 *.class
-*~
+bin
+.cache
++*/**/target
+*/target
+/target
+
