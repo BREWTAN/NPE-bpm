@@ -4,7 +4,7 @@
 		module="fsm-build"
 		revision="0.1-SNAPSHOT"
 		status="integration"
-		publication="20141013031449"
+		publication="20141015113257"
 		e:scalaVersion="2.10" e:sbtVersion="0.13"
 	>
 		<description>
@@ -44,5 +44,6 @@
 		</dependency>
 		<dependency org="com.typesafe.sbteclipse" name="sbteclipse-plugin" rev="2.3.0" conf="compile->default(compile)" e:scalaVersion="2.10" e:sbtVersion="0.13"/>
 		<dependency org="com.github.mpeltonen" name="sbt-idea" rev="1.5.2" conf="compile->default(compile)" e:scalaVersion="2.10" e:sbtVersion="0.13"/>
+		<dependency org="com.typesafe.sbt" name="sbt-native-packager" rev="0.8.0-M2" conf="compile->default(compile)" e:scalaVersion="2.10" e:sbtVersion="0.13"/>
 	</dependencies>
 </ivy-module>

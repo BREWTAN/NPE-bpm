@@ -1,3 +1,8 @@
+import com.typesafe.sbt.SbtNativePackager._
+import NativePackagerKeys._
+
+packageArchetype.java_application
+
 name := """fsm"""
 
 version := "1.0.0"
@@ -20,15 +25,21 @@ libraryDependencies += "org.slf4j" % "slf4j-api" % "1.7.7"
 
 libraryDependencies += "org.mvel" % "mvel2" % "2.2.2.Final"
 
-//libraryDependencies += "org.nights.npe" %% "commons" % "1.0.0"	
+libraryDependencies += "org.nights.npe" %% "commons" % "1.0.0"	
 
+libraryDependencies += "com.typesafe" % "config" % "1.2.0"
 
-//EclipseKeys.withSource := true
 
 resolvers ++= Seq(
    "Apache Maven" at "http://mvnrepository.com/artifact",
    "Local Maven Repository" at "file://"+Path.userHome.absolutePath+"/.m2/repository"
 )
+
+bashScriptConfigLocation := Some("${app_home}/../conf/jvmopts")
+
+bashScriptExtraDefines += """addJava "-Dconfig.file=${app_home}/../conf/application.conf""""
+
+bashScriptExtraDefines += """addJava "-Dlogback.configurationFile=${app_home}/../conf/logback.xml""""
 
 libraryDependencies ++= Seq(
    "net.sf.ehcache" % "ehcache" % "2.8.3" from "http://repo1.maven.org/maven2/net/sf/ehcache/ehcache/2.8.3/ehcache-2.8.3.pom",

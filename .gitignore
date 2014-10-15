@@ -4,4 +4,5 @@ bin
 +*/**/target
 */target
 /target
+.DS_Store
 

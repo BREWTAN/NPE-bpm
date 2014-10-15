@@ -7,8 +7,7 @@ import akka.contrib.pattern.ClusterSingletonManager
 import akka.routing.RoundRobinPool
 import akka.actor.PoisonPill
 
-object Starter {
-  def main(args: Array[String]) {
+object Starter extends App{
     val system = ActorSystem("PECluster", ConfigFactory.parseString("akka.remote.netty.tcp.port = 2551").withFallback(ConfigFactory.load))
     Cluster(system).registerOnMemberUp {
       val fsm = system.actorOf(akka.actor.Props[FsmActorsController], "fsm");
@@ -36,5 +35,4 @@ object Starter {
         + ",obtains=" + StatsCounter.obtains.get() + ")");
       println("roles:" + GlobalQueue.queue)
     }
-  }
 }
