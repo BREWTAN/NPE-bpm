@@ -22,6 +22,8 @@ libraryDependencies += "com.typesafe.akka" %% "akka-slf4j" % "2.3.5"
 
 libraryDependencies += "org.nights.npe" %% "commons" % "1.0.0"	
 
+libraryDependencies += "org.mvel" % "mvel2" % "2.2.2.Final"
+
 libraryDependencies ++= Seq(
   jdbc,
   anorm,
