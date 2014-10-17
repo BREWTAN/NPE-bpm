@@ -65,8 +65,8 @@ object ProcInstFace extends Controller {
     }
     println("query.qq="+qq)
     val results = for {
-      total <- TasksDAO.countByCond("taskdefid='_1'"+qq)
-      rows <- TasksDAO.findByCond("taskdefid='_1'"+qq, Range(skip, limit))
+      total <- TasksDAO.countByCond("nodetype=1 and taskdefid='_1'"+qq)
+      rows <- TasksDAO.findByCond("nodetype=1 and taskdefid='_1'"+qq, Range(skip, limit))
     } yield (total, rows)
 
     results.map({ f =>

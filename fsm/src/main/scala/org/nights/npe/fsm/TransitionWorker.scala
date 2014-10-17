@@ -98,19 +98,19 @@ class TransitionWorker extends ConvergeClusterListener {
         case conv: ANDConverging => {
 //          sendConverge(ConvergingTrans(UpdateStates(state, ctxData), n.froms.size, n.id));
           sendConverge(ConvergingTrans(UpdateStates(StateContext(state.procInstId, state.procDefId, nextUUID,
-        		  n.id, n.taskName+("(AndConverge自动)"), state.antecessors, InterStateNew(), prevIds, state.procHops + 1), ctxData), n.froms.size, n.id))
+        		  n.id, n.taskName+("(AndConverge自动)"), state.antecessors, InterStateNew(), prevIds,false, 1), ctxData), n.froms.size, n.id))
           null
         }
         case conv: XORConverging => {
           //          sconvergers ! ConvergingTrans(UpdateStates(state, ctxData), 1, n.id);
           sendConverge(ConvergingTrans(UpdateStates(StateContext(state.procInstId, state.procDefId, nextUUID,
-        		  n.id, n.taskName+("(xorConverge自动)"), state.antecessors, InterStateNew(), prevIds, state.procHops + 1), ctxData), 1, n.id))
+        		  n.id, n.taskName+("(xorConverge自动)"), state.antecessors, InterStateNew(), prevIds, false,1), ctxData), 1, n.id))
           null
         }
 
         case end: EndEvent if state.antecessors.size == 0 => {
           StateContext(state.procInstId, state.procDefId, nextUUID,
-            n.id, n.taskName, List.empty, InterStateNew(), prevIds, state.procHops + 1, true).asTerminate
+            n.id, n.taskName, List.empty, InterStateNew(), prevIds,  true,1).asTerminate
         }
         case end: EndEvent if state.antecessors.size > 0 => {
           //                      log.debug("get End From Subprocess1:"+state+","+state.antecessors+"::")
@@ -120,7 +120,7 @@ class TransitionWorker extends ConvergeClusterListener {
           val parentNextfromCur = ppd.getNode(parentDef.subDefId);
 
           val nextSubProc = StateContext(parentDef.procInstId, parentDef.procDefId, nextUUID,
-            parentNextfromCur.id, n.taskName, state.antecessors.drop(1), InterStateNew(), prevIds, state.procHops + 1)
+            parentNextfromCur.id, n.taskName, state.antecessors.drop(1), InterStateNew(), prevIds, false,1)
 
           log.info("transite End From SubprocessEnd:" + state + ",Next=" + nextSubProc)
 
@@ -128,7 +128,9 @@ class TransitionWorker extends ConvergeClusterListener {
         }
 
         case _ => StateContext(state.procInstId, state.procDefId, nextUUID,
-          n.id, n.taskName, state.antecessors, InterStateNew(), prevIds, state.procHops + 1)
+          n.id, n.taskName, state.antecessors, InterStateNew(), prevIds, false,
+           { if (n.tos.size > 1 || n.froms.size > 1) 1 else 0}
+          )
       }
       if (nextState != null) {
         nextState match {

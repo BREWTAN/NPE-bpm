@@ -17,6 +17,8 @@ import akka.routing.ConsistentHashingRouter.ConsistentHashableEnvelope
 import org.nights.npe.mo.NewProcess
 import org.nights.npe.mo.TaskDone
 import org.nights.npe.mo.ANewProcess
+import org.nights.npe.po.InterStateNew
+
 
 class Submitor extends Actor with ActorLogging with ActorHelper {
 
@@ -45,7 +47,8 @@ class Submitor extends Actor with ActorLogging with ActorHelper {
         val state = new StateContext(procInstId,
           procDefId,
           taskInstId,
-          startDefNode.nodeid)
+          startDefNode.nodeid,"start",
+          List.empty,InterStateNew(),List.empty,false,1)
 
         StatsCounter.newprocs.incrementAndGet();
         val subdata = ctxData.asNewProcData(procInstId)

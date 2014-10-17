@@ -61,7 +61,8 @@ object BeanTransHelper {
     null,
     null,
     dt.taskcenter,
-    dt.rootproc)
+    dt.rootproc,
+    Some(sc.nodetype ))
 
   def koFromState(sc: StateContext, submitter: String, dt: ContextData): KOTasks = KOTasks(
     sc.taskInstId, // String, // varchar(32) not null, 
@@ -86,7 +87,7 @@ object BeanTransHelper {
     submitter,
     Some(System.currentTimeMillis()),
     dt.taskcenter,
-    dt.rootproc)
+    dt.rootproc,Some(sc.nodetype))
 
   def koToState(ko: KOTasks): (StateContext, ContextData) = (
     StateContext(ko.procinstid, ko.procdefid, ko.taskinstid, ko.taskdefid,
@@ -103,7 +104,7 @@ object BeanTransHelper {
         case Some(1) => InterStateObtain()
         case Some(2) => InterStateSubmit()
         case _ => InterStateTerminate()
-      }, ko.previnsts.split("_LIST_").toList),
+      }, ko.previnsts.split("_LIST_").toList,false,ko.nodetype.getOrElse(0) ),
       ContextData(
         ko.procPIO.get,
         ko.taskPIO.get,
@@ -147,7 +148,7 @@ object BeanTransHelper {
     submitter,
     null,
     dt.taskcenter,
-    dt.rootproc)
+    dt.rootproc,Some(sc.nodetype))
 
   def koForObtainState(sc: StateContext, obtainer: String): KOObtainTasks = KOObtainTasks(
     sc.taskInstId, // String, // varchar(32) not null, 

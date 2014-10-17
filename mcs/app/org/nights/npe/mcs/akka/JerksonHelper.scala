@@ -64,14 +64,14 @@ object JerksonHelper {
     (__ \ "antecessors").read[List[ParentContext]] and
     (__ \ "internalState").read[InterState] and
     (__ \ "prevStateInstIds").read[List[String]] and
-    (__ \ "procHops").read[Int] and
-    (__ \ "isTerminate").read[Boolean])(StateContext.apply _)
+    (__ \ "isTerminate").read[Boolean] and
+    (__ \ "nodetype").read[Int])(StateContext.apply _)
 
   implicit val ContextDataReads: Reads[ContextData] = (
     (__ \ "procPIO").read[Int] and
     (__ \ "taskPIO").read[Int] and
     (__ \ "rolemark").readNullable[String].map({ _.getOrElse(null) }) and
-    (__ \ "startMS").readNullable[Long].map({_.getOrElse(System.currentTimeMillis())}) and
+    (__ \ "startMS").readNullable[Long].map({ _.getOrElse(System.currentTimeMillis()) }) and
     (__ \ "idata1").read[Option[Int]] and
     (__ \ "idata2").read[Option[Int]] and
     (__ \ "strdata1").readNullable[String].map({ _.getOrElse(null) }) and
@@ -86,6 +86,5 @@ object JerksonHelper {
     (__ \ "state").read[StateContext] and
     (__ \ "submitter").readNullable[String].map({ _.getOrElse(null) }) and
     (__ \ "ctxData").read[ContextData])(SubmitStates.apply _)
-
 
 }

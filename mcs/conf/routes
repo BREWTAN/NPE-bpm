@@ -85,3 +85,12 @@ POST	/submit				controllers.QueueWorker.submit()
 POST 	/newproc			controllers.QueueWorker.newProc(submiter:String?=null,center:String?=null,procdef:String?=null)
 
 
+##################
+# logs
+
+GET 	/oplogs			controllers.OplogsFace.getByPage(skip: Int?=0, limit: Int?=10,status:Int?=0, query:String?=null,page:Boolean?=false)
+DELETE  /oplogs/:keyy 	controllers.OplogsFace.delete(keyy:String)
+POST	/oplogs			controllers.OplogsFace.insert
+PUT		/oplogs/:keyy		controllers.OplogsFace.update(keyy:String)
+
+

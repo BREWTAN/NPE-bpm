@@ -1,7 +1,6 @@
 package controllers
 
 import scala.collection.mutable.ListBuffer
-
 import scala.concurrent.ExecutionContext
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.module.scala.DefaultScalaModule
@@ -34,7 +33,13 @@ import play.api.libs.functional.syntax._
 import play.api.libs.json.Format
 import play.api.libs.json.JsObject
 import play.api.libs.json.JsValue
-
+import org.nights.npe.mcs.db.DBOplogs._
+import akka.pattern.ask
+import scala.concurrent.duration.DurationInt
+import scala.concurrent.duration.DurationInt
+import org.nights.npe.mo.ObtainedStates
+import org.nights.npe.po.AskResult
+import org.nights.npe.mcs.db.DBOplogs
 object QueueWorker
   extends Controller {
   import org.nights.npe.mcs.akka.JerksonHelper._
@@ -50,24 +55,33 @@ object QueueWorker
   def obtainByRole(obtainer: String, role: String, center: String) = Action.async { request =>
     println("obtainByRole==" + role)
     poller.ask(QueryTasks(1, obtainer, role, obtainer))(10 seconds).map(result => {
-      Ok(mapper.writeValueAsString(result))
+      val o = result.asInstanceOf[ObtainedStates]
+      val jsonResult = mapper.writeValueAsString(result)
+      Await.ready(OplogsDAO.insert(KOOplogs(obtainer + " 获取任务 " + o.state.taskName, o.state.taskInstId+","+obtainer)),10 seconds)
+      Ok(jsonResult)
     }) recover {
       case e: akka.pattern.AskTimeoutException => Ok("{}")
     }
   }
-  def newProc(submiter: String, center: String, procdef: String) = Action { request =>
+  def newProc(submiter: String, center: String, procdef: String) = Action.async { request =>
     val jsonbody = request.body.asJson.get
-
 
     val ss = Json.fromJson[ContextData](jsonbody)
     if (ss.isSuccess) {
       //ANewProcess(procInstId: String, submitter: String, procDefId: String, data: ContextData)
       println("success==" + ss)
-      submitor ! ANewProcess(UUID.randomUUID().toString(), submiter, procdef, ss.get)
-      Ok("{\"status\":0}")
+      val uuid=UUID.randomUUID().toString();
+      submitor.ask(ANewProcess(uuid, submiter, procdef, ss.get))(10 seconds) map (result => {
+        val jsonResult = mapper.writeValueAsString(result)
+        Await.ready(OplogsDAO.insert(DBOplogs.KOOplogs(submiter + " 新建流程 " + procdef, uuid+","+submiter+","+procdef)),10 seconds)
+        Ok(jsonResult)
+      })
     } else {
-      println("error==" + ss)
-      Ok("{\"status\":-1,\"msg\":" + mapper.writeValueAsString(ss) + "}")
+      Future { 1 }.map({ f =>
+        println("error==" + ss)
+        Ok("{\"status\":-1,\"msg\":" + mapper.writeValueAsString(ss) + "}")
+
+      })
     }
   }
 
@@ -82,6 +96,9 @@ object QueueWorker
     if (ss.isSuccess) {
       println("success==" + ss)
       val sub = ss.get
+              
+      Await.ready(OplogsDAO.insert(DBOplogs.KOOplogs(sub.submitter  + " 提交任务 " + sub.state.taskName ,sub.state.taskInstId+","+sub.submitter)),10 seconds)
+
       submitor ! DoneStateContext(sub.state, sub.ctxData, sub.submitter)
       Ok("{\"status\":0}")
     } else {

@@ -48,7 +48,9 @@ case class KOTasks(val taskinstid: String, // varchar(32) not null,
   val submittime: Option[Float] = null,
   val taskcenter: String = null,
   val rootproc: String = null,
-  val createtime: Option[Long] = Some(System.currentTimeMillis()))
+  val nodetype:Option[Int] = Some(0),//节点类型，0表示人工，1表示引擎计算
+  val createtime: Option[Long] = Some(System.currentTimeMillis())
+)
 
 case class KOObtainTasks(val taskinstid: String,
   val obtainer: String,

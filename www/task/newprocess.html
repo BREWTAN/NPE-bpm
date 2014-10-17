@@ -194,8 +194,10 @@
 			</div>
 			<!-- /.page-content -->
 		</div>
+
 		<!-- /.main-content -->
 
+	</div>
 		<script type="text/javascript">$.include("parts/pages/copyright.shtml")</script>
 
 	</div>
@@ -306,7 +308,6 @@
 				submitdata['rootproc']=null
 
 
-
 				console.log("query=="+query+",submit="+JSON.stringify(submitdata))
 				$.ajax({
 					url: '/nperest/newproc'+query,
@@ -314,7 +315,6 @@
 					dataType: 'JSON',	
 		            contentType: "application/json; charset=utf-8",
 		            data: JSON.stringify(submitdata),
-		            async: false
 				})
 				.done(function(data) {
 					console.log("new proc::"+JSON.stringify(data))
@@ -325,6 +325,7 @@
 					}
 					$('#taskshow').removeClass('hidden')
 					$('#ff-debug').val(JSON.stringify(data));
+
 					$('#btn_obtain span').html('新建')
 					$('#btn_obtain').addClass("newproc").removeClass('submitting')
 					$('#btn_obtain').addClass("btn-primary").removeClass('btn-grey')

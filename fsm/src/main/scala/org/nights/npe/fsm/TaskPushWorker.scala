@@ -20,7 +20,7 @@ class PushWorker extends Actor with ActorLogging with ActorHelper {
 
   override def preStart(): Unit = {
 //    log.info("startup@{}", self)
-//    context.system.scheduler.schedule(100 millis, 1000 millis, self, "tick")
+//    context.system.scheduler.schedule(100 millis, 10 millis, self, "tick")
   }
   override def postStop(): Unit = {
 //    log.info("shutdown:{}", self)

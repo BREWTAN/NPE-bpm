@@ -35,6 +35,7 @@ class SubmitWorker extends Actor with ActorLogging {
   }
   override def postStop(): Unit = {
     //    sc.cancel
+    log.info("stop")
   }
 
   def receive = {
@@ -43,10 +44,10 @@ class SubmitWorker extends Actor with ActorLogging {
     }
     case submit: DoneStateContext =>
       {
-        workers ! ConsistentHashableEnvelope(ConsistentHashableEnvelope(TaskDone(submit), submit.submitter + "_"), submit.submitter + "_");
+        workers.tell(ConsistentHashableEnvelope(ConsistentHashableEnvelope(TaskDone(submit), submit.submitter + "_"), submit.submitter + "_"),sender);
       }
     case newproc: ANewProcess => {
-      workers ! ConsistentHashableEnvelope(ConsistentHashableEnvelope(newproc, newproc.submitter + "_"), newproc.submitter + "_");
+      workers.tell(ConsistentHashableEnvelope(ConsistentHashableEnvelope(newproc, newproc.submitter + "_"), newproc.submitter + "_"),sender);
     }
     case a @ _ => log.error("unknow message::" + a)
   }

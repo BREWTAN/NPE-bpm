@@ -52,6 +52,14 @@
 								</div>
 							</div>
 							<div class="col-sm-2 form-group">
+								<div class="btn-group input-group">
+									<!-- 查询条件控件 -->
+									<div class="input-group-addon">任务名</div>
+									<input id="find_taskname" class="inputclear form-control" type="text" placeholder="键">
+									<span class="inputclear glyphicon glyphicon-remove-circle hide" ></span>
+								</div>
+							</div>
+							<div class="col-sm-2 form-group">
 			                    <div class="btn-group input-group">
 			                        <div class="input-group-addon">状态</div>
 			                        <select class="chosen-select" id="find_status">
@@ -65,7 +73,7 @@
 
 			                    </div>
 			                </div>							
-							<div class="col-sm-6 form-group">
+							<div class="col-sm-4 form-group">
 								<div class="btn-group btn-sm">
 								    <button id="find_button" class="btn btn-sm btn-primary">
 								        查询&nbsp; <i class="fa fa-search"></i>
@@ -192,6 +200,11 @@
 		                            friendly: "任务定义",
 		                        },
 		                        {
+		                            col:"taskname",
+		                            friendly: "任务名称",
+		                        },
+
+		                        {
 		                            col:"status",
 		                            friendly: "状态",
 		                            format: statusFMM,
@@ -211,35 +224,16 @@
 		                            col:"termtime",
 		                            friendly: "完成时间",
 		                            format:newCreateDate,
-
 		                           	readonly:"readonly",  		                            
 		                        },
+
 		                       
 			                ],
 		            //---------------查询时过滤条件
 		            findFilter: function(){//find function
-		                // RQBuilder.and(rqls)
-		                var filter_instid=undefined;
-		                var filter_defid=undefined;
-		                var filter_status=undefined;
-
-		                if($('#find_instid').val())
-		                {   
-		                    filter_instid=RQLBuilder.like("procinstid",$('#find_instid').val());
-		                }
-		                if($('#find_defid').val())
-		                {   
-		                    filter_defid=RQLBuilder.like("procdefid",$('#find_defid').val());
-		                }
-		                
-		                if($('#find_status').val()!=-1)
-		                {   
-		                    filter_status=RQLBuilder.equal("status",$('#find_status').val());
-		                }
-		                var filter=RQLBuilder.and([
-		                        filter_instid,filter_defid,filter_status
-		                    ]);
-		                return '{"procinstid":"'+$('#find_instid').val()+'","procdefid":"'+$('#find_defid').val()+'","interstate":'+$('#find_status').val()+'}';
+		          
+		                return '{"procinstid":"'+$('#find_instid').val()+'","procdefid":"'+$('#find_defid').val()
+		                +'","taskname":"'+$('#find_taskname').val()+'","interstate":'+$('#find_status').val()+'}';
 		            },//--findFilter
 		            onAdded: function(ret,jsondata){
 		                console.log("added callback:"+ret+",obj="+JSON.stringify(jsondata));

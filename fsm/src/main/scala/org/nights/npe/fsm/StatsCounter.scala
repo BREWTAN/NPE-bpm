@@ -3,6 +3,7 @@ package org.nights.npe.fsm
 import java.util.concurrent.atomic.AtomicLong
 import akka.actor.ActorLogging
 import akka.actor.Actor
+import org.nights.npe.fsm.backend.LoadDefFromDB
 
 object StatsCounter {
 
@@ -37,6 +38,11 @@ class StatsWorker extends Actor with ActorLogging {
     case "queue" =>
       log.info("get queuestat@"+sender)
       sender ! GlobalQueue.queue .toString
+    case "reloadprocdef" =>
+      log.info("get reloadprocdef@"+sender)
+      context.system.actorSelection("/usr/fsm/definitionstore") !  LoadDefFromDB()
+      sender ! "OKOK"
+      
     case _ => log.error("unknow message")
   }
 

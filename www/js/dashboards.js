@@ -24,10 +24,12 @@ var Boards = function() {
 					// console.log("getQ::"+JSON.stringify(data))
 					var keymap={};
 					$.each(data,function(index,row){
-						if(!keymap[row['taskname']]){
-							keymap[row['taskname']]={}
+						var key=row['taskname'];
+						if(key==null||key=="")key="默认"
+						if(!keymap[key]){
+							keymap[key]={}
 						}
-						keymap[row['taskname']][row['interstate']]=row['counter']
+						keymap[key][row['interstate']]=row['counter']
 					});
 					var rawdata=[]
 					$.each(keymap,function(key,value){
@@ -135,9 +137,7 @@ var Boards = function() {
 	          .fail(function(err,data) {
 	          	console.log("error:"+JSON.stringify(err)+","+data);
 	          })
-	          .always(function() {
-	          	console.log("complete");
-	          });
+	          ;
 	          
 			 
 

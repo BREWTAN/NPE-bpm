@@ -10,7 +10,7 @@ import org.nights.npe.utils.ProcDefHelper
 
 trait InterState {
   val v: Int
-} 
+}
 
 case class InterStateNew(val v: Int = 0) extends InterState
 case class InterStateObtain(val v: Int = 1) extends InterState
@@ -21,7 +21,7 @@ case class ParentContext(val procInstId: String, val procDefId: String, val subD
   override def toString = procInstId + "!@!" + procDefId + "!@!" + subDefId
 }
 
-case class StateContext( 
+case class StateContext(
   val procInstId: String, //流程实例ID
   val procDefId: String, //流程定义ID
   val taskInstId: String, //任务实例ID
@@ -30,22 +30,22 @@ case class StateContext(
   val antecessors: List[ParentContext] = List.empty, //父节点信息
   val internalState: InterState = InterStateNew(), //0->新建任务，1-》任务已经被获取，2-》任务已经提交，3->任务结束
   val prevStateInstIds: List[String] = List.empty, //上一次任务实例ID,
-  val procHops: Int = 0, //节点次数,
-  var isTerminate: Boolean = false //是否为结束节点
+  var isTerminate: Boolean = false, //是否为结束节点
+  val nodetype: Int = 0 //0为人工节点，1为引擎节点
   ) extends Serializable {
 
   def simpleName(): String = {
     val p = ProcDefHelper.procDefs.get(procDefId);
     "StateContext(" + p.get.e.name + "," + p.get.nodes.get(taskDefId).get.e.name + ")"
-//    ""
+    //    ""
   }
   def copy(from: StateContext): StateContext = {
     StateContext(from.procInstId, from.procDefId, from.taskInstId, from.taskDefId, from.taskName, from.antecessors, from.internalState, from.prevStateInstIds,
-      from.procHops, from.isTerminate)
+      from.isTerminate, from.nodetype)
   }
   private def asInterState(newIState: InterState): StateContext = {
     StateContext(procInstId, procDefId, taskInstId, taskDefId, taskName, antecessors, newIState, prevStateInstIds,
-      procHops, isTerminate)
+      isTerminate, nodetype)
   }
   def asObtain(): StateContext = {
     asInterState(InterStateObtain())
@@ -77,23 +77,23 @@ case class ContextData(
   val strdata2: String = null, //text,
   val fdata1: Option[Float] = null, //float,
   val fdata2: Option[Float] = null, //float,
-  val taskcenter:String = null,
-  val rootproc:String = null,
+  val taskcenter: String = null,
+  val rootproc: String = null,
   val extra: HashMap[String, Any] = HashMap.empty) {
-  def PIO=procPIO+taskPIO;
-  
-  def merge(other: ContextData): ContextData={
-    if(PIO>=other.PIO){
-      ContextData(procPIO,taskPIO,rolemark,startMS,idata1,idata2,strdata1,strdata2,fdata1,fdata2,taskcenter,rootproc,other.extra.++:(extra))
-    }else{
-      other.merge(this) 
-    }  
+  def PIO = procPIO + taskPIO;
+
+  def merge(other: ContextData): ContextData = {
+    if (PIO >= other.PIO) {
+      ContextData(procPIO, taskPIO, rolemark, startMS, idata1, idata2, strdata1, strdata2, fdata1, fdata2, taskcenter, rootproc, other.extra.++:(extra))
+    } else {
+      other.merge(this)
+    }
   }
-  def asHigerPIODData() : ContextData={
-      ContextData(procPIO,taskPIO+1,rolemark,startMS,idata1,idata2,strdata1,strdata2,fdata1,fdata2,taskcenter,rootproc,extra) 
+  def asHigerPIODData(): ContextData = {
+    ContextData(procPIO, taskPIO + 1, rolemark, startMS, idata1, idata2, strdata1, strdata2, fdata1, fdata2, taskcenter, rootproc, extra)
   }
-  def asNewProcData(procinstid:String) : ContextData={
-      ContextData(procPIO,taskPIO+1,rolemark,startMS,idata1,idata2,strdata1,strdata2,fdata1,fdata2,taskcenter,procinstid,extra) 
+  def asNewProcData(procinstid: String): ContextData = {
+    ContextData(procPIO, taskPIO + 1, rolemark, startMS, idata1, idata2, strdata1, strdata2, fdata1, fdata2, taskcenter, procinstid, extra)
   }
 
 }

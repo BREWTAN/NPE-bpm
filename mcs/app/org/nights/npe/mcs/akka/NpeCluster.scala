@@ -34,15 +34,18 @@ class FsmCollector extends Actor with ActorLogging {
     name = "stats")
 
   override def preStart(): Unit = {
-    log.info("preStart::")
+    log.info("::fsm start")
     //    cluster.subscribe(self, initialStateMode = ClusterEvent.InitialStateAsEvents,
     //      classOf[MemberEvent], classOf[UnreachableMember])
     cluster.subscribe(self, classOf[MemberEvent])
     import scala.concurrent.ExecutionContext.Implicits.global
 
-    context.system.scheduler.schedule(5000 millis, 60000 millis, self, "tick")
+    context.system.scheduler.schedule(5000 millis, 5000 millis, self, "tick")
   }
-  override def postStop(): Unit = cluster.unsubscribe(self)
+  override def postStop(): Unit = {
+    log.error("::cluster shutdown")
+    cluster.unsubscribe(self)
+  }
   implicit val timeout = Timeout(20000)
 
   def receive = {
@@ -53,7 +56,7 @@ class FsmCollector extends Actor with ActorLogging {
         //        workerRouter ! ConsistentHashableEnvelope(ConsistentHashableEnvelope("stats", "stats"), "stats")
         val result = Await.result(ask(workerRouter, ConsistentHashableEnvelope(ConsistentHashableEnvelope("stats", "stats"), "stats")), timeout.duration) match {
           case fps: String =>
-            fps + "," + mem
+            "{\"data\":"+fps + ",\"name\":\"" + mem+"\"}"
           case _ =>
           //          //            (0, 0, 0, 0,0,0,0)
         }
@@ -103,9 +106,9 @@ object Global extends GlobalSettings {
   val system = ActorSystem.create("PECluster", ConfigFactory.load().getConfig("master"))
   
   val reg = Cluster(system).registerOnMemberUp {
-    log.info("member UPUP...");
-    val con = system.actorOf(akka.actor.Props[FsmCollector], "fsmcollects")
-    log.info("con==" + con)
+    log.info("Cluster::member UPUP...");
+    val cc = system.actorOf(akka.actor.Props[FsmCollector], "fsmcollects")
+    log.info("create fsmcollector==" + cc)
     val poller=system.actorOf(akka.actor.Props[PollWorker], "poll");
     val submitor=system.actorOf(akka.actor.Props[SubmitWorker], "submitor");
 

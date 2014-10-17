@@ -30,7 +30,7 @@ object QueueViewer
 
   def statsByName = Action.async { request =>
     val result = QueueStatDAO.exec("""select taskname,interstate,count(*) as counter 
-         from tasks group by taskname,interstate order by taskname,interstate
+         from tasks where nodetype = 0 group by taskname,interstate order by taskname,interstate
     		""", Seq.empty)
 
     result.map { qr =>
@@ -48,7 +48,7 @@ object QueueViewer
   
   def statsByCenter = Action.async { request =>
     val result = QueueStatDAO.exec("""select taskcenter as taskname,interstate,count(*) as counter 
-         from tasks group by taskcenter,interstate order by taskcenter,interstate
+         from tasks where nodetype = 0  group by taskcenter,interstate order by taskcenter,interstate
     		""", Seq.empty)
 
     result.map { qr =>

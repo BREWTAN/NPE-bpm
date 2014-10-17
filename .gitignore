@@ -2,7 +2,6 @@
 bin
 .cache
 *.cache
-+*/**/target
 */target
 /target
 .DS_Store

@@ -43,6 +43,7 @@ create table tasks(
 	createtime long,
 	taskcenter	varchar(64),
 	rootproc	varchar(64),
+	nodetype	 integer default 0,
 PRIMARY KEY (taskinstid)) CHARACTER SET = gbk  ENGINE=InnoDB;
 
 ALTER TABLE tasks ADD INDEX index_procinst (procinstid ASC);
@@ -114,4 +115,18 @@ create table params(
 
 primary key(keyy)) CHARACTER SET = gbk;
 
+
+
+DROP TABLE IF EXISTS oplogs;
+
+create table oplogs(
+	uuid	varchar(64) not null,
+  	searchkey  varchar(256) not null,
+  	message varchar(512) not null,
+  	level varchar(32) default "info"
+
+primary key(uuid)) CHARACTER SET = gbk  ENGINE=InnoDB;
+
+
 SET GLOBAL max_connections = 500;
+

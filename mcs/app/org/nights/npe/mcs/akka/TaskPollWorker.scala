@@ -34,6 +34,7 @@ class PollWorker extends Actor with ActorLogging {
   }
   override def postStop(): Unit = {
     //    sc.cancel
+    log.info("stop")
   }
 
   def receive = {

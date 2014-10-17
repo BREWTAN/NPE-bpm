@@ -29,7 +29,6 @@ libraryDependencies += "org.nights.npe" %% "commons" % "1.0.0"
 
 libraryDependencies += "com.typesafe" % "config" % "1.2.0"
 
-
 resolvers ++= Seq(
    "Apache Maven" at "http://mvnrepository.com/artifact",
    "Local Maven Repository" at "file://"+Path.userHome.absolutePath+"/.m2/repository"

@@ -30,7 +30,7 @@ import org.nights.npe.backend.db.KOTasks
 import org.nights.npe.backend.db.KOTasks
 import org.nights.npe.backend.db.KOTaskCenter
 
-case class KOTaskQuery(val taskdefid:String=null,val taskinstid:String=null,val interstate:Option[Int]=null)
+case class KOTaskQuery(val taskdefid:String=null,val taskinstid:String=null,val interstate:Option[Int]=null,val taskname:String=null)
 
 object TaskInstFace extends Controller {
 
@@ -56,6 +56,7 @@ object TaskInstFace extends Controller {
         mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
         val querytask = mapper.readValue(query, classOf[KOTaskQuery])
        if(querytask.taskdefid!=null&&querytask.taskdefid.length()>0)qq+=" and taskdefid like '%"+querytask.taskdefid+"%'"
+       if(querytask.taskname!=null&&querytask.taskname.length()>0)qq+=" and taskname like '%"+querytask.taskname+"%'"
        
        if(querytask.taskinstid!=null&&querytask.taskinstid.length()>0)qq+=" and taskinstid like '%"+querytask.taskinstid+"%'"
        
@@ -68,8 +69,8 @@ object TaskInstFace extends Controller {
     }
     println("query.qq="+qq)
     val results = for {
-      total <- TasksDAO.countByCond("taskdefid!='_1'"+qq)
-      rows <- TasksDAO.findByCond("taskdefid!='_1'"+qq, Range(skip, limit))
+      total <- TasksDAO.countByCond("nodetype=0"+qq)
+      rows <- TasksDAO.findByCond("nodetype=0"+qq, Range(skip, limit))
     } yield (total, rows)
 
     results.map({ f =>

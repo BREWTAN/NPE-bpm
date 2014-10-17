@@ -287,39 +287,27 @@
 											<div class="widget-body">
 												<div class="widget-main padding-4">
 													<div class="tab-content padding-8">
-														<div id="task-tab" class="tab-pane active">
+														<div id="task-tab" class="tab-pane active" >
+															<script type="text/x-template" id="__dust_log" >
 															
 															<!-- #section:pages/dashboard.tasks -->
-															<ul id="tasks" class="item-list ui-sortable">
+															<ul id="tasks" class="item-list ui-sortable" >
+																{#data}
 																<li class="item-orange clearfix ui-sortable-handle">
 																	<label class="inline">
-																		<span class="lbl"> Blob获取任务：扫描录入</span>
+																		<span class="lbl"> {searchkey}</span>
 																	</label>
 
 																	<div class="pull-right easy-pie-chart percentage" >
-																		2014-09-20 14:30:15</div>
+																		{dateff}</div>
 																</li>
-																<li class="item-orange clearfix ui-sortable-handle">
-																	<label class="inline">
-																		
-																		<span class="lbl"> Clus 提交任务：扫描录入</span>
-																	</label>
-
-																	<div class="pull-right easy-pie-chart percentage" >
-																		2014-09-20 14:30:15</div>
-																</li>
-																<li class="item-orange clearfix ui-sortable-handle">
-																	<label class="inline">
-																		<span class="lbl"> 机器人提交任务：记账</span>
-																	</label>
-
-																	<div class="pull-right easy-pie-chart percentage" >
-																		2014-09-20 14:30:15</div>
-																</li>
+																{/data}
+																
+														
 
 																
 															</ul>
-
+														</script>
 															<!-- /section:pages/dashboard.tasks -->
 														</div>
 
@@ -779,6 +767,7 @@
 		</div><!-- /.main-container -->
 
 			<script type="text/javascript">$.include("parts/pages/foot.shtml")</script>
+<script type="text/javascript" src="assets/addons/jquery-dateFormat.min.js"></script>
 
 <script type="text/javascript" src="assets/addons/jquery.counterup.min.js"></script>
 	</body>
@@ -809,10 +798,45 @@ var speedoptions = {
 	var lasttotalv=[0,0,0,0,0,0,0,0,0]
 	var lastspeedv=[0,0,0,0,0,0,0,0,0]
 
+    //logform = Duster.buildArr($('#__dust_log'));
+
     tbform = Duster.buildArr($('#__dust_qstatbyname'));
+
+			var buildingTemplate = dust.compile($('#__dust_log').html(),"_dust_log");
+      dust.loadSource(buildingTemplate);
+
+
 
 	var updateCounter=function(){
 
+
+	$.ajax({
+			url: '/nperest/oplogs?limit=15',
+			type: 'GET',
+			dataType: 'JSON',
+		})
+		.done(function(data) {
+			console.log("ook:"+JSON.stringify(data))
+			var formatdata=[];
+			$.each(data,function(index,value){
+				formatdata.push({"searchkey":value["searchkey"],
+					"dateff":jQuery.format.toBrowserTimeZone(new Date(parseInt(value["createtime"])))
+				})
+				
+
+			})
+			
+          dust.render("_dust_log", {"data":formatdata}, function(err, res) {
+          	console.log("log:"+res)
+            $("#task-tab").html(res)
+        });   
+
+			//var inner=logform(formatdata)
+			//console.log(logform)
+			
+
+		}
+		);
 
 		$.ajax({
 			url: '/nperest/fsmstats',
@@ -820,22 +844,23 @@ var speedoptions = {
 			dataType: 'JSON',
 		})
 		.done(function(data) {
+
 			var lastv=data[data.length-1]
 		 	var last2v=data[data.length-2]
 
-			console.log("success:"+JSON.stringify(lastv));
 
 			var totalv=[0,0,0,0,0,0,0,0,0]
 			var total2v=[0,0,0,0,0,0,0,0,0]
 
+
 			$.each(lastv, function(index, val) {
 				 $.each(totalv, function(indext, valt) {
-				 	totalv[indext]+= val[indext]				 	
+				 	totalv[indext]+= val['data'][indext]				 	
 				 });
 			});
 			$.each(last2v, function(index, val) {
 				 $.each(total2v, function(indext, valt) {
-				 	total2v[indext]+= val[indext]				 	
+				 	total2v[indext]+= val['data'][indext]				 	
 				 });
 			});
 
@@ -856,9 +881,7 @@ var speedoptions = {
 
 
 		})
-		.always(function() {
-			console.log("complete");
-		});
+		
 
 
 		$.ajax({
