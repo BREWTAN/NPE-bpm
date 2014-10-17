@@ -14,6 +14,8 @@ import java.security.MessageDigest
 
 case class PipeEnvelope(message: Any, nextActor: Any)
 
+case class CCPipeEnvelope(message: Any, nextActor: Any,ccActor:Any)
+
 trait FSMActorSelection {
 }
 case class StateStores() extends FSMActorSelection
@@ -26,7 +28,8 @@ case class Terminators() extends FSMActorSelection
 trait ActorHelper { this: Actor ⇒
 
   def wrapToPipeMessage(message: Any, nextActor: Any, hashkey: String) = ConsistentHashableEnvelope(PipeEnvelope(message, nextActor), hashkey)
-  
+    def wrapToCCPipeMessage(message: Any, nextActor: Any,ccActor:Any, hashkey: String) = ConsistentHashableEnvelope(CCPipeEnvelope(message, nextActor,ccActor), hashkey)
+
   implicit val timeout = Timeout(60000)
   //  import scala.concurrent.ExecutionContext.Implicits.global
   def fsmActorCtrl: ActorSelection = context.actorSelection("/user/fsm")

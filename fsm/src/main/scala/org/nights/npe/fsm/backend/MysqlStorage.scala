@@ -33,6 +33,10 @@ import org.nights.npe.backend.db.KOSubmitTasks
 import org.nights.npe.backend.db.InterState
 import org.nights.npe.backend.db.TermProcDAO
 import org.nights.npe.backend.db.KOTermProc
+import org.nights.npe.utils.BeanTransHelper
+import org.nights.npe.po.StateContextWithData
+import org.nights.npe.po.StateContext
+import org.nights.npe.po.InterStateNew
 
 /**
  * MySqlUpdate的模式
@@ -97,6 +101,13 @@ object MySqlStorage extends StateStore {
   override def doObtainedStates(state: StateContext, obtainer: String): Future[Any] = {
     //    log.trace("get ObtainedStates:@" + state + ",by" + obtainer)
     UpdateObtainTasksDAO.updateSelective(BeanTransHelper.koForObtainState(state, obtainer));
+  }
+  override def doRecycleStates(list:List[StateContextWithData]): Future[Any] = {
+    val uplist=list.map({f=>
+     	"\""+f.sc.taskInstId+"\"" 
+    })
+    //    log.trace("get ObtainedStates:@" + state + ",by" + obtainer)
+    TasksDAO.exec("UPDATE tasks set interstate=0 where taskinstid in "+uplist.mkString("(",",",")"));
   }
   override def doSubmitStates(state: StateContext, submitter: String, ctxData: ContextData): Future[Any] = {
     //    log.trace("get SubmitStates:@" + state + ",by" + submitter)

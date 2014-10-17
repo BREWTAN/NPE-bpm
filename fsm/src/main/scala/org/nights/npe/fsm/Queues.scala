@@ -16,7 +16,8 @@ import org.nights.npe.po.StateContext
 import org.nights.npe.po.StateContextWithData
 import org.nights.npe.mo.ObtainedStates
 import org.nights.npe.mo.NoneStateInQueue
-
+import org.nights.npe.mo.RecycleTasks
+import org.nights.npe.mo.RecycleTasks
 
 object GlobalQueue {
   val queue: RolePIOQueue[StateContextWithData] = new RolePIOQueue
@@ -47,16 +48,26 @@ class QueueWorker extends Actor with ActorLogging with ActorHelper {
         }
       }
     }
+    case recycle:RecycleTasks => {
+      log.info("RecycleTasks::{}@{}", recycle, self)
+      stateStores ! wrapToCCPipeMessage(recycle, sender,self, self.toString)
+    }
     case AskNewWork(size, obtainer) => {
-//      log.info("AskNewWork@"+sender)
+      //      log.info("AskNewWork@"+sender)
       queue.poll(obtainer) match {
         case Some(task) => stateStores ! wrapToPipeMessage(ObtainedStates(task.sc asObtain, task.dt, obtainer), sender, task.sc.taskInstId)
         case a @ _ => sender ! NoneStateInQueue(obtainer)
       }
     }
-    case ObtainedStates(state,ctxData,obtainer) =>{
-        
-      log.info("get a reput state@"+sender)
+    case cc @ CCPipeEnvelope(RecycleTasks(tasks), nextActor,ccActor) => {
+      for (task <- tasks) {
+        queue.offer(task);
+      }
+      forword("recycle.ok", nextActor, self.toString)
+    }
+    case ObtainedStates(state, ctxData, obtainer) => {
+
+      log.info("get a reput state@" + sender)
 
       queue.offer(StateContextWithData(state asNew, ctxData));
     }
@@ -80,14 +91,14 @@ class ObtainTimeOutChecker extends Actor with ActorLogging with ActorHelper {
 
       val maxtimeout = System.currentTimeMillis() - 60000
 
-//      store.recoverForStatus(1, { (state, ctxData) =>
-//        if (state != null) {
-//          log.debug(" Find a timeout:State::" + state)
-//          forword(Transition(List(state), ctxData), Queueworkers(), state.taskInstId)
-//        } else {
-//          log.info("RecoverTimeout.Finished::@{}", self)
-//        }
-//      })(" and obtaintime < " + maxtimeout + " ")
+    //      store.recoverForStatus(1, { (state, ctxData) =>
+    //        if (state != null) {
+    //          log.debug(" Find a timeout:State::" + state)
+    //          forword(Transition(List(state), ctxData), Queueworkers(), state.taskInstId)
+    //        } else {
+    //          log.info("RecoverTimeout.Finished::@{}", self)
+    //        }
+    //      })(" and obtaintime < " + maxtimeout + " ")
 
     case a @ _ => log.debug("Unknow::" + a + "@" + self)
   }

@@ -2,10 +2,7 @@ package org.nights.npe.fsm.backend
 
 import java.util.HashSet
 import scala.concurrent.ExecutionContext
-import scala.concurrent.ExecutionContext
 import scala.concurrent.Future
-import scala.concurrent.impl.Future
-import scala.concurrent.impl.Future
 import org.nights.npe.po.ContextData
 import org.nights.npe.po.InterStateNew
 import org.nights.npe.po.InterStateSubmit
@@ -19,6 +16,7 @@ import net.sf.ehcache.config.CacheConfiguration
 import net.sf.ehcache.config.Configuration
 import net.sf.ehcache.store.MemoryStoreEvictionPolicy
 import com.github.mauricio.async.db.QueryResult
+import org.nights.npe.po.StateContextWithData
 
 /**
  * 支持TC超大集群内存模式
@@ -145,6 +143,10 @@ object EhCacheStorage extends StateStore {
   override def doObtainedStates(state: StateContext, obtainer: String): Future[Any] = {
     log.trace("get ObtainedStates:@" + state + ",by" + obtainer)
     stateCache.put(new Element(state.taskInstId, state))
+    Future { 1 }
+  }
+  override def doRecycleStates(list:List[StateContextWithData]): Future[Any] = {
+    log.trace("get doRecycleStates:@")
     Future { 1 }
   }
   override def doSubmitStates(state: StateContext, submitter: String, ctxData: ContextData): Future[Any] = {

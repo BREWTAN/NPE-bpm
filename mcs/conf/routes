@@ -12,6 +12,13 @@ GET     /assets/*file               controllers.Assets.at(path="/public", file)
 # FSMView
 
 GET		/fsmstats			controllers.FSMViewer.stats
+GET		/nodestats			controllers.FSMViewer.nodestats
+
+GET		/reloadprocdef		controllers.FSMViewer.reloadprocdef
+
+
+GET		/stop				controllers.FSMViewer.stop(names:String)
+
 # Test API
 GET 	/test1				controllers.Test1.getJson
 
@@ -44,8 +51,9 @@ DELETE  /procinst/:defid 	controllers.ProcInstFace.delete(defid:String)
 
 
 ##############
-# procinst
+# taskinst
 GET  	/taskinst			controllers.TaskInstFace.getByPage(skip: Int?=0, limit: Int?=10,status:Int?=0, query:String?=null,page:Boolean?=false)
+GET  	/tasks_recycle		controllers.TaskInstFace.recycle(defids:String?=null)
 
 DELETE  /taskinst/:defid 	controllers.TaskInstFace.delete(defid:String)
 
@@ -92,5 +100,17 @@ GET 	/oplogs			controllers.OplogsFace.getByPage(skip: Int?=0, limit: Int?=10,sta
 DELETE  /oplogs/:keyy 	controllers.OplogsFace.delete(keyy:String)
 POST	/oplogs			controllers.OplogsFace.insert
 PUT		/oplogs/:keyy		controllers.OplogsFace.update(keyy:String)
+
+
+##################
+# params
+
+GET 	/params			controllers.ParamsFace.getByPage(skip: Int?=0, limit: Int?=10,status:Int?=0, query:String?=null,page:Boolean?=false)
+DELETE  /params/:keyy 	controllers.ParamsFace.delete(keyy:String)
+POST	/params			controllers.ParamsFace.insert
+PUT		/params/:keyy		controllers.ParamsFace.update(keyy:String)
+
+
+
 
 

@@ -48,9 +48,9 @@ var Boards = function() {
 			
 				central_data=rawdata;
 	          	 $.each(rawdata, function(index, row) {
-					central_sums[0]+= row["newcc"]
-					central_sums[1]+=row["obtaincc"]
-					central_sums[2]+=row["submitcc"]
+					central_sums[1]+= row["newcc"]
+					central_sums[2]+=row["obtaincc"]
+					central_sums[0]+=row["submitcc"]
 					central_sums[3]+=row["termcc"]
 
 	          	 })

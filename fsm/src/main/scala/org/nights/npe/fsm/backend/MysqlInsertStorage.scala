@@ -2,31 +2,26 @@ package org.nights.npe.fsm.backend
 
 import java.util.concurrent.atomic.AtomicBoolean
 import scala.concurrent.Await
-import scala.concurrent.Future
 import scala.concurrent.duration.DurationInt
-import org.nights.npe.po.ContextData
-import org.nights.npe.po.StateContext
-import org.nights.npe.po.AskResult
-import org.slf4j.LoggerFactory
-import com.github.mauricio.async.db.QueryResult
-import com.github.mauricio.async.db.QueryResult
-import com.github.mauricio.async.db.RowData
-import com.github.mauricio.async.db.exceptions.DatabaseException
-import akka.util.Timeout
-import scala.concurrent.impl.Future
-import scala.concurrent.ExecutionContext
-import scala.concurrent.impl.Future
-import akka.dispatch.ExecutionContexts
-import org.nights.npe.fsm.FSMGlobal
-import org.nights.npe.backend.db.InObtainTasksDAO
 import org.nights.npe.backend.db.ConvergeDAO
-import org.nights.npe.backend.db.TasksDAO
-import org.nights.npe.backend.db.KOConvergeCounter
-import org.nights.npe.backend.db.ProcinstsDAO
-import org.nights.npe.backend.db.KOTasks
+import org.nights.npe.backend.db.InObtainTasksDAO
 import org.nights.npe.backend.db.InSubmitTasksDAO
 import org.nights.npe.backend.db.InTermTasksDAO
+import org.nights.npe.backend.db.KOConvergeCounter
+import org.nights.npe.backend.db.KOTasks
 import org.nights.npe.backend.db.ProcDefDAO
+import org.nights.npe.backend.db.ProcinstsDAO
+import org.nights.npe.backend.db.TasksDAO
+import org.nights.npe.fsm.FSMGlobal
+import org.nights.npe.po.AskResult
+import org.nights.npe.po.ContextData
+import org.nights.npe.po.StateContext
+import org.nights.npe.utils.BeanTransHelper
+import org.slf4j.LoggerFactory
+import scala.concurrent.Future
+import akka.util.Timeout
+import scala.concurrent.ExecutionContext
+import org.nights.npe.po.StateContextWithData
 
 /**
  * MySqlUpdate的模式
@@ -41,6 +36,7 @@ object MySqlInsertStorage extends StateStore {
       ProcDefDAO.hb
     }
   }
+
   def shutdown() = synchronized {
   }
   override def saveTransition(states: List[StateContext], ctxData: ContextData): Future[Any] = {
@@ -69,6 +65,13 @@ object MySqlInsertStorage extends StateStore {
     //    log.trace("get ObtainedStates:@" + state + ",by" + obtainer)
     InObtainTasksDAO.insert(BeanTransHelper.koForObtainState(state, obtainer));
   }
+  override def doRecycleStates(list:List[StateContextWithData]): Future[Any] = {
+    log.trace("get doRecycleStates:@" )
+        implicit val ec: ExecutionContext = ExecutionContext.global
+
+    Future { 1 }
+  }
+
   override def doSubmitStates(state: StateContext, submitter: String, ctxData: ContextData): Future[Any] = {
     //    log.trace("get SubmitStates:@" + state + ",by" + submitter)
     InSubmitTasksDAO.insert(BeanTransHelper.koForSubmitState(state, submitter, ctxData));

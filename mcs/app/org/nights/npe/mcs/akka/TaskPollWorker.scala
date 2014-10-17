@@ -14,6 +14,8 @@ import akka.routing.ConsistentHashingRouter.ConsistentHashableEnvelope
 import akka.routing.FromConfig
 import org.nights.npe.mo.Obtainer
 import org.nights.npe.mo.NoneStateInQueue
+import org.nights.npe.mo.Transition
+import org.nights.npe.mo.RecycleTasks
 
 object WorkingBuffer {
   val queryByCenterRole: HashMap[String, ConcurrentLinkedQueue[ObtainedStates]] = new HashMap()
@@ -49,6 +51,10 @@ class PollWorker extends Actor with ActorLogging {
     case NoneStateInQueue(obtainer)=>{
         doTaskArrived(ObtainedStates(null,null,obtainer), sender)
       
+    }
+    case rtasks:RecycleTasks =>{
+      queueAllworkers.tell(ConsistentHashableEnvelope(
+    		  ConsistentHashableEnvelope(rtasks,self.toString ), self.toString ),sender)
     }
     case query: QueryTasks => {
       doQuery(query)

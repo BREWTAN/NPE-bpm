@@ -470,13 +470,14 @@
                     for (var i = 0; i < colsSorted.length; i++) {
                         var key = colsSorted[i];
                         var val = props[key];
-                        if (!_data.cols[key]) return;
+                       //!!可以显示不在这里面的列 
+                       if (!_data.cols[key]) return;
                         if (_data.cols[key].unique) row.data('unique', val);
 
                         if (!_data.cols[key].hidden) {
                             var cell = $('<td></td>').appendTo(row);
                             cell.data('column', key);
-                            if (val === undefined) continue;
+                            //if (val === undefined) continue;
 
                             var format = props[key + 'Format'] || _data.cols[key].format || '{0}';
 

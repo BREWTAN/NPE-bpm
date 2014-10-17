@@ -22,7 +22,7 @@ object Starter extends App{
     val start = System.currentTimeMillis()
 
     while (true) {
-      Thread.sleep(10 * 1000);
+      Thread.sleep(60 * 1000);
       println("stats: pps=" + StatsCounter.terminates.get() * 1000 / ((System.currentTimeMillis() - start))
         + "/s,newps=" + StatsCounter.newprocs.get() * 1000 / ((System.currentTimeMillis() - start))
         + "/s,submitps=" + StatsCounter.submits.get() * 1000 / ((System.currentTimeMillis() - start))

@@ -3,6 +3,7 @@ package org.nights.npe.mo
 import org.nights.npe.po.ContextData
 import org.nights.npe.po.DoneStateContext
 import org.nights.npe.po.StateContext
+import org.nights.npe.po.StateContextWithData
 
 case class ANewProcess(procInstId: String, submitter: String, procDefId: String, data: ContextData)
 
@@ -13,6 +14,9 @@ case class Obtainer(uid: String = null, role: String = null, center: String = nu
 case class AskNewWork(count: Int, obtainer: Obtainer=null)
  
 case class Transition(states: List[StateContext], ctxData: ContextData = null)
+
+case class RecycleTasks(tasks:List[StateContextWithData])
+
 
 case class UpdateStates(state: StateContext, ctxData: ContextData = null)
 

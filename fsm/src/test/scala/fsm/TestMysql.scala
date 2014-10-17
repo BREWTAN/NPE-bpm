@@ -61,7 +61,7 @@ object TestMysql {
         case a @ _ => println("unknow result:" + a)
       }
     }
-    val ko = KOParams("cc", "dd")
+    val ko = KOParams("cc", "dd","")
     SubmitTasksDAO.updateByCond(KOSubmitTasks(null,null,null,null, "ss"),
       KO.submitFilter("4bb2da87a202ce829158af3838002", 2))
 

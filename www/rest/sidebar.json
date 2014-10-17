@@ -63,23 +63,6 @@
     ]
   },
   {
-    "name": "系统监控",
-    "url": "#",
-    "icon": "fa-desktop",
-    "children": [
-      {
-        "name": "运行监控",
-        "url": "#",
-        "icon": "fa-desktop"
-      },
-      {
-        "name": "集群节点",
-        "url": "#",
-        "icon": "fa-desktop"
-      }
-    ]
-  },
-  {
     "name": "业务操作",
     "url": "#",
     "icon": "fa-tint",
@@ -99,28 +82,24 @@
   {
     "name": "系统管理",
     "url": "#",
-    "icon": "fa-cog",
+    "icon": "fa-desktop",
     "children": [
+      
       {
-        "name": "用户管理",
-        "url": "#",
+        "name": "集群节点",
+        "url": "sysadmin/nodeman.html",
+        "icon": "fa-desktop"
+      },{
+        "name": "参数管理",
+        "url": "sysadmin/params.html",
         "icon": "fa-desktop"
       },
       {
-        "name": "用户角色管理",
-        "url": "#",
-        "icon": "fa-desktop"
-      },
-      {
-        "name": "权限管理",
-        "url": "#",
-        "icon": "fa-desktop"
-      },
-      {
-        "name": "资源管理",
-        "url": "#",
+        "name": "操作日志",
+        "url": "sysadmin/oplogs.html",
         "icon": "fa-desktop"
       }
+
     ]
   }
 ]

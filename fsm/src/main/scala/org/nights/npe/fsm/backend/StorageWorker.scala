@@ -3,22 +3,25 @@ package org.nights.npe.fsm.backend
 import scala.concurrent.Future
 import scala.util.Success
 import org.nights.npe.fsm.ActorHelper
-import org.nights.npe.po.ContextData
 import org.nights.npe.fsm.PipeEnvelope
-import org.nights.npe.po.StateContext
+import org.nights.npe.fsm.CCPipeEnvelope
+import org.nights.npe.fsm.Queueworkers
+import org.nights.npe.mo.ObtainedStates
+import org.nights.npe.mo.Transition
+import org.nights.npe.mo.UpdateStates
 import org.nights.npe.po.AskResult
+import org.nights.npe.po.ContextData
+import org.nights.npe.po.StateContext
+import org.nights.npe.po.StateContextWithData
 import com.github.mauricio.async.db.QueryResult
 import akka.actor.Actor
 import akka.actor.ActorLogging
 import akka.cluster.Cluster
-import org.nights.npe.mo.UpdateStates
+import org.nights.npe.mo.GatewayStates
 import org.nights.npe.mo.FetchProcessStates
+import org.nights.npe.mo.RecycleTasks
 import org.nights.npe.mo.NewProcess
 import org.nights.npe.mo.SubmitStates
-import org.nights.npe.mo.ObtainedStates
-import org.nights.npe.mo.GatewayStates
-import org.nights.npe.mo.Transition
-import org.nights.npe.fsm.Queueworkers
 //state op
 
 trait StateStore {
@@ -39,6 +42,7 @@ trait StateStore {
 
   def doRemoveConverge(convergeId: String): Future[Any]
 
+  def doRecycleStates(list: List[StateContextWithData]): Future[Any]
 }
 class StorageWorker extends Actor with ActorLogging with ActorHelper {
 
@@ -80,7 +84,7 @@ class StorageWorker extends Actor with ActorLogging with ActorHelper {
 
     case PipeEnvelope(ObtainedStates(state, ctxData, obtainer), nextActor) => {
       log.info("get ObtainedStates:{}@{},next={}", state, obtainer, nextActor)
-      store.doObtainedStates(state, obtainer.uid ) andThen {
+      store.doObtainedStates(state, obtainer.uid) andThen {
         //        case _ =>
         //          forword(ObtainedStates(state, obtainer, ctxData), nextActor, state.taskInstId)
         case Success(qr: QueryResult) => {
@@ -133,7 +137,21 @@ class StorageWorker extends Actor with ActorLogging with ActorHelper {
     case obtain: ObtainedStates => {
       log.info("get reput message:" + obtain)
 
-      forword(obtain, Queueworkers(), obtain.obtainer.uid+"_")
+      forword(obtain, Queueworkers(), obtain.obtainer.uid + "_")
+    }
+    case cc@CCPipeEnvelope(RecycleTasks(tasks), nextActor,ccActor) => {
+      store.doRecycleStates(tasks) andThen {
+        case Success(qr: QueryResult) => {
+            log.debug("recycle OKOK!!:" + qr)
+            forword(cc,ccActor,self.toString)
+        }
+        case a @ _ =>
+          {
+            log.error("recycle Uknow result!!:" + a)
+            forword("recycyle.error",nextActor,self.toString)
+            //            
+          }
+      }
     }
     case a @ _ => {
       log.error("unknow message:" + a)

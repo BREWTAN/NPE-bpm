@@ -79,7 +79,11 @@
 								        查询&nbsp; <i class="fa fa-search"></i>
 								    </button>
 								</div>
-								
+								<div class="btn-group btn-sm">
+								    <button id="do_recycle" class="btn btn-sm btn-success">
+								        回收任务&nbsp; <i class="fa fa-refresh"></i>
+								    </button>
+								</div>
 								<!--div class="btn-group btn-sm">
 								    <button id="del_button" class="btn btn-sm btn-warning">
 								        删除&nbsp;
@@ -260,6 +264,43 @@
 		            xw.autoResetSearch();
 		        }
 		    });
+		    $('#do_recycle').on('click',function(e){
+		    	var waTable= xw.getTable();
+		    	var selrows = waTable.getData(true);
+
+                if (selrows.rows.length == 0) {
+                    bootbox.alert("<br><center><h4>请选择需要回收的任务</h4></center><br>");
+                } else {
+                    var selrow = selrows.rows
+                    bootbox.confirm("<br><center><h4>确定回收（" + selrows.rows.length + "）条任务吗？</h4></center><br>",
+                        function(result) {
+                            if (!result) return;
+                            var ids='"__1"';
+                            $.each(selrow, function(index, row) {
+                                ids+=',"'+(row["taskinstid"])+'"';
+                            });
+                            console.log("rcycle:"+ids);
+                            $.ajax({
+
+                            	url: '/nperest/tasks_recycle?defids='+encodeURIComponent(ids),
+                            	type: 'GET',
+                            	async: false
+                            })
+                            .done(function(data) {
+                            	console.log("success::"+JSON.stringify(data));
+                            })
+							;                            
+
+                            waTable.update();
+                           
+
+                        }); //--confirm(aSome)
+
+
+                } //else
+
+		    })
+
 
 		})
 	</script>

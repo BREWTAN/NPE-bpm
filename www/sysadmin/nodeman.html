@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta charset="utf-8" />
+	<title>集群节点管理-NPE</title>
+	<base href="../" >
+	<link rel="stylesheet" type="text/css" href="assets/js/bootstrap-select/bootstrap-select.min.css">
+	<link rel="stylesheet" href="assets/css/chosen.css" />
+
+	<link rel="stylesheet" type="text/css" href="assets/css/datepicker.css"/>
+	<link rel='stylesheet' href='assets/js/jquery-watable/watable.css'/>
+	<link rel='stylesheet' href='assets/js/jquery-watable/animate.min.css'/>
+	<!-- bootstrap & fontawesome -->
+	<script type="text/javascript" src="parts/js/header.js"></script>
+	<style type="text/css" >
+		input[type=checkbox].ace.ace-switch.ace-switch-5 + .lbl::before {
+  			content: "启用a0\a0\a0\a0\a0停止";
+		}
+	</style>
+</head>
+<body class="no-skin">
+	<script type="text/javascript">$.include("parts/pages/navbar.shtml")</script>
+
+	<div class="main-container" id="main-container">
+		<script type="text/javascript">
+				try{ace.settings.check('main-container' , 'fixed')}catch(e){}
+			</script>
+		<!-- #section:basics/sidebar -->
+		<script type="text/javascript">$.include("parts/pages/sidebar.shtml")</script>
+
+		<!-- /section:basics/sidebar -->
+		<div class="main-content">
+			<script type="text/javascript">$.include("parts/pages/content_title.shtml")</script>
+			<!-- /section:basics/content.breadcrumbs -->
+			<div class="page-content">
+				<div class="page-content-area">
+
+					<div class="row">
+
+						<div class="note note-success container col-sm-12" style="padding-bottom:0px">
+							<div class="col-sm-2 form-group">
+								<div class="btn-group input-group">
+									<!-- 查询条件控件 -->
+									<div class="input-group-addon">节点地址</div>
+									<input id="find_nodeaddr" class="inputclear form-control" type="text" placeholder="键">
+									<span class="inputclear glyphicon glyphicon-remove-circle hide" ></span>
+								</div>
+							</div>
+							<div class="col-sm-2 form-group">
+			                    <div class="btn-group input-group">
+			                        <div class="input-group-addon">状态</div>
+			                        <select class="chosen-select" id="find_status">
+			                            <option value="-1">所有</option>
+			                            <option value="1">正常</option>
+			                          	<option value="0">异常</option>
+			                        </select>
+
+			                    </div>
+			                </div>							
+							<div class="col-sm-6 form-group">
+								<div class="btn-group btn-sm">
+								    <button id="find_button" class="btn btn-sm btn-primary">
+								        查询&nbsp; <i class="fa fa-search"></i>
+								    </button>
+								</div>
+								
+								<div class="btn-group btn-sm">
+								    <button id="reload_button" class="btn btn-sm btn-success">
+								        重新加载流程&nbsp;
+								        <i class="fa fa-trash-o"></i>
+								    </button>
+								</div>
+
+								<div class="btn-group btn-sm">
+								    <button id="stop_button" class="btn btn-sm btn-danger" data-target="#stack1" data-toggle="modal">
+								        停止&nbsp;
+								        <i class="fa fa-pencil"></i>
+								    </button>
+								</div>
+							</div>
+						</div>
+						<div class="container-fluid">
+							<div id="divtable" class="table-responsive container col-sm-12" ></div>
+						</div>
+					</div>
+					<!-- /.row -->
+				</div>
+				<!-- /.page-content-area -->
+			</div>
+			<!-- /.page-content -->
+		</div>
+		<!-- /.main-content -->
+
+		<script type="text/javascript">$.include("parts/pages/copyright.shtml")</script>
+
+	</div>
+	<!-- /.main-container -->
+
+	<script type="text/javascript">$.include("parts/pages/foot.shtml")</script>
+
+</body>
+	<script type="text/javascript">$.include("parts/pages/xwatable-form.shtml")</script>
+
+	<script type="text/javascript" src="assets/js/date-time/bootstrap-datepicker.min.js"></script>
+
+	<script type="text/javascript" src="assets/js/bootstrap-select/bootstrap-select.min.js"></script>
+
+	<script src="assets/js/chosen.jquery.min.js"></script>
+
+	<script type="text/javascript" src="assets/js/jquery-watable/jquery.watable.js"></script>
+	<script type="text/javascript" src="assets/addons/rqlbuilder.js"></script>
+	<script type="text/javascript" src="assets/addons/xwatable.js"></script>
+	<script type="text/javascript" src="assets/addons/rest.js"></script>
+	<script type="text/javascript" src="assets/addons/refhelper.js"></script>
+	<script type="text/javascript" src="assets/addons/jquery-dateFormat.min.js"></script>
+
+	<script type="text/javascript">ace.vars['base'] = '..'; </script>
+
+	<!-- inline scripts related to this page -->
+	<script type="text/javascript">
+		var newCreateDate=function(){
+		    return {
+		        f: function(val){
+		            if(!val)
+		            {
+		                return "";
+		            }
+		            return jQuery.format.toBrowserTimeZone(new Date(parseInt(val)));
+		        },
+		    }
+		}();
+ 		var statusFMM=function(){
+		    return {
+		        f: function(val,row){
+		        	var statusstr=val.split(":")[0];
+		        	if(statusstr=="up")
+		        		return '<span class="badge badge-success">up</span>'+val.split(":")[1]
+		        	else 
+		        		return '<span class="badge badge-danger">'+statusstr+'</span>'+val.split(":")[1]
+
+		        },
+		    }
+		}();
+
+		var bizInfoFMM=function(){
+		    return {
+		        f: function(val,row){
+		        	return "biz"
+		        },
+		    }
+		}();
+
+		var jvmFMM=function(){
+		    return {
+		        f: function(val,row){
+		        	return Math.round(row["fps"]["vminfo"]["memused"]*100.0/row["fps"]["vminfo"]["memmax"])+"%"
+		        	+'('+row["fps"]["vminfo"]["memused"]+'/'+row["fps"]["vminfo"]["memmax"]+'MB)'
+		        },
+		    }
+		}();
+		var thFMM=function(){
+		    return {
+		        f: function(val,row){
+		        	return row["fps"]["vminfo"]["threadcount"]+"/"+row["fps"]["vminfo"]["threadtotal"]
+		        },
+		    }
+		}();
+
+		var queueFMM=function(){
+		    return {
+		        f: function(val,row){
+		        	var cc=0;
+		        	var total=0;
+		        	if(row["fps"]["queue"])
+			        {
+			        	$.each(row["fps"]["queue"], function(index,value){
+			        		cc+=value["size"]
+			        		total+=value["cc"]
+			        	})
+			        	return cc+"/"+total
+		       		 }else{
+		       		 	return "--"
+		       		 }
+		        },
+		    }
+		}();
+	
+
+		var starttimeFMM=function(){
+		    return {
+		        f: function(val,row){
+		        	val = row["fps"]["vminfo"]["start"]
+		        	if(!val)
+		            {
+		                return "";
+		            }
+		            return jQuery.format.toBrowserTimeZone(new Date(parseInt(val)));
+		        	 
+		        },
+		    }
+		}();
+
+		
+		jQuery(function($) {//初始化函数
+			setTitlePath("集群节点","系统管理")
+
+		     var xw=XWATable.init(
+		        {
+		            //----------------table的选项-------
+		            pageSize: 10,                //Initial pagesize
+		            columnPicker: true,         //Show the columnPicker button
+		            transition: 'fade',  //(bounce, fade, flip, rotate, scroll, slide).
+		            checkboxes: true,           //Make rows checkable. (Note. You need a column with the 'unique' property)
+		            checkAllToggle:true,        //Show the check-all toggle//+RQLBuilder.like("KEYY", "a").rql()
+		            rowClicked: function(data) {    
+		                console.log('row clicked');   //data.event holds the original jQuery event.
+		                console.log(data);            //data.row holds the underlying row you supplied.
+		            },
+		            rowDblClicked: function(){
+
+		            },
+		            //----------------基本restful地址---
+		            restbase: '/nodestats',
+		            key_column: "name",
+		            //---------------行定义
+		            coldefs: [
+		                        {      
+		                            col:"name",
+		                            friendly: "节点地址",
+		                            unique: true,
+		                        },
+		                        {
+		                            col:"status",
+		                            friendly: "节点状态",
+		                            format: statusFMM,
+		                        },
+		                        {
+		                            col:"vminfo",
+		                            friendly: "内存信息(已用/总数)",
+		                          	format: jvmFMM,
+		                        },
+		                        {
+		                            col:"thinfo",
+		                            friendly: "线程数(活跃/总数)",
+		                          	format: thFMM,
+		                        },
+		                        {
+		                            col:"queue",
+		                            friendly: "队列个数(当前/总获取)",
+		                            format: queueFMM,
+		                        },
+
+		                       	{
+		                            col:"fps",
+		                            friendly: "启动时间",
+		                            format: starttimeFMM,
+
+		                        },
+		                       
+			                ],
+		            //---------------查询时过滤条件
+		            findFilter: function(){//find function
+		                // RQBuilder.and(rqls)
+		                return '{"address":"'+$('#find_address').val()+'","status":'+$('#find_status').val()+'}';
+		            },//--findFilter
+		            
+
+		        }//--init
+		    );//--end init
+			
+			$('#find_status').chosen(); 
+
+			 $('#find_address').on('input',function(e){
+					        console.log("changing::"+e.target.value)
+					        if(!e.target.value){
+					            xw.autoResetSearch();
+					        }
+					    });
+
+			 $('#reload_button').on('click',function(e){
+ 					$.ajax({
+
+                    	url: '/nperest/reloadprocdef',
+                    	type: 'GET',
+                    	async: false
+                    })
+                    .done(function(data) {
+                    	console.log("success::"+JSON.stringify(data));
+                    	bootbox.alert("<br><center><h4>刷新成功，请稍后再试！</h4></center><br>");
+
+                    })
+				; 
+
+			 })
+
+			$('#stop_button').on('click',function(e){
+
+				   var waTable= xw.getTable();
+		    	var selrows = waTable.getData(true);
+
+                if (selrows.rows.length == 0) {
+                    bootbox.alert("<br><center><h4>请选择需要关闭服务器</h4></center><br>");
+                } else {
+                    var selrow = selrows.rows
+                    bootbox.confirm("<br><center><h4>确定关闭（" + selrows.rows.length + "）台服务器吗？</h4></center><br>",
+                        function(result) {
+                            if (!result) return;
+                            var ids='"__1"';
+                            $.each(selrow, function(index, row) {
+                                ids+=','+(row["name"])+'';
+                            });
+                            console.log("rcycle:"+ids);
+                            $.ajax({
+                            	url: '/nperest/stop?names='+encodeURIComponent(ids),
+                            	type: 'GET',
+                            	async: false
+                            })
+                            .done(function(data) {
+                            	console.log("success::"+JSON.stringify(data));
+                            })
+							;                            
+
+                            waTable.update();
+                           
+
+                        }); //--confirm(aSome)
+
+
+                } //else
+
+			 })
+
+
+			 
+
+		})
+	</script>
+</html>

@@ -112,6 +112,7 @@ DROP TABLE IF EXISTS params;
 create table params(
   keyy  varchar(256) not null,
   valuee varchar(512) not null,
+  des varchar(512) not null,
 
 primary key(keyy)) CHARACTER SET = gbk;
 

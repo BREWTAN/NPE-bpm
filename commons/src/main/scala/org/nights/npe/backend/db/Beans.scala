@@ -12,7 +12,7 @@ object InterState {
   val ProcessEnd: Int = 8
 }
 
-case class KOParams(val keyy: String, val valuee: String)
+case class KOParams(val keyy: String, val valuee: String,val des:String)
 
 case class KOProcdef(
   val defid: String = null,

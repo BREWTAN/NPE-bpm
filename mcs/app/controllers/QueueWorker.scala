@@ -40,6 +40,8 @@ import scala.concurrent.duration.DurationInt
 import org.nights.npe.mo.ObtainedStates
 import org.nights.npe.po.AskResult
 import org.nights.npe.mcs.db.DBOplogs
+import org.nights.npe.mo.NoneStateInQueue
+import org.nights.npe.mcs.akka.StatsCounter
 object QueueWorker
   extends Controller {
   import org.nights.npe.mcs.akka.JerksonHelper._
@@ -55,9 +57,18 @@ object QueueWorker
   def obtainByRole(obtainer: String, role: String, center: String) = Action.async { request =>
     println("obtainByRole==" + role)
     poller.ask(QueryTasks(1, obtainer, role, obtainer))(10 seconds).map(result => {
-      val o = result.asInstanceOf[ObtainedStates]
       val jsonResult = mapper.writeValueAsString(result)
-      Await.ready(OplogsDAO.insert(KOOplogs(obtainer + " 获取任务 " + o.state.taskName, o.state.taskInstId+","+obtainer)),10 seconds)
+      
+      if (result.isInstanceOf[ObtainedStates]) {
+        val o = result.asInstanceOf[ObtainedStates]
+        if (o != null&&o.state !=null) {
+          Await.ready(OplogsDAO.insert(KOOplogs(obtainer + " 获取任务 " + o.state.taskName, o.state.taskInstId + "," + obtainer)), 10 seconds)
+          
+          StatsCounter.obtains   .incrementAndGet()
+
+        }
+        
+      }
       Ok(jsonResult)
     }) recover {
       case e: akka.pattern.AskTimeoutException => Ok("{}")
@@ -70,10 +81,11 @@ object QueueWorker
     if (ss.isSuccess) {
       //ANewProcess(procInstId: String, submitter: String, procDefId: String, data: ContextData)
       println("success==" + ss)
-      val uuid=UUID.randomUUID().toString();
+      val uuid = UUID.randomUUID().toString();
       submitor.ask(ANewProcess(uuid, submiter, procdef, ss.get))(10 seconds) map (result => {
         val jsonResult = mapper.writeValueAsString(result)
-        Await.ready(OplogsDAO.insert(DBOplogs.KOOplogs(submiter + " 新建流程 " + procdef, uuid+","+submiter+","+procdef)),10 seconds)
+        Await.ready(OplogsDAO.insert(DBOplogs.KOOplogs(submiter + " 新建流程 " + procdef, uuid + "," + submiter + "," + procdef)), 10 seconds)
+        StatsCounter.newprocs .incrementAndGet()
         Ok(jsonResult)
       })
     } else {
@@ -96,10 +108,11 @@ object QueueWorker
     if (ss.isSuccess) {
       println("success==" + ss)
       val sub = ss.get
-              
-      Await.ready(OplogsDAO.insert(DBOplogs.KOOplogs(sub.submitter  + " 提交任务 " + sub.state.taskName ,sub.state.taskInstId+","+sub.submitter)),10 seconds)
+
+      Await.ready(OplogsDAO.insert(DBOplogs.KOOplogs(sub.submitter + " 提交任务 " + sub.state.taskName, sub.state.taskInstId + "," + sub.submitter)), 10 seconds)
 
       submitor ! DoneStateContext(sub.state, sub.ctxData, sub.submitter)
+      StatsCounter.submits  .incrementAndGet()
       Ok("{\"status\":0}")
     } else {
       println("error==" + ss)

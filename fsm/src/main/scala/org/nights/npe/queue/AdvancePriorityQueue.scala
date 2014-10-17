@@ -39,7 +39,7 @@ class AdvancePriorityQueue[T <: PriorityAware](role:String) {
   val addLock = new ReentrantLock()
 
    override def toString:String={
-    "[\""+role+"\",p="+queuesList.foldLeft(0)(_ + _.pio )+",c="+queuesList.foldLeft(0)(_ + _.size )+",a="+queuesList.foldLeft(0)(_ + _.offerCC.get() )+",g="+queuesList.foldLeft(0)(_ + _.obtainCC .get() )+")"
+    "{\"r\":\""+role+"\",\"pio\":"+queuesList.foldLeft(0)(_ + _.pio )+",\"size\":"+queuesList.foldLeft(0)(_ + _.size )+",\"cc\":"+queuesList.foldLeft(0)(_ + _.offerCC.get() )+"}"
 //    ""
   }
   def offer(sc: T)(implicit lq: LinkedBlockingQueue[T] = null): Unit = {

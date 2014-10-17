@@ -19,7 +19,7 @@ import akka.actor.ActorSelection.toScala
 import akka.routing.ConsistentHashingRouter.ConsistentHashableEnvelope
 import org.mvel2.MVEL
 import java.util.HashMap
-import org.nights.npe.fsm.backend.BeanTransHelper
+import org.nights.npe.utils.BeanTransHelper
 import scala.collection.mutable.MutableList
 import scala.collection.immutable.List
 

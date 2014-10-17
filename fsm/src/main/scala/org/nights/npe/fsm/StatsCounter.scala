@@ -4,6 +4,7 @@ import java.util.concurrent.atomic.AtomicLong
 import akka.actor.ActorLogging
 import akka.actor.Actor
 import org.nights.npe.fsm.backend.LoadDefFromDB
+import java.lang.management.ManagementFactory
 
 object StatsCounter {
 
@@ -32,9 +33,27 @@ class StatsWorker extends Actor with ActorLogging {
   def receive = {
     case "stats" =>
       log.info("get Stats@" + sender)
+      val runtime = Runtime.getRuntime();
+      val mb=1024*1024;
+      
+      val vminfo="{\"threadcount\":"+ManagementFactory.getThreadMXBean().getThreadCount()+
+        ",\"threadtotal\":"+ManagementFactory.getThreadMXBean().getTotalStartedThreadCount()+
+        ",\"up\":"+ManagementFactory.getRuntimeMXBean().getUptime()+
+        ",\"start\":"+ManagementFactory.getRuntimeMXBean().getStartTime()+
+        ",\"vminfo\":\""+ManagementFactory.getRuntimeMXBean().getName()+"-"+
+        ManagementFactory.getRuntimeMXBean().getVmVendor() +"-"+
+        ManagementFactory.getRuntimeMXBean().getVmVersion()  +"\""+
+        ",\"memused\":"+(runtime.totalMemory() - runtime.freeMemory()) / mb+
+        ",\"memfree\":"+(runtime.freeMemory()) / mb+
+        ",\"memmax\":"+(runtime.maxMemory()) / mb+
+        ",\"memtotal\":"+(runtime.totalMemory()) / mb+
+        "}"
+        ;
       sender ! List(StatsCounter.newprocs.get(), StatsCounter.obtains.get(), StatsCounter.submits.get(), StatsCounter.terminates.get(),
         StatsCounter.maxCost.get, StatsCounter.minCost.get,
-        StatsCounter.totalCost.get, StatsCounter.totalProcCount.get,System.currentTimeMillis()).mkString("[",",","]")
+        StatsCounter.totalCost.get, StatsCounter.totalProcCount.get,System.currentTimeMillis()).mkString("\"data\":[",",","]")+
+        ",\"queue\":" + GlobalQueue.queue .toString+",\"vminfo\":"+ vminfo
+        ;
     case "queue" =>
       log.info("get queuestat@"+sender)
       sender ! GlobalQueue.queue .toString
