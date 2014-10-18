@@ -4,5 +4,10 @@ bin
 *.cache
 */target
 /target
++*/target
+target
 .DS_Store
 nohup.out
+/bin
+*/bin
+

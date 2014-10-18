@@ -124,7 +124,8 @@ create table oplogs(
 	uuid	varchar(64) not null,
   	searchkey  varchar(256) not null,
   	message varchar(512) not null,
-  	level varchar(32) default "info"
+  	level varchar(32) default "info",
+  	createtime long,
 
 primary key(uuid)) CHARACTER SET = gbk  ENGINE=InnoDB;
 

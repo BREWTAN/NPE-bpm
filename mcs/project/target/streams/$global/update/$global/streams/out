@@ -1,4 +1,4 @@
-[0m[[0minfo[0m] [0mUpdating {file:/Users/brew/NPE/gits/mcs/project/}mcs-build...[0m
+[0m[[0minfo[0m] [0mUpdating {file:/home/brew/git/npe/mcs/project/}mcs-build...[0m
 [0m[[0mdebug[0m] [0m:: resolving dependencies :: default#mcs-build;0.1-SNAPSHOT[0m
 [0m[[0mdebug[0m] [0m	confs: [compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool][0m
 [0m[[0mdebug[0m] [0m	validate = true[0m
@@ -12339,19 +12339,19 @@
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-sbt#apply-macro;0.13.5!apply-macro.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#jline;2.10.4!jline.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.fusesource.jansi#jansi;1.4!jansi.jar[0m
-[0m[[0mdebug[0m] [0m:: resolution report :: resolve 12670ms :: artifacts dl 518ms[0m
-[0m[[0mdebug[0m] [0m	report for default#mcs-build;0.1-SNAPSHOT compile produced in /Users/brew/NPE/gits/mcs/project/target/resolution-cache/reports/default-mcs-build-compile.xml[0m
-[0m[[0mdebug[0m] [0m	report for default#mcs-build;0.1-SNAPSHOT runtime produced in /Users/brew/NPE/gits/mcs/project/target/resolution-cache/reports/default-mcs-build-runtime.xml[0m
-[0m[[0mdebug[0m] [0m	report for default#mcs-build;0.1-SNAPSHOT test produced in /Users/brew/NPE/gits/mcs/project/target/resolution-cache/reports/default-mcs-build-test.xml[0m
-[0m[[0mdebug[0m] [0m	report for default#mcs-build;0.1-SNAPSHOT provided produced in /Users/brew/NPE/gits/mcs/project/target/resolution-cache/reports/default-mcs-build-provided.xml[0m
-[0m[[0mdebug[0m] [0m	report for default#mcs-build;0.1-SNAPSHOT optional produced in /Users/brew/NPE/gits/mcs/project/target/resolution-cache/reports/default-mcs-build-optional.xml[0m
-[0m[[0mdebug[0m] [0m	report for default#mcs-build;0.1-SNAPSHOT compile-internal produced in /Users/brew/NPE/gits/mcs/project/target/resolution-cache/reports/default-mcs-build-compile-internal.xml[0m
-[0m[[0mdebug[0m] [0m	report for default#mcs-build;0.1-SNAPSHOT runtime-internal produced in /Users/brew/NPE/gits/mcs/project/target/resolution-cache/reports/default-mcs-build-runtime-internal.xml[0m
-[0m[[0mdebug[0m] [0m	report for default#mcs-build;0.1-SNAPSHOT test-internal produced in /Users/brew/NPE/gits/mcs/project/target/resolution-cache/reports/default-mcs-build-test-internal.xml[0m
-[0m[[0mdebug[0m] [0m	report for default#mcs-build;0.1-SNAPSHOT plugin produced in /Users/brew/NPE/gits/mcs/project/target/resolution-cache/reports/default-mcs-build-plugin.xml[0m
-[0m[[0mdebug[0m] [0m	report for default#mcs-build;0.1-SNAPSHOT sources produced in /Users/brew/NPE/gits/mcs/project/target/resolution-cache/reports/default-mcs-build-sources.xml[0m
-[0m[[0mdebug[0m] [0m	report for default#mcs-build;0.1-SNAPSHOT docs produced in /Users/brew/NPE/gits/mcs/project/target/resolution-cache/reports/default-mcs-build-docs.xml[0m
-[0m[[0mdebug[0m] [0m	report for default#mcs-build;0.1-SNAPSHOT pom produced in /Users/brew/NPE/gits/mcs/project/target/resolution-cache/reports/default-mcs-build-pom.xml[0m
-[0m[[0mdebug[0m] [0m	report for default#mcs-build;0.1-SNAPSHOT scala-tool produced in /Users/brew/NPE/gits/mcs/project/target/resolution-cache/reports/default-mcs-build-scala-tool.xml[0m
-[0m[[0mdebug[0m] [0m	resolve done (12670ms resolve - 518ms download)[0m
+[0m[[0mdebug[0m] [0m:: resolution report :: resolve 2924ms :: artifacts dl 59ms[0m
+[0m[[0mdebug[0m] [0m	report for default#mcs-build;0.1-SNAPSHOT compile produced in /home/brew/git/npe/mcs/project/target/resolution-cache/reports/default-mcs-build-compile.xml[0m
+[0m[[0mdebug[0m] [0m	report for default#mcs-build;0.1-SNAPSHOT runtime produced in /home/brew/git/npe/mcs/project/target/resolution-cache/reports/default-mcs-build-runtime.xml[0m
+[0m[[0mdebug[0m] [0m	report for default#mcs-build;0.1-SNAPSHOT test produced in /home/brew/git/npe/mcs/project/target/resolution-cache/reports/default-mcs-build-test.xml[0m
+[0m[[0mdebug[0m] [0m	report for default#mcs-build;0.1-SNAPSHOT provided produced in /home/brew/git/npe/mcs/project/target/resolution-cache/reports/default-mcs-build-provided.xml[0m
+[0m[[0mdebug[0m] [0m	report for default#mcs-build;0.1-SNAPSHOT optional produced in /home/brew/git/npe/mcs/project/target/resolution-cache/reports/default-mcs-build-optional.xml[0m
+[0m[[0mdebug[0m] [0m	report for default#mcs-build;0.1-SNAPSHOT compile-internal produced in /home/brew/git/npe/mcs/project/target/resolution-cache/reports/default-mcs-build-compile-internal.xml[0m
+[0m[[0mdebug[0m] [0m	report for default#mcs-build;0.1-SNAPSHOT runtime-internal produced in /home/brew/git/npe/mcs/project/target/resolution-cache/reports/default-mcs-build-runtime-internal.xml[0m
+[0m[[0mdebug[0m] [0m	report for default#mcs-build;0.1-SNAPSHOT test-internal produced in /home/brew/git/npe/mcs/project/target/resolution-cache/reports/default-mcs-build-test-internal.xml[0m
+[0m[[0mdebug[0m] [0m	report for default#mcs-build;0.1-SNAPSHOT plugin produced in /home/brew/git/npe/mcs/project/target/resolution-cache/reports/default-mcs-build-plugin.xml[0m
+[0m[[0mdebug[0m] [0m	report for default#mcs-build;0.1-SNAPSHOT sources produced in /home/brew/git/npe/mcs/project/target/resolution-cache/reports/default-mcs-build-sources.xml[0m
+[0m[[0mdebug[0m] [0m	report for default#mcs-build;0.1-SNAPSHOT docs produced in /home/brew/git/npe/mcs/project/target/resolution-cache/reports/default-mcs-build-docs.xml[0m
+[0m[[0mdebug[0m] [0m	report for default#mcs-build;0.1-SNAPSHOT pom produced in /home/brew/git/npe/mcs/project/target/resolution-cache/reports/default-mcs-build-pom.xml[0m
+[0m[[0mdebug[0m] [0m	report for default#mcs-build;0.1-SNAPSHOT scala-tool produced in /home/brew/git/npe/mcs/project/target/resolution-cache/reports/default-mcs-build-scala-tool.xml[0m
+[0m[[0mdebug[0m] [0m	resolve done (2924ms resolve - 59ms download)[0m
 [0m[[0minfo[0m] [0mDone updating.[0m
