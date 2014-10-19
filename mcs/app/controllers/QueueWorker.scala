@@ -92,7 +92,6 @@ object QueueWorker
       Future { 1 }.map({ f =>
         println("error==" + ss)
         Ok("{\"status\":-1,\"msg\":\"" + mapper.writeValueAsString(ss) + "\"}")
-
       })
     }
   }
