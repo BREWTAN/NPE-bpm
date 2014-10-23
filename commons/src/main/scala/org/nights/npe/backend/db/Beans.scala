@@ -9,6 +9,8 @@ object InterState {
   val Obtain: Int = 1
   val Submit: Int = 2
   val Terminate: Int = 3
+  val Hangup: Int = 4
+
   val ProcessEnd: Int = 8
 }
 

@@ -42,6 +42,23 @@ import org.nights.npe.po.AskResult
 import org.nights.npe.mcs.db.DBOplogs
 import org.nights.npe.mo.NoneStateInQueue
 import org.nights.npe.mcs.akka.StatsCounter
+import org.nights.npe.mo.ChangeTaskState
+import org.nights.npe.po.InterState
+import org.nights.npe.po.InterStateHangup
+import org.nights.npe.backend.db.TasksDAO
+import org.nights.npe.po.InterStateHangup
+import org.nights.npe.backend.db.Range
+import scala.util.Success
+import com.github.mauricio.async.db.QueryResult
+import org.nights.npe.backend.db.KOTasks
+import org.nights.npe.utils.BeanTransHelper
+import org.nights.npe.mo.ObtainedStates
+import org.nights.npe.mo.Obtainer
+import com.github.mauricio.async.db.QueryResult
+import org.nights.npe.backend.db.KOTasks
+import org.nights.npe.backend.db.KOTasks
+import org.nights.npe.backend.db.ObtainTasksDAO
+import org.nights.npe.backend.db.KOObtainTasks
 object QueueWorker
   extends Controller {
   import org.nights.npe.mcs.akka.JerksonHelper._
@@ -58,21 +75,68 @@ object QueueWorker
     println("obtainByRole==" + role)
     poller.ask(QueryTasks(1, obtainer, role, obtainer))(10 seconds).map(result => {
       val jsonResult = mapper.writeValueAsString(result)
-      
+
       if (result.isInstanceOf[ObtainedStates]) {
         val o = result.asInstanceOf[ObtainedStates]
-        if (o != null&&o.state !=null) {
+        if (o != null && o.state != null) {
           Await.ready(OplogsDAO.insert(KOOplogs(obtainer + " 获取任务 " + o.state.taskName, o.state.taskInstId + "," + obtainer)), 10 seconds)
-          
-          StatsCounter.obtains   .incrementAndGet()
+
+          StatsCounter.obtains.incrementAndGet()
 
         }
-        
+
       }
       Ok(jsonResult)
     }) recover {
       case e: akka.pattern.AskTimeoutException => Ok("{}")
     }
+  }
+  def obtainFromHangup(obtainer: String, role: String, center: String, states: String) = Action.async { request =>
+
+    println("obtainFromHangupFirst," + obtainer + ",state===" + states)
+    if (states == null || states.equals("undefined")) {
+      Future { 1 } map { r =>
+        Ok("{\"status\":-1,\"msg\":\" states is null :" + states + "\"}")
+      }
+    } else {
+      val cond = "interstate in (" + states + ")" + {
+        obtainer match {
+          case str: String if (str != null && str.length()>0) => " and obtainer='" + obtainer + "' "
+          case _ => ""
+        }
+      } + " order by obtaintime asc"
+
+      val noneResult = mapper.writeValueAsString(ObtainedStates(
+        null, null, Obtainer(obtainer)))
+
+      synchronized {
+
+        val result = TasksDAO.findByCond(cond, Range(0, 1))
+        Await.ready(result, 10 seconds).value.getOrElse(None) match {
+          case Success(qr: QueryResult) =>
+            if (qr.rowsAffected > 0) {
+              val ko = TasksDAO.resultRow(qr).asInstanceOf[List[KOTasks]].head
+              val sd = BeanTransHelper.koToState(ko)
+              val jsonResult = mapper.writeValueAsString(ObtainedStates(
+                sd._1, sd._2, Obtainer(obtainer, role, center)))
+              ObtainTasksDAO.update(KOObtainTasks(sd._1.taskInstId, obtainer)).map({ qr =>
+                Ok(jsonResult)
+              })
+            } else {
+              Future { 1 } map { r =>
+                Ok(noneResult)
+              }
+            }
+          case a@_ =>
+                      println("getResult:"+a)
+
+            Future { 1 } map { r =>
+              Ok(noneResult)
+            }
+        }
+      }
+    }
+
   }
   def newProc(submiter: String, center: String, procdef: String) = Action.async { request =>
     val jsonbody = request.body.asJson.get
@@ -85,7 +149,7 @@ object QueueWorker
       submitor.ask(ANewProcess(uuid, submiter, procdef, ss.get))(10 seconds) map (result => {
         val jsonResult = mapper.writeValueAsString(result)
         Await.ready(OplogsDAO.insert(DBOplogs.KOOplogs(submiter + " 新建流程 " + procdef, uuid + "," + submiter + "," + procdef)), 10 seconds)
-        StatsCounter.newprocs .incrementAndGet()
+        StatsCounter.newprocs.incrementAndGet()
         Ok(jsonResult)
       })
     } else {
@@ -111,11 +175,25 @@ object QueueWorker
       Await.ready(OplogsDAO.insert(DBOplogs.KOOplogs(sub.submitter + " 提交任务 " + sub.state.taskName, sub.state.taskInstId + "," + sub.submitter)), 10 seconds)
 
       submitor ! DoneStateContext(sub.state, sub.ctxData, sub.submitter)
-      StatsCounter.submits  .incrementAndGet()
+      StatsCounter.submits.incrementAndGet()
       Ok("{\"status\":0}")
     } else {
       println("error==" + ss)
       Ok("{\"status\":-1,\"msg\":\"" + ss + "\"}")
     }
+  }
+
+  def hangup(operator: String, taskinstid: String) = Action.async { request =>
+    submitor.ask(ChangeTaskState(taskinstid, InterStateHangup().v))(10 seconds) map (result => {
+      val msg =
+        result match {
+          case "error" => ("error", -1)
+          case _ => ("成功", 0)
+        }
+      val jsonResult = mapper.writeValueAsString(result)
+      Await.ready(OplogsDAO.insert(DBOplogs.KOOplogs(operator + " " + msg._1 + "挂起任务 " + taskinstid, operator + " 挂起任务 " + taskinstid + "::" + result.toString)), 10 seconds)
+      Ok("{\"status\": " + msg._2 + ",\"msg\":\"" + msg._1 + "\"}")
+    })
+
   }
 }

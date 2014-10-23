@@ -20,6 +20,7 @@ import scala.concurrent.Future
 import akka.actor.ActorRef
 import org.nights.npe.mo.SubmitStates
 import org.nights.npe.mo.ANewProcess
+import org.nights.npe.mo.ChangeTaskState
 
 class SubmitWorker extends Actor with ActorLogging {
 
@@ -48,6 +49,10 @@ class SubmitWorker extends Actor with ActorLogging {
       }
     case newproc: ANewProcess => {
       workers.tell(ConsistentHashableEnvelope(ConsistentHashableEnvelope(newproc, newproc.submitter + "_"), newproc.submitter + "_"),sender);
+    }
+    case hangup: ChangeTaskState=>{
+     workers.tell(ConsistentHashableEnvelope(ConsistentHashableEnvelope(hangup, hangup.taskInstId+ "_"), hangup.taskInstId + "_"),sender);
+
     }
     case a @ _ => log.error("unknow message::" + a)
   }

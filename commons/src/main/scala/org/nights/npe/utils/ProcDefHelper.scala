@@ -59,12 +59,12 @@ class ProcDefMap {
         nodeKV._2.isInstanceOf[XORConverging]
       }).size
       
-      if(xsize!=vsize){
-          p.isvalid = false;
-          ret = false;
-          p.parseError.+=:("流程定义错误，异或分支数不等于异或合并数:" +xsize+","+vsize)
-        
-      }
+//      if(xsize!=vsize){
+//          p.isvalid = false;
+//          ret = false;
+//          p.parseError.+=:("流程定义错误，异或分支数不等于异或合并数:" +xsize+","+vsize)
+//        
+//      }
     }
     ret
   }

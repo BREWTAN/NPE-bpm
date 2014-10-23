@@ -45,7 +45,7 @@
 										<span class="bigger-110 no-text-shadow">获取</span>
 									</button>
 											&nbsp; &nbsp; &nbsp;
-									<button class="btn btn-xs" id='btn_reset' type="reset">
+									<button class="btn btn-xs _reset" id='btn_reset' type="reset">
 										<i class="ace-icon fa fa-undo bigger-110"></i>
 										<span class="bigger-110 no-text-shadow">清空</span>
 										
@@ -76,23 +76,23 @@
 										</div>
 
 										<div class="form-group col-sm-12">
-											<div class="form-group col-sm-5">
+											<div class="form-group col-sm-4">
 												<label class="col-sm-4 control-label no-padding-right" for="ff-obtainer">获取人&nbsp; &nbsp;</label>
 												<div>
-													<input type="text" id="ff-obtainer" class="col-xs-10 col-sm-8" />
+												<input type="text" id="ff-obtainer" class="col-xs-10 col-sm-6" />
 												</div>
 											</div>
-											<div class="form-group col-sm-5">
+											<div class="form-group col-sm-4">
 												<label class="col-sm-4 control-label no-padding-right" for="ff-center">中心&nbsp; &nbsp;</label>
 												<div >
-													<input type="text" id="ff-center"  class="col-xs-10 col-sm-8" />
+													<input type="text" id="ff-center"  class="col-xs-10 col-sm-6" />
 												</div>
 											</div>
-											<div class="form-group col-sm-2">
-												<label class="col-sm-4 control-label no-padding-right" for="ff-center">排斥</label>
-												<div class="col-xs-3">
+											<div class="form-group col-sm-4">
+												<label class="col-sm-4 control-label no-padding-right" for="ff-hangup">挂起任务</label>
+												<div class="col-sm-4">
 													<label>
-														<input id="ff-exclude" class="ace ace-switch" type="checkbox" />
+														<input id="ff-hangup" class="ace ace-switch" type="checkbox" />
 														<span class="lbl"></span>
 													</label>
 												</div>
@@ -283,22 +283,65 @@
 			}
 		})
 
-		var resetfun=function(){
-			$("#ff-role option[value!='__ALL']:selected").removeAttr("selected");
-			$("#ff-role option[value='__ALL']").prop("selected",true);
-			$('#ff-role').trigger('chosen:updated');
-			$("#ff-obtainer").val("");
-			$("#ff-center").val("");
-			$("#ff-exclude").removeAttr("checked");
-
-
-			$.each($('#taskshow input'),function(index,v){
-					//console.log("setV:"+$(v).attr('id')+"==>"+$(v).val())
-					
-						$(v).val('')	
-					
-				})
+		$("#ff-hangup").on("change",function(){
 			
+			if(!$("#ff-hangup").attr('checked')){
+				$("#ff-hangup").attr('checked','checked')
+			}
+			else{
+				$("#ff-hangup").removeAttr("checked");
+			}
+			//alert("change:"+$("#ff-hangup").attr('checked'))
+		})
+
+		var resetfun=function(){
+			//alert("hhh:"+$("#ff-hangup").attr('checked'))
+			if($('#btn_reset._reset').length==1){
+				$("#ff-role option[value!='__ALL']:selected").removeAttr("selected");
+				$("#ff-role option[value='__ALL']").prop("selected",true);
+				$('#ff-role').trigger('chosen:updated');
+				$("#ff-obtainer").val("");
+				$("#ff-center").val("");
+				$("#ff-hangup").removeAttr("checked");
+
+
+				$.each($('#taskshow input'),function(index,v){
+						//console.log("setV:"+$(v).attr('id')+"==>"+$(v).val())
+						
+							$(v).val('')	
+						
+					})
+			}else
+			if($('#btn_reset._hangup').length==1)
+			{
+				//alert("hangup")
+				var query="?operator="+$("#ff-obtainer").val()+"&taskinstid="+$("#ff-taskInstId").val()
+				$('#btn_obtain').attr('disabled',true);
+
+				console.log("query.hangup=="+query)
+				$.ajax({
+					url: '/nperest/hangup'+query,
+					type: 'GET',
+					dataType: 'JSON',	
+				})
+				.done(function(data) {
+					console.log("get hangup::"+JSON.stringify(data))
+					$('#btn_obtain').attr('disabled',false);
+					if(data['status']==0){
+						$('#btn_reset span').html('清空')
+						$('#btn_reset').addClass("_reset").removeClass('_hangup')
+						$('#btn_reset').removeClass("btn-danger")
+
+						$('#btn_obtain span').html('获取')
+						$('#btn_obtain').addClass("obtain").removeClass('obtaining')
+						$('#btn_obtain').addClass("btn-primary").removeClass('btn-grey')
+						resetfun()
+					}
+					else{
+						alert("挂起任务失败："+data['msg'])
+					}
+				})
+			}
 		}
 		$('#btn_reset').on("click",resetfun)
 		var obtaindata=null
@@ -325,16 +368,29 @@
 				{
 					query+="&center="+$("#ff-center").val()
 				}
+				var url="/nperest/"
+				if($("#ff-hangup").attr('checked')){
+					url+="obtainhangup"
+					query+="&states=4"
+				}	
+				else{
+					url+="obtain"
+				}
+
+				$('#btn_reset').attr('disabled',true);
 
 				console.log("query=="+query)
 				$.ajax({
-					url: '/nperest/obtain'+query,
+					url: url+query,
 					type: 'GET',
 					dataType: 'JSON',	
 				})
 				.done(function(data) {
 					console.log("get Task::"+data['state'])
 					obtaindata=data;
+
+					$('#btn_reset').attr('disabled',false);
+
 					if(data['state']){
 						$('#taskshow').removeClass('hidden')
 						$.each($('#taskshow input'),function(index,v){
@@ -353,6 +409,11 @@
 						$('#btn_obtain span').html('提交')
 						$('#btn_obtain').addClass("submit").removeClass('obtaining')
 						$('#btn_obtain').addClass("btn-primary").removeClass('btn-grey')
+						
+						$('#btn_reset span').html('挂起')
+						$('#btn_reset').addClass("_hangup").removeClass('_reset')
+						$('#btn_reset').addClass("btn-danger")
+
 					}
 					else{
 						$('#btn_obtain span').html('获取')
@@ -402,6 +463,7 @@
 					$('#btn_obtain span').html('提交中...')
 					$('#btn_obtain').removeClass("btn-primary").addClass('btn-grey')
 
+					$('#btn_reset').attr('disabled',true)
 					$.ajax({
 						url: '/nperest/submit',
 						type: 'POST',
@@ -411,10 +473,16 @@
 					})
 					.done(function(data) {
 						console.log("submit OKOK:"+JSON.stringify(data))
+						$('#btn_reset').attr('disabled',false)
 						if(data['status']==0){
 							$('#btn_obtain span').html('获取')
 							$('#btn_obtain').addClass("obtain").removeClass('submiting')
 							$('#btn_obtain').addClass("btn-primary").removeClass('btn-grey')
+												
+							$('#btn_reset span').html('清空')
+							$('#btn_reset').addClass("_reset").removeClass('_hangup')
+							$('#btn_reset').removeClass("btn-danger")
+
 							resetfun()
 						}else{
 							$('#btn_obtain span').html('提交')

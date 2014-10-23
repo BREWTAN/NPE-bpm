@@ -152,7 +152,13 @@
 																	<i class="ace-icon fa fa-caret-right blue"></i>任务名称
 																</th>
 																<th class="">
-																	<i class="ace-icon fa fa-caret-right blue"></i>队列个数
+																	<i class="ace-icon fa fa-caret-right blue"></i>队列中
+																</th>
+																<th class="">
+																	<i class="ace-icon fa fa-caret-right blue"></i>正处理
+																</th>
+																<th class="">
+																	<i class="ace-icon fa fa-caret-right blue"></i>已挂起
 																</th>
 
 																<th >
@@ -173,6 +179,12 @@
 																<td>{taskname}</td>
 																<td>
 																	<span class="label label-info arrowed-right arrowed-in">{i0}</span>
+																</td>
+																<td>
+																	<span class="label label-info arrowed-left arrowed-in">{i1}</span>
+																</td>
+																<td>
+																	<span class="label label-warning arrowed-right arrowed-in">{i4}</span>
 																</td>
 																<td>
 																	<b class="green">{r}%</b>
@@ -616,9 +628,11 @@
 												<div class="widget-main no-padding">
 													<!-- #section:pages/dashboard.conversations -->
 													<div class="dialogs ace-scroll scroll-active"><div class="scroll-track" style="display: block; height: 300px;"><div class="scroll-bar" style="height: 236px; top: 0px;"></div></div><div class="scroll-content" style="max-height: 300px;">
+														<script type="text/x-template" id="__dust_warnlog" >
+
 														<div class="itemdiv dialogdiv">
 															<div class="user">
-																<img alt="Alexa's Avatar" src="assets/avatars/avatar1.png">
+																<img alt="Some Avatar" src="assets/avatars/avatar1.png">
 															</div>
 
 															<div class="body">
@@ -639,7 +653,7 @@
 																</div>
 															</div>
 														</div>
-
+														</script>
 														<div class="itemdiv dialogdiv">
 															<div class="user">
 																<img alt="John's Avatar" src="assets/avatars/avatar.png">
@@ -901,13 +915,27 @@ var speedoptions = {
 			$.each(keymap,function(key,value){
 				//console.log("::"+JSON.stringify(value))
 				var v0=0
+				var vvv=[0,0,0,0,0,0,0,0,0,0,0]
 				if(key=="End"||key=="End(gateway)"||key.length==0)return
 				if(value[0])v0=value[0]
-				rawdata.push({"taskname":key,"i0":v0,"i1":value[1],"i2":value[2],
-					"i3":value[3],"r":Math.round(value[3]*100.0/(value[3]+v0))})
+
+				if(value[4])vvv[4]=value[4]
+				if(value[3])vvv[3]=value[3]
+				if(value[2])vvv[2]=value[2]
+				if(value[1])vvv[1]=value[1]
+
+				rawdata.push({"taskname":key,"i0":v0,"i1":vvv[1],"i2":vvv[2],
+					"i3":vvv[3],"i4":vvv[4],"r":Math.round(vvv[3]*100.0/(vvv[3]+v0+vvv[4]+vvv[1]))})
 			})
 			rawdata.sort(function(a,b){
+				if(b["i0"]!=a['i0'])
 				return b["i0"]-a["i0"]
+				if(b["i1"]!=a['i1'])
+				return b["i1"]-a["i1"]
+				if(b["i4"]!=a['i4'])
+				return b["i4"]-a["i4"]
+				return b["i3"]-a["i3"]
+
 			})
 			var sorteddata=[]
 			$.each(rawdata,function(index,row){

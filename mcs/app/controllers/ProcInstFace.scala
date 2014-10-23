@@ -28,6 +28,17 @@ import com.fasterxml.jackson.databind.DeserializationFeature
 import org.nights.npe.backend.db.TasksDAO
 import org.nights.npe.backend.db.KOTasks
 import org.nights.npe.backend.db.KOTasks
+import org.nights.npe.backend.db.SimpleDAO
+import scala.reflect.classTag
+
+case class KODelete(val rootproc: String = null);
+
+object DeleteDAO extends SimpleDAO[KODelete] {
+  val ttag = classTag[KODelete];
+  val tablename = "tasks";
+  val keyname = "taskinstid"
+}
+
 
 object ProcInstFace extends Controller {
 
@@ -58,7 +69,7 @@ object ProcInstFace extends Controller {
        
        querytask.interstate match{
          case Some(v) if v>=0 => qq+=" and interstate = "+v
-         case Some(v) if v == (-2) => qq+=" and interstate not in ( 0,1,2,3,8)" 
+         case Some(v) if v == (-2) => qq+=" and interstate not in ( 0,1,2,3,4,8)" 
 
          case _ =>
        }
@@ -100,8 +111,8 @@ object ProcInstFace extends Controller {
   
 
   def delete(defid: String) = Action.async { request =>
-    val cond = KOTasks(null,null , null, null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,defid,null);
-    TasksDAO.deleteByCond(cond).map({ f =>
+    val cond = KODelete(defid);
+    DeleteDAO.deleteByCond(cond).map({ f =>
       println("okok:rowsAffected="+f.rowsAffected)
       Ok(Json.obj("rowsAffected" -> f.rowsAffected))
     })

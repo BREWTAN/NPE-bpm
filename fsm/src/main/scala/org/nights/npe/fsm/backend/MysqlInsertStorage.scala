@@ -72,6 +72,13 @@ object MySqlInsertStorage extends StateStore {
     Future { 1 }
   }
 
+  def doUpdateState(taskinstid: String, newstate: Int): Future[Any] ={
+    log.trace("get doUpdateState:@" )
+        implicit val ec: ExecutionContext = ExecutionContext.global
+
+    Future { 1 }
+  }
+
   override def doSubmitStates(state: StateContext, submitter: String, ctxData: ContextData): Future[Any] = {
     //    log.trace("get SubmitStates:@" + state + ",by" + submitter)
     InSubmitTasksDAO.insert(BeanTransHelper.koForSubmitState(state, submitter, ctxData));

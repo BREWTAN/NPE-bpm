@@ -18,6 +18,7 @@ import org.nights.npe.mo.NewProcess
 import org.nights.npe.mo.TaskDone
 import org.nights.npe.mo.ANewProcess
 import org.nights.npe.po.InterStateNew
+import org.nights.npe.mo.ChangeTaskState
 
 
 class Submitor extends Actor with ActorLogging with ActorHelper {
@@ -62,6 +63,9 @@ class Submitor extends Actor with ActorLogging with ActorHelper {
       StatsCounter.submits.incrementAndGet();
 
       stateStores ! wrapToPipeMessage(SubmitStates(doneState.state asSubmit, doneState.submitter, doneState.ctxData.asHigerPIODData), Tansitionworkers(), doneState.state.taskInstId);
+    }
+    case msg:ChangeTaskState =>{
+      stateStores! wrapToPipeMessage(msg,sender, msg.taskInstId);
     }
     case a @ _ => log.error("unknow message::" + a)
   }

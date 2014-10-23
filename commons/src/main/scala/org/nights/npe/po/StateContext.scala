@@ -16,6 +16,7 @@ case class InterStateNew(val v: Int = 0) extends InterState
 case class InterStateObtain(val v: Int = 1) extends InterState
 case class InterStateSubmit(val v: Int = 2) extends InterState
 case class InterStateTerminate(val v: Int = 3) extends InterState
+case class InterStateHangup(val v: Int = 4) extends InterState
 
 case class ParentContext(val procInstId: String, val procDefId: String, val subDefId: String) {
   override def toString = procInstId + "!@!" + procDefId + "!@!" + subDefId
@@ -49,6 +50,9 @@ case class StateContext(
   }
   def asObtain(): StateContext = {
     asInterState(InterStateObtain())
+  }
+  def asHangup(): StateContext = {
+    asInterState(InterStateHangup())
   }
   def asNew(): StateContext = {
     asInterState(InterStateNew())
@@ -107,3 +111,5 @@ case class DoneStateContext(
   val state: StateContext,
   val ctxData: ContextData,
   val submitter: String)
+  
+

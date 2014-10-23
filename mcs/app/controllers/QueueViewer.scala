@@ -20,6 +20,15 @@ object QueueStatDAO extends SimpleDAO[KOQueueStat] {
   val tablename = "tasks";
   val keyname = "taskinstid"
 }
+case class KOTimeoutWarn(val taskname: String = null, val interstate: Option[Int] = null, val taskinstid: String = null,
+    		val obtainer: String = null, val obtaintime: Option[Long] = null,  val startMS: Option[Long] = null);
+
+object TimeoutWarnDAO extends SimpleDAO[KOTimeoutWarn] {
+  val ttag = classTag[KOTimeoutWarn];
+  val tablename = "tasks";
+  val keyname = "taskinstid"
+}
+
 object QueueViewer
   extends Controller {
 
@@ -43,9 +52,24 @@ object QueueViewer
 
       Ok(retList.mkString("[", ",", "]"))
     }
-
   }
-  
+
+  def warnByTimeout(timeout: Long, states: String) = Action.async { request =>
+    val result = TimeoutWarnDAO.exec("""select * from tasks where obtaintime < ? and interstate in (?) order by obtaintime desc
+    		""", Seq(System.currentTimeMillis() - timeout, states))
+
+    result.map { qr =>
+      val retList: ListBuffer[String] = ListBuffer.empty
+      if (qr.rowsAffected > 0) {
+        TimeoutWarnDAO.resultRow(qr).asInstanceOf[List[KOTimeoutWarn]].map { ko =>
+          retList.+=:(mapper.writeValueAsString(ko))
+        }
+      }
+
+      Ok(retList.mkString("[", ",", "]"))
+    }
+  }
+
   def statsByCenter = Action.async { request =>
     val result = QueueStatDAO.exec("""select taskcenter as taskname,interstate,count(*) as counter 
          from tasks where nodetype = 0  group by taskcenter,interstate order by taskcenter,interstate

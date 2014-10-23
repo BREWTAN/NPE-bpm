@@ -114,7 +114,7 @@ object EhCacheStorage extends StateStore {
       }
     }
 
-    Future { new QueryResult(1,"OK") }
+    Future { new QueryResult(1, "OK") }
 
     //      tx.commit
     //    stateCache flush; stateHistoryCache flush; procInstDataCache flush; procInstCache flush;
@@ -145,22 +145,22 @@ object EhCacheStorage extends StateStore {
     stateCache.put(new Element(state.taskInstId, state))
     Future { 1 }
   }
-  override def doRecycleStates(list:List[StateContextWithData]): Future[Any] = {
+  override def doRecycleStates(list: List[StateContextWithData]): Future[Any] = {
     log.trace("get doRecycleStates:@")
     Future { 1 }
   }
   override def doSubmitStates(state: StateContext, submitter: String, ctxData: ContextData): Future[Any] = {
     log.trace("get SubmitStates:@" + state + ",by" + submitter)
     stateCache.put(new Element(state.taskInstId, state))
-    Future { new QueryResult(1,"OK") }
+    Future { new QueryResult(1, "OK") }
   }
   override def saveGateway(state: StateContext, submitter: String, ctxData: ContextData): Future[Any] = {
     stateCache.put(new Element(state.taskInstId, state))
-    Future { new QueryResult(1,"OK") }
+    Future { new QueryResult(1, "OK") }
   }
   override def doNewProcess(state: StateContext, submitter: String, ctxData: ContextData): Future[Any] = {
     stateCache.put(new Element(state.taskInstId, state))
-    Future { new QueryResult(1,"OK") }
+    Future { new QueryResult(1, "OK") }
 
   }
   def doFetchProcessStates(procId: String): AskResult[Any] = {
@@ -172,12 +172,18 @@ object EhCacheStorage extends StateStore {
       AskResult(0, null)
     }
   }
+  def doUpdateState(taskinstid: String, newstate: Int): Future[Any] = {
+    log.trace("get doUpdateState:@")
+    implicit val ec: ExecutionContext = ExecutionContext.global
+
+    Future { 1 }
+  }
 
   override def doSaveConverge(convergeId: String, taskInsts: String): Future[Any] = {
-    Future { new QueryResult(1,"OK") }
+    Future { new QueryResult(1, "OK") }
   }
   override def doRemoveConverge(convergeId: String): Future[Any] = {
-    Future { new QueryResult(1,"OK") }
+    Future { new QueryResult(1, "OK") }
   }
 
 }

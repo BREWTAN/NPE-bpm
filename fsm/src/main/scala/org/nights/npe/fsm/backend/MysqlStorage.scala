@@ -50,7 +50,7 @@ object MySqlStorage extends StateStore {
       ProcinstsDAO.hb
       ProcDefDAO.hb
     }
- 
+
   }
   def shutdown() = synchronized {
 
@@ -65,13 +65,13 @@ object MySqlStorage extends StateStore {
     val prevs = states.foldLeft(List[String]())(_ ++ _.prevStateInstIds).distinct
     val upbeans = prevs.map { BeanTransHelper.koTermFromString(_) }
     val future2 = upbeans.map { TermUpdateTasksDAO.update(_) }
-    val future3= states.filter(_.isTerminate ).map{ state =>
-//      println(TermProcDAO.keyname +"::"+TermProcDAO.ttag+"::"+TermProcDAO.tablename  )
-      TermProcDAO.updateByCond(KOTermProc(null,null),KOTermProc(state.procInstId,"_1",null,null))
+    val future3 = states.filter(_.isTerminate).map { state =>
+      //      println(TermProcDAO.keyname +"::"+TermProcDAO.ttag+"::"+TermProcDAO.tablename  )
+      TermProcDAO.updateByCond(KOTermProc(null, null), KOTermProc(state.procInstId, "_1", null, null))
     }
-    
+
     implicit val exec = FSMGlobal.exec
-    val result = Await.ready(Future.sequence(List(future1) ::: future2:::future3), 100 seconds)
+    val result = Await.ready(Future.sequence(List(future1) ::: future2 ::: future3), 100 seconds)
     log.debug("resultready==" + result.value.get.get)
     TasksDAO.execInBatch(result.value.get.get)
 
@@ -102,12 +102,16 @@ object MySqlStorage extends StateStore {
     //    log.trace("get ObtainedStates:@" + state + ",by" + obtainer)
     UpdateObtainTasksDAO.updateSelective(BeanTransHelper.koForObtainState(state, obtainer));
   }
-  override def doRecycleStates(list:List[StateContextWithData]): Future[Any] = {
-    val uplist=list.map({f=>
-     	"\""+f.sc.taskInstId+"\"" 
+  override def doRecycleStates(list: List[StateContextWithData]): Future[Any] = {
+    val uplist = list.map({ f =>
+      "\"" + f.sc.taskInstId + "\""
     })
     //    log.trace("get ObtainedStates:@" + state + ",by" + obtainer)
-    TasksDAO.exec("UPDATE tasks set interstate=0 where taskinstid in "+uplist.mkString("(",",",")"));
+    TasksDAO.exec("UPDATE tasks set interstate=0 where taskinstid in " + uplist.mkString("(", ",", ")"));
+  }
+
+  override def doUpdateState(taskinstid: String, newstate: Int): Future[Any] = {
+    TasksDAO.exec("UPDATE tasks set interstate=? where taskinstid = ? ",List(newstate,taskinstid));
   }
   override def doSubmitStates(state: StateContext, submitter: String, ctxData: ContextData): Future[Any] = {
     //    log.trace("get SubmitStates:@" + state + ",by" + submitter)
@@ -162,12 +166,12 @@ object MySqlStorage extends StateStore {
               log.debug("rol==" + rel)
               cb(rel._1, rel._2)
             })
-            
-              offset += rows.size
-              TasksDAO.findByCond(" interstate = " + status + cond, Range(offset, limit))
-            
+
+            offset += rows.size
+            TasksDAO.findByCond(" interstate = " + status + cond, Range(offset, limit))
+
           }
-          log.error("GetRowSize==" + rows.size+ " status="+status+",cond="+cond+",offset="+offset+",limit="+limit)
+          log.error("GetRowSize==" + rows.size + " status=" + status + ",cond=" + cond + ",offset=" + offset + ",limit=" + limit)
 
         }
         case DBResult(qr: QueryResult) => {

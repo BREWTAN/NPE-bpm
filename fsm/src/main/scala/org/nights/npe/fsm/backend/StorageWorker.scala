@@ -22,6 +22,7 @@ import org.nights.npe.mo.FetchProcessStates
 import org.nights.npe.mo.RecycleTasks
 import org.nights.npe.mo.NewProcess
 import org.nights.npe.mo.SubmitStates
+import org.nights.npe.mo.ChangeTaskState
 //state op
 
 trait StateStore {
@@ -43,6 +44,9 @@ trait StateStore {
   def doRemoveConverge(convergeId: String): Future[Any]
 
   def doRecycleStates(list: List[StateContextWithData]): Future[Any]
+  
+  def doUpdateState(taskinstid: String, newstate: Int): Future[Any] ;
+
 }
 class StorageWorker extends Actor with ActorLogging with ActorHelper {
 
@@ -102,7 +106,7 @@ class StorageWorker extends Actor with ActorLogging with ActorHelper {
           }
       }
     }
-
+ 
     case PipeEnvelope(SubmitStates(state, submitter, ctxData), nextActor) => {
       log.info("get SubmitStates:{}@{},next={}", state, submitter, nextActor)
       store.doSubmitStates(state, submitter, ctxData) andThen {
@@ -149,6 +153,20 @@ class StorageWorker extends Actor with ActorLogging with ActorHelper {
           {
             log.error("recycle Uknow result!!:" + a)
             forword("recycyle.error",nextActor,self.toString)
+            //            
+          }
+      }
+    }
+     case cc@PipeEnvelope(ChangeTaskState(taskinstid,newstate),nextActor) => {
+      store.doUpdateState(taskinstid, newstate) andThen {
+        case Success(qr: QueryResult) => {
+            log.debug("update OKOK!!:" + qr)
+            forword(ChangeTaskState(taskinstid,newstate),nextActor,self.toString)
+        }
+        case a @ _ =>
+          {
+            log.error("update failed result!!:" + a)
+            forword("error",nextActor,self.toString)
             //            
           }
       }

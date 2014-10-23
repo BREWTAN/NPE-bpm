@@ -82,6 +82,7 @@ GET		/taskrole/import	controllers.TaskRoleFace.importFromFlows
 # queue views
 GET     /qstatbyname		controllers.QueueViewer.statsByName
 GET     /qstatbycenter		controllers.QueueViewer.statsByCenter
+GET 	/warnbytimeout  	controllers.QueueViewer.warnByTimeout(timeout: Long, states: String)
 
 
 ##################
@@ -92,7 +93,9 @@ POST	/submit				controllers.QueueWorker.submit()
 
 POST 	/newproc			controllers.QueueWorker.newProc(submiter:String?=null,center:String?=null,procdef:String?=null)
 
+GET		/hangup				controllers.QueueWorker.hangup(operator: String?=null, taskinstid:String?=null)
 
+GET		/obtainhangup		controllers.QueueWorker.obtainFromHangup(obtainer:String?=null,role:String ?=null,center:String?=null,states:String?=null)
 ##################
 # logs
 

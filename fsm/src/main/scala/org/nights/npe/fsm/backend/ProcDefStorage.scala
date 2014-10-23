@@ -40,7 +40,6 @@ class ProcDefStorage extends Actor with ActorLogging with ActorHelper {
     }
     case "stop" =>{
         context.system.shutdown
-
     }
     case LoadDefFromDB() => {
       implicit def f(result: DBResult): Unit = {
