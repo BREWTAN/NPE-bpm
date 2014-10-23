@@ -99,9 +99,10 @@ case class ContextData(
   def asNewProcData(procinstid: String): ContextData = {
     ContextData(procPIO, taskPIO + 1, rolemark, startMS, idata1, idata2, strdata1, strdata2, fdata1, fdata2, taskcenter, procinstid, extra)
   }
-
 }
-case class StateContextWithData(val sc: StateContext, val dt: ContextData) extends PriorityAware {
+
+
+case class StateContextWithData(val sc: StateContext, val dt: ContextData) extends PriorityAware  {
   def pio = dt.procPIO + dt.taskPIO
   def rolemark = dt.rolemark
   def role = sc.taskName

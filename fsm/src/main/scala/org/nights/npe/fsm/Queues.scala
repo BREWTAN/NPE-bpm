@@ -48,9 +48,9 @@ class QueueWorker extends Actor with ActorLogging with ActorHelper {
         }
       }
     }
-    case recycle:RecycleTasks => {
+    case recycle: RecycleTasks => {
       log.info("RecycleTasks::{}@{}", recycle, self)
-      stateStores ! wrapToCCPipeMessage(recycle, sender,self, self.toString)
+      stateStores ! wrapToCCPipeMessage(recycle, sender, self, self.toString)
     }
     case AskNewWork(size, obtainer) => {
       //      log.info("AskNewWork@"+sender)
@@ -59,9 +59,13 @@ class QueueWorker extends Actor with ActorLogging with ActorHelper {
         case a @ _ => sender ! NoneStateInQueue(obtainer)
       }
     }
-    case cc @ CCPipeEnvelope(RecycleTasks(tasks), nextActor,ccActor) => {
+    case cc @ CCPipeEnvelope(RecycleTasks(tasks), nextActor, ccActor) => {
       for (task <- tasks) {
-        queue.offer(task);
+        if (queue.checkIfExist(task)) {
+          log.error("Task Already in Queue:" + task)
+        } else {
+          queue.offer(task);
+        }
       }
       forword("recycle.ok", nextActor, self.toString)
     }

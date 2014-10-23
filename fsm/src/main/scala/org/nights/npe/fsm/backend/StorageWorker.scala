@@ -23,6 +23,7 @@ import org.nights.npe.mo.RecycleTasks
 import org.nights.npe.mo.NewProcess
 import org.nights.npe.mo.SubmitStates
 import org.nights.npe.mo.ChangeTaskState
+import org.nights.npe.mo.NoneStateInQueue
 //state op
 
 trait StateStore {
@@ -97,6 +98,7 @@ class StorageWorker extends Actor with ActorLogging with ActorHelper {
             forword(ObtainedStates(state, ctxData, obtainer), nextActor, state.taskInstId)
           } else {
             log.error(" obtainer Error!!:Duplicate  obtainer" + qr + "::" + state)
+            forword(NoneStateInQueue( obtainer), nextActor, state.taskInstId)
           }
         }
         case a @ _ =>
