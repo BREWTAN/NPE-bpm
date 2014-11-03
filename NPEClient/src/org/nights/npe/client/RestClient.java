@@ -76,10 +76,10 @@ public class RestClient {
 	public ResponseStatus newProcess(String procdef, String submiter,
 			String center, ContextData ctxData) {
 		String postdata = JsonUtil.bean2Json(ctxData).toString();
-//		System.out.println("postData==:"+postdata);
+		System.out.println("postData==:"+postdata);
 		String body = doPost("nperest/newproc?procdef=" + procdef
 				+ "&submiter=" + submiter + "&center=" + center, postdata);
-//		System.out.println("postDatabody==:"+body);
+		System.out.println("postDatabody==:"+body);
 		return JsonUtil.json2Bean(body, ResponseStatus.class);
 	}
 

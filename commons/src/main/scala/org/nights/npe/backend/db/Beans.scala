@@ -54,6 +54,8 @@ case class KOTasks(val taskinstid: String, // varchar(32) not null,
   val createtime: Option[Long] = Some(System.currentTimeMillis())
 )
 
+
+
 case class KOObtainTasks(val taskinstid: String,
   val obtainer: String,
   val obtaintime: Option[Long] = Some(System.currentTimeMillis()),

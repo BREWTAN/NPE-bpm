@@ -16,6 +16,7 @@ import org.nights.npe.mo.Obtainer
 import org.nights.npe.mo.NoneStateInQueue
 import org.nights.npe.mo.Transition
 import org.nights.npe.mo.RecycleTasks
+import org.nights.npe.mo.ObtainedStates
 
 object WorkingBuffer {
   val queryByCenterRole: HashMap[String, ConcurrentLinkedQueue[ObtainedStates]] = new HashMap()
@@ -65,7 +66,7 @@ class PollWorker extends Actor with ActorLogging {
   def doQuery(query: QueryTasks) {
     
     val key =query.role match{
-      case role:String if role!=null=> query.center + "_" + query.role;
+      case role:String if role!=null=> query.center + "_" + query.role+"_"+query.obtainer ;
       case _ => query.center + "_" + query.obtainer 
     } 
     println("doQuery:" + key)
@@ -78,7 +79,9 @@ class PollWorker extends Actor with ActorLogging {
     }
     val q = WorkingBuffer.queryByCenterRole.get(key).poll()
     if (q != null &&
-      (query.exclude == null || (!q.ctxData.rolemark.contains(query.exclude)))) {
+//      (query.exclude == null || (!q.ctxData.rolemark.contains(query.exclude)))
+    (query.exclude == null || !(q.ctxData!=null&&q.ctxData.rolemark!=null &&q.ctxData.rolemark.contains(query.exclude+",")))    
+    ) {
       sender ! q
     } else {
       if (!askingList.containsKey(key)) {
@@ -98,14 +101,18 @@ class PollWorker extends Actor with ActorLogging {
     //        submitors ! ConsistentHashableEnvelope(TaskDone(
     //          DoneStateContext(state asSubmit, ctxData, self.toString())), state.taskInstId)
     val key = obtain.obtainer match {
-      case obtainer: Obtainer if( obtainer.role  != null )=> obtain.obtainer.center + "_" + obtainer.role 
+      case obtainer: Obtainer if( obtainer.role  != null )=> obtain.obtainer.center + "_" + obtainer.role +"_"+obtainer.uid
       case _ => obtain.obtainer.center  + "_" + obtain.obtainer.uid 
     }
     val asker = askingList.get(key).poll()
-    if (asker == null || (asker.exclude != null && obtain.ctxData.rolemark.contains(asker.exclude))) {
+    if (asker == null){// || (asker.exclude != null && obtain.ctxData.rolemark!=null&& obtain.ctxData.rolemark.contains(asker.exclude))) {
       sender ! obtain
-    } else {
+    } else 
+    if(asker.exclude == null || !(obtain.ctxData!=null&&obtain.ctxData.rolemark!=null &&obtain.ctxData.rolemark.contains(asker.exclude+",")))
+    {
       asker.address ! obtain
+    }else{
+      asker.address ! ObtainedStates(null,null,obtain.obtainer)
     }
     requestCount -= 1;
   }

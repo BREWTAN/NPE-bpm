@@ -71,9 +71,18 @@ object QueueWorker
 
   lazy val poller = Global.system.actorSelection("/user/poll");
   val counter = new AtomicLong(0)
-  def obtainByRole(obtainer: String, role: String, center: String) = Action.async { request =>
-    println("obtainByRole==" + role)
-    poller.ask(QueryTasks(1, obtainer, role, obtainer))(10 seconds).map(result => {
+  def nullcheck(vl: String): String = {
+    vl match {
+      case str if (str == null || str.length() == 0 || str.equals("undefined")) => null
+      case _ => vl
+    }
+  }
+  def obtainByRole(obtainerjj: String, rolejj: String, centerjj: String) = Action.async { request =>
+    val obtainer = nullcheck(obtainerjj)
+    val role = nullcheck(rolejj);
+    val center = nullcheck(centerjj);
+
+    poller.ask(QueryTasks(1, obtainer, role, center, obtainer))(30 seconds).map(result => {
       val jsonResult = mapper.writeValueAsString(result)
 
       if (result.isInstanceOf[ObtainedStates]) {
@@ -91,7 +100,7 @@ object QueueWorker
       case e: akka.pattern.AskTimeoutException => Ok("{}")
     }
   }
-  def obtainFromHangup(obtainer: String, role: String, center: String, states: String) = Action.async { request =>
+  def obtainFromHangup(obtainer: String, role: String, center: String, states: String,extendsql:String) = Action.async { request =>
 
     println("obtainFromHangupFirst," + obtainer + ",state===" + states)
     if (states == null || states.equals("undefined")) {
@@ -101,7 +110,22 @@ object QueueWorker
     } else {
       val cond = "interstate in (" + states + ")" + {
         obtainer match {
-          case str: String if (str != null && str.length()>0) => " and obtainer='" + obtainer + "' "
+          case str: String if (str != null && str.length() > 0) => " and obtainer='" + str + "' "
+          case _ => ""
+        }
+      } + {
+        role match {
+          case str: String if (str != null && str.length() > 0) => " and taskname='" + str + "' "
+          case _ => ""
+        }
+      }+ {
+        center match {
+          case str: String if (str != null && str.length() > 0) => " and taskcenter='" + str + "' "
+          case _ => ""
+        }
+      } + {
+        extendsql match {
+          case str: String if (str != null && str.length() > 0) => " and "+extendsql+" "
           case _ => ""
         }
       } + " order by obtaintime asc"
@@ -127,8 +151,8 @@ object QueueWorker
                 Ok(noneResult)
               }
             }
-          case a@_ =>
-                      println("getResult:"+a)
+          case a @ _ =>
+            println("getResult:" + a)
 
             Future { 1 } map { r =>
               Ok(noneResult)

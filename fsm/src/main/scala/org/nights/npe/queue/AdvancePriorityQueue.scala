@@ -1,13 +1,15 @@
 package org.nights.npe.queue
 
 import java.util.concurrent.LinkedBlockingQueue
+import java.util.concurrent.atomic.AtomicInteger
 import java.util.concurrent.locks.ReentrantLock
+
 import scala.collection.mutable.ListBuffer
 import scala.collection.mutable.Map
-import scala.util.control.Breaks._
+import scala.util.control.Breaks.break
+import scala.util.control.Breaks.breakable
+
 import org.nights.npe.po.PriorityAware
-import java.util.concurrent.atomic.AtomicLong
-import java.util.concurrent.atomic.AtomicInteger
 import org.nights.npe.po.StateContextWithData
 
 class PIOQueue[T](val pio: Int = 0, val __link: LinkedBlockingQueue[T] = new LinkedBlockingQueue[T]) {
@@ -90,13 +92,16 @@ class AdvancePriorityQueue[T <: PriorityAware](role: String) {
   def poll(filter: String = null): Option[T] = {
     for (q <- queuesList) {
       if (q.size() > 0) {
-        if (filter != null) {
+        if (filter != null&&filter.length()>0) {
           for (i <- 1 to q.size()) {
             val task = q.poll();
             if (task != null) {
               if (task.rolemark == null || (!task.rolemark.contains(filter + ","))) return wrapPoll(task);
               else //put back
-                q.offer(task)(true)
+                {
+            	  q.offer(task)(true)
+            	  //return None;
+                }
             }
           }
         } else {

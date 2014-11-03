@@ -59,7 +59,7 @@ class RolePIOQueue[T <: PriorityAware] {
       for (q <- queuesList) {
         q.poll(obtainer.filter) match {
           case some @ Some(task) => return some
-          case _ =>
+          case _ => 
         }
       }
       return None
