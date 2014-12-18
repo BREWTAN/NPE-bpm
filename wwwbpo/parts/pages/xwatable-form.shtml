@@ -1,0 +1,83 @@
+
+<script type="text/x-template" id="__dust_tableform" >
+    <form class="bootbox-form form-horizontal form-bordered form-label-stripped" onsubmit="return false" role="form" 
+        id="__editform">
+        <div class="form-body">
+            {#data}
+           
+            {?.nonedit}
+                {@select key=nonedit}
+                    {@eq value="nosend" }
+                    {/eq}
+                    {@default}
+                      <input type="hidden" id="{col}" name="{col}" value="{default_value}" data-newvalue="{new_value}"/>
+                    {/default}                
+                {/select}
+            {:else}
+
+            <div class="form-group" id="dg_{col}">
+                <label class="col-md-4 control-label" id="dl_{col}">{friendly}</label>
+                <div class="col-md-8" id="di_{col}">
+                {?.inputsource}
+                    {@select key=inputsource}
+                    {@eq value="select"}
+                        <select class="form-control chosen-select" width="100%" id="{col}" name="{col}" 
+                                data-ref-url="{ref_url}" data-ref-name="{ref_name}"
+                                data-ref-value="{ref_value}" data-value="{default_value}"
+                                data-ref-append="{ref_append}"
+                                >
+                        </select> 
+                    {/eq}
+                    {@eq value="datepicker"}
+                       <div class="input-group date date-picker" 
+                             data-date-format="yyyy-mm-dd" data-date-viewmode="years"  data-value="{default_value}" >
+                           <input type="text" id="{col}"  name="{col}"  class="form-control" readonly>                       
+                           <span class="input-group-btn">
+                               <button class="btn default" type="button"> <i class="fa fa-calendar"></i>
+                               </button>
+                           </span>
+                       </div>
+                    {/eq}
+                    {@eq value="checkbox"}
+                        <label class="checkbox-inline">
+                            <input name={col} type="checkbox" id="{col}" data-value="{default_value}"  {@eq key=default_value value=1}checked{/eq} {@eq key=checked}value=1{/eq}>  
+                            
+                        </label>
+                    {/eq}
+                    {@eq value="textarea"}
+                       
+                      <textarea cols="{width}" rows="{height}" style="resize:none;" id="{col}" name="{col}">{default_value}</textarea>
+                            
+                    {/eq}
+                    {@eq value="custom"}
+                        <div id="custom_{col}" class="editcustom" data-value="{default_value}" 
+                            data-builder="{inputbuilder}"></div>
+                    {/eq}
+                    {/select}
+                 {:else}
+                        <div class="input-icon right"> <i class="fa fa-info-circle tooltips" data-container="body"></i>
+                             {?.flagInfo}
+                                 {@select key=flagInfo}
+                                 {@eq value="flag"}
+                                  <input type="text" class="bootbox-input bootbox-input-text form-control" readonly="readonly" 
+                                    id="{col}" name="{col}" value="{flag_value}" {readonly}/>
+                                 {/eq}
+                                 {/select}
+                            {:else}
+                                  <input type="text" class="bootbox-input bootbox-input-text form-control" 
+                                    id="{col}" name="{col}" value="{default_value}" {readonly}/>
+                            {/.flagInfo}
+                        </div>
+                {/.inputsource}
+                </div>
+
+            </div>
+            {/.nonedit}
+            {/data}
+            <input type="hidden" class="_mod_id" id="_id" name="_id" value="{_id}"/>
+
+        </div>
+        
+    </form>
+
+</script>

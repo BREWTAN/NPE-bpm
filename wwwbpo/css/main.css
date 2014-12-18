@@ -1,0 +1,150 @@
+
+
+/*  *{font-family:Microsoft Yahei,simhei,"宋体";}  */
+
+/*头部*/
+#navbar{background-color:#009999;min-height:70px;}
+.ace-nav>li{height:70px;}
+.ace-nav>li>a,.ace-nav>li>a:hover,.nav .open>a, .nav .open>a:focus, .nav .open>a:hover{ background:none;}
+.nav_menu>li{line-height: 70px;height: 70px;padding: 0;position: relative;float: left;background-color:none; list-style:none;}
+.nav_menu>li>a{color: #FFF;display: block;line-height: inherit;text-align: center;height: 100%;width: auto;min-width: 110px;padding: 0 8px;position: relative;font-size:14px;}
+#font25{font-size: 25px;}
+.ace-nav>li>a>.badge {position: relative;top: -14px;left: -5px;padding-right: 10px;padding-left: 10px;}
+.ace-nav>li>a{padding:15px 10px 0 26px;}
+.badge-success, .label-success{background-color:#fcb322!important;}
+.navbar .navbar-toggle.pull-left{margin:17px 0 4px 10px;}
+.no-skin .navbar .navbar-toggle{background-color:#68ADDE; border-radius:5px; width:40px; height:40px;}
+
+/*导航*/
+.logo{min-width:175px; height:40px;padding:15px 0; margin:0;}
+.nav_menu a{position:relative}
+.nav_menu li{font-size:14px;float:left;position:relative; list-style:none;color:#414141;}
+.nav_menu li:hover{color:#414141; background:none;background-image:url(../assets/images/images/menu_bg.png);}
+.nav_menu li:hover a{color:#414141;}
+.nav_menu ul{width:390px;background-color:#fff;border:1px solid #629d2a;border-top:none;position:absolute;left:-1px;top:-999em;z-index:99999;padding:8px 0;display:none}
+.nav_menu li:hover ul{top:70px;display:block;padding:20px 10px; margin:0;}
+.nav_menu li:hover ul li{font-size:12px;border:none;width:60px;float:left; padding:0; margin:0 15px;line-height:30px; text-align:center;}
+.nav_menu li:hover ul li a{color:#333;text-decoration:none;padding:0}
+.nav_menu li:hover ul li a:hover{text-decoration:underline}
+.icon_position{top:-3px; left:10px;font-size: 22px;}
+#icon_graph{ position:relative;top:-6px; left:10px;font-size: 22px;}
+.word_position{ position:relative;top:18px; left:-17px;}
+.user-info{top:14px;}
+.nav>li>a:focus,.nav>li>a:hover{background:none;}
+
+/*主菜单*/
+.no-skin .nav-list>li{border:0; height:48px; line-height:48px; padding:0;}
+.no-skin .nav-list>li>a{background-color:#ffffff; padding:0;}
+.no-skin .nav-list>li>a>img{ margin-right:10px;}
+.main_menu{width:210px; margin:0;padding:0 0 20px 0;}
+.main_menu>li>a{height:44px; line-height:44px; margin:0 0 0 10px; padding:0;border:0;}
+.main_menu>li>a i{height:48px; line-height:48px;_line-height:42px; margin:0 10px 0 0; padding:0;}
+.no-skin .nav-list>li:hover{border:2px solid #009999; border-right:0;height:48px; line-height:48px;}
+.no-skin .nav-list>li:hover>a{color:#414141; height:44px; line-height:44px;}
+.nav-list li.hover>.submenu{top:0; margin-left:0;}
+#menu_sub{border:2px solid #009999; top:-2px; padding:10px 10px 10px 20px; width:500px;}
+#menu_sub li{height:48px; line-height:48px;padding:0; magin:0;  float:left;}
+#menu_sub li a,#menu_sub li span,#menu_sub li em{float:left; font-style:normal;margin:0; padding:0; font-size:12px;}
+#menu_sub li span{ color:#009999;}
+#menu_sub li a:hover{background-color:#fff; text-decoration:underline; color:#414141;}
+#menu_sub li em{margin:0 10px; color:#888888;}
+.nav-list>li,.submenu>li>a{pagging:0;}
+.nav-list>li:before{background-color:#fff; width:0; min-width:0;}
+ul#menu_sub #noborder{border:none; text-decoration:none; background: #fff;z-index:999;position:relative; width:3px;height:44px; left:-22px; top:-10px;}
+.menu_open{position:absolute;right:2px;}
+.nav-list>li .submenu>li>a,.nav-list>li .submenu>li>a:hover{background:none;}
+.no-skin .nav-list li.hover>.submenu>li:hover>a{background-color:#ffffff;color:#414141;}
+
+/*左侧病人列表*/
+.sidebar{width:210px;}
+.left_list,.nurse_left_list{display: inline-block; top:25px;width:200px;color: #555;position: relative;font-size:12px; margin:0; padding:0 0 80px 7px; list-style:none; }
+.left_list li{margin-bottom:20px;  min-height:40px;}
+.left_list li a,.left_list li a:hover{color:#555;}
+.list_name{width:153px; height:40px; line-height:20px;}
+.list_photo{border-radius: 100%;border: 2px solid #FFF;max-width:30px; margin-right:10px;}
+.mar_r30{margin-right:20px;}
+
+/*搜索*/
+.nav-search .form-search{padding-bottom:15px; padding-top:15px;}
+.sidebar>.nav-search{padding-top:0; background-color:#f2f2f2; position: relative; left:0; z-index:20;}
+.no-skin .sidebar-toggle{border-top:1px solid #e0e0e0; top:-20px;}
+.sidebar>.nav-search{border:0;}
+.name_select{border:0; background:transparent; width:auto;z-index: 2;position: absolute; top:4px;left: 20px; height:20px;line-height: 20px;display: inline-block;color: #909090;font-size: 12px;}
+/*.input-icon>input{padding-left:110px;}*/
+#nav-search-input{border:1px solid #e0e0e0;border-radius: 4px!important;/*background:transparent;*/}
+.nav-search .nav-search-icon{color:#009999!important;}
+
+/*右栏*/
+.sidebar+.main-content{margin-left:210px;}
+.sidebar~.footer .footer-inner{left:210px;}
+.col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9{padding:0;}
+
+/*医生右栏列表*/
+.patient-list a:hover,.nurse-list a:hover{color:#555; text-decoration:none;}
+.patient_list{display: inline-block;width: 336px;height: 150px;color: #555;border-radius: 2px;border-color: #e6e6e6!important;position: relative;font-size:12px;/*box-shadow: 2px 2px 5px #b5b5b5;*/ margin:8px 6px 0 6px;}
+.patient_photo{	width: 100px;height: 148px;margin:0;padding:0;text-align:center;border-top-left-radius: 2px;border-bottom-left-radius: 2px;}
+.patient_photo1{background-color:#fa8564;}
+.patient_photo2{background-color:#aec785;}
+.patient_photo3{background-color:#22beef;}
+.patient_photo4{background-color:#65d3d3;}
+.patient_photo5{background-color:#ffc100;}
+.patient_photo6{background-color:#e37665;}
+.patient-user-photo{margin:10px 10px 5px 20px;border-radius: 100%;border: 2px solid #FFF;max-width: 60px;}
+.list_content{padding:0;margin:0; width:236px; list-style:none;padding-top:2px; height:148px; background:url(../assets/images/images/list_bg.png) repeat-x;	border-top-right-radius: 2px;border-bottom-right-radius: 2px;}
+.list_content li{height:24px; line-height:24px;}
+.list_content li span,.nurse_list_content li span{margin:0 20px 0 10px;}
+.patient-number{color:#fff; font-size:24px; text-align:center;}
+.patient-gender{text-align:center; font-size:14px; color:#fff; height:30px; line-height:30px;}
+.patient-icon{display:block;text-align:center;width: 20px;height:20px;line-height:20px;font-size: 12px;color: #FFF;border-radius: 2px;background-color:#b3b3b3;}
+.icon_color1{background-color:#9788c6;}
+.icon_color2{background-color:#88b646;}
+.icon_color3{background-color:#6cace3;}
+.icon_color4{background-color:#fcb62c;}
+.list_content li lable,.nurse_list_content li lable{margin-left:10px;}
+
+/*护士左栏*/
+.nurse_left_list{padding:0 0 80px 0; width:210px;}
+.nurse_left_list ul{padding:0 0 0 10px; margin:0;}
+.nurse_left_list ul li{list-style:none; height:24px; line-height:24px;}
+.nurse_left_list ul li a{color:#555555;}
+.nurse_left_list ul li a:hover{text-decoration:none;color:#4c8fbd;}
+.mar_r10{margin-right:10px;}
+.ui-accordion .ui-accordion-header{background:none; border:0; border-bottom:1px solid #e0e0e0; color:#555; padding:10px 0 10px 14px;}
+.ui-accordion .ui-accordion-header:hover,.ui-accordion .ui-accordion-header.ui-state-active{background:none;}
+.ui-accordion .ui-accordion-content{border:none; border-bottom:1px solid #e0e0e0;}
+.ui-icon{color:#555;}
+.ui-accordion .ui-accordion-header.ui-state-active .ui-accordion-header-icon:before,.ui-accordion .ui-accordion-header .ui-accordion-header-icon:before{content:""}
+.nurse_left_list .group span{margin-right:14px;}
+.font140{font-size:130%;}
+.font120{font-size:120%;}
+
+/*护士*/
+.nurse_list{display: inline-block;width: 280px;height: 140px;color: #555;border-radius: 2px;border:1px solid #f1f1f1!important;position: relative;font-size:12px;box-shadow: 0px 0px 8px #f1f1f1; margin:20px 12px 0 12px;}
+.nurse_list_content{padding:0;margin:3px 0 0 0; width:160px; list-style:none;padding-top:2px; height:148px;}
+.nurse_list_content li{height:20px; line-height:20px;}
+.nurse_list_content li span em{ font-style:normal;font-size:14px; color:#009999;}
+.nurse_num{	width: 100px;height: 100px;margin:18px 0 0 0;padding:0;text-align:center;border-radius: 5px;}
+.bed_number{text-align:center; font-size:16px; color:#fff; height:30px; line-height:30px; margin:10px 0 0 0;}
+.Bed_number{color:#fff; font-size:36px; text-align:center;}
+.list_more{vertical-align:middle; text-align:center; line-height:130px;}
+.font50{font-size:50px; color:#f1f1f1; margin-right:10px; top:8px;}
+.font30{font-size:30px; color:#f1f1f1;}
+.light_gray{color:#999;}
+.margin_t5{margin-top:5px;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

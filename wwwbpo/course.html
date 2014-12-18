@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta charset="utf-8" />
+	<title>课程上传</title>
+	<base href="./" >
+	<link rel="stylesheet" type="text/css" href="assets/js/bootstrap-select/bootstrap-select.min.css">
+	<link rel="stylesheet" href="assets/css/chosen.css" />
+
+	<link rel="stylesheet" type="text/css" href="assets/css/datepicker.css"/>
+	<link rel='stylesheet' href='assets/js/jquery-watable/watable.css'/>
+	<link rel='stylesheet' href='assets/js/jquery-watable/animate.min.css'/>
+	<!-- bootstrap & fontawesome -->
+	<script type="text/javascript" src="parts/js/header.js"></script>
+<style type="text/css">
+	td{
+word-wrap:break-word; 
+word-break:break-all;	}
+
+</style>
+</head>
+<body class="no-skin">
+	<script type="text/javascript">$.include("parts/pages/navbar.shtml")</script>
+
+	<div class="main-container" id="main-container">
+		<script type="text/javascript">
+				try{ace.settings.check('main-container' , 'fixed')}catch(e){}
+			</script>
+		<!-- #section:basics/sidebar -->
+		<script type="text/javascript">$.include("parts/pages/sidebar.shtml")</script>
+
+		<!-- /section:basics/sidebar -->
+		<div class="main-content">
+			<script type="text/javascript">$.include("parts/pages/content_title.shtml")</script>
+			<!-- /section:basics/content.breadcrumbs -->
+			<div class="page-content">
+				<div class="page-content-area">
+
+					<div class="row">
+
+						<div class="note note-success container col-sm-12" style="padding-bottom:0px">
+							<div class="col-sm-2 form-group">
+								<div class="btn-group input-group">
+									<!-- 查询条件控件 -->
+									<div class="input-group-addon">实例ID</div>
+									<input id="find_instid" class="inputclear form-control" type="text" placeholder="键">
+									<span class="inputclear glyphicon glyphicon-remove-circle hide" ></span>
+								</div>
+							</div>
+							<div class="col-sm-2 form-group">
+								<div class="btn-group input-group">
+									<!-- 查询条件控件 -->
+									<div class="input-group-addon">定义ID</div>
+									<input id="find_defid" class="inputclear form-control" type="text" placeholder="键">
+									<span class="inputclear glyphicon glyphicon-remove-circle hide" ></span>
+								</div>
+							</div>
+							<div class="col-sm-2 form-group">
+			                    <div class="btn-group input-group">
+			                        <div class="input-group-addon">状态</div>
+			                        <select class="chosen-select" id="find_status">
+			                            <option value="-1">所有</option>
+			                            <option value="0">新建</option>
+			                          	<option value="3">处理中</option>
+			                            <option value="8">已完成</option>
+			                            <option value="-2">其他</option>
+			                        </select>
+
+			                    </div>
+			                </div>							
+							<div class="col-sm-6 form-group">
+								<div class="btn-group btn-sm">
+								    <button id="find_button" class="btn btn-sm btn-primary">
+								        查询&nbsp; <i class="fa fa-search"></i>
+								    </button>
+								</div>
+								
+								<div class="btn-group btn-sm">
+								    <button id="add_button" class="btn btn-sm btn-info" data-target="#stack1" data-toggle="modal">
+								        添加&nbsp; <i class="fa fa-plus"></i>
+								    </button>
+								</div>
+
+								<div class="btn-group btn-sm">
+								    <button id="del_button" class="btn btn-sm btn-warning">
+								        删除&nbsp;
+								        <i class="fa fa-trash-o"></i>
+								    </button>
+								</div>
+
+								<div class="btn-group btn-sm">
+								    <button id="upd_button" class="btn btn-sm btn-danger" data-target="#stack1" data-toggle="modal">
+								        修改&nbsp;
+								        <i class="fa fa-pencil"></i>
+								    </button>
+								</div>
+							</div>
+						</div>
+						<div class="container-fluid">
+							<div id="divtable" class="table-responsive container col-sm-12" ></div>
+						</div>
+					</div>
+					<!-- /.row -->
+				</div>
+				<!-- /.page-content-area -->
+			</div>
+			<!-- /.page-content -->
+		</div>
+		<!-- /.main-content -->
+
+		<script type="text/javascript">$.include("parts/pages/copyright.shtml")</script>
+
+	</div>
+	<!-- /.main-container -->
+
+	<script type="text/javascript">$.include("parts/pages/foot.shtml")</script>
+
+</body>
+	<script type="text/javascript">$.include("parts/pages/xwatable-form.shtml")</script>
+
+	<script type="text/javascript" src="assets/js/date-time/bootstrap-datepicker.min.js"></script>
+
+	<script type="text/javascript" src="assets/js/bootstrap-select/bootstrap-select.min.js"></script>
+
+	<script src="assets/js/chosen.jquery.min.js"></script>
+
+	<script type="text/javascript" src="assets/js/jquery-watable/jquery.watable.js"></script>
+	<script type="text/javascript" src="assets/addons/rqlbuilder.js"></script>
+	<script type="text/javascript" src="assets/addons/xwatable.js"></script>
+	<script type="text/javascript" src="assets/addons/rest.js"></script>
+	<script type="text/javascript" src="assets/addons/refhelper.js"></script>
+	<script type="text/javascript" src="assets/addons/jquery-dateFormat.min.js"></script>
+
+	<script type="text/javascript">ace.vars['base'] = '..'; </script>
+
+	<!-- inline scripts related to this page -->
+	<script type="text/javascript">
+		var newCreateDate=function(){
+		    return {
+		        f: function(val){
+		        	return val;
+		            if(!val)
+		            {
+		                return "";
+		            }
+		            return jQuery.format.toBrowserTimeZone(new Date(parseInt(val)));
+		        },
+		    }
+		}();
+
+
+        
+        var statusEditBuilder=function(val){
+		    console.log("setBuilder::"+val);
+		    if(val)
+		     {
+		        return "<select id='status' name='status' class='chosen-select '><option value=1 selected>有效</option><option value=0>无效</option></select>";
+		     }   
+		    return "<select id='status' name='status' class='chosen-select'><option value=1>有效</option><option value=0 selected>无效</option></select>";
+		}
+	var producthelper=RefHelper.create({
+		    ref_url:"/bporest/productline",
+		    ref_col:"_id",
+		    ref_display:"name",
+		});
+		var opts=""
+
+
+		 $.each(producthelper.getData(), function(key, val) {
+	                            opts+='<option value="'+key+'"';
+	                                opts+='>'+val+'</option>'
+	                            
+	                        });
+		//$("#find_productname").html(opts);
+		//$("#find_productname").chosen()
+
+		
+		var productFM=function(){
+		    return {
+		        f: function(val){
+		            return producthelper.getDisplay(val);
+		        },
+		    }
+		}();
+
+
+		jQuery(function($) {//初始化函数
+			setTitlePath("实例监控","业务监控")
+
+		     var xw=XWATable.init(
+		        {
+		            //----------------table的选项-------
+		            pageSize: 50,                //Initial pagesize
+		            columnPicker: true,         //Show the columnPicker button
+		            transition: 'fade',  //(bounce, fade, flip, rotate, scroll, slide).
+		            checkboxes: true,           //Make rows checkable. (Note. You need a column with the 'unique' property)
+		            checkAllToggle:true,        //Show the check-all toggle//+RQLBuilder.like("KEYY", "a").rql()
+		            rowClicked: function(data) {    
+		                console.log('row clicked');   //data.event holds the original jQuery event.
+		                console.log(data);            //data.row holds the underlying row you supplied.
+		            },
+		            //----------------基本restful地址---
+		            restbase: '/course',
+		            //---------------行定义
+		            coldefs: [
+		                        {
+		                            col:"_id",
+		                            friendly: "id",
+		                            unique: true,
+		                            hidden: true,
+		                            nonedit:"nosend"
+		                        },
+		                        {
+		                            col:"courseName",
+		                            friendly: "课程名称",
+		                        },
+		                        {
+		                            col:"lecturer",
+		                            friendly: "讲师",
+		                        },
+		                        {
+		                            col:"describe",
+		                            friendly: "课程简介",
+		                            inputsource : "textarea",
+		                            width: 40,
+		                            height: 5,
+		                        },
+		                        {
+		                            col:"releaseTime",
+		                            friendly: "发布时间",
+									format: newCreateDate,
+									inputsource:"datepicker"
+
+		                        },
+		                        {
+		                            col:"businessLines",
+		                            friendly: "公司业务线",
+									ref_url: "/bporest/bizline",
+				                    ref_name: "name",
+				                    ref_value: "_id", 
+				                    format: productFM,
+
+		                        },
+
+		                        {
+		                            col:"productLine",
+		                            friendly: "产品线",
+		                            inputsource: "select",
+		                            ref_url: "/bporest/productline",
+				                    ref_name: "name",
+				                    ref_value: "_id", 
+				                    format: productFM,
+		                        },
+		                        {
+		                            col:"filePath",
+		                            friendly: "课件地址",
+		                        },
+								{
+		                            col:"iconPath",
+		                            friendly: "图片",
+		                        },
+		                    	                       
+			                ],
+		            //---------------查询时过滤条件
+		            findFilter: function(){//find function
+		                // RQBuilder.and(rqls)
+		                var filter_instid=undefined;
+		                var filter_defid=undefined;
+		                var filter_status=undefined;
+
+		                if($('#find_instid').val())
+		                {   
+		                    filter_instid=RQLBuilder.like("procinstid",$('#find_instid').val());
+		                }
+		                if($('#find_defid').val())
+		                {   
+		                    filter_defid=RQLBuilder.like("procdefid",$('#find_defid').val());
+		                }
+		                
+		                if($('#find_status').val()!=-1)
+		                {   
+		                    filter_status=RQLBuilder.equal("status",$('#find_status').val());
+		                }
+		                var filter=RQLBuilder.and([
+		                        filter_instid,filter_defid,filter_status
+		                    ]);
+		                return '{"procinstid":"'+$('#find_instid').val()+'","procdefid":"'+$('#find_defid').val()+'","interstate":'+$('#find_status').val()+'}';
+		            },//--findFilter
+		           
+
+		        }//--init
+		    );//--end init
+			
+			$('#find_status').chosen(); 
+
+		    $('#find_defid').on('input',function(e){
+		        console.log("changing::"+e.target.value)
+		        if(!e.target.value){
+		            xw.autoResetSearch();
+		        }
+		    });
+
+		})
+	</script>
+</html>

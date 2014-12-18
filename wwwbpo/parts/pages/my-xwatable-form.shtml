@@ -1,0 +1,68 @@
+<script type="text/x-template" id="my__dust_tableform" >
+    <form class="bootbox-form form-horizontal form-bordered form-label-stripped" onsubmit="return false" role="form" 
+        id="my__editform">
+
+        <input type="hidden" id="_id" name="_id" value="" />
+      
+   
+        <div class="form-body">
+            <div class="form-group" >
+                <label class="col-md-4 control-label" >姓名</label>
+                <div class="col-md-8">                
+                        <div class="input-icon right"> <i class="fa fa-info-circle tooltips" data-container="body"></i>
+                            <input type="text" class="bootbox-input bootbox-input-text form-control"  readonly="readonly"
+                                    id="name" name="name" />
+                        </div>
+                </div>
+            </div>
+
+           <div class="form-group" >
+                <label class="col-md-4 control-label" >病历本号</label>
+                <div class="col-md-8">                
+                        <div class="input-icon right"> <i class="fa fa-info-circle tooltips" data-container="body"></i>
+                            <input type="text" class="bootbox-input bootbox-input-text form-control"  readonly="readonly"
+                                    id="binglibenhao" name="binglibenhao" />
+                        </div>
+                </div>
+            </div>
+
+            <input type="hidden" id="zhuangui" name="zhuangui" value="" />
+        <input type="hidden" id="zhuanguitype" name="zhuanguitype" value="" />
+        <input type="hidden" id="zhuanguiyuanyin" name="zhuanguiyuanyin" value="" />
+        <input type="hidden" id="qitayuanyin" name="qitayuanyin" value="" />
+        <input type="hidden" id="createdate" name="createdate" value="" />
+    
+
+     <!--     <div class="form-group" >
+                <label class="col-md-4 control-label" >日期</label>
+                <div class="col-md-8" >
+                    <div class="input-group date date-picker"  data-date-format="yyyy-mm-dd" data-date-viewmode="years"  data-value="" >                     
+                      <input type="text" id="date"  name="date"  class="form-control" readonly>                       
+                      <span class="input-group-btn">
+                          <button class="btn default" type="button"> <i class="fa fa-calendar"></i>
+                          </button>
+                     </span>
+                   </div>
+                </div>
+            </div>-->
+
+
+
+           <div class="form-group" >
+                <label class="col-md-4 control-label" >医生</label>
+                <div class="col-md-8" >
+                    <select class="form-control chosen-select" width="100%" id="yishenqueren" name="yishenqueren" 
+                                data-ref-url="rest/zhuan_gui/yi_sheng_que_ren.json" 
+                                data-ref-name="rname"
+                                data-ref-value="rcode" data-value="">
+                     </select> 
+
+                </div>
+            </div>
+
+
+         <input type="hidden" id="beizhu" name="beizhu" value="" />
+  
+        </div>
+    </form>
+</script>

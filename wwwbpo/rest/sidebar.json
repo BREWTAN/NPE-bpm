@@ -1,0 +1,36 @@
+[
+  {
+    "name": "参数管理",
+    "url": "#",
+    "icon": "fa-globe",
+    "children": [
+      {
+        "name": "产品线",
+        "url": "productline.html",
+        "icon": "fa-desktop"
+      },
+      {
+        "name": "业务线",
+        "url": "bizline.html",
+        "icon": "fa-desktop"
+      }
+    ]
+  },
+  {
+    "name": "课程管理",
+    "url": "#",
+    "icon": "fa-globe",
+    "children": [
+      {
+        "name": "公共课程",
+        "url": "course.html",
+        "icon": "fa-tasks"
+      },
+      {
+        "name": "我的课程",
+        "url": "coursemine.html",
+        "icon": "fa-desktop"
+      }
+    ]
+  }
+]

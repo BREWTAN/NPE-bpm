@@ -1,0 +1,26 @@
+
+	<div class="btn-group btn-sm">
+	    <button id="find_button" class="btn btn-sm btn-primary">
+	        查询&nbsp; <i class="fa fa-search"></i>
+	    </button>
+	</div>
+	
+	<div class="btn-group btn-sm">
+	    <button id="add_button" class="btn btn-sm btn-info" data-target="#stack1" data-toggle="modal">
+	        添加&nbsp; <i class="fa fa-plus"></i>
+	    </button>
+	</div>
+
+	<div class="btn-group btn-sm">
+	    <button id="del_button" class="btn btn-sm btn-warning">
+	        删除&nbsp;
+	        <i class="fa fa-trash-o"></i>
+	    </button>
+	</div>
+
+	<div class="btn-group btn-sm">
+	    <button id="upd_button" class="btn btn-sm btn-danger" data-target="#stack1" data-toggle="modal">
+	        修改&nbsp;
+	        <i class="fa fa-pencil"></i>
+	    </button>
+	</div>
