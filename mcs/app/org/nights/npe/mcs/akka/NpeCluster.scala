@@ -57,7 +57,7 @@ class FsmCollector extends Actor with ActorLogging {
         
         val computefsm=Global.remote.actorSelection(name.toString()+"/user/stats")
         val viewerfsm=Global.remote.actorSelection(name+"/user/stats")
-        println("fsm==" + name + "," + status+",cc="+name.toString()+"/user/stats")
+//        println("fsm==" + name + "," + status+",cc="+name.toString()+"/user/stats")
         //        workerRouter ! ConsistentHashableEnvelope(ConsistentHashableEnvelope("stats", "stats"), "stats")
         val result = status match {
           case compute: String if (compute.contains("compute")) =>
@@ -65,18 +65,18 @@ class FsmCollector extends Actor with ActorLogging {
             
             match {
               case fps: String =>
-                println("get compute:" + name)
+//                println("get compute:" + name)
 
                 "{\"fps\":{" + fps + "},\"name\":\"" + name + "\",\"status\":\"" + status + "\"}"
               case _ =>
-                println("cannot reach member:" + mem)
+//                println("cannot reach member:" + mem)
                 "{\"name\":\"" + name + "\",\"status\":\"" + status + "\"}"
               //          //            (0, 0, 0, 0,0,0,0)
             }
           case viewer: String if (viewer.contains("viewer")) =>
             Await.result(ask(viewerfsm, "stats").recover({case e:java.util.concurrent.TimeoutException => ""}), timeout.duration)
              match {   case fps: String =>
-                println("get viewer:" + name)
+//                println("get viewer:" + name)
 
                 "{\"fps\":{" + fps + "},\"name\":\"" + name + "\",\"status\":\"" + status + "\"}"
               case _ =>
@@ -89,11 +89,11 @@ class FsmCollector extends Actor with ActorLogging {
           case _ =>
             "{\"name\":\"" + name + "\",\"status\":\"" + status + "\"}"
         }
-        println("result===" + result);
+//        println("result===" + result);
         result
       }
 
-      println("rere===" + stats);
+//      println("rere===" + stats);
       //      Global.statsList.+=(re.asInstanceOf[List[String]].mkString("[",",","]"))
       if (stats.size == Global.members.size) {
         Global.statsList += stats

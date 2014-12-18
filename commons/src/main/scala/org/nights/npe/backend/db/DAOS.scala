@@ -34,6 +34,11 @@ object ObtainTasksDAO extends SimpleDAO[KOObtainTasks] {
   val keyname = "taskinstid"
 }
 
+object ChangePIODAO extends SimpleDAO[KOChangePIOTasks] {
+  val ttag = classTag[KOChangePIOTasks];
+  val tablename = "tasks";
+  val keyname = "taskinstid"
+}
 object SubmitTasksDAO extends SimpleDAO[KOSubmitTasks] {
   val ttag = classTag[KOSubmitTasks];
   val tablename = "tasks";

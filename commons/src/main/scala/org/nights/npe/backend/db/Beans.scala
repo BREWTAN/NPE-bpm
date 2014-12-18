@@ -14,7 +14,7 @@ object InterState {
   val ProcessEnd: Int = 8
 }
 
-case class KOParams(val keyy: String, val valuee: String,val des:String)
+case class KOParams(val keyy: String, val valuee: String, val des: String)
 
 case class KOProcdef(
   val defid: String = null,
@@ -50,16 +50,16 @@ case class KOTasks(val taskinstid: String, // varchar(32) not null,
   val submittime: Option[Float] = null,
   val taskcenter: String = null,
   val rootproc: String = null,
-  val nodetype:Option[Int] = Some(0),//节点类型，0表示人工，1表示引擎计算
-  val createtime: Option[Long] = Some(System.currentTimeMillis())
-)
-
-
+  val nodetype: Option[Int] = Some(0), //节点类型，0表示人工，1表示引擎计算
+  val createtime: Option[Long] = Some(System.currentTimeMillis()))
 
 case class KOObtainTasks(val taskinstid: String,
   val obtainer: String,
   val obtaintime: Option[Long] = Some(System.currentTimeMillis()),
   val interstate: Option[Int] = Some(1))
+
+case class KOChangePIOTasks(val taskinstid: String,
+  val taskPIO: Option[Int])
 
 case class KOInTermTask(val taskinstid: String,
   val cluster: String,
@@ -115,7 +115,7 @@ case class KOConvergeCounter(
 case class KOTaskCenter(
   val centerid: String,
   val centername: String = null,
-  val status:Option[Int] =  Some(0),
+  val status: Option[Int] = Some(0),
   val createtime: Option[Long] = Some(System.currentTimeMillis()),
   val modtime: Option[Long] = Some(System.currentTimeMillis()))
 
@@ -123,7 +123,7 @@ case class KOTaskRole(
   val roleid: String,
   val centerid: String,
   val rolename: String = null,
-  val status:Option[Int] =  Some(0),
+  val status: Option[Int] = Some(0),
   val createtime: Option[Long] = Some(System.currentTimeMillis()),
   val modtime: Option[Long] = Some(System.currentTimeMillis()))
 

@@ -185,5 +185,8 @@ object EhCacheStorage extends StateStore {
   override def doRemoveConverge(convergeId: String): Future[Any] = {
     Future { new QueryResult(1, "OK") }
   }
+  override def doChangePIO(taskid:String, newPIO:Int): Future[Any] = {
+    Future { new QueryResult(1, "OK") }
+  }
 
 }

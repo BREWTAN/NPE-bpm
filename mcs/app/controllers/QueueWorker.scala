@@ -59,6 +59,7 @@ import org.nights.npe.backend.db.KOTasks
 import org.nights.npe.backend.db.KOTasks
 import org.nights.npe.backend.db.ObtainTasksDAO
 import org.nights.npe.backend.db.KOObtainTasks
+import org.nights.npe.mo.ChangeQueuePIO
 object QueueWorker
   extends Controller {
   import org.nights.npe.mcs.akka.JerksonHelper._
@@ -207,6 +208,15 @@ object QueueWorker
     }
   }
 
+  def changePIO(taskId:String,newPIO:Int)  = Action.async { request =>
+    poller.ask(ChangeQueuePIO(taskId,newPIO))(60 seconds) map ( result =>{
+      result match{
+        case Some(id) => Ok("{\"status\": " + 1 + ",\"msg\":\"" + id + "\"}")
+        case _ => Ok("{\"status\": " + 0 + "\"}")
+      }
+    }
+    )
+  }
   def hangup(operator: String, taskinstid: String) = Action.async { request =>
     submitor.ask(ChangeTaskState(taskinstid, InterStateHangup().v))(10 seconds) map (result => {
       val msg =

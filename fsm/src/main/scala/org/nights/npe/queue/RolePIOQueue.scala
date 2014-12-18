@@ -59,7 +59,7 @@ class RolePIOQueue[T <: PriorityAware] {
       for (q <- queuesList) {
         q.poll(obtainer.filter) match {
           case some @ Some(task) => return some
-          case _ => 
+          case _ =>
         }
       }
       return None
@@ -69,6 +69,16 @@ class RolePIOQueue[T <: PriorityAware] {
         case _ => return None
       }
     }
+  }
+ 
+  def obtainByID(taskid: String): Option[T] = {
+    for (q <- queuesList) {
+      q.obtainByID(taskid) match {
+        case some @ Some(task) => return some
+        case _ =>
+      }
+    }
+    return None;
   }
 
 }

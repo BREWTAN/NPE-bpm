@@ -96,6 +96,9 @@ POST 	/newproc			controllers.QueueWorker.newProc(submiter:String?=null,center:St
 GET		/hangup				controllers.QueueWorker.hangup(operator: String?=null, taskinstid:String?=null)
 
 GET		/obtainhangup		controllers.QueueWorker.obtainFromHangup(obtainer:String?=null,role:String ?=null,center:String?=null,states:String?=null,extendsql:String?=null)
+
+GET     /changepio			controllers.QueueWorker.changePIO(taskid:String,newPIO:Int)
+
 ##################
 # logs
 

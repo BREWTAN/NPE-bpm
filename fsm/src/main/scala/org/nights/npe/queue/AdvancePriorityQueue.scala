@@ -52,7 +52,7 @@ class AdvancePriorityQueue[T <: PriorityAware](role: String) {
   def checkIfExist(sc: T): Boolean = {
     return queuesList.filter(_.checkIfExist(sc)).size > 0
   }
-  
+
   def offer(sc: T)(implicit lq: LinkedBlockingQueue[T] = null): Unit = {
     queues.get(sc.pio) match {
       case Some(q) => q.offer(sc)
@@ -92,22 +92,41 @@ class AdvancePriorityQueue[T <: PriorityAware](role: String) {
   def poll(filter: String = null): Option[T] = {
     for (q <- queuesList) {
       if (q.size() > 0) {
-        if (filter != null&&filter.length()>0) {
+        if (filter != null && filter.length() > 0) {
           for (i <- 1 to q.size()) {
             val task = q.poll();
             if (task != null) {
               if (task.rolemark == null || (!task.rolemark.contains(filter + ","))) return wrapPoll(task);
               else //put back
-                {
-            	  q.offer(task)(true)
-            	  //return None;
-                }
+              {
+                q.offer(task)(true)
+                //return None;
+              }
             }
           }
         } else {
           val task = q.poll();
           if (task != null) {
             return wrapPoll(task);
+          }
+        }
+      }
+    }
+    return None
+  }
+
+  def obtainByID(taskid: String): Option[T] = {
+    for (q <- queuesList) {
+      if (q.size() > 0) {
+        for (i <- 1 to q.size()) {
+          val task = q.poll();
+          if (task != null) {
+            if(task.id==taskid){
+              return wrapPoll(task);
+            }
+            else {
+              q.offer(task)(true)
+            } 
           }
         }
       }

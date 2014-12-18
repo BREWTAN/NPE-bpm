@@ -85,6 +85,11 @@
 								        回收任务&nbsp; <i class="fa fa-refresh"></i>
 								    </button>
 								</div>
+								<div class="btn-group btn-sm">
+								    <button id="do_changepio" class="btn btn-sm btn-success">
+								        调整优先级&nbsp; <i class="fa fa-refresh"></i>
+								    </button>
+								</div>
 								<!--div class="btn-group btn-sm">
 								    <button id="del_button" class="btn btn-sm btn-warning">
 								        删除&nbsp;
@@ -303,6 +308,53 @@
                 } //else
 
 		    })
+		    $('#do_changepio').on('click',function(e){
+		    	var waTable= xw.getTable();
+		    	var selrows = waTable.getData(true);
+
+                if (selrows.rows.length == 0) {
+                    bootbox.alert("<br><center><h4>请选择需要修改的任务</h4></center><br>");
+                }else 
+				if (selrows.rows.length > 1 ) {
+                    bootbox.alert("<br><center><h4>每次只能修改一个任务</h4></center><br>");
+                }
+                 else {
+                    var oldpio = 0
+                    var taskid = ""
+
+                    $.each(selrows.rows, function(index, row) {
+                        taskid=(row["taskinstid"]);
+                        oldpio=(row["taskPIO"])
+                    });
+                    bootbox.prompt({
+					  title: "What is your real name?",
+					  value: oldpio,
+					  callback: function(result) {
+					    if (result === null) {
+					      
+					    } else {
+							console.log("changepio:"+taskid+",newpio="+result+",oldpio="+oldpio);
+                            $.ajax({
+                            	url: '/nperest/changepio?taskid='+taskid+"&newPIO="+result,
+                            	type: 'GET',
+                            	async: false
+                            })
+                            .done(function(data) {
+                            	console.log("success::"+JSON.stringify(data));
+                            })
+							;                            
+                            waTable.update();
+
+					    }
+					  }
+					});
+
+             
+
+                } //else
+
+		    })
+
 
 
 		})

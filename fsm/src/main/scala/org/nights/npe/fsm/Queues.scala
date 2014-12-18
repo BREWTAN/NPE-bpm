@@ -17,7 +17,7 @@ import org.nights.npe.po.StateContextWithData
 import org.nights.npe.mo.ObtainedStates
 import org.nights.npe.mo.NoneStateInQueue
 import org.nights.npe.mo.RecycleTasks
-import org.nights.npe.mo.RecycleTasks
+import org.nights.npe.mo.ChangeQueuePIO
 
 object GlobalQueue {
   val queue: RolePIOQueue[StateContextWithData] = new RolePIOQueue
@@ -57,6 +57,14 @@ class QueueWorker extends Actor with ActorLogging with ActorHelper {
       queue.poll(obtainer) match {
         case Some(task) => stateStores ! wrapToPipeMessage(ObtainedStates(task.sc asObtain, task.dt, obtainer), sender, task.sc.taskInstId)
         case a @ _ => sender ! NoneStateInQueue(obtainer)
+      }
+    }
+    case cq @ ChangeQueuePIO(taskid,newPIO,scwData) => {
+           log.info("ChangeQueuePIO@"+taskid+",to:"+newPIO)
+      queue.obtainByID(taskid) match {
+        case Some(task) => 
+          stateStores ! wrapToPipeMessage(ChangeQueuePIO(taskid,newPIO,task), sender, task.sc.taskInstId)
+        case a @ _ => sender ! None
       }
     }
     case cc @ CCPipeEnvelope(RecycleTasks(tasks), nextActor, ccActor) => {

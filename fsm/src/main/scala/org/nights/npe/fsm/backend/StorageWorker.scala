@@ -24,6 +24,7 @@ import org.nights.npe.mo.NewProcess
 import org.nights.npe.mo.SubmitStates
 import org.nights.npe.mo.ChangeTaskState
 import org.nights.npe.mo.NoneStateInQueue
+import org.nights.npe.mo.ChangeQueuePIO
 //state op
 
 trait StateStore {
@@ -33,6 +34,7 @@ trait StateStore {
   //  def saveUpdateStates(state: StateContext, ctxData: ContextData): Future[Any]
   def doObtainedStates(state: StateContext, obtainer: String): Future[Any]
   def doSubmitStates(state: StateContext, submitter: String, ctxData: ContextData): Future[Any]
+  def doChangePIO(taskid: String, newPIO: Int): Future[Any] 
 
   def saveGateway(state: StateContext, submitter: String, ctxData: ContextData): Future[Any];
 
@@ -45,8 +47,8 @@ trait StateStore {
   def doRemoveConverge(convergeId: String): Future[Any]
 
   def doRecycleStates(list: List[StateContextWithData]): Future[Any]
-  
-  def doUpdateState(taskinstid: String, newstate: Int): Future[Any] ;
+
+  def doUpdateState(taskinstid: String, newstate: Int): Future[Any];
 
 }
 class StorageWorker extends Actor with ActorLogging with ActorHelper {
@@ -98,7 +100,7 @@ class StorageWorker extends Actor with ActorLogging with ActorHelper {
             forword(ObtainedStates(state, ctxData, obtainer), nextActor, state.taskInstId)
           } else {
             log.error(" obtainer Error!!:Duplicate  obtainer" + qr + "::" + state)
-            forword(NoneStateInQueue( obtainer), nextActor, state.taskInstId)
+            forword(NoneStateInQueue(obtainer), nextActor, state.taskInstId)
           }
         }
         case a @ _ =>
@@ -108,7 +110,32 @@ class StorageWorker extends Actor with ActorLogging with ActorHelper {
           }
       }
     }
- 
+
+    case PipeEnvelope(cq @ ChangeQueuePIO(taskid, newPIO,scwData),ssender) => {
+       log.info("@ ChangeQueuePIO@"+taskid)
+      store.doChangePIO(taskid, newPIO) andThen {
+        //        case _ =>
+        //          forword(ObtainedStates(state, obtainer, ctxData), nextActor, state.taskInstId)
+        case Success(qr: QueryResult) => {
+          if (qr.rowsAffected > 0) {
+            log.debug(" obtainer OKOK!!:" + qr)
+            forword(Transition(List(scwData.sc), scwData.dt withTaskPIO(newPIO) ), Queueworkers(), taskid)
+            forword(Some(taskid), ssender , taskid)
+          } else {
+            log.error(" Change Error!!:  " + qr + "::" + taskid)
+            forword( None,ssender)
+//            forword(NoneStateInQueue(obtainer), nextActor, state.taskInstId)
+          }
+        }
+        case a @ _ =>
+          {
+            log.error(" obtainer Uknow result!!:" + a)
+            forword( None,ssender)
+            //            
+          }
+      }
+    }
+
     case PipeEnvelope(SubmitStates(state, submitter, ctxData), nextActor) => {
       log.info("get SubmitStates:{}@{},next={}", state, submitter, nextActor)
       store.doSubmitStates(state, submitter, ctxData) andThen {
@@ -145,30 +172,30 @@ class StorageWorker extends Actor with ActorLogging with ActorHelper {
 
       forword(obtain, Queueworkers(), obtain.obtainer.uid + "_")
     }
-    case cc@CCPipeEnvelope(RecycleTasks(tasks), nextActor,ccActor) => {
+    case cc @ CCPipeEnvelope(RecycleTasks(tasks), nextActor, ccActor) => {
       store.doRecycleStates(tasks) andThen {
         case Success(qr: QueryResult) => {
-            log.debug("recycle OKOK!!:" + qr)
-            forword(cc,ccActor,self.toString)
+          log.debug("recycle OKOK!!:" + qr)
+          forword(cc, ccActor, self.toString)
         }
         case a @ _ =>
           {
             log.error("recycle Uknow result!!:" + a)
-            forword("recycyle.error",nextActor,self.toString)
+            forword("recycyle.error", nextActor, self.toString)
             //            
           }
       }
     }
-     case cc@PipeEnvelope(ChangeTaskState(taskinstid,newstate),nextActor) => {
+    case cc @ PipeEnvelope(ChangeTaskState(taskinstid, newstate), nextActor) => {
       store.doUpdateState(taskinstid, newstate) andThen {
         case Success(qr: QueryResult) => {
-            log.debug("update OKOK!!:" + qr)
-            forword(ChangeTaskState(taskinstid,newstate),nextActor,self.toString)
+          log.debug("update OKOK!!:" + qr)
+          forword(ChangeTaskState(taskinstid, newstate), nextActor, self.toString)
         }
         case a @ _ =>
           {
             log.error("update failed result!!:" + a)
-            forword("error",nextActor,self.toString)
+            forword("error", nextActor, self.toString)
             //            
           }
       }

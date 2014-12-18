@@ -38,6 +38,8 @@ import org.nights.npe.po.StateContextWithData
 import org.nights.npe.po.StateContext
 import org.nights.npe.po.InterStateNew
 import org.nights.npe.backend.db.KOObtainTasks
+import org.nights.npe.backend.db.ChangePIODAO
+import org.nights.npe.backend.db.KOChangePIOTasks
 
 /**
  * MySqlUpdate的模式
@@ -98,11 +100,14 @@ object MySqlStorage extends StateStore {
 
   def saveUpdateStates(state: StateContext, ctxData: ContextData): Future[Any] = { //节点更新，直接保存,主要是节点内部
     TasksDAO.updateSelective(BeanTransHelper.koFromState(state, ctxData));
-  } 
+  }
   override def doObtainedStates(state: StateContext, obtainer: String): Future[Any] = {
     //    log.trace("get ObtainedStates:@" + state + ",by" + obtainer)
     UpdateObtainTasksDAO.updateByCond(BeanTransHelper.koForObtainState(state, obtainer),
-        KOObtainTasks(state.taskInstId ,null,null,Some(0)));
+      KOObtainTasks(state.taskInstId, null, null, Some(0)));
+  }
+  override def doChangePIO(taskid: String, newPIO: Int): Future[Any] = {
+    ChangePIODAO.updateSelective(KOChangePIOTasks(taskid,Some(newPIO)));
   }
   override def doRecycleStates(list: List[StateContextWithData]): Future[Any] = {
     val uplist = list.map({ f =>
@@ -113,7 +118,7 @@ object MySqlStorage extends StateStore {
   }
 
   override def doUpdateState(taskinstid: String, newstate: Int): Future[Any] = {
-    TasksDAO.exec("UPDATE tasks set interstate=? where taskinstid = ? ",List(newstate,taskinstid));
+    TasksDAO.exec("UPDATE tasks set interstate=? where taskinstid = ? ", List(newstate, taskinstid));
   }
   override def doSubmitStates(state: StateContext, submitter: String, ctxData: ContextData): Future[Any] = {
     //    log.trace("get SubmitStates:@" + state + ",by" + submitter)

@@ -69,6 +69,7 @@ trait PriorityAware {
   def pio: Int
   def role: String
   def rolemark: String
+  def id:String
 }
 case class ContextData(
   val procPIO: Int = 0,
@@ -86,12 +87,41 @@ case class ContextData(
   val extra: HashMap[String, Any] = HashMap.empty) {
   def PIO = procPIO + taskPIO;
 
+  def getNotNull(a1:String, a2:String) = {
+    a1 match{
+      case v if a1 == null => a1
+      case _ => a2
+    }
+  }
+   def getNotNone(a1:Option[Int], a2:Option[Int]) = {
+    a1 match{
+      case Some(v) => a1
+      case _ => a2
+    }
+  }
+  def getNotNoneF(a1:Option[Float], a2:Option[Float]) = {
+    a1 match{
+      case Some(v) => a1
+      case _ => a2
+    }
+  }
   def merge(other: ContextData): ContextData = {
     if (PIO >= other.PIO) {
-      ContextData(procPIO, taskPIO, rolemark, startMS, idata1, idata2, strdata1, strdata2, fdata1, fdata2, taskcenter, rootproc, other.extra.++:(extra))
+      ContextData(procPIO, taskPIO, rolemark, startMS, 
+          getNotNone(idata1,other.idata1 ), 
+          getNotNone(idata2,other.idata2 ), 
+          getNotNull(strdata1,other.strdata1), 
+          getNotNull(strdata2,other.strdata2), 
+          getNotNoneF(fdata1,other.fdata1 ), 
+          getNotNoneF(fdata2,other.fdata2 ), 
+          taskcenter, rootproc, other.extra.++:(extra))
     } else {
       other.merge(this)
     }
+  }
+  def withTaskPIO(newPIO:Int):ContextData={
+        ContextData(procPIO, newPIO, rolemark, startMS, idata1, idata2, strdata1, strdata2, fdata1, fdata2, taskcenter, rootproc, extra)
+
   }
   def asHigerPIODData(): ContextData = {
     ContextData(procPIO, taskPIO + 1, rolemark, startMS, idata1, idata2, strdata1, strdata2, fdata1, fdata2, taskcenter, rootproc, extra)
@@ -106,6 +136,7 @@ case class StateContextWithData(val sc: StateContext, val dt: ContextData) exten
   def pio = dt.procPIO + dt.taskPIO
   def rolemark = dt.rolemark
   def role = sc.taskName
+  def id=sc.taskInstId
 }
 
 case class DoneStateContext(

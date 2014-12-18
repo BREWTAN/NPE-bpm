@@ -32,7 +32,7 @@ class StatsWorker extends Actor with ActorLogging {
 
   def receive = {
     case "stats" =>
-      log.info("get Stats@" + sender)
+//      log.info("get Stats@" + sender)
       val runtime = Runtime.getRuntime();
       val mb=1024*1024;
       
