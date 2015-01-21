@@ -91,7 +91,7 @@ GET		/obtain				controllers.QueueWorker.obtainByRole(obtainer:String?=null,role:
 
 POST	/submit				controllers.QueueWorker.submit()
 
-POST 	/newproc			controllers.QueueWorker.newProc(submiter:String?=null,center:String?=null,procdef:String?=null)
+POST 	/newproc			controllers.QueueWorker.newProc(submiter:String?=null,center:String?=null,procdef:String?=null,procinstid:String?=null)
 
 GET		/hangup				controllers.QueueWorker.hangup(operator: String?=null, taskinstid:String?=null)
 

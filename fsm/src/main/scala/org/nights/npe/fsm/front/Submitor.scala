@@ -43,7 +43,7 @@ class Submitor extends Actor with ActorLogging with ActorHelper {
         log.info("new Process,{},{},{}", procInstId, procDefId, ctxData)
 
         val startDefNode = ProcDefHelper.startDefOn(procDefId)
-        val taskInstId = nextUUID;
+        val taskInstId = procInstId;
 
         val state = new StateContext(procInstId,
           procDefId,

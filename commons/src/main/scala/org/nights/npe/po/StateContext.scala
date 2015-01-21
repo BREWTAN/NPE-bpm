@@ -89,7 +89,7 @@ case class ContextData(
 
   def getNotNull(a1:String, a2:String) = {
     a1 match{
-      case v if a1 == null => a1
+      case v if a1 != null => a1
       case _ => a2
     }
   }

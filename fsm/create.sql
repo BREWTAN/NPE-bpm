@@ -1,3 +1,10 @@
+CREATE DATABASE npe;
+
+CREATE USER 'npe'@'localhost' IDENTIFIED BY 'npenpe';
+CREATE USER 'npe'@'%' IDENTIFIED BY 'npenpe';
+GRANT ALL ON *.* TO 'npe'@'%';
+GRANT ALL ON *.* TO 'npe'@'localhost';
+
 use npe;
 
 

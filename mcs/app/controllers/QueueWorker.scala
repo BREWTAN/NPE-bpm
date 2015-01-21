@@ -163,17 +163,21 @@ object QueueWorker
     }
 
   }
-  def newProc(submiter: String, center: String, procdef: String) = Action.async { request =>
+  def newProc(submiter: String, center: String, procdef: String,procinstid :String ) = Action.async { request =>
     val jsonbody = request.body.asJson.get
 
     val ss = Json.fromJson[ContextData](jsonbody)
     if (ss.isSuccess) {
       //ANewProcess(procInstId: String, submitter: String, procDefId: String, data: ContextData)
       println("success==" + ss)
-      val uuid = UUID.randomUUID().toString();
-      submitor.ask(ANewProcess(uuid, submiter, procdef, ss.get))(10 seconds) map (result => {
+      
+      val procid = procinstid match {
+        case str if (str!=null) => procinstid
+        case _ => UUID.randomUUID().toString()
+      }
+      submitor.ask(ANewProcess(procid, submiter, procdef, ss.get))(10 seconds) map (result => {
         val jsonResult = mapper.writeValueAsString(result)
-        Await.ready(OplogsDAO.insert(DBOplogs.KOOplogs(submiter + " 新建流程 " + procdef, uuid + "," + submiter + "," + procdef)), 10 seconds)
+        Await.ready(OplogsDAO.insert(DBOplogs.KOOplogs(submiter + " 新建流程 " + procdef, procid + "," + submiter + "," + procdef)), 10 seconds)
         StatsCounter.newprocs.incrementAndGet()
         Ok(jsonResult)
       })
